@@ -119,6 +119,8 @@ public class SoundRecorderService extends Service {
 
     public void startRecording() {
         Log.d(TAG, "Sound recorder service started recording\u2026");
+        mElapsedTime = 0;
+
         if (mRecord != null) {
             return;
         }
@@ -163,7 +165,6 @@ public class SoundRecorderService extends Service {
             mRecord = null;
             mRecordThread = null;
             mVisualizerThread = null;
-            mElapsedTime = 0;
         }
 
         File mTmpFile = new File(mFilePath);
@@ -284,7 +285,8 @@ public class SoundRecorderService extends Service {
         NotificationCompat.Builder mBuilder = new NotificationCompat.Builder(mContext)
                 .setContentTitle(getString(R.string.sound_notification_title))
                 .setContentText(String.format(
-                        getString(R.string.sound_notification_message), mDateFormat.format(mElapsedTime * 1000)))
+                        getString(R.string.sound_notification_message),
+                        DateUtils.formatElapsedTime(mElapsedTime)))
                 .setOngoing(true)
                 .setSmallIcon(R.drawable.ic_action_sound_record)
                 .setContentIntent(mPIntent)
@@ -314,7 +316,7 @@ public class SoundRecorderService extends Service {
                 .setSmallIcon(R.drawable.ic_action_sound_record)
                 .setContentTitle(getString(R.string.sound_notification_title))
                 .setContentText(getString(R.string.sound_notification_message,
-                        DateUtils.formatElapsedTime(mElapsedTime / 1000)))
+                        DateUtils.formatElapsedTime(mElapsedTime)))
                 .addAction(R.drawable.ic_share, getString(R.string.share),
                         PendingIntent.getActivity(this, 0, mChooserIntent,
                                 PendingIntent.FLAG_CANCEL_CURRENT))
