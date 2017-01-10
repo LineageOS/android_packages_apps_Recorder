@@ -31,7 +31,6 @@ class PcmConverter {
     private static final long BYTE_RATE = RECORDER_BPP * 441000 * CHANNELS / 8;
     private static final String TAG = "PcmConverter";
 
-    @SuppressWarnings("SameParameterValue")
     static void convertToWave(String mInputPath, int mBufferSize) {
         FileInputStream mInput;
         FileOutputStream mOutput;

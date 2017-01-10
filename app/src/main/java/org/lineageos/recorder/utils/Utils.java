@@ -62,7 +62,6 @@ public class Utils {
         return PREF_RECORDING_SCREEN.equals(getStatus(sContext));
     }
 
-    @SuppressWarnings("SameParameterValue")
     public static int convertDp2Px(Context mContext, int mDp) {
         DisplayMetrics mMetrics = mContext.getResources().getDisplayMetrics();
         return Math.round(mDp * mMetrics.density + 0.5f);
