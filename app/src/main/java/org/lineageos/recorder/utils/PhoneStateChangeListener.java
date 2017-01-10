@@ -22,9 +22,8 @@ import android.telephony.TelephonyManager;
 import org.lineageos.recorder.RecorderActivity;
 
 public class PhoneStateChangeListener extends PhoneStateListener {
-    private int mOldCallState = TelephonyManager.CALL_STATE_IDLE;
-
     private final Context mContext;
+    private int mOldCallState = TelephonyManager.CALL_STATE_IDLE;
 
     public PhoneStateChangeListener(Context mContext) {
         this.mContext = mContext;

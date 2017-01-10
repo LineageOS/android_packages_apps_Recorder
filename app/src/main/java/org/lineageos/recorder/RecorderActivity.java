@@ -39,9 +39,9 @@ import android.telephony.PhoneStateListener;
 import android.telephony.TelephonyManager;
 
 import org.lineageos.recorder.screen.ScreenFragment;
-import org.lineageos.recorder.sounds.SoundFragment;
 import org.lineageos.recorder.screen.ScreencastService;
 import org.lineageos.recorder.sounds.RecorderBinder;
+import org.lineageos.recorder.sounds.SoundFragment;
 import org.lineageos.recorder.sounds.SoundRecorderService;
 import org.lineageos.recorder.ui.SoundVisualizer;
 import org.lineageos.recorder.ui.ViewPagerAdapter;
@@ -203,11 +203,11 @@ public class RecorderActivity extends AppCompatActivity {
                     .setMessage(mMessage)
                     .setPositiveButton(R.string.dialog_permissions_ask,
                             new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface mInterface, int mPosition) {
-                            fabClicked();
-                        }
-                    })
+                                @Override
+                                public void onClick(DialogInterface mInterface, int mPosition) {
+                                    fabClicked();
+                                }
+                            })
                     .setNegativeButton(R.string.dialog_permissions_dismiss, null)
                     .show();
         } else {
