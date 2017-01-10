@@ -19,7 +19,6 @@ import android.Manifest;
 import android.content.BroadcastReceiver;
 import android.content.ComponentName;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.ServiceConnection;
 import android.content.SharedPreferences;
@@ -197,17 +196,11 @@ public class RecorderActivity extends AppCompatActivity {
                     break;
             }
 
-            //noinspection Convert2Lambda
             new AlertDialog.Builder(this)
                     .setTitle(R.string.dialog_permissions_title)
                     .setMessage(mMessage)
                     .setPositiveButton(R.string.dialog_permissions_ask,
-                            new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface mInterface, int mPosition) {
-                            fabClicked();
-                        }
-                    })
+                            (mInterface, mPosition) -> fabClicked())
                     .setNegativeButton(R.string.dialog_permissions_dismiss, null)
                     .show();
         } else {
