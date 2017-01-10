@@ -32,7 +32,6 @@ import android.os.IBinder;
 import android.support.v4.app.NotificationCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.content.FileProvider;
-import android.text.format.DateUtils;
 import android.util.Log;
 
 import org.lineageos.recorder.R;
@@ -119,6 +118,8 @@ public class SoundRecorderService extends Service {
 
     public void startRecording() {
         Log.d(TAG, "Sound recorder service started recording\u2026");
+        mElapsedTime = 0;
+
         if (mRecord != null) {
             return;
         }
@@ -163,7 +164,6 @@ public class SoundRecorderService extends Service {
             mRecord = null;
             mRecordThread = null;
             mVisualizerThread = null;
-            mElapsedTime = 0;
         }
 
         File mTmpFile = new File(mFilePath);
@@ -309,12 +309,14 @@ public class SoundRecorderService extends Service {
         PendingIntent mContentPIntent = PendingIntent.getActivity(this, 0,
                 mContentIntent, PendingIntent.FLAG_CANCEL_CURRENT);
 
+        SimpleDateFormat mDateFormat = new SimpleDateFormat("mm:ss", Locale.getDefault());
+
         Notification mNotification = new NotificationCompat.Builder(this)
                 .setWhen(System.currentTimeMillis())
                 .setSmallIcon(R.drawable.ic_action_sound_record)
                 .setContentTitle(getString(R.string.sound_notification_title))
                 .setContentText(getString(R.string.sound_notification_message,
-                        DateUtils.formatElapsedTime(mElapsedTime / 1000)))
+                        mDateFormat.format(mElapsedTime * 1000)))
                 .addAction(R.drawable.ic_share, getString(R.string.share),
                         PendingIntent.getActivity(this, 0, mChooserIntent,
                                 PendingIntent.FLAG_CANCEL_CURRENT))
