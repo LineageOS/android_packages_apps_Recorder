@@ -26,9 +26,6 @@ public class Utils {
     public static final String PREF_RECORDING_SCREEN = "screen";
     private static final String PREF_RECORDING_SOUND = "sound";
 
-    private Utils() {
-    }
-
     private static String getStatus(Context sContext) {
         SharedPreferences sPrefs = sContext.getSharedPreferences(PREFS, 0);
         return sPrefs.getString(KEY_RECORDING, PREF_RECORDING_NOTHING);
