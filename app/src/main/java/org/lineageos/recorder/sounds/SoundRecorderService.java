@@ -31,6 +31,7 @@ import android.os.Environment;
 import android.os.IBinder;
 import android.support.v4.app.NotificationCompat;
 import android.support.v4.content.ContextCompat;
+import android.support.v4.content.FileProvider;
 import android.text.format.DateUtils;
 import android.util.Log;
 
@@ -295,7 +296,8 @@ public class SoundRecorderService extends Service {
     public void createShareNotification() {
         Intent mShareIntent = new Intent(Intent.ACTION_SEND);
         mShareIntent.setType("audio/wav");
-        Uri mFileUri = Uri.parse("file://" + mOutFilePath);
+        Uri mFileUri = FileProvider.getUriForFile(getApplicationContext(),
+                "org.lineageos.recorder.fileprovider", new File(mOutFilePath));
         mShareIntent.putExtra(Intent.EXTRA_STREAM, mFileUri);
         mShareIntent.putExtra(Intent.EXTRA_SUBJECT, new File(mOutFilePath).getName());
         Intent mChooserIntent = Intent.createChooser(mShareIntent, null);
