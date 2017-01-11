@@ -1,0 +1,95 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa3479d7_ece16e9b",
+        "filename": "app/src/main/java/org/lineageos/recorder/screen/ScreencastService.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2017-01-11T10:56:57Z",
+      "side": 1,
+      "message": "mStartTime",
+      "revId": "d53948f59af1a8eb27767a4149df126937db7016",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa3479d7_cceeaa8b",
+        "filename": "app/src/main/java/org/lineageos/recorder/screen/ScreencastService.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2017-01-11T10:56:57Z",
+      "side": 1,
+      "message": "mTimer",
+      "revId": "d53948f59af1a8eb27767a4149df126937db7016",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa3479d7_acf36672",
+        "filename": "app/src/main/java/org/lineageos/recorder/screen/ScreencastService.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2017-01-11T10:56:57Z",
+      "side": 1,
+      "message": "imho this block should stay before any function",
+      "range": {
+        "startLine": 70,
+        "startChar": 3,
+        "endLine": 74,
+        "endChar": 53
+      },
+      "revId": "d53948f59af1a8eb27767a4149df126937db7016",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa3479d7_8ce8a27d",
+        "filename": "app/src/main/java/org/lineageos/recorder/utils/Utils.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2017-01-11T10:56:57Z",
+      "side": 1,
+      "message": "can make whole class static?",
+      "revId": "d53948f59af1a8eb27767a4149df126937db7016",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa3479d7_6ced7e8b",
+        "filename": "app/src/main/java/org/lineageos/recorder/utils/Utils.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2017-01-11T10:56:57Z",
+      "side": 1,
+      "message": "static?",
+      "revId": "d53948f59af1a8eb27767a4149df126937db7016",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
