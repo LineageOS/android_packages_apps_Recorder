@@ -55,13 +55,8 @@ public class ScreencastService extends Service {
             "org.lineageos.recorder.screen.ACTION_START_SCREENCAST";
     public static final String ACTION_STOP_SCREENCAST =
             "org.lineageos.recorder.screen.ACTION_STOP_SCREENCAST";
-    private static final String LOGTAG = "ScreencastService";
     static final String SCREENCASTER_NAME = "hidden:screen-recording";
-    private long startTime;
-    private Timer timer;
-    private NotificationCompat.Builder mBuilder;
-    private RecordingDevice mRecorder;
-    private NotificationManager mNotificationManager;
+    private static final String LOGTAG = "ScreencastService";
     private final BroadcastReceiver mBroadcastReceiver = new BroadcastReceiver() {
         @Override
         public void onReceive(Context context, Intent intent) {
@@ -72,6 +67,11 @@ public class ScreencastService extends Service {
             }
         }
     };
+    private long startTime;
+    private Timer timer;
+    private NotificationCompat.Builder mBuilder;
+    private RecordingDevice mRecorder;
+    private NotificationManager mNotificationManager;
 
     @Override
     public IBinder onBind(Intent intent) {
@@ -127,7 +127,7 @@ public class ScreencastService extends Service {
     }
 
     private Point getNativeResolution() {
-        DisplayManager dm = (DisplayManager)getSystemService(DISPLAY_SERVICE);
+        DisplayManager dm = (DisplayManager) getSystemService(DISPLAY_SERVICE);
         Display display = dm.getDisplay(Display.DEFAULT_DISPLAY);
         Point ret = new Point();
         try {
@@ -147,7 +147,7 @@ public class ScreencastService extends Service {
 
 
     private void registerScreencaster(boolean withAudio) {
-        DisplayManager dm = (DisplayManager)getSystemService(DISPLAY_SERVICE);
+        DisplayManager dm = (DisplayManager) getSystemService(DISPLAY_SERVICE);
         Display display = dm.getDisplay(Display.DEFAULT_DISPLAY);
         DisplayMetrics metrics = new DisplayMetrics();
         display.getMetrics(metrics);

@@ -29,6 +29,7 @@ import android.view.Surface;
 
 import org.lineageos.recorder.R;
 import org.xml.sax.Attributes;
+import org.xml.sax.SAXException;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -47,34 +48,34 @@ abstract class EncoderDevice {
     // Standard resolution tables, removed values that aren't multiples of 8
     private final int[][] validResolutions = {
             // CEA Resolutions
-            { 640, 480 },
-            { 720, 480 },
-            { 720, 576 },
-            { 1280, 720 },
-            { 1920, 1080 },
+            {640, 480},
+            {720, 480},
+            {720, 576},
+            {1280, 720},
+            {1920, 1080},
             // VESA Resolutions
-            { 800, 600 },
-            { 1024, 768 },
-            { 1152, 864 },
-            { 1280, 768 },
-            { 1280, 800 },
-            { 1360, 768 },
-            { 1366, 768 },
-            { 1280, 1024 },
+            {800, 600},
+            {1024, 768},
+            {1152, 864},
+            {1280, 768},
+            {1280, 800},
+            {1360, 768},
+            {1366, 768},
+            {1280, 1024},
             //{ 1400, 1050 },
             //{ 1440, 900 },
             //{ 1600, 900 },
-            { 1600, 1200 },
+            {1600, 1200},
             //{ 1680, 1024 },
             //{ 1680, 1050 },
-            { 1920, 1200 },
+            {1920, 1200},
             // HH Resolutions
-            { 800, 480 },
-            { 854, 480 },
-            { 864, 480 },
-            { 640, 360 },
+            {800, 480},
+            {854, 480},
+            {864, 480},
+            {640, 360},
             //{ 960, 540 },
-            { 848, 480 }
+            {848, 480}
     };
     private MediaCodec venc;
     private int width;
@@ -89,7 +90,7 @@ abstract class EncoderDevice {
 
     VirtualDisplay registerVirtualDisplay(Context context) {
         assert virtualDisplay == null;
-        DisplayManager dm = (DisplayManager)context.getSystemService(Context.DISPLAY_SERVICE);
+        DisplayManager dm = (DisplayManager) context.getSystemService(Context.DISPLAY_SERVICE);
         Surface surface = createDisplaySurface();
         if (surface == null)
             return null;
@@ -103,7 +104,8 @@ abstract class EncoderDevice {
         if (venc != null) {
             try {
                 venc.signalEndOfInputStream();
-            } catch (Exception ignored) {}
+            } catch (Exception ignored) {
+            }
             venc = null;
         }
         if (virtualDisplay != null) {
@@ -113,13 +115,15 @@ abstract class EncoderDevice {
     }
 
     private void destroyDisplaySurface(MediaCodec venc) {
-        if (venc == null)
+        if (venc == null) {
             return;
+        }
         // release this surface
         try {
             venc.stop();
             venc.release();
-        } catch (Exception ignored) {}
+        } catch (Exception ignored) {
+        }
         // see if this device is still in use
         if (this.venc != venc) {
             return;
@@ -140,7 +144,8 @@ abstract class EncoderDevice {
             // signal any old crap to end
             try {
                 venc.signalEndOfInputStream();
-            } catch (Exception ignored) {}
+            } catch (Exception ignored) {
+            }
             venc = null;
         }
 
@@ -151,7 +156,7 @@ abstract class EncoderDevice {
         try {
             File mediaProfiles = new File("/system/etc/media_profiles.xml");
             FileInputStream fin = new FileInputStream(mediaProfiles);
-            byte[] bytes = new byte[(int)mediaProfiles.length()];
+            byte[] bytes = new byte[(int) mediaProfiles.length()];
             //noinspection ResultOfMethodCallIgnored
             fin.read(bytes);
             String xml = new String(bytes);
@@ -171,14 +176,15 @@ abstract class EncoderDevice {
                 }
             });
             Parsers.parse(new StringReader(xml), root.getContentHandler());
-            if (encoders.size() != 1)
-                throw new Exception("derp");
+            if (encoders.size() != 1) {
+                throw new IOException("derp");
+            }
 
             VideoEncoderCap v = encoders.get(0);
             maxWidth = v.maxFrameWidth;
             maxHeight = v.maxFrameHeight;
             bitrate = v.maxBitRate;
-        }  catch (Exception e) {
+        } catch (IOException | SAXException e) {
             CamcorderProfile profile = CamcorderProfile.get(CamcorderProfile.QUALITY_1080P);
 
             if (profile == null) {
@@ -211,7 +217,7 @@ abstract class EncoderDevice {
         if (width > height) {
             // landscape
             landscape = true;
-            ratio = (double)width / (double)height;
+            ratio = (double) width / (double) height;
             if (resConstraint >= 0 && height > resConstraint) {
                 min = resConstraint;
             }
@@ -220,7 +226,7 @@ abstract class EncoderDevice {
             }
         } else {
             // portrait
-            ratio = (double)height / (double)width;
+            ratio = (double) height / (double) width;
             if (resConstraint >= 0 && width > resConstraint) {
                 min = resConstraint;
             }
@@ -234,9 +240,8 @@ abstract class EncoderDevice {
             for (int[] resolution : validResolutions) {
                 // All res are in landscape. Find the highest match
                 if (resolution[0] <= max && resolution[1] <= min &&
-                        (!matched || (resolution[0] > (landscape ? width : height)))
-                        ) {
-                    if (((double)resolution[0] / (double)resolution[1]) == ratio) {
+                        (!matched || (resolution[0] > (landscape ? width : height)))) {
+                    if (((double) resolution[0] / (double) resolution[1]) == ratio) {
                         // Got a valid one
                         if (landscape) {
                             width = resolution[0];
