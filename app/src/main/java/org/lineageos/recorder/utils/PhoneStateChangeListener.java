@@ -41,8 +41,10 @@ public class PhoneStateChangeListener extends PhoneStateListener {
                 if (mOldCallState == TelephonyManager.CALL_STATE_IDLE) {
                     mOldCallState = mState;
 
-                    // Stop sound recorder
-                    ((RecorderActivity) mContext).toggleSoundRecorder();
+                    // Stop sound recorder if it's running
+                    if (Utils.isSoundRecording(mContext)) {
+                        ((RecorderActivity) mContext).toggleSoundRecorder();
+                    }
                 }
                 break;
         }
