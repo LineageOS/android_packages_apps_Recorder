@@ -224,7 +224,7 @@ public class SoundRecorderService extends Service {
     }
 
     private void startVisualizerThread() {
-         mVisualizerThread = new Thread(() -> {
+        mVisualizerThread = new Thread(() -> {
             while (isRecording()) {
                 try {
                     Thread.sleep((long) 100);
