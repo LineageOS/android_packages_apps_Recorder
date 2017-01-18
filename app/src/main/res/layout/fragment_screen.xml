@@ -13,94 +13,99 @@
      See the License for the specific language governing permissions and
      limitations under the License.
 -->
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:animateLayoutChanges="true"
-    android:orientation="vertical"
-    android:paddingEnd="8dp"
-    android:paddingStart="8dp">
+    android:layout_height="match_parent">
 
-    <!-- Recording card -->
-    <android.support.v7.widget.CardView
-        android:id="@+id/screen_card_recording"
-        style="@style/CardTheme.Card">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:animateLayoutChanges="true"
+        android:orientation="vertical"
+        android:paddingEnd="8dp"
+        android:paddingStart="8dp">
 
-        <RelativeLayout style="@style/CardTheme.Layout">
+        <!-- Recording card -->
+        <android.support.v7.widget.CardView
+            android:id="@+id/screen_card_recording"
+            style="@style/CardTheme.Card">
 
-            <TextView
-                android:id="@+id/screen_recording_title"
-                style="@style/CardTheme.Title"
-                android:text="@string/screen_recording_title" />
-
-            <ImageView
-                style="@style/CardTheme.Icon"
-                android:contentDescription="@null"
-                android:src="@drawable/ic_action_screen_record"
-                android:tint="@color/white" />
-
-            <RelativeLayout
-                style="@style/CardTheme.Layout"
-                android:layout_below="@id/screen_recording_title"
-                android:paddingTop="8dp">
+            <RelativeLayout style="@style/CardTheme.Layout">
 
                 <TextView
-                    android:id="@+id/screen_recording_message"
-                    style="@style/CardTheme.Message"
-                    android:text="@string/screen_recording_message" />
+                    android:id="@+id/screen_recording_title"
+                    style="@style/CardTheme.Title"
+                    android:text="@string/screen_recording_title" />
 
-                <Button
-                    android:id="@+id/screen_recording_button"
-                    style="@style/CardTheme.Button"
-                    android:layout_below="@id/screen_recording_message"
-                    android:text="@string/stop" />
+                <ImageView
+                    style="@style/CardTheme.Icon"
+                    android:contentDescription="@null"
+                    android:src="@drawable/ic_action_screen_record"
+                    android:tint="@color/white" />
+
+                <RelativeLayout
+                    style="@style/CardTheme.Layout"
+                    android:layout_below="@id/screen_recording_title"
+                    android:paddingTop="8dp">
+
+                    <TextView
+                        android:id="@+id/screen_recording_message"
+                        style="@style/CardTheme.Message"
+                        android:text="@string/screen_recording_message" />
+
+                    <Button
+                        android:id="@+id/screen_recording_button"
+                        style="@style/CardTheme.Button"
+                        android:layout_below="@id/screen_recording_message"
+                        android:text="@string/stop" />
+                </RelativeLayout>
             </RelativeLayout>
-        </RelativeLayout>
-    </android.support.v7.widget.CardView>
+        </android.support.v7.widget.CardView>
 
-    <!-- Microphone audio card -->
-    <android.support.v7.widget.CardView
-        android:id="@+id/screen_card_audio"
-        style="@style/CardTheme.Card">
+        <!-- Microphone audio card -->
+        <android.support.v7.widget.CardView
+            android:id="@+id/screen_card_audio"
+            style="@style/CardTheme.Card">
 
-        <RelativeLayout style="@style/CardTheme.Layout">
-
-            <TextView
-                android:id="@+id/screen_audio_title"
-                style="@style/CardTheme.Title"
-                android:text="@string/screen_audio_title" />
-
-            <ImageView
-                style="@style/CardTheme.Icon"
-                android:contentDescription="@null"
-                android:src="@drawable/ic_audio" />
-
-            <RelativeLayout
-                android:id="@+id/screen_warning_layout"
-                style="@style/CardTheme.Layout"
-                android:layout_below="@id/screen_audio_title"
-                android:paddingTop="8dp"
-                android:visibility="gone">
+            <RelativeLayout style="@style/CardTheme.Layout">
 
                 <TextView
-                    android:id="@+id/screen_warning_message"
+                    android:id="@+id/screen_audio_title"
+                    style="@style/CardTheme.Title"
+                    android:text="@string/screen_audio_title" />
+
+                <ImageView
+                    style="@style/CardTheme.Icon"
+                    android:contentDescription="@null"
+                    android:src="@drawable/ic_audio" />
+
+                <RelativeLayout
+                    android:id="@+id/screen_warning_layout"
+                    style="@style/CardTheme.Layout"
+                    android:layout_below="@id/screen_audio_title"
+                    android:paddingTop="8dp"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:id="@+id/screen_warning_message"
+                        style="@style/CardTheme.Message"
+                        android:text="@string/screen_audio_warning_message" />
+
+                    <Button
+                        android:id="@+id/screen_warning_button"
+                        style="@style/CardTheme.Button"
+                        android:layout_below="@id/screen_warning_message"
+                        android:text="@string/screen_audio_warning_button_ask" />
+
+                </RelativeLayout>
+
+                <Switch
+                    android:id="@+id/screen_audio_toggle"
                     style="@style/CardTheme.Message"
-                    android:text="@string/screen_audio_warning_message" />
-
-                <Button
-                    android:id="@+id/screen_warning_button"
-                    style="@style/CardTheme.Button"
-                    android:layout_below="@id/screen_warning_message"
-                    android:text="@string/screen_audio_warning_button_ask" />
-
+                    android:layout_below="@id/screen_audio_title"
+                    android:text="@string/screen_audio_message_off"
+                    android:theme="@style/CardTheme" />
             </RelativeLayout>
-
-            <Switch
-                android:id="@+id/screen_audio_toggle"
-                style="@style/CardTheme.Message"
-                android:layout_below="@id/screen_audio_title"
-                android:text="@string/screen_audio_message_off"
-                android:theme="@style/CardTheme" />
-        </RelativeLayout>
-    </android.support.v7.widget.CardView>
-</LinearLayout>
+        </android.support.v7.widget.CardView>
+    </LinearLayout>
+</ScrollView>
