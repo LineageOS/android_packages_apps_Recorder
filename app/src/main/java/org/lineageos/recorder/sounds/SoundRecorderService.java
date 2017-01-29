@@ -306,6 +306,7 @@ public class SoundRecorderService extends Service {
         Intent mContentIntent = new Intent(Intent.ACTION_VIEW);
         mContentIntent.setDataAndType(mFileUri, "audio/wav");
         mContentIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        mContentIntent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
         PendingIntent mContentPIntent = PendingIntent.getActivity(this, 0,
                 mContentIntent, PendingIntent.FLAG_CANCEL_CURRENT);
 

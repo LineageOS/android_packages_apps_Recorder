@@ -253,6 +253,7 @@ public class ScreencastService extends Service {
         Intent open = new Intent(Intent.ACTION_VIEW);
         open.setDataAndType(uri, "video/mp4");
         open.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        open.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
         PendingIntent contentIntent =
                 PendingIntent.getActivity(this, 0, open, PendingIntent.FLAG_CANCEL_CURRENT);
 
