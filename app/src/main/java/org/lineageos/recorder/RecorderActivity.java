@@ -142,6 +142,11 @@ public class RecorderActivity extends AppCompatActivity implements ViewPagerAdap
     @Override
     public void onRequestPermissionsResult(int mCode, @NonNull String[] mPerms,
                                            @NonNull int[] mResults) {
+        if (mCode == ScreenFragment.REQUEST_AUDIO_PERMS) {
+            getScreenFragment().refresh(this);
+            return;
+        }
+
         if (hasAllPermissions()) {
             fabClicked();
             return;
