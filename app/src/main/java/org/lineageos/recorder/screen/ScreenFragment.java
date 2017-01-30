@@ -23,6 +23,7 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.CardView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -35,15 +36,13 @@ import org.lineageos.recorder.RecorderActivity;
 import org.lineageos.recorder.utils.Utils;
 
 public class ScreenFragment extends Fragment {
-    private static final int REQUEST_AUDIO_PERMS = 654;
+    public static final int REQUEST_AUDIO_PERMS = 654;
 
     private Activity mActivity;
 
     private Switch mAudioSwitch;
     private RelativeLayout mWarningLayout;
     private CardView mStopCard;
-
-    private boolean hasAudioPermission;
 
     public ScreenFragment() {
     }
@@ -67,7 +66,7 @@ public class ScreenFragment extends Fragment {
 
         mRequestButton.setOnClickListener(mButtonView -> {
             String mPerms[] = {Manifest.permission.RECORD_AUDIO};
-            requestPermissions(mPerms, REQUEST_AUDIO_PERMS);
+            mActivity.requestPermissions(mPerms, REQUEST_AUDIO_PERMS);
         });
 
         mStopButton.setOnClickListener(mButtonView ->
@@ -81,13 +80,7 @@ public class ScreenFragment extends Fragment {
     @Override
     public void onRequestPermissionsResult(int mCode, @NonNull String[] mPerms,
                                            @NonNull int[] mResults) {
-        if (mCode == REQUEST_AUDIO_PERMS) {
-            for (int mRes : mResults) {
-                hasAudioPermission &= (mRes == PackageManager.PERMISSION_GRANTED);
-            }
-
-            refresh(getContext());
-        }
+        Log.d("OHAI", "Code: " + mCode);
     }
 
     // Pass context to avoid unexpected NPE when refreshing from RecorderActivity
@@ -96,7 +89,8 @@ public class ScreenFragment extends Fragment {
             return;
         }
 
-        hasAudioPermission = hasPermission();
+        boolean hasAudioPermission = hasPermission();
+        Log.d("OHAI", "Refresh - " + hasAudioPermission);
         mAudioSwitch.setVisibility(hasAudioPermission ? View.VISIBLE : View.GONE);
         mWarningLayout.setVisibility(hasAudioPermission ? View.GONE : View.VISIBLE);
         mStopCard.setVisibility(Utils.isScreenRecording(mContext) ? View.VISIBLE : View.GONE);
