@@ -21,26 +21,33 @@ import android.content.Context;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.CardView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.RelativeLayout;
 import android.widget.Switch;
+import android.widget.TextView;
 
 import org.lineageos.recorder.R;
 import org.lineageos.recorder.RecorderActivity;
+import org.lineageos.recorder.utils.LastRecordHelper;
 import org.lineageos.recorder.utils.Utils;
 
 public class ScreenFragment extends Fragment {
     public static final int REQUEST_AUDIO_PERMS = 654;
+    private static final String TYPE = "video/mp4";
 
     private Activity mActivity;
 
     private Switch mAudioSwitch;
     private RelativeLayout mWarningLayout;
     private CardView mStopCard;
+    private CardView mLastCard;
+    private TextView mLastMessage;
 
     public ScreenFragment() {
     }
@@ -53,8 +60,13 @@ public class ScreenFragment extends Fragment {
         mAudioSwitch = (Switch) mView.findViewById(R.id.screen_audio_toggle);
         mWarningLayout = (RelativeLayout) mView.findViewById(R.id.screen_warning_layout);
         mStopCard = (CardView) mView.findViewById(R.id.screen_card_recording);
+        mLastCard = (CardView) mView.findViewById(R.id.screen_card_last);
+        mLastMessage = (TextView) mView.findViewById(R.id.screen_last_message);
         Button mRequestButton = (Button) mView.findViewById(R.id.screen_warning_button);
         Button mStopButton = (Button) mView.findViewById(R.id.screen_recording_button);
+        ImageButton mPlayButton = (ImageButton) mView.findViewById(R.id.screen_last_play);
+        ImageButton mShareButton = (ImageButton) mView.findViewById(R.id.screen_last_share);
+        ImageButton mDeleteButton = (ImageButton) mView.findViewById(R.id.screen_last_delete);
 
         mActivity = getActivity();
 
@@ -69,9 +81,17 @@ public class ScreenFragment extends Fragment {
 
         mStopButton.setOnClickListener(mButtonView ->
                 ((RecorderActivity) getActivity()).toggleScreenRecorder());
+        mPlayButton.setOnClickListener(mButtonView -> startActivityForResult(
+                LastRecordHelper.getOpenIntent(getContext(), getFile(), TYPE), 0));
+        mShareButton.setOnClickListener(mButtonView ->
+                startActivity(LastRecordHelper.getShareIntent(getContext(), getFile(), TYPE)));
+        mDeleteButton.setOnClickListener(mButtonView -> {
+            AlertDialog mDialog = LastRecordHelper.deleteFile(getContext(), getFile(), false);
+            mDialog.setOnDismissListener(mListener -> refresh(mActivity));
+            mDialog.show();
+        });
 
         refresh(getContext());
-
         return mView;
     }
 
@@ -86,6 +106,13 @@ public class ScreenFragment extends Fragment {
         mWarningLayout.setVisibility(hasAudioPermission ? View.GONE : View.VISIBLE);
         mStopCard.setVisibility(Utils.isScreenRecording(mContext) ? View.VISIBLE : View.GONE);
         mAudioSwitch.setEnabled(!Utils.isScreenRecording(mContext));
+        boolean hasLastRecord = getFile() != null;
+        mLastCard.setVisibility(hasLastRecord ? View.VISIBLE : View.GONE);
+        if (hasLastRecord) {
+            mLastMessage.setText(mActivity.getString(R.string.screen_last_message,
+                    LastRecordHelper.getLastItemDate(mActivity, false),
+                    LastRecordHelper.getLastItemDuration(mActivity, false) / 1000));
+        }
     }
 
     private boolean hasPermission() {
@@ -95,5 +122,13 @@ public class ScreenFragment extends Fragment {
 
     public boolean withAudio() {
         return mAudioSwitch.isChecked();
+    }
+
+    private String getFile() {
+        if (mActivity == null) {
+            return null;
+        }
+
+        return LastRecordHelper.getLastItemPath(mActivity, false);
     }
 }
