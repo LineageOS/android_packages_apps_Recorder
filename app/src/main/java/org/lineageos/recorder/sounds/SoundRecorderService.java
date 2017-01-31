@@ -37,6 +37,7 @@ import android.util.Log;
 
 import org.lineageos.recorder.R;
 import org.lineageos.recorder.RecorderActivity;
+import org.lineageos.recorder.utils.LastRecordHelper;
 
 import java.io.BufferedOutputStream;
 import java.io.File;
@@ -302,21 +303,13 @@ public class SoundRecorderService extends Service {
     }
 
     public void createShareNotification() {
-        Intent mShareIntent = new Intent(Intent.ACTION_SEND);
-        mShareIntent.setType("audio/wav");
-        Uri mFileUri = FileProvider.getUriForFile(getApplicationContext(),
-                "org.lineageos.recorder.fileprovider", new File(mOutFilePath));
-        mShareIntent.putExtra(Intent.EXTRA_STREAM, mFileUri);
-        mShareIntent.putExtra(Intent.EXTRA_SUBJECT, new File(mOutFilePath).getName());
-        Intent mChooserIntent = Intent.createChooser(mShareIntent, null);
-        mChooserIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+        Intent mChooserIntent = LastRecordHelper.getShareIntent(this, mOutFilePath, "audio/wav");
 
-        Intent mContentIntent = new Intent(Intent.ACTION_VIEW);
-        mContentIntent.setDataAndType(mFileUri, "audio/wav");
-        mContentIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-        mContentIntent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
         PendingIntent mContentPIntent = PendingIntent.getActivity(this, 0,
-                mContentIntent, PendingIntent.FLAG_CANCEL_CURRENT);
+                LastRecordHelper.getOpenIntent(this, mOutFilePath, "audio/wav"),
+                PendingIntent.FLAG_CANCEL_CURRENT);
+
+        LastRecordHelper.setLastItem(this, mOutFilePath, mElapsedTime, true);
 
         Notification mNotification = new NotificationCompat.Builder(this)
                 .setWhen(System.currentTimeMillis())
