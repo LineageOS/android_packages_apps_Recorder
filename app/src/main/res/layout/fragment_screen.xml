@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- Copyright (c) 2017 The LineageOS Project
+<?xml version="1.0" encoding="utf-8"?><!-- Copyright (c) 2017 The LineageOS Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -105,6 +104,50 @@
                     android:layout_below="@id/screen_audio_title"
                     android:text="@string/screen_audio_message_off"
                     android:theme="@style/CardTheme" />
+            </RelativeLayout>
+        </android.support.v7.widget.CardView>
+
+        <!-- Last item card -->
+        <android.support.v7.widget.CardView
+            android:id="@+id/screen_card_last"
+            style="@style/CardTheme.Card">
+
+            <RelativeLayout style="@style/CardTheme.Layout">
+
+                <TextView
+                    android:id="@+id/screen_last_title"
+                    style="@style/CardTheme.Title"
+                    android:text="@string/screen_last_title" />
+
+                <ImageView
+                    style="@style/CardTheme.Icon"
+                    android:contentDescription="@null"
+                    android:src="@drawable/ic_last_screen" />
+
+                <TextView
+                    android:id="@+id/screen_last_message"
+                    style="@style/CardTheme.Message"
+                    android:layout_below="@id/screen_last_title" />
+
+                <LinearLayout
+                    style="@style/CardTheme.ActionsLayout"
+                    android:layout_below="@id/screen_last_message">
+
+                    <ImageButton
+                        android:id="@+id/screen_last_play"
+                        style="@style/CardTheme.ImageButton"
+                        android:src="@drawable/ic_play" />
+
+                    <ImageButton
+                        android:id="@+id/screen_last_delete"
+                        style="@style/CardTheme.ImageButton"
+                        android:src="@drawable/ic_delete" />
+
+                    <ImageButton
+                        android:id="@+id/screen_last_share"
+                        style="@style/CardTheme.ImageButton"
+                        android:src="@drawable/ic_share" />
+                </LinearLayout>
             </RelativeLayout>
         </android.support.v7.widget.CardView>
     </LinearLayout>

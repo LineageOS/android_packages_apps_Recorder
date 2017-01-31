@@ -26,13 +26,11 @@ import android.content.IntentFilter;
 import android.graphics.Point;
 import android.hardware.display.DisplayManager;
 import android.hardware.display.VirtualDisplay;
-import android.net.Uri;
 import android.os.Environment;
 import android.os.IBinder;
 import android.os.StatFs;
 import android.os.SystemClock;
 import android.support.v4.app.NotificationCompat;
-import android.support.v4.content.FileProvider;
 import android.text.TextUtils;
 import android.text.format.DateUtils;
 import android.util.DisplayMetrics;
@@ -42,9 +40,9 @@ import android.widget.Toast;
 
 import org.lineageos.recorder.R;
 import org.lineageos.recorder.RecorderActivity;
+import org.lineageos.recorder.utils.LastRecordHelper;
 import org.lineageos.recorder.utils.Utils;
 
-import java.io.File;
 import java.lang.reflect.Method;
 import java.util.Timer;
 import java.util.TimerTask;
@@ -238,24 +236,16 @@ public class ScreencastService extends Service {
     }
 
     private NotificationCompat.Builder createShareNotificationBuilder(String file) {
-        Intent sharingIntent = new Intent(Intent.ACTION_SEND);
-        sharingIntent.setType("video/mp4");
-        Uri uri = FileProvider.getUriForFile(getApplicationContext(),
-                "org.lineageos.recorder.fileprovider", new File(file));
-        sharingIntent.putExtra(Intent.EXTRA_STREAM, uri);
-        sharingIntent.putExtra(Intent.EXTRA_SUBJECT, new File(file).getName());
-        Intent chooserIntent = Intent.createChooser(sharingIntent, null);
-        chooserIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+        Intent mShareIntent = LastRecordHelper.getShareIntent(this, file, "video/mp4");
         long timeElapsed = SystemClock.elapsedRealtime() - startTime;
 
-        Log.i(LOGTAG, "Video complete: " + uri);
+        LastRecordHelper.setLastItem(this, file, timeElapsed, false);
 
-        Intent open = new Intent(Intent.ACTION_VIEW);
-        open.setDataAndType(uri, "video/mp4");
-        open.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-        open.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
+        Log.i(LOGTAG, "Video complete: " + file);
+
+        Intent mOpenIntent = LastRecordHelper.getOpenIntent(this, file, "video/mp4");
         PendingIntent contentIntent =
-                PendingIntent.getActivity(this, 0, open, PendingIntent.FLAG_CANCEL_CURRENT);
+                PendingIntent.getActivity(this, 0, mOpenIntent, PendingIntent.FLAG_CANCEL_CURRENT);
 
         return new NotificationCompat.Builder(this)
                 .setWhen(System.currentTimeMillis())
@@ -264,7 +254,7 @@ public class ScreencastService extends Service {
                 .setContentText(getString(R.string.screen_notification_message,
                         DateUtils.formatElapsedTime(timeElapsed / 1000)))
                 .addAction(R.drawable.ic_share, getString(R.string.share),
-                        PendingIntent.getActivity(this, 0, chooserIntent,
+                        PendingIntent.getActivity(this, 0, mShareIntent,
                                 PendingIntent.FLAG_CANCEL_CURRENT))
                 .setContentIntent(contentIntent);
     }
