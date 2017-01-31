@@ -70,10 +70,10 @@ public class RecorderActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_recorder);
+        // Always recreate instance
+        super.onCreate(null);
 
-        startService(new Intent(this, SoundRecorderService.class));
+        setContentView(R.layout.activity_recorder);
 
         mFab = (FloatingActionButton) findViewById(R.id.fab);
         mFab.setOnClickListener(mView -> fabClicked());
@@ -114,6 +114,9 @@ public class RecorderActivity extends AppCompatActivity {
             }
         });
 
+        // Bind to service
+        bindSoundRecService();
+
         refresh();
     }
 
@@ -140,11 +143,21 @@ public class RecorderActivity extends AppCompatActivity {
     }
 
     @Override
+    public void onDestroy() {
+        if (mConnection != null) {
+            unbindService(mConnection);
+        }
+        super.onDestroy();
+    }
+
+    @Override
     public void onRequestPermissionsResult(int mCode, @NonNull String[] mPerms,
                                            @NonNull int[] mResults) {
         if (mCode == ScreenFragment.REQUEST_AUDIO_PERMS) {
             mScreenFragment.refresh(this);
             return;
+        } else if (mCode == REQUEST_SOUND_REC_PERMS) {
+            setupConnection();
         }
 
         if (hasAllPermissions()) {
@@ -226,10 +239,6 @@ public class RecorderActivity extends AppCompatActivity {
                     mVisualizer = mSoundFragment.getVisualizer();
                 }
                 mSoundService.setAudioListener(mVisualizer);
-
-                if (Utils.isSoundRecording(getApplicationContext())) {
-                    mSoundService.startRecording();
-                }
             }
 
             @Override
@@ -256,18 +265,19 @@ public class RecorderActivity extends AppCompatActivity {
         }
 
         if (mSoundService == null) {
-            // First start
-            setupConnection();
-            bindService(new Intent(this, SoundRecorderService.class), mConnection,
-                    BIND_AUTO_CREATE);
-            Utils.setStatus(this, Utils.UiStatus.SOUND);
-        } else if (mSoundService.isRecording()) {
+            bindSoundRecService();
+            return;
+        }
+
+        if (mSoundService.isRecording()) {
             // Stop
             mSoundService.stopRecording();
             mSoundService.createShareNotification();
+            stopService(new Intent(this, SoundRecorderService.class));
             Utils.setStatus(this, Utils.UiStatus.NOTHING);
         } else {
             // Start
+            startService(new Intent(this, SoundRecorderService.class));
             mSoundService.startRecording();
             Utils.setStatus(this, Utils.UiStatus.SOUND);
         }
@@ -379,6 +389,14 @@ public class RecorderActivity extends AppCompatActivity {
         String mPerms[] = {Manifest.permission.WRITE_EXTERNAL_STORAGE};
         requestPermissions(mPerms, REQUEST_STORAGE_PERMS);
         return true;
+    }
+
+    private void bindSoundRecService() {
+        if (mSoundService == null && hasAllPermissions()) {
+            setupConnection();
+            bindService(new Intent(this, SoundRecorderService.class),
+                    mConnection, BIND_AUTO_CREATE);
+        }
     }
 
 }
