@@ -66,6 +66,7 @@ public class SoundRecorderService extends Service {
             CHANNEL_IN, FORMAT);
     private static final int NOTIFICATION_ID = 60;
     private final IBinder mBinder = new RecorderBinder(this);
+    private BroadcastReceiver mShutdownReceiver;
     private int mElapsedTime;
 
     private TimerTask mTask;
@@ -100,8 +101,9 @@ public class SoundRecorderService extends Service {
         return START_STICKY;
     }
 
+    @Override
     public void onCreate() {
-        BroadcastReceiver mShutdownReceiver = new BroadcastReceiver() {
+        mShutdownReceiver = new BroadcastReceiver() {
             @Override
             public void onReceive(Context mContext, Intent mIntent) {
                 stopRecording();
@@ -111,6 +113,12 @@ public class SoundRecorderService extends Service {
         IntentFilter mFilter = new IntentFilter();
         mFilter.addAction(Intent.ACTION_SHUTDOWN);
         registerReceiver(mShutdownReceiver, mFilter);
+    }
+
+    @Override
+    public void onDestroy() {
+        unregisterReceiver(mShutdownReceiver);
+        super.onDestroy();
     }
 
     public boolean isRecording() {
