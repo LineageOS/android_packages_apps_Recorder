@@ -145,7 +145,6 @@ public class ScreencastService extends Service {
         return ret;
     }        // size = new Point(1080, 1920);
 
-
     private void registerScreencaster(boolean withAudio) {
         DisplayManager dm = (DisplayManager) getSystemService(DISPLAY_SERVICE);
         Display display = dm.getDisplay(Display.DEFAULT_DISPLAY);
