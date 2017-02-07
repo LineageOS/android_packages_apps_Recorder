@@ -292,10 +292,17 @@ public class SoundRecorderService extends Service {
     }
 
     public void createShareNotification() {
-        Intent chooserIntent = LastRecordHelper.getShareIntent(this, mOutFilePath, "audio/wav");
+        Intent intent = new Intent(this, RecorderActivity.class);
+        // Fake launcher intent to resume previous activity - FIXME: use singleTop instead?
+        intent.setAction(Intent.ACTION_MAIN);
+        intent.addCategory(Intent.CATEGORY_LAUNCHER);
+        PendingIntent pi = PendingIntent.getActivity(this, 0, intent, 0);
 
-        PendingIntent pi = PendingIntent.getActivity(this, 0,
+        PendingIntent playPIntent = PendingIntent.getActivity(this, 0,
                 LastRecordHelper.getOpenIntent(this, mOutFilePath, "audio/wav"),
+                PendingIntent.FLAG_CANCEL_CURRENT);
+        PendingIntent sharePIntent = PendingIntent.getActivity(this, 0,
+                LastRecordHelper.getShareIntent(this, mOutFilePath, "audio/wav"),
                 PendingIntent.FLAG_CANCEL_CURRENT);
 
         LastRecordHelper.setLastItem(this, mOutFilePath, mElapsedTime, true);
@@ -306,9 +313,8 @@ public class SoundRecorderService extends Service {
                 .setContentTitle(getString(R.string.sound_notification_title))
                 .setContentText(getString(R.string.sound_notification_message,
                         DateUtils.formatElapsedTime(mElapsedTime)))
-                .addAction(R.drawable.ic_share, getString(R.string.share),
-                        PendingIntent.getActivity(this, 0, chooserIntent,
-                                PendingIntent.FLAG_CANCEL_CURRENT))
+                .addAction(R.drawable.ic_play, getString(R.string.play), playPIntent)
+                .addAction(R.drawable.ic_share, getString(R.string.share), sharePIntent)
                 .setContentIntent(pi)
                 .build();
 
