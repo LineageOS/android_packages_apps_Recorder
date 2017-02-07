@@ -29,17 +29,17 @@ class ResizeAnimation extends Animation {
     private final int mDeltaRadius;
     private final View mView;
 
-    ResizeAnimation(View mView, int mInitialRadius, int mDeltaRadius) {
-        this.mView = mView;
-        this.mInitialRadius = mInitialRadius;
-        this.mDeltaRadius = mDeltaRadius;
+    ResizeAnimation(View view, int initialRadius, int deltaRadius) {
+        mView = view;
+        mInitialRadius = initialRadius;
+        mDeltaRadius = deltaRadius;
     }
 
     @Override
-    protected void applyTransformation(float mTime, Transformation mTransformation) {
-        int mNewRadius = (int) (mInitialRadius + mDeltaRadius * mTime);
-        mView.getLayoutParams().height = mNewRadius;
-        mView.getLayoutParams().width = mNewRadius;
+    protected void applyTransformation(float time, Transformation transformation) {
+        int newRadius = (int) (mInitialRadius + mDeltaRadius * time);
+        mView.getLayoutParams().height = newRadius;
+        mView.getLayoutParams().width = newRadius;
         mView.requestLayout();
     }
 

@@ -29,43 +29,42 @@ public class Utils {
     private Utils() {
     }
 
-    private static String getStatus(Context sContext) {
-        SharedPreferences sPrefs = sContext.getSharedPreferences(PREFS, 0);
-        return sPrefs.getString(KEY_RECORDING, PREF_RECORDING_NOTHING);
+    private static String getStatus(Context context) {
+        SharedPreferences prefs = context.getSharedPreferences(PREFS, 0);
+        return prefs.getString(KEY_RECORDING, PREF_RECORDING_NOTHING);
     }
 
-    public static void setStatus(Context sContext, UiStatus sStatus) {
-        String sStr = PREF_RECORDING_NOTHING;
-        if (sStatus.equals(UiStatus.SOUND)) {
-            sStr = PREF_RECORDING_SOUND;
-        } else if (sStatus.equals(UiStatus.SCREEN)) {
-            sStr = PREF_RECORDING_SCREEN;
+    public static void setStatus(Context context, UiStatus status) {
+        if (status.equals(UiStatus.SOUND)) {
+            setStatus(context, PREF_RECORDING_SOUND);
+        } else if (status.equals(UiStatus.SCREEN)) {
+            setStatus(context, PREF_RECORDING_SCREEN);
+        } else {
+            setStatus(context, PREF_RECORDING_NOTHING);
         }
-
-        setStatus(sContext, sStr);
     }
 
-    public static void setStatus(Context sContext, String sStatus) {
-        SharedPreferences sPrefs = sContext.getSharedPreferences(PREFS, 0);
-        sPrefs.edit().putString(KEY_RECORDING, sStatus).apply();
+    public static void setStatus(Context context, String status) {
+        SharedPreferences prefs = context.getSharedPreferences(PREFS, 0);
+        prefs.edit().putString(KEY_RECORDING, status).apply();
     }
 
-    public static boolean isRecording(Context sContext) {
-        return !PREF_RECORDING_NOTHING.equals(getStatus(sContext));
+    public static boolean isRecording(Context context) {
+        return !PREF_RECORDING_NOTHING.equals(getStatus(context));
     }
 
-    public static boolean isSoundRecording(Context sContext) {
-        return PREF_RECORDING_SOUND.equals(getStatus(sContext));
+    public static boolean isSoundRecording(Context context) {
+        return PREF_RECORDING_SOUND.equals(getStatus(context));
     }
 
-    public static boolean isScreenRecording(Context sContext) {
-        return PREF_RECORDING_SCREEN.equals(getStatus(sContext));
+    public static boolean isScreenRecording(Context context) {
+        return PREF_RECORDING_SCREEN.equals(getStatus(context));
     }
 
     @SuppressWarnings("SameParameterValue")
-    public static int convertDp2Px(Context mContext, int mDp) {
-        DisplayMetrics mMetrics = mContext.getResources().getDisplayMetrics();
-        return Math.round(mDp * mMetrics.density + 0.5f);
+    public static int convertDp2Px(Context context, int dp) {
+        DisplayMetrics metrics = context.getResources().getDisplayMetrics();
+        return Math.round(dp * metrics.density + 0.5f);
     }
 
     public enum UiStatus {

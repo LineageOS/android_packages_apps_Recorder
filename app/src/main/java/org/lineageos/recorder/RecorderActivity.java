@@ -20,6 +20,7 @@ import android.content.BroadcastReceiver;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.content.ServiceConnection;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
@@ -35,7 +36,6 @@ import android.support.v4.view.ViewPager;
 import android.support.v4.view.animation.FastOutSlowInInterpolator;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
-import android.telephony.PhoneStateListener;
 import android.telephony.TelephonyManager;
 
 import org.lineageos.recorder.screen.ScreenFragment;
@@ -45,7 +45,6 @@ import org.lineageos.recorder.sounds.SoundFragment;
 import org.lineageos.recorder.sounds.SoundRecorderService;
 import org.lineageos.recorder.ui.SoundVisualizer;
 import org.lineageos.recorder.ui.ViewPagerAdapter;
-import org.lineageos.recorder.utils.PhoneStateChangeListener;
 import org.lineageos.recorder.utils.Utils;
 
 import java.util.ArrayList;
@@ -62,6 +61,17 @@ public class RecorderActivity extends AppCompatActivity implements
         R.string.fragment_sounds, R.string.fragment_screen
     };
 
+    private static final int[] PERMISSION_ERROR_MESSAGE_RES_IDS = {
+        0,
+        R.string.dialog_permissions_mic,
+        R.string.dialog_permissions_storage,
+        R.string.dialog_permissions_phone,
+        R.string.dialog_permissions_mic_storage,
+        R.string.dialog_permissions_mic_phone,
+        R.string.dialog_permissions_storage_phone,
+        R.string.dialog_permissions_mic_storage_phone
+    };
+
     private ServiceConnection mConnection;
     private SoundRecorderService mSoundService;
 
@@ -71,10 +81,20 @@ public class RecorderActivity extends AppCompatActivity implements
 
     private SoundVisualizer mVisualizer;
 
-    private BroadcastReceiver mTelephonyReceiver;
-
     private SharedPreferences mPrefs;
     private int mPosition = 0;
+
+    private BroadcastReceiver mTelephonyReceiver = new BroadcastReceiver() {
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            if (TelephonyManager.ACTION_PHONE_STATE_CHANGED.equals(intent.getAction())) {
+                int state = intent.getIntExtra(TelephonyManager.EXTRA_STATE, -1);
+                if (state == TelephonyManager.CALL_STATE_OFFHOOK && Utils.isSoundRecording(context)) {
+                    toggleSoundRecorder();
+                }
+            }
+        }
+    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -85,7 +105,7 @@ public class RecorderActivity extends AppCompatActivity implements
         mFab = (FloatingActionButton) findViewById(R.id.fab);
         mFab.setOnClickListener(mView -> fabClicked());
 
-        TabLayout mTabs = (TabLayout) findViewById(R.id.tabs);
+        TabLayout tabs = (TabLayout) findViewById(R.id.tabs);
         mViewPager = (ViewPager) findViewById(R.id.viewpager);
         mAdapter = new ViewPagerAdapter(getSupportFragmentManager(), this);
         mViewPager.setAdapter(mAdapter);
@@ -102,11 +122,11 @@ public class RecorderActivity extends AppCompatActivity implements
             @Override
             public void onPageSelected(int mNewPosition) {
                 mPosition = mNewPosition;
-                mFab.setImageResource(mPosition == 1 ?
+                mFab.setImageResource(mPosition == PAGE_INDEX_SCREEN ?
                         R.drawable.ic_action_screen_record : R.drawable.ic_action_sound_record);
             }
         });
-        mTabs.setupWithViewPager(mViewPager);
+        tabs.setupWithViewPager(mViewPager);
 
         mPrefs = getSharedPreferences(Utils.PREFS, 0);
         mPrefs.registerOnSharedPreferenceChangeListener(this);
@@ -127,24 +147,23 @@ public class RecorderActivity extends AppCompatActivity implements
     }
 
     @Override
+    protected void onStart() {
+        super.onStart();
+        registerReceiver(mTelephonyReceiver,
+                new IntentFilter(TelephonyManager.ACTION_PHONE_STATE_CHANGED));
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        unregisterReceiver(mTelephonyReceiver);
+    }
+
+    @Override
     protected void onResume() {
         super.onResume();
         if (Utils.isScreenRecording(this)) {
-            mViewPager.setCurrentItem(1);
-        }
-
-        if (mTelephonyReceiver == null) {
-            mTelephonyReceiver = new BroadcastReceiver() {
-                @Override
-                public void onReceive(Context mContext, Intent mIntent) {
-                    if (mIntent.getAction().equals("android.intent.action.PHONE_STATE")) {
-                        TelephonyManager mManager =
-                                (TelephonyManager) getSystemService(Context.TELEPHONY_SERVICE);
-                        mManager.listen(new PhoneStateChangeListener(getApplicationContext()),
-                                PhoneStateListener.LISTEN_CALL_STATE);
-                    }
-                }
-            };
+            mViewPager.setCurrentItem(PAGE_INDEX_SCREEN);
         }
     }
 
@@ -156,12 +175,12 @@ public class RecorderActivity extends AppCompatActivity implements
     }
 
     @Override
-    public void onRequestPermissionsResult(int mCode, @NonNull String[] mPerms,
-                                           @NonNull int[] mResults) {
-        if (mCode == ScreenFragment.REQUEST_AUDIO_PERMS) {
-            getScreenFragment().refresh(this);
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions,
+                                           @NonNull int[] results) {
+        if (requestCode == ScreenFragment.REQUEST_AUDIO_PERMS) {
+            getScreenFragment().refresh();
             return;
-        } else if (mCode == REQUEST_SOUND_REC_PERMS) {
+        } else if (requestCode == REQUEST_SOUND_REC_PERMS) {
             setupConnection();
         }
 
@@ -171,7 +190,7 @@ public class RecorderActivity extends AppCompatActivity implements
         }
 
         // Storage access permission is enough for screen recording
-        if (hasStoragePermission() && mPosition == 1) {
+        if (hasStoragePermission() && mPosition == PAGE_INDEX_SCREEN) {
             fabClicked();
             return;
         }
@@ -180,50 +199,25 @@ public class RecorderActivity extends AppCompatActivity implements
                 shouldShowRequestPermissionRationale(Manifest.permission.WRITE_EXTERNAL_STORAGE) ||
                 shouldShowRequestPermissionRationale(Manifest.permission.READ_PHONE_STATE)) {
             // Explain the user why the denied permission is needed
-            int mError = 0;
-            final String mMessage;
+            int error = 0;
 
             if (!hasAudioPermission()) {
-                mError |= 1;
+                error |= 1;
             }
-
             if (!hasStoragePermission()) {
-                mError |= 1 << 1;
+                error |= 1 << 1;
             }
-
             if (!hasPhoneReaderPermission()) {
-                mError |= 1 << 2;
+                error |= 1 << 2;
             }
 
-            switch (mError) {
-                case 1:
-                    mMessage = getString(R.string.dialog_permissions_mic);
-                    break;
-                case 2:
-                    mMessage = getString(R.string.dialog_permissions_storage);
-                    break;
-                case 3:
-                    mMessage = getString(R.string.dialog_permissions_phone);
-                    break;
-                case 4:
-                    mMessage = getString(R.string.dialog_permissions_mic_storage);
-                    break;
-                case 5:
-                    mMessage = getString(R.string.dialog_permissions_mic_phone);
-                    break;
-                case 6:
-                    mMessage = getString(R.string.dialog_permissions_storage_phone);
-                    break;
-                default:
-                    mMessage = getString(R.string.dialog_permissions_mic_storage_phone);
-                    break;
-            }
+            String message = getString(PERMISSION_ERROR_MESSAGE_RES_IDS[error]);
 
             new AlertDialog.Builder(this)
                     .setTitle(R.string.dialog_permissions_title)
-                    .setMessage(mMessage)
+                    .setMessage(message)
                     .setPositiveButton(R.string.dialog_permissions_ask,
-                            (mInterface, mPosition) -> fabClicked())
+                            (dialog, position) -> fabClicked())
                     .setNegativeButton(R.string.dialog_permissions_dismiss, null)
                     .show();
         } else {
@@ -252,8 +246,8 @@ public class RecorderActivity extends AppCompatActivity implements
         checkSoundRecPermissions();
         mConnection = new ServiceConnection() {
             @Override
-            public void onServiceConnected(ComponentName componentName, IBinder iBinder) {
-                mSoundService = ((RecorderBinder) iBinder).getService();
+            public void onServiceConnected(ComponentName componentName, IBinder binder) {
+                mSoundService = ((RecorderBinder) binder).getService();
                 SoundFragment soundFragment = getSoundFragment();
 
                 if (mVisualizer == null && soundFragment != null) {
@@ -331,9 +325,7 @@ public class RecorderActivity extends AppCompatActivity implements
     }
 
     private void refresh() {
-        final Context mContext = this;
-
-        if (Utils.isRecording(mContext)) {
+        if (Utils.isRecording(this)) {
             if (mFab.getScaleX() != 0f) {
                 mFab.animate().scaleX(0f).scaleY(0f).setDuration(750)
                         .setInterpolator(new FastOutSlowInInterpolator()).start();
@@ -354,26 +346,26 @@ public class RecorderActivity extends AppCompatActivity implements
             if (mSoundService != null) {
                 mSoundService.setAudioListener(mVisualizer);
             }
-            soundFragment.refresh(mContext);
+            soundFragment.refresh();
         }
         if (screenFragment != null) {
-            screenFragment.refresh(mContext);
+            screenFragment.refresh();
         }
     }
 
     private boolean hasStoragePermission() {
-        int mRes = checkSelfPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE);
-        return mRes == PackageManager.PERMISSION_GRANTED;
+        int result = checkSelfPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE);
+        return result == PackageManager.PERMISSION_GRANTED;
     }
 
     private boolean hasAudioPermission() {
-        int mRes = checkSelfPermission(Manifest.permission.RECORD_AUDIO);
-        return mRes == PackageManager.PERMISSION_GRANTED;
+        int result = checkSelfPermission(Manifest.permission.RECORD_AUDIO);
+        return result == PackageManager.PERMISSION_GRANTED;
     }
 
     private boolean hasPhoneReaderPermission() {
-        int mRes = checkSelfPermission(Manifest.permission.READ_PHONE_STATE);
-        return mRes == PackageManager.PERMISSION_GRANTED;
+        int result = checkSelfPermission(Manifest.permission.READ_PHONE_STATE);
+        return result == PackageManager.PERMISSION_GRANTED;
     }
 
     private boolean hasAllPermissions() {
@@ -381,24 +373,23 @@ public class RecorderActivity extends AppCompatActivity implements
     }
 
     private boolean checkSoundRecPermissions() {
-        ArrayList<String> mPerms = new ArrayList<>();
+        ArrayList<String> permissions = new ArrayList<>();
 
         if (!hasStoragePermission()) {
-            mPerms.add(Manifest.permission.WRITE_EXTERNAL_STORAGE);
+            permissions.add(Manifest.permission.WRITE_EXTERNAL_STORAGE);
         }
 
         if (!hasAudioPermission()) {
-            mPerms.add(Manifest.permission.RECORD_AUDIO);
+            permissions.add(Manifest.permission.RECORD_AUDIO);
         }
 
         if (!hasPhoneReaderPermission()) {
-            mPerms.add(Manifest.permission.READ_PHONE_STATE);
+            permissions.add(Manifest.permission.READ_PHONE_STATE);
         }
 
-        if (!mPerms.isEmpty()) {
-            String mPermsArray[] = new String[mPerms.size()];
-            mPermsArray = mPerms.toArray(mPermsArray);
-            requestPermissions(mPermsArray, REQUEST_SOUND_REC_PERMS);
+        if (!permissions.isEmpty()) {
+            String[] permissionArray = permissions.toArray(new String[permissions.size()]);
+            requestPermissions(permissionArray, REQUEST_SOUND_REC_PERMS);
             return true;
         }
 
@@ -410,8 +401,8 @@ public class RecorderActivity extends AppCompatActivity implements
             return false;
         }
 
-        String mPerms[] = {Manifest.permission.WRITE_EXTERNAL_STORAGE};
-        requestPermissions(mPerms, REQUEST_STORAGE_PERMS);
+        final String[] perms = { Manifest.permission.WRITE_EXTERNAL_STORAGE };
+        requestPermissions(perms, REQUEST_STORAGE_PERMS);
         return true;
     }
 
