@@ -229,16 +229,23 @@ public class ScreencastService extends Service {
     }
 
     private NotificationCompat.Builder createShareNotificationBuilder(String file) {
-        Intent shareIntent = LastRecordHelper.getShareIntent(this, file, "video/mp4");
-        long timeElapsed = SystemClock.elapsedRealtime() - mStartTime;
+        Intent intent = new Intent(this, RecorderActivity.class);
+        // Fake launcher intent to resume previous activity - FIXME: use singleTop instead?
+        intent.setAction(Intent.ACTION_MAIN);
+        intent.addCategory(Intent.CATEGORY_LAUNCHER);
+        PendingIntent pi = PendingIntent.getActivity(this, 0, intent, 0);
 
+        PendingIntent playPIntent = PendingIntent.getActivity(this, 0,
+                LastRecordHelper.getOpenIntent(this, file, "video/mp4"),
+                PendingIntent.FLAG_CANCEL_CURRENT);
+        PendingIntent sharePIntent = PendingIntent.getActivity(this, 0,
+                LastRecordHelper.getShareIntent(this, file, "video/mp4"),
+                PendingIntent.FLAG_CANCEL_CURRENT);
+
+        long timeElapsed = SystemClock.elapsedRealtime() - mStartTime;
         LastRecordHelper.setLastItem(this, file, timeElapsed, false);
 
         Log.i(LOGTAG, "Video complete: " + file);
-
-        Intent openIntent = LastRecordHelper.getOpenIntent(this, file, "video/mp4");
-        PendingIntent contentIntent =
-                PendingIntent.getActivity(this, 0, openIntent, PendingIntent.FLAG_CANCEL_CURRENT);
 
         return new NotificationCompat.Builder(this)
                 .setWhen(System.currentTimeMillis())
@@ -246,9 +253,8 @@ public class ScreencastService extends Service {
                 .setContentTitle(getString(R.string.screen_notification_message_done))
                 .setContentText(getString(R.string.screen_notification_message,
                         DateUtils.formatElapsedTime(timeElapsed / 1000)))
-                .addAction(R.drawable.ic_share, getString(R.string.share),
-                        PendingIntent.getActivity(this, 0, shareIntent,
-                                PendingIntent.FLAG_CANCEL_CURRENT))
-                .setContentIntent(contentIntent);
+                .addAction(R.drawable.ic_play, getString(R.string.play), playPIntent)
+                .addAction(R.drawable.ic_share, getString(R.string.share), sharePIntent)
+                .setContentIntent(pi);
     }
 }
