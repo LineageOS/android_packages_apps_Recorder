@@ -16,5 +16,5 @@
 package org.lineageos.recorder.sounds;
 
 public interface OnAudioLevelUpdatedListener {
-    void onAudioLevelUpdated(int mValue);
+    void onAudioLevelUpdated(int value);
 }

@@ -17,6 +17,8 @@ package org.lineageos.recorder.sounds;
 
 import android.util.Log;
 
+import org.lineageos.recorder.utils.Utils;
+
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -32,86 +34,81 @@ class PcmConverter {
     private static final String TAG = "PcmConverter";
 
     @SuppressWarnings("SameParameterValue")
-    static void convertToWave(String mInputPath, int mBufferSize) {
-        FileInputStream mInput;
-        FileOutputStream mOutput;
+    static void convertToWave(String inputPath, int bufferSize) {
+        FileInputStream input = null;
+        FileOutputStream output = null;
 
-        long mAudioLength;
-        long mDataLength;
-
-        byte[] mData = new byte[mBufferSize];
+        byte[] data = new byte[bufferSize];
 
         try {
-            Log.d(TAG, mInputPath);
-            mInput = new FileInputStream(mInputPath.replace(WAV_EXTENSION, EXTENSION));
-            mOutput = new FileOutputStream(mInputPath);
-            mAudioLength = mInput.getChannel().size();
-            mDataLength = mAudioLength + 36;
+            Log.d(TAG, inputPath);
+            input = new FileInputStream(inputPath.replace(WAV_EXTENSION, EXTENSION));
+            output = new FileOutputStream(inputPath);
+            long audioLength = input.getChannel().size();
+            long dataLength = audioLength + 36;
 
-            writeWaveHeader(mOutput, mAudioLength, mDataLength);
-            while (mInput.read(mData) != -1) {
-                mOutput.write(mData);
+            writeWaveHeader(output, audioLength, dataLength);
+            while (input.read(data) != -1) {
+                output.write(data);
             }
-
-            mInput.close();
-            mOutput.close();
         } catch (IOException e) {
             Log.e(TAG, e.getMessage());
+        } finally {
+            Utils.closeQuietly(input);
+            Utils.closeQuietly(output);
         }
     }
 
     // http://stackoverflow.com/questions/4440015/java-pcm-to-wav
-    private static void writeWaveHeader(FileOutputStream mOut, long mAudioLength,
-                                        long mDataLength) throws IOException {
-        byte[] mHeader = new byte[44];
+    private static void writeWaveHeader(FileOutputStream out, long audioLength,
+                                        long dataLength) throws IOException {
+        byte[] header = new byte[44];
 
-        mHeader[0] = 'R';  // RIFF/WAVE header
-        mHeader[1] = 'I';
-        mHeader[2] = 'F';
-        mHeader[3] = 'F';
-        mHeader[4] = (byte) (mDataLength & 0xff);
-        mHeader[5] = (byte) ((mDataLength >> 8) & 0xff);
-        mHeader[6] = (byte) ((mDataLength >> 16) & 0xff);
-        mHeader[7] = (byte) ((mDataLength >> 24) & 0xff);
-        mHeader[8] = 'W';
-        mHeader[9] = 'A';
-        mHeader[10] = 'V';
-        mHeader[11] = 'E';
-        mHeader[12] = 'f';  // 'fmt ' chunk
-        mHeader[13] = 'm';
-        mHeader[14] = 't';
-        mHeader[15] = ' ';
-        mHeader[16] = 16;  // 4 bytes: size of 'fmt ' chunk
-        mHeader[17] = 0;
-        mHeader[18] = 0;
-        mHeader[19] = 0;
-        mHeader[20] = 1;  // format = 1
-        mHeader[21] = 0;
-        mHeader[22] = (byte) CHANNELS;
-        mHeader[23] = 0;
-        mHeader[24] = (byte) (SAMPLE_RATE & 0xff);
-        mHeader[25] = (byte) ((SAMPLE_RATE >> 8) & 0xff);
-        mHeader[26] = (byte) (0L);
-        mHeader[27] = (byte) (0L);
-        mHeader[28] = (byte) (BYTE_RATE & 0xff);
-        mHeader[29] = (byte) ((BYTE_RATE >> 8) & 0xff);
-        mHeader[30] = (byte) ((BYTE_RATE >> 16) & 0xff);
-        mHeader[31] = (byte) (0L);
-        mHeader[32] = (byte) (2 * 16 / 8);  // block align
-        mHeader[33] = 0;
-        mHeader[34] = RECORDER_BPP;  // bits per sample
-        mHeader[35] = 0;
-        mHeader[36] = 'd';
-        mHeader[37] = 'a';
-        mHeader[38] = 't';
-        mHeader[39] = 'a';
-        mHeader[40] = (byte) (mAudioLength & 0xff);
-        mHeader[41] = (byte) ((mAudioLength >> 8) & 0xff);
-        mHeader[42] = (byte) ((mAudioLength >> 16) & 0xff);
-        mHeader[43] = (byte) ((mAudioLength >> 24) & 0xff);
+        header[0] = 'R';  // RIFF/WAVE header
+        header[1] = 'I';
+        header[2] = 'F';
+        header[3] = 'F';
+        header[4] = (byte) (dataLength & 0xff);
+        header[5] = (byte) ((dataLength >> 8) & 0xff);
+        header[6] = (byte) ((dataLength >> 16) & 0xff);
+        header[7] = (byte) ((dataLength >> 24) & 0xff);
+        header[8] = 'W';
+        header[9] = 'A';
+        header[10] = 'V';
+        header[11] = 'E';
+        header[12] = 'f';  // 'fmt ' chunk
+        header[13] = 'm';
+        header[14] = 't';
+        header[15] = ' ';
+        header[16] = 16;  // 4 bytes: size of 'fmt ' chunk
+        header[17] = 0;
+        header[18] = 0;
+        header[19] = 0;
+        header[20] = 1;  // format = 1
+        header[21] = 0;
+        header[22] = (byte) CHANNELS;
+        header[23] = 0;
+        header[24] = (byte) (SAMPLE_RATE & 0xff);
+        header[25] = (byte) ((SAMPLE_RATE >> 8) & 0xff);
+        header[26] = (byte) (0L);
+        header[27] = (byte) (0L);
+        header[28] = (byte) (BYTE_RATE & 0xff);
+        header[29] = (byte) ((BYTE_RATE >> 8) & 0xff);
+        header[30] = (byte) ((BYTE_RATE >> 16) & 0xff);
+        header[31] = (byte) (0L);
+        header[32] = (byte) (2 * 16 / 8);  // block align
+        header[33] = 0;
+        header[34] = RECORDER_BPP;  // bits per sample
+        header[35] = 0;
+        header[36] = 'd';
+        header[37] = 'a';
+        header[38] = 't';
+        header[39] = 'a';
+        header[40] = (byte) (audioLength & 0xff);
+        header[41] = (byte) ((audioLength >> 8) & 0xff);
+        header[42] = (byte) ((audioLength >> 16) & 0xff);
+        header[43] = (byte) ((audioLength >> 24) & 0xff);
 
-        mOut.write(mHeader, 0, 44);
-
+        out.write(header, 0, 44);
     }
-
 }

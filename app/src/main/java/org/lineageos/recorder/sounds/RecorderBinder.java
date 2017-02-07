@@ -20,9 +20,9 @@ import android.os.Binder;
 public class RecorderBinder extends Binder {
     private final SoundRecorderService mService;
 
-    RecorderBinder(SoundRecorderService mService) {
+    RecorderBinder(SoundRecorderService service) {
         super();
-        this.mService = mService;
+        mService = service;
     }
 
     public SoundRecorderService getService() {

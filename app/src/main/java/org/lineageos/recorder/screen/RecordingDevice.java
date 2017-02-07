@@ -42,23 +42,23 @@ class RecordingDevice extends EncoderDevice {
             new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_MOVIES),
                     "ScreenRecords");
     private final boolean mRecordAudio;
-    private final File path;
+    private final File mPath;
 
     RecordingDevice(Context context, int width, int height, boolean recordAudio) {
         super(context, width, height);
         mRecordAudio = recordAudio;
         // Prepare all the output metadata
         String videoDate = new SimpleDateFormat("yyyy-MM-dd-HH-mm-ss", Locale.getDefault())
-                .format(new Date(System.currentTimeMillis()));
+                .format(new Date());
         // the directory which holds all recording files
-        path = new File(RECORDINGS_DIR, "ScreenRecord-" + videoDate + ".mp4");
+        mPath = new File(RECORDINGS_DIR, "ScreenRecord-" + videoDate + ".mp4");
     }
 
     /**
      * @return the path of the screen cast file.
      */
     String getRecordingFilePath() {
-        return path.getAbsolutePath();
+        return mPath.getAbsolutePath();
     }
 
     @Override
@@ -216,13 +216,13 @@ class RecordingDevice extends EncoderDevice {
 
         @Override
         public void encode() throws Exception {
-            File recordingDir = path.getParentFile();
+            File recordingDir = mPath.getParentFile();
             //noinspection ResultOfMethodCallIgnored
             recordingDir.mkdirs();
             if (!(recordingDir.exists() && recordingDir.canWrite())) {
                 throw new SecurityException("Cannot write to " + recordingDir);
             }
-            MediaMuxer muxer = new MediaMuxer(path.getAbsolutePath(),
+            MediaMuxer muxer = new MediaMuxer(mPath.getAbsolutePath(),
                     MediaMuxer.OutputFormat.MUXER_OUTPUT_MPEG_4);
             boolean muxerStarted = false;
             int trackIndex = -1;
@@ -294,7 +294,7 @@ class RecordingDevice extends EncoderDevice {
             }
             muxer.stop();
             MediaScannerConnection.scanFile(context,
-                    new String[]{path.getAbsolutePath()}, null,
+                    new String[]{mPath.getAbsolutePath()}, null,
                     (path1, uri) -> Log.i(LOGTAG, "MediaScanner scanned recording " + path1));
         }
     }

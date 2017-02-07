@@ -33,7 +33,6 @@ import android.os.SystemClock;
 import android.support.v4.app.NotificationCompat;
 import android.text.TextUtils;
 import android.text.format.DateUtils;
-import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.Display;
 import android.widget.Toast;
@@ -55,52 +54,38 @@ public class ScreencastService extends Service {
             "org.lineageos.recorder.screen.ACTION_STOP_SCREENCAST";
     static final String SCREENCASTER_NAME = "hidden:screen-recording";
     private static final String LOGTAG = "ScreencastService";
-    private final BroadcastReceiver mBroadcastReceiver = new BroadcastReceiver() {
-        @Override
-        public void onReceive(Context context, Intent intent) {
-            if (intent.getAction().equals(Intent.ACTION_USER_BACKGROUND) ||
-                    intent.getAction().equals(Intent.ACTION_SHUTDOWN)) {
-                context.startService(new Intent(ACTION_STOP_SCREENCAST)
-                        .setClass(context, ScreencastService.class));
-            }
-        }
-    };
-    private long startTime;
-    private Timer timer;
+    private long mStartTime;
+    private Timer mTimer;
     private NotificationCompat.Builder mBuilder;
     private RecordingDevice mRecorder;
     private NotificationManager mNotificationManager;
+    private final BroadcastReceiver mBroadcastReceiver = new BroadcastReceiver() {
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            final String action = intent.getAction();
+            if (Intent.ACTION_USER_BACKGROUND.equals(action) ||
+                    Intent.ACTION_SHUTDOWN.equals(action)) {
+                stopCasting();
+            }
+        }
+    };
 
     @Override
     public IBinder onBind(Intent intent) {
         return null;
     }
 
-    private void cleanup() {
-        String recorderPath = null;
-        if (mRecorder != null) {
-            recorderPath = mRecorder.getRecordingFilePath();
-            mRecorder.stop();
-            mRecorder = null;
-        }
-        if (timer != null) {
-            timer.cancel();
-            timer = null;
-        }
-        stopForeground(true);
-        if (recorderPath != null) {
-            sendShareNotification(recorderPath);
-        }
-    }
-
     @Override
     public void onCreate() {
-        stopCasting();
+        super.onCreate();
+
+        mNotificationManager =
+                (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+
         IntentFilter filter = new IntentFilter();
         filter.addAction(Intent.ACTION_USER_BACKGROUND);
         filter.addAction(Intent.ACTION_SHUTDOWN);
         registerReceiver(mBroadcastReceiver, filter);
-        super.onCreate();
     }
 
     @Override
@@ -118,7 +103,7 @@ public class ScreencastService extends Service {
     }
 
     private void updateNotification() {
-        long timeElapsed = SystemClock.elapsedRealtime() - startTime;
+        long timeElapsed = SystemClock.elapsedRealtime() - mStartTime;
         mBuilder.setContentText(getString(R.string.screen_notification_message,
                 DateUtils.formatElapsedTime(timeElapsed / 1000)));
         mNotificationManager.notify(0, mBuilder.build());
@@ -141,23 +126,34 @@ public class ScreencastService extends Service {
             }
         }
         return ret;
-    }        // size = new Point(1080, 1920);
+    }
+
+    private void cleanup() {
+        String recorderPath = null;
+        if (mRecorder != null) {
+            recorderPath = mRecorder.getRecordingFilePath();
+            mRecorder.stop();
+            mRecorder = null;
+        }
+        if (mTimer != null) {
+            mTimer.cancel();
+            mTimer = null;
+        }
+        stopForeground(true);
+        if (recorderPath != null) {
+            sendShareNotification(recorderPath);
+        }
+    }
 
 
     private void registerScreencaster(boolean withAudio) {
-        DisplayManager dm = (DisplayManager) getSystemService(DISPLAY_SERVICE);
-        Display display = dm.getDisplay(Display.DEFAULT_DISPLAY);
-        DisplayMetrics metrics = new DisplayMetrics();
-        display.getMetrics(metrics);
-
         assert mRecorder == null;
         Point size = getNativeResolution();
-        // size = new Point(1080, 1920);
         mRecorder = new RecordingDevice(this, size.x, size.y, withAudio);
-        VirtualDisplay vd = mRecorder.registerVirtualDisplay(this
-        );
-        if (vd == null)
+        VirtualDisplay vd = mRecorder.registerVirtualDisplay(this);
+        if (vd == null) {
             cleanup();
+        }
     }
 
     private void stopCasting() {
@@ -174,26 +170,23 @@ public class ScreencastService extends Service {
         if (intent == null) {
             return START_NOT_STICKY;
         }
-        if ("org.lineageos.recorder.server.display.SCAN".equals(intent.getAction())) {
+        final String action = intent.getAction();
+        if ("org.lineageos.recorder.server.display.SCAN".equals(action)
+                || "org.lineageos.recorder.server.display.STOP_SCAN".equals(action)) {
             return START_STICKY;
-        } else if ("org.lineageos.recorder.server.display.STOP_SCAN".equals(intent.getAction())) {
-            return START_STICKY;
-        } else if (TextUtils.equals(intent.getAction(), ACTION_START_SCREENCAST) ||
-                TextUtils.equals(intent.getAction(), "com.cyanogenmod.ACTION_START_SCREENCAST")) {
+        } else if (ACTION_START_SCREENCAST.equals(action)
+                || "com.cyanogenmod.ACTION_START_SCREENCAST".equals(action)) {
             try {
                 if (hasNoAvailableSpace()) {
                     Toast.makeText(this, R.string.screen_insufficient_storage, Toast.LENGTH_LONG).show();
                     return START_NOT_STICKY;
                 }
-                startTime = SystemClock.elapsedRealtime();
-                boolean withAudio = intent.getBooleanExtra(EXTRA_WITHAUDIO, true);
-                registerScreencaster(withAudio);
+                mStartTime = SystemClock.elapsedRealtime();
+                registerScreencaster(intent.getBooleanExtra(EXTRA_WITHAUDIO, true));
                 mBuilder = createNotificationBuilder();
-                mNotificationManager =
-                        (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
 
-                timer = new Timer();
-                timer.scheduleAtFixedRate(new TimerTask() {
+                mTimer = new Timer();
+                mTimer.scheduleAtFixedRate(new TimerTask() {
                     @Override
                     public void run() {
                         updateNotification();
@@ -212,22 +205,22 @@ public class ScreencastService extends Service {
     }
 
     private NotificationCompat.Builder createNotificationBuilder() {
-        Intent mIntent = new Intent(this, RecorderActivity.class);
-        // Fake launcher intent to resume previous activity
-        mIntent.setAction("android.intent.action.MAIN");
-        mIntent.addCategory("android.intent.category.LAUNCHER");
+        Intent intent = new Intent(this, RecorderActivity.class);
+        // Fake launcher intent to resume previous activity - FIXME: use singleTop?
+        intent.setAction(Intent.ACTION_MAIN);
+        intent.addCategory(Intent.CATEGORY_LAUNCHER);
 
-        Intent stopRecording = new Intent(ACTION_STOP_SCREENCAST);
-        stopRecording.setClass(this, ScreencastService.class);
+        Intent stopRecordingIntent = new Intent(ACTION_STOP_SCREENCAST);
+        stopRecordingIntent.setClass(this, ScreencastService.class);
 
         return new NotificationCompat.Builder(this)
                 .setOngoing(true)
                 .setSmallIcon(R.drawable.ic_action_screen_record)
                 .setContentTitle(getString(R.string.screen_notification_title))
                 .setContentText(getString(R.string.screen_notification_message))
-                .setContentIntent(PendingIntent.getActivity(this, 0, mIntent, 0))
+                .setContentIntent(PendingIntent.getActivity(this, 0, intent, 0))
                 .addAction(R.drawable.ic_stop, getString(R.string.stop),
-                        PendingIntent.getService(this, 0, stopRecording, 0));
+                        PendingIntent.getService(this, 0, stopRecordingIntent, 0));
     }
 
     private void sendShareNotification(String recordingFilePath) {
@@ -236,16 +229,16 @@ public class ScreencastService extends Service {
     }
 
     private NotificationCompat.Builder createShareNotificationBuilder(String file) {
-        Intent mShareIntent = LastRecordHelper.getShareIntent(this, file, "video/mp4");
-        long timeElapsed = SystemClock.elapsedRealtime() - startTime;
+        Intent shareIntent = LastRecordHelper.getShareIntent(this, file, "video/mp4");
+        long timeElapsed = SystemClock.elapsedRealtime() - mStartTime;
 
         LastRecordHelper.setLastItem(this, file, timeElapsed, false);
 
         Log.i(LOGTAG, "Video complete: " + file);
 
-        Intent mOpenIntent = LastRecordHelper.getOpenIntent(this, file, "video/mp4");
+        Intent openIntent = LastRecordHelper.getOpenIntent(this, file, "video/mp4");
         PendingIntent contentIntent =
-                PendingIntent.getActivity(this, 0, mOpenIntent, PendingIntent.FLAG_CANCEL_CURRENT);
+                PendingIntent.getActivity(this, 0, openIntent, PendingIntent.FLAG_CANCEL_CURRENT);
 
         return new NotificationCompat.Builder(this)
                 .setWhen(System.currentTimeMillis())
@@ -254,7 +247,7 @@ public class ScreencastService extends Service {
                 .setContentText(getString(R.string.screen_notification_message,
                         DateUtils.formatElapsedTime(timeElapsed / 1000)))
                 .addAction(R.drawable.ic_share, getString(R.string.share),
-                        PendingIntent.getActivity(this, 0, mShareIntent,
+                        PendingIntent.getActivity(this, 0, shareIntent,
                                 PendingIntent.FLAG_CANCEL_CURRENT))
                 .setContentIntent(contentIntent);
     }

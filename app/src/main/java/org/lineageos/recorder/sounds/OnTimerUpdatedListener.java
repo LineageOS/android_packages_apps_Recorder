@@ -16,5 +16,5 @@
 package org.lineageos.recorder.sounds;
 
 interface OnTimerUpdatedListener {
-    void onTimerUpdated(int mSeconds);
+    void onTimerUpdated(int seconds);
 }

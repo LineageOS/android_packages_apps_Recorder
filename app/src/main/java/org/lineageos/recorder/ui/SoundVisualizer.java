@@ -35,32 +35,23 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class SoundVisualizer extends LinearLayout implements OnAudioLevelUpdatedListener {
-    private static int BUBBLE_RADIUS;
-
     private final Context mContext;
     private final List<View> mWaveList = new ArrayList<>();
+    private final int mBubbleRadius;
 
-    public SoundVisualizer(Context mContext) {
-        super(mContext);
-        this.mContext = mContext;
-        setup();
+    public SoundVisualizer(Context context) {
+        this(context, null);
     }
 
-    public SoundVisualizer(Context mContext, AttributeSet mAttrSet) {
-        super(mContext, mAttrSet);
-        this.mContext = mContext;
-        setup();
+    public SoundVisualizer(Context context, AttributeSet attrs) {
+        this(context, attrs, 0);
     }
 
-    public SoundVisualizer(Context mContext, AttributeSet mAttrSet, int mDefStyleAttr) {
-        super(mContext, mAttrSet, mDefStyleAttr);
-        this.mContext = mContext;
+    public SoundVisualizer(Context context, AttributeSet attrs, int defStyleAttr) {
+        super(context, attrs, defStyleAttr);
 
-        setup();
-    }
-
-    private void setup() {
-        BUBBLE_RADIUS = Utils.convertDp2Px(mContext, 24);
+        mContext = context;
+        mBubbleRadius = Utils.convertDp2Px(context, 24);
 
         // Setup layout
         setLayoutParams(new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,
@@ -69,54 +60,53 @@ public class SoundVisualizer extends LinearLayout implements OnAudioLevelUpdated
         setGravity(Gravity.CENTER);
 
         // Draw bubbles
-        for (int mCounter = 0; mCounter < 5; mCounter++) {
+        for (int counter = 0; counter < 5; counter++) {
             // Create container layout
-            RelativeLayout mContainer = new RelativeLayout(mContext);
-            RelativeLayout.LayoutParams mContainerParams = new RelativeLayout.LayoutParams(0,
+            RelativeLayout container = new RelativeLayout(context);
+            RelativeLayout.LayoutParams containerParams = new RelativeLayout.LayoutParams(0,
                     ViewGroup.LayoutParams.MATCH_PARENT);
-            mContainerParams.addRule(RelativeLayout.CENTER_IN_PARENT, RelativeLayout.TRUE);
-            mContainer.setLayoutParams(mContainerParams);
+            containerParams.addRule(RelativeLayout.CENTER_IN_PARENT, RelativeLayout.TRUE);
+            container.setLayoutParams(containerParams);
+
             // Inflate params to set weight = 1
-            LinearLayout.LayoutParams mInflateParams =
+            LinearLayout.LayoutParams inflateParams =
                     new LinearLayout.LayoutParams(0, ViewGroup.LayoutParams.MATCH_PARENT, 1);
 
             // Create bubble
-            View mView = new View(mContext);
-            mView.setLayoutParams(new ViewGroup.LayoutParams(BUBBLE_RADIUS, BUBBLE_RADIUS));
-            GradientDrawable mDrawable = new GradientDrawable();
-            mDrawable.setColor(ContextCompat.getColor(mContext, R.color.colorAccentDark));
-            mDrawable.setCornerRadius(BUBBLE_RADIUS);
-            mView.setBackground(mDrawable);
-            mView.setForegroundGravity(Gravity.CENTER);
+            View view = new View(context);
+            view.setLayoutParams(new ViewGroup.LayoutParams(mBubbleRadius, mBubbleRadius));
+
+            GradientDrawable drawable = new GradientDrawable();
+            drawable.setColor(ContextCompat.getColor(context, R.color.colorAccentDark));
+            drawable.setCornerRadius(mBubbleRadius);
+
+            view.setBackground(drawable);
+            view.setForegroundGravity(Gravity.CENTER);
 
             // Register items
-            mWaveList.add(mView);
-            mContainer.addView(mView, mContainerParams);
-            this.addView(mContainer, mInflateParams);
+            mWaveList.add(view);
+            container.addView(view, containerParams);
+            addView(container, inflateParams);
         }
     }
 
     @Override
-    public void onAudioLevelUpdated(int mValue) {
-        for (int mCounter = 0; mCounter < 5 && mCounter < mWaveList.size(); mCounter++) {
-            final int mFinalCount = mCounter;
+    public void onAudioLevelUpdated(int value) {
+        SecureRandom random = new SecureRandom();
+        for (int counter = 0; counter < 5 && counter < mWaveList.size(); counter++) {
+            final int finalCount = counter;
             ((Activity) mContext).runOnUiThread(() -> {
-                View mBubble = mWaveList.get(mFinalCount);
+                View bubble = mWaveList.get(finalCount);
 
-                int mOriginalRadius = mBubble.getHeight();
-                int mSize = mValue / (new SecureRandom().nextInt(5) + 1) * 2 + 10;
-                int mNewRadius = mSize;
-                if (mSize < BUBBLE_RADIUS) {
-                    mNewRadius = BUBBLE_RADIUS;
-                } else if (mSize > this.getHeight()) {
-                    mSize = this.getHeight();
-                }
+                int originalRadius = bubble.getHeight();
+                int size = value / (random.nextInt(5) + 1) * 2 + 10;
+                int newRadius = Math.max(size, mBubbleRadius);
 
-                ResizeAnimation mAnim = new ResizeAnimation(mBubble, mOriginalRadius,
-                        mNewRadius - mOriginalRadius);
-                mAnim.setDuration(100);
+                ResizeAnimation anim = new ResizeAnimation(bubble, originalRadius,
+                        newRadius - originalRadius);
+                anim.setDuration(100);
 
-                mBubble.startAnimation(mAnim);
+                bubble.startAnimation(anim);
             });
         }
     }
