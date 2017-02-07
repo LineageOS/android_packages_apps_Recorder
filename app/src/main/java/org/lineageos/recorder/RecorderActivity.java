@@ -30,6 +30,7 @@ import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.design.widget.TabLayout;
+import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 import android.support.v4.view.animation.FastOutSlowInInterpolator;
 import android.support.v7.app.AlertDialog;
@@ -49,18 +50,23 @@ import org.lineageos.recorder.utils.Utils;
 
 import java.util.ArrayList;
 
-public class RecorderActivity extends AppCompatActivity {
-
+public class RecorderActivity extends AppCompatActivity implements ViewPagerAdapter.PageProvider {
     private static final int REQUEST_STORAGE_PERMS = 439;
     private static final int REQUEST_SOUND_REC_PERMS = 440;
 
+    private static final int PAGE_INDEX_SOUND = 0;
+    private static final int PAGE_INDEX_SCREEN = 1;
+
+    private static final int[] PAGE_TITLE_RES_IDS = {
+        R.string.fragment_sounds, R.string.fragment_screen
+    };
+
     private ServiceConnection mConnection;
     private SoundRecorderService mSoundService;
-    private ScreenFragment mScreenFragment;
-    private SoundFragment mSoundFragment;
 
     private FloatingActionButton mFab;
     private ViewPager mViewPager;
+    private ViewPagerAdapter mAdapter;
 
     private SoundVisualizer mVisualizer;
 
@@ -78,15 +84,9 @@ public class RecorderActivity extends AppCompatActivity {
         mFab = (FloatingActionButton) findViewById(R.id.fab);
         mFab.setOnClickListener(mView -> fabClicked());
 
-        // Setup fragments
-        mSoundFragment = new SoundFragment();
-        mScreenFragment = new ScreenFragment();
-
         TabLayout mTabs = (TabLayout) findViewById(R.id.tabs);
         mViewPager = (ViewPager) findViewById(R.id.viewpager);
-        ViewPagerAdapter mAdapter = new ViewPagerAdapter(getSupportFragmentManager());
-        mAdapter.addFragment(mSoundFragment, getString(R.string.fragment_sounds));
-        mAdapter.addFragment(mScreenFragment, getString(R.string.fragment_screen));
+        mAdapter = new ViewPagerAdapter(getSupportFragmentManager(), this);
         mViewPager.setAdapter(mAdapter);
         mViewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
@@ -210,15 +210,31 @@ public class RecorderActivity extends AppCompatActivity {
         }
     }
 
+    @Override
+    public int getCount() {
+        return PAGE_TITLE_RES_IDS.length;
+    }
+
+    @Override
+    public Fragment createPage(int index) {
+        return index == PAGE_INDEX_SOUND ? new SoundFragment() : new ScreenFragment();
+    }
+
+    @Override
+    public String getPageTitle(int index) {
+        return getString(PAGE_TITLE_RES_IDS[index]);
+    }
+
     private void setupConnection() {
         checkSoundRecPermissions();
         mConnection = new ServiceConnection() {
             @Override
             public void onServiceConnected(ComponentName componentName, IBinder iBinder) {
                 mSoundService = ((RecorderBinder) iBinder).getService();
+                SoundFragment soundFragment = getSoundFragment();
 
-                if (mVisualizer == null && mSoundFragment != null) {
-                    mVisualizer = mSoundFragment.getVisualizer();
+                if (mVisualizer == null && soundFragment != null) {
+                    mVisualizer = soundFragment.getVisualizer();
                 }
                 mSoundService.setAudioListener(mVisualizer);
 
@@ -285,7 +301,7 @@ public class RecorderActivity extends AppCompatActivity {
             new Handler().postDelayed(() -> mFab.animate().scaleX(0f).scaleY(0f).setDuration(750)
                     .setInterpolator(new FastOutSlowInInterpolator()).start(), 250);
             Intent mIntent = new Intent(ScreencastService.ACTION_START_SCREENCAST);
-            mIntent.putExtra(ScreencastService.EXTRA_WITHAUDIO, mScreenFragment.withAudio());
+            mIntent.putExtra(ScreencastService.EXTRA_WITHAUDIO, getScreenFragment().withAudio());
             new Handler().postDelayed(() -> {
                 startService(mIntent.setClass(this, ScreencastService.class));
                 Utils.setStatus(this, Utils.UiStatus.SCREEN);
@@ -310,16 +326,19 @@ public class RecorderActivity extends AppCompatActivity {
             }
         }
 
-        if (mSoundFragment != null) {
-            mVisualizer = mSoundFragment.getVisualizer();
+        SoundFragment soundFragment = getSoundFragment();
+        ScreenFragment screenFragment = getScreenFragment();
+
+        if (soundFragment != null) {
+            mVisualizer = soundFragment.getVisualizer();
             if (mSoundService != null) {
                 mSoundService.setAudioListener(mVisualizer);
             }
+            soundFragment.refresh(mContext);
         }
-
-        // Refresh fragments too
-        mScreenFragment.refresh(mContext);
-        mSoundFragment.refresh(mContext);
+        if (screenFragment != null) {
+            screenFragment.refresh(mContext);
+        }
     }
 
     private boolean hasStoragePermission() {
@@ -376,4 +395,11 @@ public class RecorderActivity extends AppCompatActivity {
         return true;
     }
 
+    private SoundFragment getSoundFragment() {
+        return (SoundFragment) mAdapter.getFragment(PAGE_INDEX_SOUND);
+    }
+
+    private ScreenFragment getScreenFragment() {
+        return (ScreenFragment) mAdapter.getFragment(PAGE_INDEX_SCREEN);
+    }
 }

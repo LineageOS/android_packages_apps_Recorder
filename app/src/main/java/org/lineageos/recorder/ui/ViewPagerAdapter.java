@@ -18,36 +18,56 @@ package org.lineageos.recorder.ui;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
+import android.util.SparseArray;
+import android.view.ViewGroup;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class ViewPagerAdapter extends FragmentPagerAdapter {
-    private final List<Fragment> mFragmentList = new ArrayList<>();
-    private final List<String> mFragmentTitleList = new ArrayList<>();
+    public interface PageProvider {
+        int getCount();
+        Fragment createPage(int index);
+        String getPageTitle(int index);
+    }
 
-    public ViewPagerAdapter(FragmentManager mManager) {
+    private final SparseArray<Fragment> mKnownFragments = new SparseArray<>();
+    private final PageProvider mProvider;
+
+    public ViewPagerAdapter(FragmentManager mManager, PageProvider provider) {
         super(mManager);
+        mProvider = provider;
     }
 
     @Override
     public Fragment getItem(int mPosition) {
-        return mFragmentList.get(mPosition);
+        return mProvider.createPage(mPosition);
     }
 
     @Override
     public int getCount() {
-        return mFragmentList.size();
+        return mProvider.getCount();
     }
 
     @Override
     public CharSequence getPageTitle(int mPosition) {
-        return mFragmentTitleList.get(mPosition);
+        return mProvider.getPageTitle(mPosition);
     }
 
-    public void addFragment(Fragment mFragment, String mTitle) {
-        mFragmentList.add(mFragment);
-        mFragmentTitleList.add(mTitle);
+    @Override
+    public Object instantiateItem(ViewGroup container, int position) {
+        Fragment fragment = (Fragment) super.instantiateItem(container, position);
+        mKnownFragments.put(position, fragment);
+        return fragment;
     }
 
+    @Override
+    public void destroyItem(ViewGroup container, int position, Object object) {
+        mKnownFragments.remove(position);
+        super.destroyItem(container, position, object);
+    }
+
+    public Fragment getFragment(int position) {
+        return mKnownFragments.get(position);
+    }
 }
