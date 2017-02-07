@@ -21,19 +21,9 @@ import android.support.v4.app.FragmentPagerAdapter;
 import android.util.SparseArray;
 import android.view.ViewGroup;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class ViewPagerAdapter extends FragmentPagerAdapter {
-    public interface PageProvider {
-        int getCount();
-        Fragment createPage(int index);
-        String getPageTitle(int index);
-    }
-
     private final SparseArray<Fragment> mKnownFragments = new SparseArray<>();
     private final PageProvider mProvider;
-
     public ViewPagerAdapter(FragmentManager mManager, PageProvider provider) {
         super(mManager);
         mProvider = provider;
@@ -69,5 +59,13 @@ public class ViewPagerAdapter extends FragmentPagerAdapter {
 
     public Fragment getFragment(int position) {
         return mKnownFragments.get(position);
+    }
+
+    public interface PageProvider {
+        int getCount();
+
+        Fragment createPage(int index);
+
+        String getPageTitle(int index);
     }
 }
