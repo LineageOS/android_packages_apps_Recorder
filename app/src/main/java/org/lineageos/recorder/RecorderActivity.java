@@ -50,7 +50,8 @@ import org.lineageos.recorder.utils.Utils;
 
 import java.util.ArrayList;
 
-public class RecorderActivity extends AppCompatActivity implements ViewPagerAdapter.PageProvider {
+public class RecorderActivity extends AppCompatActivity implements
+        ViewPagerAdapter.PageProvider, SharedPreferences.OnSharedPreferenceChangeListener {
     private static final int REQUEST_STORAGE_PERMS = 439;
     private static final int REQUEST_SOUND_REC_PERMS = 440;
 
@@ -72,6 +73,7 @@ public class RecorderActivity extends AppCompatActivity implements ViewPagerAdap
 
     private BroadcastReceiver mTelephonyReceiver;
 
+    private SharedPreferences mPrefs;
     private int mPosition = 0;
 
     @Override
@@ -106,17 +108,22 @@ public class RecorderActivity extends AppCompatActivity implements ViewPagerAdap
         });
         mTabs.setupWithViewPager(mViewPager);
 
-        SharedPreferences mPref = getSharedPreferences(Utils.PREFS, 0);
-        mPref.registerOnSharedPreferenceChangeListener((mChanged, mKey) -> {
-            if (Utils.KEY_RECORDING.equals(mKey)) {
-                refresh();
-            }
-        });
+        mPrefs = getSharedPreferences(Utils.PREFS, 0);
+        mPrefs.registerOnSharedPreferenceChangeListener(this);
 
         // Bind to service
         bindSoundRecService();
 
         refresh();
+    }
+
+    @Override
+    public void onDestroy() {
+        if (mConnection != null) {
+            unbindService(mConnection);
+        }
+        mPrefs.unregisterOnSharedPreferenceChangeListener(this);
+        super.onDestroy();
     }
 
     @Override
@@ -142,11 +149,10 @@ public class RecorderActivity extends AppCompatActivity implements ViewPagerAdap
     }
 
     @Override
-    public void onDestroy() {
-        if (mConnection != null) {
-            unbindService(mConnection);
+    public void onSharedPreferenceChanged(SharedPreferences prefs, String key) {
+        if (Utils.KEY_RECORDING.equals(key)) {
+            refresh();
         }
-        super.onDestroy();
     }
 
     @Override
