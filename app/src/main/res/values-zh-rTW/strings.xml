@@ -26,6 +26,11 @@
   <string name="share">分享</string>
   <!-- Stop action for notification -->
   <string name="stop">停止</string>
+  <!-- Play action -->
+  <!-- Delete action -->
+  <!-- Delete confirm title -->
+  <!-- Delete confirm message -->
+  <!-- Date for last item %1 is year, %2 month, %3 day, %4 hour, %5 min -->
   <!-- Permissions -->
   <!-- Sound recorder -->
   <!-- Sound recorder notification title -->
@@ -38,6 +43,8 @@
   <string name="sound_recording_title_working">錄製中</string>
   <!-- Sound recorder status card title busy -->
   <string name="sound_recording_title_busy">在錄製螢幕畫面時停用</string>
+  <!-- Sound recorder last item title -->
+  <!-- Sound recorder last item message -->
   <!-- Screen recorder -->
   <!-- Screen recorder audio card title -->
   <string name="screen_audio_title">麥克風</string>
@@ -63,6 +70,8 @@
   <string name="screen_recording_title">錄製中</string>
   <!-- Screen recorder status message -->
   <string name="screen_recording_message">正在錄製螢幕畫面</string>
+  <!-- Screen recorder last item title -->
+  <!-- Screen recorder last item message -->
   <!-- Permissions -->
   <!-- Permissions dialog title -->
   <string name="dialog_permissions_title">權限</string>

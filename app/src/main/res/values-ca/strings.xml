@@ -26,6 +26,11 @@
   <string name="share">Comparteix</string>
   <!-- Stop action for notification -->
   <string name="stop">Para</string>
+  <!-- Play action -->
+  <!-- Delete action -->
+  <!-- Delete confirm title -->
+  <!-- Delete confirm message -->
+  <!-- Date for last item %1 is year, %2 month, %3 day, %4 hour, %5 min -->
   <!-- Permissions -->
   <!-- Sound recorder -->
   <!-- Sound recorder notification title -->
@@ -38,6 +43,8 @@
   <string name="sound_recording_title_working">S\'està gravant</string>
   <!-- Sound recorder status card title busy -->
   <string name="sound_recording_title_busy">Deshabilitat mentre s\'enregistra la Pantalla</string>
+  <!-- Sound recorder last item title -->
+  <!-- Sound recorder last item message -->
   <!-- Screen recorder -->
   <!-- Screen recorder audio card title -->
   <string name="screen_audio_title">Micròfon</string>
@@ -63,6 +70,8 @@
   <string name="screen_recording_title">S\'està gravant</string>
   <!-- Screen recorder status message -->
   <string name="screen_recording_message">La pantalla està sent gravada\u2026</string>
+  <!-- Screen recorder last item title -->
+  <!-- Screen recorder last item message -->
   <!-- Permissions -->
   <!-- Permissions dialog title -->
   <string name="dialog_permissions_title">Permisos</string>

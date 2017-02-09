@@ -25,19 +25,26 @@
   <!-- Share action for notification -->
   <string name="share">Споделяне</string>
   <!-- Stop action for notification -->
-  <string name="stop">Спри</string>
+  <string name="stop">Стоп</string>
+  <!-- Play action -->
+  <!-- Delete action -->
+  <!-- Delete confirm title -->
+  <!-- Delete confirm message -->
+  <!-- Date for last item %1 is year, %2 month, %3 day, %4 hour, %5 min -->
   <!-- Permissions -->
   <!-- Sound recorder -->
   <!-- Sound recorder notification title -->
   <string name="sound_notification_title">Записване на звук</string>
   <!-- Sound recorder notification message -->
-  <string name="sound_notification_message">Продължителност на аудио: %1$s</string>
+  <string name="sound_notification_message">Продължителност на аудио запис: %1$s</string>
   <!-- Sound recorder status card title ready -->
   <string name="sound_recording_title_ready">Готово за запис</string>
   <!-- Sound recorder status card title recording -->
   <string name="sound_recording_title_working">Записване</string>
   <!-- Sound recorder status card title busy -->
   <string name="sound_recording_title_busy">Деактивиране при запис на екран</string>
+  <!-- Sound recorder last item title -->
+  <!-- Sound recorder last item message -->
   <!-- Screen recorder -->
   <!-- Screen recorder audio card title -->
   <string name="screen_audio_title">Микрофон</string>
@@ -56,13 +63,15 @@
   <!-- Screen recorder notification title -->
   <string name="screen_notification_title">Видеозапис на екрана</string>
   <!-- Screen recorder notification message -->
-  <string name="screen_notification_message">Продължителност на видеото %s</string>
+  <string name="screen_notification_message">Продължителност на видео запис: %s</string>
   <!-- Screen recorder notification share title -->
   <string name="screen_notification_message_done">Готово за споделяне</string>
   <!-- Screen recorder status card title -->
   <string name="screen_recording_title">Записване</string>
   <!-- Screen recorder status message -->
   <string name="screen_recording_message">Екрана се записва\u2026</string>
+  <!-- Screen recorder last item title -->
+  <!-- Screen recorder last item message -->
   <!-- Permissions -->
   <!-- Permissions dialog title -->
   <string name="dialog_permissions_title">Разрешения</string>

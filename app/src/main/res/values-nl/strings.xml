@@ -26,6 +26,11 @@
   <string name="share">Delen</string>
   <!-- Stop action for notification -->
   <string name="stop">Stoppen</string>
+  <!-- Play action -->
+  <!-- Delete action -->
+  <!-- Delete confirm title -->
+  <!-- Delete confirm message -->
+  <!-- Date for last item %1 is year, %2 month, %3 day, %4 hour, %5 min -->
   <!-- Permissions -->
   <!-- Sound recorder -->
   <!-- Sound recorder notification title -->
@@ -38,6 +43,8 @@
   <string name="sound_recording_title_working">Opnemen</string>
   <!-- Sound recorder status card title busy -->
   <string name="sound_recording_title_busy">Niet mogelijk tijdens schermopname</string>
+  <!-- Sound recorder last item title -->
+  <!-- Sound recorder last item message -->
   <!-- Screen recorder -->
   <!-- Screen recorder audio card title -->
   <string name="screen_audio_title">Microfoon</string>
@@ -63,6 +70,8 @@
   <string name="screen_recording_title">Opnemen</string>
   <!-- Screen recorder status message -->
   <string name="screen_recording_message">Scherm wordt opgenomen\u2026</string>
+  <!-- Screen recorder last item title -->
+  <!-- Screen recorder last item message -->
   <!-- Permissions -->
   <!-- Permissions dialog title -->
   <string name="dialog_permissions_title">Machtigingen</string>
@@ -85,4 +94,5 @@
   <!-- Permissions dialog action: dismiss dialog -->
   <string name="dialog_permissions_dismiss">Sluiten</string>
   <!-- No permissions granted error -->
+  <string name="snack_permissions_no_permission">Vereiste machtigingen werden geweigerd, schakel ze in bij Instellingen om opname te starten</string>
 </resources>

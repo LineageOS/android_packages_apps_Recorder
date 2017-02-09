@@ -26,6 +26,11 @@
   <string name="share">Del</string>
   <!-- Stop action for notification -->
   <string name="stop">Stopp</string>
+  <!-- Play action -->
+  <!-- Delete action -->
+  <!-- Delete confirm title -->
+  <!-- Delete confirm message -->
+  <!-- Date for last item %1 is year, %2 month, %3 day, %4 hour, %5 min -->
   <!-- Permissions -->
   <!-- Sound recorder -->
   <!-- Sound recorder notification title -->
@@ -37,29 +42,57 @@
   <!-- Sound recorder status card title recording -->
   <string name="sound_recording_title_working">Tar opp</string>
   <!-- Sound recorder status card title busy -->
+  <string name="sound_recording_title_busy">Deaktivert mens skjermen taes opp</string>
+  <!-- Sound recorder last item title -->
+  <!-- Sound recorder last item message -->
   <!-- Screen recorder -->
   <!-- Screen recorder audio card title -->
+  <string name="screen_audio_title">Mikrofon</string>
   <!-- Screen recorder enabled audio card message -->
+  <string name="screen_audio_message_on">Lyd fra mikrofonen vil inkluderes i videoen</string>
   <!-- Screen recorder disabled audio card message -->
+  <string name="screen_audio_message_off">Lyd fra mikrofonen vil ikke inkluderes i videoen</string>
   <!-- Screen recorder audio permission request card message -->
+  <string name="screen_audio_warning_message">Du må gi appen tilgang til mikrofonen for å legge lyd til opptaket. Trykk nedenfor for å gi tilgang til denne appen</string>
   <!-- Screen recorder audio permission request card button -->
+  <string name="screen_audio_warning_button_ask">Spør</string>
   <!-- Screen recorder notification storage error title -->
+  <string name="screen_insufficient_storage">Ikke nok lagringsplass</string>
   <!-- Screen recorder notification storage error message -->
+  <string name="screen_not_enough_storage">Ikke nok tilgjengelig lagringsplass</string>
   <!-- Screen recorder notification title -->
+  <string name="screen_notification_title">Skjermopptaker</string>
   <!-- Screen recorder notification message -->
+  <string name="screen_notification_message">Videolengde: %s</string>
   <!-- Screen recorder notification share title -->
+  <string name="screen_notification_message_done">Klar til å dele</string>
   <!-- Screen recorder status card title -->
+  <string name="screen_recording_title">Tar opp</string>
   <!-- Screen recorder status message -->
+  <string name="screen_recording_message">Skjermen blir tatt opp\u2026</string>
+  <!-- Screen recorder last item title -->
+  <!-- Screen recorder last item message -->
   <!-- Permissions -->
   <!-- Permissions dialog title -->
+  <string name="dialog_permissions_title">Tillatelser</string>
   <!-- Message: microphone access denied -->
+  <string name="dialog_permissions_mic">Opptaker trenger mikrofon tilgang for å spille inn lyd</string>
   <!-- Message: storage access denied -->
+  <string name="dialog_permissions_storage">Opptaker trenger lagrings tilgang for å lagre innspilt lyd</string>
   <!-- Message: phone status denied -->
+  <string name="dialog_permissions_phone">Opptaker trenger telefon tilgang for å passe på at du ikke tar opp anropene dine</string>
   <!-- Message: microphone and storage access denied -->
+  <string name="dialog_permissions_mic_storage">Opptaker trenger mikrofon tilgang for å spille inn lyd og lagrings tilgang for å lagre innspilt lyd</string>
   <!-- Message: microphone and phone status access denied -->
+  <string name="dialog_permissions_mic_phone">Opptaker trenger mikrofon tilgang for å spille inn lyd og telefon tilgang for å passe på at du ikke tar opp anropene dine</string>
   <!-- Message: storage and phone status access denied -->
+  <string name="dialog_permissions_storage_phone">Opptaker trenger lagrings tilgang for å lagre innspilt lyd og telefon tilgang for å passe på at du ikke tar opp anropene dine</string>
   <!-- Message: microphone, storage and phone status access denied -->
+  <string name="dialog_permissions_mic_storage_phone">Opptaker trenger mikrofon tilgang for å innspille lyd, lagrings tilgang for å lagre innspill og telefon tilgang for å passe på at du ikke tar opp anropene dine</string>
   <!-- Permissions dialog action: ask permissions access again -->
+  <string name="dialog_permissions_ask">Spør igjen</string>
   <!-- Permissions dialog action: dismiss dialog -->
+  <string name="dialog_permissions_dismiss">Avvis</string>
   <!-- No permissions granted error -->
+  <string name="snack_permissions_no_permission">Nødvendige tillatelser ble nektet, aktiver dem fra telefonens innstillinger for å starte å ta opp lyd</string>
 </resources>
