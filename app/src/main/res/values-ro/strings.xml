@@ -27,10 +27,15 @@
   <!-- Stop action for notification -->
   <string name="stop">Stop</string>
   <!-- Play action -->
+  <string name="play">Redați</string>
   <!-- Delete action -->
+  <string name="delete">Ștergeți</string>
   <!-- Delete confirm title -->
+  <string name="delete_title">Ștergere înregistrare</string>
   <!-- Delete confirm message -->
+  <string name="delete_message">Sunteţi sigur(ă) că doriţi să ştergeţi %1$s? Această acţiune nu poate fi modificată ulterior</string>
   <!-- Date for last item %1 is year, %2 month, %3 day, %4 hour, %5 min -->
+  <string name="date_format">%1$s-%2$s-%3$s %4$s:%5$s</string>
   <!-- Permissions -->
   <!-- Sound recorder -->
   <!-- Sound recorder notification title -->
@@ -44,7 +49,9 @@
   <!-- Sound recorder status card title busy -->
   <string name="sound_recording_title_busy">Dezactivat în timpul înregistrării Ecranului</string>
   <!-- Sound recorder last item title -->
+  <string name="sound_last_title">Ultima înregistrare</string>
   <!-- Sound recorder last item message -->
+  <string name="sound_last_message">Data: %1$s\nDurata: %2$d secunde</string>
   <!-- Screen recorder -->
   <!-- Screen recorder audio card title -->
   <string name="screen_audio_title">Microfon</string>
@@ -71,7 +78,9 @@
   <!-- Screen recorder status message -->
   <string name="screen_recording_message">Ecranul este înregistrat\u2026</string>
   <!-- Screen recorder last item title -->
+  <string name="screen_last_title">Ultima înregistrare</string>
   <!-- Screen recorder last item message -->
+  <string name="screen_last_message">Data: %1$s\nDurata: %2$d secunde</string>
   <!-- Permissions -->
   <!-- Permissions dialog title -->
   <string name="dialog_permissions_title">Permisiuni</string>

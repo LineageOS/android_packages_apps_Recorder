@@ -27,10 +27,14 @@
   <!-- Stop action for notification -->
   <string name="stop">Deter</string>
   <!-- Play action -->
+  <string name="play">Reproducir</string>
   <!-- Delete action -->
+  <string name="delete">Borrar</string>
   <!-- Delete confirm title -->
+  <string name="delete_title">Eliminando rexistro</string>
   <!-- Delete confirm message -->
   <!-- Date for last item %1 is year, %2 month, %3 day, %4 hour, %5 min -->
+  <string name="date_format">%1$s-%2$s-%3$s %4$s:%5$s</string>
   <!-- Permissions -->
   <!-- Sound recorder -->
   <!-- Sound recorder notification title -->

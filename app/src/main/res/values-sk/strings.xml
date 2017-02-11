@@ -27,10 +27,15 @@
   <!-- Stop action for notification -->
   <string name="stop">Zastaviť</string>
   <!-- Play action -->
+  <string name="play">Prehrať</string>
   <!-- Delete action -->
+  <string name="delete">Vymazať</string>
   <!-- Delete confirm title -->
+  <string name="delete_title">Mazanie záznamu</string>
   <!-- Delete confirm message -->
+  <string name="delete_message">Ste si istý, že chcete vymazať %1$s? Táto akcia sa nedá vrátiť späť</string>
   <!-- Date for last item %1 is year, %2 month, %3 day, %4 hour, %5 min -->
+  <string name="date_format">%1$s-%2$s-%3$s %4$s:%5$s</string>
   <!-- Permissions -->
   <!-- Sound recorder -->
   <!-- Sound recorder notification title -->
@@ -44,7 +49,9 @@
   <!-- Sound recorder status card title busy -->
   <string name="sound_recording_title_busy">Zakázané pri zázname obrazovky</string>
   <!-- Sound recorder last item title -->
+  <string name="sound_last_title">Posledný záznam</string>
   <!-- Sound recorder last item message -->
+  <string name="sound_last_message">Dátum: %1$s\nTrvanie: %2$d sek.</string>
   <!-- Screen recorder -->
   <!-- Screen recorder audio card title -->
   <string name="screen_audio_title">Mikrofón</string>
@@ -71,7 +78,9 @@
   <!-- Screen recorder status message -->
   <string name="screen_recording_message">Obrazovka sa nahráva\u2026</string>
   <!-- Screen recorder last item title -->
+  <string name="screen_last_title">Posledný záznam</string>
   <!-- Screen recorder last item message -->
+  <string name="screen_last_message">Dátum: %1$s\nTrvanie: %2$d sek.</string>
   <!-- Permissions -->
   <!-- Permissions dialog title -->
   <string name="dialog_permissions_title">Oprávnenia</string>

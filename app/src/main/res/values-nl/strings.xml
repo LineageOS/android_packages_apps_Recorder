@@ -27,10 +27,15 @@
   <!-- Stop action for notification -->
   <string name="stop">Stoppen</string>
   <!-- Play action -->
+  <string name="play">Afspelen</string>
   <!-- Delete action -->
+  <string name="delete">Verwijder</string>
   <!-- Delete confirm title -->
+  <string name="delete_title">Verwijderen opname</string>
   <!-- Delete confirm message -->
+  <string name="delete_message">Weet je zeker dat je %1$s wilt verwijderen? Dit kan niet ongedaan worden gemaakt</string>
   <!-- Date for last item %1 is year, %2 month, %3 day, %4 hour, %5 min -->
+  <string name="date_format">%1$s-%2$s-%3$s %4$s:%5$s</string>
   <!-- Permissions -->
   <!-- Sound recorder -->
   <!-- Sound recorder notification title -->
@@ -44,7 +49,9 @@
   <!-- Sound recorder status card title busy -->
   <string name="sound_recording_title_busy">Niet mogelijk tijdens schermopname</string>
   <!-- Sound recorder last item title -->
+  <string name="sound_last_title">Laatste opname</string>
   <!-- Sound recorder last item message -->
+  <string name="sound_last_message">Datum: %1$s\nLengte: %2$d seconden</string>
   <!-- Screen recorder -->
   <!-- Screen recorder audio card title -->
   <string name="screen_audio_title">Microfoon</string>
@@ -71,7 +78,9 @@
   <!-- Screen recorder status message -->
   <string name="screen_recording_message">Scherm wordt opgenomen\u2026</string>
   <!-- Screen recorder last item title -->
+  <string name="screen_last_title">Laatste opname</string>
   <!-- Screen recorder last item message -->
+  <string name="screen_last_message">Datum: %1$s\nLengte: %2$d seconden</string>
   <!-- Permissions -->
   <!-- Permissions dialog title -->
   <string name="dialog_permissions_title">Machtigingen</string>

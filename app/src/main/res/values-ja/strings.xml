@@ -27,9 +27,13 @@
   <!-- Stop action for notification -->
   <string name="stop">停止</string>
   <!-- Play action -->
+  <string name="play">再生</string>
   <!-- Delete action -->
+  <string name="delete">削除</string>
   <!-- Delete confirm title -->
+  <string name="delete_title">記録の削除</string>
   <!-- Delete confirm message -->
+  <string name="delete_message">%1$s を削除しますか? この操作は元に戻せません。</string>
   <!-- Date for last item %1 is year, %2 month, %3 day, %4 hour, %5 min -->
   <!-- Permissions -->
   <!-- Sound recorder -->
@@ -44,7 +48,9 @@
   <!-- Sound recorder status card title busy -->
   <string name="sound_recording_title_busy">画面の録画中には無効になります</string>
   <!-- Sound recorder last item title -->
+  <string name="sound_last_title">最後の記録</string>
   <!-- Sound recorder last item message -->
+  <string name="sound_last_message">日付: %1$s\n時間: %2$d 秒</string>
   <!-- Screen recorder -->
   <!-- Screen recorder audio card title -->
   <string name="screen_audio_title">マイク</string>
@@ -71,7 +77,9 @@
   <!-- Screen recorder status message -->
   <string name="screen_recording_message">画面を録画中...</string>
   <!-- Screen recorder last item title -->
+  <string name="screen_last_title">最後の記録</string>
   <!-- Screen recorder last item message -->
+  <string name="screen_last_message">日時: %1$s\n時間: %2$d 秒</string>
   <!-- Permissions -->
   <!-- Permissions dialog title -->
   <string name="dialog_permissions_title">権限</string>
