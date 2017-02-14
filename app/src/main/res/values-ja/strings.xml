@@ -35,6 +35,7 @@
   <!-- Delete confirm message -->
   <string name="delete_message">%1$s を削除しますか? この操作は元に戻せません。</string>
   <!-- Date for last item %1 is year, %2 month, %3 day, %4 hour, %5 min -->
+  <string name="date_format">%1$s-%2$s-%3$s %4$s:%5$s</string>
   <!-- Permissions -->
   <!-- Sound recorder -->
   <!-- Sound recorder notification title -->

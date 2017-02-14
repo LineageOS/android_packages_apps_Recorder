@@ -27,7 +27,7 @@
   <!-- Stop action for notification -->
   <string name="stop">Стоп</string>
   <!-- Play action -->
-  <string name="play">Изпълни</string>
+  <string name="play">Възпроизвеждане</string>
   <!-- Delete action -->
   <string name="delete">Изтриване</string>
   <!-- Delete confirm title -->

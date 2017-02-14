@@ -17,26 +17,34 @@
 <resources>
   <!-- Fragment titles -->
   <!-- Sound recorder fragment title -->
+  <string name="fragment_sounds">Звук</string>
   <!-- Screen recorder fragment title -->
+  <string name="fragment_screen">Экран</string>
   <!-- Common actions -->
   <!-- Share action for notification -->
+  <string name="share">Отправить</string>
   <!-- Stop action for notification -->
   <!-- Play action -->
   <!-- Delete action -->
+  <string name="delete">Удалить</string>
   <!-- Delete confirm title -->
   <!-- Delete confirm message -->
   <!-- Date for last item %1 is year, %2 month, %3 day, %4 hour, %5 min -->
+  <string name="date_format">%3$s.%2$s.%1$s, %4$s:%5$s</string>
   <!-- Permissions -->
   <!-- Sound recorder -->
   <!-- Sound recorder notification title -->
   <!-- Sound recorder notification message -->
+  <string name="sound_notification_message">Длительность аудио: %1$s</string>
   <!-- Sound recorder status card title ready -->
   <!-- Sound recorder status card title recording -->
   <!-- Sound recorder status card title busy -->
   <!-- Sound recorder last item title -->
+  <string name="sound_last_title">Последняя запись</string>
   <!-- Sound recorder last item message -->
   <!-- Screen recorder -->
   <!-- Screen recorder audio card title -->
+  <string name="screen_audio_title">Микрофон</string>
   <!-- Screen recorder enabled audio card message -->
   <!-- Screen recorder disabled audio card message -->
   <!-- Screen recorder audio permission request card message -->

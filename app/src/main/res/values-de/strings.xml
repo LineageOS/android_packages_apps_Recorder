@@ -27,10 +27,15 @@
   <!-- Stop action for notification -->
   <string name="stop">Stoppen</string>
   <!-- Play action -->
+  <string name="play">Wiedergabe</string>
   <!-- Delete action -->
+  <string name="delete">Löschen</string>
   <!-- Delete confirm title -->
+  <string name="delete_title">Aufnahme löschen</string>
   <!-- Delete confirm message -->
+  <string name="delete_message">Sind Sie sicher, dass Sie %1$s löschen möchten? Dies kann nicht rückgängig gemacht werden</string>
   <!-- Date for last item %1 is year, %2 month, %3 day, %4 hour, %5 min -->
+  <string name="date_format">%3$s.%2$s.%1$s %4$s:%5$s</string>
   <!-- Permissions -->
   <!-- Sound recorder -->
   <!-- Sound recorder notification title -->
@@ -44,7 +49,9 @@
   <!-- Sound recorder status card title busy -->
   <string name="sound_recording_title_busy">Während Bildschirmaufzeichnung deaktiviert</string>
   <!-- Sound recorder last item title -->
+  <string name="sound_last_title">Letzte Aufnahme</string>
   <!-- Sound recorder last item message -->
+  <string name="sound_last_message">Aufnahmezeitpunkt: %1$s\nAufzeichnungsdauer: %2$d Sekunden</string>
   <!-- Screen recorder -->
   <!-- Screen recorder audio card title -->
   <string name="screen_audio_title">Mikrofon</string>
@@ -71,7 +78,9 @@
   <!-- Screen recorder status message -->
   <string name="screen_recording_message">Bildschirm wird aufgenommen\u2026</string>
   <!-- Screen recorder last item title -->
+  <string name="screen_last_title">Letzte Aufnahme</string>
   <!-- Screen recorder last item message -->
+  <string name="screen_last_message">Aufnahmezeitpunkt: %1$s\nAufzeichnungsdauer: %2$d Sekunden</string>
   <!-- Permissions -->
   <!-- Permissions dialog title -->
   <string name="dialog_permissions_title">Berechtigungen</string>
