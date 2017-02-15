@@ -14,10 +14,10 @@
      limitations under the License.
 -->
 <resources>
-    <color name="colorPrimary">#f8f8f8</color>
-    <color name="colorPrimaryDark">#e0e0e0</color>
-    <color name="colorAccent">#965031</color>
-    <color name="colorAccentDark">#552514</color>
+    <color name="colorPrimary">#167c80</color>
+    <color name="colorPrimaryDark">#F44336</color>
+    <color name="colorAccent">#F44336</color>
+    <color name="colorAccentDark">#fafafa</color>
 
     <color name="white">#fafafa</color>
     <color name="black">#000000</color>
