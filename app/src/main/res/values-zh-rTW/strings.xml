@@ -27,13 +27,13 @@
   <!-- Stop action for notification -->
   <string name="stop">停止</string>
   <!-- Play action -->
-  <string name="play">開始</string>
+  <string name="play">播放</string>
   <!-- Delete action -->
   <string name="delete">刪除</string>
   <!-- Delete confirm title -->
   <string name="delete_title">正在刪除記錄</string>
   <!-- Delete confirm message -->
-  <string name="delete_message">您確定要刪除「%1$s」？ 此項動作是無法還原的</string>
+  <string name="delete_message">您確定要刪除「%1$s」？此項動作是無法還原的</string>
   <!-- Date for last item %1 is year, %2 month, %3 day, %4 hour, %5 min -->
   <string name="date_format">%1$s-%2$s-%3$s %4$s:%5$s</string>
   <!-- Permissions -->

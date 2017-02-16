@@ -27,7 +27,9 @@
   <!-- Stop action for notification -->
   <string name="stop">Parar</string>
   <!-- Play action -->
+  <string name="play">Reproduzir</string>
   <!-- Delete action -->
+  <string name="delete">Excluir</string>
   <!-- Delete confirm title -->
   <!-- Delete confirm message -->
   <!-- Date for last item %1 is year, %2 month, %3 day, %4 hour, %5 min -->
@@ -36,6 +38,7 @@
   <!-- Sound recorder notification title -->
   <string name="sound_notification_title">Gravador de som</string>
   <!-- Sound recorder notification message -->
+  <string name="sound_notification_message">Duração do áudio: %1$s</string>
   <!-- Sound recorder status card title ready -->
   <string name="sound_recording_title_ready">Pronto para gravar</string>
   <!-- Sound recorder status card title recording -->
@@ -43,6 +46,7 @@
   <!-- Sound recorder status card title busy -->
   <!-- Sound recorder last item title -->
   <!-- Sound recorder last item message -->
+  <string name="sound_last_message">Data: %1$s\nDuração: %2$d segundos</string>
   <!-- Screen recorder -->
   <!-- Screen recorder audio card title -->
   <string name="screen_audio_title">Microfone</string>
@@ -54,22 +58,35 @@
   <string name="screen_insufficient_storage">Armazenamento insuficiente</string>
   <!-- Screen recorder notification storage error message -->
   <!-- Screen recorder notification title -->
+  <string name="screen_notification_title">Gravador de tela</string>
   <!-- Screen recorder notification message -->
+  <string name="screen_notification_message">Duração do vídeo: %s</string>
   <!-- Screen recorder notification share title -->
+  <string name="screen_notification_message_done">Pronto para compartilhar</string>
   <!-- Screen recorder status card title -->
+  <string name="screen_recording_title">Gravando</string>
   <!-- Screen recorder status message -->
+  <string name="screen_recording_message">A tela está sendo gravada</string>
   <!-- Screen recorder last item title -->
   <!-- Screen recorder last item message -->
+  <string name="screen_last_message">Data: %1$s\nDuração: %2$d segundos</string>
   <!-- Permissions -->
   <!-- Permissions dialog title -->
   <string name="dialog_permissions_title">Permissões</string>
   <!-- Message: microphone access denied -->
+  <string name="dialog_permissions_mic">O gravador requer acesso ao microfone para gravar áudio</string>
   <!-- Message: storage access denied -->
+  <string name="dialog_permissions_storage">O gravador requer acesso ao armazenamento para salvar as gravações</string>
   <!-- Message: phone status denied -->
+  <string name="dialog_permissions_phone">O gravador requer acesso ao estado do telefone para impedir que este aplicativo grave enquanto você estiver em uma ligação</string>
   <!-- Message: microphone and storage access denied -->
+  <string name="dialog_permissions_mic_storage">O gravador requer acesso ao microfone para gravar áudio e acesso ao armazenamento para salvar as gravações</string>
   <!-- Message: microphone and phone status access denied -->
+  <string name="dialog_permissions_mic_phone">O gravador requer acesso ao microfone para gravar áudio e acesso ao estado do telefone para impedir este aplicativo de gravar enquanto você estiver em uma ligação</string>
   <!-- Message: storage and phone status access denied -->
+  <string name="dialog_permissions_storage_phone">O gravador requer acesso ao armazenamento para salvar as gravações e acesso ao estado do telefone para impedir este aplicativo de gravar enquanto você estiver em uma ligação</string>
   <!-- Message: microphone, storage and phone status access denied -->
+  <string name="dialog_permissions_mic_storage_phone">O gravador requer acesso ao microfone para gravar áudio, acesso ao armazenamento para salvar as gravações e acesso ao estado do telefone para impedir este aplicativo de gravar enquanto você estiver em uma ligação</string>
   <!-- Permissions dialog action: ask permissions access again -->
   <!-- Permissions dialog action: dismiss dialog -->
   <!-- No permissions granted error -->

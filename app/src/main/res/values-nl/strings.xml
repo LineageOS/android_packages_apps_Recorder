@@ -29,13 +29,13 @@
   <!-- Play action -->
   <string name="play">Afspelen</string>
   <!-- Delete action -->
-  <string name="delete">Verwijder</string>
+  <string name="delete">Verwijderen</string>
   <!-- Delete confirm title -->
-  <string name="delete_title">Verwijderen opname</string>
+  <string name="delete_title">Opname verwijderen</string>
   <!-- Delete confirm message -->
-  <string name="delete_message">Weet je zeker dat je %1$s wilt verwijderen? Dit kan niet ongedaan worden gemaakt</string>
+  <string name="delete_message">Weet u zeker dat u %1$s wilt verwijderen? Dit kan niet ongedaan worden gemaakt</string>
   <!-- Date for last item %1 is year, %2 month, %3 day, %4 hour, %5 min -->
-  <string name="date_format">%1$s-%2$s-%3$s %4$s:%5$s</string>
+  <string name="date_format">%3$s-%2$s-%1$s %4$s:%5$s</string>
   <!-- Permissions -->
   <!-- Sound recorder -->
   <!-- Sound recorder notification title -->
