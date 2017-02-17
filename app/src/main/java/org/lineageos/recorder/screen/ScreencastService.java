@@ -53,6 +53,7 @@ public class ScreencastService extends Service {
     public static final String ACTION_STOP_SCREENCAST =
             "org.lineageos.recorder.screen.ACTION_STOP_SCREENCAST";
     static final String SCREENCASTER_NAME = "hidden:screen-recording";
+    public static final int NOTIFICATION_ID = 61;
     private static final String LOGTAG = "ScreencastService";
     private long mStartTime;
     private Timer mTimer;
@@ -106,7 +107,7 @@ public class ScreencastService extends Service {
         long timeElapsed = SystemClock.elapsedRealtime() - mStartTime;
         mBuilder.setContentText(getString(R.string.screen_notification_message,
                 DateUtils.formatElapsedTime(timeElapsed / 1000)));
-        mNotificationManager.notify(0, mBuilder.build());
+        mNotificationManager.notify(NOTIFICATION_ID, mBuilder.build());
     }
 
     private Point getNativeResolution() {
@@ -225,7 +226,7 @@ public class ScreencastService extends Service {
 
     private void sendShareNotification(String recordingFilePath) {
         mBuilder = createShareNotificationBuilder(recordingFilePath);
-        mNotificationManager.notify(0, mBuilder.build());
+        mNotificationManager.notify(NOTIFICATION_ID, mBuilder.build());
     }
 
     private NotificationCompat.Builder createShareNotificationBuilder(String file) {

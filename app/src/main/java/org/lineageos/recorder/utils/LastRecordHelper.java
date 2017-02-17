@@ -1,5 +1,6 @@
 package org.lineageos.recorder.utils;
 
+import android.app.NotificationManager;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -8,6 +9,8 @@ import android.support.v4.content.FileProvider;
 import android.support.v7.app.AlertDialog;
 
 import org.lineageos.recorder.R;
+import org.lineageos.recorder.screen.ScreencastService;
+import org.lineageos.recorder.sounds.SoundRecorderService;
 
 import java.io.File;
 
@@ -31,6 +34,13 @@ public class LastRecordHelper {
                     if (record.exists()) {
                         //noinspection ResultOfMethodCallIgnored
                         record.delete();
+                    }
+                    NotificationManager nm = (NotificationManager)
+                            context.getSystemService(Context.NOTIFICATION_SERVICE);
+                    if (isSound) {
+                        nm.cancel(SoundRecorderService.NOTIFICATION_ID);
+                    } else {
+                        nm.cancel(ScreencastService.NOTIFICATION_ID);
                     }
                     setLastItem(context, null, 0, isSound);
                 })
