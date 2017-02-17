@@ -116,7 +116,7 @@ public class SoundFragment extends Fragment implements View.OnClickListener {
         if (hasLastRecord) {
             mLastMessage.setText(mActivity.getString(R.string.sound_last_message,
                     LastRecordHelper.getLastItemDate(context, true),
-                    LastRecordHelper.getLastItemDuration(context, true) / 100));
+                    LastRecordHelper.getLastItemDuration(context, true)));
         }
     }
 
