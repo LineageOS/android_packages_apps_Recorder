@@ -64,7 +64,7 @@ public class SoundRecorderService extends Service {
     private static final int FORMAT = AudioFormat.ENCODING_PCM_16BIT;
     private static final int BUFFER_SIZE = AudioRecord.getMinBufferSize(SAMPLING_RATE,
             CHANNEL_IN, FORMAT);
-    private static final int NOTIFICATION_ID = 60;
+    public static final int NOTIFICATION_ID = 60;
     private final IBinder mBinder = new RecorderBinder(this);
     private int mElapsedTime;
     private TimerTask mTask;
