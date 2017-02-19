@@ -27,10 +27,15 @@
   <!-- Stop action for notification -->
   <string name="stop">Dừng</string>
   <!-- Play action -->
+  <string name="play">Phát</string>
   <!-- Delete action -->
+  <string name="delete">Xóa</string>
   <!-- Delete confirm title -->
+  <string name="delete_title">Đang xóa</string>
   <!-- Delete confirm message -->
+  <string name="delete_message">Bạn có chắcchắn muốn xóa %1$s? Việc này không thể hoàn tác</string>
   <!-- Date for last item %1 is year, %2 month, %3 day, %4 hour, %5 min -->
+  <string name="date_format">%1$s-%2$s-%3$s %4$s:%5$s</string>
   <!-- Permissions -->
   <!-- Sound recorder -->
   <!-- Sound recorder notification title -->
@@ -44,7 +49,9 @@
   <!-- Sound recorder status card title busy -->
   <string name="sound_recording_title_busy">Đã tắt khi quay màn hình</string>
   <!-- Sound recorder last item title -->
+  <string name="sound_last_title">Lần ghi cuối</string>
   <!-- Sound recorder last item message -->
+  <string name="sound_last_message">Ngày: %1$s\nĐộ dài: %2$d giây</string>
   <!-- Screen recorder -->
   <!-- Screen recorder audio card title -->
   <string name="screen_audio_title">Microphone</string>
@@ -71,7 +78,9 @@
   <!-- Screen recorder status message -->
   <string name="screen_recording_message">Màn hình đang được ghi\u2026</string>
   <!-- Screen recorder last item title -->
+  <string name="screen_last_title">Lần ghi cuối</string>
   <!-- Screen recorder last item message -->
+  <string name="screen_last_message">Ngày: %1$s\nĐộ dài: %2$d giây</string>
   <!-- Permissions -->
   <!-- Permissions dialog title -->
   <string name="dialog_permissions_title">Quyền truy cập</string>

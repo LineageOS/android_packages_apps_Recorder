@@ -33,6 +33,7 @@
   <!-- Delete confirm title -->
   <string name="delete_title">Eliminando rexistro</string>
   <!-- Delete confirm message -->
+  <string name="delete_message">Tes a certeza de querer eliminar %1$s? Isto non poderá desfacerse</string>
   <!-- Date for last item %1 is year, %2 month, %3 day, %4 hour, %5 min -->
   <string name="date_format">%1$s-%2$s-%3$s %4$s:%5$s</string>
   <!-- Permissions -->
@@ -48,7 +49,9 @@
   <!-- Sound recorder status card title busy -->
   <string name="sound_recording_title_busy">Desactivado durante a gravación da pantalla</string>
   <!-- Sound recorder last item title -->
+  <string name="sound_last_title">Última grabación</string>
   <!-- Sound recorder last item message -->
+  <string name="sound_last_message">Data: %1$s\nDuración: %2$d segundos</string>
   <!-- Screen recorder -->
   <!-- Screen recorder audio card title -->
   <string name="screen_audio_title">Micrófono</string>
@@ -75,7 +78,9 @@
   <!-- Screen recorder status message -->
   <string name="screen_recording_message">A pantalla está a ser gravada\u2026</string>
   <!-- Screen recorder last item title -->
+  <string name="screen_last_title">Última grabación</string>
   <!-- Screen recorder last item message -->
+  <string name="screen_last_message">Data: %1$s\nDuración: %2$d segundos</string>
   <!-- Permissions -->
   <!-- Permissions dialog title -->
   <string name="dialog_permissions_title">Permisos</string>
