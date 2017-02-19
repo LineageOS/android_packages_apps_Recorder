@@ -317,7 +317,11 @@ abstract class EncoderDevice {
             try {
                 encode();
             } catch (Exception e) {
-                Log.e(LOGTAG, e.getMessage());
+                if (e.getMessage() != null) {
+                    Log.e(LOGTAG, e.getMessage());
+                } else {
+                    Log.e(LOGTAG, "Error encoding", e);
+                }
             }
             cleanup();
             Log.i(LOGTAG, "=======ENCODING COMPLETE=======");
