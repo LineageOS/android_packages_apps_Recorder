@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "fa5d592f_073c9e2e",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 17143
+      },
+      "writtenOn": "2017-02-21T04:32:46Z",
+      "side": 1,
+      "message": "\u003e Line breaks make your commit message much more readable.\n\nOK, I made my commit message more readable",
+      "parentUuid": "fa5d592f_2ccae94f",
+      "range": {
+        "startLine": 9,
+        "startChar": 71,
+        "endLine": 9,
+        "endChar": 80
+      },
+      "revId": "b3e672b6177fa70eff73fab6844a4040054a1c65",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa5d592f_0cc72547",
         "filename": "app/src/main/java/org/lineageos/recorder/screen/EncoderDevice.java",
         "patchSetId": 3
@@ -36,6 +60,30 @@
       "writtenOn": "2017-02-20T17:37:14Z",
       "side": 1,
       "message": "Try Log.e(LOGTAG, \"Error encoding\", e) ?\n\nThis is implying your exception is being thrown without a message.",
+      "range": {
+        "startLine": 321,
+        "startChar": 20,
+        "endLine": 321,
+        "endChar": 50
+      },
+      "revId": "b3e672b6177fa70eff73fab6844a4040054a1c65",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa5d592f_e7486ace",
+        "filename": "app/src/main/java/org/lineageos/recorder/screen/EncoderDevice.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 321,
+      "author": {
+        "id": 17143
+      },
+      "writtenOn": "2017-02-21T04:32:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa5d592f_0cc72547",
       "range": {
         "startLine": 321,
         "startChar": 20,
