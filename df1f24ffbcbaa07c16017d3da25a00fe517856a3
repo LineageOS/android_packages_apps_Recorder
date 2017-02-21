@@ -22,6 +22,30 @@
       "revId": "df1f24ffbcbaa07c16017d3da25a00fe517856a3",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa5d592f_47bbb672",
+        "filename": "app/src/main/java/org/lineageos/recorder/screen/EncoderDevice.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 323,
+      "author": {
+        "id": 17143
+      },
+      "writtenOn": "2017-02-21T09:46:44Z",
+      "side": 1,
+      "message": "\u003e i personally would just use this way of logging.\n \u003e \n \u003e \n \u003e the if looks really weird to me and freaks me out.\n\nI wouldn\u0027t",
+      "parentUuid": "fa5d592f_a795d2e5",
+      "range": {
+        "startLine": 323,
+        "startChar": 20,
+        "endLine": 323,
+        "endChar": 55
+      },
+      "revId": "df1f24ffbcbaa07c16017d3da25a00fe517856a3",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
     }
   ]
 }
