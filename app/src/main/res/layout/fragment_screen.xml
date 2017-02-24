@@ -22,6 +22,7 @@
         android:layout_height="wrap_content"
         android:animateLayoutChanges="true"
         android:orientation="vertical"
+        android:paddingTop="16dp"
         android:paddingEnd="8dp"
         android:paddingStart="8dp">
 
