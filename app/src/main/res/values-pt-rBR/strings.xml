@@ -31,8 +31,11 @@
   <!-- Delete action -->
   <string name="delete">Excluir</string>
   <!-- Delete confirm title -->
+  <string name="delete_title">Excluir gravação</string>
   <!-- Delete confirm message -->
+  <string name="delete_message">Tem certeza de que quer excluir %1$s? Isto não pode ser desfeito</string>
   <!-- Date for last item %1 is year, %2 month, %3 day, %4 hour, %5 min -->
+  <string name="date_format">%1$s-%2$s-%3$s %4$s:%5$s</string>
   <!-- Permissions -->
   <!-- Sound recorder -->
   <!-- Sound recorder notification title -->
@@ -44,19 +47,25 @@
   <!-- Sound recorder status card title recording -->
   <string name="sound_recording_title_working">Gravando</string>
   <!-- Sound recorder status card title busy -->
+  <string name="sound_recording_title_busy">Desativado durante a gravação da tela</string>
   <!-- Sound recorder last item title -->
+  <string name="sound_last_title">Última gravação</string>
   <!-- Sound recorder last item message -->
   <string name="sound_last_message">Data: %1$s\nDuração: %2$d segundos</string>
   <!-- Screen recorder -->
   <!-- Screen recorder audio card title -->
   <string name="screen_audio_title">Microfone</string>
   <!-- Screen recorder enabled audio card message -->
+  <string name="screen_audio_message_on">Áudio do microfone será incluído no vídeo</string>
   <!-- Screen recorder disabled audio card message -->
+  <string name="screen_audio_message_off">Áudio do microfone não será incluído no vídeo</string>
   <!-- Screen recorder audio permission request card message -->
   <!-- Screen recorder audio permission request card button -->
+  <string name="screen_audio_warning_button_ask">Permitir</string>
   <!-- Screen recorder notification storage error title -->
   <string name="screen_insufficient_storage">Armazenamento insuficiente</string>
   <!-- Screen recorder notification storage error message -->
+  <string name="screen_not_enough_storage">Armazenamento disponível insuficiente</string>
   <!-- Screen recorder notification title -->
   <string name="screen_notification_title">Gravador de tela</string>
   <!-- Screen recorder notification message -->
@@ -68,6 +77,7 @@
   <!-- Screen recorder status message -->
   <string name="screen_recording_message">A tela está sendo gravada</string>
   <!-- Screen recorder last item title -->
+  <string name="screen_last_title">Última gravação de tela</string>
   <!-- Screen recorder last item message -->
   <string name="screen_last_message">Data: %1$s\nDuração: %2$d segundos</string>
   <!-- Permissions -->
@@ -88,6 +98,9 @@
   <!-- Message: microphone, storage and phone status access denied -->
   <string name="dialog_permissions_mic_storage_phone">O gravador requer acesso ao microfone para gravar áudio, acesso ao armazenamento para salvar as gravações e acesso ao estado do telefone para impedir este aplicativo de gravar enquanto você estiver em uma ligação</string>
   <!-- Permissions dialog action: ask permissions access again -->
+  <string name="dialog_permissions_ask">Permitir novamente</string>
   <!-- Permissions dialog action: dismiss dialog -->
+  <string name="dialog_permissions_dismiss">Dispensar</string>
   <!-- No permissions granted error -->
+  <string name="snack_permissions_no_permission">As permissões necessárias foram negadas, ative-as no aplicativo Configurações para iniciar a gravação</string>
 </resources>

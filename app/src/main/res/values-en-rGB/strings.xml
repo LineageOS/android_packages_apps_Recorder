@@ -15,21 +15,30 @@
      limitations under the License.
 -->
 <resources>
+  <string name="app_name">Recorder</string>
   <!-- Fragment titles -->
   <!-- Sound recorder fragment title -->
+  <string name="fragment_sounds">Sound</string>
   <!-- Screen recorder fragment title -->
+  <string name="fragment_screen">Screen</string>
   <!-- Common actions -->
   <!-- Share action for notification -->
+  <string name="share">Share</string>
   <!-- Stop action for notification -->
+  <string name="stop">Stop</string>
   <!-- Play action -->
+  <string name="play">Play</string>
   <!-- Delete action -->
+  <string name="delete">Delete</string>
   <!-- Delete confirm title -->
+  <string name="delete_title">Deleting record</string>
   <!-- Delete confirm message -->
   <!-- Date for last item %1 is year, %2 month, %3 day, %4 hour, %5 min -->
   <!-- Permissions -->
   <!-- Sound recorder -->
   <!-- Sound recorder notification title -->
   <!-- Sound recorder notification message -->
+  <string name="sound_notification_message">Audio length: %1$s</string>
   <!-- Sound recorder status card title ready -->
   <!-- Sound recorder status card title recording -->
   <!-- Sound recorder status card title busy -->

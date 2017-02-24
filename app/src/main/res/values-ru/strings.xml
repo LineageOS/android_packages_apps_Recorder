@@ -15,6 +15,7 @@
      limitations under the License.
 -->
 <resources>
+  <string name="app_name">Рекордер</string>
   <!-- Fragment titles -->
   <!-- Sound recorder fragment title -->
   <string name="fragment_sounds">Звук</string>
@@ -24,24 +25,33 @@
   <!-- Share action for notification -->
   <string name="share">Отправить</string>
   <!-- Stop action for notification -->
+  <string name="stop">Остановить</string>
   <!-- Play action -->
+  <string name="play">Воспроизвести</string>
   <!-- Delete action -->
   <string name="delete">Удалить</string>
   <!-- Delete confirm title -->
+  <string name="delete_title">Удаление записи</string>
   <!-- Delete confirm message -->
+  <string name="delete_message">Действительно удалить «%1$s»? Это действие не может быть отменено.</string>
   <!-- Date for last item %1 is year, %2 month, %3 day, %4 hour, %5 min -->
   <string name="date_format">%3$s.%2$s.%1$s, %4$s:%5$s</string>
   <!-- Permissions -->
   <!-- Sound recorder -->
   <!-- Sound recorder notification title -->
+  <string name="sound_notification_title">Запись звука</string>
   <!-- Sound recorder notification message -->
   <string name="sound_notification_message">Длительность аудио: %1$s</string>
   <!-- Sound recorder status card title ready -->
+  <string name="sound_recording_title_ready">Готов к записи</string>
   <!-- Sound recorder status card title recording -->
+  <string name="sound_recording_title_working">Запись</string>
   <!-- Sound recorder status card title busy -->
+  <string name="sound_recording_title_busy">Отключено при записи экрана</string>
   <!-- Sound recorder last item title -->
   <string name="sound_last_title">Последняя запись</string>
   <!-- Sound recorder last item message -->
+  <string name="sound_last_message">Дата: %1$s\nДлительность: %2$d сек.</string>
   <!-- Screen recorder -->
   <!-- Screen recorder audio card title -->
   <string name="screen_audio_title">Микрофон</string>
@@ -52,14 +62,22 @@
   <!-- Screen recorder notification storage error title -->
   <!-- Screen recorder notification storage error message -->
   <!-- Screen recorder notification title -->
+  <string name="screen_notification_title">Запись экрана</string>
   <!-- Screen recorder notification message -->
+  <string name="screen_notification_message">Длительность видео: %s</string>
   <!-- Screen recorder notification share title -->
+  <string name="screen_notification_message_done">Готово к отправке</string>
   <!-- Screen recorder status card title -->
+  <string name="screen_recording_title">Запись</string>
   <!-- Screen recorder status message -->
+  <string name="screen_recording_message">Идёт запись с экрана</string>
   <!-- Screen recorder last item title -->
+  <string name="screen_last_title">Последняя запись</string>
   <!-- Screen recorder last item message -->
+  <string name="screen_last_message">Дата: %1$s\nДлительность: %2$d сек.</string>
   <!-- Permissions -->
   <!-- Permissions dialog title -->
+  <string name="dialog_permissions_title">Разрешения</string>
   <!-- Message: microphone access denied -->
   <!-- Message: storage access denied -->
   <!-- Message: phone status denied -->
@@ -68,6 +86,9 @@
   <!-- Message: storage and phone status access denied -->
   <!-- Message: microphone, storage and phone status access denied -->
   <!-- Permissions dialog action: ask permissions access again -->
+  <string name="dialog_permissions_ask">Спросить снова</string>
   <!-- Permissions dialog action: dismiss dialog -->
+  <string name="dialog_permissions_dismiss">Пропустить</string>
   <!-- No permissions granted error -->
+  <string name="snack_permissions_no_permission">Отказано в необходимых разрешениях. Включите их в настройках, чтобы начать запись</string>
 </resources>

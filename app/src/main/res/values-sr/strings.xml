@@ -15,51 +15,82 @@
      limitations under the License.
 -->
 <resources>
+  <string name="app_name">Снимач</string>
   <!-- Fragment titles -->
   <!-- Sound recorder fragment title -->
+  <string name="fragment_sounds">Звук</string>
   <!-- Screen recorder fragment title -->
+  <string name="fragment_screen">Екран</string>
   <!-- Common actions -->
   <!-- Share action for notification -->
+  <string name="share">Подели</string>
   <!-- Stop action for notification -->
+  <string name="stop">Стоп</string>
   <!-- Play action -->
+  <string name="play">Пусти</string>
   <!-- Delete action -->
+  <string name="delete">Обриши</string>
   <!-- Delete confirm title -->
+  <string name="delete_title">Обришите запис</string>
   <!-- Delete confirm message -->
+  <string name="delete_message">Да ли сте сигурни да желите да избришете %1$s? Ово се не може опозвати</string>
   <!-- Date for last item %1 is year, %2 month, %3 day, %4 hour, %5 min -->
+  <string name="date_format">%1$s-%2$s-%3$s %4$s:%5$s</string>
   <!-- Permissions -->
   <!-- Sound recorder -->
   <!-- Sound recorder notification title -->
+  <string name="sound_notification_title">Снимач звука</string>
   <!-- Sound recorder notification message -->
+  <string name="sound_notification_message">Дужина снимка: %1$с</string>
   <!-- Sound recorder status card title ready -->
+  <string name="sound_recording_title_ready">Спреман за снимање</string>
   <!-- Sound recorder status card title recording -->
+  <string name="sound_recording_title_working">Снима се</string>
   <!-- Sound recorder status card title busy -->
   <!-- Sound recorder last item title -->
+  <string name="sound_last_title">Задњи запис</string>
   <!-- Sound recorder last item message -->
+  <string name="sound_last_message">Датум: %1$s\nТрајање: %2$d секунди</string>
   <!-- Screen recorder -->
   <!-- Screen recorder audio card title -->
+  <string name="screen_audio_title">Микрофон</string>
   <!-- Screen recorder enabled audio card message -->
   <!-- Screen recorder disabled audio card message -->
   <!-- Screen recorder audio permission request card message -->
   <!-- Screen recorder audio permission request card button -->
+  <string name="screen_audio_warning_button_ask">Питај</string>
   <!-- Screen recorder notification storage error title -->
   <!-- Screen recorder notification storage error message -->
   <!-- Screen recorder notification title -->
+  <string name="screen_notification_title">Снимање екрана</string>
   <!-- Screen recorder notification message -->
+  <string name="screen_notification_message">Дужина видеа: %s</string>
   <!-- Screen recorder notification share title -->
   <!-- Screen recorder status card title -->
+  <string name="screen_recording_title">Снима се</string>
   <!-- Screen recorder status message -->
+  <string name="screen_recording_message">Екран се снима\u2026</string>
   <!-- Screen recorder last item title -->
+  <string name="screen_last_title">Задњи запис</string>
   <!-- Screen recorder last item message -->
+  <string name="screen_last_message">Датум: %1$s\nТрајање: %2$d секунди</string>
   <!-- Permissions -->
   <!-- Permissions dialog title -->
+  <string name="dialog_permissions_title">Дозволе</string>
   <!-- Message: microphone access denied -->
+  <string name="dialog_permissions_mic">Снимач звука треба приступ микрофону за снимање звука</string>
   <!-- Message: storage access denied -->
+  <string name="dialog_permissions_storage">Снимач звука треба приступ складишту за чување снимљених фајлова</string>
   <!-- Message: phone status denied -->
   <!-- Message: microphone and storage access denied -->
   <!-- Message: microphone and phone status access denied -->
   <!-- Message: storage and phone status access denied -->
   <!-- Message: microphone, storage and phone status access denied -->
+  <string name="dialog_permissions_mic_storage_phone">Снимачу звука потребан приступ микрофону за снимање звука, приступ складишту да чува снимљене фајлове и приступ статусу телефона да спречи апликацију да снима док позивате</string>
   <!-- Permissions dialog action: ask permissions access again -->
+  <string name="dialog_permissions_ask">Питај поново</string>
   <!-- Permissions dialog action: dismiss dialog -->
+  <string name="dialog_permissions_dismiss">Одбаци</string>
   <!-- No permissions granted error -->
+  <string name="snack_permissions_no_permission">Потребна дозвола је одбијена, омогући је из апликације за подешавање да започнете снимање</string>
 </resources>

@@ -35,7 +35,7 @@
   <!-- Delete confirm message -->
   <string name="delete_message">Tem a certeza que quer apagar %1$s? Esta ação não pode ser revertida</string>
   <!-- Date for last item %1 is year, %2 month, %3 day, %4 hour, %5 min -->
-  <string name="date_format">%1$s-%2$s-%3$s %4$s:%5$s</string>
+  <string name="date_format">%3$s-%2$s-%1$s %4$s:%5$s</string>
   <!-- Permissions -->
   <!-- Sound recorder -->
   <!-- Sound recorder notification title -->

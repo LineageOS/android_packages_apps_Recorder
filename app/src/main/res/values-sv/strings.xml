@@ -23,17 +23,24 @@
   <string name="fragment_screen">Skärm</string>
   <!-- Common actions -->
   <!-- Share action for notification -->
+  <string name="share">Dela</string>
   <!-- Stop action for notification -->
+  <string name="stop">Avbryt</string>
   <!-- Play action -->
+  <string name="play">Spela upp</string>
   <!-- Delete action -->
   <!-- Delete confirm title -->
   <!-- Delete confirm message -->
   <!-- Date for last item %1 is year, %2 month, %3 day, %4 hour, %5 min -->
+  <string name="date_format">%1$s-%2$s-%3$s %4$s:%5$s</string>
   <!-- Permissions -->
   <!-- Sound recorder -->
   <!-- Sound recorder notification title -->
+  <string name="sound_notification_title">Ljudinspelare</string>
   <!-- Sound recorder notification message -->
+  <string name="sound_notification_message">Ljudlängd: %1$s</string>
   <!-- Sound recorder status card title ready -->
+  <string name="sound_recording_title_ready">Redo att spela in</string>
   <!-- Sound recorder status card title recording -->
   <!-- Sound recorder status card title busy -->
   <!-- Sound recorder last item title -->
@@ -51,6 +58,7 @@
   <!-- Screen recorder notification title -->
   <string name="screen_notification_title">Skärminspelare</string>
   <!-- Screen recorder notification message -->
+  <string name="screen_notification_message">Videolängd: %s</string>
   <!-- Screen recorder notification share title -->
   <!-- Screen recorder status card title -->
   <!-- Screen recorder status message -->
