@@ -20,27 +20,35 @@
   <!-- Screen recorder fragment title -->
   <!-- Common actions -->
   <!-- Share action for notification -->
+  <string name="share">공유</string>
   <!-- Stop action for notification -->
   <!-- Play action -->
+  <string name="play">재생</string>
   <!-- Delete action -->
+  <string name="delete">삭제</string>
   <!-- Delete confirm title -->
   <!-- Delete confirm message -->
   <!-- Date for last item %1 is year, %2 month, %3 day, %4 hour, %5 min -->
+  <string name="date_format">%1$s-%2$s-%3$s %4$s:%5$s</string>
   <!-- Permissions -->
   <!-- Sound recorder -->
   <!-- Sound recorder notification title -->
   <!-- Sound recorder notification message -->
+  <string name="sound_notification_message">오디오 길이: %1$s</string>
   <!-- Sound recorder status card title ready -->
   <!-- Sound recorder status card title recording -->
   <!-- Sound recorder status card title busy -->
   <!-- Sound recorder last item title -->
   <!-- Sound recorder last item message -->
+  <string name="sound_last_message">날짜: %1$s\n길이: %2$d초</string>
   <!-- Screen recorder -->
   <!-- Screen recorder audio card title -->
+  <string name="screen_audio_title">마이크</string>
   <!-- Screen recorder enabled audio card message -->
   <!-- Screen recorder disabled audio card message -->
   <!-- Screen recorder audio permission request card message -->
   <!-- Screen recorder audio permission request card button -->
+  <string name="screen_audio_warning_button_ask">묻기</string>
   <!-- Screen recorder notification storage error title -->
   <!-- Screen recorder notification storage error message -->
   <!-- Screen recorder notification title -->
@@ -50,8 +58,10 @@
   <!-- Screen recorder status message -->
   <!-- Screen recorder last item title -->
   <!-- Screen recorder last item message -->
+  <string name="screen_last_message">날짜: %1$s\n길이: %2$d초</string>
   <!-- Permissions -->
   <!-- Permissions dialog title -->
+  <string name="dialog_permissions_title">권한</string>
   <!-- Message: microphone access denied -->
   <!-- Message: storage access denied -->
   <!-- Message: phone status denied -->
@@ -60,6 +70,8 @@
   <!-- Message: storage and phone status access denied -->
   <!-- Message: microphone, storage and phone status access denied -->
   <!-- Permissions dialog action: ask permissions access again -->
+  <string name="dialog_permissions_ask">다시 묻기</string>
   <!-- Permissions dialog action: dismiss dialog -->
+  <string name="dialog_permissions_dismiss">다시 묻지 않기</string>
   <!-- No permissions granted error -->
 </resources>
