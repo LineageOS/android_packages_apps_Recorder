@@ -56,10 +56,14 @@
   <!-- Screen recorder audio card title -->
   <string name="screen_audio_title">Микрофон</string>
   <!-- Screen recorder enabled audio card message -->
+  <string name="screen_audio_message_on">Звуки с микрофона будут записаны в видео</string>
   <!-- Screen recorder disabled audio card message -->
+  <string name="screen_audio_message_off">Звуки с микрофона не записываются</string>
   <!-- Screen recorder audio permission request card message -->
   <!-- Screen recorder audio permission request card button -->
+  <string name="screen_audio_warning_button_ask">Запросить разрешения</string>
   <!-- Screen recorder notification storage error title -->
+  <string name="screen_insufficient_storage">Недостаточно памяти</string>
   <!-- Screen recorder notification storage error message -->
   <!-- Screen recorder notification title -->
   <string name="screen_notification_title">Запись экрана</string>

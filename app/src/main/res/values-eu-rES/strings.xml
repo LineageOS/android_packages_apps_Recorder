@@ -15,15 +15,20 @@
      limitations under the License.
 -->
 <resources>
+  <string name="app_name">Grabatzailea</string>
   <!-- Fragment titles -->
   <!-- Sound recorder fragment title -->
+  <string name="fragment_sounds">Soinua</string>
   <!-- Screen recorder fragment title -->
   <!-- Common actions -->
   <!-- Share action for notification -->
   <!-- Stop action for notification -->
+  <string name="stop">Gelditu</string>
   <!-- Play action -->
   <!-- Delete action -->
+  <string name="delete">Ezabatu</string>
   <!-- Delete confirm title -->
+  <string name="delete_title">Grabaketa ezabatzen</string>
   <!-- Delete confirm message -->
   <!-- Date for last item %1 is year, %2 month, %3 day, %4 hour, %5 min -->
   <!-- Permissions -->
@@ -31,6 +36,7 @@
   <!-- Sound recorder notification title -->
   <!-- Sound recorder notification message -->
   <!-- Sound recorder status card title ready -->
+  <string name="sound_recording_title_ready">Grabatzeko prest</string>
   <!-- Sound recorder status card title recording -->
   <!-- Sound recorder status card title busy -->
   <!-- Sound recorder last item title -->
@@ -39,13 +45,16 @@
   <!-- Screen recorder audio card title -->
   <!-- Screen recorder enabled audio card message -->
   <!-- Screen recorder disabled audio card message -->
+  <string name="screen_audio_message_off">Mikrofonoko audioa ez da bideoan txertatuko</string>
   <!-- Screen recorder audio permission request card message -->
   <!-- Screen recorder audio permission request card button -->
+  <string name="screen_audio_warning_button_ask">Galdetu</string>
   <!-- Screen recorder notification storage error title -->
   <!-- Screen recorder notification storage error message -->
   <!-- Screen recorder notification title -->
   <!-- Screen recorder notification message -->
   <!-- Screen recorder notification share title -->
+  <string name="screen_notification_message_done">Partekatzeko prest</string>
   <!-- Screen recorder status card title -->
   <!-- Screen recorder status message -->
   <!-- Screen recorder last item title -->

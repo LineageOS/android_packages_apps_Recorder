@@ -60,6 +60,7 @@
   <!-- Screen recorder disabled audio card message -->
   <string name="screen_audio_message_off">Áudio do microfone não será incluído no vídeo</string>
   <!-- Screen recorder audio permission request card message -->
+  <string name="screen_audio_warning_message">Para adicionar áudio à gravação, é preciso permitir que o aplicativo acesse seu microfone. Clique no botão abaixo para permitir acesso a este aplicativo</string>
   <!-- Screen recorder audio permission request card button -->
   <string name="screen_audio_warning_button_ask">Permitir</string>
   <!-- Screen recorder notification storage error title -->
