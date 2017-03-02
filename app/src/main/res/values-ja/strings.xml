@@ -89,15 +89,15 @@
   <!-- Message: storage access denied -->
   <string name="dialog_permissions_storage">レコーダーは録音したファイルを保存するためにストレージの権限を必要とします。</string>
   <!-- Message: phone status denied -->
-  <string name="dialog_permissions_phone">レコーダーは通話中に録音を停止するために携帯電話の状態の権限が必要とします。</string>
+  <string name="dialog_permissions_phone">レコーダーは通話中に録音を停止するために端末の状態の権限が必要とします。</string>
   <!-- Message: microphone and storage access denied -->
   <string name="dialog_permissions_mic_storage">レコーダーは音声を録音するためにマイクの権限と、録音したファイルを保存するためにストレージの権限を必要とします。</string>
   <!-- Message: microphone and phone status access denied -->
-  <string name="dialog_permissions_mic_phone">レコーダーは音声を録音するためにマイクの権限と、通話中に録音を停止するために携帯電話の状態の権限を必要とします。</string>
+  <string name="dialog_permissions_mic_phone">レコーダーは音声を録音するためにマイクの権限と、通話中に録音を停止するために端末の状態の権限を必要とします。</string>
   <!-- Message: storage and phone status access denied -->
-  <string name="dialog_permissions_storage_phone">レコーダーは録音したファイルを保存するためにストレージの権限と、通話中に録音を停止するために携帯電話の状態の権限を必要とします。</string>
+  <string name="dialog_permissions_storage_phone">レコーダーは録音したファイルを保存するためにストレージの権限と、通話中に録音を停止するために端末の状態の権限を必要とします。</string>
   <!-- Message: microphone, storage and phone status access denied -->
-  <string name="dialog_permissions_mic_storage_phone">レコーダーは音声を録音するためにマイクの権限、録音したファイルを保存するためにストレージの権限、通話中に録音を停止するために携帯電話の状態の権限を必要とします。</string>
+  <string name="dialog_permissions_mic_storage_phone">レコーダーは音声を録音するためにマイクの権限、録音したファイルを保存するためにストレージの権限、通話中に録音を停止するために端末の状態の権限を必要とします。</string>
   <!-- Permissions dialog action: ask permissions access again -->
   <string name="dialog_permissions_ask">次回も確認する</string>
   <!-- Permissions dialog action: dismiss dialog -->
