@@ -60,11 +60,13 @@
   <!-- Screen recorder disabled audio card message -->
   <string name="screen_audio_message_off">Звуки с микрофона не записываются</string>
   <!-- Screen recorder audio permission request card message -->
+  <string name="screen_audio_warning_message">Для записи со звуком необходимо предоставить разрешение на использование микрофона. Нажмите кнопку ниже, чтобы разрешить доступ</string>
   <!-- Screen recorder audio permission request card button -->
   <string name="screen_audio_warning_button_ask">Запросить разрешения</string>
   <!-- Screen recorder notification storage error title -->
   <string name="screen_insufficient_storage">Недостаточно памяти</string>
   <!-- Screen recorder notification storage error message -->
+  <string name="screen_not_enough_storage">Недостаточно свободной памяти</string>
   <!-- Screen recorder notification title -->
   <string name="screen_notification_title">Запись экрана</string>
   <!-- Screen recorder notification message -->
@@ -83,12 +85,19 @@
   <!-- Permissions dialog title -->
   <string name="dialog_permissions_title">Разрешения</string>
   <!-- Message: microphone access denied -->
+  <string name="dialog_permissions_mic">Рекордеру требуется доступ к микрофону для записи звука</string>
   <!-- Message: storage access denied -->
+  <string name="dialog_permissions_storage">Рекордеру требуется доступ к хранилищу для сохранения записанных файлов</string>
   <!-- Message: phone status denied -->
+  <string name="dialog_permissions_phone">Рекордеру требуется доступ к данным о состоянии телефона, чтобы прекращать запись во время звонка</string>
   <!-- Message: microphone and storage access denied -->
+  <string name="dialog_permissions_mic_storage">Рекордеру требуется доступ к микрофону для записи звука и доступ к хранилищу для сохранения записанных файлов</string>
   <!-- Message: microphone and phone status access denied -->
+  <string name="dialog_permissions_mic_phone">Рекордеру требуется доступ к микрофону для записи звука и доступ к данным о состоянии телефона, чтобы прекращать запись во время звонка</string>
   <!-- Message: storage and phone status access denied -->
+  <string name="dialog_permissions_storage_phone">Рекордеру требуется доступ к хранилищу для сохранения записанных файлов и доступ к данным о состоянии телефона, чтобы прекращать запись во время звонка</string>
   <!-- Message: microphone, storage and phone status access denied -->
+  <string name="dialog_permissions_mic_storage_phone">Рекордеру требуется доступ к микрофону для записи звука, доступ к хранилищу для сохранения записанных файлов и доступ к данным о состоянии телефона, чтобы прекращать запись во время звонка</string>
   <!-- Permissions dialog action: ask permissions access again -->
   <string name="dialog_permissions_ask">Спросить снова</string>
   <!-- Permissions dialog action: dismiss dialog -->

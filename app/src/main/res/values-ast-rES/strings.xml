@@ -15,43 +15,61 @@
      limitations under the License.
 -->
 <resources>
+  <string name="app_name">Grabadora</string>
   <!-- Fragment titles -->
   <!-- Sound recorder fragment title -->
+  <string name="fragment_sounds">Soníu</string>
   <!-- Screen recorder fragment title -->
+  <string name="fragment_screen">Pantalla</string>
   <!-- Common actions -->
   <!-- Share action for notification -->
+  <string name="share">Compartir</string>
   <!-- Stop action for notification -->
+  <string name="stop">Parar</string>
   <!-- Play action -->
+  <string name="play">Reproducir</string>
   <!-- Delete action -->
   <!-- Delete confirm title -->
   <!-- Delete confirm message -->
+  <string name="delete_message">¿De xuru que quies desaniciar %1$s? Esto nun pue desfacese</string>
   <!-- Date for last item %1 is year, %2 month, %3 day, %4 hour, %5 min -->
+  <string name="date_format">%1$s-%2$s-%3$s %4$s:%5$s</string>
   <!-- Permissions -->
   <!-- Sound recorder -->
   <!-- Sound recorder notification title -->
+  <string name="sound_notification_title">Grabadora de soníu</string>
   <!-- Sound recorder notification message -->
   <!-- Sound recorder status card title ready -->
   <!-- Sound recorder status card title recording -->
+  <string name="sound_recording_title_working">Grabando</string>
   <!-- Sound recorder status card title busy -->
   <!-- Sound recorder last item title -->
   <!-- Sound recorder last item message -->
+  <string name="sound_last_message">Data: %1$s\nDuración: %2$d segundos</string>
   <!-- Screen recorder -->
   <!-- Screen recorder audio card title -->
+  <string name="screen_audio_title">Micrófonu</string>
   <!-- Screen recorder enabled audio card message -->
   <!-- Screen recorder disabled audio card message -->
   <!-- Screen recorder audio permission request card message -->
   <!-- Screen recorder audio permission request card button -->
+  <string name="screen_audio_warning_button_ask">Entrugar</string>
   <!-- Screen recorder notification storage error title -->
   <!-- Screen recorder notification storage error message -->
+  <string name="screen_not_enough_storage">Nun hai espaciu abondo disponible</string>
   <!-- Screen recorder notification title -->
+  <string name="screen_notification_title">Grabadora de pantalla</string>
   <!-- Screen recorder notification message -->
   <!-- Screen recorder notification share title -->
   <!-- Screen recorder status card title -->
   <!-- Screen recorder status message -->
+  <string name="screen_recording_message">Ta grabándose la pantalla\u2026</string>
   <!-- Screen recorder last item title -->
   <!-- Screen recorder last item message -->
+  <string name="screen_last_message">Data: %1$s\nDuración: %2$d segundos</string>
   <!-- Permissions -->
   <!-- Permissions dialog title -->
+  <string name="dialog_permissions_title">Permisos</string>
   <!-- Message: microphone access denied -->
   <!-- Message: storage access denied -->
   <!-- Message: phone status denied -->
@@ -60,6 +78,9 @@
   <!-- Message: storage and phone status access denied -->
   <!-- Message: microphone, storage and phone status access denied -->
   <!-- Permissions dialog action: ask permissions access again -->
+  <string name="dialog_permissions_ask">Entrugar de nueves</string>
   <!-- Permissions dialog action: dismiss dialog -->
+  <string name="dialog_permissions_dismiss">Escartar</string>
   <!-- No permissions granted error -->
+  <string name="snack_permissions_no_permission">Ñegáronse permisos riquíos, habilítalos dende Axustes pa entamar a grabar</string>
 </resources>
