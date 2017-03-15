@@ -33,7 +33,7 @@
   <!-- Delete confirm title -->
   <string name="delete_title">Excluir gravação</string>
   <!-- Delete confirm message -->
-  <string name="delete_message">Tem certeza de que quer excluir %1$s? Isto não pode ser desfeito</string>
+  <string name="delete_message">Tem certeza de que deseja excluir %1$s? Esta ação não poderá ser revertida</string>
   <!-- Date for last item %1 is year, %2 month, %3 day, %4 hour, %5 min -->
   <string name="date_format">%1$s-%2$s-%3$s %4$s:%5$s</string>
   <!-- Permissions -->

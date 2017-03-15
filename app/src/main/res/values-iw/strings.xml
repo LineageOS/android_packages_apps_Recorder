@@ -47,9 +47,9 @@
   <!-- Sound recorder status card title recording -->
   <string name="sound_recording_title_working">מקליט</string>
   <!-- Sound recorder status card title busy -->
-  <string name="sound_recording_title_busy">לא מאופשר בעת הקלטת מסך</string>
+  <string name="sound_recording_title_busy">לא אפשרי בעת הקלטת מסך</string>
   <!-- Sound recorder last item title -->
-  <string name="sound_last_title">רשומה אחרונה</string>
+  <string name="sound_last_title">הקלטה אחרונה</string>
   <!-- Sound recorder last item message -->
   <string name="sound_last_message">תאריך: %1$s\nמשך: %2$d שניות</string>
   <!-- Screen recorder -->
@@ -76,9 +76,9 @@
   <!-- Screen recorder status card title -->
   <string name="screen_recording_title">מקליט</string>
   <!-- Screen recorder status message -->
-  <string name="screen_recording_message">מקליט את המסך\u2026</string>
+  <string name="screen_recording_message">המסך מוקלט\u2026</string>
   <!-- Screen recorder last item title -->
-  <string name="screen_last_title">רשומה אחרונה</string>
+  <string name="screen_last_title">הקלטה אחרונה</string>
   <!-- Screen recorder last item message -->
   <string name="screen_last_message">תאריך: %1$s\nמשך: %2$d שניות</string>
   <!-- Permissions -->

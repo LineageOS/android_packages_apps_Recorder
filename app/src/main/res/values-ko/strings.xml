@@ -33,7 +33,7 @@
   <!-- Delete confirm title -->
   <string name="delete_title">녹음/녹화 삭제</string>
   <!-- Delete confirm message -->
-  <string name="delete_message">정말 %1$s을(를) 삭제하시겠습니까? 이 작업은 되돌릴 수 없습니다</string>
+  <string name="delete_message">정말 %1$s을(를) 삭제하시겠습니까? 이 작업은 되돌릴 수 없습니다.</string>
   <!-- Date for last item %1 is year, %2 month, %3 day, %4 hour, %5 min -->
   <string name="date_format">%1$s-%2$s-%3$s %4$s:%5$s</string>
   <!-- Permissions -->
@@ -56,17 +56,17 @@
   <!-- Screen recorder audio card title -->
   <string name="screen_audio_title">마이크</string>
   <!-- Screen recorder enabled audio card message -->
-  <string name="screen_audio_message_on">마이크로 녹음된 오디오가 영상에 포함됩니다</string>
+  <string name="screen_audio_message_on">마이크로 녹음된 오디오가 영상에 포함됩니다.</string>
   <!-- Screen recorder disabled audio card message -->
-  <string name="screen_audio_message_off">마이크로 녹음된 오디오가 영상에 포함되지 않습니다</string>
+  <string name="screen_audio_message_off">마이크로 녹음된 오디오가 영상에 포함되지 않습니다.</string>
   <!-- Screen recorder audio permission request card message -->
-  <string name="screen_audio_warning_message">녹화에 오디오를 추가하려면 마이크 권한을 허용해야 합니다. 아래를 눌러 이 앱의 접근을 허용하세요</string>
+  <string name="screen_audio_warning_message">녹화에 오디오를 추가하려면 마이크 권한을 허용해야 합니다. 아래를 눌러 이 앱의 접근을 허용하세요.</string>
   <!-- Screen recorder audio permission request card button -->
   <string name="screen_audio_warning_button_ask">묻기</string>
   <!-- Screen recorder notification storage error title -->
   <string name="screen_insufficient_storage">저장 공간 부족</string>
   <!-- Screen recorder notification storage error message -->
-  <string name="screen_not_enough_storage">저장 공간이 충분하지 않습니다</string>
+  <string name="screen_not_enough_storage">저장 공간이 충분하지 않습니다.</string>
   <!-- Screen recorder notification title -->
   <string name="screen_notification_title">화면 녹화기</string>
   <!-- Screen recorder notification message -->
@@ -85,23 +85,23 @@
   <!-- Permissions dialog title -->
   <string name="dialog_permissions_title">권한</string>
   <!-- Message: microphone access denied -->
-  <string name="dialog_permissions_mic">녹음/녹화 도구는 소리를 녹음하기 위해 마이크 사용 권한이 필요합니다</string>
+  <string name="dialog_permissions_mic">녹음/녹화 도구는 소리를 녹음하기 위해 마이크 사용 권한이 필요합니다.</string>
   <!-- Message: storage access denied -->
-  <string name="dialog_permissions_storage">녹음/녹화 도구는 녹음한 파일을 저장하기 위해 저장소 사용 권한이 필요합니다</string>
+  <string name="dialog_permissions_storage">녹음/녹화 도구는 녹음한 파일을 저장하기 위해 저장소 사용 권한이 필요합니다.</string>
   <!-- Message: phone status denied -->
-  <string name="dialog_permissions_phone">녹음/녹화 도구는 통화 도중에 녹음되는 것을 방지하기 위해 전화 상태 접근 권한이 필요합니다</string>
+  <string name="dialog_permissions_phone">녹음/녹화 도구는 통화 도중에 녹음되는 것을 방지하기 위해 전화 상태 접근 권한이 필요합니다.</string>
   <!-- Message: microphone and storage access denied -->
-  <string name="dialog_permissions_mic_storage">녹음/녹화 도구는 소리를 녹음하기 위한 마이크 사용 권한과 녹음한 파일을 저장하기 위한 저장소 사용 권한이 필요합니다</string>
+  <string name="dialog_permissions_mic_storage">녹음/녹화 도구는 소리를 녹음하기 위한 마이크 사용 권한과 녹음한 파일을 저장하기 위한 저장소 사용 권한이 필요합니다.</string>
   <!-- Message: microphone and phone status access denied -->
-  <string name="dialog_permissions_mic_phone">녹음/녹화 도구는 녹음한 파일을 저장하기 위한 저장소 사용 권한과 통화 도중에 녹음되는 것을 방지하기 위한 전화 상태 접근 권한이 필요합니다</string>
+  <string name="dialog_permissions_mic_phone">녹음/녹화 도구는 녹음한 파일을 저장하기 위한 저장소 사용 권한과 통화 도중에 녹음되는 것을 방지하기 위한 전화 상태 접근 권한이 필요합니다.</string>
   <!-- Message: storage and phone status access denied -->
-  <string name="dialog_permissions_storage_phone">녹음/녹화 도구는 녹음한 파일을 저장하기 위한 저장소 사용 권한과 통화 도중에 녹음되는 것을 방지하기 위한 전화 상태 접근 권한이 필요합니다</string>
+  <string name="dialog_permissions_storage_phone">녹음/녹화 도구는 녹음한 파일을 저장하기 위한 저장소 사용 권한과 통화 도중에 녹음되는 것을 방지하기 위한 전화 상태 접근 권한이 필요합니다.</string>
   <!-- Message: microphone, storage and phone status access denied -->
-  <string name="dialog_permissions_mic_storage_phone">녹음/녹화 도구는 소리를 녹음하기 위한 마이크 사용 권한, 녹음한 파일을 저장하기 위한 저장소 사용 권한과 통화 도중에 녹음되는 것을 방지하기 위한 전화 상태 접근 권한이 필요합니다</string>
+  <string name="dialog_permissions_mic_storage_phone">녹음/녹화 도구는 소리를 녹음하기 위한 마이크 사용 권한, 녹음한 파일을 저장하기 위한 저장소 사용 권한과 통화 도중에 녹음되는 것을 방지하기 위한 전화 상태 접근 권한이 필요합니다.</string>
   <!-- Permissions dialog action: ask permissions access again -->
   <string name="dialog_permissions_ask">다시 묻기</string>
   <!-- Permissions dialog action: dismiss dialog -->
   <string name="dialog_permissions_dismiss">다시 묻지 않기</string>
   <!-- No permissions granted error -->
-  <string name="snack_permissions_no_permission">필요한 권한이 거부되었습니다. 설정 앱에서 권한을 허용한 다음 녹음/녹화를 시작하세요</string>
+  <string name="snack_permissions_no_permission">필요한 권한이 거부되었습니다. 설정 앱에서 권한을 허용한 다음 녹음/녹화를 시작하세요.</string>
 </resources>

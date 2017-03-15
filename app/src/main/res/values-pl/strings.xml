@@ -25,6 +25,7 @@
   <!-- Delete action -->
   <!-- Delete confirm title -->
   <!-- Delete confirm message -->
+  <string name="delete_message">Czy na pewno chcesz usunąć %1$s? Tej operacji nie da się cofnąć</string>
   <!-- Date for last item %1 is year, %2 month, %3 day, %4 hour, %5 min -->
   <!-- Permissions -->
   <!-- Sound recorder -->
@@ -48,6 +49,7 @@
   <!-- Screen recorder notification share title -->
   <!-- Screen recorder status card title -->
   <!-- Screen recorder status message -->
+  <string name="screen_recording_message">Ekran jest nagrywany\u2026</string>
   <!-- Screen recorder last item title -->
   <!-- Screen recorder last item message -->
   <!-- Permissions -->
