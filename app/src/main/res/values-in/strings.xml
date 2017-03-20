@@ -47,7 +47,7 @@
   <!-- Sound recorder status card title recording -->
   <string name="sound_recording_title_working">Merekam</string>
   <!-- Sound recorder status card title busy -->
-  <string name="sound_recording_title_busy">Dinonaktifkan saat merekam layar</string>
+  <string name="sound_recording_title_busy">Dimatikan saat merekam layar</string>
   <!-- Sound recorder last item title -->
   <string name="sound_last_title">Rekaman terakhir</string>
   <!-- Sound recorder last item message -->
@@ -103,5 +103,5 @@
   <!-- Permissions dialog action: dismiss dialog -->
   <string name="dialog_permissions_dismiss">Tutup</string>
   <!-- No permissions granted error -->
-  <string name="snack_permissions_no_permission">Izin yang diperlukan ditolak, aktifkan dari aplikasi Pengaturan untuk mulai merekam</string>
+  <string name="snack_permissions_no_permission">Izin yang diperlukan ditolak, hidupkan dari aplikasi Pengaturan untuk mulai merekam</string>
 </resources>
