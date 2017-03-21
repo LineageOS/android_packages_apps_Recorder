@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="wrap_content"
+    android:layout_width="wrap_content"
+    android:elevation="4dp"
+    android:layout_margin="4dp"
+    android:orientation="horizontal"
+    android:background="@drawable/background_screen_recorder_overlay"
+    android:theme="@style/AppTheme.NoActionBar">
+
+    <ImageButton
+        android:id="@+id/overlay_button"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:padding="8dp"
+        android:background="?selectableItemBackground"
+        android:src="@drawable/ic_action_screen_record"/>
+
+    <ImageButton
+        android:id="@+id/overlay_drag"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:padding="12dp"
+        android:background="@null"
+        android:src="@drawable/ic_drag"/>
+</LinearLayout>

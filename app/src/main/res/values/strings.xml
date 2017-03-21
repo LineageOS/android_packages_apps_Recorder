@@ -85,6 +85,10 @@
     <string name="screen_last_title">Last record</string>
     <!-- Screen recorder last item message -->
     <string name="screen_last_message">Date: %1$s\nDuration: %2$d seconds</string>
+    <!-- Screen recorder notification overlay title -->
+    <string name="screen_overlay_notif_title">Ready to record</string>
+    <!-- Screen recorder notification overlay message -->
+    <string name="screen_overlay_notif_message">Press the record button when you\'re ready to start</string>
 
     <!-- Permissions -->
     <!-- Permissions dialog title -->
@@ -107,6 +111,8 @@
     <string name="dialog_permissions_ask">Ask again</string>
     <!-- Permissions dialog action: dismiss dialog -->
     <string name="dialog_permissions_dismiss">Dismiss</string>
+    <!-- Message: overlay permission denied. Make sure "Draw over other apps" matches settings strings -->
+    <string name="dialog_permissions_overlay">Recorder needs \"Draw over other apps\" permission to record your screen. Press allow, enable the permission in the settings and come back to Recorder</string>
     <!-- No permissions granted error -->
     <string name="snack_permissions_no_permission">Required permissions were denied, enable them from Settings app to start recording</string>
 

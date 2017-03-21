@@ -16,6 +16,7 @@
 package org.lineageos.recorder;
 
 import android.Manifest;
+import android.app.ActivityManager;
 import android.content.BroadcastReceiver;
 import android.content.ComponentName;
 import android.content.Context;
@@ -24,9 +25,11 @@ import android.content.IntentFilter;
 import android.content.ServiceConnection;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.IBinder;
+import android.provider.Settings;
 import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -37,7 +40,9 @@ import android.support.v4.view.animation.FastOutSlowInInterpolator;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.telephony.TelephonyManager;
+import android.util.Log;
 
+import org.lineageos.recorder.screen.OverlayService;
 import org.lineageos.recorder.screen.ScreenFragment;
 import org.lineageos.recorder.screen.ScreencastService;
 import org.lineageos.recorder.sounds.RecorderBinder;
@@ -48,6 +53,7 @@ import org.lineageos.recorder.ui.ViewPagerAdapter;
 import org.lineageos.recorder.utils.Utils;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class RecorderActivity extends AppCompatActivity implements
         ViewPagerAdapter.PageProvider, SharedPreferences.OnSharedPreferenceChangeListener {
@@ -165,6 +171,8 @@ public class RecorderActivity extends AppCompatActivity implements
         if (Utils.isScreenRecording(this)) {
             mViewPager.setCurrentItem(PAGE_INDEX_SCREEN);
         }
+
+        stopOverlayService();
     }
 
     @Override
@@ -310,15 +318,16 @@ public class RecorderActivity extends AppCompatActivity implements
                     .setClass(this, ScreencastService.class));
         } else {
             // Start
-            mFab.animate().scaleX(1.3f).scaleY(1.3f).setDuration(250).start();
-            new Handler().postDelayed(() -> mFab.animate().scaleX(0f).scaleY(0f).setDuration(750)
-                    .setInterpolator(new FastOutSlowInInterpolator()).start(), 250);
-            Intent mIntent = new Intent(ScreencastService.ACTION_START_SCREENCAST);
-            mIntent.putExtra(ScreencastService.EXTRA_WITHAUDIO, getScreenFragment().withAudio());
+            mFab.animate().scaleX(1.3f).scaleY(1.3f).setDuration(250)
+                    .withEndAction(() -> mFab.animate().scaleX(0f).scaleY(0f).setDuration(750)
+                            .setInterpolator(new FastOutSlowInInterpolator()).start())
+                    .start();
             new Handler().postDelayed(() -> {
-                startService(mIntent.setClass(this, ScreencastService.class));
-                Utils.setStatus(this, Utils.UiStatus.SCREEN);
-                finish();
+                Log.d("OHAI", "TRIGGERED");
+                Intent intent = new Intent(this, OverlayService.class);
+                intent.putExtra(OverlayService.EXTRA_HAS_AUDIO, getScreenFragment().withAudio());
+                startService(intent);
+                onBackPressed();
             }, 1000);
         }
     }
@@ -367,6 +376,10 @@ public class RecorderActivity extends AppCompatActivity implements
         return result == PackageManager.PERMISSION_GRANTED;
     }
 
+    private boolean hasDrawOverOtherAppsPermission() {
+        return Settings.canDrawOverlays(this);
+    }
+
     private boolean hasAllPermissions() {
         return hasStoragePermission() && hasAudioPermission() && hasPhoneReaderPermission();
     }
@@ -386,18 +399,29 @@ public class RecorderActivity extends AppCompatActivity implements
             permissions.add(Manifest.permission.READ_PHONE_STATE);
         }
 
-        if (!permissions.isEmpty()) {
-            String[] permissionArray = permissions.toArray(new String[permissions.size()]);
-            requestPermissions(permissionArray, REQUEST_SOUND_REC_PERMS);
-            return true;
+        if (permissions.isEmpty()) {
+            return false;
         }
 
-        return false;
+        String[] permissionArray = permissions.toArray(new String[permissions.size()]);
+        requestPermissions(permissionArray, REQUEST_SOUND_REC_PERMS);
+        return true;
     }
 
     private boolean checkScreenRecPermissions() {
         if (hasStoragePermission()) {
             return false;
+        }
+
+        if (!hasDrawOverOtherAppsPermission()) {
+            Intent overlayIntent = new Intent(Settings.ACTION_MANAGE_OVERLAY_PERMISSION,
+                    Uri.parse("package:" + getPackageName()));
+            new AlertDialog.Builder(this)
+                    .setTitle(R.string.dialog_permissions_title)
+                    .setPositiveButton(getString(R.string.screen_audio_warning_button_ask),
+                            (dialog, which) -> startActivityForResult(overlayIntent, 443))
+                    .show();
+            return true;
         }
 
         final String[] perms = {Manifest.permission.WRITE_EXTERNAL_STORAGE};
@@ -419,5 +443,16 @@ public class RecorderActivity extends AppCompatActivity implements
             bindService(new Intent(this, SoundRecorderService.class),
                     mConnection, BIND_AUTO_CREATE);
         }
+    }
+
+    private void stopOverlayService() {
+        ActivityManager manager = (ActivityManager) getSystemService(ACTIVITY_SERVICE);
+        List<ActivityManager.RunningServiceInfo> services =
+                manager.getRunningServices(Integer.MAX_VALUE);
+
+        // Stop overlay service if running
+        services.stream().filter(info -> getPackageName().equals(info.service.getPackageName()) &&
+                        OverlayService.class.getName().equals(info.service.getClassName()))
+                .forEach(info -> stopService(new Intent(this, OverlayService.class)));
     }
 }
