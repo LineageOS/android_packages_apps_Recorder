@@ -41,7 +41,7 @@
   <!-- Sound recorder notification title -->
   <string name="sound_notification_title">Снимач звука</string>
   <!-- Sound recorder notification message -->
-  <string name="sound_notification_message">Дужина снимка: %1$с</string>
+  <string name="sound_notification_message">Дужина снимка: %1$s</string>
   <!-- Sound recorder status card title ready -->
   <string name="sound_recording_title_ready">Спреман за снимање</string>
   <!-- Sound recorder status card title recording -->

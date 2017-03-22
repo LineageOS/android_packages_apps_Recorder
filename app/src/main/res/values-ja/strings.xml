@@ -76,7 +76,7 @@
   <!-- Screen recorder status card title -->
   <string name="screen_recording_title">録画中</string>
   <!-- Screen recorder status message -->
-  <string name="screen_recording_message">画面を録画中...</string>
+  <string name="screen_recording_message">画面を録画中\u2026</string>
   <!-- Screen recorder last item title -->
   <string name="screen_last_title">最後の記録</string>
   <!-- Screen recorder last item message -->

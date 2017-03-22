@@ -30,6 +30,7 @@
   <string name="play">Spela upp</string>
   <!-- Delete action -->
   <!-- Delete confirm title -->
+  <string name="delete_title">Ta bort inspelning</string>
   <!-- Delete confirm message -->
   <!-- Date for last item %1 is year, %2 month, %3 day, %4 hour, %5 min -->
   <string name="date_format">%1$s-%2$s-%3$s %4$s:%5$s</string>
@@ -42,6 +43,7 @@
   <!-- Sound recorder status card title ready -->
   <string name="sound_recording_title_ready">Redo att spela in</string>
   <!-- Sound recorder status card title recording -->
+  <string name="sound_recording_title_working">Spelar in</string>
   <!-- Sound recorder status card title busy -->
   <!-- Sound recorder last item title -->
   <!-- Sound recorder last item message -->
