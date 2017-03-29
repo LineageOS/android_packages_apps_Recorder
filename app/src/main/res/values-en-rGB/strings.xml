@@ -81,6 +81,10 @@
   <string name="screen_last_title">Last record</string>
   <!-- Screen recorder last item message -->
   <string name="screen_last_message">Date: %1$s\nDuration: %2$d seconds</string>
+  <!-- Screen recorder notification overlay title -->
+  <string name="screen_overlay_notif_title">Ready to record</string>
+  <!-- Screen recorder notification overlay message -->
+  <string name="screen_overlay_notif_message">Press the record button when you\'re ready to start</string>
   <!-- Permissions -->
   <!-- Permissions dialog title -->
   <string name="dialog_permissions_title">Permissions</string>
@@ -93,12 +97,17 @@
   <!-- Message: microphone and storage access denied -->
   <string name="dialog_permissions_mic_storage">Recorder needs microphone permission to record audio and storage access to save recorded files</string>
   <!-- Message: microphone and phone status access denied -->
+  <string name="dialog_permissions_mic_phone">Recorder needs microphone permission to record audio and phone status access to prevent this app from recording while you\'re calling</string>
   <!-- Message: storage and phone status access denied -->
+  <string name="dialog_permissions_storage_phone">Recorder needs storage access to save recorded files and phone status access to prevent this app from recording while you\'re calling</string>
   <!-- Message: microphone, storage and phone status access denied -->
   <string name="dialog_permissions_mic_storage_phone">Recorder needs microphone permission to record audio, storage access to save recorded files and phone status access to prevent this app from recording while you\'re calling</string>
   <!-- Permissions dialog action: ask permissions access again -->
   <string name="dialog_permissions_ask">Ask again</string>
   <!-- Permissions dialog action: dismiss dialog -->
   <string name="dialog_permissions_dismiss">Dismiss</string>
+  <!-- Message: overlay permission denied. Make sure "Draw over other apps" matches settings strings -->
+  <string name="dialog_permissions_overlay">Recorder needs \"Draw over other apps\" permission to record your screen. Press allow, enable the permission in the settings and come back to Recorder</string>
   <!-- No permissions granted error -->
+  <string name="snack_permissions_no_permission">Required permissions were denied, enable them from Settings app to start recording</string>
 </resources>

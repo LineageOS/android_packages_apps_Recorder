@@ -81,6 +81,10 @@
   <string name="screen_last_title">Azken grabaketa</string>
   <!-- Screen recorder last item message -->
   <string name="screen_last_message">Data: %1$s\nIraupena: %2$d segundo</string>
+  <!-- Screen recorder notification overlay title -->
+  <string name="screen_overlay_notif_title">Grabatzeko prest</string>
+  <!-- Screen recorder notification overlay message -->
+  <string name="screen_overlay_notif_message">Sakatu Grabatu botoia hasteko prest zaudenean</string>
   <!-- Permissions -->
   <!-- Permissions dialog title -->
   <string name="dialog_permissions_title">Baimenak</string>
@@ -102,6 +106,8 @@
   <string name="dialog_permissions_ask">Galdetu berriro</string>
   <!-- Permissions dialog action: dismiss dialog -->
   <string name="dialog_permissions_dismiss">Baztertu</string>
+  <!-- Message: overlay permission denied. Make sure "Draw over other apps" matches settings strings -->
+  <string name="dialog_permissions_overlay">Grabagailuak \"Marraztu beste aplikazioen gainean\" baimena behar du zure pantaila grabatzeko. Sakatu baimendu, gaitu baimena ezarpenetan eta itzuli grabagailura</string>
   <!-- No permissions granted error -->
   <string name="snack_permissions_no_permission">Beharrezkoak diren baimenak ukatu dira, gaitu itzazu ezarpenen aplikaziotik grabatzen hasteko</string>
 </resources>

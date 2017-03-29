@@ -81,6 +81,10 @@
   <string name="screen_last_title">Laatste opname</string>
   <!-- Screen recorder last item message -->
   <string name="screen_last_message">Datum: %1$s\nLengte: %2$d seconden</string>
+  <!-- Screen recorder notification overlay title -->
+  <string name="screen_overlay_notif_title">Klaar voor opname</string>
+  <!-- Screen recorder notification overlay message -->
+  <string name="screen_overlay_notif_message">Tik op de opnameknop wanneer u wilt beginnen</string>
   <!-- Permissions -->
   <!-- Permissions dialog title -->
   <string name="dialog_permissions_title">Machtigingen</string>
@@ -102,6 +106,7 @@
   <string name="dialog_permissions_ask">Opnieuw vragen</string>
   <!-- Permissions dialog action: dismiss dialog -->
   <string name="dialog_permissions_dismiss">Sluiten</string>
+  <!-- Message: overlay permission denied. Make sure "Draw over other apps" matches settings strings -->
   <!-- No permissions granted error -->
   <string name="snack_permissions_no_permission">Vereiste machtigingen werden geweigerd, schakel ze in bij Instellingen om opname te starten</string>
 </resources>

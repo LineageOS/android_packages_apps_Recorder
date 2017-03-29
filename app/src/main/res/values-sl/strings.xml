@@ -81,6 +81,10 @@
   <string name="screen_last_title">Zadnji posnetek</string>
   <!-- Screen recorder last item message -->
   <string name="screen_last_message">Datum: %1$s\nDolžina: %2$d sekund</string>
+  <!-- Screen recorder notification overlay title -->
+  <string name="screen_overlay_notif_title">Pripravljen za snemanje</string>
+  <!-- Screen recorder notification overlay message -->
+  <string name="screen_overlay_notif_message">Ko ste pripravljeni začeti, pritisnite gumb za snemanje</string>
   <!-- Permissions -->
   <!-- Permissions dialog title -->
   <string name="dialog_permissions_title">Dovoljenja</string>
@@ -102,6 +106,8 @@
   <string name="dialog_permissions_ask">Ponovno vprašaj</string>
   <!-- Permissions dialog action: dismiss dialog -->
   <string name="dialog_permissions_dismiss">Opusti</string>
+  <!-- Message: overlay permission denied. Make sure "Draw over other apps" matches settings strings -->
+  <string name="dialog_permissions_overlay">Snemalnik potrebuje dovoljenje \"risanje preko ostalih aplikacij\" za snemanje zaslona. Pritisnite dovoli, omogočite dovoljenje v nastavitvah in se vrnite v snemalnik</string>
   <!-- No permissions granted error -->
   <string name="snack_permissions_no_permission">Zahtevana dovoljenja so bila zavrnjena, omogočite jih v aplikaciji Nastavitve, da začnete snemati</string>
 </resources>

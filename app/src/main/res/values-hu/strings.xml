@@ -81,6 +81,8 @@
   <string name="screen_last_title">Utolsó felvétel</string>
   <!-- Screen recorder last item message -->
   <string name="screen_last_message">Dátum: %1$s\nHossz: %2$d másodperc</string>
+  <!-- Screen recorder notification overlay title -->
+  <!-- Screen recorder notification overlay message -->
   <!-- Permissions -->
   <!-- Permissions dialog title -->
   <string name="dialog_permissions_title">Jogosultságok</string>
@@ -102,6 +104,7 @@
   <string name="dialog_permissions_ask">Kérdezze meg újra</string>
   <!-- Permissions dialog action: dismiss dialog -->
   <string name="dialog_permissions_dismiss">Elvetés</string>
+  <!-- Message: overlay permission denied. Make sure "Draw over other apps" matches settings strings -->
   <!-- No permissions granted error -->
   <string name="snack_permissions_no_permission">Szükséges engedélyek megtagadva, engedélyezze őket a Beállításokban a felvétel megkezdéséhez</string>
 </resources>

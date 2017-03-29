@@ -52,6 +52,8 @@
   <string name="screen_recording_message">Ekran jest nagrywany\u2026</string>
   <!-- Screen recorder last item title -->
   <!-- Screen recorder last item message -->
+  <!-- Screen recorder notification overlay title -->
+  <!-- Screen recorder notification overlay message -->
   <!-- Permissions -->
   <!-- Permissions dialog title -->
   <!-- Message: microphone access denied -->
@@ -59,9 +61,11 @@
   <!-- Message: phone status denied -->
   <!-- Message: microphone and storage access denied -->
   <!-- Message: microphone and phone status access denied -->
+  <string name="dialog_permissions_mic_phone">Rejestrator potrzebuje uprawnień mikrofonu w celu nagrywania dźwięku i dostępu do statusu telefonu, aby zapobiec nagrywaniu w trakcie wykonywania połączenia</string>
   <!-- Message: storage and phone status access denied -->
   <!-- Message: microphone, storage and phone status access denied -->
   <!-- Permissions dialog action: ask permissions access again -->
   <!-- Permissions dialog action: dismiss dialog -->
+  <!-- Message: overlay permission denied. Make sure "Draw over other apps" matches settings strings -->
   <!-- No permissions granted error -->
 </resources>

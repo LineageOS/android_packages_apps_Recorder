@@ -81,6 +81,10 @@
   <string name="screen_last_title">마지막 녹화</string>
   <!-- Screen recorder last item message -->
   <string name="screen_last_message">날짜: %1$s\n길이: %2$d초</string>
+  <!-- Screen recorder notification overlay title -->
+  <string name="screen_overlay_notif_title">녹화 준비 완료</string>
+  <!-- Screen recorder notification overlay message -->
+  <string name="screen_overlay_notif_message">녹화할 준비가 되면 녹화 버튼을 누르세요.</string>
   <!-- Permissions -->
   <!-- Permissions dialog title -->
   <string name="dialog_permissions_title">권한</string>
@@ -102,6 +106,8 @@
   <string name="dialog_permissions_ask">다시 묻기</string>
   <!-- Permissions dialog action: dismiss dialog -->
   <string name="dialog_permissions_dismiss">다시 묻지 않기</string>
+  <!-- Message: overlay permission denied. Make sure "Draw over other apps" matches settings strings -->
+  <string name="dialog_permissions_overlay">녹음/녹화 도구는 화면을 녹화하기 위해 \"다른 앱 위에 그리기\" 권한이 필요합니다. 설정에서 권한을 허용하고 녹음/녹화 도구로 돌아오세요.</string>
   <!-- No permissions granted error -->
   <string name="snack_permissions_no_permission">필요한 권한이 거부되었습니다. 설정 앱에서 권한을 허용한 다음 녹음/녹화를 시작하세요.</string>
 </resources>

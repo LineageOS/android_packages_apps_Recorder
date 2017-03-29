@@ -81,6 +81,10 @@
   <string name="screen_last_title">Ultima registrazione</string>
   <!-- Screen recorder last item message -->
   <string name="screen_last_message">Data: %1$s\nDurata: %2$d secondi</string>
+  <!-- Screen recorder notification overlay title -->
+  <string name="screen_overlay_notif_title">Pronto per registrare</string>
+  <!-- Screen recorder notification overlay message -->
+  <string name="screen_overlay_notif_message">Premi il pulsante registra per iniziare la registrazione</string>
   <!-- Permissions -->
   <!-- Permissions dialog title -->
   <string name="dialog_permissions_title">Permessi</string>
@@ -102,6 +106,8 @@
   <string name="dialog_permissions_ask">Chiedi di nuovo</string>
   <!-- Permissions dialog action: dismiss dialog -->
   <string name="dialog_permissions_dismiss">Annulla</string>
+  <!-- Message: overlay permission denied. Make sure "Draw over other apps" matches settings strings -->
+  <string name="dialog_permissions_overlay">Registratore necessita del permesso \"Spostamento su altre app\" per registrare lo schermo. Premi consenti, abilita il permesso nelle impostazioni e ritorna al Registratore per cominciare</string>
   <!-- No permissions granted error -->
   <string name="snack_permissions_no_permission">I permessi richiesti sono stati negati, abilitali dall\'app Impostazioni per iniziare a registrare</string>
 </resources>

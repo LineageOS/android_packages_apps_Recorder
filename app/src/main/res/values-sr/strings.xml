@@ -74,6 +74,8 @@
   <string name="screen_last_title">Задњи запис</string>
   <!-- Screen recorder last item message -->
   <string name="screen_last_message">Датум: %1$s\nТрајање: %2$d секунди</string>
+  <!-- Screen recorder notification overlay title -->
+  <!-- Screen recorder notification overlay message -->
   <!-- Permissions -->
   <!-- Permissions dialog title -->
   <string name="dialog_permissions_title">Дозволе</string>
@@ -91,6 +93,7 @@
   <string name="dialog_permissions_ask">Питај поново</string>
   <!-- Permissions dialog action: dismiss dialog -->
   <string name="dialog_permissions_dismiss">Одбаци</string>
+  <!-- Message: overlay permission denied. Make sure "Draw over other apps" matches settings strings -->
   <!-- No permissions granted error -->
   <string name="snack_permissions_no_permission">Потребна дозвола је одбијена, омогући је из апликације за подешавање да започнете снимање</string>
 </resources>

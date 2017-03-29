@@ -81,6 +81,8 @@
   <string name="screen_last_title">Son kayıt</string>
   <!-- Screen recorder last item message -->
   <string name="screen_last_message">Tarih: %1$s\nSüre: %2$d saniye</string>
+  <!-- Screen recorder notification overlay title -->
+  <!-- Screen recorder notification overlay message -->
   <!-- Permissions -->
   <!-- Permissions dialog title -->
   <string name="dialog_permissions_title">İzinler</string>
@@ -102,6 +104,7 @@
   <string name="dialog_permissions_ask">Tekrar sor</string>
   <!-- Permissions dialog action: dismiss dialog -->
   <string name="dialog_permissions_dismiss">Reddet</string>
+  <!-- Message: overlay permission denied. Make sure "Draw over other apps" matches settings strings -->
   <!-- No permissions granted error -->
   <string name="snack_permissions_no_permission">Gerekli izinler reddedildi, kayda başlamak için bunları Ayarlar uygulamasından etkinleştirin</string>
 </resources>

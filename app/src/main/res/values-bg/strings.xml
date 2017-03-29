@@ -81,6 +81,10 @@
   <string name="screen_last_title">Последен запис</string>
   <!-- Screen recorder last item message -->
   <string name="screen_last_message">Дата: %1$s\nПродължителност: %2$d секунди</string>
+  <!-- Screen recorder notification overlay title -->
+  <string name="screen_overlay_notif_title">Готово за запис</string>
+  <!-- Screen recorder notification overlay message -->
+  <string name="screen_overlay_notif_message">Натиснете бутона за запис, когато сте готови да започнете</string>
   <!-- Permissions -->
   <!-- Permissions dialog title -->
   <string name="dialog_permissions_title">Разрешения</string>
@@ -102,6 +106,8 @@
   <string name="dialog_permissions_ask">Попитай отново</string>
   <!-- Permissions dialog action: dismiss dialog -->
   <string name="dialog_permissions_dismiss">Отхвърли</string>
+  <!-- Message: overlay permission denied. Make sure "Draw over other apps" matches settings strings -->
+  <string name="dialog_permissions_overlay">Записвачката изисква разрешение \"Изчертай върху другите приложения\" за да записвате вашия екран. Натиснете позволявам разрешението в настройките и се върнете отново към Записвачката</string>
   <!-- No permissions granted error -->
   <string name="snack_permissions_no_permission">Необходимите разрешения са отказани, разрешете ги от настройките на приложението и започнете запис</string>
 </resources>

@@ -81,6 +81,10 @@
   <string name="screen_last_title">Letzte Aufnahme</string>
   <!-- Screen recorder last item message -->
   <string name="screen_last_message">Aufnahmezeitpunkt: %1$s\nAufzeichnungsdauer: %2$d Sekunden</string>
+  <!-- Screen recorder notification overlay title -->
+  <string name="screen_overlay_notif_title">Bereit zur Aufnahme</string>
+  <!-- Screen recorder notification overlay message -->
+  <string name="screen_overlay_notif_message">Drücken Sie die Aufnahme-Schaltfläche, um die Aufnahme zu starten</string>
   <!-- Permissions -->
   <!-- Permissions dialog title -->
   <string name="dialog_permissions_title">Berechtigungen</string>
@@ -102,6 +106,8 @@
   <string name="dialog_permissions_ask">Erneut nachfragen</string>
   <!-- Permissions dialog action: dismiss dialog -->
   <string name="dialog_permissions_dismiss">Verwerfen</string>
+  <!-- Message: overlay permission denied. Make sure "Draw over other apps" matches settings strings -->
+  <string name="dialog_permissions_overlay">Rekorder benötigt die Berechtigung \"Über anderen Apps einblenden\", um den Bildschirm aufzuzeichnen. Lassen Sie die Berechtigung in den Einstellungen zu und kehren zu Rekorder zurück</string>
   <!-- No permissions granted error -->
   <string name="snack_permissions_no_permission">Erforderliche Berechtigungen wurden verweigert, aktivieren Sie diese in den Einstellungen, um mit der Aufnahme zu beginnen</string>
 </resources>

@@ -81,6 +81,10 @@
   <string name="screen_last_title">Ultima înregistrare</string>
   <!-- Screen recorder last item message -->
   <string name="screen_last_message">Data: %1$s\nDurata: %2$d secunde</string>
+  <!-- Screen recorder notification overlay title -->
+  <string name="screen_overlay_notif_title">Gata de înregistrare</string>
+  <!-- Screen recorder notification overlay message -->
+  <string name="screen_overlay_notif_message">Apăsaţi butonul de înregistrare atunci când sunteţi gata pentru a începe</string>
   <!-- Permissions -->
   <!-- Permissions dialog title -->
   <string name="dialog_permissions_title">Permisiuni</string>
@@ -102,6 +106,8 @@
   <string name="dialog_permissions_ask">Cere din nou</string>
   <!-- Permissions dialog action: dismiss dialog -->
   <string name="dialog_permissions_dismiss">Renunţaţi</string>
+  <!-- Message: overlay permission denied. Make sure "Draw over other apps" matches settings strings -->
+  <string name="dialog_permissions_overlay">Recorder are nevoie de permisiunea \"Afișează peste alte aplicații\" pentru a înregistra ecranul dvs. Atingeți permite, activați permisiunea în setări şi întoarceți-vă la Recorder</string>
   <!-- No permissions granted error -->
   <string name="snack_permissions_no_permission">Permisiunile necesare au fost refuzate, activați-le din aplicația Setări pentru a începe înregistrarea</string>
 </resources>
