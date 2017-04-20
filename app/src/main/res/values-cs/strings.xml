@@ -82,7 +82,9 @@
   <!-- Screen recorder last item message -->
   <string name="screen_last_message">Datum: %1$s\nTrvání: %2$d sekund</string>
   <!-- Screen recorder notification overlay title -->
+  <string name="screen_overlay_notif_title">Připraveno k záznamu</string>
   <!-- Screen recorder notification overlay message -->
+  <string name="screen_overlay_notif_message">Pokud jste připraveni začít stiskněte nahrávací tlačítko</string>
   <!-- Permissions -->
   <!-- Permissions dialog title -->
   <string name="dialog_permissions_title">Oprávnění</string>
@@ -105,6 +107,7 @@
   <!-- Permissions dialog action: dismiss dialog -->
   <string name="dialog_permissions_dismiss">Neukládat</string>
   <!-- Message: overlay permission denied. Make sure "Draw over other apps" matches settings strings -->
+  <string name="dialog_permissions_overlay">Aby mohl Rekordér nahrávat Vaší obrazovku, potřebuje oprávnění „Vykreslit okna navrchu“. Prosím, povolte toto oprávnění v nastavení a vraťte se do Rekordéru</string>
   <!-- No permissions granted error -->
   <string name="snack_permissions_no_permission">Požadovaná oprávnění byla odepřena, pro spuštění nahrávání je povolte v nastavení aplikace</string>
 </resources>

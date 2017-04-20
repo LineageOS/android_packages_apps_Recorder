@@ -83,6 +83,7 @@
   <string name="screen_last_message">Datum: %1$s\nTrajanje: %2$d s</string>
   <!-- Screen recorder notification overlay title -->
   <!-- Screen recorder notification overlay message -->
+  <string name="screen_overlay_notif_message">Pritisnite tipku za snimanje kada budete spremni za početak.</string>
   <!-- Permissions -->
   <!-- Permissions dialog title -->
   <string name="dialog_permissions_title">Dopuštenja</string>

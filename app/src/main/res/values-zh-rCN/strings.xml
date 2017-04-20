@@ -109,5 +109,5 @@
   <!-- Message: overlay permission denied. Make sure "Draw over other apps" matches settings strings -->
   <string name="dialog_permissions_overlay">录制器需要“出现在其他应用上”权限来录制您的屏幕。按下允许，或在设置中启用该权限并返回录制器。</string>
   <!-- No permissions granted error -->
-  <string name="snack_permissions_no_permission">必要的权限被拒绝，在“设置”应用中启用它们才能开始录音</string>
+  <string name="snack_permissions_no_permission">必要的权限被拒绝，在“设置”应用中启用它们才能开始录制</string>
 </resources>

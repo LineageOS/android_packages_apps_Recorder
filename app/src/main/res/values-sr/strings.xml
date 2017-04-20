@@ -47,6 +47,7 @@
   <!-- Sound recorder status card title recording -->
   <string name="sound_recording_title_working">Снима се</string>
   <!-- Sound recorder status card title busy -->
+  <string name="sound_recording_title_busy">Онемогућено током снимања екрана</string>
   <!-- Sound recorder last item title -->
   <string name="sound_last_title">Задњи запис</string>
   <!-- Sound recorder last item message -->
@@ -56,7 +57,9 @@
   <string name="screen_audio_title">Микрофон</string>
   <!-- Screen recorder enabled audio card message -->
   <!-- Screen recorder disabled audio card message -->
+  <string name="screen_audio_message_off">Звук из микрофона неће бити додат видеу</string>
   <!-- Screen recorder audio permission request card message -->
+  <string name="screen_audio_warning_message">Потребно је одобрити приступ микрофону да би додали звук снимку. Додирни доле да одобриш приступ за ову апликацију</string>
   <!-- Screen recorder audio permission request card button -->
   <string name="screen_audio_warning_button_ask">Питај</string>
   <!-- Screen recorder notification storage error title -->

@@ -107,6 +107,7 @@
   <!-- Permissions dialog action: dismiss dialog -->
   <string name="dialog_permissions_dismiss">Sluiten</string>
   <!-- Message: overlay permission denied. Make sure "Draw over other apps" matches settings strings -->
+  <string name="dialog_permissions_overlay">Recorder heeft de \"Over andere apps tekenen\"-machtiging nodig. Tik op Toestaan, schakel de machtiging in in de instellingen en keer terug naar Recorder</string>
   <!-- No permissions granted error -->
   <string name="snack_permissions_no_permission">Vereiste machtigingen werden geweigerd, schakel ze in bij Instellingen om opname te starten</string>
 </resources>

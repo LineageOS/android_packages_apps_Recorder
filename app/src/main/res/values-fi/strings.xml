@@ -82,7 +82,9 @@
   <!-- Screen recorder last item message -->
   <string name="screen_last_message">Päivämäärä: %1$s\nKesto: %2$d sekuntia</string>
   <!-- Screen recorder notification overlay title -->
+  <string name="screen_overlay_notif_title">Valmis tallentamaan</string>
   <!-- Screen recorder notification overlay message -->
+  <string name="screen_overlay_notif_message">Paina Tallenna-painiketta, kun olet valmis aloittamaan</string>
   <!-- Permissions -->
   <!-- Permissions dialog title -->
   <string name="dialog_permissions_title">Käyttöoikeudet</string>
@@ -105,6 +107,7 @@
   <!-- Permissions dialog action: dismiss dialog -->
   <string name="dialog_permissions_dismiss">Hylkää</string>
   <!-- Message: overlay permission denied. Make sure "Draw over other apps" matches settings strings -->
+  <string name="dialog_permissions_overlay">Nauhoitus tarvitsee käyttöoikeuden muiden sovellusten päälle piirtämiseen näytön nauhoittamiseksi. Paina Salli, anna käyttöoikeus asetuksissa ja palaa takaisin Nauhoitukseen</string>
   <!-- No permissions granted error -->
   <string name="snack_permissions_no_permission">Tarvittavat käyttöoikeudet hylättiin, ota ne käyttöön Asetukset-sovelluksesta aloittaaksesi nauhoituksen</string>
 </resources>

@@ -107,6 +107,7 @@
   <!-- Permissions dialog action: dismiss dialog -->
   <string name="dialog_permissions_dismiss">Avvis</string>
   <!-- Message: overlay permission denied. Make sure "Draw over other apps" matches settings strings -->
+  <string name="dialog_permissions_overlay">Opptakeren trenger tillatelsen \"Ligge over andre apper\" for å kunne filme skjermen din. Trykk Tillat, endre tillatelsen i innstillingene og kom tilbake til Opptaker-appen</string>
   <!-- No permissions granted error -->
   <string name="snack_permissions_no_permission">Nødvendige tillatelser ble nektet, aktiver dem fra telefonens innstillinger for å starte å ta opp lyd</string>
 </resources>

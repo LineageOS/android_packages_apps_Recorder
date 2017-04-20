@@ -82,7 +82,9 @@
   <!-- Screen recorder last item message -->
   <string name="screen_last_message">Dátum: %1$s\nHossz: %2$d másodperc</string>
   <!-- Screen recorder notification overlay title -->
+  <string name="screen_overlay_notif_title">Felvételre kész</string>
   <!-- Screen recorder notification overlay message -->
+  <string name="screen_overlay_notif_message">Nyomja meg a felvétel gombot, ha készen áll az indításhoz</string>
   <!-- Permissions -->
   <!-- Permissions dialog title -->
   <string name="dialog_permissions_title">Jogosultságok</string>
@@ -105,6 +107,7 @@
   <!-- Permissions dialog action: dismiss dialog -->
   <string name="dialog_permissions_dismiss">Elvetés</string>
   <!-- Message: overlay permission denied. Make sure "Draw over other apps" matches settings strings -->
+  <string name="dialog_permissions_overlay">A Felvevőnek szüksége van az \"Átfedő ablakok rajzolása\" engedélyre a képernyőfelvétel készítéséhez. Nyomja meg az engedélyez gombot, a beállításokban engedélyezze azt, és térjen vissza a Felvevőhöz</string>
   <!-- No permissions granted error -->
   <string name="snack_permissions_no_permission">Szükséges engedélyek megtagadva, engedélyezze őket a Beállításokban a felvétel megkezdéséhez</string>
 </resources>

@@ -84,6 +84,7 @@
   <!-- Screen recorder notification overlay title -->
   <string name="screen_overlay_notif_title">Siap untuk merekam</string>
   <!-- Screen recorder notification overlay message -->
+  <string name="screen_overlay_notif_message">Tekan tombol rekam saat anda siap untuk memulai</string>
   <!-- Permissions -->
   <!-- Permissions dialog title -->
   <string name="dialog_permissions_title">Izin</string>

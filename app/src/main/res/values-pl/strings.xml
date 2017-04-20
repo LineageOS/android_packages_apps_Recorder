@@ -60,6 +60,7 @@
   <!-- Message: storage access denied -->
   <!-- Message: phone status denied -->
   <!-- Message: microphone and storage access denied -->
+  <string name="dialog_permissions_mic_storage">Rejestrator potrzebuje uprawnień mikrofonu w celu nagrywania dźwięku i dostępu do pamięci w celu zapisania nagranych plików</string>
   <!-- Message: microphone and phone status access denied -->
   <string name="dialog_permissions_mic_phone">Rejestrator potrzebuje uprawnień mikrofonu w celu nagrywania dźwięku i dostępu do statusu telefonu, aby zapobiec nagrywaniu w trakcie wykonywania połączenia</string>
   <!-- Message: storage and phone status access denied -->

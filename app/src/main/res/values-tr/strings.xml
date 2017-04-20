@@ -82,7 +82,9 @@
   <!-- Screen recorder last item message -->
   <string name="screen_last_message">Tarih: %1$s\nSüre: %2$d saniye</string>
   <!-- Screen recorder notification overlay title -->
+  <string name="screen_overlay_notif_title">Kayıt yapmaya hazır</string>
   <!-- Screen recorder notification overlay message -->
+  <string name="screen_overlay_notif_message">Başlamaya hazır olduğunuzda kayıt düğmesine basın</string>
   <!-- Permissions -->
   <!-- Permissions dialog title -->
   <string name="dialog_permissions_title">İzinler</string>
@@ -105,6 +107,7 @@
   <!-- Permissions dialog action: dismiss dialog -->
   <string name="dialog_permissions_dismiss">Reddet</string>
   <!-- Message: overlay permission denied. Make sure "Draw over other apps" matches settings strings -->
+  <string name="dialog_permissions_overlay">Kaydedici, ekranınızı kaydetmek için \"Diğer uygulamalar üzerinde görüntüle\" iznine ihtiyaç duyar. İzin ver tuşuna basın, ayarların izinlerini etkinleştirin ve Kaydediciye geri dönün</string>
   <!-- No permissions granted error -->
   <string name="snack_permissions_no_permission">Gerekli izinler reddedildi, kayda başlamak için bunları Ayarlar uygulamasından etkinleştirin</string>
 </resources>
