@@ -58,6 +58,7 @@
   <!-- Screen recorder enabled audio card message -->
   <string name="screen_audio_message_on">L\'enregistrement audio du microphone sera inclus dans la vidéo</string>
   <!-- Screen recorder disabled audio card message -->
+  <string name="screen_audio_message_off">L\'enregistrement audio du microphone ne sera pas inclus dans la vidéo</string>
   <!-- Screen recorder audio permission request card message -->
   <string name="screen_audio_warning_message">Vous devez accorder l\'accès au microphone pour ajouter l\'audio à l\'enregistrement. Appuyez ci-dessous pour autoriser l\'accès pour cette application</string>
   <!-- Screen recorder audio permission request card button -->
@@ -81,7 +82,9 @@
   <!-- Screen recorder last item message -->
   <string name="screen_last_message">Date: %1$s\nDurée: %2$d secondes</string>
   <!-- Screen recorder notification overlay title -->
+  <string name="screen_overlay_notif_title">Prêt à enregistrer</string>
   <!-- Screen recorder notification overlay message -->
+  <string name="screen_overlay_notif_message">Appuyez sur le bouton enregistrer quand vous êtes prêt à démarrer</string>
   <!-- Permissions -->
   <!-- Permissions dialog title -->
   <string name="dialog_permissions_title">Autorisations</string>
