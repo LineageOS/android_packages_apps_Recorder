@@ -81,7 +81,9 @@
   <!-- Screen recorder last item message -->
   <string name="screen_last_message">Data: %1$s\nDuración: %2$d segundos</string>
   <!-- Screen recorder notification overlay title -->
+  <string name="screen_overlay_notif_title">Preparada pa grabar</string>
   <!-- Screen recorder notification overlay message -->
+  <string name="screen_overlay_notif_message">Primi\'l botón de grabar cuando teas preparáu</string>
   <!-- Permissions -->
   <!-- Permissions dialog title -->
   <string name="dialog_permissions_title">Permisos</string>

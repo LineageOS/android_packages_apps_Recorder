@@ -66,7 +66,7 @@
   <!-- Screen recorder notification storage error title -->
   <string name="screen_insufficient_storage">Almacenamiento insuficiente</string>
   <!-- Screen recorder notification storage error message -->
-  <string name="screen_not_enough_storage">Sin suficiente almacenamiento disponible</string>
+  <string name="screen_not_enough_storage">Almacenamiento disponible insuficiente</string>
   <!-- Screen recorder notification title -->
   <string name="screen_notification_title">Grabadora de pantalla</string>
   <!-- Screen recorder notification message -->

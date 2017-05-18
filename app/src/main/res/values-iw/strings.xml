@@ -103,7 +103,7 @@
   <!-- Message: microphone, storage and phone status access denied -->
   <string name="dialog_permissions_mic_storage_phone">הרשמקול זקוק לגישה למיקרופון על מנת להקליט שמע, גישה לאחסון על מנת לשמור הקלטות וגישה למצב השיחה על מנת למנוע הקלטה בעת חיוג</string>
   <!-- Permissions dialog action: ask permissions access again -->
-  <string name="dialog_permissions_ask">בקש הרשאות שוב</string>
+  <string name="dialog_permissions_ask">שאל שוב</string>
   <!-- Permissions dialog action: dismiss dialog -->
   <string name="dialog_permissions_dismiss">דחה</string>
   <!-- Message: overlay permission denied. Make sure "Draw over other apps" matches settings strings -->

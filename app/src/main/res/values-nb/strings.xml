@@ -93,15 +93,15 @@
   <!-- Message: storage access denied -->
   <string name="dialog_permissions_storage">Opptaker trenger lagrings tilgang for å lagre innspilt lyd</string>
   <!-- Message: phone status denied -->
-  <string name="dialog_permissions_phone">Opptaker trenger telefon tilgang for å passe på at du ikke tar opp anropene dine</string>
+  <string name="dialog_permissions_phone">Opptaker trenger telefontilgang for å passe på at du ikke tar opp anropene dine</string>
   <!-- Message: microphone and storage access denied -->
   <string name="dialog_permissions_mic_storage">Opptaker trenger mikrofon tilgang for å spille inn lyd og lagrings tilgang for å lagre innspilt lyd</string>
   <!-- Message: microphone and phone status access denied -->
-  <string name="dialog_permissions_mic_phone">Opptaker trenger mikrofon tilgang for å spille inn lyd og telefon tilgang for å passe på at du ikke tar opp anropene dine</string>
+  <string name="dialog_permissions_mic_phone">Opptaker trenger mikrofontilgang for å spille inn lyd og telefontilgang for å passe på at du ikke tar opp anropene dine</string>
   <!-- Message: storage and phone status access denied -->
-  <string name="dialog_permissions_storage_phone">Opptaker trenger lagrings tilgang for å lagre innspilt lyd og telefon tilgang for å passe på at du ikke tar opp anropene dine</string>
+  <string name="dialog_permissions_storage_phone">Opptaker trenger lagringstilgang for å lagre innspilt lyd og telefontilgang for å passe på at du ikke tar opp anropene dine</string>
   <!-- Message: microphone, storage and phone status access denied -->
-  <string name="dialog_permissions_mic_storage_phone">Opptaker trenger mikrofon tilgang for å innspille lyd, lagrings tilgang for å lagre innspill og telefon tilgang for å passe på at du ikke tar opp anropene dine</string>
+  <string name="dialog_permissions_mic_storage_phone">Opptaker trenger mikrofontilgang for å innspille lyd, lagringstilgang for å lagre innspilte filer og telefontilgang for å passe på at du ikke tar opp anropene dine</string>
   <!-- Permissions dialog action: ask permissions access again -->
   <string name="dialog_permissions_ask">Spør igjen</string>
   <!-- Permissions dialog action: dismiss dialog -->
