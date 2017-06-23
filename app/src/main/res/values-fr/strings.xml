@@ -107,6 +107,7 @@
   <!-- Permissions dialog action: dismiss dialog -->
   <string name="dialog_permissions_dismiss">Fermer</string>
   <!-- Message: overlay permission denied. Make sure "Draw over other apps" matches settings strings -->
+  <string name="dialog_permissions_overlay">Magnétophone a besoin de la permission \"Se superposer aux autres applis\" pour enregistrer votre écran. Choisissez autoriser, activez la permission dans les paramètres et revenez dans Magnétophone</string>
   <!-- No permissions granted error -->
   <string name="snack_permissions_no_permission">Les autorisations requises ont été refusées, activez-les depuis les Paramètres pour commencer à enregistrer</string>
 </resources>
