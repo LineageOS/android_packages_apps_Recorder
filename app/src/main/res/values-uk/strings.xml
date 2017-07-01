@@ -89,7 +89,6 @@
   <!-- Permissions dialog title -->
   <string name="dialog_permissions_title">Дозволи</string>
   <!-- Message: microphone access denied -->
-  <string name="dialog_permissions_mic">Додаток «Recorder» потребує доступ до мікрофону для аудіозапису</string>
   <!-- Message: storage access denied -->
   <string name="dialog_permissions_storage">Додатку «Recorder» потрібен доступ до накопичувача для збереження записаних файлів</string>
   <!-- Message: phone status denied -->

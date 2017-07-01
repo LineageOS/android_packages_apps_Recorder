@@ -107,7 +107,7 @@
   <!-- Permissions dialog action: dismiss dialog -->
   <string name="dialog_permissions_dismiss">Descartar</string>
   <!-- Message: overlay permission denied. Make sure "Draw over other apps" matches settings strings -->
-  <string name="dialog_permissions_overlay">La Grabadora debe conceder permiso de \"Mostrar sobre otras aplicaciones\" para grabar la pantalla. Pulsa en conceder, para activar los permisos en los ajustes y volver a la Grabadora</string>
+  <string name="dialog_permissions_overlay">La grabadora necesita el permiso \"Mostrar sobre otras aplicaciones\" para grabar la pantalla. Pulsa en conceder, para activar los permisos en los ajustes y volver a la grabadora</string>
   <!-- No permissions granted error -->
   <string name="snack_permissions_no_permission">Permisos necesarios denegados, actívelos desde la aplicación de Ajustes para iniciar la grabación</string>
 </resources>
