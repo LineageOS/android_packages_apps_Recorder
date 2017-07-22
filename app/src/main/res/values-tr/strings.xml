@@ -39,7 +39,7 @@
   <!-- Permissions -->
   <!-- Sound recorder -->
   <!-- Sound recorder notification title -->
-  <string name="sound_notification_title">Ses kaydedici</string>
+  <string name="sound_notification_title">Ses Kaydedici</string>
   <!-- Sound recorder notification message -->
   <string name="sound_notification_message">Ses uzunluğu: %1$s</string>
   <!-- Sound recorder status card title ready -->
