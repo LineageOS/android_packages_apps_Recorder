@@ -17,6 +17,7 @@ package org.lineageos.recorder.sounds;
 
 import android.app.Notification;
 import android.app.NotificationManager;
+import android.app.NotificationChannel;
 import android.app.PendingIntent;
 import android.app.Service;
 import android.content.BroadcastReceiver;
@@ -279,7 +280,17 @@ public class SoundRecorderService extends Service {
         intent.addCategory(Intent.CATEGORY_LAUNCHER);
         PendingIntent pi = PendingIntent.getActivity(this, 0, intent, 0);
 
-        NotificationCompat.Builder builder = new NotificationCompat.Builder(this)
+        NotificationManager mNotificationManager =
+            (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+            String id = "soundrecorder_persist_channel";
+            CharSequence name = "Sound is being recorded";
+            String description = "Persistent notification when recording sound";
+            int importance = NotificationManager.IMPORTANCE_LOW;
+            NotificationChannel mChannel = new NotificationChannel(id, name, importance);
+            mChannel.setDescription(description);
+            mNotificationManager.createNotificationChannel(mChannel);
+
+        NotificationCompat.Builder builder = new NotificationCompat.Builder(this, "soundrecorder_persist_channel")
                 .setContentTitle(getString(R.string.sound_notification_title))
                 .setContentText(getString(R.string.sound_notification_message,
                         DateUtils.formatElapsedTime(mElapsedTime)))
@@ -307,7 +318,17 @@ public class SoundRecorderService extends Service {
 
         LastRecordHelper.setLastItem(this, mOutFilePath, mElapsedTime, true);
 
-        Notification notification = new NotificationCompat.Builder(this)
+        NotificationManager mNotificationManager =
+            (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+            String id = "soundrecorder_complete_channel";
+            CharSequence name = "Sound recording complete";
+            String description = "Notification showing sound recording is complete";
+            int importance = NotificationManager.IMPORTANCE_LOW;
+            NotificationChannel mChannel = new NotificationChannel(id, name, importance);
+            mChannel.setDescription(description);
+            mNotificationManager.createNotificationChannel(mChannel);
+
+        Notification notification = new NotificationCompat.Builder(this, "soundrecorder_complete_channel")
                 .setWhen(System.currentTimeMillis())
                 .setSmallIcon(R.drawable.ic_action_sound_record)
                 .setContentTitle(getString(R.string.sound_notification_title))
