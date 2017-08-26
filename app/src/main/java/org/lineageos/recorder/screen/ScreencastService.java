@@ -16,6 +16,7 @@
  */
 package org.lineageos.recorder.screen;
 
+import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.app.Service;
@@ -47,6 +48,10 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 public class ScreencastService extends Service {
+
+    private static final String SCREENCAST_NOTIFICATION_CHANNEL =
+            "screencast_notification_channel";
+
     public static final String EXTRA_WITHAUDIO = "withaudio";
     public static final String ACTION_START_SCREENCAST =
             "org.lineageos.recorder.screen.ACTION_START_SCREENCAST";
@@ -80,8 +85,14 @@ public class ScreencastService extends Service {
     public void onCreate() {
         super.onCreate();
 
-        mNotificationManager =
-                (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+        mNotificationManager = getSystemService(NotificationManager.class);
+        CharSequence name = getString(R.string.screen_channel_title);
+        String description = getString(R.string.screen_channel_desc);
+        NotificationChannel notificationChannel =
+                new NotificationChannel(SCREENCAST_NOTIFICATION_CHANNEL,
+                        name, NotificationManager.IMPORTANCE_LOW);
+        notificationChannel.setDescription(description);
+        mNotificationManager.createNotificationChannel(notificationChannel);
 
         IntentFilter filter = new IntentFilter();
         filter.addAction(Intent.ACTION_USER_BACKGROUND);
@@ -210,7 +221,7 @@ public class ScreencastService extends Service {
         Intent stopRecordingIntent = new Intent(ACTION_STOP_SCREENCAST);
         stopRecordingIntent.setClass(this, ScreencastService.class);
 
-        return new NotificationCompat.Builder(this)
+        return new NotificationCompat.Builder(this, SCREENCAST_NOTIFICATION_CHANNEL)
                 .setOngoing(true)
                 .setSmallIcon(R.drawable.ic_action_screen_record)
                 .setContentTitle(getString(R.string.screen_notification_title))
@@ -244,7 +255,7 @@ public class ScreencastService extends Service {
 
         Log.i(LOGTAG, "Video complete: " + file);
 
-        return new NotificationCompat.Builder(this)
+        return new NotificationCompat.Builder(this, SCREENCAST_NOTIFICATION_CHANNEL)
                 .setWhen(System.currentTimeMillis())
                 .setSmallIcon(R.drawable.ic_action_screen_record)
                 .setContentTitle(getString(R.string.screen_notification_message_done))
