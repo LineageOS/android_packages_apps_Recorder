@@ -16,8 +16,11 @@
 package org.lineageos.recorder.screen;
 
 import android.app.Notification;
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.app.Service;
+import android.content.Context;
 import android.content.Intent;
 import android.os.IBinder;
 import android.support.v4.app.NotificationCompat;
@@ -28,9 +31,14 @@ import org.lineageos.recorder.ui.OverlayLayer;
 import org.lineageos.recorder.utils.Utils;
 
 public class OverlayService extends Service {
+
+    private static final String SCREENCAST_OVERLAY_NOTIFICATION_CHANNEL =
+            "screencast_overlay_notification_channel";
+
     public static final String EXTRA_HAS_AUDIO = "extra_audio";
     private final static int FG_ID = 123;
 
+    private NotificationManager mNotificationManager;
     private OverlayLayer mLayer;
 
     @Override
@@ -46,7 +54,16 @@ public class OverlayService extends Service {
             onDestroy();
         });
 
-        Notification notification = new NotificationCompat.Builder(this)
+        CharSequence name = getString(R.string.screen_overlay_channel_title);
+        String description = getString(R.string.screen_overlay_channel_desc);
+        NotificationChannel notificationChannel =
+                new NotificationChannel(SCREENCAST_OVERLAY_NOTIFICATION_CHANNEL,
+                name, NotificationManager.IMPORTANCE_LOW);
+        notificationChannel.setDescription(description);
+        mNotificationManager.createNotificationChannel(notificationChannel);
+
+        Notification notification = new NotificationCompat.Builder(
+                this, SCREENCAST_OVERLAY_NOTIFICATION_CHANNEL)
                 .setContentTitle(getString(R.string.screen_overlay_notif_title))
                 .setContentText(getString(R.string.screen_overlay_notif_message))
                 .setSmallIcon(R.drawable.ic_action_screen_record)
@@ -61,6 +78,14 @@ public class OverlayService extends Service {
     @Override
     public IBinder onBind(Intent intent) {
         return null;
+    }
+
+    @Override
+    public void onCreate() {
+        super.onCreate();
+
+        mNotificationManager =
+                (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
     }
 
     @Override
