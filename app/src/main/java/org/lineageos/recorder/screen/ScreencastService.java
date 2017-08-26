@@ -17,6 +17,7 @@
 package org.lineageos.recorder.screen;
 
 import android.app.NotificationManager;
+import android.app.NotificationChannel;
 import android.app.PendingIntent;
 import android.app.Service;
 import android.content.BroadcastReceiver;
@@ -214,7 +215,17 @@ public class ScreencastService extends Service {
         Intent stopRecordingIntent = new Intent(ACTION_STOP_SCREENCAST);
         stopRecordingIntent.setClass(this, ScreencastService.class);
 
-        return new NotificationCompat.Builder(this)
+        NotificationManager mNotificationManager =
+            (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+            String id = "screencast_persist_channel";
+            CharSequence name = "Screen is being recorded";
+            String description = "Persistent notification when recording the screen";
+            int importance = NotificationManager.IMPORTANCE_LOW;
+            NotificationChannel mChannel = new NotificationChannel(id, name, importance);
+            mChannel.setDescription(description);
+            mNotificationManager.createNotificationChannel(mChannel);
+
+        return new NotificationCompat.Builder(this, "screencast_persist_channel")
                 .setOngoing(true)
                 .setSmallIcon(R.drawable.ic_action_screen_record)
                 .setContentTitle(getString(R.string.screen_notification_title))
@@ -248,7 +259,17 @@ public class ScreencastService extends Service {
 
         Log.i(LOGTAG, "Video complete: " + file);
 
-        return new NotificationCompat.Builder(this)
+        NotificationManager mNotificationManager =
+            (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+            String id = "screencast_complete_channel";
+            CharSequence name = "Screen record complete";
+            String description = "Notification showing screen recording is complete";
+            int importance = NotificationManager.IMPORTANCE_LOW;
+            NotificationChannel mChannel = new NotificationChannel(id, name, importance);
+            mChannel.setDescription(description);
+            mNotificationManager.createNotificationChannel(mChannel);
+
+        return new NotificationCompat.Builder(this, "screencast_complete_channel")
                 .setWhen(System.currentTimeMillis())
                 .setSmallIcon(R.drawable.ic_action_screen_record)
                 .setContentTitle(getString(R.string.screen_notification_message_done))
