@@ -17,6 +17,7 @@
 package org.lineageos.recorder.screen;
 
 import android.app.NotificationManager;
+import android.app.NotificationChannel;
 import android.app.PendingIntent;
 import android.app.Service;
 import android.content.BroadcastReceiver;
@@ -210,7 +211,15 @@ public class ScreencastService extends Service {
         Intent stopRecordingIntent = new Intent(ACTION_STOP_SCREENCAST);
         stopRecordingIntent.setClass(this, ScreencastService.class);
 
-        return new NotificationCompat.Builder(this)
+        String id = "screencast_persist_channel";
+        CharSequence name = getString(R.string.screen_persistent_channel_title);
+        String description = getString(R.string.screen_persistent_channel_desc);
+        int importance = NotificationManager.IMPORTANCE_LOW;
+        NotificationChannel notificationChannel = new NotificationChannel(id, name, importance);
+        notificationChannel.setDescription(description);
+        mNotificationManager.createNotificationChannel(notificationChannel);
+
+        return new NotificationCompat.Builder(this, id)
                 .setOngoing(true)
                 .setSmallIcon(R.drawable.ic_action_screen_record)
                 .setContentTitle(getString(R.string.screen_notification_title))
@@ -241,7 +250,15 @@ public class ScreencastService extends Service {
 
         Log.i(LOGTAG, "Video complete: " + file);
 
-        return new NotificationCompat.Builder(this)
+        String id = "screencast_complete_channel";
+        CharSequence name = getString(R.string.screen_complete_channel_title);
+        String description = getString(R.string.screen_complete_channel_desc);
+        int importance = NotificationManager.IMPORTANCE_LOW;
+        NotificationChannel notificationChannel = new NotificationChannel(id, name, importance);
+        notificationChannel.setDescription(description);
+        mNotificationManager.createNotificationChannel(notificationChannel);
+
+        return new NotificationCompat.Builder(this, id)
                 .setWhen(System.currentTimeMillis())
                 .setSmallIcon(R.drawable.ic_action_screen_record)
                 .setContentTitle(getString(R.string.screen_notification_message_done))

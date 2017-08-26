@@ -17,6 +17,7 @@ package org.lineageos.recorder.sounds;
 
 import android.app.Notification;
 import android.app.NotificationManager;
+import android.app.NotificationChannel;
 import android.app.PendingIntent;
 import android.app.Service;
 import android.content.BroadcastReceiver;
@@ -77,6 +78,7 @@ public class SoundRecorderService extends Service {
     private Thread mVisualizerThread;
     private byte[] mData;
     private RecorderStatus mStatus = RecorderStatus.STOPPED;
+    private NotificationManager mNotificationManager;
     private final BroadcastReceiver mShutdownReceiver = new BroadcastReceiver() {
         @Override
         public void onReceive(Context context, Intent intent) {
@@ -105,6 +107,10 @@ public class SoundRecorderService extends Service {
     @Override
     public void onCreate() {
         super.onCreate();
+
+        mNotificationManager =
+            (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+
         registerReceiver(mShutdownReceiver, new IntentFilter(Intent.ACTION_SHUTDOWN));
     }
 
@@ -276,7 +282,15 @@ public class SoundRecorderService extends Service {
         Intent intent = new Intent(this, RecorderActivity.class);
         PendingIntent pi = PendingIntent.getActivity(this, 0, intent, 0);
 
-        NotificationCompat.Builder builder = new NotificationCompat.Builder(this)
+        String id = "soundrecorder_persist_channel";
+        CharSequence name = getString(R.string.sound_persistent_channel_title);
+        String description = getString(R.string.sound_persistent_channel_desc);
+        int importance = NotificationManager.IMPORTANCE_LOW;
+        NotificationChannel notificationChannel = new NotificationChannel(id, name, importance);
+        notificationChannel.setDescription(description);
+        mNotificationManager.createNotificationChannel(notificationChannel);
+
+        NotificationCompat.Builder builder = new NotificationCompat.Builder(this, id)
                 .setContentTitle(getString(R.string.sound_notification_title))
                 .setContentText(getString(R.string.sound_notification_message,
                         DateUtils.formatElapsedTime(mElapsedTime / 1000)))
@@ -301,7 +315,15 @@ public class SoundRecorderService extends Service {
 
         LastRecordHelper.setLastItem(this, mOutFilePath, mElapsedTime, true);
 
-        Notification notification = new NotificationCompat.Builder(this)
+        String id = "soundrecorder_complete_channel";
+        CharSequence name = getString(R.string.sound_complete_channel_title);
+        String description = getString(R.string.sound_complete_channel_desc);
+        int importance = NotificationManager.IMPORTANCE_LOW;
+        NotificationChannel notificationChannel = new NotificationChannel(id, name, importance);
+        notificationChannel.setDescription(description);
+        mNotificationManager.createNotificationChannel(notificationChannel);
+
+        Notification notification = new NotificationCompat.Builder(this, id)
                 .setWhen(System.currentTimeMillis())
                 .setSmallIcon(R.drawable.ic_action_sound_record)
                 .setContentTitle(getString(R.string.sound_notification_title))
