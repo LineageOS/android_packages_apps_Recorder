@@ -16,6 +16,7 @@
 package org.lineageos.recorder.sounds;
 
 import android.app.Notification;
+import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.app.Service;
@@ -54,6 +55,10 @@ public class SoundRecorderService extends Service {
     private static final String ACTION_STARTED = "org.lineageos.recorder.sounds.STARTED_SOUND";
     private static final String ACTION_STOPPED = "org.lineageos.recorder.sounds.STOPPED_SOUND";
     private static final String EXTRA_FILE = "extra_filename";
+    private static final String SOUNDRECORDER_PERSIST_NOTIFICATION_CHANNEL =
+            "soundrecorder_persist_notification_channel";
+    private static final String SOUNDRECORDER_COMPLETE_NOTIFICATION_CHANNEL =
+            "soundrecorder_complete_notification_channel";
 
     private static final String TAG = "SoundRecorderService";
     private static final File RECORDINGS_DIR =
@@ -77,6 +82,7 @@ public class SoundRecorderService extends Service {
     private Thread mVisualizerThread;
     private byte[] mData;
     private RecorderStatus mStatus = RecorderStatus.STOPPED;
+    private NotificationManager mNotificationManager;
     private final BroadcastReceiver mShutdownReceiver = new BroadcastReceiver() {
         @Override
         public void onReceive(Context context, Intent intent) {
@@ -105,6 +111,9 @@ public class SoundRecorderService extends Service {
     @Override
     public void onCreate() {
         super.onCreate();
+
+        mNotificationManager = getSystemService(NotificationManager.class);
+
         registerReceiver(mShutdownReceiver, new IntentFilter(Intent.ACTION_SHUTDOWN));
     }
 
@@ -254,11 +263,8 @@ public class SoundRecorderService extends Service {
 
     private void startTimer() {
         Timer timer = new Timer();
-        mTimerListener = (seconds -> {
-            NotificationManager nm = (NotificationManager)
-                    getSystemService(Context.NOTIFICATION_SERVICE);
-            nm.notify(NOTIFICATION_ID, createRecordingNotification());
-        });
+        mTimerListener = (seconds ->
+                mNotificationManager.notify(NOTIFICATION_ID, createRecordingNotification()));
 
         mTask = new TimerTask() {
             @Override
@@ -276,7 +282,16 @@ public class SoundRecorderService extends Service {
         Intent intent = new Intent(this, RecorderActivity.class);
         PendingIntent pi = PendingIntent.getActivity(this, 0, intent, 0);
 
-        NotificationCompat.Builder builder = new NotificationCompat.Builder(this)
+        CharSequence name = getString(R.string.sound_persistent_channel_title);
+        String description = getString(R.string.sound_persistent_channel_desc);
+        NotificationChannel notificationChannel =
+                new NotificationChannel(SOUNDRECORDER_PERSIST_NOTIFICATION_CHANNEL,
+                        name, NotificationManager.IMPORTANCE_LOW);
+        notificationChannel.setDescription(description);
+        mNotificationManager.createNotificationChannel(notificationChannel);
+
+        NotificationCompat.Builder builder = new NotificationCompat.Builder(
+                this, SOUNDRECORDER_PERSIST_NOTIFICATION_CHANNEL)
                 .setContentTitle(getString(R.string.sound_notification_title))
                 .setContentText(getString(R.string.sound_notification_message,
                         DateUtils.formatElapsedTime(mElapsedTime / 1000)))
@@ -301,7 +316,16 @@ public class SoundRecorderService extends Service {
 
         LastRecordHelper.setLastItem(this, mOutFilePath, mElapsedTime, true);
 
-        Notification notification = new NotificationCompat.Builder(this)
+        CharSequence name = getString(R.string.sound_complete_channel_title);
+        String description = getString(R.string.sound_complete_channel_desc);
+        NotificationChannel notificationChannel =
+                new NotificationChannel(SOUNDRECORDER_COMPLETE_NOTIFICATION_CHANNEL,
+                        name, NotificationManager.IMPORTANCE_LOW);
+        notificationChannel.setDescription(description);
+        mNotificationManager.createNotificationChannel(notificationChannel);
+
+        Notification notification = new NotificationCompat.Builder(
+                this, SOUNDRECORDER_COMPLETE_NOTIFICATION_CHANNEL)
                 .setWhen(System.currentTimeMillis())
                 .setSmallIcon(R.drawable.ic_action_sound_record)
                 .setContentTitle(getString(R.string.sound_notification_title))
@@ -312,9 +336,7 @@ public class SoundRecorderService extends Service {
                 .setContentIntent(pi)
                 .build();
 
-        NotificationManager nm = (NotificationManager)
-                getSystemService(Context.NOTIFICATION_SERVICE);
-        nm.notify(NOTIFICATION_ID, notification);
+        mNotificationManager.notify(NOTIFICATION_ID, notification);
     }
 
     public enum RecorderStatus {
