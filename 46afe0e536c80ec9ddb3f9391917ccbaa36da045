@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6b12b260_53ac96ad",
+        "filename": "app/src/main/java/org/lineageos/recorder/screen/ScreencastService.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 264,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2017-08-27T07:55:47Z",
+      "side": 1,
+      "message": "remove the - from the variable",
+      "revId": "46afe0e536c80ec9ddb3f9391917ccbaa36da045",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
