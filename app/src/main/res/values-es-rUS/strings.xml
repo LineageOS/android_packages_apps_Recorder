@@ -101,13 +101,13 @@
   <!-- Message: storage and phone status access denied -->
   <string name="dialog_permissions_storage_phone">La grabadora de sonidos necesita acceder al almacenamiento para guardar las grabaciones y al estado del teléfono para evitar grabar durante una llamada</string>
   <!-- Message: microphone, storage and phone status access denied -->
-  <string name="dialog_permissions_mic_storage_phone">La grabadora de sonido necesita acceder al micrófono para grabar el audio, al almacenamiento para guardar las grabaciones y al estado del teléfono para evitar grabar durante una llamada</string>
+  <string name="dialog_permissions_mic_storage_phone">La grabadora necesita acceder al micrófono para grabar el audio, al almacenamiento para guardar las grabaciones y al estado del teléfono para evitar grabar durante una llamada</string>
   <!-- Permissions dialog action: ask permissions access again -->
   <string name="dialog_permissions_ask">Preguntar de nuevo</string>
   <!-- Permissions dialog action: dismiss dialog -->
   <string name="dialog_permissions_dismiss">Descartar</string>
   <!-- Message: overlay permission denied. Make sure "Draw over other apps" matches settings strings -->
-  <string name="dialog_permissions_overlay">La grabadora necesita el permiso \"Mostrar sobre otras aplicaciones\" para grabar la pantalla. Pulsa en conceder, para activar los permisos en los ajustes y volver a la grabadora</string>
+  <string name="dialog_permissions_overlay">La grabadora necesita el permiso «Mostrarse sobre otras aplicaciones» para grabar la pantalla. Pulsa en conceder, para activar los permisos en los ajustes y volver a la grabadora</string>
   <!-- No permissions granted error -->
   <string name="snack_permissions_no_permission">Permisos necesarios denegados, actívelos desde la aplicación de Ajustes para iniciar la grabación</string>
 </resources>
