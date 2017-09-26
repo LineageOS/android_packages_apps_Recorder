@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- Copyright (c) 2017 The LineageOS Project
+<?xml version="1.0" encoding="utf-8"?><!-- Copyright (c) 2017 The LineageOS Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -19,9 +18,8 @@
     android:viewportHeight="24"
     android:viewportWidth="24">
 
-    <path android:pathData="M0,0 L24,0 L24,24 L0,24 Z" />
     <path
-        android:fillColor="@color/white"
+        android:fillColor="@color/black"
         android:pathData="M18,16.08 C17.24,16.08,16.56,16.38,16.04,16.85 L8.91,12.7
 C8.96,12.47,9,12.24,9,12 S8.96,11.53,8.91,11.3 L15.96,7.19
 C16.5,7.69,17.21,8,18,8 C19.66,8,21,6.66,21,5 S19.66,2,18,2 S15,3.34,15,5

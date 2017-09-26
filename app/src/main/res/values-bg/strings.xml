@@ -18,10 +18,8 @@
   <string name="app_name">Записвачка</string>
   <!-- Fragment titles -->
   <!-- Sound recorder fragment title -->
-  <string name="fragment_sounds">Звук</string>
-  <!-- Screen recorder fragment title -->
-  <string name="fragment_screen">Екран</string>
-  <!-- Common actions -->
+    <!-- Screen recorder fragment title -->
+    <!-- Common actions -->
   <!-- Share action for notification -->
   <string name="share">Споделяне</string>
   <!-- Stop action for notification -->
@@ -43,25 +41,20 @@
   <!-- Sound recorder notification message -->
   <string name="sound_notification_message">Продължителност на аудио запис: %1$s</string>
   <!-- Sound recorder status card title ready -->
-  <string name="sound_recording_title_ready">Готово за запис</string>
-  <!-- Sound recorder status card title recording -->
+    <!-- Sound recorder status card title recording -->
   <string name="sound_recording_title_working">Записване</string>
   <!-- Sound recorder status card title busy -->
-  <string name="sound_recording_title_busy">Деактивиране при запис на екран</string>
-  <!-- Sound recorder last item title -->
+    <!-- Sound recorder last item title -->
   <string name="sound_last_title">Последен запис</string>
   <!-- Sound recorder last item message -->
-  <string name="sound_last_message">Дата: %1$s\nПродължителност: %2$d секунди</string>
-  <!-- Screen recorder -->
+    <!-- Screen recorder -->
   <!-- Screen recorder audio card title -->
-  <string name="screen_audio_title">Микрофон</string>
-  <!-- Screen recorder enabled audio card message -->
+    <!-- Screen recorder enabled audio card message -->
   <string name="screen_audio_message_on">Звукът от микрофона ще бъде включен във видеото</string>
   <!-- Screen recorder disabled audio card message -->
   <string name="screen_audio_message_off">Звукът от микрофона няма да бъде включен във видеото</string>
   <!-- Screen recorder audio permission request card message -->
-  <string name="screen_audio_warning_message">Трябва да предоставите достъп до микрофона за да добавите аудио към записа. Натиснете по-долу, за да разрешите достъп на това приложение</string>
-  <!-- Screen recorder audio permission request card button -->
+    <!-- Screen recorder audio permission request card button -->
   <string name="screen_audio_warning_button_ask">Попитай</string>
   <!-- Screen recorder notification storage error title -->
   <string name="screen_insufficient_storage">Недостатъчен размер на паметта</string>
@@ -74,8 +67,7 @@
   <!-- Screen recorder notification share title -->
   <string name="screen_notification_message_done">Готово за споделяне</string>
   <!-- Screen recorder status card title -->
-  <string name="screen_recording_title">Записване</string>
-  <!-- Screen recorder status message -->
+    <!-- Screen recorder status message -->
   <string name="screen_recording_message">Екрана се записва\u2026</string>
   <!-- Screen recorder last item title -->
   <string name="screen_last_title">Последен запис</string>

@@ -18,10 +18,8 @@
   <string name="app_name">Regjistruesi</string>
   <!-- Fragment titles -->
   <!-- Sound recorder fragment title -->
-  <string name="fragment_sounds">Tingulli</string>
-  <!-- Screen recorder fragment title -->
-  <string name="fragment_screen">Ekrani</string>
-  <!-- Common actions -->
+    <!-- Screen recorder fragment title -->
+    <!-- Common actions -->
   <!-- Share action for notification -->
   <string name="share">Ndaj</string>
   <!-- Stop action for notification -->
@@ -43,25 +41,20 @@
   <!-- Sound recorder notification message -->
   <string name="sound_notification_message">Gjatësia e audios: %1$s</string>
   <!-- Sound recorder status card title ready -->
-  <string name="sound_recording_title_ready">Gati për të regjistruar</string>
-  <!-- Sound recorder status card title recording -->
+    <!-- Sound recorder status card title recording -->
   <string name="sound_recording_title_working">Duke regjistruar</string>
   <!-- Sound recorder status card title busy -->
-  <string name="sound_recording_title_busy">E çaktivizuar gjatë regjistrimit të ekranit</string>
-  <!-- Sound recorder last item title -->
+    <!-- Sound recorder last item title -->
   <string name="sound_last_title">Regjistrimi i fundit</string>
   <!-- Sound recorder last item message -->
-  <string name="sound_last_message">Data: %1$s\nKohëzgjatja: %2$d sekonda</string>
-  <!-- Screen recorder -->
+    <!-- Screen recorder -->
   <!-- Screen recorder audio card title -->
-  <string name="screen_audio_title">Mikrofoni</string>
-  <!-- Screen recorder enabled audio card message -->
+    <!-- Screen recorder enabled audio card message -->
   <string name="screen_audio_message_on">Audioja nga mikrofoni do të përfshihet në video</string>
   <!-- Screen recorder disabled audio card message -->
   <string name="screen_audio_message_off">Audioja nga mikrofoni nuk do të përfshihet në video</string>
   <!-- Screen recorder audio permission request card message -->
-  <string name="screen_audio_warning_message">Duhet t\'i japësh akses mikrofonit në mënyrë që t\'i shtosh audio regjistrimit. Shtyp më poshtë për të lejuar aksesin për këtë aplikacion</string>
-  <!-- Screen recorder audio permission request card button -->
+    <!-- Screen recorder audio permission request card button -->
   <string name="screen_audio_warning_button_ask">Pyet</string>
   <!-- Screen recorder notification storage error title -->
   <string name="screen_insufficient_storage">Memorie e pamjaftueshme</string>
@@ -74,8 +67,7 @@
   <!-- Screen recorder notification share title -->
   <string name="screen_notification_message_done">Gati për t\'u ndarë</string>
   <!-- Screen recorder status card title -->
-  <string name="screen_recording_title">Duke regjistruar</string>
-  <!-- Screen recorder status message -->
+    <!-- Screen recorder status message -->
   <string name="screen_recording_message">Ekrani është duke u regjistruar\u2026</string>
   <!-- Screen recorder last item title -->
   <string name="screen_last_title">Regjistrimi i fundit</string>

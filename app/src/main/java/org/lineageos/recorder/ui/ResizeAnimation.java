@@ -15,6 +15,7 @@
  */
 package org.lineageos.recorder.ui;
 
+import android.util.Log;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.Transformation;

@@ -18,10 +18,8 @@
   <string name="app_name">녹음/녹화 도구</string>
   <!-- Fragment titles -->
   <!-- Sound recorder fragment title -->
-  <string name="fragment_sounds">소리</string>
-  <!-- Screen recorder fragment title -->
-  <string name="fragment_screen">화면</string>
-  <!-- Common actions -->
+    <!-- Screen recorder fragment title -->
+    <!-- Common actions -->
   <!-- Share action for notification -->
   <string name="share">공유</string>
   <!-- Stop action for notification -->
@@ -43,25 +41,20 @@
   <!-- Sound recorder notification message -->
   <string name="sound_notification_message">오디오 길이: %1$s</string>
   <!-- Sound recorder status card title ready -->
-  <string name="sound_recording_title_ready">녹음 준비 완료</string>
-  <!-- Sound recorder status card title recording -->
+    <!-- Sound recorder status card title recording -->
   <string name="sound_recording_title_working">녹음 중</string>
   <!-- Sound recorder status card title busy -->
-  <string name="sound_recording_title_busy">화면을 녹화하는 중에는 사용할 수 없음</string>
-  <!-- Sound recorder last item title -->
+    <!-- Sound recorder last item title -->
   <string name="sound_last_title">마지막 녹음</string>
   <!-- Sound recorder last item message -->
-  <string name="sound_last_message">날짜: %1$s\n길이: %2$d초</string>
-  <!-- Screen recorder -->
+    <!-- Screen recorder -->
   <!-- Screen recorder audio card title -->
-  <string name="screen_audio_title">마이크</string>
-  <!-- Screen recorder enabled audio card message -->
+    <!-- Screen recorder enabled audio card message -->
   <string name="screen_audio_message_on">마이크로 녹음된 오디오가 영상에 포함됩니다.</string>
   <!-- Screen recorder disabled audio card message -->
   <string name="screen_audio_message_off">마이크로 녹음된 오디오가 영상에 포함되지 않습니다.</string>
   <!-- Screen recorder audio permission request card message -->
-  <string name="screen_audio_warning_message">녹화에 오디오를 추가하려면 마이크 권한을 허용해야 합니다. 아래를 눌러 이 앱의 접근을 허용하세요.</string>
-  <!-- Screen recorder audio permission request card button -->
+    <!-- Screen recorder audio permission request card button -->
   <string name="screen_audio_warning_button_ask">묻기</string>
   <!-- Screen recorder notification storage error title -->
   <string name="screen_insufficient_storage">저장 공간 부족</string>
@@ -74,8 +67,7 @@
   <!-- Screen recorder notification share title -->
   <string name="screen_notification_message_done">공유 준비 완료</string>
   <!-- Screen recorder status card title -->
-  <string name="screen_recording_title">녹화 중</string>
-  <!-- Screen recorder status message -->
+    <!-- Screen recorder status message -->
   <string name="screen_recording_message">화면을 녹화하는 중\u2026</string>
   <!-- Screen recorder last item title -->
   <string name="screen_last_title">마지막 녹화</string>

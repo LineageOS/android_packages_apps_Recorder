@@ -18,10 +18,8 @@
   <string name="app_name">Rekorder</string>
   <!-- Fragment titles -->
   <!-- Sound recorder fragment title -->
-  <string name="fragment_sounds">Ton</string>
-  <!-- Screen recorder fragment title -->
-  <string name="fragment_screen">Bildschirm</string>
-  <!-- Common actions -->
+    <!-- Screen recorder fragment title -->
+    <!-- Common actions -->
   <!-- Share action for notification -->
   <string name="share">Teilen</string>
   <!-- Stop action for notification -->
@@ -43,25 +41,20 @@
   <!-- Sound recorder notification message -->
   <string name="sound_notification_message">Audiolänge: %1$s</string>
   <!-- Sound recorder status card title ready -->
-  <string name="sound_recording_title_ready">Bereit zum Aufnehmen</string>
-  <!-- Sound recorder status card title recording -->
+    <!-- Sound recorder status card title recording -->
   <string name="sound_recording_title_working">Wird aufgenommen</string>
   <!-- Sound recorder status card title busy -->
-  <string name="sound_recording_title_busy">Während Bildschirmaufzeichnung deaktiviert</string>
-  <!-- Sound recorder last item title -->
+    <!-- Sound recorder last item title -->
   <string name="sound_last_title">Letzte Aufnahme</string>
   <!-- Sound recorder last item message -->
-  <string name="sound_last_message">Aufnahmezeitpunkt: %1$s\nAufzeichnungsdauer: %2$d Sekunden</string>
-  <!-- Screen recorder -->
+    <!-- Screen recorder -->
   <!-- Screen recorder audio card title -->
-  <string name="screen_audio_title">Mikrofon</string>
-  <!-- Screen recorder enabled audio card message -->
+    <!-- Screen recorder enabled audio card message -->
   <string name="screen_audio_message_on">Ton vom Mikrofon wird mit aufgenommen</string>
   <!-- Screen recorder disabled audio card message -->
   <string name="screen_audio_message_off">Ton vom Mikrofon wird nicht mit aufgenommen</string>
   <!-- Screen recorder audio permission request card message -->
-  <string name="screen_audio_warning_message">Sie müssen den Zugriff auf das Mikrofon zulassen, um Ton aufzunehmen. Tippen Sie unten um den Zugriff für diese App zu erlauben</string>
-  <!-- Screen recorder audio permission request card button -->
+    <!-- Screen recorder audio permission request card button -->
   <string name="screen_audio_warning_button_ask">Erlauben</string>
   <!-- Screen recorder notification storage error title -->
   <string name="screen_insufficient_storage">Zu wenig Speicher</string>
@@ -74,8 +67,7 @@
   <!-- Screen recorder notification share title -->
   <string name="screen_notification_message_done">Bereit zu teilen</string>
   <!-- Screen recorder status card title -->
-  <string name="screen_recording_title">Wird aufgenommen</string>
-  <!-- Screen recorder status message -->
+    <!-- Screen recorder status message -->
   <string name="screen_recording_message">Bildschirm wird aufgenommen\u2026</string>
   <!-- Screen recorder last item title -->
   <string name="screen_last_title">Letzte Aufnahme</string>

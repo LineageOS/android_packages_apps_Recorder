@@ -22,8 +22,8 @@ import android.content.Intent;
 import android.os.IBinder;
 import android.support.v4.app.NotificationCompat;
 
-import org.lineageos.recorder.R;
 import org.lineageos.recorder.RecorderActivity;
+import org.lineageos.recorder.R;
 import org.lineageos.recorder.ui.OverlayLayer;
 import org.lineageos.recorder.utils.Utils;
 

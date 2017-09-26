@@ -37,8 +37,8 @@ import android.util.Log;
 import android.view.Display;
 import android.widget.Toast;
 
-import org.lineageos.recorder.R;
 import org.lineageos.recorder.RecorderActivity;
+import org.lineageos.recorder.R;
 import org.lineageos.recorder.utils.LastRecordHelper;
 import org.lineageos.recorder.utils.Utils;
 
@@ -207,10 +207,6 @@ public class ScreencastService extends Service {
 
     private NotificationCompat.Builder createNotificationBuilder() {
         Intent intent = new Intent(this, RecorderActivity.class);
-        // Fake launcher intent to resume previous activity - FIXME: use singleTop?
-        intent.setAction(Intent.ACTION_MAIN);
-        intent.addCategory(Intent.CATEGORY_LAUNCHER);
-
         Intent stopRecordingIntent = new Intent(ACTION_STOP_SCREENCAST);
         stopRecordingIntent.setClass(this, ScreencastService.class);
 
@@ -231,9 +227,6 @@ public class ScreencastService extends Service {
 
     private NotificationCompat.Builder createShareNotificationBuilder(String file) {
         Intent intent = new Intent(this, RecorderActivity.class);
-        // Fake launcher intent to resume previous activity - FIXME: use singleTop instead?
-        intent.setAction(Intent.ACTION_MAIN);
-        intent.addCategory(Intent.CATEGORY_LAUNCHER);
         PendingIntent pi = PendingIntent.getActivity(this, 0, intent, 0);
 
         PendingIntent playPIntent = PendingIntent.getActivity(this, 0,

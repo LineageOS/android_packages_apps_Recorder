@@ -18,10 +18,8 @@
   <string name="app_name">Trình ghi lại</string>
   <!-- Fragment titles -->
   <!-- Sound recorder fragment title -->
-  <string name="fragment_sounds">Âm thanh</string>
-  <!-- Screen recorder fragment title -->
-  <string name="fragment_screen">Màn hình</string>
-  <!-- Common actions -->
+    <!-- Screen recorder fragment title -->
+    <!-- Common actions -->
   <!-- Share action for notification -->
   <string name="share">Chia sẻ</string>
   <!-- Stop action for notification -->
@@ -43,25 +41,20 @@
   <!-- Sound recorder notification message -->
   <string name="sound_notification_message">Độ dài âm thanh: %1$s</string>
   <!-- Sound recorder status card title ready -->
-  <string name="sound_recording_title_ready">Sẵn sàng để ghi lại</string>
-  <!-- Sound recorder status card title recording -->
+    <!-- Sound recorder status card title recording -->
   <string name="sound_recording_title_working">Đang ghi</string>
   <!-- Sound recorder status card title busy -->
-  <string name="sound_recording_title_busy">Đã tắt khi quay màn hình</string>
-  <!-- Sound recorder last item title -->
+    <!-- Sound recorder last item title -->
   <string name="sound_last_title">Lần ghi cuối</string>
   <!-- Sound recorder last item message -->
-  <string name="sound_last_message">Ngày: %1$s\nĐộ dài: %2$d giây</string>
-  <!-- Screen recorder -->
+    <!-- Screen recorder -->
   <!-- Screen recorder audio card title -->
-  <string name="screen_audio_title">Microphone</string>
-  <!-- Screen recorder enabled audio card message -->
+    <!-- Screen recorder enabled audio card message -->
   <string name="screen_audio_message_on">Âm thanh từ microphone sẽ được chứa trong trong video</string>
   <!-- Screen recorder disabled audio card message -->
   <string name="screen_audio_message_off">Âm thanh từ microphone sẽ không được chứa trong trong video</string>
   <!-- Screen recorder audio permission request card message -->
-  <string name="screen_audio_warning_message">Bạn cần phải cấp quyền truy cập vào microphone để thêm âm thanh vào bản ghi này. Chạm vào bên dưới để cho phép truy cập cho ứng dụng này</string>
-  <!-- Screen recorder audio permission request card button -->
+    <!-- Screen recorder audio permission request card button -->
   <string name="screen_audio_warning_button_ask">Yêu cầu</string>
   <!-- Screen recorder notification storage error title -->
   <string name="screen_insufficient_storage">Không đủ bộ nhớ</string>
@@ -74,8 +67,7 @@
   <!-- Screen recorder notification share title -->
   <string name="screen_notification_message_done">Sẵn sàng để chia sẻ</string>
   <!-- Screen recorder status card title -->
-  <string name="screen_recording_title">Đang ghi</string>
-  <!-- Screen recorder status message -->
+    <!-- Screen recorder status message -->
   <string name="screen_recording_message">Màn hình đang được ghi\u2026</string>
   <!-- Screen recorder last item title -->
   <string name="screen_last_title">Lần ghi cuối</string>

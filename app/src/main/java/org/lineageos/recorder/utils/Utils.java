@@ -17,6 +17,7 @@ package org.lineageos.recorder.utils;
 
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.graphics.Color;
 import android.util.DisplayMetrics;
 
 import java.io.Closeable;
@@ -28,6 +29,7 @@ public class Utils {
     public static final String PREF_RECORDING_NOTHING = "nothing";
     public static final String PREF_RECORDING_SCREEN = "screen";
     private static final String PREF_RECORDING_SOUND = "sound";
+    public static final String PREF_SCREEN_WITH_AUDIO = "screen_with_audio";
 
     private Utils() {
     }
@@ -68,6 +70,19 @@ public class Utils {
     public static int convertDp2Px(Context context, int dp) {
         DisplayMetrics metrics = context.getResources().getDisplayMetrics();
         return Math.round(dp * metrics.density + 0.5f);
+    }
+
+    public static int darkenedColor(int color) {
+        int alpha = Color.alpha(color);
+        int red = getDarkenedColorValue(Color.red(color));
+        int green = getDarkenedColorValue(Color.green(color));
+        int blue = getDarkenedColorValue(Color.blue(color));
+        return Color.argb(alpha, red, green, blue);
+    }
+
+    private static int getDarkenedColorValue(int value) {
+        float dark = 0.8f; // -20% lightness
+        return Math.min(Math.round(value * dark), 255);
     }
 
     /**

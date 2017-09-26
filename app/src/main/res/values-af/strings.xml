@@ -18,10 +18,8 @@
   <string name="app_name">Opnemer</string>
   <!-- Fragment titles -->
   <!-- Sound recorder fragment title -->
-  <string name="fragment_sounds">Klank</string>
-  <!-- Screen recorder fragment title -->
-  <string name="fragment_screen">Skerm</string>
-  <!-- Common actions -->
+    <!-- Screen recorder fragment title -->
+    <!-- Common actions -->
   <!-- Share action for notification -->
   <string name="share">Deel</string>
   <!-- Stop action for notification -->
@@ -43,25 +41,20 @@
   <!-- Sound recorder notification message -->
   <string name="sound_notification_message">Oudio-lengte: %1$s</string>
   <!-- Sound recorder status card title ready -->
-  <string name="sound_recording_title_ready">Gereed om op te neem</string>
-  <!-- Sound recorder status card title recording -->
+    <!-- Sound recorder status card title recording -->
   <string name="sound_recording_title_working">Neem tans op</string>
   <!-- Sound recorder status card title busy -->
-  <string name="sound_recording_title_busy">Gedeaktiveer terwyl skerm opgeneem word</string>
-  <!-- Sound recorder last item title -->
+    <!-- Sound recorder last item title -->
   <string name="sound_last_title">Laaste opname</string>
   <!-- Sound recorder last item message -->
-  <string name="sound_last_message">Datum: %1$s\nLengte: %2$d sekondes</string>
-  <!-- Screen recorder -->
+    <!-- Screen recorder -->
   <!-- Screen recorder audio card title -->
-  <string name="screen_audio_title">Mikrofoon</string>
-  <!-- Screen recorder enabled audio card message -->
+    <!-- Screen recorder enabled audio card message -->
   <string name="screen_audio_message_on">Oudio vanaf die mikrofoon sal in die video ingesluit word</string>
   <!-- Screen recorder disabled audio card message -->
   <string name="screen_audio_message_off">Oudio vanaf mikrofoon sal nie in die video ingesluit word nie</string>
   <!-- Screen recorder audio permission request card message -->
-  <string name="screen_audio_warning_message">Jy moet die toegang tot die mikrofoon verleen oudio tot die rekord by te voeg. Tik hier onder om toegang vir hierdie toepassing toelaat</string>
-  <!-- Screen recorder audio permission request card button -->
+    <!-- Screen recorder audio permission request card button -->
   <string name="screen_audio_warning_button_ask">Vra</string>
   <!-- Screen recorder notification storage error title -->
   <string name="screen_insufficient_storage">Onvoldoende stoorspasie</string>
@@ -74,8 +67,7 @@
   <!-- Screen recorder notification share title -->
   <string name="screen_notification_message_done">Gereed om te deel</string>
   <!-- Screen recorder status card title -->
-  <string name="screen_recording_title">Neem tans op</string>
-  <!-- Screen recorder status message -->
+    <!-- Screen recorder status message -->
   <string name="screen_recording_message">Skerm word opgeneem\u2026</string>
   <!-- Screen recorder last item title -->
   <string name="screen_last_title">Laaste opname</string>

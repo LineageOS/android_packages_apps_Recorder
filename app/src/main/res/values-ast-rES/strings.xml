@@ -18,10 +18,8 @@
   <string name="app_name">Grabadora</string>
   <!-- Fragment titles -->
   <!-- Sound recorder fragment title -->
-  <string name="fragment_sounds">Soníu</string>
-  <!-- Screen recorder fragment title -->
-  <string name="fragment_screen">Pantalla</string>
-  <!-- Common actions -->
+    <!-- Screen recorder fragment title -->
+    <!-- Common actions -->
   <!-- Share action for notification -->
   <string name="share">Compartir</string>
   <!-- Stop action for notification -->
@@ -43,25 +41,20 @@
   <!-- Sound recorder notification message -->
   <string name="sound_notification_message">Duración d\'audiu: %1$s</string>
   <!-- Sound recorder status card title ready -->
-  <string name="sound_recording_title_ready">Preparada pa grabar</string>
-  <!-- Sound recorder status card title recording -->
+    <!-- Sound recorder status card title recording -->
   <string name="sound_recording_title_working">Grabando</string>
   <!-- Sound recorder status card title busy -->
-  <string name="sound_recording_title_busy">Deshabilitóse entrín se grabe la pantalla</string>
-  <!-- Sound recorder last item title -->
+    <!-- Sound recorder last item title -->
   <string name="sound_last_title">Grabación cabera</string>
   <!-- Sound recorder last item message -->
-  <string name="sound_last_message">Data: %1$s\nDuración: %2$d segundos</string>
-  <!-- Screen recorder -->
+    <!-- Screen recorder -->
   <!-- Screen recorder audio card title -->
-  <string name="screen_audio_title">Micrófonu</string>
-  <!-- Screen recorder enabled audio card message -->
+    <!-- Screen recorder enabled audio card message -->
   <string name="screen_audio_message_on">Incluyiráse nel videu l\'audiu del micrófonu</string>
   <!-- Screen recorder disabled audio card message -->
   <string name="screen_audio_message_off">Nun s\'incluyirá nel videu l\'audiu del micrófonu</string>
   <!-- Screen recorder audio permission request card message -->
-  <string name="screen_audio_warning_message">Precises conceder l\'accesu al micrófonu p\'amestar audiu a la grabación. Calca embaxo pa permitir l\'accesu a esta aplicación</string>
-  <!-- Screen recorder audio permission request card button -->
+    <!-- Screen recorder audio permission request card button -->
   <string name="screen_audio_warning_button_ask">Entrugar</string>
   <!-- Screen recorder notification storage error title -->
   <string name="screen_insufficient_storage">Almacenamientu insufiente</string>
@@ -73,8 +66,7 @@
   <string name="screen_notification_message">Duración del videu: %s</string>
   <!-- Screen recorder notification share title -->
   <!-- Screen recorder status card title -->
-  <string name="screen_recording_title">Grabando</string>
-  <!-- Screen recorder status message -->
+    <!-- Screen recorder status message -->
   <string name="screen_recording_message">Ta grabándose la pantalla\u2026</string>
   <!-- Screen recorder last item title -->
   <string name="screen_last_title">Grabación cabera</string>

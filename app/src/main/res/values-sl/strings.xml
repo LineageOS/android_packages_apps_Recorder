@@ -18,10 +18,8 @@
   <string name="app_name">Snemalnik</string>
   <!-- Fragment titles -->
   <!-- Sound recorder fragment title -->
-  <string name="fragment_sounds">Zvok</string>
-  <!-- Screen recorder fragment title -->
-  <string name="fragment_screen">Zaslon</string>
-  <!-- Common actions -->
+    <!-- Screen recorder fragment title -->
+    <!-- Common actions -->
   <!-- Share action for notification -->
   <string name="share">Souporaba</string>
   <!-- Stop action for notification -->
@@ -43,25 +41,20 @@
   <!-- Sound recorder notification message -->
   <string name="sound_notification_message">Dolžina zvoka: %1$s</string>
   <!-- Sound recorder status card title ready -->
-  <string name="sound_recording_title_ready">Pripravljen za snemanje</string>
-  <!-- Sound recorder status card title recording -->
+    <!-- Sound recorder status card title recording -->
   <string name="sound_recording_title_working">Snemanje</string>
   <!-- Sound recorder status card title busy -->
-  <string name="sound_recording_title_busy">Onemogočeno med snemanjem zaslona</string>
-  <!-- Sound recorder last item title -->
+    <!-- Sound recorder last item title -->
   <string name="sound_last_title">Zadnji posnetek</string>
   <!-- Sound recorder last item message -->
-  <string name="sound_last_message">Datum: %1$s\nDolžina: %2$d sekund</string>
-  <!-- Screen recorder -->
+    <!-- Screen recorder -->
   <!-- Screen recorder audio card title -->
-  <string name="screen_audio_title">Mikrofon</string>
-  <!-- Screen recorder enabled audio card message -->
+    <!-- Screen recorder enabled audio card message -->
   <string name="screen_audio_message_on">Zvok iz mikrofona bo vključen v video</string>
   <!-- Screen recorder disabled audio card message -->
   <string name="screen_audio_message_off">Zvok iz mikrofona ne bo vključen v video</string>
   <!-- Screen recorder audio permission request card message -->
-  <string name="screen_audio_warning_message">Dovoliti morate dostop do mikrofona za dodajanje zvoka na posnetek. Tapnite spodaj za dodelitev dostopa tej aplikaciji</string>
-  <!-- Screen recorder audio permission request card button -->
+    <!-- Screen recorder audio permission request card button -->
   <string name="screen_audio_warning_button_ask">Vprašaj</string>
   <!-- Screen recorder notification storage error title -->
   <string name="screen_insufficient_storage">Nezadostna velikost pomnilniške naprave</string>
@@ -74,8 +67,7 @@
   <!-- Screen recorder notification share title -->
   <string name="screen_notification_message_done">Pripravljen za souporabo</string>
   <!-- Screen recorder status card title -->
-  <string name="screen_recording_title">Snemanje</string>
-  <!-- Screen recorder status message -->
+    <!-- Screen recorder status message -->
   <string name="screen_recording_message">Snemanje zaslona\u2026</string>
   <!-- Screen recorder last item title -->
   <string name="screen_last_title">Zadnji posnetek</string>

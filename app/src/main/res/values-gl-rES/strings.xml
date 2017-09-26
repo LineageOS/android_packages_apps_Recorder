@@ -18,10 +18,8 @@
   <string name="app_name">Gravador</string>
   <!-- Fragment titles -->
   <!-- Sound recorder fragment title -->
-  <string name="fragment_sounds">Son</string>
-  <!-- Screen recorder fragment title -->
-  <string name="fragment_screen">Pantalla</string>
-  <!-- Common actions -->
+    <!-- Screen recorder fragment title -->
+    <!-- Common actions -->
   <!-- Share action for notification -->
   <string name="share">Compartir</string>
   <!-- Stop action for notification -->
@@ -43,25 +41,20 @@
   <!-- Sound recorder notification message -->
   <string name="sound_notification_message">Duración do son: %1$s</string>
   <!-- Sound recorder status card title ready -->
-  <string name="sound_recording_title_ready">Listo para gravar</string>
-  <!-- Sound recorder status card title recording -->
+    <!-- Sound recorder status card title recording -->
   <string name="sound_recording_title_working">Gravando</string>
   <!-- Sound recorder status card title busy -->
-  <string name="sound_recording_title_busy">Desactivado durante a gravación da pantalla</string>
-  <!-- Sound recorder last item title -->
+    <!-- Sound recorder last item title -->
   <string name="sound_last_title">Última grabación</string>
   <!-- Sound recorder last item message -->
-  <string name="sound_last_message">Data: %1$s\nDuración: %2$d segundos</string>
-  <!-- Screen recorder -->
+    <!-- Screen recorder -->
   <!-- Screen recorder audio card title -->
-  <string name="screen_audio_title">Micrófono</string>
-  <!-- Screen recorder enabled audio card message -->
+    <!-- Screen recorder enabled audio card message -->
   <string name="screen_audio_message_on">O audio grabado polo micrófono se incluirá no vídeo</string>
   <!-- Screen recorder disabled audio card message -->
   <string name="screen_audio_message_off">O audio grabado polo micrófono non se incluirá no vídeo</string>
   <!-- Screen recorder audio permission request card message -->
-  <string name="screen_audio_warning_message">Debe permitir o accso ao micrófono para añadir o audio á gravación. Pulse deibaxo para permitir o acceso a esta aplicación</string>
-  <!-- Screen recorder audio permission request card button -->
+    <!-- Screen recorder audio permission request card button -->
   <string name="screen_audio_warning_button_ask">Preguntar</string>
   <!-- Screen recorder notification storage error title -->
   <string name="screen_insufficient_storage">Almacenamento insuficiente</string>
@@ -74,8 +67,7 @@
   <!-- Screen recorder notification share title -->
   <string name="screen_notification_message_done">Listo para compartir</string>
   <!-- Screen recorder status card title -->
-  <string name="screen_recording_title">Gravando</string>
-  <!-- Screen recorder status message -->
+    <!-- Screen recorder status message -->
   <string name="screen_recording_message">A pantalla está a ser gravada\u2026</string>
   <!-- Screen recorder last item title -->
   <string name="screen_last_title">Última grabación</string>

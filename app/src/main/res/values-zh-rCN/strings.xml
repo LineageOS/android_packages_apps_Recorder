@@ -18,10 +18,8 @@
   <string name="app_name">录制器</string>
   <!-- Fragment titles -->
   <!-- Sound recorder fragment title -->
-  <string name="fragment_sounds">声音</string>
-  <!-- Screen recorder fragment title -->
-  <string name="fragment_screen">屏幕</string>
-  <!-- Common actions -->
+    <!-- Screen recorder fragment title -->
+    <!-- Common actions -->
   <!-- Share action for notification -->
   <string name="share">分享</string>
   <!-- Stop action for notification -->
@@ -43,25 +41,20 @@
   <!-- Sound recorder notification message -->
   <string name="sound_notification_message">音频长度：%1$s</string>
   <!-- Sound recorder status card title ready -->
-  <string name="sound_recording_title_ready">可以开始录制</string>
-  <!-- Sound recorder status card title recording -->
+    <!-- Sound recorder status card title recording -->
   <string name="sound_recording_title_working">正在录制</string>
   <!-- Sound recorder status card title busy -->
-  <string name="sound_recording_title_busy">当录屏时停用</string>
-  <!-- Sound recorder last item title -->
+    <!-- Sound recorder last item title -->
   <string name="sound_last_title">上次录制</string>
   <!-- Sound recorder last item message -->
-  <string name="sound_last_message">日期︰%1$s\n持续时间：%2$d 秒</string>
-  <!-- Screen recorder -->
+    <!-- Screen recorder -->
   <!-- Screen recorder audio card title -->
-  <string name="screen_audio_title">麦克风</string>
-  <!-- Screen recorder enabled audio card message -->
+    <!-- Screen recorder enabled audio card message -->
   <string name="screen_audio_message_on">将麦克风的声音纳入视频</string>
   <!-- Screen recorder disabled audio card message -->
   <string name="screen_audio_message_off">麦克风的音频将不会纳入视频</string>
   <!-- Screen recorder audio permission request card message -->
-  <string name="screen_audio_warning_message">若要将麦克风的音频纳入视频，您需要授予麦克风访问权限。在稍后点击“允许”该应用访问</string>
-  <!-- Screen recorder audio permission request card button -->
+    <!-- Screen recorder audio permission request card button -->
   <string name="screen_audio_warning_button_ask">询问</string>
   <!-- Screen recorder notification storage error title -->
   <string name="screen_insufficient_storage">存储空间不足</string>
@@ -74,8 +67,7 @@
   <!-- Screen recorder notification share title -->
   <string name="screen_notification_message_done">已准备好分享</string>
   <!-- Screen recorder status card title -->
-  <string name="screen_recording_title">正在录制</string>
-  <!-- Screen recorder status message -->
+    <!-- Screen recorder status message -->
   <string name="screen_recording_message">录屏已开始\u2026</string>
   <!-- Screen recorder last item title -->
   <string name="screen_last_title">上次录制</string>
