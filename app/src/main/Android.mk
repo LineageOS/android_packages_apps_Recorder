@@ -20,23 +20,28 @@ include $(CLEAR_VARS)
 LOCAL_RESOURCE_DIR := $(LOCAL_PATH)/res \
     frameworks/support/design/res \
     frameworks/support/v7/appcompat/res \
-    frameworks/support/v7/cardview/res \
+    frameworks/support/v7/cardview/res
 
 LOCAL_SRC_FILES := $(call all-java-files-under, java)
 
 LOCAL_AAPT_FLAGS := \
     --auto-add-overlay \
+    --extra-packages android.support.constraint \
     --extra-packages android.support.design \
     --extra-packages android.support.v7.appcompat \
     --extra-packages android.support.v7.cardview
 
 LOCAL_STATIC_JAVA_LIBRARIES += \
+    android-support-annotations \
+    android-support-constraint-layout-solver \
     android-support-design \
+    android-support-transition \
     android-support-v4 \
     android-support-v7-appcompat \
-    android-support-v7-cardview \
-    android-support-v7-recyclerview \
-    android-support-annotations
+    android-support-v7-cardview
+
+LOCAL_STATIC_JAVA_AAR_LIBRARIES += \
+    android-support-constraint-layout
 
 LOCAL_PACKAGE_NAME := Recorder
 LOCAL_CERTIFICATE := platform
@@ -46,6 +51,11 @@ LOCAL_PRIVILEGED_MODULE := true
 include $(BUILD_PACKAGE)
 
 include $(CLEAR_VARS)
+
+LOCAL_PREBUILT_STATIC_JAVA_LIBRARIES += \
+    android-support-constraint-layout:../../libs/constraint-layout-1.1.0-beta2.aar \
+    android-support-constraint-layout-solver:../../libs/constraint-layout-solver-1.1.0-beta2.jar
+
 include $(BUILD_MULTI_PREBUILT)
 
 include $(call all-makefiles-under,$(LOCAL_PATH))
