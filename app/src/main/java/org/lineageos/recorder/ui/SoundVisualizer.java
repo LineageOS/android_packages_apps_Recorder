@@ -23,6 +23,7 @@ import android.util.AttributeSet;
 import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.AccelerateDecelerateInterpolator;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 
@@ -38,6 +39,8 @@ public class SoundVisualizer extends LinearLayout implements OnAudioLevelUpdated
     private final Context mContext;
     private final List<View> mWaveList = new ArrayList<>();
     private final int mBubbleRadius;
+    private final AccelerateDecelerateInterpolator mInterpolator =
+            new AccelerateDecelerateInterpolator();
 
     public SoundVisualizer(Context context) {
         this(context, null);
@@ -77,7 +80,7 @@ public class SoundVisualizer extends LinearLayout implements OnAudioLevelUpdated
             view.setLayoutParams(new ViewGroup.LayoutParams(mBubbleRadius, mBubbleRadius));
 
             GradientDrawable drawable = new GradientDrawable();
-            drawable.setColor(ContextCompat.getColor(context, R.color.colorAccentDark));
+            drawable.setColor(ContextCompat.getColor(context, R.color.icon));
             drawable.setCornerRadius(mBubbleRadius);
 
             view.setBackground(drawable);
@@ -104,7 +107,8 @@ public class SoundVisualizer extends LinearLayout implements OnAudioLevelUpdated
 
                 ResizeAnimation anim = new ResizeAnimation(bubble, originalRadius,
                         newRadius - originalRadius);
-                anim.setDuration(100);
+                anim.setInterpolator(mInterpolator);
+                anim.setDuration(150);
 
                 bubble.startAnimation(anim);
             });

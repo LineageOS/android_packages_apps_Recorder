@@ -230,7 +230,7 @@ public class SoundRecorderService extends Service {
         mVisualizerThread = new Thread(() -> {
             while (isRecording()) {
                 try {
-                    Thread.sleep(100L);
+                    Thread.sleep(150L);
                 } catch (InterruptedException e) {
                     Log.e(TAG, e.getMessage());
                 }
@@ -263,7 +263,7 @@ public class SoundRecorderService extends Service {
         mTask = new TimerTask() {
             @Override
             public void run() {
-                mElapsedTime++;
+                mElapsedTime += 1000;
                 if (mTimerListener != null) {
                     mTimerListener.onTimerUpdated(mElapsedTime);
                 }
@@ -274,15 +274,12 @@ public class SoundRecorderService extends Service {
 
     private Notification createRecordingNotification() {
         Intent intent = new Intent(this, RecorderActivity.class);
-        // Fake launcher intent to resume previous activity - FIXME: use singleTop instead?
-        intent.setAction(Intent.ACTION_MAIN);
-        intent.addCategory(Intent.CATEGORY_LAUNCHER);
         PendingIntent pi = PendingIntent.getActivity(this, 0, intent, 0);
 
         NotificationCompat.Builder builder = new NotificationCompat.Builder(this)
                 .setContentTitle(getString(R.string.sound_notification_title))
                 .setContentText(getString(R.string.sound_notification_message,
-                        DateUtils.formatElapsedTime(mElapsedTime)))
+                        DateUtils.formatElapsedTime(mElapsedTime / 1000)))
                 .setOngoing(true)
                 .setSmallIcon(R.drawable.ic_action_sound_record)
                 .setContentIntent(pi)
@@ -293,9 +290,6 @@ public class SoundRecorderService extends Service {
 
     public void createShareNotification() {
         Intent intent = new Intent(this, RecorderActivity.class);
-        // Fake launcher intent to resume previous activity - FIXME: use singleTop instead?
-        intent.setAction(Intent.ACTION_MAIN);
-        intent.addCategory(Intent.CATEGORY_LAUNCHER);
         PendingIntent pi = PendingIntent.getActivity(this, 0, intent, 0);
 
         PendingIntent playPIntent = PendingIntent.getActivity(this, 0,
@@ -312,7 +306,7 @@ public class SoundRecorderService extends Service {
                 .setSmallIcon(R.drawable.ic_action_sound_record)
                 .setContentTitle(getString(R.string.sound_notification_title))
                 .setContentText(getString(R.string.sound_notification_message,
-                        DateUtils.formatElapsedTime(mElapsedTime)))
+                        DateUtils.formatElapsedTime(mElapsedTime / 1000)))
                 .addAction(R.drawable.ic_play, getString(R.string.play), playPIntent)
                 .addAction(R.drawable.ic_share, getString(R.string.share), sharePIntent)
                 .setContentIntent(pi)

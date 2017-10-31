@@ -31,40 +31,38 @@ import android.os.Handler;
 import android.os.IBinder;
 import android.provider.Settings;
 import android.support.annotation.NonNull;
+import android.support.constraint.ConstraintLayout;
+import android.support.constraint.ConstraintSet;
 import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.support.design.widget.TabLayout;
-import android.support.v4.app.Fragment;
-import android.support.v4.view.ViewPager;
-import android.support.v4.view.animation.FastOutSlowInInterpolator;
+import android.support.transition.TransitionManager;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.app.ActivityOptionsCompat;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.telephony.TelephonyManager;
+import android.view.View;
+import android.widget.ImageView;
+import android.widget.RelativeLayout;
+import android.widget.TextView;
 
 import org.lineageos.recorder.screen.OverlayService;
-import org.lineageos.recorder.screen.ScreenFragment;
 import org.lineageos.recorder.screen.ScreencastService;
 import org.lineageos.recorder.sounds.RecorderBinder;
-import org.lineageos.recorder.sounds.SoundFragment;
 import org.lineageos.recorder.sounds.SoundRecorderService;
 import org.lineageos.recorder.ui.SoundVisualizer;
-import org.lineageos.recorder.ui.ViewPagerAdapter;
+import org.lineageos.recorder.utils.LastRecordHelper;
+import org.lineageos.recorder.utils.OnBoardingHelper;
 import org.lineageos.recorder.utils.Utils;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class RecorderActivity extends AppCompatActivity implements
-        ViewPagerAdapter.PageProvider, SharedPreferences.OnSharedPreferenceChangeListener {
-    private static final int REQUEST_STORAGE_PERMS = 439;
+        SharedPreferences.OnSharedPreferenceChangeListener {
+    private static final int REQUEST_SCREEN_REC_PERMS = 439;
     private static final int REQUEST_SOUND_REC_PERMS = 440;
-
-    private static final int PAGE_INDEX_SOUND = 0;
-    private static final int PAGE_INDEX_SCREEN = 1;
-
-    private static final int[] PAGE_TITLE_RES_IDS = {
-            R.string.fragment_sounds, R.string.fragment_screen
-    };
+    private static final int REQUEST_DIALOG_ACTIVITY = 441;
 
     private static final int[] PERMISSION_ERROR_MESSAGE_RES_IDS = {
             0,
@@ -79,22 +77,28 @@ public class RecorderActivity extends AppCompatActivity implements
 
     private ServiceConnection mConnection;
     private SoundRecorderService mSoundService;
-
-    private FloatingActionButton mFab;
-    private ViewPager mViewPager;
-    private ViewPagerAdapter mAdapter;
-
-    private SoundVisualizer mVisualizer;
-
     private SharedPreferences mPrefs;
-    private int mPosition = 0;
+
+    private ConstraintLayout mConstraintRoot;
+
+    private FloatingActionButton mScreenFab;
+    private ImageView mScreenSettings;
+    private ImageView mScreenLast;
+
+    private FloatingActionButton mSoundFab;
+    private ImageView mSoundLast;
+
+    private RelativeLayout mRecordingLayout;
+    private TextView mRecordingText;
+    private SoundVisualizer mRecordingVisualizer;
 
     private final BroadcastReceiver mTelephonyReceiver = new BroadcastReceiver() {
         @Override
         public void onReceive(Context context, Intent intent) {
             if (TelephonyManager.ACTION_PHONE_STATE_CHANGED.equals(intent.getAction())) {
                 int state = intent.getIntExtra(TelephonyManager.EXTRA_STATE, -1);
-                if (state == TelephonyManager.CALL_STATE_OFFHOOK && Utils.isSoundRecording(context)) {
+                if (state == TelephonyManager.CALL_STATE_OFFHOOK &&
+                        Utils.isSoundRecording(context)) {
                     toggleSoundRecorder();
                 }
             }
@@ -102,44 +106,35 @@ public class RecorderActivity extends AppCompatActivity implements
     };
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+    public void onCreate(Bundle savedInstance) {
+        super.onCreate(savedInstance);
+        setContentView(R.layout.activty_constraint);
 
-        setContentView(R.layout.activity_recorder);
+        mConstraintRoot = (ConstraintLayout) findViewById(R.id.main_root);
 
-        mFab = (FloatingActionButton) findViewById(R.id.fab);
-        mFab.setOnClickListener(mView -> fabClicked());
+        mScreenFab = (FloatingActionButton) findViewById(R.id.screen_fab);
+        mScreenSettings = (ImageView) findViewById(R.id.screen_settings_icon);
+        mScreenLast = (ImageView) findViewById(R.id.screen_last_icon);
 
-        TabLayout tabs = (TabLayout) findViewById(R.id.tabs);
-        mViewPager = (ViewPager) findViewById(R.id.viewpager);
-        mAdapter = new ViewPagerAdapter(getSupportFragmentManager(), this);
-        mViewPager.setAdapter(mAdapter);
-        mViewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
-            @Override
-            public void onPageScrolled(int mNewPosition, float mOffset,
-                                       int mOffsetPixels) {
-            }
+        mSoundFab = (FloatingActionButton) findViewById(R.id.sound_fab);
+        mSoundLast = (ImageView) findViewById(R.id.sound_last_icon);
 
-            @Override
-            public void onPageScrollStateChanged(int mState) {
-            }
+        mRecordingLayout = (RelativeLayout) findViewById(R.id.main_recording);
+        mRecordingText = (TextView) findViewById(R.id.main_recording_text);
+        mRecordingVisualizer = (SoundVisualizer) findViewById(R.id.main_recording_visualizer);
 
-            @Override
-            public void onPageSelected(int mNewPosition) {
-                mPosition = mNewPosition;
-                mFab.setImageResource(mPosition == PAGE_INDEX_SCREEN ?
-                        R.drawable.ic_action_screen_record : R.drawable.ic_action_sound_record);
-            }
-        });
-        tabs.setupWithViewPager(mViewPager);
+        mScreenFab.setOnClickListener(v -> toggleScreenRecorder());
+        mSoundFab.setOnClickListener(v -> toggleSoundRecorder());
+        mScreenSettings.setOnClickListener(v -> openScreenSettings());
+        mScreenLast.setOnClickListener(v -> openLastScreen());
+        mSoundLast.setOnClickListener(v -> openLastSound());
 
         mPrefs = getSharedPreferences(Utils.PREFS, 0);
         mPrefs.registerOnSharedPreferenceChangeListener(this);
 
-        // Bind to service
         bindSoundRecService();
 
-        refresh();
+        OnBoardingHelper.onBoardScreenSettings(this, mScreenSettings);
     }
 
     @Override
@@ -167,37 +162,16 @@ public class RecorderActivity extends AppCompatActivity implements
     @Override
     protected void onResume() {
         super.onResume();
-        if (Utils.isScreenRecording(this)) {
-            mViewPager.setCurrentItem(PAGE_INDEX_SCREEN);
-        }
-
         stopOverlayService();
-    }
-
-    @Override
-    public void onSharedPreferenceChanged(SharedPreferences prefs, String key) {
-        if (Utils.KEY_RECORDING.equals(key)) {
-            refresh();
-        }
+        refresh();
+        clearTransitionNames();
     }
 
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions,
                                            @NonNull int[] results) {
         if (hasAllPermissions()) {
-            if (requestCode == ScreenFragment.REQUEST_AUDIO_PERMS) {
-                getScreenFragment().refresh();
-                return;
-            } else if (requestCode == REQUEST_SOUND_REC_PERMS) {
-                setupConnection();
-            }
-            fabClicked();
-            return;
-        }
-
-        // Storage access permission is enough for screen recording
-        if (hasStoragePermission() && mPosition == PAGE_INDEX_SCREEN) {
-            fabClicked();
+            toggleAfterPermissionRequest(requestCode);
             return;
         }
 
@@ -223,64 +197,54 @@ public class RecorderActivity extends AppCompatActivity implements
                     .setTitle(R.string.dialog_permissions_title)
                     .setMessage(message)
                     .setPositiveButton(R.string.dialog_permissions_ask,
-                            (dialog, position) -> fabClicked())
+                            (dialog, position) -> {
+                                dialog.dismiss();
+                                askPermissionsAgain(requestCode);
+                            })
                     .setNegativeButton(R.string.dialog_permissions_dismiss, null)
                     .show();
         } else {
             // User has denied all the required permissions "forever"
-            Snackbar.make(findViewById(R.id.coordinator), getString(
-                    R.string.snack_permissions_no_permission), Snackbar.LENGTH_LONG).show();
+            new AlertDialog.Builder(this)
+                    .setTitle(R.string.dialog_permissions_title)
+                    .setMessage(R.string.snack_permissions_no_permission)
+                    .setPositiveButton(R.string.dialog_permissions_dismiss, null)
+                    .show();
         }
     }
 
     @Override
-    public int getCount() {
-        return PAGE_TITLE_RES_IDS.length;
+    public void onSharedPreferenceChanged(SharedPreferences prefs, String key) {
+        if (Utils.KEY_RECORDING.equals(key)) {
+            refresh();
+        }
     }
 
-    @Override
-    public Fragment createPage(int index) {
-        return index == PAGE_INDEX_SOUND ? new SoundFragment() : new ScreenFragment();
-    }
 
-    @Override
-    public String getPageTitle(int index) {
-        return getString(PAGE_TITLE_RES_IDS[index]);
-    }
-
-    private void setupConnection() {
-        checkSoundRecPermissions();
-        mConnection = new ServiceConnection() {
-            @Override
-            public void onServiceConnected(ComponentName componentName, IBinder binder) {
-                mSoundService = ((RecorderBinder) binder).getService();
-                SoundFragment soundFragment = getSoundFragment();
-
-                if (mVisualizer == null && soundFragment != null) {
-                    mVisualizer = soundFragment.getVisualizer();
-                }
-                mSoundService.setAudioListener(mVisualizer);
-            }
-
-            @Override
-            public void onServiceDisconnected(ComponentName componentName) {
-                mSoundService = null;
-            }
-        };
-    }
-
-    private void fabClicked() {
-        switch (mPosition) {
-            case 0:
+    private void toggleAfterPermissionRequest(int requestCode) {
+        switch (requestCode) {
+            case REQUEST_SOUND_REC_PERMS:
+                setupConnection();
                 toggleSoundRecorder();
                 break;
-            case 1:
+            case REQUEST_SCREEN_REC_PERMS:
                 toggleScreenRecorder();
                 break;
         }
     }
 
-    public void toggleSoundRecorder() {
+    private void askPermissionsAgain(int requestCode) {
+        switch (requestCode) {
+            case REQUEST_SOUND_REC_PERMS:
+                checkSoundRecPermissions();
+                break;
+            case REQUEST_SCREEN_REC_PERMS:
+                checkScreenRecPermissions();
+                break;
+        }
+    }
+
+    private void toggleSoundRecorder() {
         if (checkSoundRecPermissions()) {
             return;
         }
@@ -305,7 +269,7 @@ public class RecorderActivity extends AppCompatActivity implements
         refresh();
     }
 
-    public void toggleScreenRecorder() {
+    private void toggleScreenRecorder() {
         if (checkScreenRecPermissions()) {
             return;
         }
@@ -317,11 +281,9 @@ public class RecorderActivity extends AppCompatActivity implements
                     .setClass(this, ScreencastService.class));
         } else {
             // Start
-            mFab.animate().scaleX(0f).scaleY(0f).setDuration(500)
-                    .setInterpolator(new FastOutSlowInInterpolator()).start();
             new Handler().postDelayed(() -> {
                 Intent intent = new Intent(this, OverlayService.class);
-                intent.putExtra(OverlayService.EXTRA_HAS_AUDIO, getScreenFragment().withAudio());
+                intent.putExtra(OverlayService.EXTRA_HAS_AUDIO, isAudioAllowedWithScreen());
                 startService(intent);
                 onBackPressed();
             }, 500);
@@ -329,32 +291,43 @@ public class RecorderActivity extends AppCompatActivity implements
     }
 
     private void refresh() {
+        ConstraintSet set = new ConstraintSet();
         if (Utils.isRecording(this)) {
-            if (mFab.getScaleX() != 0f) {
-                mFab.animate().scaleX(0f).scaleY(0f).setDuration(750)
-                        .setInterpolator(new FastOutSlowInInterpolator()).start();
+            boolean screenRec = Utils.isScreenRecording(this);
+
+            mRecordingText.setText(getString(screenRec ?
+                    R.string.screen_recording_message : R.string.sound_recording_title_working));
+            mRecordingLayout.setBackgroundColor(ContextCompat.getColor(this, screenRec ?
+                    R.color.screen : R.color.sound));
+            mRecordingVisualizer.setVisibility(screenRec ? View.GONE : View.VISIBLE);
+            mScreenFab.setSelected(screenRec);
+            mSoundFab.setSelected(!screenRec);
+
+            if (screenRec) {
+                mScreenFab.setImageResource(R.drawable.ic_stop_screen);
+                set.clone(this, R.layout.constraint_screen);
+            } else {
+                mSoundFab.setImageResource(R.drawable.ic_stop_sound);
+                mRecordingVisualizer.onAudioLevelUpdated(0);
+                if (mSoundService != null) {
+                    mSoundService.setAudioListener(mRecordingVisualizer);
+                }
+                set.clone(this, R.layout.constraint_sound);
             }
         } else {
-            if (mFab.getScaleX() != 1f) {
-                mFab.animate().scaleX(1f).scaleY(1f).setDuration(500)
-                        .setInterpolator(new FastOutSlowInInterpolator())
-                        .start();
-            }
+            mScreenFab.setImageResource(R.drawable.ic_action_screen_record);
+            mSoundFab.setImageResource(R.drawable.ic_action_sound_record);
+            mScreenFab.setSelected(false);
+            mSoundFab.setSelected(false);
+            mRecordingVisualizer.setVisibility(View.GONE);
+            set.clone(this, R.layout.constraint_default);
         }
 
-        SoundFragment soundFragment = getSoundFragment();
-        ScreenFragment screenFragment = getScreenFragment();
+        updateLastItemStatus();
+        updateSystemUIColors();
 
-        if (soundFragment != null) {
-            mVisualizer = soundFragment.getVisualizer();
-            if (mSoundService != null) {
-                mSoundService.setAudioListener(mVisualizer);
-            }
-            soundFragment.refresh();
-        }
-        if (screenFragment != null) {
-            screenFragment.refresh();
-        }
+        TransitionManager.beginDelayedTransition(mConstraintRoot);
+        set.applyTo(mConstraintRoot);
     }
 
     private boolean hasStoragePermission() {
@@ -405,10 +378,6 @@ public class RecorderActivity extends AppCompatActivity implements
     }
 
     private boolean checkScreenRecPermissions() {
-        if (hasStoragePermission()) {
-            return false;
-        }
-
         if (!hasDrawOverOtherAppsPermission()) {
             Intent overlayIntent = new Intent(Settings.ACTION_MANAGE_OVERLAY_PERMISSION,
                     Uri.parse("package:" + getPackageName()));
@@ -421,17 +390,33 @@ public class RecorderActivity extends AppCompatActivity implements
             return true;
         }
 
+        if (hasStoragePermission()) {
+            return false;
+        }
+
         final String[] perms = {Manifest.permission.WRITE_EXTERNAL_STORAGE};
-        requestPermissions(perms, REQUEST_STORAGE_PERMS);
+        requestPermissions(perms, REQUEST_SCREEN_REC_PERMS);
         return true;
     }
 
-    private SoundFragment getSoundFragment() {
-        return (SoundFragment) mAdapter.getFragment(PAGE_INDEX_SOUND);
+    private boolean isAudioAllowedWithScreen() {
+        return mPrefs.getBoolean(Utils.PREF_SCREEN_WITH_AUDIO, false);
     }
 
-    private ScreenFragment getScreenFragment() {
-        return (ScreenFragment) mAdapter.getFragment(PAGE_INDEX_SCREEN);
+    private void setupConnection() {
+        checkSoundRecPermissions();
+        mConnection = new ServiceConnection() {
+            @Override
+            public void onServiceConnected(ComponentName name, IBinder binder) {
+                mSoundService = ((RecorderBinder) binder).getService();
+                mSoundService.setAudioListener(mRecordingVisualizer);
+            }
+
+            @Override
+            public void onServiceDisconnected(ComponentName name) {
+                mSoundService = null;
+            }
+        };
     }
 
     private void bindSoundRecService() {
@@ -449,7 +434,79 @@ public class RecorderActivity extends AppCompatActivity implements
 
         // Stop overlay service if running
         services.stream().filter(info -> getPackageName().equals(info.service.getPackageName()) &&
-                        OverlayService.class.getName().equals(info.service.getClassName()))
+                OverlayService.class.getName().equals(info.service.getClassName()))
                 .forEach(info -> stopService(new Intent(this, OverlayService.class)));
+    }
+
+    private void updateLastItemStatus() {
+        String lastScreen = LastRecordHelper.getLastItemPath(this, false);
+        String lastSound = LastRecordHelper.getLastItemPath(this, true);
+
+        if (lastScreen == null) {
+            mScreenLast.setVisibility(View.GONE);
+        } else {
+            mScreenLast.setVisibility(View.VISIBLE);
+            OnBoardingHelper.onBoardLastItem(this, mScreenLast, false);
+        }
+
+        if (lastSound == null) {
+            mSoundLast.setVisibility(View.GONE);
+        } else {
+            mSoundLast.setVisibility(View.VISIBLE);
+            OnBoardingHelper.onBoardLastItem(this, mSoundLast, true);
+        }
+    }
+
+    private void updateSystemUIColors() {
+        int statusBarColor;
+        int navigationBarColor;
+
+        if (Utils.isRecording(this)) {
+            statusBarColor = ContextCompat.getColor(this, Utils.isScreenRecording(this) ?
+                    R.color.screen : R.color.sound);
+            navigationBarColor = statusBarColor;
+        } else {
+            statusBarColor = ContextCompat.getColor(this, R.color.screen);
+            navigationBarColor = ContextCompat.getColor(this, R.color.sound);
+        }
+
+        getWindow().setStatusBarColor(Utils.darkenedColor(statusBarColor));
+        getWindow().setNavigationBarColor(Utils.darkenedColor(navigationBarColor));
+    }
+
+    private void clearTransitionNames() {
+        mScreenSettings.setTransitionName("");
+        mScreenLast.setTransitionName("");
+        mSoundLast.setTransitionName("");
+    }
+
+    private void showDialog(Intent intent, View view) {
+        String transitionName = getString(R.string.transition_dialog_name);
+        view.setTransitionName(transitionName);
+        ActivityOptionsCompat options = ActivityOptionsCompat.makeSceneTransitionAnimation(this,
+                view, transitionName);
+        ActivityCompat.startActivityForResult(this, intent,
+                REQUEST_DIALOG_ACTIVITY, options.toBundle());
+    }
+
+    private void openScreenSettings() {
+        Intent intent = new Intent(this, DialogActivity.class);
+        intent.putExtra(DialogActivity.EXTRA_TITLE, R.string.screen_settings_title);
+        intent.putExtra(DialogActivity.EXTRA_SETTINGS_SCREEN, true);
+        showDialog(intent, mScreenSettings);
+    }
+
+    private void openLastScreen() {
+        Intent intent = new Intent(this, DialogActivity.class);
+        intent.putExtra(DialogActivity.EXTRA_TITLE, R.string.screen_last_title);
+        intent.putExtra(DialogActivity.EXTRA_LAST_SCREEN, true);
+        showDialog(intent, mScreenLast);
+    }
+
+    private void openLastSound() {
+        Intent intent = new Intent(this, DialogActivity.class);
+        intent.putExtra(DialogActivity.EXTRA_TITLE, R.string.sound_last_title);
+        intent.putExtra(DialogActivity.EXTRA_LAST_SOUND, true);
+        showDialog(intent, mSoundLast);
     }
 }
