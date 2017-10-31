@@ -54,8 +54,8 @@ public class OverlayLayer extends View {
         inflater.inflate(R.layout.window_screen_recorder_overlay, mLayout);
 
         mButton = (ImageButton) mLayout.findViewById(R.id.overlay_button);
-        ImageButton mDrag = (ImageButton) mLayout.findViewById(R.id.overlay_drag);
-        mDrag.setOnTouchListener(new OnTouchListener() {
+        DragView drag = (DragView) mLayout.findViewById(R.id.overlay_drag);
+        drag.setOnTouchListener(new OnTouchListener() {
             private int origX;
             private int origY;
             private int touchX;
@@ -79,6 +79,7 @@ public class OverlayLayer extends View {
                         mManager.updateViewLayout(mLayout, mParams);
                         break;
                     case MotionEvent.ACTION_UP:
+                        v.performClick();
                         break;
                     default:
                         return false;
