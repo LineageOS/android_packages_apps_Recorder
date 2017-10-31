@@ -59,7 +59,7 @@ public class LastRecordHelper {
                     }
                     setLastItem(context, null, 0, isSound);
                 })
-                .setNegativeButton(android.R.string.cancel, null)
+                .setNegativeButton(R.string.cancel, null)
                 .create();
     }
 
@@ -97,12 +97,12 @@ public class LastRecordHelper {
         return prefs.getString(isSound ? KEY_LAST_SOUND : KEY_LAST_SCREEN, null);
     }
 
-    public static long getLastItemDuration(Context context, boolean isSound) {
+    private static long getLastItemDuration(Context context, boolean isSound) {
         SharedPreferences prefs = context.getSharedPreferences(PREFS, 0);
         return prefs.getLong(isSound ? KEY_LAST_SOUND_TIME : KEY_LAST_SCREEN_TIME, -1);
     }
 
-    public static String getLastItemDate(Context context, boolean isSound) {
+    private static String getLastItemDate(Context context, boolean isSound) {
         String path = getLastItemPath(context, isSound);
         String[] pathParts = path.split("/");
         String[] date = pathParts[pathParts.length - 1]
@@ -111,5 +111,11 @@ public class LastRecordHelper {
                 .split("-");
         return context.getString(R.string.date_format, date[1], date[2], date[3],
                 date[4], date[5]);
+    }
+
+    public static String getLastItemDescription(Context context, boolean isSound) {
+        return context.getString(R.string.screen_last_message,
+                getLastItemDate(context, isSound),
+                getLastItemDuration(context, isSound) / 1000);
     }
 }
