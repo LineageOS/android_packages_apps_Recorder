@@ -14,6 +14,7 @@
      limitations under the License.
 -->
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="org.lineageos.recorder">
 
     <uses-permission android:name="android.permission.CAPTURE_SECURE_VIDEO_OUTPUT" />
@@ -24,6 +25,10 @@
     <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission android:name="android.permission.WRITE_SETTINGS" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <!-- This is needed for aosp build env -->
+    <uses-sdk android:minSdkVersion='25'
+        tools:ignore="GradleOverrides" />
 
     <application
         android:allowBackup="false"
