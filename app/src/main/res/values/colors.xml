@@ -16,9 +16,12 @@
 <resources>
     <color name="colorPrimary">#f8f8f8</color>
     <color name="colorPrimaryDark">#e0e0e0</color>
-    <color name="colorAccent">#965031</color>
-    <color name="colorAccentDark">#552514</color>
+    <color name="colorAccent">#167c80</color>
 
     <color name="white">#fafafa</color>
-    <color name="black">#000000</color>
+    <color name="black">#333333</color>
+
+    <color name="screen">#4e888a</color>
+    <color name="sound">#f19645</color>
+    <color name="icon">#56000000</color>
 </resources>
