@@ -33,8 +33,8 @@ import android.support.v4.content.ContextCompat;
 import android.text.format.DateUtils;
 import android.util.Log;
 
-import org.lineageos.recorder.R;
 import org.lineageos.recorder.RecorderActivity;
+import org.lineageos.recorder.R;
 import org.lineageos.recorder.utils.LastRecordHelper;
 import org.lineageos.recorder.utils.Utils;
 
@@ -230,7 +230,7 @@ public class SoundRecorderService extends Service {
         mVisualizerThread = new Thread(() -> {
             while (isRecording()) {
                 try {
-                    Thread.sleep(100L);
+                    Thread.sleep(150L);
                 } catch (InterruptedException e) {
                     Log.e(TAG, e.getMessage());
                 }
@@ -274,9 +274,6 @@ public class SoundRecorderService extends Service {
 
     private Notification createRecordingNotification() {
         Intent intent = new Intent(this, RecorderActivity.class);
-        // Fake launcher intent to resume previous activity - FIXME: use singleTop instead?
-        intent.setAction(Intent.ACTION_MAIN);
-        intent.addCategory(Intent.CATEGORY_LAUNCHER);
         PendingIntent pi = PendingIntent.getActivity(this, 0, intent, 0);
 
         NotificationCompat.Builder builder = new NotificationCompat.Builder(this)
@@ -293,9 +290,6 @@ public class SoundRecorderService extends Service {
 
     public void createShareNotification() {
         Intent intent = new Intent(this, RecorderActivity.class);
-        // Fake launcher intent to resume previous activity - FIXME: use singleTop instead?
-        intent.setAction(Intent.ACTION_MAIN);
-        intent.addCategory(Intent.CATEGORY_LAUNCHER);
         PendingIntent pi = PendingIntent.getActivity(this, 0, intent, 0);
 
         PendingIntent playPIntent = PendingIntent.getActivity(this, 0,
