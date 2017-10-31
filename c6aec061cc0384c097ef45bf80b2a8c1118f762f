@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fbe9ffba_2eb09f95",
+        "filename": "app/src/main/Android.mk",
+        "patchSetId": 1
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 8461
+      },
+      "writtenOn": "2017-10-31T18:52:13Z",
+      "side": 1,
+      "message": "It\u0027s not possible to use $(LOCAL_PATH) here because it goes mad  ¯\\_(?)_/¯",
+      "range": {
+        "startLine": 56,
+        "startChar": 44,
+        "endLine": 56,
+        "endChar": 48
+      },
+      "revId": "c6aec061cc0384c097ef45bf80b2a8c1118f762f",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
