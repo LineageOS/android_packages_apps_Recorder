@@ -28,6 +28,7 @@ LOCAL_AAPT_FLAGS := \
     --auto-add-overlay \
     --extra-packages android.support.constraint \
     --extra-packages android.support.design \
+    --extra-packages android.support.transition \
     --extra-packages android.support.v7.appcompat \
     --extra-packages android.support.v7.cardview
 
@@ -35,13 +36,13 @@ LOCAL_STATIC_JAVA_LIBRARIES += \
     android-support-annotations \
     android-support-constraint-layout-solver \
     android-support-design \
-    android-support-transition \
     android-support-v4 \
     android-support-v7-appcompat \
     android-support-v7-cardview
 
 LOCAL_STATIC_JAVA_AAR_LIBRARIES += \
-    android-support-constraint-layout
+    android-support-constraint-layout \
+    android-support-transition-custom
 
 LOCAL_PACKAGE_NAME := Recorder
 LOCAL_CERTIFICATE := platform
@@ -54,7 +55,8 @@ include $(CLEAR_VARS)
 
 LOCAL_PREBUILT_STATIC_JAVA_LIBRARIES += \
     android-support-constraint-layout:../../libs/constraint-layout-1.1.0-beta2.aar \
-    android-support-constraint-layout-solver:../../libs/constraint-layout-solver-1.1.0-beta2.jar
+    android-support-constraint-layout-solver:../../libs/constraint-layout-solver-1.1.0-beta2.jar \
+    android-support-transition-custom:../../libs/transition-26.1.0.aar
 
 include $(BUILD_MULTI_PREBUILT)
 
