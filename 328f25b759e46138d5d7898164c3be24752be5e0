@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8ab3919d_5f465920",
+        "filename": "app/src/main/Android.mk",
+        "patchSetId": 1
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2017-11-04T14:19:34Z",
+      "side": 1,
+      "message": "This had to be named to something other than android-support-transition to avoid colliding with the one from frameworks.\n\nThis was the error:\n\nbuild/core/base_rules.mk:238: error: packages/apps/Recorder/app/src/main: MODULE.TARGET.JAVA_LIBRARIES.android-support-transition already defined by frameworks/support/transition.",
+      "range": {
+        "startLine": 59,
+        "startChar": 4,
+        "endLine": 59,
+        "endChar": 37
+      },
+      "revId": "328f25b759e46138d5d7898164c3be24752be5e0",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
