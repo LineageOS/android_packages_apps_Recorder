@@ -68,8 +68,8 @@ public class RecorderActivity extends AppCompatActivity implements
             0,
             R.string.dialog_permissions_mic,
             R.string.dialog_permissions_storage,
-            R.string.dialog_permissions_phone,
             R.string.dialog_permissions_mic_storage,
+            R.string.dialog_permissions_phone,
             R.string.dialog_permissions_mic_phone,
             R.string.dialog_permissions_storage_phone,
             R.string.dialog_permissions_mic_storage_phone
