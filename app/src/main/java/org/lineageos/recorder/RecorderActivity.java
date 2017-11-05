@@ -224,8 +224,8 @@ public class RecorderActivity extends AppCompatActivity implements
     private void toggleAfterPermissionRequest(int requestCode) {
         switch (requestCode) {
             case REQUEST_SOUND_REC_PERMS:
-                setupConnection();
-                toggleSoundRecorder();
+                bindSoundRecService();
+                new Handler().postDelayed(this::toggleSoundRecorder, 500);
                 break;
             case REQUEST_SCREEN_REC_PERMS:
                 toggleScreenRecorder();
