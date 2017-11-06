@@ -76,7 +76,7 @@
     <!-- Screen recorder notification overlay message -->
     <string name="screen_overlay_notif_message">Press the record button when you\'re ready to start</string>
     <!-- Screen settings dialog title -->
-    <string name="screen_settings_title">Screen record settings</string>
+    <string name="screen_settings_title">Screen recorder settings</string>
 
     <!-- Permissions -->
     <!-- Permissions dialog title -->
