@@ -298,6 +298,9 @@ public class SoundRecorderService extends Service {
         PendingIntent sharePIntent = PendingIntent.getActivity(this, 0,
                 LastRecordHelper.getShareIntent(this, mOutFilePath, "audio/wav"),
                 PendingIntent.FLAG_CANCEL_CURRENT);
+        PendingIntent deletePIntent = PendingIntent.getActivity(this, 0,
+                LastRecordHelper.getDeleteIntent(this, true),
+                PendingIntent.FLAG_CANCEL_CURRENT);
 
         LastRecordHelper.setLastItem(this, mOutFilePath, mElapsedTime, true);
 
@@ -309,6 +312,7 @@ public class SoundRecorderService extends Service {
                         DateUtils.formatElapsedTime(mElapsedTime / 1000)))
                 .addAction(R.drawable.ic_play, getString(R.string.play), playPIntent)
                 .addAction(R.drawable.ic_share, getString(R.string.share), sharePIntent)
+                .addAction(R.drawable.ic_delete, getString(R.string.delete), deletePIntent)
                 .setContentIntent(pi)
                 .build();
 

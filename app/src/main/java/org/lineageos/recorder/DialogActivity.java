@@ -42,6 +42,7 @@ public class DialogActivity extends AppCompatActivity implements
     public static final String EXTRA_LAST_SCREEN = "lastScreenItem";
     public static final String EXTRA_LAST_SOUND = "lastSoundItem";
     public static final String EXTRA_SETTINGS_SCREEN = "settingsScreen";
+    public static final String EXTRA_DELETE_LAST_RECORDING = "deleteLastItem";
     private static final int REQUEST_RECORD_AUDIO_PERMS = 213;
     private static final String TYPE_AUDIO = "audio/wav";
     private static final String TYPE_VIDEO = "video/mp4";
@@ -71,7 +72,6 @@ public class DialogActivity extends AppCompatActivity implements
         boolean isLastScreen = intent.getBooleanExtra(EXTRA_LAST_SCREEN, false);
         boolean isLastSound = intent.getBooleanExtra(EXTRA_LAST_SOUND, false);
         boolean isSettingsScreen = intent.getBooleanExtra(EXTRA_SETTINGS_SCREEN, false);
-
         getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT,
                 ViewGroup.LayoutParams.WRAP_CONTENT);
 
@@ -88,6 +88,11 @@ public class DialogActivity extends AppCompatActivity implements
         }
 
         animateAppareance();
+
+        boolean deleteLastRecording = intent.getBooleanExtra(EXTRA_DELETE_LAST_RECORDING, false);
+        if (deleteLastRecording) {
+            deleteLastItem(isLastSound);
+        }
     }
 
     @Override
