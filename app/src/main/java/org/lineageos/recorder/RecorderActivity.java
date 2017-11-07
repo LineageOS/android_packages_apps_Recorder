@@ -41,6 +41,7 @@ import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.telephony.TelephonyManager;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
@@ -170,7 +171,18 @@ public class RecorderActivity extends AppCompatActivity implements
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions,
                                            @NonNull int[] results) {
-        if (hasAllPermissions()) {
+        boolean hasRequiredPermissions = false;
+        switch (requestCode) {
+            case REQUEST_SCREEN_REC_PERMS:
+                hasRequiredPermissions = hasStoragePermission();
+                break;
+
+            case REQUEST_SOUND_REC_PERMS:
+                hasRequiredPermissions = hasAllPermissions();
+                break;
+        }
+
+        if (hasRequiredPermissions) {
             toggleAfterPermissionRequest(requestCode);
             return;
         }
