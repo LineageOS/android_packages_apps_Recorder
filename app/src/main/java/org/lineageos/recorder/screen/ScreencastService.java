@@ -235,6 +235,9 @@ public class ScreencastService extends Service {
         PendingIntent sharePIntent = PendingIntent.getActivity(this, 0,
                 LastRecordHelper.getShareIntent(this, file, "video/mp4"),
                 PendingIntent.FLAG_CANCEL_CURRENT);
+        PendingIntent deletePIntent = PendingIntent.getActivity(this, 0,
+                LastRecordHelper.getDeleteIntent(this, false),
+                PendingIntent.FLAG_CANCEL_CURRENT);
 
         long timeElapsed = SystemClock.elapsedRealtime() - mStartTime;
         LastRecordHelper.setLastItem(this, file, timeElapsed, false);
@@ -249,6 +252,7 @@ public class ScreencastService extends Service {
                         DateUtils.formatElapsedTime(timeElapsed / 1000)))
                 .addAction(R.drawable.ic_play, getString(R.string.play), playPIntent)
                 .addAction(R.drawable.ic_share, getString(R.string.share), sharePIntent)
+                .addAction(R.drawable.ic_delete, getString(R.string.delete), deletePIntent)
                 .setContentIntent(pi);
     }
 }
