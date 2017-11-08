@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "89446a45_6e040f3c",
+        "filename": "app/src/main/java/org/lineageos/recorder/DialogActivity.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2017-11-08T13:40:40Z",
+      "side": 0,
+      "message": "removed line",
+      "revId": "e89aff121054cf43c183542ed5786e4b8c16956e",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
