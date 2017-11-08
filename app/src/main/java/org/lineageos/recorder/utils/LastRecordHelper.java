@@ -23,6 +23,7 @@ import android.net.Uri;
 import android.support.v4.content.FileProvider;
 import android.support.v7.app.AlertDialog;
 
+import org.lineageos.recorder.DialogActivity;
 import org.lineageos.recorder.R;
 import org.lineageos.recorder.screen.ScreencastService;
 import org.lineageos.recorder.sounds.SoundRecorderService;
@@ -80,6 +81,15 @@ public class LastRecordHelper {
         Intent intent = new Intent(Intent.ACTION_VIEW);
         intent.setDataAndType(uri, mimeType);
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_GRANT_READ_URI_PERMISSION);
+        return intent;
+    }
+
+    public static Intent getDeleteIntent(Context context, boolean isSound) {
+        Intent intent = new Intent(context, DialogActivity.class);
+        intent.putExtra(DialogActivity.EXTRA_TITLE, R.string.sound_last_title);
+        intent.putExtra(DialogActivity.EXTRA_LAST_SCREEN, !isSound);
+        intent.putExtra(DialogActivity.EXTRA_LAST_SOUND, isSound);
+        intent.putExtra(DialogActivity.EXTRA_DELETE_LAST_RECORDING, true);
         return intent;
     }
 
