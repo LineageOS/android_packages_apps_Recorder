@@ -19,6 +19,7 @@ include $(CLEAR_VARS)
 
 LOCAL_RESOURCE_DIR := $(LOCAL_PATH)/res \
     frameworks/support/design/res \
+    frameworks/support/transition/res \
     frameworks/support/v7/appcompat/res \
     frameworks/support/v7/cardview/res
 
