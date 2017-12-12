@@ -16,11 +16,6 @@
 -->
 <resources>
   <string name="app_name">Felvevő</string>
-  <!-- Fragment titles -->
-  <!-- Sound recorder fragment title -->
-  <string name="fragment_sounds">Hang</string>
-  <!-- Screen recorder fragment title -->
-  <string name="fragment_screen">Kijelző</string>
   <!-- Common actions -->
   <!-- Share action for notification -->
   <string name="share">Megosztás</string>
@@ -30,6 +25,7 @@
   <string name="play">Lejátszás</string>
   <!-- Delete action -->
   <string name="delete">Törlés</string>
+  <!-- Cancel action -->
   <!-- Delete confirm title -->
   <string name="delete_title">Felvétel törlése</string>
   <!-- Delete confirm message -->
@@ -42,25 +38,16 @@
   <string name="sound_notification_title">Hangrögzítő</string>
   <!-- Sound recorder notification message -->
   <string name="sound_notification_message">Audio hossza: %1$s</string>
-  <!-- Sound recorder status card title ready -->
-  <string name="sound_recording_title_ready">Felvételre kész</string>
   <!-- Sound recorder status card title recording -->
   <string name="sound_recording_title_working">Felvétel</string>
-  <!-- Sound recorder status card title busy -->
-  <string name="sound_recording_title_busy">Képernyő felvétele közben letiltva</string>
   <!-- Sound recorder last item title -->
   <string name="sound_last_title">Utolsó felvétel</string>
-  <!-- Sound recorder last item message -->
-  <string name="sound_last_message">Dátum: %1$s\nHossz: %2$d másodperc</string>
   <!-- Screen recorder -->
-  <!-- Screen recorder audio card title -->
-  <string name="screen_audio_title">Mikrofon</string>
-  <!-- Screen recorder enabled audio card message -->
+  <!-- Screen recorder enabled audio message -->
   <string name="screen_audio_message_on">A mikrofonon keresztüli hang a videó része lesz</string>
-  <!-- Screen recorder disabled audio card message -->
+  <!-- Screen recorder disabled audio message -->
   <string name="screen_audio_message_off">A mikrofonon keresztüli hang nem lesz a videó része</string>
-  <!-- Screen recorder audio permission request card message -->
-  <string name="screen_audio_warning_message">A mikrofonhoz való hozzáférést engedélyeznie kell annak érdekében, hogy hangsávot adjon a felvételhez. Érintse meg alul a hozzáférés engedélyezéséhez</string>
+  <!-- Screen recorder disabled audio toggle message -->
   <!-- Screen recorder audio permission request card button -->
   <string name="screen_audio_warning_button_ask">Rákérdez</string>
   <!-- Screen recorder notification storage error title -->
@@ -73,8 +60,6 @@
   <string name="screen_notification_message">Videó hossza: %s</string>
   <!-- Screen recorder notification share title -->
   <string name="screen_notification_message_done">Megosztásra kész</string>
-  <!-- Screen recorder status card title -->
-  <string name="screen_recording_title">Felvétel</string>
   <!-- Screen recorder status message -->
   <string name="screen_recording_message">Képernyőfelvétel\u2026</string>
   <!-- Screen recorder last item title -->
@@ -85,6 +70,7 @@
   <string name="screen_overlay_notif_title">Felvételre kész</string>
   <!-- Screen recorder notification overlay message -->
   <string name="screen_overlay_notif_message">Nyomja meg a felvétel gombot, ha készen áll az indításhoz</string>
+  <!-- Screen settings dialog title -->
   <!-- Permissions -->
   <!-- Permissions dialog title -->
   <string name="dialog_permissions_title">Jogosultságok</string>
@@ -110,4 +96,8 @@
   <string name="dialog_permissions_overlay">A Felvevőnek szüksége van az \"Átfedő ablakok rajzolása\" engedélyre a képernyőfelvétel készítéséhez. Nyomja meg az engedélyez gombot, a beállításokban engedélyezze azt, és térjen vissza a Felvevőhöz</string>
   <!-- No permissions granted error -->
   <string name="snack_permissions_no_permission">Szükséges engedélyek megtagadva, engedélyezze őket a Beállításokban a felvétel megkezdéséhez</string>
+  <!-- Main activity -->
+  <!-- Screen record title -->
+  <!-- Sound record title -->
+  <!-- Transition name for dialogActivity -->
 </resources>

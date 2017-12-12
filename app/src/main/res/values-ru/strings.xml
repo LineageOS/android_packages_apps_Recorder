@@ -16,11 +16,6 @@
 -->
 <resources>
   <string name="app_name">Рекордер</string>
-  <!-- Fragment titles -->
-  <!-- Sound recorder fragment title -->
-  <string name="fragment_sounds">Звук</string>
-  <!-- Screen recorder fragment title -->
-  <string name="fragment_screen">Экран</string>
   <!-- Common actions -->
   <!-- Share action for notification -->
   <string name="share">Отправить</string>
@@ -30,6 +25,8 @@
   <string name="play">Воспроизвести</string>
   <!-- Delete action -->
   <string name="delete">Удалить</string>
+  <!-- Cancel action -->
+  <string name="cancel">Отмена</string>
   <!-- Delete confirm title -->
   <string name="delete_title">Удаление записи</string>
   <!-- Delete confirm message -->
@@ -42,25 +39,17 @@
   <string name="sound_notification_title">Запись звука</string>
   <!-- Sound recorder notification message -->
   <string name="sound_notification_message">Длительность аудио: %1$s</string>
-  <!-- Sound recorder status card title ready -->
-  <string name="sound_recording_title_ready">Готов к записи</string>
   <!-- Sound recorder status card title recording -->
   <string name="sound_recording_title_working">Запись</string>
-  <!-- Sound recorder status card title busy -->
-  <string name="sound_recording_title_busy">Отключено при записи экрана</string>
   <!-- Sound recorder last item title -->
   <string name="sound_last_title">Последняя запись</string>
-  <!-- Sound recorder last item message -->
-  <string name="sound_last_message">Дата: %1$s\nДлительность: %2$d сек.</string>
   <!-- Screen recorder -->
-  <!-- Screen recorder audio card title -->
-  <string name="screen_audio_title">Микрофон</string>
-  <!-- Screen recorder enabled audio card message -->
+  <!-- Screen recorder enabled audio message -->
   <string name="screen_audio_message_on">Звуки с микрофона будут записаны в видео</string>
-  <!-- Screen recorder disabled audio card message -->
+  <!-- Screen recorder disabled audio message -->
   <string name="screen_audio_message_off">Звуки с микрофона не записываются</string>
-  <!-- Screen recorder audio permission request card message -->
-  <string name="screen_audio_warning_message">Для записи со звуком необходимо предоставить разрешение на использование микрофона. Нажмите кнопку ниже, чтобы разрешить доступ</string>
+  <!-- Screen recorder disabled audio toggle message -->
+  <string name="screen_audio_message_disabled">Во время записи экрана изменить эту настройку невозможно</string>
   <!-- Screen recorder audio permission request card button -->
   <string name="screen_audio_warning_button_ask">Запросить разрешения</string>
   <!-- Screen recorder notification storage error title -->
@@ -73,8 +62,6 @@
   <string name="screen_notification_message">Длительность видео: %s</string>
   <!-- Screen recorder notification share title -->
   <string name="screen_notification_message_done">Готово к отправке</string>
-  <!-- Screen recorder status card title -->
-  <string name="screen_recording_title">Запись</string>
   <!-- Screen recorder status message -->
   <string name="screen_recording_message">Идёт запись с экрана</string>
   <!-- Screen recorder last item title -->
@@ -85,6 +72,8 @@
   <string name="screen_overlay_notif_title">Готов к записи</string>
   <!-- Screen recorder notification overlay message -->
   <string name="screen_overlay_notif_message">Нажмите кнопку записи, когда будете готовы</string>
+  <!-- Screen settings dialog title -->
+  <string name="screen_settings_title">Настройки записи экрана</string>
   <!-- Permissions -->
   <!-- Permissions dialog title -->
   <string name="dialog_permissions_title">Разрешения</string>
@@ -110,4 +99,10 @@
   <string name="dialog_permissions_overlay">Рекордеру требуется разрешение «Показывать поверх других окон» для осуществления записи экрана. Нажмите кнопку «Запросить разрешения» ниже, включите соответствующую опцию для приложения и вернитесь назад</string>
   <!-- No permissions granted error -->
   <string name="snack_permissions_no_permission">Отказано в необходимых разрешениях. Включите их в настройках, чтобы начать запись</string>
+  <!-- Main activity -->
+  <!-- Screen record title -->
+  <string name="main_screen_action">Запись экрана</string>
+  <!-- Sound record title -->
+  <string name="main_sound_action">Запись звука</string>
+  <!-- Transition name for dialogActivity -->
 </resources>

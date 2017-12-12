@@ -16,11 +16,6 @@
 -->
 <resources>
   <string name="app_name">レコーダー</string>
-  <!-- Fragment titles -->
-  <!-- Sound recorder fragment title -->
-  <string name="fragment_sounds">音声</string>
-  <!-- Screen recorder fragment title -->
-  <string name="fragment_screen">画面</string>
   <!-- Common actions -->
   <!-- Share action for notification -->
   <string name="share">共有</string>
@@ -30,6 +25,8 @@
   <string name="play">再生</string>
   <!-- Delete action -->
   <string name="delete">削除</string>
+  <!-- Cancel action -->
+  <string name="cancel">キャンセル</string>
   <!-- Delete confirm title -->
   <string name="delete_title">記録の削除</string>
   <!-- Delete confirm message -->
@@ -42,25 +39,17 @@
   <string name="sound_notification_title">音声レコーダー</string>
   <!-- Sound recorder notification message -->
   <string name="sound_notification_message">音声の長さ: %1$s</string>
-  <!-- Sound recorder status card title ready -->
-  <string name="sound_recording_title_ready">録音準備ができました</string>
   <!-- Sound recorder status card title recording -->
   <string name="sound_recording_title_working">録音中</string>
-  <!-- Sound recorder status card title busy -->
-  <string name="sound_recording_title_busy">画面の録画中には無効になります</string>
   <!-- Sound recorder last item title -->
   <string name="sound_last_title">最後の記録</string>
-  <!-- Sound recorder last item message -->
-  <string name="sound_last_message">日付: %1$s\n時間: %2$d 秒</string>
   <!-- Screen recorder -->
-  <!-- Screen recorder audio card title -->
-  <string name="screen_audio_title">マイク</string>
-  <!-- Screen recorder enabled audio card message -->
+  <!-- Screen recorder enabled audio message -->
   <string name="screen_audio_message_on">マイクからの音声が動画に含まれます</string>
-  <!-- Screen recorder disabled audio card message -->
+  <!-- Screen recorder disabled audio message -->
   <string name="screen_audio_message_off">マイクからの音声は動画に含まれません</string>
-  <!-- Screen recorder audio permission request card message -->
-  <string name="screen_audio_warning_message">録音するにはマイクの権限を許可する必要があります。下のボタンをタップするとこのアプリの権限を許可できます</string>
+  <!-- Screen recorder disabled audio toggle message -->
+  <string name="screen_audio_message_disabled">画面の録画中はこの設定を変更できません</string>
   <!-- Screen recorder audio permission request card button -->
   <string name="screen_audio_warning_button_ask">要求する</string>
   <!-- Screen recorder notification storage error title -->
@@ -73,8 +62,6 @@
   <string name="screen_notification_message">動画の長さ: %s</string>
   <!-- Screen recorder notification share title -->
   <string name="screen_notification_message_done">共有する準備ができました</string>
-  <!-- Screen recorder status card title -->
-  <string name="screen_recording_title">録画中</string>
   <!-- Screen recorder status message -->
   <string name="screen_recording_message">画面を録画中...</string>
   <!-- Screen recorder last item title -->
@@ -85,6 +72,8 @@
   <string name="screen_overlay_notif_title">録音準備OK</string>
   <!-- Screen recorder notification overlay message -->
   <string name="screen_overlay_notif_message">開始する準備ができたら録画ボタンを押してください</string>
+  <!-- Screen settings dialog title -->
+  <string name="screen_settings_title">スクリーンレコード設定</string>
   <!-- Permissions -->
   <!-- Permissions dialog title -->
   <string name="dialog_permissions_title">権限</string>
@@ -110,4 +99,10 @@
   <string name="dialog_permissions_overlay">レコーダーには画面を録画するために「他のアプリの上に重ねて表示」権限が必要です。設定で権限を許可してからレコーダーを起動し直してください。</string>
   <!-- No permissions granted error -->
   <string name="snack_permissions_no_permission">必要な権限が拒否されました。録音を開始するには設定アプリから権限を有効にしてください。</string>
+  <!-- Main activity -->
+  <!-- Screen record title -->
+  <string name="main_screen_action">画面の録画</string>
+  <!-- Sound record title -->
+  <string name="main_sound_action">サウンドの録音</string>
+  <!-- Transition name for dialogActivity -->
 </resources>

@@ -16,11 +16,6 @@
 -->
 <resources>
   <string name="app_name">Gravadora</string>
-  <!-- Fragment titles -->
-  <!-- Sound recorder fragment title -->
-  <string name="fragment_sounds">So</string>
-  <!-- Screen recorder fragment title -->
-  <string name="fragment_screen">Pantalla</string>
   <!-- Common actions -->
   <!-- Share action for notification -->
   <string name="share">Comparteix</string>
@@ -30,6 +25,8 @@
   <string name="play">Reprodueix</string>
   <!-- Delete action -->
   <string name="delete">Elimina</string>
+  <!-- Cancel action -->
+  <string name="cancel">Cancel·la</string>
   <!-- Delete confirm title -->
   <string name="delete_title">S\'està eliminant el registre</string>
   <!-- Delete confirm message -->
@@ -42,25 +39,17 @@
   <string name="sound_notification_title">Gravadora de so</string>
   <!-- Sound recorder notification message -->
   <string name="sound_notification_message">Durada de l\'àudio: %1$s</string>
-  <!-- Sound recorder status card title ready -->
-  <string name="sound_recording_title_ready">Preparat per enregistrar</string>
   <!-- Sound recorder status card title recording -->
   <string name="sound_recording_title_working">S\'està gravant</string>
-  <!-- Sound recorder status card title busy -->
-  <string name="sound_recording_title_busy">Deshabilitat mentre s\'enregistra la Pantalla</string>
   <!-- Sound recorder last item title -->
   <string name="sound_last_title">Darrer enregistrament</string>
-  <!-- Sound recorder last item message -->
-  <string name="sound_last_message">Data: %1$s\nDuració: %2$d segons</string>
   <!-- Screen recorder -->
-  <!-- Screen recorder audio card title -->
-  <string name="screen_audio_title">Micròfon</string>
-  <!-- Screen recorder enabled audio card message -->
+  <!-- Screen recorder enabled audio message -->
   <string name="screen_audio_message_on">L\'àudio del micròfon s\'inclourà al vídeo</string>
-  <!-- Screen recorder disabled audio card message -->
+  <!-- Screen recorder disabled audio message -->
   <string name="screen_audio_message_off">L\'àudio del micròfon no s\'inclourà al vídeo</string>
-  <!-- Screen recorder audio permission request card message -->
-  <string name="screen_audio_warning_message">Has de concedir l\'accés al micròfon per poder afegir àudio a la gravació. Pica a sota per permetre l\'accés a aquesta aplicació</string>
+  <!-- Screen recorder disabled audio toggle message -->
+  <string name="screen_audio_message_disabled">No és possible canviar aquesta configuració mentre s\'enregistra la pantalla</string>
   <!-- Screen recorder audio permission request card button -->
   <string name="screen_audio_warning_button_ask">Pregunta</string>
   <!-- Screen recorder notification storage error title -->
@@ -73,8 +62,6 @@
   <string name="screen_notification_message">Durada del vídeo: %s</string>
   <!-- Screen recorder notification share title -->
   <string name="screen_notification_message_done">A punt per compartir</string>
-  <!-- Screen recorder status card title -->
-  <string name="screen_recording_title">S\'està gravant</string>
   <!-- Screen recorder status message -->
   <string name="screen_recording_message">La pantalla està sent gravada\u2026</string>
   <!-- Screen recorder last item title -->
@@ -85,6 +72,8 @@
   <string name="screen_overlay_notif_title">Preparat per enregistrar</string>
   <!-- Screen recorder notification overlay message -->
   <string name="screen_overlay_notif_message">Prem el botó de gravació quan estiguis a punt per començar</string>
+  <!-- Screen settings dialog title -->
+  <string name="screen_settings_title">Configuració de l\'enregistrador de pantalla</string>
   <!-- Permissions -->
   <!-- Permissions dialog title -->
   <string name="dialog_permissions_title">Permisos</string>
@@ -110,4 +99,10 @@
   <string name="dialog_permissions_overlay">La gravadora necessita el permís «Dibuixar sobre altres aplicacions» per gravar la pantalla. Prem permetre per habilitar el permís a la configuració i torneu a la gravadora</string>
   <!-- No permissions granted error -->
   <string name="snack_permissions_no_permission">Els permisos necessaris han estat denegats, habilita\'ls des de l\'aplicació Configuració per iniciar l\'enregistrament</string>
+  <!-- Main activity -->
+  <!-- Screen record title -->
+  <string name="main_screen_action">Enregistra la pantalla</string>
+  <!-- Sound record title -->
+  <string name="main_sound_action">Enregistra el so</string>
+  <!-- Transition name for dialogActivity -->
 </resources>

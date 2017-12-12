@@ -16,11 +16,6 @@
 -->
 <resources>
   <string name="app_name">Magnétophone</string>
-  <!-- Fragment titles -->
-  <!-- Sound recorder fragment title -->
-  <string name="fragment_sounds">Son</string>
-  <!-- Screen recorder fragment title -->
-  <string name="fragment_screen">Écran</string>
   <!-- Common actions -->
   <!-- Share action for notification -->
   <string name="share">Partager</string>
@@ -30,6 +25,8 @@
   <string name="play">Lecture</string>
   <!-- Delete action -->
   <string name="delete">Supprimer</string>
+  <!-- Cancel action -->
+  <string name="cancel">Annuler</string>
   <!-- Delete confirm title -->
   <string name="delete_title">Suppression de l’enregistrement</string>
   <!-- Delete confirm message -->
@@ -42,25 +39,16 @@
   <string name="sound_notification_title">Enregistreur audio</string>
   <!-- Sound recorder notification message -->
   <string name="sound_notification_message">Durée de l\'audio : %1$s</string>
-  <!-- Sound recorder status card title ready -->
-  <string name="sound_recording_title_ready">Prêt à enregistrer</string>
   <!-- Sound recorder status card title recording -->
   <string name="sound_recording_title_working">Enregistrement en cours</string>
-  <!-- Sound recorder status card title busy -->
-  <string name="sound_recording_title_busy">Désactivé lors de l\'enregistrement de l\'écran</string>
   <!-- Sound recorder last item title -->
   <string name="sound_last_title">Dernier enregistrement</string>
-  <!-- Sound recorder last item message -->
-  <string name="sound_last_message">Date: %1$s\nDurée: %2$d secondes</string>
   <!-- Screen recorder -->
-  <!-- Screen recorder audio card title -->
-  <string name="screen_audio_title">Microphone</string>
-  <!-- Screen recorder enabled audio card message -->
+  <!-- Screen recorder enabled audio message -->
   <string name="screen_audio_message_on">L\'enregistrement audio du microphone sera inclus dans la vidéo</string>
-  <!-- Screen recorder disabled audio card message -->
+  <!-- Screen recorder disabled audio message -->
   <string name="screen_audio_message_off">L\'enregistrement audio du microphone ne sera pas inclus dans la vidéo</string>
-  <!-- Screen recorder audio permission request card message -->
-  <string name="screen_audio_warning_message">Vous devez accorder l\'accès au microphone pour ajouter l\'audio à l\'enregistrement. Appuyez ci-dessous pour autoriser l\'accès pour cette application</string>
+  <!-- Screen recorder disabled audio toggle message -->
   <!-- Screen recorder audio permission request card button -->
   <string name="screen_audio_warning_button_ask">Demander</string>
   <!-- Screen recorder notification storage error title -->
@@ -73,8 +61,6 @@
   <string name="screen_notification_message">Durée de la vidéo : %s</string>
   <!-- Screen recorder notification share title -->
   <string name="screen_notification_message_done">Prêt à partager</string>
-  <!-- Screen recorder status card title -->
-  <string name="screen_recording_title">Enregistrement en cours</string>
   <!-- Screen recorder status message -->
   <string name="screen_recording_message">Écran en cours d\'enregistrement\u2026</string>
   <!-- Screen recorder last item title -->
@@ -85,6 +71,7 @@
   <string name="screen_overlay_notif_title">Prêt à enregistrer</string>
   <!-- Screen recorder notification overlay message -->
   <string name="screen_overlay_notif_message">Appuyez sur le bouton enregistrer quand vous êtes prêt à démarrer</string>
+  <!-- Screen settings dialog title -->
   <!-- Permissions -->
   <!-- Permissions dialog title -->
   <string name="dialog_permissions_title">Autorisations</string>
@@ -110,4 +97,8 @@
   <string name="dialog_permissions_overlay">Magnétophone a besoin de la permission \"Se superposer aux autres applis\" pour enregistrer votre écran. Choisissez autoriser, activez la permission dans les paramètres et revenez dans Magnétophone</string>
   <!-- No permissions granted error -->
   <string name="snack_permissions_no_permission">Les autorisations requises ont été refusées, activez-les depuis les Paramètres pour commencer à enregistrer</string>
+  <!-- Main activity -->
+  <!-- Screen record title -->
+  <!-- Sound record title -->
+  <!-- Transition name for dialogActivity -->
 </resources>

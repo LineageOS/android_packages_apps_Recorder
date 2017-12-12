@@ -15,14 +15,12 @@
      limitations under the License.
 -->
 <resources>
-  <!-- Fragment titles -->
-  <!-- Sound recorder fragment title -->
-  <!-- Screen recorder fragment title -->
   <!-- Common actions -->
   <!-- Share action for notification -->
   <!-- Stop action for notification -->
   <!-- Play action -->
   <!-- Delete action -->
+  <!-- Cancel action -->
   <!-- Delete confirm title -->
   <!-- Delete confirm message -->
   <!-- Date for last item %1 is year, %2 month, %3 day, %4 hour, %5 min -->
@@ -30,28 +28,24 @@
   <!-- Sound recorder -->
   <!-- Sound recorder notification title -->
   <!-- Sound recorder notification message -->
-  <!-- Sound recorder status card title ready -->
   <!-- Sound recorder status card title recording -->
-  <!-- Sound recorder status card title busy -->
   <!-- Sound recorder last item title -->
-  <!-- Sound recorder last item message -->
   <!-- Screen recorder -->
-  <!-- Screen recorder audio card title -->
-  <!-- Screen recorder enabled audio card message -->
-  <!-- Screen recorder disabled audio card message -->
-  <!-- Screen recorder audio permission request card message -->
+  <!-- Screen recorder enabled audio message -->
+  <!-- Screen recorder disabled audio message -->
+  <!-- Screen recorder disabled audio toggle message -->
   <!-- Screen recorder audio permission request card button -->
   <!-- Screen recorder notification storage error title -->
   <!-- Screen recorder notification storage error message -->
   <!-- Screen recorder notification title -->
   <!-- Screen recorder notification message -->
   <!-- Screen recorder notification share title -->
-  <!-- Screen recorder status card title -->
   <!-- Screen recorder status message -->
   <!-- Screen recorder last item title -->
   <!-- Screen recorder last item message -->
   <!-- Screen recorder notification overlay title -->
   <!-- Screen recorder notification overlay message -->
+  <!-- Screen settings dialog title -->
   <!-- Permissions -->
   <!-- Permissions dialog title -->
   <!-- Message: microphone access denied -->
@@ -65,4 +59,8 @@
   <!-- Permissions dialog action: dismiss dialog -->
   <!-- Message: overlay permission denied. Make sure "Draw over other apps" matches settings strings -->
   <!-- No permissions granted error -->
+  <!-- Main activity -->
+  <!-- Screen record title -->
+  <!-- Sound record title -->
+  <!-- Transition name for dialogActivity -->
 </resources>

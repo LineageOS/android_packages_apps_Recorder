@@ -16,11 +16,6 @@
 -->
 <resources>
   <string name="app_name">Grabatzailea</string>
-  <!-- Fragment titles -->
-  <!-- Sound recorder fragment title -->
-  <string name="fragment_sounds">Soinua</string>
-  <!-- Screen recorder fragment title -->
-  <string name="fragment_screen">Pantaila</string>
   <!-- Common actions -->
   <!-- Share action for notification -->
   <string name="share">Partekatu</string>
@@ -30,6 +25,8 @@
   <string name="play">Erreproduzitu</string>
   <!-- Delete action -->
   <string name="delete">Ezabatu</string>
+  <!-- Cancel action -->
+  <string name="cancel">Utzi</string>
   <!-- Delete confirm title -->
   <string name="delete_title">Grabaketa ezabatzen</string>
   <!-- Delete confirm message -->
@@ -42,25 +39,17 @@
   <string name="sound_notification_title">Soinu grabagailua</string>
   <!-- Sound recorder notification message -->
   <string name="sound_notification_message">Audioaren iraupena: %1$s</string>
-  <!-- Sound recorder status card title ready -->
-  <string name="sound_recording_title_ready">Grabatzeko prest</string>
   <!-- Sound recorder status card title recording -->
   <string name="sound_recording_title_working">Grabatzen</string>
-  <!-- Sound recorder status card title busy -->
-  <string name="sound_recording_title_busy">Desgaitu pantaila grabatzean</string>
   <!-- Sound recorder last item title -->
   <string name="sound_last_title">Azken grabaketa</string>
-  <!-- Sound recorder last item message -->
-  <string name="sound_last_message">Data: %1$s\nIraupena: %2$d segundo</string>
   <!-- Screen recorder -->
-  <!-- Screen recorder audio card title -->
-  <string name="screen_audio_title">Mikrofonoa</string>
-  <!-- Screen recorder enabled audio card message -->
+  <!-- Screen recorder enabled audio message -->
   <string name="screen_audio_message_on">Mikrofonoko audioa bideoan txertatuko da</string>
-  <!-- Screen recorder disabled audio card message -->
+  <!-- Screen recorder disabled audio message -->
   <string name="screen_audio_message_off">Mikrofonoko audioa ez da bideoan txertatuko</string>
-  <!-- Screen recorder audio permission request card message -->
-  <string name="screen_audio_warning_message">Mikrofonoa atzitzeko baimena eman behar duzu grabazioari audioa gehitzeko. Ukitu behean aplikazio honi baimena emateko</string>
+  <!-- Screen recorder disabled audio toggle message -->
+  <string name="screen_audio_message_disabled">Ezin da ezarpen hau aldatu pantaila grabatzen ari zarela</string>
   <!-- Screen recorder audio permission request card button -->
   <string name="screen_audio_warning_button_ask">Galdetu</string>
   <!-- Screen recorder notification storage error title -->
@@ -73,8 +62,6 @@
   <string name="screen_notification_message">Bideoaren iraupena: %s</string>
   <!-- Screen recorder notification share title -->
   <string name="screen_notification_message_done">Partekatzeko prest</string>
-  <!-- Screen recorder status card title -->
-  <string name="screen_recording_title">Grabatzen</string>
   <!-- Screen recorder status message -->
   <string name="screen_recording_message">Pantaila grabatzen ari da\u2026</string>
   <!-- Screen recorder last item title -->
@@ -85,6 +72,8 @@
   <string name="screen_overlay_notif_title">Grabatzeko prest</string>
   <!-- Screen recorder notification overlay message -->
   <string name="screen_overlay_notif_message">Sakatu Grabatu botoia hasteko prest zaudenean</string>
+  <!-- Screen settings dialog title -->
+  <string name="screen_settings_title">Pantaila grabatzailearen ezarpenaqk</string>
   <!-- Permissions -->
   <!-- Permissions dialog title -->
   <string name="dialog_permissions_title">Baimenak</string>
@@ -110,4 +99,10 @@
   <string name="dialog_permissions_overlay">Grabagailuak \"Marraztu beste aplikazioen gainean\" baimena behar du zure pantaila grabatzeko. Sakatu baimendu, gaitu baimena ezarpenetan eta itzuli grabagailura</string>
   <!-- No permissions granted error -->
   <string name="snack_permissions_no_permission">Beharrezkoak diren baimenak ukatu dira, gaitu itzazu ezarpenen aplikaziotik grabatzen hasteko</string>
+  <!-- Main activity -->
+  <!-- Screen record title -->
+  <string name="main_screen_action">Grabatu pantaila</string>
+  <!-- Sound record title -->
+  <string name="main_sound_action">Grabatu soinua</string>
+  <!-- Transition name for dialogActivity -->
 </resources>

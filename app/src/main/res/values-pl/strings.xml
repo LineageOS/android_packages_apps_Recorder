@@ -16,11 +16,6 @@
 -->
 <resources>
   <string name="app_name">Rejestrator</string>
-  <!-- Fragment titles -->
-  <!-- Sound recorder fragment title -->
-  <string name="fragment_sounds">Dźwięk</string>
-  <!-- Screen recorder fragment title -->
-  <string name="fragment_screen">Ekran</string>
   <!-- Common actions -->
   <!-- Share action for notification -->
   <string name="share">Udostępnij</string>
@@ -30,6 +25,8 @@
   <string name="play">Odtwórz</string>
   <!-- Delete action -->
   <string name="delete">Usuń</string>
+  <!-- Cancel action -->
+  <string name="cancel">Anuluj</string>
   <!-- Delete confirm title -->
   <string name="delete_title">Usuwanie nagrania</string>
   <!-- Delete confirm message -->
@@ -42,25 +39,16 @@
   <string name="sound_notification_title">Rejestrator dźwięku</string>
   <!-- Sound recorder notification message -->
   <string name="sound_notification_message">Długość dźwięku: %1$s</string>
-  <!-- Sound recorder status card title ready -->
-  <string name="sound_recording_title_ready">Gotowy do nagrywania</string>
   <!-- Sound recorder status card title recording -->
   <string name="sound_recording_title_working">Nagrywanie</string>
-  <!-- Sound recorder status card title busy -->
-  <string name="sound_recording_title_busy">Wyłączone podczas nagrywania ekranu</string>
   <!-- Sound recorder last item title -->
   <string name="sound_last_title">Ostatnie nagranie</string>
-  <!-- Sound recorder last item message -->
-  <string name="sound_last_message">Data: %1$s\nCzas trwania: %2$d sekund</string>
   <!-- Screen recorder -->
-  <!-- Screen recorder audio card title -->
-  <string name="screen_audio_title">Mikrofon</string>
-  <!-- Screen recorder enabled audio card message -->
+  <!-- Screen recorder enabled audio message -->
   <string name="screen_audio_message_on">Dźwięk z mikrofonu zostanie umieszczony w filmie</string>
-  <!-- Screen recorder disabled audio card message -->
+  <!-- Screen recorder disabled audio message -->
   <string name="screen_audio_message_off">Dźwięk z mikrofonu nie będzie zawarty w filmie</string>
-  <!-- Screen recorder audio permission request card message -->
-  <string name="screen_audio_warning_message">Należy udzielić dostępu do mikrofonu w celu nagrywania z dźwiękiem. Naciśnij poniżej, aby udzielić dostępu dla tej aplikacji</string>
+  <!-- Screen recorder disabled audio toggle message -->
   <!-- Screen recorder audio permission request card button -->
   <string name="screen_audio_warning_button_ask">Zapytaj</string>
   <!-- Screen recorder notification storage error title -->
@@ -73,8 +61,6 @@
   <string name="screen_notification_message">Długość wideo: %s</string>
   <!-- Screen recorder notification share title -->
   <string name="screen_notification_message_done">Gotowy do udostępniania</string>
-  <!-- Screen recorder status card title -->
-  <string name="screen_recording_title">Nagrywanie</string>
   <!-- Screen recorder status message -->
   <string name="screen_recording_message">Ekran jest nagrywany\u2026</string>
   <!-- Screen recorder last item title -->
@@ -85,6 +71,7 @@
   <string name="screen_overlay_notif_title">Gotowy do nagrywania</string>
   <!-- Screen recorder notification overlay message -->
   <string name="screen_overlay_notif_message">Naciśnij przycisk nagrywania, gdy jesteś gotowy rozpocząć</string>
+  <!-- Screen settings dialog title -->
   <!-- Permissions -->
   <!-- Permissions dialog title -->
   <string name="dialog_permissions_title">Uprawnienia</string>
@@ -110,4 +97,8 @@
   <string name="dialog_permissions_overlay">Rejestrator potrzebuje zezwolenia na „wyświetlanie nad innymi aplikacjami” w celu rejestrowania ekranu. Proszę wydać zezwolenie w ustawieniach i powrócić do Rejestratora</string>
   <!-- No permissions granted error -->
   <string name="snack_permissions_no_permission">Brak wymaganych uprawnień. Włącz je w Ustawieniach, aby rozpocząć nagrywanie</string>
+  <!-- Main activity -->
+  <!-- Screen record title -->
+  <!-- Sound record title -->
+  <!-- Transition name for dialogActivity -->
 </resources>

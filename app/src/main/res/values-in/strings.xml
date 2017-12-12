@@ -16,11 +16,6 @@
 -->
 <resources>
   <string name="app_name">Perekam</string>
-  <!-- Fragment titles -->
-  <!-- Sound recorder fragment title -->
-  <string name="fragment_sounds">Suara</string>
-  <!-- Screen recorder fragment title -->
-  <string name="fragment_screen">Layar</string>
   <!-- Common actions -->
   <!-- Share action for notification -->
   <string name="share">Bagikan</string>
@@ -30,6 +25,8 @@
   <string name="play">Putar</string>
   <!-- Delete action -->
   <string name="delete">Hapus</string>
+  <!-- Cancel action -->
+  <string name="cancel">Batal</string>
   <!-- Delete confirm title -->
   <string name="delete_title">Menghapus rekaman</string>
   <!-- Delete confirm message -->
@@ -42,25 +39,16 @@
   <string name="sound_notification_title">Perekam Suara</string>
   <!-- Sound recorder notification message -->
   <string name="sound_notification_message">Durasi audio: %1$s</string>
-  <!-- Sound recorder status card title ready -->
-  <string name="sound_recording_title_ready">Siap untuk merekam</string>
   <!-- Sound recorder status card title recording -->
   <string name="sound_recording_title_working">Merekam</string>
-  <!-- Sound recorder status card title busy -->
-  <string name="sound_recording_title_busy">Dimatikan saat merekam layar</string>
   <!-- Sound recorder last item title -->
   <string name="sound_last_title">Rekaman terakhir</string>
-  <!-- Sound recorder last item message -->
-  <string name="sound_last_message">Tanggal: %1$s\nDurasi: %2$d detik</string>
   <!-- Screen recorder -->
-  <!-- Screen recorder audio card title -->
-  <string name="screen_audio_title">Mikrofon</string>
-  <!-- Screen recorder enabled audio card message -->
+  <!-- Screen recorder enabled audio message -->
   <string name="screen_audio_message_on">Audio dari mikrofon akan disertakan dalam video</string>
-  <!-- Screen recorder disabled audio card message -->
+  <!-- Screen recorder disabled audio message -->
   <string name="screen_audio_message_off">Audio dari mikrofon tidak akan disertakan dalam video</string>
-  <!-- Screen recorder audio permission request card message -->
-  <string name="screen_audio_warning_message">Akses ke mikrofon diperlukan untuk menambahkan audio pada rekaman. Ketuk tombol di bawah ini untuk mengizinkan aplikasi ini menggunakan mikrofon</string>
+  <!-- Screen recorder disabled audio toggle message -->
   <!-- Screen recorder audio permission request card button -->
   <string name="screen_audio_warning_button_ask">Minta izin</string>
   <!-- Screen recorder notification storage error title -->
@@ -73,8 +61,6 @@
   <string name="screen_notification_message">Durasi video: %s</string>
   <!-- Screen recorder notification share title -->
   <string name="screen_notification_message_done">Siap untuk dibagikan</string>
-  <!-- Screen recorder status card title -->
-  <string name="screen_recording_title">Merekam</string>
   <!-- Screen recorder status message -->
   <string name="screen_recording_message">Layar sedang direkam\u2026</string>
   <!-- Screen recorder last item title -->
@@ -85,6 +71,7 @@
   <string name="screen_overlay_notif_title">Siap untuk merekam</string>
   <!-- Screen recorder notification overlay message -->
   <string name="screen_overlay_notif_message">Tekan tombol rekam saat anda siap untuk memulai</string>
+  <!-- Screen settings dialog title -->
   <!-- Permissions -->
   <!-- Permissions dialog title -->
   <string name="dialog_permissions_title">Izin</string>
@@ -109,4 +96,10 @@
   <!-- Message: overlay permission denied. Make sure "Draw over other apps" matches settings strings -->
   <!-- No permissions granted error -->
   <string name="snack_permissions_no_permission">Izin yang diperlukan ditolak, hidupkan dari aplikasi Pengaturan untuk mulai merekam</string>
+  <!-- Main activity -->
+  <!-- Screen record title -->
+  <string name="main_screen_action">Rekam layar</string>
+  <!-- Sound record title -->
+  <string name="main_sound_action">Rekam suara</string>
+  <!-- Transition name for dialogActivity -->
 </resources>

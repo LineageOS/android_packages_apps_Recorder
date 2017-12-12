@@ -16,11 +16,6 @@
 -->
 <resources>
   <string name="app_name">Rekordér</string>
-  <!-- Fragment titles -->
-  <!-- Sound recorder fragment title -->
-  <string name="fragment_sounds">Zvuk</string>
-  <!-- Screen recorder fragment title -->
-  <string name="fragment_screen">Obrazovka</string>
   <!-- Common actions -->
   <!-- Share action for notification -->
   <string name="share">Sdílet</string>
@@ -30,6 +25,8 @@
   <string name="play">Přehrát</string>
   <!-- Delete action -->
   <string name="delete">Odstranit</string>
+  <!-- Cancel action -->
+  <string name="cancel">Zrušit</string>
   <!-- Delete confirm title -->
   <string name="delete_title">Odstraňování záznamu</string>
   <!-- Delete confirm message -->
@@ -42,25 +39,17 @@
   <string name="sound_notification_title">Záznam zvuku</string>
   <!-- Sound recorder notification message -->
   <string name="sound_notification_message">Délka zvukového záznamu: %1$s</string>
-  <!-- Sound recorder status card title ready -->
-  <string name="sound_recording_title_ready">Připraveno k záznamu</string>
   <!-- Sound recorder status card title recording -->
   <string name="sound_recording_title_working">Nahrávání</string>
-  <!-- Sound recorder status card title busy -->
-  <string name="sound_recording_title_busy">Zakázáno při záznamu obrazovky</string>
   <!-- Sound recorder last item title -->
   <string name="sound_last_title">Poslední záznam</string>
-  <!-- Sound recorder last item message -->
-  <string name="sound_last_message">Datum: %1$s\nTrvání: %2$d sekund</string>
   <!-- Screen recorder -->
-  <!-- Screen recorder audio card title -->
-  <string name="screen_audio_title">Mikrofon</string>
-  <!-- Screen recorder enabled audio card message -->
+  <!-- Screen recorder enabled audio message -->
   <string name="screen_audio_message_on">Zvuk z mikrofonu bude uložen k videu</string>
-  <!-- Screen recorder disabled audio card message -->
+  <!-- Screen recorder disabled audio message -->
   <string name="screen_audio_message_off">Zvuk z mikrofonu nebude uložen k videu</string>
-  <!-- Screen recorder audio permission request card message -->
-  <string name="screen_audio_warning_message">Pro uložení zvuku z mikrofonu k videu, Je třeba udělit přístup k mikrofonu. Klepnutím níže můžete povolit přístup pro tuto aplikaci</string>
+  <!-- Screen recorder disabled audio toggle message -->
+  <string name="screen_audio_message_disabled">Toto nastavení nelze při nahrávání obrazovky změnit</string>
   <!-- Screen recorder audio permission request card button -->
   <string name="screen_audio_warning_button_ask">Zeptat se</string>
   <!-- Screen recorder notification storage error title -->
@@ -73,8 +62,6 @@
   <string name="screen_notification_message">Délka video záznamu: %s</string>
   <!-- Screen recorder notification share title -->
   <string name="screen_notification_message_done">Připraven ke sdílení</string>
-  <!-- Screen recorder status card title -->
-  <string name="screen_recording_title">Nahrávání</string>
   <!-- Screen recorder status message -->
   <string name="screen_recording_message">Obrazovka je zaznamenávána\u2026</string>
   <!-- Screen recorder last item title -->
@@ -85,6 +72,7 @@
   <string name="screen_overlay_notif_title">Připraveno k záznamu</string>
   <!-- Screen recorder notification overlay message -->
   <string name="screen_overlay_notif_message">Pokud jste připraveni začít stiskněte nahrávací tlačítko</string>
+  <!-- Screen settings dialog title -->
   <!-- Permissions -->
   <!-- Permissions dialog title -->
   <string name="dialog_permissions_title">Oprávnění</string>
@@ -110,4 +98,10 @@
   <string name="dialog_permissions_overlay">Aby mohl Rekordér nahrávat Vaší obrazovku, potřebuje oprávnění „Vykreslit okna navrchu“. Prosím, povolte toto oprávnění v nastavení a vraťte se do Rekordéru</string>
   <!-- No permissions granted error -->
   <string name="snack_permissions_no_permission">Požadovaná oprávnění byla odepřena, pro spuštění nahrávání je povolte v nastavení aplikace</string>
+  <!-- Main activity -->
+  <!-- Screen record title -->
+  <string name="main_screen_action">Nahrávání obrazovky</string>
+  <!-- Sound record title -->
+  <string name="main_sound_action">Nahrávání zvuku</string>
+  <!-- Transition name for dialogActivity -->
 </resources>

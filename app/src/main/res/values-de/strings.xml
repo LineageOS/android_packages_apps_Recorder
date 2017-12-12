@@ -16,11 +16,6 @@
 -->
 <resources>
   <string name="app_name">Rekorder</string>
-  <!-- Fragment titles -->
-  <!-- Sound recorder fragment title -->
-  <string name="fragment_sounds">Ton</string>
-  <!-- Screen recorder fragment title -->
-  <string name="fragment_screen">Bildschirm</string>
   <!-- Common actions -->
   <!-- Share action for notification -->
   <string name="share">Teilen</string>
@@ -30,6 +25,8 @@
   <string name="play">Wiedergabe</string>
   <!-- Delete action -->
   <string name="delete">Löschen</string>
+  <!-- Cancel action -->
+  <string name="cancel">Abbrechen</string>
   <!-- Delete confirm title -->
   <string name="delete_title">Aufnahme löschen</string>
   <!-- Delete confirm message -->
@@ -42,25 +39,17 @@
   <string name="sound_notification_title">Soundrekorder</string>
   <!-- Sound recorder notification message -->
   <string name="sound_notification_message">Audiolänge: %1$s</string>
-  <!-- Sound recorder status card title ready -->
-  <string name="sound_recording_title_ready">Bereit zum Aufnehmen</string>
   <!-- Sound recorder status card title recording -->
   <string name="sound_recording_title_working">Wird aufgenommen</string>
-  <!-- Sound recorder status card title busy -->
-  <string name="sound_recording_title_busy">Während Bildschirmaufzeichnung deaktiviert</string>
   <!-- Sound recorder last item title -->
   <string name="sound_last_title">Letzte Aufnahme</string>
-  <!-- Sound recorder last item message -->
-  <string name="sound_last_message">Aufnahmezeitpunkt: %1$s\nAufzeichnungsdauer: %2$d Sekunden</string>
   <!-- Screen recorder -->
-  <!-- Screen recorder audio card title -->
-  <string name="screen_audio_title">Mikrofon</string>
-  <!-- Screen recorder enabled audio card message -->
+  <!-- Screen recorder enabled audio message -->
   <string name="screen_audio_message_on">Ton vom Mikrofon wird mit aufgenommen</string>
-  <!-- Screen recorder disabled audio card message -->
+  <!-- Screen recorder disabled audio message -->
   <string name="screen_audio_message_off">Ton vom Mikrofon wird nicht mit aufgenommen</string>
-  <!-- Screen recorder audio permission request card message -->
-  <string name="screen_audio_warning_message">Sie müssen den Zugriff auf das Mikrofon zulassen, um Ton aufzunehmen. Tippen Sie unten um den Zugriff für diese App zu erlauben</string>
+  <!-- Screen recorder disabled audio toggle message -->
+  <string name="screen_audio_message_disabled">Diese Einstellung kann während der Aufnahme des Bildschirms nicht geändert werden</string>
   <!-- Screen recorder audio permission request card button -->
   <string name="screen_audio_warning_button_ask">Erlauben</string>
   <!-- Screen recorder notification storage error title -->
@@ -73,8 +62,6 @@
   <string name="screen_notification_message">Videolänge: %s</string>
   <!-- Screen recorder notification share title -->
   <string name="screen_notification_message_done">Bereit zu teilen</string>
-  <!-- Screen recorder status card title -->
-  <string name="screen_recording_title">Wird aufgenommen</string>
   <!-- Screen recorder status message -->
   <string name="screen_recording_message">Bildschirm wird aufgenommen\u2026</string>
   <!-- Screen recorder last item title -->
@@ -85,6 +72,7 @@
   <string name="screen_overlay_notif_title">Bereit zur Aufnahme</string>
   <!-- Screen recorder notification overlay message -->
   <string name="screen_overlay_notif_message">Drücken Sie die Aufnahme-Schaltfläche, um die Aufnahme zu starten</string>
+  <!-- Screen settings dialog title -->
   <!-- Permissions -->
   <!-- Permissions dialog title -->
   <string name="dialog_permissions_title">Berechtigungen</string>
@@ -110,4 +98,10 @@
   <string name="dialog_permissions_overlay">Rekorder benötigt die Berechtigung \"Über anderen Apps einblenden\", um den Bildschirm aufzuzeichnen. Lassen Sie die Berechtigung in den Einstellungen zu und kehren zu Rekorder zurück</string>
   <!-- No permissions granted error -->
   <string name="snack_permissions_no_permission">Erforderliche Berechtigungen wurden verweigert, aktivieren Sie diese in den Einstellungen, um mit der Aufnahme zu beginnen</string>
+  <!-- Main activity -->
+  <!-- Screen record title -->
+  <string name="main_screen_action">Bildschirm aufnehmen</string>
+  <!-- Sound record title -->
+  <string name="main_sound_action">Ton aufnehmen</string>
+  <!-- Transition name for dialogActivity -->
 </resources>

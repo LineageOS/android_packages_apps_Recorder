@@ -15,11 +15,6 @@
      limitations under the License.
 -->
 <resources>
-  <!-- Fragment titles -->
-  <!-- Sound recorder fragment title -->
-  <string name="fragment_sounds">Ήχος</string>
-  <!-- Screen recorder fragment title -->
-  <string name="fragment_screen">Οθόνη</string>
   <!-- Common actions -->
   <!-- Share action for notification -->
   <string name="share">Κοινή χρήση</string>
@@ -29,6 +24,7 @@
   <string name="play">Αναπαραγωγή</string>
   <!-- Delete action -->
   <string name="delete">Διαγραφή</string>
+  <!-- Cancel action -->
   <!-- Delete confirm title -->
   <string name="delete_title">Διαγραφή εγγραφής</string>
   <!-- Delete confirm message -->
@@ -40,28 +36,24 @@
   <!-- Sound recorder notification title -->
   <string name="sound_notification_title">Ηχογράφηση</string>
   <!-- Sound recorder notification message -->
-  <!-- Sound recorder status card title ready -->
   <!-- Sound recorder status card title recording -->
-  <!-- Sound recorder status card title busy -->
   <!-- Sound recorder last item title -->
-  <!-- Sound recorder last item message -->
   <!-- Screen recorder -->
-  <!-- Screen recorder audio card title -->
-  <!-- Screen recorder enabled audio card message -->
-  <!-- Screen recorder disabled audio card message -->
-  <!-- Screen recorder audio permission request card message -->
+  <!-- Screen recorder enabled audio message -->
+  <!-- Screen recorder disabled audio message -->
+  <!-- Screen recorder disabled audio toggle message -->
   <!-- Screen recorder audio permission request card button -->
   <!-- Screen recorder notification storage error title -->
   <!-- Screen recorder notification storage error message -->
   <!-- Screen recorder notification title -->
   <!-- Screen recorder notification message -->
   <!-- Screen recorder notification share title -->
-  <!-- Screen recorder status card title -->
   <!-- Screen recorder status message -->
   <!-- Screen recorder last item title -->
   <!-- Screen recorder last item message -->
   <!-- Screen recorder notification overlay title -->
   <!-- Screen recorder notification overlay message -->
+  <!-- Screen settings dialog title -->
   <!-- Permissions -->
   <!-- Permissions dialog title -->
   <!-- Message: microphone access denied -->
@@ -75,4 +67,8 @@
   <!-- Permissions dialog action: dismiss dialog -->
   <!-- Message: overlay permission denied. Make sure "Draw over other apps" matches settings strings -->
   <!-- No permissions granted error -->
+  <!-- Main activity -->
+  <!-- Screen record title -->
+  <!-- Sound record title -->
+  <!-- Transition name for dialogActivity -->
 </resources>

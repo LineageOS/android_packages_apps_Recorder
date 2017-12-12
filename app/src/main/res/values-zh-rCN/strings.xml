@@ -16,11 +16,6 @@
 -->
 <resources>
   <string name="app_name">录制器</string>
-  <!-- Fragment titles -->
-  <!-- Sound recorder fragment title -->
-  <string name="fragment_sounds">声音</string>
-  <!-- Screen recorder fragment title -->
-  <string name="fragment_screen">屏幕</string>
   <!-- Common actions -->
   <!-- Share action for notification -->
   <string name="share">分享</string>
@@ -30,6 +25,8 @@
   <string name="play">播放</string>
   <!-- Delete action -->
   <string name="delete">删除</string>
+  <!-- Cancel action -->
+  <string name="cancel">取消</string>
   <!-- Delete confirm title -->
   <string name="delete_title">正在删除记录</string>
   <!-- Delete confirm message -->
@@ -42,25 +39,17 @@
   <string name="sound_notification_title">录音机</string>
   <!-- Sound recorder notification message -->
   <string name="sound_notification_message">音频长度：%1$s</string>
-  <!-- Sound recorder status card title ready -->
-  <string name="sound_recording_title_ready">可以开始录制</string>
   <!-- Sound recorder status card title recording -->
   <string name="sound_recording_title_working">正在录制</string>
-  <!-- Sound recorder status card title busy -->
-  <string name="sound_recording_title_busy">当录屏时停用</string>
   <!-- Sound recorder last item title -->
   <string name="sound_last_title">上次录制</string>
-  <!-- Sound recorder last item message -->
-  <string name="sound_last_message">日期︰%1$s\n持续时间：%2$d 秒</string>
   <!-- Screen recorder -->
-  <!-- Screen recorder audio card title -->
-  <string name="screen_audio_title">麦克风</string>
-  <!-- Screen recorder enabled audio card message -->
+  <!-- Screen recorder enabled audio message -->
   <string name="screen_audio_message_on">将麦克风的声音纳入视频</string>
-  <!-- Screen recorder disabled audio card message -->
+  <!-- Screen recorder disabled audio message -->
   <string name="screen_audio_message_off">麦克风的音频将不会纳入视频</string>
-  <!-- Screen recorder audio permission request card message -->
-  <string name="screen_audio_warning_message">若要将麦克风的音频纳入视频，您需要授予麦克风访问权限。在稍后点击“允许”该应用访问</string>
+  <!-- Screen recorder disabled audio toggle message -->
+  <string name="screen_audio_message_disabled">在录屏时无法修改此设置</string>
   <!-- Screen recorder audio permission request card button -->
   <string name="screen_audio_warning_button_ask">询问</string>
   <!-- Screen recorder notification storage error title -->
@@ -73,8 +62,6 @@
   <string name="screen_notification_message">视频长度：%s</string>
   <!-- Screen recorder notification share title -->
   <string name="screen_notification_message_done">已准备好分享</string>
-  <!-- Screen recorder status card title -->
-  <string name="screen_recording_title">正在录制</string>
   <!-- Screen recorder status message -->
   <string name="screen_recording_message">录屏已开始\u2026</string>
   <!-- Screen recorder last item title -->
@@ -85,6 +72,8 @@
   <string name="screen_overlay_notif_title">已准备好开始录制</string>
   <!-- Screen recorder notification overlay message -->
   <string name="screen_overlay_notif_message">当您准备好开始时请按下录制按钮</string>
+  <!-- Screen settings dialog title -->
+  <string name="screen_settings_title">屏幕录制设置</string>
   <!-- Permissions -->
   <!-- Permissions dialog title -->
   <string name="dialog_permissions_title">权限</string>
@@ -110,4 +99,10 @@
   <string name="dialog_permissions_overlay">录制器需要“出现在其他应用上”权限来录制您的屏幕。按下允许，或在设置中启用该权限并返回录制器。</string>
   <!-- No permissions granted error -->
   <string name="snack_permissions_no_permission">必要的权限被拒绝，在“设置”应用中启用它们才能开始录制</string>
+  <!-- Main activity -->
+  <!-- Screen record title -->
+  <string name="main_screen_action">录制屏幕</string>
+  <!-- Sound record title -->
+  <string name="main_sound_action">录制声音</string>
+  <!-- Transition name for dialogActivity -->
 </resources>

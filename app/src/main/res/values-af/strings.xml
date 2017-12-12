@@ -16,11 +16,6 @@
 -->
 <resources>
   <string name="app_name">Opnemer</string>
-  <!-- Fragment titles -->
-  <!-- Sound recorder fragment title -->
-  <string name="fragment_sounds">Klank</string>
-  <!-- Screen recorder fragment title -->
-  <string name="fragment_screen">Skerm</string>
   <!-- Common actions -->
   <!-- Share action for notification -->
   <string name="share">Deel</string>
@@ -30,6 +25,7 @@
   <string name="play">Speel</string>
   <!-- Delete action -->
   <string name="delete">Verwyder</string>
+  <!-- Cancel action -->
   <!-- Delete confirm title -->
   <string name="delete_title">Verwyde opname</string>
   <!-- Delete confirm message -->
@@ -42,25 +38,16 @@
   <string name="sound_notification_title">Klankopnemer</string>
   <!-- Sound recorder notification message -->
   <string name="sound_notification_message">Oudio-lengte: %1$s</string>
-  <!-- Sound recorder status card title ready -->
-  <string name="sound_recording_title_ready">Gereed om op te neem</string>
   <!-- Sound recorder status card title recording -->
   <string name="sound_recording_title_working">Neem tans op</string>
-  <!-- Sound recorder status card title busy -->
-  <string name="sound_recording_title_busy">Gedeaktiveer terwyl skerm opgeneem word</string>
   <!-- Sound recorder last item title -->
   <string name="sound_last_title">Laaste opname</string>
-  <!-- Sound recorder last item message -->
-  <string name="sound_last_message">Datum: %1$s\nLengte: %2$d sekondes</string>
   <!-- Screen recorder -->
-  <!-- Screen recorder audio card title -->
-  <string name="screen_audio_title">Mikrofoon</string>
-  <!-- Screen recorder enabled audio card message -->
+  <!-- Screen recorder enabled audio message -->
   <string name="screen_audio_message_on">Oudio vanaf die mikrofoon sal in die video ingesluit word</string>
-  <!-- Screen recorder disabled audio card message -->
+  <!-- Screen recorder disabled audio message -->
   <string name="screen_audio_message_off">Oudio vanaf mikrofoon sal nie in die video ingesluit word nie</string>
-  <!-- Screen recorder audio permission request card message -->
-  <string name="screen_audio_warning_message">Jy moet die toegang tot die mikrofoon verleen oudio tot die rekord by te voeg. Tik hier onder om toegang vir hierdie toepassing toelaat</string>
+  <!-- Screen recorder disabled audio toggle message -->
   <!-- Screen recorder audio permission request card button -->
   <string name="screen_audio_warning_button_ask">Vra</string>
   <!-- Screen recorder notification storage error title -->
@@ -73,8 +60,6 @@
   <string name="screen_notification_message">Video lengte: %s</string>
   <!-- Screen recorder notification share title -->
   <string name="screen_notification_message_done">Gereed om te deel</string>
-  <!-- Screen recorder status card title -->
-  <string name="screen_recording_title">Neem tans op</string>
   <!-- Screen recorder status message -->
   <string name="screen_recording_message">Skerm word opgeneem\u2026</string>
   <!-- Screen recorder last item title -->
@@ -85,6 +70,7 @@
   <string name="screen_overlay_notif_title">Gereed om op te neem</string>
   <!-- Screen recorder notification overlay message -->
   <string name="screen_overlay_notif_message">Druk die opneem-knoppie wanneer jy gereed is om te begin</string>
+  <!-- Screen settings dialog title -->
   <!-- Permissions -->
   <!-- Permissions dialog title -->
   <string name="dialog_permissions_title">Toestemmings</string>
@@ -110,4 +96,8 @@
   <string name="dialog_permissions_overlay">Opnemer benodig \"Trek oor ander toepassings\" toestemming om jou skerm op te neem. Druk toelaat, aktiveer die toestemming in die instellings en kom terug na Opnemer</string>
   <!-- No permissions granted error -->
   <string name="snack_permissions_no_permission">Nodige toestemmings geweier, aktiveer hulle vanaf Instellings toep om die opname te begin</string>
+  <!-- Main activity -->
+  <!-- Screen record title -->
+  <!-- Sound record title -->
+  <!-- Transition name for dialogActivity -->
 </resources>

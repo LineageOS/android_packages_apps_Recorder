@@ -16,11 +16,6 @@
 -->
 <resources>
   <string name="app_name">Recorder</string>
-  <!-- Fragment titles -->
-  <!-- Sound recorder fragment title -->
-  <string name="fragment_sounds">Geluid</string>
-  <!-- Screen recorder fragment title -->
-  <string name="fragment_screen">Scherm</string>
   <!-- Common actions -->
   <!-- Share action for notification -->
   <string name="share">Delen</string>
@@ -30,6 +25,8 @@
   <string name="play">Afspelen</string>
   <!-- Delete action -->
   <string name="delete">Verwijderen</string>
+  <!-- Cancel action -->
+  <string name="cancel">Annuleren</string>
   <!-- Delete confirm title -->
   <string name="delete_title">Opname verwijderen</string>
   <!-- Delete confirm message -->
@@ -42,25 +39,17 @@
   <string name="sound_notification_title">Geluidsrecorder</string>
   <!-- Sound recorder notification message -->
   <string name="sound_notification_message">Audiolengte: %1$s</string>
-  <!-- Sound recorder status card title ready -->
-  <string name="sound_recording_title_ready">Klaar voor opname</string>
   <!-- Sound recorder status card title recording -->
   <string name="sound_recording_title_working">Opnemen</string>
-  <!-- Sound recorder status card title busy -->
-  <string name="sound_recording_title_busy">Niet mogelijk tijdens schermopname</string>
   <!-- Sound recorder last item title -->
   <string name="sound_last_title">Laatste opname</string>
-  <!-- Sound recorder last item message -->
-  <string name="sound_last_message">Datum: %1$s\nLengte: %2$d seconden</string>
   <!-- Screen recorder -->
-  <!-- Screen recorder audio card title -->
-  <string name="screen_audio_title">Microfoon</string>
-  <!-- Screen recorder enabled audio card message -->
+  <!-- Screen recorder enabled audio message -->
   <string name="screen_audio_message_on">Geluid van de microfoon wordt toegevoegd aan de video</string>
-  <!-- Screen recorder disabled audio card message -->
+  <!-- Screen recorder disabled audio message -->
   <string name="screen_audio_message_off">Geluid van de microfoon wordt niet toegevoegd aan de video</string>
-  <!-- Screen recorder audio permission request card message -->
-  <string name="screen_audio_warning_message">U moet toegang tot de microfoon geven om geluid bij de opname te kunnen toevoegen. Tik hieronder om toegang te verlenen voor deze app</string>
+  <!-- Screen recorder disabled audio toggle message -->
+  <string name="screen_audio_message_disabled">Het is niet mogelijk deze instelling te wijzigen tijdens het opnemen van het scherm</string>
   <!-- Screen recorder audio permission request card button -->
   <string name="screen_audio_warning_button_ask">Vragen</string>
   <!-- Screen recorder notification storage error title -->
@@ -73,8 +62,6 @@
   <string name="screen_notification_message">Videolengte: %s</string>
   <!-- Screen recorder notification share title -->
   <string name="screen_notification_message_done">Klaar om te delen</string>
-  <!-- Screen recorder status card title -->
-  <string name="screen_recording_title">Opnemen</string>
   <!-- Screen recorder status message -->
   <string name="screen_recording_message">Scherm wordt opgenomen\u2026</string>
   <!-- Screen recorder last item title -->
@@ -85,6 +72,8 @@
   <string name="screen_overlay_notif_title">Klaar voor opname</string>
   <!-- Screen recorder notification overlay message -->
   <string name="screen_overlay_notif_message">Tik op de opnameknop wanneer u wilt beginnen</string>
+  <!-- Screen settings dialog title -->
+  <string name="screen_settings_title">Instellingen Schermrecorder</string>
   <!-- Permissions -->
   <!-- Permissions dialog title -->
   <string name="dialog_permissions_title">Machtigingen</string>
@@ -110,4 +99,10 @@
   <string name="dialog_permissions_overlay">Recorder heeft de \"Over andere apps tekenen\"-machtiging nodig. Tik op Toestaan, schakel de machtiging in in de instellingen en keer terug naar Recorder</string>
   <!-- No permissions granted error -->
   <string name="snack_permissions_no_permission">Vereiste machtigingen werden geweigerd, schakel ze in bij Instellingen om opname te starten</string>
+  <!-- Main activity -->
+  <!-- Screen record title -->
+  <string name="main_screen_action">Scherm opnemen</string>
+  <!-- Sound record title -->
+  <string name="main_sound_action">Geluid opnemen</string>
+  <!-- Transition name for dialogActivity -->
 </resources>
