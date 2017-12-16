@@ -73,6 +73,7 @@
   <!-- Screen recorder notification overlay message -->
   <string name="screen_overlay_notif_message">Preme o botón gravar cando desexes comezar</string>
   <!-- Screen settings dialog title -->
+  <string name="screen_settings_title">Axustes do gravador de pantalla</string>
   <!-- Permissions -->
   <!-- Permissions dialog title -->
   <string name="dialog_permissions_title">Permisos</string>

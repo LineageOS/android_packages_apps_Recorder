@@ -73,6 +73,7 @@
   <!-- Screen recorder notification overlay message -->
   <string name="screen_overlay_notif_message">Drücken Sie die Aufnahme-Schaltfläche, um die Aufnahme zu starten</string>
   <!-- Screen settings dialog title -->
+  <string name="screen_settings_title">Bildschirmaufnahmeeinstellungen</string>
   <!-- Permissions -->
   <!-- Permissions dialog title -->
   <string name="dialog_permissions_title">Berechtigungen</string>

@@ -72,6 +72,7 @@
   <!-- Screen recorder notification overlay message -->
   <string name="screen_overlay_notif_message">Naciśnij przycisk nagrywania, gdy jesteś gotowy rozpocząć</string>
   <!-- Screen settings dialog title -->
+  <string name="screen_settings_title">Ustawienia nagrywania ekranu</string>
   <!-- Permissions -->
   <!-- Permissions dialog title -->
   <string name="dialog_permissions_title">Uprawnienia</string>
