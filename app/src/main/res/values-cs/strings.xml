@@ -73,6 +73,7 @@
   <!-- Screen recorder notification overlay message -->
   <string name="screen_overlay_notif_message">Pokud jste připraveni začít stiskněte nahrávací tlačítko</string>
   <!-- Screen settings dialog title -->
+  <string name="screen_settings_title">Nastavení nahrávání obrazovky</string>
   <!-- Permissions -->
   <!-- Permissions dialog title -->
   <string name="dialog_permissions_title">Oprávnění</string>

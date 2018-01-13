@@ -49,6 +49,7 @@
   <!-- Screen recorder disabled audio message -->
   <string name="screen_audio_message_off">Dźwięk z mikrofonu nie będzie zawarty w filmie</string>
   <!-- Screen recorder disabled audio toggle message -->
+  <string name="screen_audio_message_disabled">Nie można zmienić tego ustawienia podczas nagrywania ekranu</string>
   <!-- Screen recorder audio permission request card button -->
   <string name="screen_audio_warning_button_ask">Zapytaj</string>
   <!-- Screen recorder notification storage error title -->
@@ -100,6 +101,8 @@
   <string name="snack_permissions_no_permission">Brak wymaganych uprawnień. Włącz je w Ustawieniach, aby rozpocząć nagrywanie</string>
   <!-- Main activity -->
   <!-- Screen record title -->
+  <string name="main_screen_action">Nagrywaj ekran</string>
   <!-- Sound record title -->
+  <string name="main_sound_action">Nagraj dźwięk</string>
   <!-- Transition name for dialogActivity -->
 </resources>
