@@ -1,6 +1,6 @@
 /*
  * Copyright (C) 2013 The CyanogenMod Project
- * Copyright (C) 2017 The LineageOS Project
+ * Copyright (C) 2017-2018 The LineageOS Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -32,7 +32,6 @@ import android.os.IBinder;
 import android.os.StatFs;
 import android.os.SystemClock;
 import android.support.v4.app.NotificationCompat;
-import android.text.TextUtils;
 import android.text.format.DateUtils;
 import android.util.Log;
 import android.view.Display;
@@ -57,10 +56,15 @@ public class ScreencastService extends Service {
             "org.lineageos.recorder.screen.ACTION_START_SCREENCAST";
     public static final String ACTION_STOP_SCREENCAST =
             "org.lineageos.recorder.screen.ACTION_STOP_SCREENCAST";
+    private static final String ACTION_SCAN =
+            "org.lineageos.recorder.server.display.SCAN";
+    private static final String ACTION_STOP_SCAN =
+            "org.lineageos.recorder.server.display.STOP_SCAN";
     static final String SCREENCASTER_NAME = "hidden:screen-recording";
     public static final int NOTIFICATION_ID = 61;
     private static final String LOGTAG = "ScreencastService";
     private long mStartTime;
+    private final IBinder mBinder = new ScreenBinder(this);
     private Timer mTimer;
     private NotificationCompat.Builder mBuilder;
     private RecordingDevice mRecorder;
@@ -78,7 +82,32 @@ public class ScreencastService extends Service {
 
     @Override
     public IBinder onBind(Intent intent) {
-        return null;
+        return mBinder;
+    }
+
+    @Override
+    public int onStartCommand(Intent intent, int flags, int startId) {
+        if (intent == null) {
+            return START_NOT_STICKY;
+        }
+
+        final String action = intent.getAction();
+        if (action == null) {
+            return START_NOT_STICKY;
+        }
+
+        switch (action) {
+            case ACTION_SCAN:
+            case ACTION_STOP_SCAN:
+                return START_STICKY;
+            case ACTION_START_SCREENCAST:
+                return startScreencasting(intent);
+            case ACTION_STOP_SCREENCAST:
+                stopCasting();
+                return START_STICKY;
+            default:
+                return START_NOT_STICKY;
+        }
     }
 
     @Override
@@ -105,6 +134,36 @@ public class ScreencastService extends Service {
         stopCasting();
         unregisterReceiver(mBroadcastReceiver);
         super.onDestroy();
+    }
+
+    private int startScreencasting(Intent intent) {
+        try {
+            if (hasNoAvailableSpace()) {
+                Toast.makeText(this, R.string.screen_insufficient_storage,
+                        Toast.LENGTH_LONG).show();
+                return START_NOT_STICKY;
+            }
+
+            mStartTime = SystemClock.elapsedRealtime();
+            registerScreencaster(intent.getBooleanExtra(EXTRA_WITHAUDIO, false));
+            mBuilder = createNotificationBuilder();
+            mTimer = new Timer();
+            mTimer.scheduleAtFixedRate(new TimerTask() {
+                @Override
+                public void run() {
+                    updateNotification();
+                }
+            }, 100, 1000);
+
+            Utils.setStatus(getApplicationContext(), Utils.PREF_RECORDING_SCREEN);
+
+            startForeground(NOTIFICATION_ID, mBuilder.build());
+            return START_STICKY;
+        } catch (Exception e) {
+            Log.e(LOGTAG, e.getMessage());
+        }
+
+        return START_NOT_STICKY;
     }
 
     private boolean hasNoAvailableSpace() {
@@ -175,45 +234,6 @@ public class ScreencastService extends Service {
         if (hasNoAvailableSpace()) {
             Toast.makeText(this, R.string.screen_not_enough_storage, Toast.LENGTH_LONG).show();
         }
-    }
-
-    @Override
-    public int onStartCommand(Intent intent, int flags, int startId) {
-        if (intent == null) {
-            return START_NOT_STICKY;
-        }
-        final String action = intent.getAction();
-        if ("org.lineageos.recorder.server.display.SCAN".equals(action)
-                || "org.lineageos.recorder.server.display.STOP_SCAN".equals(action)) {
-            return START_STICKY;
-        } else if (ACTION_START_SCREENCAST.equals(action)
-                || "com.cyanogenmod.ACTION_START_SCREENCAST".equals(action)) {
-            try {
-                if (hasNoAvailableSpace()) {
-                    Toast.makeText(this, R.string.screen_insufficient_storage, Toast.LENGTH_LONG).show();
-                    return START_NOT_STICKY;
-                }
-                mStartTime = SystemClock.elapsedRealtime();
-                registerScreencaster(intent.getBooleanExtra(EXTRA_WITHAUDIO, true));
-                mBuilder = createNotificationBuilder();
-
-                mTimer = new Timer();
-                mTimer.scheduleAtFixedRate(new TimerTask() {
-                    @Override
-                    public void run() {
-                        updateNotification();
-                    }
-                }, 100, 1000);
-
-                Utils.setStatus(getApplicationContext(), Utils.PREF_RECORDING_SCREEN);
-                return START_STICKY;
-            } catch (Exception e) {
-                Log.e(LOGTAG, e.getMessage());
-            }
-        } else if (TextUtils.equals(intent.getAction(), ACTION_STOP_SCREENCAST)) {
-            stopCasting();
-        }
-        return START_NOT_STICKY;
     }
 
     private NotificationCompat.Builder createNotificationBuilder() {
