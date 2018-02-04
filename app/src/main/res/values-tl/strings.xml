@@ -21,14 +21,12 @@
   <!-- Play action -->
   <!-- Delete action -->
   <!-- Cancel action -->
-  <string name="cancel">Diddymu</string>
   <!-- Delete confirm title -->
   <!-- Delete confirm message -->
   <!-- Date for last item %1 is year, %2 month, %3 day, %4 hour, %5 min -->
   <!-- Permissions -->
   <!-- Sound recorder -->
   <!-- Sound recorder notification title -->
-  <string name="sound_notification_title">Recordydd Sain</string>
   <!-- Sound recorder notification message -->
   <!-- Sound recorder status card title recording -->
   <!-- Sound recorder last item title -->
