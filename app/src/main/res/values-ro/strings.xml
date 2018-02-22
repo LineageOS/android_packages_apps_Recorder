@@ -43,6 +43,10 @@
   <string name="sound_recording_title_working">Înregistrare</string>
   <!-- Sound recorder last item title -->
   <string name="sound_last_title">Ultima înregistrare</string>
+  <!-- Sound recorder notification channel title -->
+  <string name="sound_channel_title">Înregistrare sunet</string>
+  <!-- Sound recorder notification channel description-->
+  <string name="sound_channel_desc">Notificare persistentă când se înregistrează sunetul și notificare când acțiunea este completă</string>
   <!-- Screen recorder -->
   <!-- Screen recorder enabled audio message -->
   <string name="screen_audio_message_on">Audio de la microfon va fi inclus în video</string>
@@ -74,6 +78,14 @@
   <string name="screen_overlay_notif_message">Apăsaţi butonul de înregistrare atunci când sunteţi gata pentru a începe</string>
   <!-- Screen settings dialog title -->
   <string name="screen_settings_title">Setări înregistrare ecran</string>
+  <!-- Screen recorder notification overlay channel title -->
+  <string name="screen_overlay_channel_title">Pregătit pentru a înregistra ecranul</string>
+  <!-- Screen recorder notification overlay channel description-->
+  <string name="screen_overlay_channel_desc">Notificarea privind faptul că înregistrarea ecranului este pregătită pentru începere</string>
+  <!-- Screen recorder persistent notification channel title -->
+  <string name="screen_channel_title">Înregistrare ecran</string>
+  <!-- Screen recorder persistent notification channel description-->
+  <string name="screen_channel_desc">Notificare persistentă când se înregistrează ecranul și notificare când acțiunea este completă</string>
   <!-- Permissions -->
   <!-- Permissions dialog title -->
   <string name="dialog_permissions_title">Permisiuni</string>

@@ -43,6 +43,10 @@
   <string name="sound_recording_title_working">Snemanje</string>
   <!-- Sound recorder last item title -->
   <string name="sound_last_title">Zadnji posnetek</string>
+  <!-- Sound recorder notification channel title -->
+  <string name="sound_channel_title">Snemanje zvoka</string>
+  <!-- Sound recorder notification channel description-->
+  <string name="sound_channel_desc">Trajno obvestilo med snemanjem zvoka in obvestilo, ko je končano</string>
   <!-- Screen recorder -->
   <!-- Screen recorder enabled audio message -->
   <string name="screen_audio_message_on">Zvok iz mikrofona bo vključen v video</string>
@@ -74,6 +78,14 @@
   <string name="screen_overlay_notif_message">Ko ste pripravljeni začeti, pritisnite gumb za snemanje</string>
   <!-- Screen settings dialog title -->
   <string name="screen_settings_title">Nastavitve snemalnika zaslona</string>
+  <!-- Screen recorder notification overlay channel title -->
+  <string name="screen_overlay_channel_title">Pripravljen za snemanje zaslona</string>
+  <!-- Screen recorder notification overlay channel description-->
+  <string name="screen_overlay_channel_desc">Prikaz obvestila, da je snemanje zaslona pripravljeno za začetek</string>
+  <!-- Screen recorder persistent notification channel title -->
+  <string name="screen_channel_title">Snemanje zaslona</string>
+  <!-- Screen recorder persistent notification channel description-->
+  <string name="screen_channel_desc">Trajno obvestilo med snemanjem zaslona in obvestilo, ko je končano</string>
   <!-- Permissions -->
   <!-- Permissions dialog title -->
   <string name="dialog_permissions_title">Dovoljenja</string>

@@ -45,6 +45,10 @@
   <string name="sound_recording_title_working">מקליט</string>
   <!-- Sound recorder last item title -->
   <string name="sound_last_title">הקלטה אחרונה</string>
+  <!-- Sound recorder notification channel title -->
+  <string name="sound_channel_title">הקלטת שמע</string>
+  <!-- Sound recorder notification channel description-->
+  <string name="sound_channel_desc">התראה קבועה בעת הקלטת השמע והתראה בסיום ההקלטה</string>
   <!-- Screen recorder -->
   <!-- Screen recorder enabled audio message -->
   <string name="screen_audio_message_on">שמע מהמיקרופון יהיה כלול בוידאו</string>
@@ -76,6 +80,14 @@
   <string name="screen_overlay_notif_message">לחץ על כפתור ההקלטה כשאתה מוכל להתחיל להקליט</string>
   <!-- Screen settings dialog title -->
   <string name="screen_settings_title">הגדרות מקליט מסך</string>
+  <!-- Screen recorder notification overlay channel title -->
+  <string name="screen_overlay_channel_title">מוכן להקלטת מסך</string>
+  <!-- Screen recorder notification overlay channel description-->
+  <string name="screen_overlay_channel_desc">התראה תראה שהקלטת המסך מוכנה להפעלה</string>
+  <!-- Screen recorder persistent notification channel title -->
+  <string name="screen_channel_title">הקלטת מסך</string>
+  <!-- Screen recorder persistent notification channel description-->
+  <string name="screen_channel_desc">התראה קבועה בעת הקלטת המסך והתראה בסיום ההקלטה</string>
   <!-- Permissions -->
   <!-- Permissions dialog title -->
   <string name="dialog_permissions_title">הרשאות</string>

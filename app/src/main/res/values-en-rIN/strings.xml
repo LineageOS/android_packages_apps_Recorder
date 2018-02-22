@@ -43,6 +43,10 @@
   <string name="sound_recording_title_working">Recording</string>
   <!-- Sound recorder last item title -->
   <string name="sound_last_title">Last record</string>
+  <!-- Sound recorder notification channel title -->
+  <string name="sound_channel_title">Sound recording</string>
+  <!-- Sound recorder notification channel description-->
+  <string name="sound_channel_desc">Persistent notification when recording sound and notification after it is complete</string>
   <!-- Screen recorder -->
   <!-- Screen recorder enabled audio message -->
   <string name="screen_audio_message_on">Audio from the microphone will be included in the video</string>
@@ -74,6 +78,14 @@
   <string name="screen_overlay_notif_message">Press the record button when you\'re ready to start</string>
   <!-- Screen settings dialog title -->
   <string name="screen_settings_title">Screen recorder settings</string>
+  <!-- Screen recorder notification overlay channel title -->
+  <string name="screen_overlay_channel_title">Ready to record screen</string>
+  <!-- Screen recorder notification overlay channel description-->
+  <string name="screen_overlay_channel_desc">Notification showing screen recording is ready to start</string>
+  <!-- Screen recorder persistent notification channel title -->
+  <string name="screen_channel_title">Screen recording</string>
+  <!-- Screen recorder persistent notification channel description-->
+  <string name="screen_channel_desc">Persistent notification when recording the screen and notification after it is complete</string>
   <!-- Permissions -->
   <!-- Permissions dialog title -->
   <string name="dialog_permissions_title">Permissions</string>

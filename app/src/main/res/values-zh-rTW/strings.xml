@@ -43,6 +43,10 @@
   <string name="sound_recording_title_working">錄製中</string>
   <!-- Sound recorder last item title -->
   <string name="sound_last_title">最後一筆記錄</string>
+  <!-- Sound recorder notification channel title -->
+  <string name="sound_channel_title">錄音中</string>
+  <!-- Sound recorder notification channel description-->
+  <string name="sound_channel_desc">在錄音完後保持通知</string>
   <!-- Screen recorder -->
   <!-- Screen recorder enabled audio message -->
   <string name="screen_audio_message_on">來自麥克風的音訊將包含在影片中</string>
@@ -74,6 +78,14 @@
   <string name="screen_overlay_notif_message">準備開始時按下錄製按鍵</string>
   <!-- Screen settings dialog title -->
   <string name="screen_settings_title">螢幕錄製設定</string>
+  <!-- Screen recorder notification overlay channel title -->
+  <string name="screen_overlay_channel_title">準備錄製螢幕</string>
+  <!-- Screen recorder notification overlay channel description-->
+  <string name="screen_overlay_channel_desc">顯示螢幕錄製的通知已就緒, 可以開始了</string>
+  <!-- Screen recorder persistent notification channel title -->
+  <string name="screen_channel_title">螢幕錄製中</string>
+  <!-- Screen recorder persistent notification channel description-->
+  <string name="screen_channel_desc">在螢幕錄製完後保持通知</string>
   <!-- Permissions -->
   <!-- Permissions dialog title -->
   <string name="dialog_permissions_title">權限</string>

@@ -43,6 +43,10 @@
   <string name="sound_recording_title_working">Kaydediliyor</string>
   <!-- Sound recorder last item title -->
   <string name="sound_last_title">Son kayıt</string>
+  <!-- Sound recorder notification channel title -->
+  <string name="sound_channel_title">Ses kaydı</string>
+  <!-- Sound recorder notification channel description-->
+  <string name="sound_channel_desc">Ses kaydedilirken kalıcı bildirim göster ve tamamlandıktan sonra bildirim göster</string>
   <!-- Screen recorder -->
   <!-- Screen recorder enabled audio message -->
   <string name="screen_audio_message_on">Mikrofondaki ses videoya dahil edilecek</string>
@@ -74,6 +78,14 @@
   <string name="screen_overlay_notif_message">Başlamaya hazır olduğunuzda kayıt düğmesine basın</string>
   <!-- Screen settings dialog title -->
   <string name="screen_settings_title">Ekran kaydedici ayarları</string>
+  <!-- Screen recorder notification overlay channel title -->
+  <string name="screen_overlay_channel_title">Ekran kaydetmek için hazır</string>
+  <!-- Screen recorder notification overlay channel description-->
+  <string name="screen_overlay_channel_desc">Ekran kaydını gösteren bildirim başlatmaya hazır</string>
+  <!-- Screen recorder persistent notification channel title -->
+  <string name="screen_channel_title">Ekran kaydı</string>
+  <!-- Screen recorder persistent notification channel description-->
+  <string name="screen_channel_desc">Ekran kaydedilirken kalıcı bildirim göster ve tamamlandıktan sonra bildirim göster</string>
   <!-- Permissions -->
   <!-- Permissions dialog title -->
   <string name="dialog_permissions_title">İzinler</string>

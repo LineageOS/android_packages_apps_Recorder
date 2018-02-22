@@ -43,6 +43,10 @@
   <string name="sound_recording_title_working">Nahrávanie</string>
   <!-- Sound recorder last item title -->
   <string name="sound_last_title">Posledný záznam</string>
+  <!-- Sound recorder notification channel title -->
+  <string name="sound_channel_title">Nahrávanie zvuku</string>
+  <!-- Sound recorder notification channel description-->
+  <string name="sound_channel_desc">Trvalé upozornenie pri nahrávaní zvuku a upozornenie po jeho dokončení</string>
   <!-- Screen recorder -->
   <!-- Screen recorder enabled audio message -->
   <string name="screen_audio_message_on">Zvuk z mikrofónu bude zahrnutý vo videu</string>
@@ -74,6 +78,14 @@
   <string name="screen_overlay_notif_message">Ak ste pripravení začať, stlačte tlačidlo nahrávania</string>
   <!-- Screen settings dialog title -->
   <string name="screen_settings_title">Nastavenia nahrávánia obrazovky</string>
+  <!-- Screen recorder notification overlay channel title -->
+  <string name="screen_overlay_channel_title">Pripravené na záznam obrazovky</string>
+  <!-- Screen recorder notification overlay channel description-->
+  <string name="screen_overlay_channel_desc">Zobrazí sa upozornenie, ak je pripravené spustenie záznamu obrazovky</string>
+  <!-- Screen recorder persistent notification channel title -->
+  <string name="screen_channel_title">Nahrávanie obrazovky</string>
+  <!-- Screen recorder persistent notification channel description-->
+  <string name="screen_channel_desc">Trvalé upozornenie pri nahrávaní obrazovky a upozornenie po jeho dokončení</string>
   <!-- Permissions -->
   <!-- Permissions dialog title -->
   <string name="dialog_permissions_title">Oprávnenia</string>

@@ -26,6 +26,7 @@
   <!-- Delete action -->
   <string name="delete">Delete</string>
   <!-- Cancel action -->
+  <string name="cancel">Cancel</string>
   <!-- Delete confirm title -->
   <string name="delete_title">Deleting record</string>
   <!-- Delete confirm message -->
@@ -42,12 +43,17 @@
   <string name="sound_recording_title_working">Recording</string>
   <!-- Sound recorder last item title -->
   <string name="sound_last_title">Last record</string>
+  <!-- Sound recorder notification channel title -->
+  <string name="sound_channel_title">Sound recording</string>
+  <!-- Sound recorder notification channel description-->
+  <string name="sound_channel_desc">Persistent notification when recording sound and notification after it is complete</string>
   <!-- Screen recorder -->
   <!-- Screen recorder enabled audio message -->
   <string name="screen_audio_message_on">Audio from the microphone will be included in the video</string>
   <!-- Screen recorder disabled audio message -->
   <string name="screen_audio_message_off">Audio from microphone won\'t be included in the video</string>
   <!-- Screen recorder disabled audio toggle message -->
+  <string name="screen_audio_message_disabled">It\'s not possible to change this setting while recording the screen</string>
   <!-- Screen recorder audio permission request card button -->
   <string name="screen_audio_warning_button_ask">Ask</string>
   <!-- Screen recorder notification storage error title -->
@@ -71,6 +77,15 @@
   <!-- Screen recorder notification overlay message -->
   <string name="screen_overlay_notif_message">Press the record button when you\'re ready to start</string>
   <!-- Screen settings dialog title -->
+  <string name="screen_settings_title">Screen recorder settings</string>
+  <!-- Screen recorder notification overlay channel title -->
+  <string name="screen_overlay_channel_title">Ready to record screen</string>
+  <!-- Screen recorder notification overlay channel description-->
+  <string name="screen_overlay_channel_desc">Notification showing screen recording is ready to start</string>
+  <!-- Screen recorder persistent notification channel title -->
+  <string name="screen_channel_title">Screen recording</string>
+  <!-- Screen recorder persistent notification channel description-->
+  <string name="screen_channel_desc">Persistent notification when recording the screen and notification after it is complete</string>
   <!-- Permissions -->
   <!-- Permissions dialog title -->
   <string name="dialog_permissions_title">Permissions</string>
@@ -98,6 +113,8 @@
   <string name="snack_permissions_no_permission">Required permissions were denied, enable them from Settings app to start recording</string>
   <!-- Main activity -->
   <!-- Screen record title -->
+  <string name="main_screen_action">Record screen</string>
   <!-- Sound record title -->
+  <string name="main_sound_action">Record sound</string>
   <!-- Transition name for dialogActivity -->
 </resources>

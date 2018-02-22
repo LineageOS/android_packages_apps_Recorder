@@ -43,6 +43,10 @@
   <string name="sound_recording_title_working">S\'està gravant</string>
   <!-- Sound recorder last item title -->
   <string name="sound_last_title">Darrer enregistrament</string>
+  <!-- Sound recorder notification channel title -->
+  <string name="sound_channel_title">Enregistrament de so</string>
+  <!-- Sound recorder notification channel description-->
+  <string name="sound_channel_desc">Notificació persistent quan s\'està enregistrant so i notificació quan s\'hagi acabat</string>
   <!-- Screen recorder -->
   <!-- Screen recorder enabled audio message -->
   <string name="screen_audio_message_on">L\'àudio del micròfon s\'inclourà al vídeo</string>
@@ -74,6 +78,14 @@
   <string name="screen_overlay_notif_message">Prem el botó de gravació quan estiguis a punt per començar</string>
   <!-- Screen settings dialog title -->
   <string name="screen_settings_title">Configuració de l\'enregistrador de pantalla</string>
+  <!-- Screen recorder notification overlay channel title -->
+  <string name="screen_overlay_channel_title">Preparat per enregistrar la pantalla</string>
+  <!-- Screen recorder notification overlay channel description-->
+  <string name="screen_overlay_channel_desc">Es mostrarà una notificació quan l\'enregistrament de pantalla estigui llest per començar</string>
+  <!-- Screen recorder persistent notification channel title -->
+  <string name="screen_channel_title">Enregistrament de pantalla</string>
+  <!-- Screen recorder persistent notification channel description-->
+  <string name="screen_channel_desc">Notificació persistent quan s\'està enregistrant la pantalla i notificació quan s\'hagi acabat</string>
   <!-- Permissions -->
   <!-- Permissions dialog title -->
   <string name="dialog_permissions_title">Permisos</string>

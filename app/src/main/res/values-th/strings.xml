@@ -30,6 +30,8 @@
   <!-- Sound recorder notification message -->
   <!-- Sound recorder status card title recording -->
   <!-- Sound recorder last item title -->
+  <!-- Sound recorder notification channel title -->
+  <!-- Sound recorder notification channel description-->
   <!-- Screen recorder -->
   <!-- Screen recorder enabled audio message -->
   <!-- Screen recorder disabled audio message -->
@@ -46,6 +48,10 @@
   <!-- Screen recorder notification overlay title -->
   <!-- Screen recorder notification overlay message -->
   <!-- Screen settings dialog title -->
+  <!-- Screen recorder notification overlay channel title -->
+  <!-- Screen recorder notification overlay channel description-->
+  <!-- Screen recorder persistent notification channel title -->
+  <!-- Screen recorder persistent notification channel description-->
   <!-- Permissions -->
   <!-- Permissions dialog title -->
   <!-- Message: microphone access denied -->

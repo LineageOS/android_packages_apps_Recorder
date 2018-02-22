@@ -43,6 +43,10 @@
   <string name="sound_recording_title_working">Đang ghi</string>
   <!-- Sound recorder last item title -->
   <string name="sound_last_title">Lần ghi cuối</string>
+  <!-- Sound recorder notification channel title -->
+  <string name="sound_channel_title">Trình ghi âm</string>
+  <!-- Sound recorder notification channel description-->
+  <string name="sound_channel_desc">Thông báo liên tục khi ghi âm và thông báo sau khi hoàn tất</string>
   <!-- Screen recorder -->
   <!-- Screen recorder enabled audio message -->
   <string name="screen_audio_message_on">Âm thanh từ micro sẽ được chứa trong video</string>
@@ -74,6 +78,14 @@
   <string name="screen_overlay_notif_message">Nhấn nút ghi âm khi bạn đã sẵn sàng để bắt đầu</string>
   <!-- Screen settings dialog title -->
   <string name="screen_settings_title">Cài đặt trình ghi màn hình</string>
+  <!-- Screen recorder notification overlay channel title -->
+  <string name="screen_overlay_channel_title">Sẵn sàng để ghi lại màn hình</string>
+  <!-- Screen recorder notification overlay channel description-->
+  <string name="screen_overlay_channel_desc">Thông báo cho thấy ghi hình màn hình đã sẵn sàng để bắt đầu</string>
+  <!-- Screen recorder persistent notification channel title -->
+  <string name="screen_channel_title">Ghi màn hình</string>
+  <!-- Screen recorder persistent notification channel description-->
+  <string name="screen_channel_desc">Thông báo liên tục khi ghi lại màn hình và thông báo sau khi hoàn tất</string>
   <!-- Permissions -->
   <!-- Permissions dialog title -->
   <string name="dialog_permissions_title">Quyền truy cập</string>

@@ -43,6 +43,10 @@
   <string name="sound_recording_title_working">Записване</string>
   <!-- Sound recorder last item title -->
   <string name="sound_last_title">Последен запис</string>
+  <!-- Sound recorder notification channel title -->
+  <string name="sound_channel_title">Запис на звук</string>
+  <!-- Sound recorder notification channel description-->
+  <string name="sound_channel_desc">Постоянно известяване при запис на звук и известие, след завършване</string>
   <!-- Screen recorder -->
   <!-- Screen recorder enabled audio message -->
   <string name="screen_audio_message_on">Звукът от микрофона ще бъде включен във видеото</string>
@@ -74,6 +78,14 @@
   <string name="screen_overlay_notif_message">Натиснете бутона за запис, когато сте готови да започнете</string>
   <!-- Screen settings dialog title -->
   <string name="screen_settings_title">Настройки за запис на екрана</string>
+  <!-- Screen recorder notification overlay channel title -->
+  <string name="screen_overlay_channel_title">Готов за запис на екран</string>
+  <!-- Screen recorder notification overlay channel description-->
+  <string name="screen_overlay_channel_desc">Съобщението, показващо екранното записване, е готово за стартиране</string>
+  <!-- Screen recorder persistent notification channel title -->
+  <string name="screen_channel_title">Записване на екрана</string>
+  <!-- Screen recorder persistent notification channel description-->
+  <string name="screen_channel_desc">Постоянно известяване при запис на екрана и известие, след завършване</string>
   <!-- Permissions -->
   <!-- Permissions dialog title -->
   <string name="dialog_permissions_title">Разрешения</string>

@@ -43,12 +43,15 @@
   <string name="sound_recording_title_working">Enregistrement en cours</string>
   <!-- Sound recorder last item title -->
   <string name="sound_last_title">Dernier enregistrement</string>
+  <!-- Sound recorder notification channel title -->
+  <!-- Sound recorder notification channel description-->
   <!-- Screen recorder -->
   <!-- Screen recorder enabled audio message -->
   <string name="screen_audio_message_on">L\'enregistrement audio du microphone sera inclus dans la vidéo</string>
   <!-- Screen recorder disabled audio message -->
   <string name="screen_audio_message_off">L\'enregistrement audio du microphone ne sera pas inclus dans la vidéo</string>
   <!-- Screen recorder disabled audio toggle message -->
+  <string name="screen_audio_message_disabled">Il est impossible de modifier ce paramètre pendant l\'enregistrement de l\'écran</string>
   <!-- Screen recorder audio permission request card button -->
   <string name="screen_audio_warning_button_ask">Demander</string>
   <!-- Screen recorder notification storage error title -->
@@ -72,6 +75,11 @@
   <!-- Screen recorder notification overlay message -->
   <string name="screen_overlay_notif_message">Appuyez sur le bouton enregistrer quand vous êtes prêt à démarrer</string>
   <!-- Screen settings dialog title -->
+  <string name="screen_settings_title">Paramètres de capture vidéo</string>
+  <!-- Screen recorder notification overlay channel title -->
+  <!-- Screen recorder notification overlay channel description-->
+  <!-- Screen recorder persistent notification channel title -->
+  <!-- Screen recorder persistent notification channel description-->
   <!-- Permissions -->
   <!-- Permissions dialog title -->
   <string name="dialog_permissions_title">Autorisations</string>
@@ -99,6 +107,8 @@
   <string name="snack_permissions_no_permission">Les autorisations requises ont été refusées, activez-les depuis les Paramètres pour commencer à enregistrer</string>
   <!-- Main activity -->
   <!-- Screen record title -->
+  <string name="main_screen_action">Enregistrer l\'écran</string>
   <!-- Sound record title -->
+  <string name="main_sound_action">Enregistrement vocal</string>
   <!-- Transition name for dialogActivity -->
 </resources>

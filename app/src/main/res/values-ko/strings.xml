@@ -30,7 +30,7 @@
   <!-- Delete confirm title -->
   <string name="delete_title">녹음/녹화 삭제</string>
   <!-- Delete confirm message -->
-  <string name="delete_message">정말 %1$s을(를) 삭제하시겠습니까? 이 작업은 되돌릴 수 없습니다.</string>
+  <string name="delete_message">정말 %1$s 파일을 삭제하시겠습니까? 이 작업은 되돌릴 수 없습니다.</string>
   <!-- Date for last item %1 is year, %2 month, %3 day, %4 hour, %5 min -->
   <string name="date_format">%1$s-%2$s-%3$s %4$s:%5$s</string>
   <!-- Permissions -->
@@ -43,6 +43,10 @@
   <string name="sound_recording_title_working">녹음 중</string>
   <!-- Sound recorder last item title -->
   <string name="sound_last_title">마지막 녹음</string>
+  <!-- Sound recorder notification channel title -->
+  <string name="sound_channel_title">소리 녹음</string>
+  <!-- Sound recorder notification channel description-->
+  <string name="sound_channel_desc">소리 녹음 중 또는 녹음 완료 시 지속적으로 표시되는 알림</string>
   <!-- Screen recorder -->
   <!-- Screen recorder enabled audio message -->
   <string name="screen_audio_message_on">마이크로 녹음된 오디오가 영상에 포함됩니다.</string>
@@ -74,6 +78,14 @@
   <string name="screen_overlay_notif_message">녹화할 준비가 되면 녹화 버튼을 누르세요.</string>
   <!-- Screen settings dialog title -->
   <string name="screen_settings_title">화면 녹화 설정</string>
+  <!-- Screen recorder notification overlay channel title -->
+  <string name="screen_overlay_channel_title">화면 녹화 준비됨</string>
+  <!-- Screen recorder notification overlay channel description-->
+  <string name="screen_overlay_channel_desc">화면 녹화가 준비되었음을 나타내는 알림</string>
+  <!-- Screen recorder persistent notification channel title -->
+  <string name="screen_channel_title">화면 녹화</string>
+  <!-- Screen recorder persistent notification channel description-->
+  <string name="screen_channel_desc">화면 녹화 중 또는 녹화 완료 시 지속적으로 표시되는 알림</string>
   <!-- Permissions -->
   <!-- Permissions dialog title -->
   <string name="dialog_permissions_title">권한</string>
