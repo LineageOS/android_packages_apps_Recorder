@@ -46,7 +46,7 @@
   <!-- Sound recorder notification channel title -->
   <string name="sound_channel_title">录音</string>
   <!-- Sound recorder notification channel description-->
-  <string name="sound_channel_desc">记录声音和通知完成后的通知</string>
+  <string name="sound_channel_desc">录音至完成期间的持续通知</string>
   <!-- Screen recorder -->
   <!-- Screen recorder enabled audio message -->
   <string name="screen_audio_message_on">将麦克风的声音纳入视频</string>
@@ -81,11 +81,11 @@
   <!-- Screen recorder notification overlay channel title -->
   <string name="screen_overlay_channel_title">准备录制屏幕</string>
   <!-- Screen recorder notification overlay channel description-->
-  <string name="screen_overlay_channel_desc">显示屏幕录制的通知已就绪, 可以开始</string>
+  <string name="screen_overlay_channel_desc">屏幕录制准备就绪时将显示通知</string>
   <!-- Screen recorder persistent notification channel title -->
   <string name="screen_channel_title">屏幕录制</string>
   <!-- Screen recorder persistent notification channel description-->
-  <string name="screen_channel_desc">记录屏幕和通知完成后的通知</string>
+  <string name="screen_channel_desc">录屏至完成期间的持续通知</string>
   <!-- Permissions -->
   <!-- Permissions dialog title -->
   <string name="dialog_permissions_title">权限</string>
