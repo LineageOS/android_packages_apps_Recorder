@@ -46,6 +46,7 @@
   <!-- Sound recorder notification channel title -->
   <string name="sound_channel_title">Gravação de som</string>
   <!-- Sound recorder notification channel description-->
+  <string name="sound_channel_desc">Notificação persistente durante a gravação de som e notificação após gravar</string>
   <!-- Screen recorder -->
   <!-- Screen recorder enabled audio message -->
   <string name="screen_audio_message_on">Áudio do microfone será incluído no vídeo</string>
@@ -78,9 +79,13 @@
   <!-- Screen settings dialog title -->
   <string name="screen_settings_title">Configurações do gravador de tela</string>
   <!-- Screen recorder notification overlay channel title -->
+  <string name="screen_overlay_channel_title">Pronto para gravar a tela</string>
   <!-- Screen recorder notification overlay channel description-->
+  <string name="screen_overlay_channel_desc">Notificação mostrando que a gravação de tela está pronta para começar</string>
   <!-- Screen recorder persistent notification channel title -->
+  <string name="screen_channel_title">Gravação de tela</string>
   <!-- Screen recorder persistent notification channel description-->
+  <string name="screen_channel_desc">Notificação persistente durante a gravação de tela e notificação após a conclusão</string>
   <!-- Permissions -->
   <!-- Permissions dialog title -->
   <string name="dialog_permissions_title">Permissões</string>

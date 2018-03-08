@@ -44,6 +44,7 @@
   <!-- Sound recorder last item title -->
   <string name="sound_last_title">Последњи снимак</string>
   <!-- Sound recorder notification channel title -->
+  <string name="sound_channel_title">Снимање звука</string>
   <!-- Sound recorder notification channel description-->
   <!-- Screen recorder -->
   <!-- Screen recorder enabled audio message -->
@@ -79,6 +80,7 @@
   <!-- Screen recorder notification overlay channel title -->
   <!-- Screen recorder notification overlay channel description-->
   <!-- Screen recorder persistent notification channel title -->
+  <string name="screen_channel_title">Снимање екрана</string>
   <!-- Screen recorder persistent notification channel description-->
   <!-- Permissions -->
   <!-- Permissions dialog title -->

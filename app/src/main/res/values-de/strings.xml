@@ -46,6 +46,7 @@
   <!-- Sound recorder notification channel title -->
   <string name="sound_channel_title">Tonaufnahme</string>
   <!-- Sound recorder notification channel description-->
+  <string name="sound_channel_desc">Dauerhafte Benachrichtigung bei der Tonaufnahme und Benachrichtigung nach Abschluss der Aufnahme</string>
   <!-- Screen recorder -->
   <!-- Screen recorder enabled audio message -->
   <string name="screen_audio_message_on">Ton vom Mikrofon wird mit aufgenommen</string>
@@ -78,11 +79,13 @@
   <!-- Screen settings dialog title -->
   <string name="screen_settings_title">Bildschirmaufnahmeeinstellungen</string>
   <!-- Screen recorder notification overlay channel title -->
+  <string name="screen_overlay_channel_title">Bereit zur Aufnahme des Bildschirms</string>
   <!-- Screen recorder notification overlay channel description-->
   <string name="screen_overlay_channel_desc">Benachrichtigung anzeigen, wenn die Bildschirmaufnahme startbereit ist</string>
   <!-- Screen recorder persistent notification channel title -->
   <string name="screen_channel_title">Bildschirmaufnahme</string>
   <!-- Screen recorder persistent notification channel description-->
+  <string name="screen_channel_desc">Dauerhafte Benachrichtigung bei der Bildschirmaufnahme und Benachrichtigung nach Abschluss der Aufnahme</string>
   <!-- Permissions -->
   <!-- Permissions dialog title -->
   <string name="dialog_permissions_title">Berechtigungen</string>
