@@ -26,6 +26,7 @@
   <!-- Delete action -->
   <string name="delete">Poista</string>
   <!-- Cancel action -->
+  <string name="cancel">Peruuta</string>
   <!-- Delete confirm title -->
   <string name="delete_title">Poistetaan nauhoitusta</string>
   <!-- Delete confirm message -->
@@ -48,6 +49,7 @@
   <!-- Screen recorder disabled audio message -->
   <string name="screen_audio_message_off">Mikrofonin ääntä ei sisällytetä videoon</string>
   <!-- Screen recorder disabled audio toggle message -->
+  <string name="screen_audio_message_disabled">Tätä asetusta ei voi muuttaa nauhoittaessa näyttöä</string>
   <!-- Screen recorder audio permission request card button -->
   <string name="screen_audio_warning_button_ask">Kysy</string>
   <!-- Screen recorder notification storage error title -->
@@ -71,6 +73,7 @@
   <!-- Screen recorder notification overlay message -->
   <string name="screen_overlay_notif_message">Paina Tallenna-painiketta, kun olet valmis aloittamaan</string>
   <!-- Screen settings dialog title -->
+  <string name="screen_settings_title">Muuta näytön videotallennuksen asetuksia</string>
   <!-- Permissions -->
   <!-- Permissions dialog title -->
   <string name="dialog_permissions_title">Käyttöoikeudet</string>
@@ -98,6 +101,8 @@
   <string name="snack_permissions_no_permission">Tarvittavat käyttöoikeudet hylättiin, ota ne käyttöön Asetukset-sovelluksesta aloittaaksesi nauhoituksen</string>
   <!-- Main activity -->
   <!-- Screen record title -->
+  <string name="main_screen_action">Nauhoita näyttöä</string>
   <!-- Sound record title -->
+  <string name="main_sound_action">Nauhoita ääntä</string>
   <!-- Transition name for dialogActivity -->
 </resources>

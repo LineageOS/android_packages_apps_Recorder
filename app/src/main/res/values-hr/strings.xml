@@ -26,6 +26,7 @@
   <!-- Delete action -->
   <string name="delete">Izbriši</string>
   <!-- Cancel action -->
+  <string name="cancel">Odustani</string>
   <!-- Delete confirm title -->
   <string name="delete_title">Brisanje zapisa</string>
   <!-- Delete confirm message -->
@@ -48,6 +49,7 @@
   <!-- Screen recorder disabled audio message -->
   <string name="screen_audio_message_off">Zvuk iz mikrofona neće biti uključen u videozapisu.</string>
   <!-- Screen recorder disabled audio toggle message -->
+  <string name="screen_audio_message_disabled">Nije moguće promijeniti tu postavku tijekom snimanja zaslona</string>
   <!-- Screen recorder audio permission request card button -->
   <string name="screen_audio_warning_button_ask">Pitaj</string>
   <!-- Screen recorder notification storage error title -->
@@ -67,9 +69,11 @@
   <!-- Screen recorder last item message -->
   <string name="screen_last_message">Datum: %1$s\nTrajanje: %2$d s</string>
   <!-- Screen recorder notification overlay title -->
+  <string name="screen_overlay_notif_title">Spremno za snimanje</string>
   <!-- Screen recorder notification overlay message -->
   <string name="screen_overlay_notif_message">Pritisnite tipku za snimanje kada budete spremni za početak.</string>
   <!-- Screen settings dialog title -->
+  <string name="screen_settings_title">Postavke snimanja zaslona</string>
   <!-- Permissions -->
   <!-- Permissions dialog title -->
   <string name="dialog_permissions_title">Dopuštenja</string>
@@ -92,10 +96,13 @@
   <!-- Permissions dialog action: dismiss dialog -->
   <string name="dialog_permissions_dismiss">Odbaci</string>
   <!-- Message: overlay permission denied. Make sure "Draw over other apps" matches settings strings -->
+  <string name="dialog_permissions_overlay">Snimač treba „Crtanje preko drugih aplikacija” dopuštenje za snimanje zaslona. Pritisnite dopusti, omogućite dopuštenje u postavkama i vratite se u Snimač</string>
   <!-- No permissions granted error -->
   <string name="snack_permissions_no_permission">Potrebna su dopuštenja odbijena. Omogućite ih u postavkama da biste mogli snimati.</string>
   <!-- Main activity -->
   <!-- Screen record title -->
+  <string name="main_screen_action">Snimanje zaslona</string>
   <!-- Sound record title -->
+  <string name="main_sound_action">Snimanje zvuka</string>
   <!-- Transition name for dialogActivity -->
 </resources>

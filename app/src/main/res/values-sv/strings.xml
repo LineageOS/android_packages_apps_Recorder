@@ -26,6 +26,7 @@
   <!-- Delete action -->
   <string name="delete">Radera</string>
   <!-- Cancel action -->
+  <string name="cancel">Avbryt</string>
   <!-- Delete confirm title -->
   <string name="delete_title">Ta bort inspelning</string>
   <!-- Delete confirm message -->
@@ -97,6 +98,8 @@
   <string name="snack_permissions_no_permission">Nödvändiga behörigheter nekades, aktivera dem i appens inställningar för att starta inspelningen</string>
   <!-- Main activity -->
   <!-- Screen record title -->
+  <string name="main_screen_action">Spela in skärmen</string>
   <!-- Sound record title -->
+  <string name="main_sound_action">Spela in ljud</string>
   <!-- Transition name for dialogActivity -->
 </resources>
