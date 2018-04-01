@@ -44,7 +44,9 @@
   <!-- Sound recorder last item title -->
   <string name="sound_last_title">Dernier enregistrement</string>
   <!-- Sound recorder notification channel title -->
+  <string name="sound_channel_title">Enregistreur audio</string>
   <!-- Sound recorder notification channel description-->
+  <string name="sound_channel_desc">Notification persistante lors de l\'enregistrement audio et notification après la fin de ce dernier</string>
   <!-- Screen recorder -->
   <!-- Screen recorder enabled audio message -->
   <string name="screen_audio_message_on">L\'enregistrement audio du microphone sera inclus dans la vidéo</string>
@@ -77,9 +79,13 @@
   <!-- Screen settings dialog title -->
   <string name="screen_settings_title">Paramètres de capture vidéo</string>
   <!-- Screen recorder notification overlay channel title -->
+  <string name="screen_overlay_channel_title">Prêt à enregistrer l\'écran</string>
   <!-- Screen recorder notification overlay channel description-->
+  <string name="screen_overlay_channel_desc">Notification indiquant que l\'enregistrement d\'écran est prêt à démarrer</string>
   <!-- Screen recorder persistent notification channel title -->
+  <string name="screen_channel_title">Enregistrement d\'écran</string>
   <!-- Screen recorder persistent notification channel description-->
+  <string name="screen_channel_desc">Notification persistante lors de l\'enregistrement d\'écran et notification après la fin de ce dernier</string>
   <!-- Permissions -->
   <!-- Permissions dialog title -->
   <string name="dialog_permissions_title">Autorisations</string>

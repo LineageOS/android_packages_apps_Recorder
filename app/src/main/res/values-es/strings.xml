@@ -53,7 +53,7 @@
   <!-- Screen recorder disabled audio message -->
   <string name="screen_audio_message_off">El audio grabado por el micrófono no se incluirá en el vídeo</string>
   <!-- Screen recorder disabled audio toggle message -->
-  <string name="screen_audio_message_disabled">No es posible cambiar esta configuración mientras se graba la pantalla</string>
+  <string name="screen_audio_message_disabled">Imosible cambiar esta configuración mientras se graba la pantalla</string>
   <!-- Screen recorder audio permission request card button -->
   <string name="screen_audio_warning_button_ask">Preguntar</string>
   <!-- Screen recorder notification storage error title -->
