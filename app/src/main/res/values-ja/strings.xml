@@ -44,7 +44,9 @@
   <!-- Sound recorder last item title -->
   <string name="sound_last_title">最後の記録</string>
   <!-- Sound recorder notification channel title -->
+  <string name="sound_channel_title">音声録音</string>
   <!-- Sound recorder notification channel description-->
+  <string name="sound_channel_desc">録音中の通知を完了後も表示し続ける</string>
   <!-- Screen recorder -->
   <!-- Screen recorder enabled audio message -->
   <string name="screen_audio_message_on">マイクからの音声が動画に含まれます</string>
@@ -77,9 +79,13 @@
   <!-- Screen settings dialog title -->
   <string name="screen_settings_title">スクリーンレコード設定</string>
   <!-- Screen recorder notification overlay channel title -->
+  <string name="screen_overlay_channel_title">画面録画の準備完了</string>
   <!-- Screen recorder notification overlay channel description-->
+  <string name="screen_overlay_channel_desc">画面の録画の準備が完了したら通知を表示</string>
   <!-- Screen recorder persistent notification channel title -->
+  <string name="screen_channel_title">画面の録画中</string>
   <!-- Screen recorder persistent notification channel description-->
+  <string name="screen_channel_desc">録音中の通知を完了後も表示し続ける</string>
   <!-- Permissions -->
   <!-- Permissions dialog title -->
   <string name="dialog_permissions_title">権限</string>

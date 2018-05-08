@@ -78,6 +78,7 @@
   <!-- Screen recorder notification overlay channel title -->
   <string name="screen_overlay_channel_title">Siap merekam layar</string>
   <!-- Screen recorder notification overlay channel description-->
+  <string name="screen_overlay_channel_desc">Pemberitahuan yang menampilkan perekaman layar sudah siap untuk dimulai</string>
   <!-- Screen recorder persistent notification channel title -->
   <string name="screen_channel_title">Rekaman layar</string>
   <!-- Screen recorder persistent notification channel description-->

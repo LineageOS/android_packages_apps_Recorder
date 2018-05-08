@@ -17,12 +17,16 @@
 <resources>
   <!-- Common actions -->
   <!-- Share action for notification -->
+  <string name="share">Cumpartzi</string>
   <!-- Stop action for notification -->
   <!-- Play action -->
   <!-- Delete action -->
+  <string name="delete">Iscantzella</string>
   <!-- Cancel action -->
+  <string name="cancel">Annulla</string>
   <!-- Delete confirm title -->
   <!-- Delete confirm message -->
+  <string name="delete_message">Ses seguru chi nche cheres iscantzellare %1$s? Custu non podet èssere annulladu</string>
   <!-- Date for last item %1 is year, %2 month, %3 day, %4 hour, %5 min -->
   <!-- Permissions -->
   <!-- Sound recorder -->

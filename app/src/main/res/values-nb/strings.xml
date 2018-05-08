@@ -75,6 +75,7 @@
   <!-- Screen recorder notification overlay message -->
   <string name="screen_overlay_notif_message">Trykk på opptaksknappen når du er klar til å begynne</string>
   <!-- Screen settings dialog title -->
+  <string name="screen_settings_title">Skjerminnspiller-innstillinger</string>
   <!-- Screen recorder notification overlay channel title -->
   <!-- Screen recorder notification overlay channel description-->
   <!-- Screen recorder persistent notification channel title -->
