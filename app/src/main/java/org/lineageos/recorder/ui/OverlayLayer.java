@@ -38,10 +38,9 @@ public class OverlayLayer extends View {
     public OverlayLayer(Context context) {
         super(context);
 
-        LayoutInflater inflater = (LayoutInflater)
-                context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        LayoutInflater inflater = context.getSystemService(LayoutInflater.class);
         mLayout = new FrameLayout(context);
-        mManager = (WindowManager) context.getSystemService(Context.WINDOW_SERVICE);
+        mManager = context.getSystemService(WindowManager.class);
         mParams = new WindowManager.LayoutParams(
                 ViewGroup.LayoutParams.WRAP_CONTENT,
                 ViewGroup.LayoutParams.WRAP_CONTENT,
@@ -50,11 +49,15 @@ public class OverlayLayer extends View {
                         WindowManager.LayoutParams.FLAG_NOT_TOUCH_MODAL,
                 PixelFormat.TRANSLUCENT);
         mParams.gravity = Gravity.START;
-        mManager.addView(mLayout, mParams);
-        inflater.inflate(R.layout.window_screen_recorder_overlay, mLayout);
+        if (mManager != null) {
+            mManager.addView(mLayout, mParams);
+        }
+        if (inflater != null) {
+            inflater.inflate(R.layout.window_screen_recorder_overlay, mLayout);
+        }
 
-        mButton = (ImageButton) mLayout.findViewById(R.id.overlay_button);
-        DragView drag = (DragView) mLayout.findViewById(R.id.overlay_drag);
+        mButton = mLayout.findViewById(R.id.overlay_button);
+        DragView drag = mLayout.findViewById(R.id.overlay_drag);
         drag.setOnTouchListener(new OnTouchListener() {
             private int origX;
             private int origY;
@@ -76,7 +79,9 @@ public class OverlayLayer extends View {
                     case MotionEvent.ACTION_MOVE:
                         mParams.x = origX + x - touchX;
                         mParams.y = origY + y - touchY;
-                        mManager.updateViewLayout(mLayout, mParams);
+                        if (mManager != null) {
+                            mManager.updateViewLayout(mLayout, mParams);
+                        }
                         break;
                     case MotionEvent.ACTION_UP:
                         v.performClick();

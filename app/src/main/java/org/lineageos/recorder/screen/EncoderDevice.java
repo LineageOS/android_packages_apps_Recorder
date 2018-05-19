@@ -90,9 +90,9 @@ abstract class EncoderDevice {
 
     VirtualDisplay registerVirtualDisplay(Context context) {
         assert virtualDisplay == null;
-        DisplayManager dm = (DisplayManager) context.getSystemService(Context.DISPLAY_SERVICE);
+        DisplayManager dm = context.getSystemService(DisplayManager.class);
         Surface surface = createDisplaySurface();
-        if (surface == null)
+        if (surface == null || dm == null)
             return null;
         return virtualDisplay = dm.createVirtualDisplay(ScreencastService.SCREENCASTER_NAME,
                 width, height, 1,

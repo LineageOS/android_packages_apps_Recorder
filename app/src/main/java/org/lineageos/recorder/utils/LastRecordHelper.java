@@ -51,8 +51,11 @@ public class LastRecordHelper {
                         //noinspection ResultOfMethodCallIgnored
                         record.delete();
                     }
-                    NotificationManager nm = (NotificationManager)
-                            context.getSystemService(Context.NOTIFICATION_SERVICE);
+                    NotificationManager nm = context.getSystemService(NotificationManager.class);
+                    if (nm == null) {
+                        return;
+                    }
+
                     if (isSound) {
                         nm.cancel(SoundRecorderService.NOTIFICATION_ID);
                     } else {
