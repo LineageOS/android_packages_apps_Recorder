@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "06cbfec5_73fa2e04",
+        "filename": "app/src/main/java/org/lineageos/recorder/screen/OverlayService.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2018-05-19T21:02:06Z",
+      "side": 1,
+      "message": "Why only here and not also in the other classes where NotificationChannels are created?",
+      "range": {
+        "startLine": 97,
+        "startChar": 0,
+        "endLine": 99,
+        "endChar": 9
+      },
+      "revId": "1daa90cd2224328444005686db70743ab14dac20",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
