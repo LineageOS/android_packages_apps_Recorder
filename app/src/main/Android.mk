@@ -55,9 +55,9 @@ include $(BUILD_PACKAGE)
 include $(CLEAR_VARS)
 
 LOCAL_PREBUILT_STATIC_JAVA_LIBRARIES += \
-    android-support-constraint-layout:../../libs/constraint-layout-1.1.0-beta2.aar \
-    android-support-constraint-layout-solver:../../libs/constraint-layout-solver-1.1.0-beta2.jar \
-    android-support-transition-recorder:../../libs/transition-26.1.0.aar
+    android-support-constraint-layout:../../libs/constraint-layout-1.1.0.aar \
+    android-support-constraint-layout-solver:../../libs/constraint-layout-solver-1.1.0.jar \
+    android-support-transition-recorder:../../libs/transition-27.0.2.aar
 
 include $(BUILD_MULTI_PREBUILT)
 
