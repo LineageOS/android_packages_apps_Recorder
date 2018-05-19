@@ -21,6 +21,7 @@ import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.app.Service;
 import android.content.Intent;
+import android.os.Build;
 import android.os.IBinder;
 import android.support.v4.app.NotificationCompat;
 
@@ -81,6 +82,10 @@ public class OverlayService extends Service {
     public void onCreate() {
         super.onCreate();
 
+        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.O) {
+            return;
+        }
+
         NotificationManager notificationManager = getSystemService(NotificationManager.class);
         CharSequence name = getString(R.string.screen_overlay_channel_title);
         String description = getString(R.string.screen_overlay_channel_desc);
@@ -88,7 +93,10 @@ public class OverlayService extends Service {
                 new NotificationChannel(SCREENCAST_OVERLAY_NOTIFICATION_CHANNEL,
                         name, NotificationManager.IMPORTANCE_LOW);
         notificationChannel.setDescription(description);
-        notificationManager.createNotificationChannel(notificationChannel);
+
+        if (notificationManager != null) {
+            notificationManager.createNotificationChannel(notificationChannel);
+        }
     }
 
     @Override
