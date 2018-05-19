@@ -16,7 +16,6 @@
 package org.lineageos.recorder;
 
 import android.Manifest;
-import android.app.ActivityManager;
 import android.content.BroadcastReceiver;
 import android.content.ComponentName;
 import android.content.Context;
@@ -56,7 +55,6 @@ import org.lineageos.recorder.utils.OnBoardingHelper;
 import org.lineageos.recorder.utils.Utils;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class RecorderActivity extends AppCompatActivity implements
         SharedPreferences.OnSharedPreferenceChangeListener {
@@ -110,18 +108,18 @@ public class RecorderActivity extends AppCompatActivity implements
         super.onCreate(savedInstance);
         setContentView(R.layout.activty_constraint);
 
-        mConstraintRoot = (ConstraintLayout) findViewById(R.id.main_root);
+        mConstraintRoot = findViewById(R.id.main_root);
 
-        mScreenFab = (FloatingActionButton) findViewById(R.id.screen_fab);
-        mScreenSettings = (ImageView) findViewById(R.id.screen_settings_icon);
-        mScreenLast = (ImageView) findViewById(R.id.screen_last_icon);
+        mScreenFab = findViewById(R.id.screen_fab);
+        mScreenSettings = findViewById(R.id.screen_settings_icon);
+        mScreenLast = findViewById(R.id.screen_last_icon);
 
-        mSoundFab = (FloatingActionButton) findViewById(R.id.sound_fab);
-        mSoundLast = (ImageView) findViewById(R.id.sound_last_icon);
+        mSoundFab = findViewById(R.id.sound_fab);
+        mSoundLast = findViewById(R.id.sound_last_icon);
 
-        mRecordingLayout = (RelativeLayout) findViewById(R.id.main_recording);
-        mRecordingText = (TextView) findViewById(R.id.main_recording_text);
-        mRecordingVisualizer = (SoundVisualizer) findViewById(R.id.main_recording_visualizer);
+        mRecordingLayout = findViewById(R.id.main_recording);
+        mRecordingText = findViewById(R.id.main_recording_text);
+        mRecordingVisualizer = findViewById(R.id.main_recording_visualizer);
 
         mScreenFab.setOnClickListener(v -> toggleScreenRecorder());
         mSoundFab.setOnClickListener(v -> toggleSoundRecorder());
@@ -433,14 +431,10 @@ public class RecorderActivity extends AppCompatActivity implements
     }
 
     private void stopOverlayService() {
-        ActivityManager manager = (ActivityManager) getSystemService(ACTIVITY_SERVICE);
-        List<ActivityManager.RunningServiceInfo> services =
-                manager.getRunningServices(Integer.MAX_VALUE);
-
         // Stop overlay service if running
-        services.stream().filter(info -> getPackageName().equals(info.service.getPackageName()) &&
-                OverlayService.class.getName().equals(info.service.getClassName()))
-                .forEach(info -> stopService(new Intent(this, OverlayService.class)));
+        if (OverlayService.isRunning) {
+            stopService(new Intent(this, OverlayService.class));
+        }
     }
 
     private void updateLastItemStatus() {

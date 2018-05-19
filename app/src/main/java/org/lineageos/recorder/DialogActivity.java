@@ -60,9 +60,9 @@ public class DialogActivity extends AppCompatActivity implements
         setContentView(R.layout.dialog_base);
         setFinishOnTouchOutside(true);
 
-        mRootView = (LinearLayout) findViewById(R.id.dialog_root);
-        TextView title = (TextView) findViewById(R.id.dialog_title);
-        mContent = (FrameLayout) findViewById(R.id.dialog_content);
+        mRootView = findViewById(R.id.dialog_root);
+        TextView title = findViewById(R.id.dialog_title);
+        mContent = findViewById(R.id.dialog_content);
 
         mPrefs = getSharedPreferences(Utils.PREFS, 0);
         mPrefs.registerOnSharedPreferenceChangeListener(this);
@@ -136,10 +136,10 @@ public class DialogActivity extends AppCompatActivity implements
 
     private void setupAsLastItem(boolean isSound) {
         View view = createContentView(R.layout.dialog_content_last_item);
-        TextView description = (TextView) view.findViewById(R.id.dialog_content_last_description);
-        ImageView play = (ImageView) view.findViewById(R.id.dialog_content_last_play);
-        ImageView delete = (ImageView) view.findViewById(R.id.dialog_content_last_delete);
-        ImageView share = (ImageView) view.findViewById(R.id.dialog_content_last_share);
+        TextView description = view.findViewById(R.id.dialog_content_last_description);
+        ImageView play = view.findViewById(R.id.dialog_content_last_play);
+        ImageView delete = view.findViewById(R.id.dialog_content_last_delete);
+        ImageView share = view.findViewById(R.id.dialog_content_last_share);
 
         description.setText(LastRecordHelper.getLastItemDescription(this, isSound));
 
@@ -169,7 +169,7 @@ public class DialogActivity extends AppCompatActivity implements
 
     private void setupAsSettingsScreen() {
         View view = createContentView(R.layout.dialog_content_screen_settings);
-        mAudioSwitch = (Switch) view.findViewById(R.id.dialog_content_screen_settings_switch);
+        mAudioSwitch = view.findViewById(R.id.dialog_content_screen_settings_switch);
         mAudioSwitch.setOnCheckedChangeListener((button, isChecked) -> {
             if (hasAudioPermission()) {
                 setScreenWithAudio(isChecked);

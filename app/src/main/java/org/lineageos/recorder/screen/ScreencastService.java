@@ -180,14 +180,20 @@ public class ScreencastService extends Service {
     }
 
     private Point getNativeResolution() {
-        DisplayManager dm = (DisplayManager) getSystemService(DISPLAY_SERVICE);
+        DisplayManager dm = getSystemService(DisplayManager.class);
+        if (dm == null) {
+            return null;
+        }
+
         Display display = dm.getDisplay(Display.DEFAULT_DISPLAY);
         Point ret = new Point();
         try {
             display.getRealSize(ret);
         } catch (Exception e) {
             try {
+                //noinspection JavaReflectionMemberAccess
                 Method mGetRawH = Display.class.getMethod("getRawHeight");
+                //noinspection JavaReflectionMemberAccess
                 Method mGetRawW = Display.class.getMethod("getRawWidth");
                 ret.x = (Integer) mGetRawW.invoke(display);
                 ret.y = (Integer) mGetRawH.invoke(display);
@@ -219,6 +225,10 @@ public class ScreencastService extends Service {
     private void registerScreencaster(boolean withAudio) {
         assert mRecorder == null;
         Point size = getNativeResolution();
+        if (size == null) {
+            return;
+        }
+
         mRecorder = new RecordingDevice(this, size.x, size.y, withAudio);
         VirtualDisplay vd = mRecorder.registerVirtualDisplay(this);
         if (vd == null) {
