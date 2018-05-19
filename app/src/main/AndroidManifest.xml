@@ -27,7 +27,7 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <!-- This is needed for aosp build env -->
-    <uses-sdk android:minSdkVersion='25'
+    <uses-sdk android:minSdkVersion='24'
         tools:ignore="GradleOverrides" />
 
     <application

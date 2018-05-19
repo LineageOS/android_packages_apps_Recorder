@@ -27,6 +27,7 @@ import android.content.IntentFilter;
 import android.graphics.Point;
 import android.hardware.display.DisplayManager;
 import android.hardware.display.VirtualDisplay;
+import android.os.Build;
 import android.os.Environment;
 import android.os.IBinder;
 import android.os.StatFs;
@@ -113,7 +114,19 @@ public class ScreencastService extends Service {
     public void onCreate() {
         super.onCreate();
 
+        IntentFilter filter = new IntentFilter();
+        filter.addAction(Intent.ACTION_USER_BACKGROUND);
+        filter.addAction(Intent.ACTION_SHUTDOWN);
+        registerReceiver(mBroadcastReceiver, filter);
+
         mNotificationManager = getSystemService(NotificationManager.class);
+
+        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.O ||
+                mNotificationManager == null || mNotificationManager.getNotificationChannel(
+                        SCREENCAST_NOTIFICATION_CHANNEL) != null) {
+            return;
+        }
+
         CharSequence name = getString(R.string.screen_channel_title);
         String description = getString(R.string.screen_channel_desc);
         NotificationChannel notificationChannel =
@@ -121,11 +134,6 @@ public class ScreencastService extends Service {
                         name, NotificationManager.IMPORTANCE_LOW);
         notificationChannel.setDescription(description);
         mNotificationManager.createNotificationChannel(notificationChannel);
-
-        IntentFilter filter = new IntentFilter();
-        filter.addAction(Intent.ACTION_USER_BACKGROUND);
-        filter.addAction(Intent.ACTION_SHUTDOWN);
-        registerReceiver(mBroadcastReceiver, filter);
     }
 
     @Override
