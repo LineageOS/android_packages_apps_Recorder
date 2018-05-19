@@ -27,6 +27,7 @@ import android.content.IntentFilter;
 import android.media.AudioFormat;
 import android.media.AudioRecord;
 import android.media.MediaRecorder;
+import android.os.Build;
 import android.os.Environment;
 import android.os.IBinder;
 import android.support.v4.app.NotificationCompat;
@@ -111,7 +112,14 @@ public class SoundRecorderService extends Service {
     public void onCreate() {
         super.onCreate();
 
+        registerReceiver(mShutdownReceiver, new IntentFilter(Intent.ACTION_SHUTDOWN));
+
         mNotificationManager = getSystemService(NotificationManager.class);
+
+        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.O) {
+            return;
+        }
+
         CharSequence name = getString(R.string.sound_channel_title);
         String description = getString(R.string.sound_channel_desc);
         NotificationChannel notificationChannel =
@@ -119,8 +127,6 @@ public class SoundRecorderService extends Service {
                         name, NotificationManager.IMPORTANCE_LOW);
         notificationChannel.setDescription(description);
         mNotificationManager.createNotificationChannel(notificationChannel);
-
-        registerReceiver(mShutdownReceiver, new IntentFilter(Intent.ACTION_SHUTDOWN));
     }
 
     @Override
