@@ -22,6 +22,30 @@
       "revId": "1daa90cd2224328444005686db70743ab14dac20",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bc098ed3_9f58d8d1",
+        "filename": "app/src/main/java/org/lineageos/recorder/screen/OverlayService.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 8461
+      },
+      "writtenOn": "2018-05-20T07:41:05Z",
+      "side": 1,
+      "message": "The linter reported a nullability issue only there, so it means the other cases are already guarded somewhere else",
+      "parentUuid": "06cbfec5_73fa2e04",
+      "range": {
+        "startLine": 97,
+        "startChar": 0,
+        "endLine": 99,
+        "endChar": 9
+      },
+      "revId": "1daa90cd2224328444005686db70743ab14dac20",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
     }
   ]
 }
