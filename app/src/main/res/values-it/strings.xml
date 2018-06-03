@@ -115,6 +115,6 @@
   <!-- Screen record title -->
   <string name="main_screen_action">Registra schermo</string>
   <!-- Sound record title -->
-  <string name="main_sound_action">Registra suono</string>
+  <string name="main_sound_action">Registra suoni</string>
   <!-- Transition name for dialogActivity -->
 </resources>

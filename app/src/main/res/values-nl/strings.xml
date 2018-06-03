@@ -79,6 +79,7 @@
   <!-- Screen recorder notification overlay channel title -->
   <!-- Screen recorder notification overlay channel description-->
   <!-- Screen recorder persistent notification channel title -->
+  <string name="screen_channel_title">Scherm opnemen</string>
   <!-- Screen recorder persistent notification channel description-->
   <!-- Permissions -->
   <!-- Permissions dialog title -->
