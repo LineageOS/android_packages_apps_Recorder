@@ -67,7 +67,7 @@
   <!-- Screen recorder notification share title -->
   <string name="screen_notification_message_done">Готово к отправке</string>
   <!-- Screen recorder status message -->
-  <string name="screen_recording_message">Идёт запись с экрана</string>
+  <string name="screen_recording_message">Идет запись с экрана</string>
   <!-- Screen recorder last item title -->
   <string name="screen_last_title">Последняя запись</string>
   <!-- Screen recorder last item message -->
