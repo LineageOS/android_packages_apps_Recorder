@@ -22,6 +22,24 @@
       "revId": "c2b89cd398f8a5b45409ebd20e65e9d170afbce6",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9073e70a_eeac88a8",
+        "filename": "app/src/main/java/org/lineageos/recorder/screen/EncoderDevice.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2018-07-16T20:58:48Z",
+      "side": 1,
+      "message": "I copy pasted from fw/base ...",
+      "parentUuid": "4c10b86e_d64ad41c",
+      "revId": "c2b89cd398f8a5b45409ebd20e65e9d170afbce6",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
     }
   ]
 }
