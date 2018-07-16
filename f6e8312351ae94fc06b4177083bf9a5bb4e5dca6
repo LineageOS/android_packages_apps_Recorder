@@ -1,0 +1,107 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "b8510a42_32385b10",
+        "filename": "app/src/main/java/org/lineageos/recorder/screen/EncoderDevice.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2018-07-16T16:37:00Z",
+      "side": 1,
+      "message": "remove",
+      "revId": "f6e8312351ae94fc06b4177083bf9a5bb4e5dca6",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "7371c5c9_1a2ff652",
+        "filename": "app/src/main/java/org/lineageos/recorder/screen/EncoderDevice.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2018-07-16T16:37:00Z",
+      "side": 1,
+      "message": "ArrayList",
+      "range": {
+        "startLine": 82,
+        "startChar": 12,
+        "endLine": 82,
+        "endChar": 16
+      },
+      "revId": "f6e8312351ae94fc06b4177083bf9a5bb4e5dca6",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a0222724_b4d5366c",
+        "filename": "app/src/main/java/org/lineageos/recorder/screen/EncoderDevice.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 85,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2018-07-16T16:37:00Z",
+      "side": 1,
+      "message": "/vendor/etc/media_profiles_V1_0.xml\n/system/etc/media_profiles.xml\n\n+ prop\n\nIn this order, the rest are ignored by Android",
+      "range": {
+        "startLine": 83,
+        "startChar": 0,
+        "endLine": 85,
+        "endChar": 55
+      },
+      "revId": "f6e8312351ae94fc06b4177083bf9a5bb4e5dca6",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "885bdefc_2504a216",
+        "filename": "app/src/main/java/org/lineageos/recorder/screen/EncoderDevice.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 159,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2018-07-16T16:37:00Z",
+      "side": 1,
+      "message": "remove?\nIt\u0027ll either add a path or die completely",
+      "range": {
+        "startLine": 159,
+        "startChar": 32,
+        "endLine": 159,
+        "endChar": 37
+      },
+      "revId": "f6e8312351ae94fc06b4177083bf9a5bb4e5dca6",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "8e3d71fc_d841fb36",
+        "filename": "app/src/main/java/org/lineageos/recorder/screen/EncoderDevice.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 208,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2018-07-16T16:37:00Z",
+      "side": 1,
+      "message": "add NullPointerException",
+      "revId": "f6e8312351ae94fc06b4177083bf9a5bb4e5dca6",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    }
+  ]
+}
