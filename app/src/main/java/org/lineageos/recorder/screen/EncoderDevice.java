@@ -23,6 +23,7 @@ import android.media.CamcorderProfile;
 import android.media.MediaCodec;
 import android.media.MediaCodecInfo;
 import android.media.MediaFormat;
+import android.os.SystemProperties;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.Surface;
@@ -77,6 +78,10 @@ abstract class EncoderDevice {
             //{ 960, 540 },
             {848, 480}
     };
+    private ArrayList<String> validMediaProfilesPaths = new ArrayList<String>() {{
+            add("/vendor/etc/media_profiles_V1_0.xml");
+            add("/system/etc/media_profiles.xml");
+    }};
     private MediaCodec venc;
     private int width;
     private int height;
@@ -149,12 +154,26 @@ abstract class EncoderDevice {
             venc = null;
         }
 
+        String mediaProfilesPath = "";
+        String mediaProfilesProp = SystemProperties.get("media.settings.xml", "");
         int maxWidth;
         int maxHeight;
         int bitrate;
 
+        if (!mediaProfilesProp.isEmpty()) {
+            validMediaProfilesPaths.add(0, mediaProfilesProp);
+        }
+
+        for (String path : validMediaProfilesPaths) {
+            File mediaProfiles = new File(path);
+            if (mediaProfiles.canRead()) {
+                mediaProfilesPath = path;
+                break;
+            }
+        }
+
         try {
-            File mediaProfiles = new File("/system/etc/media_profiles.xml");
+            File mediaProfiles = new File(mediaProfilesPath);
             FileInputStream fin = new FileInputStream(mediaProfiles);
             byte[] bytes = new byte[(int) mediaProfiles.length()];
             //noinspection ResultOfMethodCallIgnored
