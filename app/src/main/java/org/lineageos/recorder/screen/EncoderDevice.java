@@ -19,32 +19,28 @@ package org.lineageos.recorder.screen;
 import android.content.Context;
 import android.hardware.display.DisplayManager;
 import android.hardware.display.VirtualDisplay;
-import android.media.CamcorderProfile;
+import android.media.EncoderCapabilities;
+import android.media.EncoderCapabilities.VideoEncoderCap;
 import android.media.MediaCodec;
 import android.media.MediaCodecInfo;
 import android.media.MediaFormat;
+import android.media.MediaRecorder;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.Surface;
 
 import org.lineageos.recorder.R;
-import org.xml.sax.Attributes;
-import org.xml.sax.SAXException;
 
-import java.io.File;
-import java.io.FileInputStream;
 import java.io.IOException;
-import java.io.StringReader;
-import java.util.ArrayList;
-
-import safesax.Element;
-import safesax.ElementListener;
-import safesax.Parsers;
-import safesax.RootElement;
+import java.util.List;
 
 abstract class EncoderDevice {
     final Context context;
     private final String LOGTAG = getClass().getSimpleName();
+
+    private static final List<VideoEncoderCap> videoEncoders =
+            EncoderCapabilities.getVideoEncoders();
+
     // Standard resolution tables, removed values that aren't multiples of 8
     private final int[][] validResolutions = {
             // CEA Resolutions
@@ -149,56 +145,15 @@ abstract class EncoderDevice {
             venc = null;
         }
 
-        int maxWidth;
-        int maxHeight;
-        int bitrate;
+        int maxWidth = 640;
+        int maxHeight = 480;
+        int bitrate = 2000000;
 
-        try {
-            File mediaProfiles = new File("/system/etc/media_profiles.xml");
-            FileInputStream fin = new FileInputStream(mediaProfiles);
-            byte[] bytes = new byte[(int) mediaProfiles.length()];
-            //noinspection ResultOfMethodCallIgnored
-            fin.read(bytes);
-            String xml = new String(bytes);
-            RootElement root = new RootElement("MediaSettings");
-            Element encoder = root.requireChild("VideoEncoderCap");
-            final ArrayList<VideoEncoderCap> encoders = new ArrayList<>();
-            encoder.setElementListener(new ElementListener() {
-                @Override
-                public void end() {
-                }
-
-                @Override
-                public void start(Attributes attributes) {
-                    if (!TextUtils.equals(attributes.getValue("name"), "h264"))
-                        return;
-                    encoders.add(new VideoEncoderCap(attributes));
-                }
-            });
-            Parsers.parse(new StringReader(xml), root.getContentHandler());
-            if (encoders.size() != 1) {
-                throw new IOException("derp");
-            }
-
-            VideoEncoderCap v = encoders.get(0);
-            maxWidth = v.maxFrameWidth;
-            maxHeight = v.maxFrameHeight;
-            bitrate = v.maxBitRate;
-        } catch (IOException | SAXException e) {
-            CamcorderProfile profile = CamcorderProfile.get(CamcorderProfile.QUALITY_1080P);
-
-            if (profile == null) {
-                profile = CamcorderProfile.get(CamcorderProfile.QUALITY_720P);
-            }
-
-            if (profile == null) {
-                maxWidth = 640;
-                maxHeight = 480;
-                bitrate = 2000000;
-            } else {
-                maxWidth = profile.videoFrameWidth;
-                maxHeight = profile.videoFrameHeight;
-                bitrate = profile.videoBitRate;
+        for (VideoEncoderCap cap : videoEncoders) {
+            if (cap.mCodec == MediaRecorder.VideoEncoder.H264) {
+                maxWidth = cap.mMaxFrameWidth;
+                maxHeight = cap.mMaxFrameHeight;
+                bitrate = cap.mMaxBitRate;
             }
         }
 
@@ -284,18 +239,6 @@ abstract class EncoderDevice {
         EncoderRunnable runnable = onSurfaceCreated(venc);
         new Thread(runnable, "Encoder").start();
         return surface;
-    }
-
-    private static class VideoEncoderCap {
-        final int maxFrameWidth;
-        final int maxFrameHeight;
-        final int maxBitRate;
-
-        VideoEncoderCap(Attributes attributes) {
-            maxFrameWidth = Integer.valueOf(attributes.getValue("maxFrameWidth"));
-            maxFrameHeight = Integer.valueOf(attributes.getValue("maxFrameHeight"));
-            maxBitRate = Integer.valueOf(attributes.getValue("maxBitRate"));
-        }
     }
 
     abstract class EncoderRunnable implements Runnable {
