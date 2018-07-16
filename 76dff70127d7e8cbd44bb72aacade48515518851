@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "271317ed_b4eaab3b",
+        "filename": "app/src/main/java/org/lineageos/recorder/screen/EncoderDevice.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2018-07-16T11:46:16Z",
+      "side": 1,
+      "message": "This isn\u0027t standard",
+      "revId": "76dff70127d7e8cbd44bb72aacade48515518851",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    }
+  ]
+}
