@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "4c10b86e_d64ad41c",
+        "filename": "app/src/main/java/org/lineageos/recorder/screen/EncoderDevice.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2018-07-16T20:58:01Z",
+      "side": 1,
+      "message": "Line is too long.",
+      "range": {
+        "startLine": 41,
+        "startChar": 4,
+        "endLine": 41,
+        "endChar": 102
+      },
+      "revId": "c2b89cd398f8a5b45409ebd20e65e9d170afbce6",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
