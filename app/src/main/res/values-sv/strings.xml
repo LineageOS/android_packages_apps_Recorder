@@ -76,6 +76,7 @@
   <string name="screen_overlay_notif_message">Tryck på inspelningsknappen när du är redo att börja</string>
   <!-- Screen settings dialog title -->
   <!-- Screen recorder notification overlay channel title -->
+  <string name="screen_overlay_channel_title">Redo att spela in skärmen</string>
   <!-- Screen recorder notification overlay channel description-->
   <!-- Screen recorder persistent notification channel title -->
   <string name="screen_channel_title">Skärminspelning</string>
