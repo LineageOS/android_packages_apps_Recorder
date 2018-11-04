@@ -15,108 +15,108 @@
      limitations under the License.
 -->
 <resources>
-  <string name="app_name">מקליט</string>
-  <!-- Common actions -->
-  <!-- Share action for notification -->
-  <string name="share">שיתוף</string>
-  <!-- Stop action for notification -->
-  <string name="stop">עצור</string>
-  <!-- Play action -->
-  <string name="play">נגן</string>
-  <!-- Delete action -->
-  <string name="delete">מחק</string>
-  <!-- Cancel action -->
-  <string name="cancel">ביטול</string>
-  <!-- Delete confirm title -->
-  <string name="delete_title">מחיקת הקלטה</string>
-  <!-- Delete confirm message -->
-  <string name="delete_message">למחוק את הקובץ הבא?\n
+    <string name="app_name">מקליט</string>
+    <!-- Common actions -->
+    <!-- Share action for notification -->
+    <string name="share">שיתוף</string>
+    <!-- Stop action for notification -->
+    <string name="stop">עצור</string>
+    <!-- Play action -->
+    <string name="play">נגן</string>
+    <!-- Delete action -->
+    <string name="delete">מחק</string>
+    <!-- Cancel action -->
+    <string name="cancel">ביטול</string>
+    <!-- Delete confirm title -->
+    <string name="delete_title">מחיקת הקלטה</string>
+    <!-- Delete confirm message -->
+    <string name="delete_message">למחוק את הקובץ הבא?\n
 %1$s 
 זוהי פעולה בילתי הפיכה</string>
-  <!-- Date for last item %1 is year, %2 month, %3 day, %4 hour, %5 min -->
-  <string name="date_format">%1$s-%2$s-%3$s %4$s:%5$s</string>
-  <!-- Permissions -->
-  <!-- Sound recorder -->
-  <!-- Sound recorder notification title -->
-  <string name="sound_notification_title">מקליט שמע</string>
-  <!-- Sound recorder notification message -->
-  <string name="sound_notification_message">אורך השמע: %1$s</string>
-  <!-- Sound recorder status card title recording -->
-  <string name="sound_recording_title_working">מקליט</string>
-  <!-- Sound recorder last item title -->
-  <string name="sound_last_title">הקלטה אחרונה</string>
-  <!-- Sound recorder notification channel title -->
-  <string name="sound_channel_title">הקלטת שמע</string>
-  <!-- Sound recorder notification channel description-->
-  <string name="sound_channel_desc">התראה קבועה בעת הקלטת השמע והתראה בסיום ההקלטה</string>
-  <!-- Screen recorder -->
-  <!-- Screen recorder enabled audio message -->
-  <string name="screen_audio_message_on">שמע מהמיקרופון יהיה כלול בוידאו</string>
-  <!-- Screen recorder disabled audio message -->
-  <string name="screen_audio_message_off">שמע מהמיקרופון לא יהיה כלול בוידאו</string>
-  <!-- Screen recorder disabled audio toggle message -->
-  <string name="screen_audio_message_disabled">אין אפשרות לשנות הגדרה זו תוך כדי הקלטת המסך</string>
-  <!-- Screen recorder audio permission request card button -->
-  <string name="screen_audio_warning_button_ask">בקש גישה</string>
-  <!-- Screen recorder notification storage error title -->
-  <string name="screen_insufficient_storage">אין מספיק מקום אחסון</string>
-  <!-- Screen recorder notification storage error message -->
-  <string name="screen_not_enough_storage">אין מספיק מקום אחסון זמין</string>
-  <!-- Screen recorder notification title -->
-  <string name="screen_notification_title">מקליט מסך</string>
-  <!-- Screen recorder notification message -->
-  <string name="screen_notification_message">אורך הוידאו: %s</string>
-  <!-- Screen recorder notification share title -->
-  <string name="screen_notification_message_done">מוכן לשיתוף</string>
-  <!-- Screen recorder status message -->
-  <string name="screen_recording_message">המסך מוקלט\u2026</string>
-  <!-- Screen recorder last item title -->
-  <string name="screen_last_title">הקלטה אחרונה</string>
-  <!-- Screen recorder last item message -->
-  <string name="screen_last_message">תאריך: %1$s\nמשך: %2$d שניות</string>
-  <!-- Screen recorder notification overlay title -->
-  <string name="screen_overlay_notif_title">מוכן להקלטה</string>
-  <!-- Screen recorder notification overlay message -->
-  <string name="screen_overlay_notif_message">לחץ על כפתור ההקלטה כשאתה מוכל להתחיל להקליט</string>
-  <!-- Screen settings dialog title -->
-  <string name="screen_settings_title">הגדרות מקליט מסך</string>
-  <!-- Screen recorder notification overlay channel title -->
-  <string name="screen_overlay_channel_title">מוכן להקלטת מסך</string>
-  <!-- Screen recorder notification overlay channel description-->
-  <string name="screen_overlay_channel_desc">התראה תראה שהקלטת המסך מוכנה להפעלה</string>
-  <!-- Screen recorder persistent notification channel title -->
-  <string name="screen_channel_title">הקלטת מסך</string>
-  <!-- Screen recorder persistent notification channel description-->
-  <string name="screen_channel_desc">התראה קבועה בעת הקלטת המסך והתראה בסיום ההקלטה</string>
-  <!-- Permissions -->
-  <!-- Permissions dialog title -->
-  <string name="dialog_permissions_title">הרשאות</string>
-  <!-- Message: microphone access denied -->
-  <string name="dialog_permissions_mic">המקליט זקוק לגישה למיקרופון על מנת להקליט שמע</string>
-  <!-- Message: storage access denied -->
-  <string name="dialog_permissions_storage">המקליט זקוק לגישה לאחסון על מנת לשמור את קבצי ההקלטות</string>
-  <!-- Message: phone status denied -->
-  <string name="dialog_permissions_phone">המקליט זקוק לגישה למצב השיחה על מנת למנוע הקלטה בעת חיוג</string>
-  <!-- Message: microphone and storage access denied -->
-  <string name="dialog_permissions_mic_storage">המקליט זקוק לגישה למיקרופון על מנת להקליט שמע, וגישה לאחסון על מנת לשמור הקלטות</string>
-  <!-- Message: microphone and phone status access denied -->
-  <string name="dialog_permissions_mic_phone">המקליט זקוק לגישה למיקרופון על מנת להקליט שמע, וגישה למצב השיחה על מנת למנוע הקלטה בעת החיוג</string>
-  <!-- Message: storage and phone status access denied -->
-  <string name="dialog_permissions_storage_phone">המקליט זקוק לגישה לאחסון על מנת לשמור הקלטות, וגישה למצב השיחה על מנת למנוע הקלטה בעת חיוג</string>
-  <!-- Message: microphone, storage and phone status access denied -->
-  <string name="dialog_permissions_mic_storage_phone">הרשמקול זקוק לגישה למיקרופון על מנת להקליט שמע, גישה לאחסון על מנת לשמור הקלטות וגישה למצב השיחה על מנת למנוע הקלטה בעת חיוג</string>
-  <!-- Permissions dialog action: ask permissions access again -->
-  <string name="dialog_permissions_ask">שאל שוב</string>
-  <!-- Permissions dialog action: dismiss dialog -->
-  <string name="dialog_permissions_dismiss">דחה</string>
-  <!-- Message: overlay permission denied. Make sure "Draw over other apps" matches settings strings -->
-  <string name="dialog_permissions_overlay">כדי להקליט את המסך המקליט צריך לקבל הרשאה להצגה מעל אפליקציות אחרות. לחץ אפשר, הפעל את ההרשאה במסך שהופיע ואז חזור אל המקליט</string>
-  <!-- No permissions granted error -->
-  <string name="snack_permissions_no_permission">ההרשאות הנדרשות נדחו, הפעל אותם מההגדרות כדי להתחיל בהקלטה</string>
-  <!-- Main activity -->
-  <!-- Screen record title -->
-  <string name="main_screen_action">הקלט מסך</string>
-  <!-- Sound record title -->
-  <string name="main_sound_action">הקלט קול</string>
-  <!-- Transition name for dialogActivity -->
+    <!-- Date for last item %1 is year, %2 month, %3 day, %4 hour, %5 min -->
+    <string name="date_format">%1$s-%2$s-%3$s %4$s:%5$s</string>
+    <!-- Permissions -->
+    <!-- Sound recorder -->
+    <!-- Sound recorder notification title -->
+    <string name="sound_notification_title">מקליט שמע</string>
+    <!-- Sound recorder notification message -->
+    <string name="sound_notification_message">אורך השמע: %1$s</string>
+    <!-- Sound recorder status card title recording -->
+    <string name="sound_recording_title_working">מקליט</string>
+    <!-- Sound recorder last item title -->
+    <string name="sound_last_title">הקלטה אחרונה</string>
+    <!-- Sound recorder notification channel title -->
+    <string name="sound_channel_title">הקלטת שמע</string>
+    <!-- Sound recorder notification channel description-->
+    <string name="sound_channel_desc">התראה קבועה בעת הקלטת השמע והתראה בסיום ההקלטה</string>
+    <!-- Screen recorder -->
+    <!-- Screen recorder enabled audio message -->
+    <string name="screen_audio_message_on">שמע מהמיקרופון יהיה כלול בוידאו</string>
+    <!-- Screen recorder disabled audio message -->
+    <string name="screen_audio_message_off">שמע מהמיקרופון לא יהיה כלול בוידאו</string>
+    <!-- Screen recorder disabled audio toggle message -->
+    <string name="screen_audio_message_disabled">אין אפשרות לשנות הגדרה זו תוך כדי הקלטת המסך</string>
+    <!-- Screen recorder audio permission request card button -->
+    <string name="screen_audio_warning_button_ask">בקש גישה</string>
+    <!-- Screen recorder notification storage error title -->
+    <string name="screen_insufficient_storage">אין מספיק מקום אחסון</string>
+    <!-- Screen recorder notification storage error message -->
+    <string name="screen_not_enough_storage">אין מספיק מקום אחסון זמין</string>
+    <!-- Screen recorder notification title -->
+    <string name="screen_notification_title">מקליט מסך</string>
+    <!-- Screen recorder notification message -->
+    <string name="screen_notification_message">אורך הוידאו: %s</string>
+    <!-- Screen recorder notification share title -->
+    <string name="screen_notification_message_done">מוכן לשיתוף</string>
+    <!-- Screen recorder status message -->
+    <string name="screen_recording_message">המסך מוקלט\u2026</string>
+    <!-- Screen recorder last item title -->
+    <string name="screen_last_title">הקלטה אחרונה</string>
+    <!-- Screen recorder last item message -->
+    <string name="screen_last_message">תאריך: %1$s\nמשך: %2$d שניות</string>
+    <!-- Screen recorder notification overlay title -->
+    <string name="screen_overlay_notif_title">מוכן להקלטה</string>
+    <!-- Screen recorder notification overlay message -->
+    <string name="screen_overlay_notif_message">לחץ על כפתור ההקלטה כשאתה מוכל להתחיל להקליט</string>
+    <!-- Screen settings dialog title -->
+    <string name="screen_settings_title">הגדרות מקליט מסך</string>
+    <!-- Screen recorder notification overlay channel title -->
+    <string name="screen_overlay_channel_title">מוכן להקלטת מסך</string>
+    <!-- Screen recorder notification overlay channel description-->
+    <string name="screen_overlay_channel_desc">התראה תראה שהקלטת המסך מוכנה להפעלה</string>
+    <!-- Screen recorder persistent notification channel title -->
+    <string name="screen_channel_title">הקלטת מסך</string>
+    <!-- Screen recorder persistent notification channel description-->
+    <string name="screen_channel_desc">התראה קבועה בעת הקלטת המסך והתראה בסיום ההקלטה</string>
+    <!-- Permissions -->
+    <!-- Permissions dialog title -->
+    <string name="dialog_permissions_title">הרשאות</string>
+    <!-- Message: microphone access denied -->
+    <string name="dialog_permissions_mic">המקליט זקוק לגישה למיקרופון על מנת להקליט שמע</string>
+    <!-- Message: storage access denied -->
+    <string name="dialog_permissions_storage">המקליט זקוק לגישה לאחסון על מנת לשמור את קבצי ההקלטות</string>
+    <!-- Message: phone status denied -->
+    <string name="dialog_permissions_phone">המקליט זקוק לגישה למצב השיחה על מנת למנוע הקלטה בעת חיוג</string>
+    <!-- Message: microphone and storage access denied -->
+    <string name="dialog_permissions_mic_storage">המקליט זקוק לגישה למיקרופון על מנת להקליט שמע, וגישה לאחסון על מנת לשמור הקלטות</string>
+    <!-- Message: microphone and phone status access denied -->
+    <string name="dialog_permissions_mic_phone">המקליט זקוק לגישה למיקרופון על מנת להקליט שמע, וגישה למצב השיחה על מנת למנוע הקלטה בעת החיוג</string>
+    <!-- Message: storage and phone status access denied -->
+    <string name="dialog_permissions_storage_phone">המקליט זקוק לגישה לאחסון על מנת לשמור הקלטות, וגישה למצב השיחה על מנת למנוע הקלטה בעת חיוג</string>
+    <!-- Message: microphone, storage and phone status access denied -->
+    <string name="dialog_permissions_mic_storage_phone">הרשמקול זקוק לגישה למיקרופון על מנת להקליט שמע, גישה לאחסון על מנת לשמור הקלטות וגישה למצב השיחה על מנת למנוע הקלטה בעת חיוג</string>
+    <!-- Permissions dialog action: ask permissions access again -->
+    <string name="dialog_permissions_ask">שאל שוב</string>
+    <!-- Permissions dialog action: dismiss dialog -->
+    <string name="dialog_permissions_dismiss">דחה</string>
+    <!-- Message: overlay permission denied. Make sure "Draw over other apps" matches settings strings -->
+    <string name="dialog_permissions_overlay">כדי להקליט את המסך המקליט צריך לקבל הרשאה להצגה מעל אפליקציות אחרות. לחץ אפשר, הפעל את ההרשאה במסך שהופיע ואז חזור אל המקליט</string>
+    <!-- No permissions granted error -->
+    <string name="snack_permissions_no_permission">ההרשאות הנדרשות נדחו, הפעל אותם מההגדרות כדי להתחיל בהקלטה</string>
+    <!-- Main activity -->
+    <!-- Screen record title -->
+    <string name="main_screen_action">הקלט מסך</string>
+    <!-- Sound record title -->
+    <string name="main_sound_action">הקלט קול</string>
+    <!-- Transition name for dialogActivity -->
 </resources>

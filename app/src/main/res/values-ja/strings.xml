@@ -15,106 +15,106 @@
      limitations under the License.
 -->
 <resources>
-  <string name="app_name">レコーダー</string>
-  <!-- Common actions -->
-  <!-- Share action for notification -->
-  <string name="share">共有</string>
-  <!-- Stop action for notification -->
-  <string name="stop">停止</string>
-  <!-- Play action -->
-  <string name="play">再生</string>
-  <!-- Delete action -->
-  <string name="delete">削除</string>
-  <!-- Cancel action -->
-  <string name="cancel">キャンセル</string>
-  <!-- Delete confirm title -->
-  <string name="delete_title">記録の削除</string>
-  <!-- Delete confirm message -->
-  <string name="delete_message">%1$s を削除しますか? この操作は元に戻せません。</string>
-  <!-- Date for last item %1 is year, %2 month, %3 day, %4 hour, %5 min -->
-  <string name="date_format">%1$s-%2$s-%3$s %4$s:%5$s</string>
-  <!-- Permissions -->
-  <!-- Sound recorder -->
-  <!-- Sound recorder notification title -->
-  <string name="sound_notification_title">音声レコーダー</string>
-  <!-- Sound recorder notification message -->
-  <string name="sound_notification_message">音声の長さ: %1$s</string>
-  <!-- Sound recorder status card title recording -->
-  <string name="sound_recording_title_working">録音中</string>
-  <!-- Sound recorder last item title -->
-  <string name="sound_last_title">最後の記録</string>
-  <!-- Sound recorder notification channel title -->
-  <string name="sound_channel_title">音声録音</string>
-  <!-- Sound recorder notification channel description-->
-  <string name="sound_channel_desc">録音中の通知を完了後も表示し続ける</string>
-  <!-- Screen recorder -->
-  <!-- Screen recorder enabled audio message -->
-  <string name="screen_audio_message_on">マイクからの音声が動画に含まれます</string>
-  <!-- Screen recorder disabled audio message -->
-  <string name="screen_audio_message_off">マイクからの音声は動画に含まれません</string>
-  <!-- Screen recorder disabled audio toggle message -->
-  <string name="screen_audio_message_disabled">画面の録画中はこの設定を変更できません</string>
-  <!-- Screen recorder audio permission request card button -->
-  <string name="screen_audio_warning_button_ask">要求する</string>
-  <!-- Screen recorder notification storage error title -->
-  <string name="screen_insufficient_storage">ストレージ容量不足</string>
-  <!-- Screen recorder notification storage error message -->
-  <string name="screen_not_enough_storage">十分な容量がありません</string>
-  <!-- Screen recorder notification title -->
-  <string name="screen_notification_title">画面の録画</string>
-  <!-- Screen recorder notification message -->
-  <string name="screen_notification_message">動画の長さ: %s</string>
-  <!-- Screen recorder notification share title -->
-  <string name="screen_notification_message_done">共有する準備ができました</string>
-  <!-- Screen recorder status message -->
-  <string name="screen_recording_message">画面を録画中...</string>
-  <!-- Screen recorder last item title -->
-  <string name="screen_last_title">最後の記録</string>
-  <!-- Screen recorder last item message -->
-  <string name="screen_last_message">日時: %1$s\n時間: %2$d 秒</string>
-  <!-- Screen recorder notification overlay title -->
-  <string name="screen_overlay_notif_title">録音準備OK</string>
-  <!-- Screen recorder notification overlay message -->
-  <string name="screen_overlay_notif_message">開始する準備ができたら録画ボタンを押してください</string>
-  <!-- Screen settings dialog title -->
-  <string name="screen_settings_title">スクリーンレコード設定</string>
-  <!-- Screen recorder notification overlay channel title -->
-  <string name="screen_overlay_channel_title">画面録画の準備完了</string>
-  <!-- Screen recorder notification overlay channel description-->
-  <string name="screen_overlay_channel_desc">画面の録画の準備が完了したら通知を表示</string>
-  <!-- Screen recorder persistent notification channel title -->
-  <string name="screen_channel_title">画面の録画中</string>
-  <!-- Screen recorder persistent notification channel description-->
-  <string name="screen_channel_desc">録音中の通知を完了後も表示し続ける</string>
-  <!-- Permissions -->
-  <!-- Permissions dialog title -->
-  <string name="dialog_permissions_title">権限</string>
-  <!-- Message: microphone access denied -->
-  <string name="dialog_permissions_mic">レコーダーは音声を録音するためにマイクの権限を必要とします。</string>
-  <!-- Message: storage access denied -->
-  <string name="dialog_permissions_storage">レコーダーは録音したファイルを保存するためにストレージの権限を必要とします。</string>
-  <!-- Message: phone status denied -->
-  <string name="dialog_permissions_phone">レコーダーは通話中に録音を停止するために端末の状態の権限が必要とします。</string>
-  <!-- Message: microphone and storage access denied -->
-  <string name="dialog_permissions_mic_storage">レコーダーは音声を録音するためにマイクの権限と、録音したファイルを保存するためにストレージの権限を必要とします。</string>
-  <!-- Message: microphone and phone status access denied -->
-  <string name="dialog_permissions_mic_phone">レコーダーは音声を録音するためにマイクの権限と、通話中に録音を停止するために端末の状態の権限を必要とします。</string>
-  <!-- Message: storage and phone status access denied -->
-  <string name="dialog_permissions_storage_phone">レコーダーは録音したファイルを保存するためにストレージの権限と、通話中に録音を停止するために端末の状態の権限を必要とします。</string>
-  <!-- Message: microphone, storage and phone status access denied -->
-  <string name="dialog_permissions_mic_storage_phone">レコーダーは音声を録音するためにマイクの権限、録音したファイルを保存するためにストレージの権限、通話中に録音を停止するために端末の状態の権限を必要とします。</string>
-  <!-- Permissions dialog action: ask permissions access again -->
-  <string name="dialog_permissions_ask">次回も確認する</string>
-  <!-- Permissions dialog action: dismiss dialog -->
-  <string name="dialog_permissions_dismiss">閉じる</string>
-  <!-- Message: overlay permission denied. Make sure "Draw over other apps" matches settings strings -->
-  <string name="dialog_permissions_overlay">レコーダーには画面を録画するために「他のアプリの上に重ねて表示」権限が必要です。設定で権限を許可してからレコーダーを起動し直してください。</string>
-  <!-- No permissions granted error -->
-  <string name="snack_permissions_no_permission">必要な権限が拒否されました。録音を開始するには設定アプリから権限を有効にしてください。</string>
-  <!-- Main activity -->
-  <!-- Screen record title -->
-  <string name="main_screen_action">画面の録画</string>
-  <!-- Sound record title -->
-  <string name="main_sound_action">サウンドの録音</string>
-  <!-- Transition name for dialogActivity -->
+    <string name="app_name">レコーダー</string>
+    <!-- Common actions -->
+    <!-- Share action for notification -->
+    <string name="share">共有</string>
+    <!-- Stop action for notification -->
+    <string name="stop">停止</string>
+    <!-- Play action -->
+    <string name="play">再生</string>
+    <!-- Delete action -->
+    <string name="delete">削除</string>
+    <!-- Cancel action -->
+    <string name="cancel">キャンセル</string>
+    <!-- Delete confirm title -->
+    <string name="delete_title">記録の削除</string>
+    <!-- Delete confirm message -->
+    <string name="delete_message">%1$s を削除しますか? この操作は元に戻せません。</string>
+    <!-- Date for last item %1 is year, %2 month, %3 day, %4 hour, %5 min -->
+    <string name="date_format">%1$s-%2$s-%3$s %4$s:%5$s</string>
+    <!-- Permissions -->
+    <!-- Sound recorder -->
+    <!-- Sound recorder notification title -->
+    <string name="sound_notification_title">音声レコーダー</string>
+    <!-- Sound recorder notification message -->
+    <string name="sound_notification_message">音声の長さ: %1$s</string>
+    <!-- Sound recorder status card title recording -->
+    <string name="sound_recording_title_working">録音中</string>
+    <!-- Sound recorder last item title -->
+    <string name="sound_last_title">最後の記録</string>
+    <!-- Sound recorder notification channel title -->
+    <string name="sound_channel_title">音声録音</string>
+    <!-- Sound recorder notification channel description-->
+    <string name="sound_channel_desc">録音中の通知を完了後も表示し続ける</string>
+    <!-- Screen recorder -->
+    <!-- Screen recorder enabled audio message -->
+    <string name="screen_audio_message_on">マイクからの音声が動画に含まれます</string>
+    <!-- Screen recorder disabled audio message -->
+    <string name="screen_audio_message_off">マイクからの音声は動画に含まれません</string>
+    <!-- Screen recorder disabled audio toggle message -->
+    <string name="screen_audio_message_disabled">画面の録画中はこの設定を変更できません</string>
+    <!-- Screen recorder audio permission request card button -->
+    <string name="screen_audio_warning_button_ask">要求する</string>
+    <!-- Screen recorder notification storage error title -->
+    <string name="screen_insufficient_storage">ストレージ容量不足</string>
+    <!-- Screen recorder notification storage error message -->
+    <string name="screen_not_enough_storage">十分な容量がありません</string>
+    <!-- Screen recorder notification title -->
+    <string name="screen_notification_title">画面の録画</string>
+    <!-- Screen recorder notification message -->
+    <string name="screen_notification_message">動画の長さ: %s</string>
+    <!-- Screen recorder notification share title -->
+    <string name="screen_notification_message_done">共有する準備ができました</string>
+    <!-- Screen recorder status message -->
+    <string name="screen_recording_message">画面を録画中...</string>
+    <!-- Screen recorder last item title -->
+    <string name="screen_last_title">最後の記録</string>
+    <!-- Screen recorder last item message -->
+    <string name="screen_last_message">日時: %1$s\n時間: %2$d 秒</string>
+    <!-- Screen recorder notification overlay title -->
+    <string name="screen_overlay_notif_title">録音準備OK</string>
+    <!-- Screen recorder notification overlay message -->
+    <string name="screen_overlay_notif_message">開始する準備ができたら録画ボタンを押してください</string>
+    <!-- Screen settings dialog title -->
+    <string name="screen_settings_title">スクリーンレコード設定</string>
+    <!-- Screen recorder notification overlay channel title -->
+    <string name="screen_overlay_channel_title">画面録画の準備完了</string>
+    <!-- Screen recorder notification overlay channel description-->
+    <string name="screen_overlay_channel_desc">画面の録画の準備が完了したら通知を表示</string>
+    <!-- Screen recorder persistent notification channel title -->
+    <string name="screen_channel_title">画面の録画中</string>
+    <!-- Screen recorder persistent notification channel description-->
+    <string name="screen_channel_desc">録音中の通知を完了後も表示し続ける</string>
+    <!-- Permissions -->
+    <!-- Permissions dialog title -->
+    <string name="dialog_permissions_title">権限</string>
+    <!-- Message: microphone access denied -->
+    <string name="dialog_permissions_mic">レコーダーは音声を録音するためにマイクの権限を必要とします。</string>
+    <!-- Message: storage access denied -->
+    <string name="dialog_permissions_storage">レコーダーは録音したファイルを保存するためにストレージの権限を必要とします。</string>
+    <!-- Message: phone status denied -->
+    <string name="dialog_permissions_phone">レコーダーは通話中に録音を停止するために端末の状態の権限が必要とします。</string>
+    <!-- Message: microphone and storage access denied -->
+    <string name="dialog_permissions_mic_storage">レコーダーは音声を録音するためにマイクの権限と、録音したファイルを保存するためにストレージの権限を必要とします。</string>
+    <!-- Message: microphone and phone status access denied -->
+    <string name="dialog_permissions_mic_phone">レコーダーは音声を録音するためにマイクの権限と、通話中に録音を停止するために端末の状態の権限を必要とします。</string>
+    <!-- Message: storage and phone status access denied -->
+    <string name="dialog_permissions_storage_phone">レコーダーは録音したファイルを保存するためにストレージの権限と、通話中に録音を停止するために端末の状態の権限を必要とします。</string>
+    <!-- Message: microphone, storage and phone status access denied -->
+    <string name="dialog_permissions_mic_storage_phone">レコーダーは音声を録音するためにマイクの権限、録音したファイルを保存するためにストレージの権限、通話中に録音を停止するために端末の状態の権限を必要とします。</string>
+    <!-- Permissions dialog action: ask permissions access again -->
+    <string name="dialog_permissions_ask">次回も確認する</string>
+    <!-- Permissions dialog action: dismiss dialog -->
+    <string name="dialog_permissions_dismiss">閉じる</string>
+    <!-- Message: overlay permission denied. Make sure "Draw over other apps" matches settings strings -->
+    <string name="dialog_permissions_overlay">レコーダーには画面を録画するために「他のアプリの上に重ねて表示」権限が必要です。設定で権限を許可してからレコーダーを起動し直してください。</string>
+    <!-- No permissions granted error -->
+    <string name="snack_permissions_no_permission">必要な権限が拒否されました。録音を開始するには設定アプリから権限を有効にしてください。</string>
+    <!-- Main activity -->
+    <!-- Screen record title -->
+    <string name="main_screen_action">画面の録画</string>
+    <!-- Sound record title -->
+    <string name="main_sound_action">サウンドの録音</string>
+    <!-- Transition name for dialogActivity -->
 </resources>

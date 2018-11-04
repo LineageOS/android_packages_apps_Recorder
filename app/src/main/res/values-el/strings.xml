@@ -15,106 +15,106 @@
      limitations under the License.
 -->
 <resources>
-  <string name="app_name">Εγγραφή</string>
-  <!-- Common actions -->
-  <!-- Share action for notification -->
-  <string name="share">Κοινή χρήση</string>
-  <!-- Stop action for notification -->
-  <string name="stop">Διακοπή</string>
-  <!-- Play action -->
-  <string name="play">Αναπαραγωγή</string>
-  <!-- Delete action -->
-  <string name="delete">Διαγραφή</string>
-  <!-- Cancel action -->
-  <string name="cancel">Ακύρωση</string>
-  <!-- Delete confirm title -->
-  <string name="delete_title">Διαγραφή εγγραφής</string>
-  <!-- Delete confirm message -->
-  <string name="delete_message">Είστε βέβαιοι ότι θέλετε να διαγράψετε το %1$s; Αυτό δεν μπορεί να αναιρεθεί</string>
-  <!-- Date for last item %1 is year, %2 month, %3 day, %4 hour, %5 min -->
-  <string name="date_format">%3$s-%2$s-%1$s-%4$s-%5$s</string>
-  <!-- Permissions -->
-  <!-- Sound recorder -->
-  <!-- Sound recorder notification title -->
-  <string name="sound_notification_title">Εγγραφή ήχου</string>
-  <!-- Sound recorder notification message -->
-  <string name="sound_notification_message">Μήκος ήχου: %1$s</string>
-  <!-- Sound recorder status card title recording -->
-  <string name="sound_recording_title_working">Γίνεται εγγραφή</string>
-  <!-- Sound recorder last item title -->
-  <string name="sound_last_title">Τελευταία εγγραφή</string>
-  <!-- Sound recorder notification channel title -->
-  <string name="sound_channel_title">Εγγραφή ήχου</string>
-  <!-- Sound recorder notification channel description-->
-  <string name="sound_channel_desc">Συνεχής ειδοποίηση κατά την εγγραφή ήχου και ειδοποίηση αφού έχει ολοκληρωθεί</string>
-  <!-- Screen recorder -->
-  <!-- Screen recorder enabled audio message -->
-  <string name="screen_audio_message_on">Ο ήχος από το μικρόφωνο θα συμπεριληφθεί στο βίντεο</string>
-  <!-- Screen recorder disabled audio message -->
-  <string name="screen_audio_message_off">Ο ήχος από το μικρόφωνο δεν θα συμπεριληφθεί στο βίντεο</string>
-  <!-- Screen recorder disabled audio toggle message -->
-  <string name="screen_audio_message_disabled">Δεν είναι δυνατό να αλλάξετε αυτήν τη ρύθμιση κατά την εγγραφή της οθόνης</string>
-  <!-- Screen recorder audio permission request card button -->
-  <string name="screen_audio_warning_button_ask">Να γίνεται ερώτηση</string>
-  <!-- Screen recorder notification storage error title -->
-  <string name="screen_insufficient_storage">Ανεπαρκής χώρος αποθήκευσης</string>
-  <!-- Screen recorder notification storage error message -->
-  <string name="screen_not_enough_storage">Δεν υπάρχει αρκετός διαθέσιμος χώρος αποθήκευσης</string>
-  <!-- Screen recorder notification title -->
-  <string name="screen_notification_title">Εγγραφή οθόνης</string>
-  <!-- Screen recorder notification message -->
-  <string name="screen_notification_message">Μήκος βίντεο: %s</string>
-  <!-- Screen recorder notification share title -->
-  <string name="screen_notification_message_done">Έτοιμο για κοινή χρήση</string>
-  <!-- Screen recorder status message -->
-  <string name="screen_recording_message">Γίνεται εγγραφή της οθόνης\u2026</string>
-  <!-- Screen recorder last item title -->
-  <string name="screen_last_title">Τελευταία εγγραφή</string>
-  <!-- Screen recorder last item message -->
-  <string name="screen_last_message">Ημερομηνία: %1$s\nΔιάρκεια: %2$d δευτερόλεπτα</string>
-  <!-- Screen recorder notification overlay title -->
-  <string name="screen_overlay_notif_title">Έτοιμο για εγγραφή</string>
-  <!-- Screen recorder notification overlay message -->
-  <string name="screen_overlay_notif_message">Πατήστε το πλήκτρο εγγραφής όταν είστε έτοιμοι να ξεκινήσετε</string>
-  <!-- Screen settings dialog title -->
-  <string name="screen_settings_title">Ρυθμίσεις εγγραφής της οθόνης</string>
-  <!-- Screen recorder notification overlay channel title -->
-  <string name="screen_overlay_channel_title">Έτοιμο για εγγραφή οθόνης</string>
-  <!-- Screen recorder notification overlay channel description-->
-  <string name="screen_overlay_channel_desc">Ειδοποίηση που εμφανίζεται όταν είστε έτοιμοι να ξεκινήσετε την εγγραφή οθόνης</string>
-  <!-- Screen recorder persistent notification channel title -->
-  <string name="screen_channel_title">Εγγραφή οθόνης</string>
-  <!-- Screen recorder persistent notification channel description-->
-  <string name="screen_channel_desc">Συνεχής ειδοποίηση κατά την εγγραφή της οθόνης και ειδοποίηση αφού έχει ολοκληρωθεί</string>
-  <!-- Permissions -->
-  <!-- Permissions dialog title -->
-  <string name="dialog_permissions_title">Δικαιώματα</string>
-  <!-- Message: microphone access denied -->
-  <string name="dialog_permissions_mic">Η Εγγραφή χρειάζεται πρόσβαση στο μικρόφωνο για την εγγραφή ήχου</string>
-  <!-- Message: storage access denied -->
-  <string name="dialog_permissions_storage">Η Εγγραφή χρειάζεται πρόσβαση στον αποθηκευτικό χώρο για την αποθήκευση εγγεγραμμένων αρχείων</string>
-  <!-- Message: phone status denied -->
-  <string name="dialog_permissions_phone">Η Εγγραφή χρειάζεται πρόσβαση στην κατάσταση του τηλεφώνου προκειμένου να μην ηχογραφεί κατά την διάρκεια κλήσεων</string>
-  <!-- Message: microphone and storage access denied -->
-  <string name="dialog_permissions_mic_storage">Η Εγγραφή χρειάζεται πρόσβαση στο μικρόφωνο για την εγγραφή ήχου και πρόσβαση στον αποθηκευτικό χώρο για την αποθήκευση των εγγεγραμμένων αρχείων</string>
-  <!-- Message: microphone and phone status access denied -->
-  <string name="dialog_permissions_mic_phone">Η Εγγραφή χρειάζεται πρόσβαση στο μικρόφωνο για την εγγραφή ήχου και πρόσβαση στην κατάσταση τηλεφώνου προκειμένου να μην ηχογραφεί κατά την διάρκεια κλήσεων</string>
-  <!-- Message: storage and phone status access denied -->
-  <string name="dialog_permissions_storage_phone">Η Εγγραφή χρειάζεται πρόσβαση στον αποθηκευτικό χώρο για την αποθήκευση εγγεγραμμένων αρχείων και πρόσβαση στην κατάσταση τηλεφώνου προκειμένου να μην ηχογραφεί κατά την διάρκεια κλήσεων</string>
-  <!-- Message: microphone, storage and phone status access denied -->
-  <string name="dialog_permissions_mic_storage_phone">Η Εγγραφή χρειάζεται πρόσβαση στο μικρόφωνο για την εγγραφή ήχου, πρόσβαση στον αποθηκευτικό χώρο για την αποθήκευση εγγεγραμμένων αρχείων και πρόσβαση στην κατάσταση τηλεφώνου προκειμένου να μην ηχογραφεί κατά την διάρκεια κλήσεων</string>
-  <!-- Permissions dialog action: ask permissions access again -->
-  <string name="dialog_permissions_ask">Ερώτηση ξανά</string>
-  <!-- Permissions dialog action: dismiss dialog -->
-  <string name="dialog_permissions_dismiss">Παράβλεψη</string>
-  <!-- Message: overlay permission denied. Make sure "Draw over other apps" matches settings strings -->
-  <string name="dialog_permissions_overlay">Η Εγγραφή χρειάζεται την άδεια \"Σχεδίαση πάνω από άλλες εφαρμογές\" για να κάνει εγγραφή της οθόνης σας. Παρακαλούμε επιτρέψτε, ενεργοποιήστε αυτή την άδεια στις ρυθμίσεις και ελάτε πίσω στην Εγγραφή</string>
-  <!-- No permissions granted error -->
-  <string name="snack_permissions_no_permission">Τα απαραίτητα δικαιώματα απορρίφθηκαν, ενεργοποιήστε τα από τις Ρυθμίσεις για να ξεκινήσει η εγγραφή</string>
-  <!-- Main activity -->
-  <!-- Screen record title -->
-  <string name="main_screen_action">Εγγραφή οθόνης</string>
-  <!-- Sound record title -->
-  <string name="main_sound_action">Εγγραφή ήχου</string>
-  <!-- Transition name for dialogActivity -->
+    <string name="app_name">Εγγραφή</string>
+    <!-- Common actions -->
+    <!-- Share action for notification -->
+    <string name="share">Κοινή χρήση</string>
+    <!-- Stop action for notification -->
+    <string name="stop">Διακοπή</string>
+    <!-- Play action -->
+    <string name="play">Αναπαραγωγή</string>
+    <!-- Delete action -->
+    <string name="delete">Διαγραφή</string>
+    <!-- Cancel action -->
+    <string name="cancel">Ακύρωση</string>
+    <!-- Delete confirm title -->
+    <string name="delete_title">Διαγραφή εγγραφής</string>
+    <!-- Delete confirm message -->
+    <string name="delete_message">Είστε βέβαιοι ότι θέλετε να διαγράψετε το %1$s; Αυτό δεν μπορεί να αναιρεθεί</string>
+    <!-- Date for last item %1 is year, %2 month, %3 day, %4 hour, %5 min -->
+    <string name="date_format">%3$s-%2$s-%1$s-%4$s-%5$s</string>
+    <!-- Permissions -->
+    <!-- Sound recorder -->
+    <!-- Sound recorder notification title -->
+    <string name="sound_notification_title">Εγγραφή ήχου</string>
+    <!-- Sound recorder notification message -->
+    <string name="sound_notification_message">Μήκος ήχου: %1$s</string>
+    <!-- Sound recorder status card title recording -->
+    <string name="sound_recording_title_working">Γίνεται εγγραφή</string>
+    <!-- Sound recorder last item title -->
+    <string name="sound_last_title">Τελευταία εγγραφή</string>
+    <!-- Sound recorder notification channel title -->
+    <string name="sound_channel_title">Εγγραφή ήχου</string>
+    <!-- Sound recorder notification channel description-->
+    <string name="sound_channel_desc">Συνεχής ειδοποίηση κατά την εγγραφή ήχου και ειδοποίηση αφού έχει ολοκληρωθεί</string>
+    <!-- Screen recorder -->
+    <!-- Screen recorder enabled audio message -->
+    <string name="screen_audio_message_on">Ο ήχος από το μικρόφωνο θα συμπεριληφθεί στο βίντεο</string>
+    <!-- Screen recorder disabled audio message -->
+    <string name="screen_audio_message_off">Ο ήχος από το μικρόφωνο δεν θα συμπεριληφθεί στο βίντεο</string>
+    <!-- Screen recorder disabled audio toggle message -->
+    <string name="screen_audio_message_disabled">Δεν είναι δυνατό να αλλάξετε αυτήν τη ρύθμιση κατά την εγγραφή της οθόνης</string>
+    <!-- Screen recorder audio permission request card button -->
+    <string name="screen_audio_warning_button_ask">Να γίνεται ερώτηση</string>
+    <!-- Screen recorder notification storage error title -->
+    <string name="screen_insufficient_storage">Ανεπαρκής χώρος αποθήκευσης</string>
+    <!-- Screen recorder notification storage error message -->
+    <string name="screen_not_enough_storage">Δεν υπάρχει αρκετός διαθέσιμος χώρος αποθήκευσης</string>
+    <!-- Screen recorder notification title -->
+    <string name="screen_notification_title">Εγγραφή οθόνης</string>
+    <!-- Screen recorder notification message -->
+    <string name="screen_notification_message">Μήκος βίντεο: %s</string>
+    <!-- Screen recorder notification share title -->
+    <string name="screen_notification_message_done">Έτοιμο για κοινή χρήση</string>
+    <!-- Screen recorder status message -->
+    <string name="screen_recording_message">Γίνεται εγγραφή της οθόνης\u2026</string>
+    <!-- Screen recorder last item title -->
+    <string name="screen_last_title">Τελευταία εγγραφή</string>
+    <!-- Screen recorder last item message -->
+    <string name="screen_last_message">Ημερομηνία: %1$s\nΔιάρκεια: %2$d δευτερόλεπτα</string>
+    <!-- Screen recorder notification overlay title -->
+    <string name="screen_overlay_notif_title">Έτοιμο για εγγραφή</string>
+    <!-- Screen recorder notification overlay message -->
+    <string name="screen_overlay_notif_message">Πατήστε το πλήκτρο εγγραφής όταν είστε έτοιμοι να ξεκινήσετε</string>
+    <!-- Screen settings dialog title -->
+    <string name="screen_settings_title">Ρυθμίσεις εγγραφής της οθόνης</string>
+    <!-- Screen recorder notification overlay channel title -->
+    <string name="screen_overlay_channel_title">Έτοιμο για εγγραφή οθόνης</string>
+    <!-- Screen recorder notification overlay channel description-->
+    <string name="screen_overlay_channel_desc">Ειδοποίηση που εμφανίζεται όταν είστε έτοιμοι να ξεκινήσετε την εγγραφή οθόνης</string>
+    <!-- Screen recorder persistent notification channel title -->
+    <string name="screen_channel_title">Εγγραφή οθόνης</string>
+    <!-- Screen recorder persistent notification channel description-->
+    <string name="screen_channel_desc">Συνεχής ειδοποίηση κατά την εγγραφή της οθόνης και ειδοποίηση αφού έχει ολοκληρωθεί</string>
+    <!-- Permissions -->
+    <!-- Permissions dialog title -->
+    <string name="dialog_permissions_title">Δικαιώματα</string>
+    <!-- Message: microphone access denied -->
+    <string name="dialog_permissions_mic">Η Εγγραφή χρειάζεται πρόσβαση στο μικρόφωνο για την εγγραφή ήχου</string>
+    <!-- Message: storage access denied -->
+    <string name="dialog_permissions_storage">Η Εγγραφή χρειάζεται πρόσβαση στον αποθηκευτικό χώρο για την αποθήκευση εγγεγραμμένων αρχείων</string>
+    <!-- Message: phone status denied -->
+    <string name="dialog_permissions_phone">Η Εγγραφή χρειάζεται πρόσβαση στην κατάσταση του τηλεφώνου προκειμένου να μην ηχογραφεί κατά την διάρκεια κλήσεων</string>
+    <!-- Message: microphone and storage access denied -->
+    <string name="dialog_permissions_mic_storage">Η Εγγραφή χρειάζεται πρόσβαση στο μικρόφωνο για την εγγραφή ήχου και πρόσβαση στον αποθηκευτικό χώρο για την αποθήκευση των εγγεγραμμένων αρχείων</string>
+    <!-- Message: microphone and phone status access denied -->
+    <string name="dialog_permissions_mic_phone">Η Εγγραφή χρειάζεται πρόσβαση στο μικρόφωνο για την εγγραφή ήχου και πρόσβαση στην κατάσταση τηλεφώνου προκειμένου να μην ηχογραφεί κατά την διάρκεια κλήσεων</string>
+    <!-- Message: storage and phone status access denied -->
+    <string name="dialog_permissions_storage_phone">Η Εγγραφή χρειάζεται πρόσβαση στον αποθηκευτικό χώρο για την αποθήκευση εγγεγραμμένων αρχείων και πρόσβαση στην κατάσταση τηλεφώνου προκειμένου να μην ηχογραφεί κατά την διάρκεια κλήσεων</string>
+    <!-- Message: microphone, storage and phone status access denied -->
+    <string name="dialog_permissions_mic_storage_phone">Η Εγγραφή χρειάζεται πρόσβαση στο μικρόφωνο για την εγγραφή ήχου, πρόσβαση στον αποθηκευτικό χώρο για την αποθήκευση εγγεγραμμένων αρχείων και πρόσβαση στην κατάσταση τηλεφώνου προκειμένου να μην ηχογραφεί κατά την διάρκεια κλήσεων</string>
+    <!-- Permissions dialog action: ask permissions access again -->
+    <string name="dialog_permissions_ask">Ερώτηση ξανά</string>
+    <!-- Permissions dialog action: dismiss dialog -->
+    <string name="dialog_permissions_dismiss">Παράβλεψη</string>
+    <!-- Message: overlay permission denied. Make sure "Draw over other apps" matches settings strings -->
+    <string name="dialog_permissions_overlay">Η Εγγραφή χρειάζεται την άδεια \"Σχεδίαση πάνω από άλλες εφαρμογές\" για να κάνει εγγραφή της οθόνης σας. Παρακαλούμε επιτρέψτε, ενεργοποιήστε αυτή την άδεια στις ρυθμίσεις και ελάτε πίσω στην Εγγραφή</string>
+    <!-- No permissions granted error -->
+    <string name="snack_permissions_no_permission">Τα απαραίτητα δικαιώματα απορρίφθηκαν, ενεργοποιήστε τα από τις Ρυθμίσεις για να ξεκινήσει η εγγραφή</string>
+    <!-- Main activity -->
+    <!-- Screen record title -->
+    <string name="main_screen_action">Εγγραφή οθόνης</string>
+    <!-- Sound record title -->
+    <string name="main_sound_action">Εγγραφή ήχου</string>
+    <!-- Transition name for dialogActivity -->
 </resources>

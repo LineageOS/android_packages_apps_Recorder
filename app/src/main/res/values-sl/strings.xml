@@ -15,106 +15,106 @@
      limitations under the License.
 -->
 <resources>
-  <string name="app_name">Snemalnik</string>
-  <!-- Common actions -->
-  <!-- Share action for notification -->
-  <string name="share">Souporaba</string>
-  <!-- Stop action for notification -->
-  <string name="stop">Ustavi</string>
-  <!-- Play action -->
-  <string name="play">Predvajaj</string>
-  <!-- Delete action -->
-  <string name="delete">Izbriši</string>
-  <!-- Cancel action -->
-  <string name="cancel">Prekliči</string>
-  <!-- Delete confirm title -->
-  <string name="delete_title">Brisanje posnetka</string>
-  <!-- Delete confirm message -->
-  <string name="delete_message">Ali ste prepričani, da želite izbrisati %1$s? Tega ni mogoče razveljaviti</string>
-  <!-- Date for last item %1 is year, %2 month, %3 day, %4 hour, %5 min -->
-  <string name="date_format">%1$s-%2$s-%3$s %4$s:%5$s</string>
-  <!-- Permissions -->
-  <!-- Sound recorder -->
-  <!-- Sound recorder notification title -->
-  <string name="sound_notification_title">Snemalnik zvoka</string>
-  <!-- Sound recorder notification message -->
-  <string name="sound_notification_message">Dolžina zvoka: %1$s</string>
-  <!-- Sound recorder status card title recording -->
-  <string name="sound_recording_title_working">Snemanje</string>
-  <!-- Sound recorder last item title -->
-  <string name="sound_last_title">Zadnji posnetek</string>
-  <!-- Sound recorder notification channel title -->
-  <string name="sound_channel_title">Snemanje zvoka</string>
-  <!-- Sound recorder notification channel description-->
-  <string name="sound_channel_desc">Trajno obvestilo med snemanjem zvoka in obvestilo, ko je končano</string>
-  <!-- Screen recorder -->
-  <!-- Screen recorder enabled audio message -->
-  <string name="screen_audio_message_on">Zvok iz mikrofona bo vključen v video</string>
-  <!-- Screen recorder disabled audio message -->
-  <string name="screen_audio_message_off">Zvok iz mikrofona ne bo vključen v video</string>
-  <!-- Screen recorder disabled audio toggle message -->
-  <string name="screen_audio_message_disabled">Te nastavitve ni mogoče spremeniti med snemanjem zaslona</string>
-  <!-- Screen recorder audio permission request card button -->
-  <string name="screen_audio_warning_button_ask">Vprašaj</string>
-  <!-- Screen recorder notification storage error title -->
-  <string name="screen_insufficient_storage">Nezadostna velikost pomnilniške naprave</string>
-  <!-- Screen recorder notification storage error message -->
-  <string name="screen_not_enough_storage">Na voljo ni dovolj prostora</string>
-  <!-- Screen recorder notification title -->
-  <string name="screen_notification_title">Snemalnik zaslona</string>
-  <!-- Screen recorder notification message -->
-  <string name="screen_notification_message">Dolžina videa: %s</string>
-  <!-- Screen recorder notification share title -->
-  <string name="screen_notification_message_done">Pripravljen za souporabo</string>
-  <!-- Screen recorder status message -->
-  <string name="screen_recording_message">Snemanje zaslona\u2026</string>
-  <!-- Screen recorder last item title -->
-  <string name="screen_last_title">Zadnji posnetek</string>
-  <!-- Screen recorder last item message -->
-  <string name="screen_last_message">Datum: %1$s\nDolžina: %2$d sekund</string>
-  <!-- Screen recorder notification overlay title -->
-  <string name="screen_overlay_notif_title">Pripravljen za snemanje</string>
-  <!-- Screen recorder notification overlay message -->
-  <string name="screen_overlay_notif_message">Ko ste pripravljeni začeti, pritisnite gumb za snemanje</string>
-  <!-- Screen settings dialog title -->
-  <string name="screen_settings_title">Nastavitve snemalnika zaslona</string>
-  <!-- Screen recorder notification overlay channel title -->
-  <string name="screen_overlay_channel_title">Pripravljen za snemanje zaslona</string>
-  <!-- Screen recorder notification overlay channel description-->
-  <string name="screen_overlay_channel_desc">Prikaz obvestila, da je snemanje zaslona pripravljeno za začetek</string>
-  <!-- Screen recorder persistent notification channel title -->
-  <string name="screen_channel_title">Snemanje zaslona</string>
-  <!-- Screen recorder persistent notification channel description-->
-  <string name="screen_channel_desc">Trajno obvestilo med snemanjem zaslona in obvestilo, ko je končano</string>
-  <!-- Permissions -->
-  <!-- Permissions dialog title -->
-  <string name="dialog_permissions_title">Dovoljenja</string>
-  <!-- Message: microphone access denied -->
-  <string name="dialog_permissions_mic">Snemalnik potrebuje dovoljenje za mikrofon za snemanje zvoka</string>
-  <!-- Message: storage access denied -->
-  <string name="dialog_permissions_storage">Snemalnik potrebuje dostop do pomnilniške naprave za shranjevanje datotek s posnetki</string>
-  <!-- Message: phone status denied -->
-  <string name="dialog_permissions_phone">Snemalnik potrebuje dostop do stanja telefona, da tej aplikaciji prepreči snemanje med klicem</string>
-  <!-- Message: microphone and storage access denied -->
-  <string name="dialog_permissions_mic_storage">Snemalnik potrebuje dovoljenje za mikrofon za snemanje zvoka in dostop do pomnilniške naprave za shranjevanje datotek s posnetki</string>
-  <!-- Message: microphone and phone status access denied -->
-  <string name="dialog_permissions_mic_phone">Snemalnik potrebuje dovoljenje za mikrofon za snemanje zvoka in dostop do stanja telefona, da tej aplikaciji prepreči snemanje med klicem</string>
-  <!-- Message: storage and phone status access denied -->
-  <string name="dialog_permissions_storage_phone">Snemalnik potrebuje dostop do pomnilniške naprave za shranjevanje datotek s posnetki in dostop do stanja telefona, da tej aplikaciji prepreči snemanje med klicem</string>
-  <!-- Message: microphone, storage and phone status access denied -->
-  <string name="dialog_permissions_mic_storage_phone">Snemalnik potrebuje dovoljenje za mikrofon za snemanje zvoka, dostop do pomnilniške naprave za shranjevanje datotek s posnetki in dostop do stanja telefona, da tej aplikaciji prepreči snemanje med klicem</string>
-  <!-- Permissions dialog action: ask permissions access again -->
-  <string name="dialog_permissions_ask">Ponovno vprašaj</string>
-  <!-- Permissions dialog action: dismiss dialog -->
-  <string name="dialog_permissions_dismiss">Opusti</string>
-  <!-- Message: overlay permission denied. Make sure "Draw over other apps" matches settings strings -->
-  <string name="dialog_permissions_overlay">Snemalnik potrebuje dovoljenje \"risanje preko ostalih aplikacij\" za snemanje zaslona. Pritisnite dovoli, omogočite dovoljenje v nastavitvah in se vrnite v snemalnik</string>
-  <!-- No permissions granted error -->
-  <string name="snack_permissions_no_permission">Zahtevana dovoljenja so bila zavrnjena, omogočite jih v aplikaciji Nastavitve, da začnete snemati</string>
-  <!-- Main activity -->
-  <!-- Screen record title -->
-  <string name="main_screen_action">Snemanje zaslona</string>
-  <!-- Sound record title -->
-  <string name="main_sound_action">Snemanje zvoka</string>
-  <!-- Transition name for dialogActivity -->
+    <string name="app_name">Snemalnik</string>
+    <!-- Common actions -->
+    <!-- Share action for notification -->
+    <string name="share">Souporaba</string>
+    <!-- Stop action for notification -->
+    <string name="stop">Ustavi</string>
+    <!-- Play action -->
+    <string name="play">Predvajaj</string>
+    <!-- Delete action -->
+    <string name="delete">Izbriši</string>
+    <!-- Cancel action -->
+    <string name="cancel">Prekliči</string>
+    <!-- Delete confirm title -->
+    <string name="delete_title">Brisanje posnetka</string>
+    <!-- Delete confirm message -->
+    <string name="delete_message">Ali ste prepričani, da želite izbrisati %1$s? Tega ni mogoče razveljaviti</string>
+    <!-- Date for last item %1 is year, %2 month, %3 day, %4 hour, %5 min -->
+    <string name="date_format">%1$s-%2$s-%3$s %4$s:%5$s</string>
+    <!-- Permissions -->
+    <!-- Sound recorder -->
+    <!-- Sound recorder notification title -->
+    <string name="sound_notification_title">Snemalnik zvoka</string>
+    <!-- Sound recorder notification message -->
+    <string name="sound_notification_message">Dolžina zvoka: %1$s</string>
+    <!-- Sound recorder status card title recording -->
+    <string name="sound_recording_title_working">Snemanje</string>
+    <!-- Sound recorder last item title -->
+    <string name="sound_last_title">Zadnji posnetek</string>
+    <!-- Sound recorder notification channel title -->
+    <string name="sound_channel_title">Snemanje zvoka</string>
+    <!-- Sound recorder notification channel description-->
+    <string name="sound_channel_desc">Trajno obvestilo med snemanjem zvoka in obvestilo, ko je končano</string>
+    <!-- Screen recorder -->
+    <!-- Screen recorder enabled audio message -->
+    <string name="screen_audio_message_on">Zvok iz mikrofona bo vključen v video</string>
+    <!-- Screen recorder disabled audio message -->
+    <string name="screen_audio_message_off">Zvok iz mikrofona ne bo vključen v video</string>
+    <!-- Screen recorder disabled audio toggle message -->
+    <string name="screen_audio_message_disabled">Te nastavitve ni mogoče spremeniti med snemanjem zaslona</string>
+    <!-- Screen recorder audio permission request card button -->
+    <string name="screen_audio_warning_button_ask">Vprašaj</string>
+    <!-- Screen recorder notification storage error title -->
+    <string name="screen_insufficient_storage">Nezadostna velikost pomnilniške naprave</string>
+    <!-- Screen recorder notification storage error message -->
+    <string name="screen_not_enough_storage">Na voljo ni dovolj prostora</string>
+    <!-- Screen recorder notification title -->
+    <string name="screen_notification_title">Snemalnik zaslona</string>
+    <!-- Screen recorder notification message -->
+    <string name="screen_notification_message">Dolžina videa: %s</string>
+    <!-- Screen recorder notification share title -->
+    <string name="screen_notification_message_done">Pripravljen za souporabo</string>
+    <!-- Screen recorder status message -->
+    <string name="screen_recording_message">Snemanje zaslona\u2026</string>
+    <!-- Screen recorder last item title -->
+    <string name="screen_last_title">Zadnji posnetek</string>
+    <!-- Screen recorder last item message -->
+    <string name="screen_last_message">Datum: %1$s\nDolžina: %2$d sekund</string>
+    <!-- Screen recorder notification overlay title -->
+    <string name="screen_overlay_notif_title">Pripravljen za snemanje</string>
+    <!-- Screen recorder notification overlay message -->
+    <string name="screen_overlay_notif_message">Ko ste pripravljeni začeti, pritisnite gumb za snemanje</string>
+    <!-- Screen settings dialog title -->
+    <string name="screen_settings_title">Nastavitve snemalnika zaslona</string>
+    <!-- Screen recorder notification overlay channel title -->
+    <string name="screen_overlay_channel_title">Pripravljen za snemanje zaslona</string>
+    <!-- Screen recorder notification overlay channel description-->
+    <string name="screen_overlay_channel_desc">Prikaz obvestila, da je snemanje zaslona pripravljeno za začetek</string>
+    <!-- Screen recorder persistent notification channel title -->
+    <string name="screen_channel_title">Snemanje zaslona</string>
+    <!-- Screen recorder persistent notification channel description-->
+    <string name="screen_channel_desc">Trajno obvestilo med snemanjem zaslona in obvestilo, ko je končano</string>
+    <!-- Permissions -->
+    <!-- Permissions dialog title -->
+    <string name="dialog_permissions_title">Dovoljenja</string>
+    <!-- Message: microphone access denied -->
+    <string name="dialog_permissions_mic">Snemalnik potrebuje dovoljenje za mikrofon za snemanje zvoka</string>
+    <!-- Message: storage access denied -->
+    <string name="dialog_permissions_storage">Snemalnik potrebuje dostop do pomnilniške naprave za shranjevanje datotek s posnetki</string>
+    <!-- Message: phone status denied -->
+    <string name="dialog_permissions_phone">Snemalnik potrebuje dostop do stanja telefona, da tej aplikaciji prepreči snemanje med klicem</string>
+    <!-- Message: microphone and storage access denied -->
+    <string name="dialog_permissions_mic_storage">Snemalnik potrebuje dovoljenje za mikrofon za snemanje zvoka in dostop do pomnilniške naprave za shranjevanje datotek s posnetki</string>
+    <!-- Message: microphone and phone status access denied -->
+    <string name="dialog_permissions_mic_phone">Snemalnik potrebuje dovoljenje za mikrofon za snemanje zvoka in dostop do stanja telefona, da tej aplikaciji prepreči snemanje med klicem</string>
+    <!-- Message: storage and phone status access denied -->
+    <string name="dialog_permissions_storage_phone">Snemalnik potrebuje dostop do pomnilniške naprave za shranjevanje datotek s posnetki in dostop do stanja telefona, da tej aplikaciji prepreči snemanje med klicem</string>
+    <!-- Message: microphone, storage and phone status access denied -->
+    <string name="dialog_permissions_mic_storage_phone">Snemalnik potrebuje dovoljenje za mikrofon za snemanje zvoka, dostop do pomnilniške naprave za shranjevanje datotek s posnetki in dostop do stanja telefona, da tej aplikaciji prepreči snemanje med klicem</string>
+    <!-- Permissions dialog action: ask permissions access again -->
+    <string name="dialog_permissions_ask">Ponovno vprašaj</string>
+    <!-- Permissions dialog action: dismiss dialog -->
+    <string name="dialog_permissions_dismiss">Opusti</string>
+    <!-- Message: overlay permission denied. Make sure "Draw over other apps" matches settings strings -->
+    <string name="dialog_permissions_overlay">Snemalnik potrebuje dovoljenje \"risanje preko ostalih aplikacij\" za snemanje zaslona. Pritisnite dovoli, omogočite dovoljenje v nastavitvah in se vrnite v snemalnik</string>
+    <!-- No permissions granted error -->
+    <string name="snack_permissions_no_permission">Zahtevana dovoljenja so bila zavrnjena, omogočite jih v aplikaciji Nastavitve, da začnete snemati</string>
+    <!-- Main activity -->
+    <!-- Screen record title -->
+    <string name="main_screen_action">Snemanje zaslona</string>
+    <!-- Sound record title -->
+    <string name="main_sound_action">Snemanje zvoka</string>
+    <!-- Transition name for dialogActivity -->
 </resources>

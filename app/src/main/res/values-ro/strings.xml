@@ -15,106 +15,106 @@
      limitations under the License.
 -->
 <resources>
-  <string name="app_name">Recorder</string>
-  <!-- Common actions -->
-  <!-- Share action for notification -->
-  <string name="share">Distribuiți</string>
-  <!-- Stop action for notification -->
-  <string name="stop">Stop</string>
-  <!-- Play action -->
-  <string name="play">Redați</string>
-  <!-- Delete action -->
-  <string name="delete">Ștergeți</string>
-  <!-- Cancel action -->
-  <string name="cancel">Anulare</string>
-  <!-- Delete confirm title -->
-  <string name="delete_title">Ștergere înregistrare</string>
-  <!-- Delete confirm message -->
-  <string name="delete_message">Sunteţi sigur(ă) că doriţi să ştergeţi %1$s? Această acţiune nu poate fi modificată ulterior</string>
-  <!-- Date for last item %1 is year, %2 month, %3 day, %4 hour, %5 min -->
-  <string name="date_format">%1$s-%2$s-%3$s %4$s:%5$s</string>
-  <!-- Permissions -->
-  <!-- Sound recorder -->
-  <!-- Sound recorder notification title -->
-  <string name="sound_notification_title">Înregistrare Sunet</string>
-  <!-- Sound recorder notification message -->
-  <string name="sound_notification_message">Lungime audio: %1$s</string>
-  <!-- Sound recorder status card title recording -->
-  <string name="sound_recording_title_working">Înregistrare</string>
-  <!-- Sound recorder last item title -->
-  <string name="sound_last_title">Ultima înregistrare</string>
-  <!-- Sound recorder notification channel title -->
-  <string name="sound_channel_title">Înregistrare sunet</string>
-  <!-- Sound recorder notification channel description-->
-  <string name="sound_channel_desc">Notificare persistentă când se înregistrează sunetul și notificare când acțiunea este completă</string>
-  <!-- Screen recorder -->
-  <!-- Screen recorder enabled audio message -->
-  <string name="screen_audio_message_on">Audio de la microfon va fi inclus în video</string>
-  <!-- Screen recorder disabled audio message -->
-  <string name="screen_audio_message_off">Audio de la microfon nu va fi inclus în video</string>
-  <!-- Screen recorder disabled audio toggle message -->
-  <string name="screen_audio_message_disabled">Nu puteți schimba această setare în timpul înregistrării ecranului</string>
-  <!-- Screen recorder audio permission request card button -->
-  <string name="screen_audio_warning_button_ask">Cere</string>
-  <!-- Screen recorder notification storage error title -->
-  <string name="screen_insufficient_storage">Stocare insuficientă</string>
-  <!-- Screen recorder notification storage error message -->
-  <string name="screen_not_enough_storage">Nu mai există suficient spațiu de stocare disponibil</string>
-  <!-- Screen recorder notification title -->
-  <string name="screen_notification_title">Înregistrare Ecran</string>
-  <!-- Screen recorder notification message -->
-  <string name="screen_notification_message">Lungime video: %s</string>
-  <!-- Screen recorder notification share title -->
-  <string name="screen_notification_message_done">Gata pentru distribuire</string>
-  <!-- Screen recorder status message -->
-  <string name="screen_recording_message">Ecranul este înregistrat\u2026</string>
-  <!-- Screen recorder last item title -->
-  <string name="screen_last_title">Ultima înregistrare</string>
-  <!-- Screen recorder last item message -->
-  <string name="screen_last_message">Data: %1$s\nDurata: %2$d secunde</string>
-  <!-- Screen recorder notification overlay title -->
-  <string name="screen_overlay_notif_title">Gata de înregistrare</string>
-  <!-- Screen recorder notification overlay message -->
-  <string name="screen_overlay_notif_message">Apăsaţi butonul de înregistrare atunci când sunteţi gata pentru a începe</string>
-  <!-- Screen settings dialog title -->
-  <string name="screen_settings_title">Setări înregistrare ecran</string>
-  <!-- Screen recorder notification overlay channel title -->
-  <string name="screen_overlay_channel_title">Pregătit pentru a înregistra ecranul</string>
-  <!-- Screen recorder notification overlay channel description-->
-  <string name="screen_overlay_channel_desc">Notificarea privind faptul că înregistrarea ecranului este pregătită pentru începere</string>
-  <!-- Screen recorder persistent notification channel title -->
-  <string name="screen_channel_title">Înregistrare ecran</string>
-  <!-- Screen recorder persistent notification channel description-->
-  <string name="screen_channel_desc">Notificare persistentă când se înregistrează ecranul și notificare când acțiunea este completă</string>
-  <!-- Permissions -->
-  <!-- Permissions dialog title -->
-  <string name="dialog_permissions_title">Permisiuni</string>
-  <!-- Message: microphone access denied -->
-  <string name="dialog_permissions_mic">Recorder are nevoie de permisiunea de microfon pentru a înregistra audio</string>
-  <!-- Message: storage access denied -->
-  <string name="dialog_permissions_storage">Recorder are nevoie de acces la stocare pentru a salva fișierele înregistrate</string>
-  <!-- Message: phone status denied -->
-  <string name="dialog_permissions_phone">Recorder are nevoie de acces la starea telefonului pentru a împiedica aplicația să înregistreze în timpul apelurilor</string>
-  <!-- Message: microphone and storage access denied -->
-  <string name="dialog_permissions_mic_storage">Recorder are nevoie de permisiunea de microfon pentru a înregistra audio și acces la stocare pentru a salva fișierele înregistrate</string>
-  <!-- Message: microphone and phone status access denied -->
-  <string name="dialog_permissions_mic_phone">Recorder are nevoie de permisiunea de microfon pentru a înregistra audio și acces la starea telefonului pentru a împiedica aplicația să înregistreze când apelați</string>
-  <!-- Message: storage and phone status access denied -->
-  <string name="dialog_permissions_storage_phone">Recorder are nevoie de acces la stocare pentru a salva fișierele înregistrate și acces la starea telefonului pentru a împiedica aplicația să înregistreze când apelați</string>
-  <!-- Message: microphone, storage and phone status access denied -->
-  <string name="dialog_permissions_mic_storage_phone">Recorder are nevoie de permisiunea de microfon pentru a înregistra audio, acces la stocare pentru a salva fișierele înregistrate și acces la starea telefonului pentru a împiedica aplicația să înregistreze când apelați</string>
-  <!-- Permissions dialog action: ask permissions access again -->
-  <string name="dialog_permissions_ask">Cere din nou</string>
-  <!-- Permissions dialog action: dismiss dialog -->
-  <string name="dialog_permissions_dismiss">Renunţaţi</string>
-  <!-- Message: overlay permission denied. Make sure "Draw over other apps" matches settings strings -->
-  <string name="dialog_permissions_overlay">Recorder are nevoie de permisiunea \"Afișează peste alte aplicații\" pentru a înregistra ecranul dvs. Atingeți permite, activați permisiunea în setări şi întoarceți-vă la Recorder</string>
-  <!-- No permissions granted error -->
-  <string name="snack_permissions_no_permission">Permisiunile necesare au fost refuzate, activați-le din aplicația Setări pentru a începe înregistrarea</string>
-  <!-- Main activity -->
-  <!-- Screen record title -->
-  <string name="main_screen_action">Înregistrare de ecran</string>
-  <!-- Sound record title -->
-  <string name="main_sound_action">Înregistrare sunet</string>
-  <!-- Transition name for dialogActivity -->
+    <string name="app_name">Recorder</string>
+    <!-- Common actions -->
+    <!-- Share action for notification -->
+    <string name="share">Distribuiți</string>
+    <!-- Stop action for notification -->
+    <string name="stop">Stop</string>
+    <!-- Play action -->
+    <string name="play">Redați</string>
+    <!-- Delete action -->
+    <string name="delete">Ștergeți</string>
+    <!-- Cancel action -->
+    <string name="cancel">Anulare</string>
+    <!-- Delete confirm title -->
+    <string name="delete_title">Ștergere înregistrare</string>
+    <!-- Delete confirm message -->
+    <string name="delete_message">Sunteţi sigur(ă) că doriţi să ştergeţi %1$s? Această acţiune nu poate fi modificată ulterior</string>
+    <!-- Date for last item %1 is year, %2 month, %3 day, %4 hour, %5 min -->
+    <string name="date_format">%1$s-%2$s-%3$s %4$s:%5$s</string>
+    <!-- Permissions -->
+    <!-- Sound recorder -->
+    <!-- Sound recorder notification title -->
+    <string name="sound_notification_title">Înregistrare Sunet</string>
+    <!-- Sound recorder notification message -->
+    <string name="sound_notification_message">Lungime audio: %1$s</string>
+    <!-- Sound recorder status card title recording -->
+    <string name="sound_recording_title_working">Înregistrare</string>
+    <!-- Sound recorder last item title -->
+    <string name="sound_last_title">Ultima înregistrare</string>
+    <!-- Sound recorder notification channel title -->
+    <string name="sound_channel_title">Înregistrare sunet</string>
+    <!-- Sound recorder notification channel description-->
+    <string name="sound_channel_desc">Notificare persistentă când se înregistrează sunetul și notificare când acțiunea este completă</string>
+    <!-- Screen recorder -->
+    <!-- Screen recorder enabled audio message -->
+    <string name="screen_audio_message_on">Audio de la microfon va fi inclus în video</string>
+    <!-- Screen recorder disabled audio message -->
+    <string name="screen_audio_message_off">Audio de la microfon nu va fi inclus în video</string>
+    <!-- Screen recorder disabled audio toggle message -->
+    <string name="screen_audio_message_disabled">Nu puteți schimba această setare în timpul înregistrării ecranului</string>
+    <!-- Screen recorder audio permission request card button -->
+    <string name="screen_audio_warning_button_ask">Cere</string>
+    <!-- Screen recorder notification storage error title -->
+    <string name="screen_insufficient_storage">Stocare insuficientă</string>
+    <!-- Screen recorder notification storage error message -->
+    <string name="screen_not_enough_storage">Nu mai există suficient spațiu de stocare disponibil</string>
+    <!-- Screen recorder notification title -->
+    <string name="screen_notification_title">Înregistrare Ecran</string>
+    <!-- Screen recorder notification message -->
+    <string name="screen_notification_message">Lungime video: %s</string>
+    <!-- Screen recorder notification share title -->
+    <string name="screen_notification_message_done">Gata pentru distribuire</string>
+    <!-- Screen recorder status message -->
+    <string name="screen_recording_message">Ecranul este înregistrat\u2026</string>
+    <!-- Screen recorder last item title -->
+    <string name="screen_last_title">Ultima înregistrare</string>
+    <!-- Screen recorder last item message -->
+    <string name="screen_last_message">Data: %1$s\nDurata: %2$d secunde</string>
+    <!-- Screen recorder notification overlay title -->
+    <string name="screen_overlay_notif_title">Gata de înregistrare</string>
+    <!-- Screen recorder notification overlay message -->
+    <string name="screen_overlay_notif_message">Apăsaţi butonul de înregistrare atunci când sunteţi gata pentru a începe</string>
+    <!-- Screen settings dialog title -->
+    <string name="screen_settings_title">Setări înregistrare ecran</string>
+    <!-- Screen recorder notification overlay channel title -->
+    <string name="screen_overlay_channel_title">Pregătit pentru a înregistra ecranul</string>
+    <!-- Screen recorder notification overlay channel description-->
+    <string name="screen_overlay_channel_desc">Notificarea privind faptul că înregistrarea ecranului este pregătită pentru începere</string>
+    <!-- Screen recorder persistent notification channel title -->
+    <string name="screen_channel_title">Înregistrare ecran</string>
+    <!-- Screen recorder persistent notification channel description-->
+    <string name="screen_channel_desc">Notificare persistentă când se înregistrează ecranul și notificare când acțiunea este completă</string>
+    <!-- Permissions -->
+    <!-- Permissions dialog title -->
+    <string name="dialog_permissions_title">Permisiuni</string>
+    <!-- Message: microphone access denied -->
+    <string name="dialog_permissions_mic">Recorder are nevoie de permisiunea de microfon pentru a înregistra audio</string>
+    <!-- Message: storage access denied -->
+    <string name="dialog_permissions_storage">Recorder are nevoie de acces la stocare pentru a salva fișierele înregistrate</string>
+    <!-- Message: phone status denied -->
+    <string name="dialog_permissions_phone">Recorder are nevoie de acces la starea telefonului pentru a împiedica aplicația să înregistreze în timpul apelurilor</string>
+    <!-- Message: microphone and storage access denied -->
+    <string name="dialog_permissions_mic_storage">Recorder are nevoie de permisiunea de microfon pentru a înregistra audio și acces la stocare pentru a salva fișierele înregistrate</string>
+    <!-- Message: microphone and phone status access denied -->
+    <string name="dialog_permissions_mic_phone">Recorder are nevoie de permisiunea de microfon pentru a înregistra audio și acces la starea telefonului pentru a împiedica aplicația să înregistreze când apelați</string>
+    <!-- Message: storage and phone status access denied -->
+    <string name="dialog_permissions_storage_phone">Recorder are nevoie de acces la stocare pentru a salva fișierele înregistrate și acces la starea telefonului pentru a împiedica aplicația să înregistreze când apelați</string>
+    <!-- Message: microphone, storage and phone status access denied -->
+    <string name="dialog_permissions_mic_storage_phone">Recorder are nevoie de permisiunea de microfon pentru a înregistra audio, acces la stocare pentru a salva fișierele înregistrate și acces la starea telefonului pentru a împiedica aplicația să înregistreze când apelați</string>
+    <!-- Permissions dialog action: ask permissions access again -->
+    <string name="dialog_permissions_ask">Cere din nou</string>
+    <!-- Permissions dialog action: dismiss dialog -->
+    <string name="dialog_permissions_dismiss">Renunţaţi</string>
+    <!-- Message: overlay permission denied. Make sure "Draw over other apps" matches settings strings -->
+    <string name="dialog_permissions_overlay">Recorder are nevoie de permisiunea \"Afișează peste alte aplicații\" pentru a înregistra ecranul dvs. Atingeți permite, activați permisiunea în setări şi întoarceți-vă la Recorder</string>
+    <!-- No permissions granted error -->
+    <string name="snack_permissions_no_permission">Permisiunile necesare au fost refuzate, activați-le din aplicația Setări pentru a începe înregistrarea</string>
+    <!-- Main activity -->
+    <!-- Screen record title -->
+    <string name="main_screen_action">Înregistrare de ecran</string>
+    <!-- Sound record title -->
+    <string name="main_sound_action">Înregistrare sunet</string>
+    <!-- Transition name for dialogActivity -->
 </resources>

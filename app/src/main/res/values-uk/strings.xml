@@ -15,99 +15,99 @@
      limitations under the License.
 -->
 <resources>
-  <string name="app_name">Recorder</string>
-  <!-- Common actions -->
-  <!-- Share action for notification -->
-  <string name="share">Поділитися</string>
-  <!-- Stop action for notification -->
-  <string name="stop">Зупинити</string>
-  <!-- Play action -->
-  <string name="play">Відтворити</string>
-  <!-- Delete action -->
-  <string name="delete">Видалити</string>
-  <!-- Cancel action -->
-  <string name="cancel">Скасувати</string>
-  <!-- Delete confirm title -->
-  <string name="delete_title">Видалення записів</string>
-  <!-- Delete confirm message -->
-  <string name="delete_message">Ви впевнені, що хочете видалити %1$s? Цю дію неможливо буде скасувати</string>
-  <!-- Date for last item %1 is year, %2 month, %3 day, %4 hour, %5 min -->
-  <string name="date_format">%3$s-%2$s-%1$s %4$s:%5$s</string>
-  <!-- Permissions -->
-  <!-- Sound recorder -->
-  <!-- Sound recorder notification title -->
-  <string name="sound_notification_title">Запис звуку</string>
-  <!-- Sound recorder notification message -->
-  <string name="sound_notification_message">Тривалість аудіо запису: %1$s</string>
-  <!-- Sound recorder status card title recording -->
-  <string name="sound_recording_title_working">Запис</string>
-  <!-- Sound recorder last item title -->
-  <string name="sound_last_title">Останній запис</string>
-  <!-- Sound recorder notification channel title -->
-  <!-- Sound recorder notification channel description-->
-  <!-- Screen recorder -->
-  <!-- Screen recorder enabled audio message -->
-  <string name="screen_audio_message_on">Звук з мікрофону буде додано у відео</string>
-  <!-- Screen recorder disabled audio message -->
-  <string name="screen_audio_message_off">Звук з мікрофону не буде додано у відео</string>
-  <!-- Screen recorder disabled audio toggle message -->
-  <string name="screen_audio_message_disabled">Під час запису екрану змінити ці налаштування неможливо</string>
-  <!-- Screen recorder audio permission request card button -->
-  <string name="screen_audio_warning_button_ask">Запитувати</string>
-  <!-- Screen recorder notification storage error title -->
-  <string name="screen_insufficient_storage">Недостатньо пам\'яті</string>
-  <!-- Screen recorder notification storage error message -->
-  <string name="screen_not_enough_storage">Недостатньо вільної пам\'яті</string>
-  <!-- Screen recorder notification title -->
-  <string name="screen_notification_title">Запис екрану</string>
-  <!-- Screen recorder notification message -->
-  <string name="screen_notification_message">Тривалість відео: %s</string>
-  <!-- Screen recorder notification share title -->
-  <string name="screen_notification_message_done">Готово, аби поділитися</string>
-  <!-- Screen recorder status message -->
-  <string name="screen_recording_message">Триває запис з екрану\u2026</string>
-  <!-- Screen recorder last item title -->
-  <string name="screen_last_title">Останній запис</string>
-  <!-- Screen recorder last item message -->
-  <string name="screen_last_message">Дата: %1$s\nТривалість: %2$d сек</string>
-  <!-- Screen recorder notification overlay title -->
-  <string name="screen_overlay_notif_title">Готово для запису</string>
-  <!-- Screen recorder notification overlay message -->
-  <string name="screen_overlay_notif_message">Натисніть кнопку запису, щоб почати</string>
-  <!-- Screen settings dialog title -->
-  <!-- Screen recorder notification overlay channel title -->
-  <!-- Screen recorder notification overlay channel description-->
-  <!-- Screen recorder persistent notification channel title -->
-  <!-- Screen recorder persistent notification channel description-->
-  <!-- Permissions -->
-  <!-- Permissions dialog title -->
-  <string name="dialog_permissions_title">Дозволи</string>
-  <!-- Message: microphone access denied -->
-  <string name="dialog_permissions_mic">Додаток «Звукозаписувач» потребує доступ до мікрофону для здійснення звукозапису</string>
-  <!-- Message: storage access denied -->
-  <string name="dialog_permissions_storage">Додатку «Recorder» потрібен доступ до накопичувача для збереження записаних файлів</string>
-  <!-- Message: phone status denied -->
-  <string name="dialog_permissions_phone">Додатку «Recorder» потрібен доступ до стану телефону, щоб припиняти аудіозапис під час дзвінка</string>
-  <!-- Message: microphone and storage access denied -->
-  <string name="dialog_permissions_mic_storage">Додатку «Recorder» потрібен доступ до мікрофону для аудіозапису і доступ до накопичувача для збереження записаних файлів</string>
-  <!-- Message: microphone and phone status access denied -->
-  <string name="dialog_permissions_mic_phone">Додатку «Recorder» потрібен доступ до мікрофону для аудіозапису і доступ до стану телефону, щоб припиняти аудіозапис під час дзвінка</string>
-  <!-- Message: storage and phone status access denied -->
-  <string name="dialog_permissions_storage_phone">Додатку «Recorder» потрібен доступ до накопичувача для збереження записаних файлів і доступ до стану телефону, щоб припиняти аудіозапис під час дзвінка</string>
-  <!-- Message: microphone, storage and phone status access denied -->
-  <string name="dialog_permissions_mic_storage_phone">Додатку «Recorder» потрібен доступ до мікрофона для аудіозапису, доступ до накопичувача для збереження записаних файлів і доступ до стану телефону, щоб припиняти аудіозапис під час дзвінка</string>
-  <!-- Permissions dialog action: ask permissions access again -->
-  <string name="dialog_permissions_ask">Запитайте ще раз</string>
-  <!-- Permissions dialog action: dismiss dialog -->
-  <string name="dialog_permissions_dismiss">Відхилити</string>
-  <!-- Message: overlay permission denied. Make sure "Draw over other apps" matches settings strings -->
-  <string name="dialog_permissions_overlay">Запис екрану потребує дозволу «Відображати поверх інших програм». Натисніть \"Дозволити\" в налаштуваннях та поверніться до запису</string>
-  <!-- No permissions granted error -->
-  <string name="snack_permissions_no_permission">Відмовлено в необхідних дозволах. Увімкніть їх у налаштуваннях, щоб почати запис</string>
-  <!-- Main activity -->
-  <!-- Screen record title -->
-  <string name="main_screen_action">Запис з екрану</string>
-  <!-- Sound record title -->
-  <string name="main_sound_action">Запис звуку</string>
-  <!-- Transition name for dialogActivity -->
+    <string name="app_name">Recorder</string>
+    <!-- Common actions -->
+    <!-- Share action for notification -->
+    <string name="share">Поділитися</string>
+    <!-- Stop action for notification -->
+    <string name="stop">Зупинити</string>
+    <!-- Play action -->
+    <string name="play">Відтворити</string>
+    <!-- Delete action -->
+    <string name="delete">Видалити</string>
+    <!-- Cancel action -->
+    <string name="cancel">Скасувати</string>
+    <!-- Delete confirm title -->
+    <string name="delete_title">Видалення записів</string>
+    <!-- Delete confirm message -->
+    <string name="delete_message">Ви впевнені, що хочете видалити %1$s? Цю дію неможливо буде скасувати</string>
+    <!-- Date for last item %1 is year, %2 month, %3 day, %4 hour, %5 min -->
+    <string name="date_format">%3$s-%2$s-%1$s %4$s:%5$s</string>
+    <!-- Permissions -->
+    <!-- Sound recorder -->
+    <!-- Sound recorder notification title -->
+    <string name="sound_notification_title">Запис звуку</string>
+    <!-- Sound recorder notification message -->
+    <string name="sound_notification_message">Тривалість аудіо запису: %1$s</string>
+    <!-- Sound recorder status card title recording -->
+    <string name="sound_recording_title_working">Запис</string>
+    <!-- Sound recorder last item title -->
+    <string name="sound_last_title">Останній запис</string>
+    <!-- Sound recorder notification channel title -->
+    <!-- Sound recorder notification channel description-->
+    <!-- Screen recorder -->
+    <!-- Screen recorder enabled audio message -->
+    <string name="screen_audio_message_on">Звук з мікрофону буде додано у відео</string>
+    <!-- Screen recorder disabled audio message -->
+    <string name="screen_audio_message_off">Звук з мікрофону не буде додано у відео</string>
+    <!-- Screen recorder disabled audio toggle message -->
+    <string name="screen_audio_message_disabled">Під час запису екрану змінити ці налаштування неможливо</string>
+    <!-- Screen recorder audio permission request card button -->
+    <string name="screen_audio_warning_button_ask">Запитувати</string>
+    <!-- Screen recorder notification storage error title -->
+    <string name="screen_insufficient_storage">Недостатньо пам\'яті</string>
+    <!-- Screen recorder notification storage error message -->
+    <string name="screen_not_enough_storage">Недостатньо вільної пам\'яті</string>
+    <!-- Screen recorder notification title -->
+    <string name="screen_notification_title">Запис екрану</string>
+    <!-- Screen recorder notification message -->
+    <string name="screen_notification_message">Тривалість відео: %s</string>
+    <!-- Screen recorder notification share title -->
+    <string name="screen_notification_message_done">Готово, аби поділитися</string>
+    <!-- Screen recorder status message -->
+    <string name="screen_recording_message">Триває запис з екрану\u2026</string>
+    <!-- Screen recorder last item title -->
+    <string name="screen_last_title">Останній запис</string>
+    <!-- Screen recorder last item message -->
+    <string name="screen_last_message">Дата: %1$s\nТривалість: %2$d сек</string>
+    <!-- Screen recorder notification overlay title -->
+    <string name="screen_overlay_notif_title">Готово для запису</string>
+    <!-- Screen recorder notification overlay message -->
+    <string name="screen_overlay_notif_message">Натисніть кнопку запису, щоб почати</string>
+    <!-- Screen settings dialog title -->
+    <!-- Screen recorder notification overlay channel title -->
+    <!-- Screen recorder notification overlay channel description-->
+    <!-- Screen recorder persistent notification channel title -->
+    <!-- Screen recorder persistent notification channel description-->
+    <!-- Permissions -->
+    <!-- Permissions dialog title -->
+    <string name="dialog_permissions_title">Дозволи</string>
+    <!-- Message: microphone access denied -->
+    <string name="dialog_permissions_mic">Додаток «Звукозаписувач» потребує доступ до мікрофону для здійснення звукозапису</string>
+    <!-- Message: storage access denied -->
+    <string name="dialog_permissions_storage">Додатку «Recorder» потрібен доступ до накопичувача для збереження записаних файлів</string>
+    <!-- Message: phone status denied -->
+    <string name="dialog_permissions_phone">Додатку «Recorder» потрібен доступ до стану телефону, щоб припиняти аудіозапис під час дзвінка</string>
+    <!-- Message: microphone and storage access denied -->
+    <string name="dialog_permissions_mic_storage">Додатку «Recorder» потрібен доступ до мікрофону для аудіозапису і доступ до накопичувача для збереження записаних файлів</string>
+    <!-- Message: microphone and phone status access denied -->
+    <string name="dialog_permissions_mic_phone">Додатку «Recorder» потрібен доступ до мікрофону для аудіозапису і доступ до стану телефону, щоб припиняти аудіозапис під час дзвінка</string>
+    <!-- Message: storage and phone status access denied -->
+    <string name="dialog_permissions_storage_phone">Додатку «Recorder» потрібен доступ до накопичувача для збереження записаних файлів і доступ до стану телефону, щоб припиняти аудіозапис під час дзвінка</string>
+    <!-- Message: microphone, storage and phone status access denied -->
+    <string name="dialog_permissions_mic_storage_phone">Додатку «Recorder» потрібен доступ до мікрофона для аудіозапису, доступ до накопичувача для збереження записаних файлів і доступ до стану телефону, щоб припиняти аудіозапис під час дзвінка</string>
+    <!-- Permissions dialog action: ask permissions access again -->
+    <string name="dialog_permissions_ask">Запитайте ще раз</string>
+    <!-- Permissions dialog action: dismiss dialog -->
+    <string name="dialog_permissions_dismiss">Відхилити</string>
+    <!-- Message: overlay permission denied. Make sure "Draw over other apps" matches settings strings -->
+    <string name="dialog_permissions_overlay">Запис екрану потребує дозволу «Відображати поверх інших програм». Натисніть \"Дозволити\" в налаштуваннях та поверніться до запису</string>
+    <!-- No permissions granted error -->
+    <string name="snack_permissions_no_permission">Відмовлено в необхідних дозволах. Увімкніть їх у налаштуваннях, щоб почати запис</string>
+    <!-- Main activity -->
+    <!-- Screen record title -->
+    <string name="main_screen_action">Запис з екрану</string>
+    <!-- Sound record title -->
+    <string name="main_sound_action">Запис звуку</string>
+    <!-- Transition name for dialogActivity -->
 </resources>

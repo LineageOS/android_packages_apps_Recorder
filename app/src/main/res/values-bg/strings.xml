@@ -15,106 +15,106 @@
      limitations under the License.
 -->
 <resources>
-  <string name="app_name">Записвачка</string>
-  <!-- Common actions -->
-  <!-- Share action for notification -->
-  <string name="share">Споделяне</string>
-  <!-- Stop action for notification -->
-  <string name="stop">Стоп</string>
-  <!-- Play action -->
-  <string name="play">Възпроизвеждане</string>
-  <!-- Delete action -->
-  <string name="delete">Изтриване</string>
-  <!-- Cancel action -->
-  <string name="cancel">Отказ</string>
-  <!-- Delete confirm title -->
-  <string name="delete_title">Изтриване на записа</string>
-  <!-- Delete confirm message -->
-  <string name="delete_message">Наистина ли искате да изтриете %1$s? Това действе не може да бъде отменено</string>
-  <!-- Date for last item %1 is year, %2 month, %3 day, %4 hour, %5 min -->
-  <string name="date_format">%1$s-%2$s-%3$s %4$s:%5$s</string>
-  <!-- Permissions -->
-  <!-- Sound recorder -->
-  <!-- Sound recorder notification title -->
-  <string name="sound_notification_title">Записване на звук</string>
-  <!-- Sound recorder notification message -->
-  <string name="sound_notification_message">Продължителност на аудио запис: %1$s</string>
-  <!-- Sound recorder status card title recording -->
-  <string name="sound_recording_title_working">Записване</string>
-  <!-- Sound recorder last item title -->
-  <string name="sound_last_title">Последен запис</string>
-  <!-- Sound recorder notification channel title -->
-  <string name="sound_channel_title">Запис на звук</string>
-  <!-- Sound recorder notification channel description-->
-  <string name="sound_channel_desc">Постоянно известяване при запис на звук и известие, след завършване</string>
-  <!-- Screen recorder -->
-  <!-- Screen recorder enabled audio message -->
-  <string name="screen_audio_message_on">Звукът от микрофона ще бъде включен във видеото</string>
-  <!-- Screen recorder disabled audio message -->
-  <string name="screen_audio_message_off">Звукът от микрофона няма да бъде включен във видеото</string>
-  <!-- Screen recorder disabled audio toggle message -->
-  <string name="screen_audio_message_disabled">Не е възможно да промените тази настройка при записване на екрана</string>
-  <!-- Screen recorder audio permission request card button -->
-  <string name="screen_audio_warning_button_ask">Попитай</string>
-  <!-- Screen recorder notification storage error title -->
-  <string name="screen_insufficient_storage">Недостатъчен размер на паметта</string>
-  <!-- Screen recorder notification storage error message -->
-  <string name="screen_not_enough_storage">Няма достатъчно място за съхранение</string>
-  <!-- Screen recorder notification title -->
-  <string name="screen_notification_title">Видеозапис на екрана</string>
-  <!-- Screen recorder notification message -->
-  <string name="screen_notification_message">Продължителност на видео запис: %s</string>
-  <!-- Screen recorder notification share title -->
-  <string name="screen_notification_message_done">Готово за споделяне</string>
-  <!-- Screen recorder status message -->
-  <string name="screen_recording_message">Екрана се записва\u2026</string>
-  <!-- Screen recorder last item title -->
-  <string name="screen_last_title">Последен запис</string>
-  <!-- Screen recorder last item message -->
-  <string name="screen_last_message">Дата: %1$s\nПродължителност: %2$d секунди</string>
-  <!-- Screen recorder notification overlay title -->
-  <string name="screen_overlay_notif_title">Готово за запис</string>
-  <!-- Screen recorder notification overlay message -->
-  <string name="screen_overlay_notif_message">Натиснете бутона за запис, когато сте готови да започнете</string>
-  <!-- Screen settings dialog title -->
-  <string name="screen_settings_title">Настройки за запис на екрана</string>
-  <!-- Screen recorder notification overlay channel title -->
-  <string name="screen_overlay_channel_title">Готов за запис на екран</string>
-  <!-- Screen recorder notification overlay channel description-->
-  <string name="screen_overlay_channel_desc">Съобщението, показващо екранното записване, е готово за стартиране</string>
-  <!-- Screen recorder persistent notification channel title -->
-  <string name="screen_channel_title">Записване на екрана</string>
-  <!-- Screen recorder persistent notification channel description-->
-  <string name="screen_channel_desc">Постоянно известяване при запис на екрана и известие, след завършване</string>
-  <!-- Permissions -->
-  <!-- Permissions dialog title -->
-  <string name="dialog_permissions_title">Разрешения</string>
-  <!-- Message: microphone access denied -->
-  <string name="dialog_permissions_mic">Приложението за запис се нуждае отдостъп до микрофона за запис на аудио</string>
-  <!-- Message: storage access denied -->
-  <string name="dialog_permissions_storage">Приложението за запис се нуждае от достъп до място за съхранение за запазване на записаните файлове</string>
-  <!-- Message: phone status denied -->
-  <string name="dialog_permissions_phone">Приложението за запис се нуждае от достъп до телефонен статус за да предотврати запис по време на разговор</string>
-  <!-- Message: microphone and storage access denied -->
-  <string name="dialog_permissions_mic_storage">Приложението за запис се нуждае от достъп до микрофона за записване и достъп до хранилището за съхранение на записаните файлове</string>
-  <!-- Message: microphone and phone status access denied -->
-  <string name="dialog_permissions_mic_phone">Приложението за запис се нуждае от достъп до микрофона и телефонен статус за да предотврати запис по време на разговор</string>
-  <!-- Message: storage and phone status access denied -->
-  <string name="dialog_permissions_storage_phone">Приложението за запис се нуждае от достъп до място за съхранение и телефонен статус за да предотврати запис по време на разговор</string>
-  <!-- Message: microphone, storage and phone status access denied -->
-  <string name="dialog_permissions_mic_storage_phone">Приложението за запис се нуждае от достъп до микрофон и до място за съхранение и телефонен статус за да предотврати запис по време на разговор</string>
-  <!-- Permissions dialog action: ask permissions access again -->
-  <string name="dialog_permissions_ask">Попитай отново</string>
-  <!-- Permissions dialog action: dismiss dialog -->
-  <string name="dialog_permissions_dismiss">Отхвърли</string>
-  <!-- Message: overlay permission denied. Make sure "Draw over other apps" matches settings strings -->
-  <string name="dialog_permissions_overlay">Записвачката изисква разрешение \"Изчертай върху другите приложения\" за да записвате вашия екран. Натиснете позволявам разрешението в настройките и се върнете отново към Записвачката</string>
-  <!-- No permissions granted error -->
-  <string name="snack_permissions_no_permission">Необходимите разрешения са отказани, разрешете ги от настройките на приложението и започнете запис</string>
-  <!-- Main activity -->
-  <!-- Screen record title -->
-  <string name="main_screen_action">Запис на екрана</string>
-  <!-- Sound record title -->
-  <string name="main_sound_action">Запис на звук</string>
-  <!-- Transition name for dialogActivity -->
+    <string name="app_name">Записвачка</string>
+    <!-- Common actions -->
+    <!-- Share action for notification -->
+    <string name="share">Споделяне</string>
+    <!-- Stop action for notification -->
+    <string name="stop">Стоп</string>
+    <!-- Play action -->
+    <string name="play">Възпроизвеждане</string>
+    <!-- Delete action -->
+    <string name="delete">Изтриване</string>
+    <!-- Cancel action -->
+    <string name="cancel">Отказ</string>
+    <!-- Delete confirm title -->
+    <string name="delete_title">Изтриване на записа</string>
+    <!-- Delete confirm message -->
+    <string name="delete_message">Наистина ли искате да изтриете %1$s? Това действе не може да бъде отменено</string>
+    <!-- Date for last item %1 is year, %2 month, %3 day, %4 hour, %5 min -->
+    <string name="date_format">%1$s-%2$s-%3$s %4$s:%5$s</string>
+    <!-- Permissions -->
+    <!-- Sound recorder -->
+    <!-- Sound recorder notification title -->
+    <string name="sound_notification_title">Записване на звук</string>
+    <!-- Sound recorder notification message -->
+    <string name="sound_notification_message">Продължителност на аудио запис: %1$s</string>
+    <!-- Sound recorder status card title recording -->
+    <string name="sound_recording_title_working">Записване</string>
+    <!-- Sound recorder last item title -->
+    <string name="sound_last_title">Последен запис</string>
+    <!-- Sound recorder notification channel title -->
+    <string name="sound_channel_title">Запис на звук</string>
+    <!-- Sound recorder notification channel description-->
+    <string name="sound_channel_desc">Постоянно известяване при запис на звук и известие, след завършване</string>
+    <!-- Screen recorder -->
+    <!-- Screen recorder enabled audio message -->
+    <string name="screen_audio_message_on">Звукът от микрофона ще бъде включен във видеото</string>
+    <!-- Screen recorder disabled audio message -->
+    <string name="screen_audio_message_off">Звукът от микрофона няма да бъде включен във видеото</string>
+    <!-- Screen recorder disabled audio toggle message -->
+    <string name="screen_audio_message_disabled">Не е възможно да промените тази настройка при записване на екрана</string>
+    <!-- Screen recorder audio permission request card button -->
+    <string name="screen_audio_warning_button_ask">Попитай</string>
+    <!-- Screen recorder notification storage error title -->
+    <string name="screen_insufficient_storage">Недостатъчен размер на паметта</string>
+    <!-- Screen recorder notification storage error message -->
+    <string name="screen_not_enough_storage">Няма достатъчно място за съхранение</string>
+    <!-- Screen recorder notification title -->
+    <string name="screen_notification_title">Видеозапис на екрана</string>
+    <!-- Screen recorder notification message -->
+    <string name="screen_notification_message">Продължителност на видео запис: %s</string>
+    <!-- Screen recorder notification share title -->
+    <string name="screen_notification_message_done">Готово за споделяне</string>
+    <!-- Screen recorder status message -->
+    <string name="screen_recording_message">Екрана се записва\u2026</string>
+    <!-- Screen recorder last item title -->
+    <string name="screen_last_title">Последен запис</string>
+    <!-- Screen recorder last item message -->
+    <string name="screen_last_message">Дата: %1$s\nПродължителност: %2$d секунди</string>
+    <!-- Screen recorder notification overlay title -->
+    <string name="screen_overlay_notif_title">Готово за запис</string>
+    <!-- Screen recorder notification overlay message -->
+    <string name="screen_overlay_notif_message">Натиснете бутона за запис, когато сте готови да започнете</string>
+    <!-- Screen settings dialog title -->
+    <string name="screen_settings_title">Настройки за запис на екрана</string>
+    <!-- Screen recorder notification overlay channel title -->
+    <string name="screen_overlay_channel_title">Готов за запис на екран</string>
+    <!-- Screen recorder notification overlay channel description-->
+    <string name="screen_overlay_channel_desc">Съобщението, показващо екранното записване, е готово за стартиране</string>
+    <!-- Screen recorder persistent notification channel title -->
+    <string name="screen_channel_title">Записване на екрана</string>
+    <!-- Screen recorder persistent notification channel description-->
+    <string name="screen_channel_desc">Постоянно известяване при запис на екрана и известие, след завършване</string>
+    <!-- Permissions -->
+    <!-- Permissions dialog title -->
+    <string name="dialog_permissions_title">Разрешения</string>
+    <!-- Message: microphone access denied -->
+    <string name="dialog_permissions_mic">Приложението за запис се нуждае отдостъп до микрофона за запис на аудио</string>
+    <!-- Message: storage access denied -->
+    <string name="dialog_permissions_storage">Приложението за запис се нуждае от достъп до място за съхранение за запазване на записаните файлове</string>
+    <!-- Message: phone status denied -->
+    <string name="dialog_permissions_phone">Приложението за запис се нуждае от достъп до телефонен статус за да предотврати запис по време на разговор</string>
+    <!-- Message: microphone and storage access denied -->
+    <string name="dialog_permissions_mic_storage">Приложението за запис се нуждае от достъп до микрофона за записване и достъп до хранилището за съхранение на записаните файлове</string>
+    <!-- Message: microphone and phone status access denied -->
+    <string name="dialog_permissions_mic_phone">Приложението за запис се нуждае от достъп до микрофона и телефонен статус за да предотврати запис по време на разговор</string>
+    <!-- Message: storage and phone status access denied -->
+    <string name="dialog_permissions_storage_phone">Приложението за запис се нуждае от достъп до място за съхранение и телефонен статус за да предотврати запис по време на разговор</string>
+    <!-- Message: microphone, storage and phone status access denied -->
+    <string name="dialog_permissions_mic_storage_phone">Приложението за запис се нуждае от достъп до микрофон и до място за съхранение и телефонен статус за да предотврати запис по време на разговор</string>
+    <!-- Permissions dialog action: ask permissions access again -->
+    <string name="dialog_permissions_ask">Попитай отново</string>
+    <!-- Permissions dialog action: dismiss dialog -->
+    <string name="dialog_permissions_dismiss">Отхвърли</string>
+    <!-- Message: overlay permission denied. Make sure "Draw over other apps" matches settings strings -->
+    <string name="dialog_permissions_overlay">Записвачката изисква разрешение \"Изчертай върху другите приложения\" за да записвате вашия екран. Натиснете позволявам разрешението в настройките и се върнете отново към Записвачката</string>
+    <!-- No permissions granted error -->
+    <string name="snack_permissions_no_permission">Необходимите разрешения са отказани, разрешете ги от настройките на приложението и започнете запис</string>
+    <!-- Main activity -->
+    <!-- Screen record title -->
+    <string name="main_screen_action">Запис на екрана</string>
+    <!-- Sound record title -->
+    <string name="main_sound_action">Запис на звук</string>
+    <!-- Transition name for dialogActivity -->
 </resources>

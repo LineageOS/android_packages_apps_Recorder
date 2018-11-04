@@ -15,106 +15,106 @@
      limitations under the License.
 -->
 <resources>
-  <string name="app_name">Nauhoitus</string>
-  <!-- Common actions -->
-  <!-- Share action for notification -->
-  <string name="share">Jaa</string>
-  <!-- Stop action for notification -->
-  <string name="stop">Lopeta</string>
-  <!-- Play action -->
-  <string name="play">Toista</string>
-  <!-- Delete action -->
-  <string name="delete">Poista</string>
-  <!-- Cancel action -->
-  <string name="cancel">Peruuta</string>
-  <!-- Delete confirm title -->
-  <string name="delete_title">Poistetaan nauhoitusta</string>
-  <!-- Delete confirm message -->
-  <string name="delete_message">Oletko varma, että haluat poistaa %1$s? Toimintoa ei voi peruuttaa</string>
-  <!-- Date for last item %1 is year, %2 month, %3 day, %4 hour, %5 min -->
-  <string name="date_format">%1$s-%2$s-%3$s %4$s:%5$s</string>
-  <!-- Permissions -->
-  <!-- Sound recorder -->
-  <!-- Sound recorder notification title -->
-  <string name="sound_notification_title">Ääninauhuri</string>
-  <!-- Sound recorder notification message -->
-  <string name="sound_notification_message">Äänen kesto: %1$s</string>
-  <!-- Sound recorder status card title recording -->
-  <string name="sound_recording_title_working">Nauhoitetaan</string>
-  <!-- Sound recorder last item title -->
-  <string name="sound_last_title">Viimeisin nauhoitus</string>
-  <!-- Sound recorder notification channel title -->
-  <string name="sound_channel_title">Ääninauhuri</string>
-  <!-- Sound recorder notification channel description-->
-  <string name="sound_channel_desc">Jatkuva ilmoitus äänen tallentamisesta ja ilmoitus kun se on valmis</string>
-  <!-- Screen recorder -->
-  <!-- Screen recorder enabled audio message -->
-  <string name="screen_audio_message_on">Mikrofonin ääni sisällytetään videoon</string>
-  <!-- Screen recorder disabled audio message -->
-  <string name="screen_audio_message_off">Mikrofonin ääntä ei sisällytetä videoon</string>
-  <!-- Screen recorder disabled audio toggle message -->
-  <string name="screen_audio_message_disabled">Tätä asetusta ei voi muuttaa nauhoittaessa näyttöä</string>
-  <!-- Screen recorder audio permission request card button -->
-  <string name="screen_audio_warning_button_ask">Kysy</string>
-  <!-- Screen recorder notification storage error title -->
-  <string name="screen_insufficient_storage">Muisti ei riitä</string>
-  <!-- Screen recorder notification storage error message -->
-  <string name="screen_not_enough_storage">Muistia ei riittävästi saatavilla</string>
-  <!-- Screen recorder notification title -->
-  <string name="screen_notification_title">Näytön tallennin</string>
-  <!-- Screen recorder notification message -->
-  <string name="screen_notification_message">Videon kesto: %s</string>
-  <!-- Screen recorder notification share title -->
-  <string name="screen_notification_message_done">Valmis jakamaan</string>
-  <!-- Screen recorder status message -->
-  <string name="screen_recording_message">Näyttötallennus on käynnissä\u2026</string>
-  <!-- Screen recorder last item title -->
-  <string name="screen_last_title">Viimeisin nauhoitus</string>
-  <!-- Screen recorder last item message -->
-  <string name="screen_last_message">Päivämäärä: %1$s\nKesto: %2$d sekuntia</string>
-  <!-- Screen recorder notification overlay title -->
-  <string name="screen_overlay_notif_title">Valmis tallentamaan</string>
-  <!-- Screen recorder notification overlay message -->
-  <string name="screen_overlay_notif_message">Paina Tallenna-painiketta, kun olet valmis aloittamaan</string>
-  <!-- Screen settings dialog title -->
-  <string name="screen_settings_title">Muuta näytön videotallennuksen asetuksia</string>
-  <!-- Screen recorder notification overlay channel title -->
-  <string name="screen_overlay_channel_title">Valmis nauhoittamaan näyttöä</string>
-  <!-- Screen recorder notification overlay channel description-->
-  <string name="screen_overlay_channel_desc">Ilmoitus näyttää näytön nauhoituksen valmiuden</string>
-  <!-- Screen recorder persistent notification channel title -->
-  <string name="screen_channel_title">Näytön nauhoitus</string>
-  <!-- Screen recorder persistent notification channel description-->
-  <string name="screen_channel_desc">Jatkuva ilmoitus näytön nauhoittamisesta ja ilmoitus kun se on valmis</string>
-  <!-- Permissions -->
-  <!-- Permissions dialog title -->
-  <string name="dialog_permissions_title">Käyttöoikeudet</string>
-  <!-- Message: microphone access denied -->
-  <string name="dialog_permissions_mic">Nauhoitus tarvitsee pääsyn mikrofoniin nauhoittaakseen ääntä</string>
-  <!-- Message: storage access denied -->
-  <string name="dialog_permissions_storage">Nauhoitus tarvitsee tallennustilan käyttöoikeuden tallentaakseen tiedostoja</string>
-  <!-- Message: phone status denied -->
-  <string name="dialog_permissions_phone">Nauhoitus tarvitsee puhelimen käyttöoikeuden estääkseen nauhoituksen puhelun aikana</string>
-  <!-- Message: microphone and storage access denied -->
-  <string name="dialog_permissions_mic_storage">Nauhoitus tarvitsee pääsyn mikrofoniin nauhoittaakseen ääntä ja tallennustilaan tallentaakseen tiedostoja</string>
-  <!-- Message: microphone and phone status access denied -->
-  <string name="dialog_permissions_mic_phone">Nauhoitus tarvitsee pääsyn mikrofoniin nauhoittaakseen ääntä ja puhelimen tilaan estääkseen nauhoituksen puhelun aikana</string>
-  <!-- Message: storage and phone status access denied -->
-  <string name="dialog_permissions_storage_phone">Nauhoitus tarvitsee pääsyn tallennustilaan tallentaakseen tiedostoja ja puhelimen tilaan estääkseen nauhoituksen puhelun aikan</string>
-  <!-- Message: microphone, storage and phone status access denied -->
-  <string name="dialog_permissions_mic_storage_phone">Nauhoitus tarvitsee pääsyn mikrofoniin nauhoittaakseen ääntä, tallennustilaan tallentaakseen tiedostoja ja puhelimen tilaan estääkseen nauhoituksen puhelun aikana</string>
-  <!-- Permissions dialog action: ask permissions access again -->
-  <string name="dialog_permissions_ask">Kysy uudelleen</string>
-  <!-- Permissions dialog action: dismiss dialog -->
-  <string name="dialog_permissions_dismiss">Hylkää</string>
-  <!-- Message: overlay permission denied. Make sure "Draw over other apps" matches settings strings -->
-  <string name="dialog_permissions_overlay">Nauhoitus tarvitsee käyttöoikeuden muiden sovellusten päälle piirtämiseen näytön nauhoittamiseksi. Paina Salli, anna käyttöoikeus asetuksissa ja palaa takaisin Nauhoitukseen</string>
-  <!-- No permissions granted error -->
-  <string name="snack_permissions_no_permission">Tarvittavat käyttöoikeudet hylättiin, ota ne käyttöön Asetukset-sovelluksesta aloittaaksesi nauhoituksen</string>
-  <!-- Main activity -->
-  <!-- Screen record title -->
-  <string name="main_screen_action">Nauhoita näyttöä</string>
-  <!-- Sound record title -->
-  <string name="main_sound_action">Nauhoita ääntä</string>
-  <!-- Transition name for dialogActivity -->
+    <string name="app_name">Nauhoitus</string>
+    <!-- Common actions -->
+    <!-- Share action for notification -->
+    <string name="share">Jaa</string>
+    <!-- Stop action for notification -->
+    <string name="stop">Lopeta</string>
+    <!-- Play action -->
+    <string name="play">Toista</string>
+    <!-- Delete action -->
+    <string name="delete">Poista</string>
+    <!-- Cancel action -->
+    <string name="cancel">Peruuta</string>
+    <!-- Delete confirm title -->
+    <string name="delete_title">Poistetaan nauhoitusta</string>
+    <!-- Delete confirm message -->
+    <string name="delete_message">Oletko varma, että haluat poistaa %1$s? Toimintoa ei voi peruuttaa</string>
+    <!-- Date for last item %1 is year, %2 month, %3 day, %4 hour, %5 min -->
+    <string name="date_format">%1$s-%2$s-%3$s %4$s:%5$s</string>
+    <!-- Permissions -->
+    <!-- Sound recorder -->
+    <!-- Sound recorder notification title -->
+    <string name="sound_notification_title">Ääninauhuri</string>
+    <!-- Sound recorder notification message -->
+    <string name="sound_notification_message">Äänen kesto: %1$s</string>
+    <!-- Sound recorder status card title recording -->
+    <string name="sound_recording_title_working">Nauhoitetaan</string>
+    <!-- Sound recorder last item title -->
+    <string name="sound_last_title">Viimeisin nauhoitus</string>
+    <!-- Sound recorder notification channel title -->
+    <string name="sound_channel_title">Ääninauhuri</string>
+    <!-- Sound recorder notification channel description-->
+    <string name="sound_channel_desc">Jatkuva ilmoitus äänen tallentamisesta ja ilmoitus kun se on valmis</string>
+    <!-- Screen recorder -->
+    <!-- Screen recorder enabled audio message -->
+    <string name="screen_audio_message_on">Mikrofonin ääni sisällytetään videoon</string>
+    <!-- Screen recorder disabled audio message -->
+    <string name="screen_audio_message_off">Mikrofonin ääntä ei sisällytetä videoon</string>
+    <!-- Screen recorder disabled audio toggle message -->
+    <string name="screen_audio_message_disabled">Tätä asetusta ei voi muuttaa nauhoittaessa näyttöä</string>
+    <!-- Screen recorder audio permission request card button -->
+    <string name="screen_audio_warning_button_ask">Kysy</string>
+    <!-- Screen recorder notification storage error title -->
+    <string name="screen_insufficient_storage">Muisti ei riitä</string>
+    <!-- Screen recorder notification storage error message -->
+    <string name="screen_not_enough_storage">Muistia ei riittävästi saatavilla</string>
+    <!-- Screen recorder notification title -->
+    <string name="screen_notification_title">Näytön tallennin</string>
+    <!-- Screen recorder notification message -->
+    <string name="screen_notification_message">Videon kesto: %s</string>
+    <!-- Screen recorder notification share title -->
+    <string name="screen_notification_message_done">Valmis jakamaan</string>
+    <!-- Screen recorder status message -->
+    <string name="screen_recording_message">Näyttötallennus on käynnissä\u2026</string>
+    <!-- Screen recorder last item title -->
+    <string name="screen_last_title">Viimeisin nauhoitus</string>
+    <!-- Screen recorder last item message -->
+    <string name="screen_last_message">Päivämäärä: %1$s\nKesto: %2$d sekuntia</string>
+    <!-- Screen recorder notification overlay title -->
+    <string name="screen_overlay_notif_title">Valmis tallentamaan</string>
+    <!-- Screen recorder notification overlay message -->
+    <string name="screen_overlay_notif_message">Paina Tallenna-painiketta, kun olet valmis aloittamaan</string>
+    <!-- Screen settings dialog title -->
+    <string name="screen_settings_title">Muuta näytön videotallennuksen asetuksia</string>
+    <!-- Screen recorder notification overlay channel title -->
+    <string name="screen_overlay_channel_title">Valmis nauhoittamaan näyttöä</string>
+    <!-- Screen recorder notification overlay channel description-->
+    <string name="screen_overlay_channel_desc">Ilmoitus näyttää näytön nauhoituksen valmiuden</string>
+    <!-- Screen recorder persistent notification channel title -->
+    <string name="screen_channel_title">Näytön nauhoitus</string>
+    <!-- Screen recorder persistent notification channel description-->
+    <string name="screen_channel_desc">Jatkuva ilmoitus näytön nauhoittamisesta ja ilmoitus kun se on valmis</string>
+    <!-- Permissions -->
+    <!-- Permissions dialog title -->
+    <string name="dialog_permissions_title">Käyttöoikeudet</string>
+    <!-- Message: microphone access denied -->
+    <string name="dialog_permissions_mic">Nauhoitus tarvitsee pääsyn mikrofoniin nauhoittaakseen ääntä</string>
+    <!-- Message: storage access denied -->
+    <string name="dialog_permissions_storage">Nauhoitus tarvitsee tallennustilan käyttöoikeuden tallentaakseen tiedostoja</string>
+    <!-- Message: phone status denied -->
+    <string name="dialog_permissions_phone">Nauhoitus tarvitsee puhelimen käyttöoikeuden estääkseen nauhoituksen puhelun aikana</string>
+    <!-- Message: microphone and storage access denied -->
+    <string name="dialog_permissions_mic_storage">Nauhoitus tarvitsee pääsyn mikrofoniin nauhoittaakseen ääntä ja tallennustilaan tallentaakseen tiedostoja</string>
+    <!-- Message: microphone and phone status access denied -->
+    <string name="dialog_permissions_mic_phone">Nauhoitus tarvitsee pääsyn mikrofoniin nauhoittaakseen ääntä ja puhelimen tilaan estääkseen nauhoituksen puhelun aikana</string>
+    <!-- Message: storage and phone status access denied -->
+    <string name="dialog_permissions_storage_phone">Nauhoitus tarvitsee pääsyn tallennustilaan tallentaakseen tiedostoja ja puhelimen tilaan estääkseen nauhoituksen puhelun aikan</string>
+    <!-- Message: microphone, storage and phone status access denied -->
+    <string name="dialog_permissions_mic_storage_phone">Nauhoitus tarvitsee pääsyn mikrofoniin nauhoittaakseen ääntä, tallennustilaan tallentaakseen tiedostoja ja puhelimen tilaan estääkseen nauhoituksen puhelun aikana</string>
+    <!-- Permissions dialog action: ask permissions access again -->
+    <string name="dialog_permissions_ask">Kysy uudelleen</string>
+    <!-- Permissions dialog action: dismiss dialog -->
+    <string name="dialog_permissions_dismiss">Hylkää</string>
+    <!-- Message: overlay permission denied. Make sure "Draw over other apps" matches settings strings -->
+    <string name="dialog_permissions_overlay">Nauhoitus tarvitsee käyttöoikeuden muiden sovellusten päälle piirtämiseen näytön nauhoittamiseksi. Paina Salli, anna käyttöoikeus asetuksissa ja palaa takaisin Nauhoitukseen</string>
+    <!-- No permissions granted error -->
+    <string name="snack_permissions_no_permission">Tarvittavat käyttöoikeudet hylättiin, ota ne käyttöön Asetukset-sovelluksesta aloittaaksesi nauhoituksen</string>
+    <!-- Main activity -->
+    <!-- Screen record title -->
+    <string name="main_screen_action">Nauhoita näyttöä</string>
+    <!-- Sound record title -->
+    <string name="main_sound_action">Nauhoita ääntä</string>
+    <!-- Transition name for dialogActivity -->
 </resources>

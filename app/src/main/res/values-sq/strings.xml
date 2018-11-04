@@ -15,95 +15,95 @@
      limitations under the License.
 -->
 <resources>
-  <string name="app_name">Regjistruesi</string>
-  <!-- Common actions -->
-  <!-- Share action for notification -->
-  <string name="share">Ndaj</string>
-  <!-- Stop action for notification -->
-  <string name="stop">Ndalo</string>
-  <!-- Play action -->
-  <string name="play">Luaj</string>
-  <!-- Delete action -->
-  <string name="delete">Fshi</string>
-  <!-- Cancel action -->
-  <!-- Delete confirm title -->
-  <string name="delete_title">Duke fshirë regjistrimin</string>
-  <!-- Delete confirm message -->
-  <string name="delete_message">Jeni të sigurt që doni të fshini %1$s? Ky veprim nuk mund të zhbëhet</string>
-  <!-- Date for last item %1 is year, %2 month, %3 day, %4 hour, %5 min -->
-  <string name="date_format">%1$s-%2$s-%3$s %4$s:%5$s</string>
-  <!-- Permissions -->
-  <!-- Sound recorder -->
-  <!-- Sound recorder notification title -->
-  <string name="sound_notification_title">Regjistruesi i Tingujve</string>
-  <!-- Sound recorder notification message -->
-  <string name="sound_notification_message">Gjatësia e audios: %1$s</string>
-  <!-- Sound recorder status card title recording -->
-  <string name="sound_recording_title_working">Duke regjistruar</string>
-  <!-- Sound recorder last item title -->
-  <string name="sound_last_title">Regjistrimi i fundit</string>
-  <!-- Sound recorder notification channel title -->
-  <!-- Sound recorder notification channel description-->
-  <!-- Screen recorder -->
-  <!-- Screen recorder enabled audio message -->
-  <string name="screen_audio_message_on">Audioja nga mikrofoni do të përfshihet në video</string>
-  <!-- Screen recorder disabled audio message -->
-  <string name="screen_audio_message_off">Audioja nga mikrofoni nuk do të përfshihet në video</string>
-  <!-- Screen recorder disabled audio toggle message -->
-  <!-- Screen recorder audio permission request card button -->
-  <string name="screen_audio_warning_button_ask">Pyet</string>
-  <!-- Screen recorder notification storage error title -->
-  <string name="screen_insufficient_storage">Memorie e pamjaftueshme</string>
-  <!-- Screen recorder notification storage error message -->
-  <string name="screen_not_enough_storage">Nuk ka hapësirë të mjaftueshme në dispozicion</string>
-  <!-- Screen recorder notification title -->
-  <string name="screen_notification_title">Regjistruesi i Ekranit</string>
-  <!-- Screen recorder notification message -->
-  <string name="screen_notification_message">Gjatësia e videos: %s</string>
-  <!-- Screen recorder notification share title -->
-  <string name="screen_notification_message_done">Gati për t\'u ndarë</string>
-  <!-- Screen recorder status message -->
-  <string name="screen_recording_message">Ekrani është duke u regjistruar\u2026</string>
-  <!-- Screen recorder last item title -->
-  <string name="screen_last_title">Regjistrimi i fundit</string>
-  <!-- Screen recorder last item message -->
-  <string name="screen_last_message">Data: %1$s\nKohëzgjatja: %2$d sekonda</string>
-  <!-- Screen recorder notification overlay title -->
-  <string name="screen_overlay_notif_title">Gati për të regjistruar</string>
-  <!-- Screen recorder notification overlay message -->
-  <string name="screen_overlay_notif_message">Shtyp butonin e regjistrimit kur të jesh gati për të filluar</string>
-  <!-- Screen settings dialog title -->
-  <!-- Screen recorder notification overlay channel title -->
-  <!-- Screen recorder notification overlay channel description-->
-  <!-- Screen recorder persistent notification channel title -->
-  <!-- Screen recorder persistent notification channel description-->
-  <!-- Permissions -->
-  <!-- Permissions dialog title -->
-  <string name="dialog_permissions_title">Lejet</string>
-  <!-- Message: microphone access denied -->
-  <string name="dialog_permissions_mic">Regjistruesi kërkon leje aksesi tek mikrofoni për të regjistruar audio</string>
-  <!-- Message: storage access denied -->
-  <string name="dialog_permissions_storage">Regjistruesi kërkon akses te memoria për të ruajtur skedarët e regjistruar</string>
-  <!-- Message: phone status denied -->
-  <string name="dialog_permissions_phone">Regjistruesi kërkon akses te statusi i telefonit për të parandaluar aplikacionin që të regjistrojë gjatë një telefonate</string>
-  <!-- Message: microphone and storage access denied -->
-  <string name="dialog_permissions_mic_storage">Regjistruesi kërkon akses te mikrofoni për të regjistruar audio si dhe akses te memoria për të ruajtur skedarët e regjistruar</string>
-  <!-- Message: microphone and phone status access denied -->
-  <string name="dialog_permissions_mic_phone">Regjistruesi kërkon leje për përdorimin e mikrofonit që të regjistrojë audio dhe akses te statusi i telefonit për të parandaluar aplikacionin që të regjistrojë gjatë një telefonate</string>
-  <!-- Message: storage and phone status access denied -->
-  <string name="dialog_permissions_storage_phone">Regjistruesi kërkon akses te memoria për të ruajtur regjistrimet dhe akses te statusi i telefonit për të parandaluar aplikacionin që të regjistrojë gjatë një telefonate</string>
-  <!-- Message: microphone, storage and phone status access denied -->
-  <string name="dialog_permissions_mic_storage_phone">Regjistruesi kërkon leje për përdorimin e mikrofonit që të regjistrojë audio, akses te memoria për të ruajtur regjistrimet dhe akses te statusi i telefonit për të parandaluar aplikacionin që të regjistrojë gjatë një telefonate</string>
-  <!-- Permissions dialog action: ask permissions access again -->
-  <string name="dialog_permissions_ask">Pyet përsëri</string>
-  <!-- Permissions dialog action: dismiss dialog -->
-  <string name="dialog_permissions_dismiss">Largo</string>
-  <!-- Message: overlay permission denied. Make sure "Draw over other apps" matches settings strings -->
-  <string name="dialog_permissions_overlay">Regjistruesi kërkon lejen \"Mbivendos mbi aplikacionet e tjera\" për të regjistruar ekranin. Shtyp butonin Lejo, aktivizo lejen te parametrat dhe kthehu përsëri te Regjistruesi</string>
-  <!-- No permissions granted error -->
-  <string name="snack_permissions_no_permission">Lejet e nevojitura u refuzuan. Aktivizoji ato nga aplikacioni i Parametrave për të nisur regjistrimin</string>
-  <!-- Main activity -->
-  <!-- Screen record title -->
-  <!-- Sound record title -->
-  <!-- Transition name for dialogActivity -->
+    <string name="app_name">Regjistruesi</string>
+    <!-- Common actions -->
+    <!-- Share action for notification -->
+    <string name="share">Ndaj</string>
+    <!-- Stop action for notification -->
+    <string name="stop">Ndalo</string>
+    <!-- Play action -->
+    <string name="play">Luaj</string>
+    <!-- Delete action -->
+    <string name="delete">Fshi</string>
+    <!-- Cancel action -->
+    <!-- Delete confirm title -->
+    <string name="delete_title">Duke fshirë regjistrimin</string>
+    <!-- Delete confirm message -->
+    <string name="delete_message">Jeni të sigurt që doni të fshini %1$s? Ky veprim nuk mund të zhbëhet</string>
+    <!-- Date for last item %1 is year, %2 month, %3 day, %4 hour, %5 min -->
+    <string name="date_format">%1$s-%2$s-%3$s %4$s:%5$s</string>
+    <!-- Permissions -->
+    <!-- Sound recorder -->
+    <!-- Sound recorder notification title -->
+    <string name="sound_notification_title">Regjistruesi i Tingujve</string>
+    <!-- Sound recorder notification message -->
+    <string name="sound_notification_message">Gjatësia e audios: %1$s</string>
+    <!-- Sound recorder status card title recording -->
+    <string name="sound_recording_title_working">Duke regjistruar</string>
+    <!-- Sound recorder last item title -->
+    <string name="sound_last_title">Regjistrimi i fundit</string>
+    <!-- Sound recorder notification channel title -->
+    <!-- Sound recorder notification channel description-->
+    <!-- Screen recorder -->
+    <!-- Screen recorder enabled audio message -->
+    <string name="screen_audio_message_on">Audioja nga mikrofoni do të përfshihet në video</string>
+    <!-- Screen recorder disabled audio message -->
+    <string name="screen_audio_message_off">Audioja nga mikrofoni nuk do të përfshihet në video</string>
+    <!-- Screen recorder disabled audio toggle message -->
+    <!-- Screen recorder audio permission request card button -->
+    <string name="screen_audio_warning_button_ask">Pyet</string>
+    <!-- Screen recorder notification storage error title -->
+    <string name="screen_insufficient_storage">Memorie e pamjaftueshme</string>
+    <!-- Screen recorder notification storage error message -->
+    <string name="screen_not_enough_storage">Nuk ka hapësirë të mjaftueshme në dispozicion</string>
+    <!-- Screen recorder notification title -->
+    <string name="screen_notification_title">Regjistruesi i Ekranit</string>
+    <!-- Screen recorder notification message -->
+    <string name="screen_notification_message">Gjatësia e videos: %s</string>
+    <!-- Screen recorder notification share title -->
+    <string name="screen_notification_message_done">Gati për t\'u ndarë</string>
+    <!-- Screen recorder status message -->
+    <string name="screen_recording_message">Ekrani është duke u regjistruar\u2026</string>
+    <!-- Screen recorder last item title -->
+    <string name="screen_last_title">Regjistrimi i fundit</string>
+    <!-- Screen recorder last item message -->
+    <string name="screen_last_message">Data: %1$s\nKohëzgjatja: %2$d sekonda</string>
+    <!-- Screen recorder notification overlay title -->
+    <string name="screen_overlay_notif_title">Gati për të regjistruar</string>
+    <!-- Screen recorder notification overlay message -->
+    <string name="screen_overlay_notif_message">Shtyp butonin e regjistrimit kur të jesh gati për të filluar</string>
+    <!-- Screen settings dialog title -->
+    <!-- Screen recorder notification overlay channel title -->
+    <!-- Screen recorder notification overlay channel description-->
+    <!-- Screen recorder persistent notification channel title -->
+    <!-- Screen recorder persistent notification channel description-->
+    <!-- Permissions -->
+    <!-- Permissions dialog title -->
+    <string name="dialog_permissions_title">Lejet</string>
+    <!-- Message: microphone access denied -->
+    <string name="dialog_permissions_mic">Regjistruesi kërkon leje aksesi tek mikrofoni për të regjistruar audio</string>
+    <!-- Message: storage access denied -->
+    <string name="dialog_permissions_storage">Regjistruesi kërkon akses te memoria për të ruajtur skedarët e regjistruar</string>
+    <!-- Message: phone status denied -->
+    <string name="dialog_permissions_phone">Regjistruesi kërkon akses te statusi i telefonit për të parandaluar aplikacionin që të regjistrojë gjatë një telefonate</string>
+    <!-- Message: microphone and storage access denied -->
+    <string name="dialog_permissions_mic_storage">Regjistruesi kërkon akses te mikrofoni për të regjistruar audio si dhe akses te memoria për të ruajtur skedarët e regjistruar</string>
+    <!-- Message: microphone and phone status access denied -->
+    <string name="dialog_permissions_mic_phone">Regjistruesi kërkon leje për përdorimin e mikrofonit që të regjistrojë audio dhe akses te statusi i telefonit për të parandaluar aplikacionin që të regjistrojë gjatë një telefonate</string>
+    <!-- Message: storage and phone status access denied -->
+    <string name="dialog_permissions_storage_phone">Regjistruesi kërkon akses te memoria për të ruajtur regjistrimet dhe akses te statusi i telefonit për të parandaluar aplikacionin që të regjistrojë gjatë një telefonate</string>
+    <!-- Message: microphone, storage and phone status access denied -->
+    <string name="dialog_permissions_mic_storage_phone">Regjistruesi kërkon leje për përdorimin e mikrofonit që të regjistrojë audio, akses te memoria për të ruajtur regjistrimet dhe akses te statusi i telefonit për të parandaluar aplikacionin që të regjistrojë gjatë një telefonate</string>
+    <!-- Permissions dialog action: ask permissions access again -->
+    <string name="dialog_permissions_ask">Pyet përsëri</string>
+    <!-- Permissions dialog action: dismiss dialog -->
+    <string name="dialog_permissions_dismiss">Largo</string>
+    <!-- Message: overlay permission denied. Make sure "Draw over other apps" matches settings strings -->
+    <string name="dialog_permissions_overlay">Regjistruesi kërkon lejen \"Mbivendos mbi aplikacionet e tjera\" për të regjistruar ekranin. Shtyp butonin Lejo, aktivizo lejen te parametrat dhe kthehu përsëri te Regjistruesi</string>
+    <!-- No permissions granted error -->
+    <string name="snack_permissions_no_permission">Lejet e nevojitura u refuzuan. Aktivizoji ato nga aplikacioni i Parametrave për të nisur regjistrimin</string>
+    <!-- Main activity -->
+    <!-- Screen record title -->
+    <!-- Sound record title -->
+    <!-- Transition name for dialogActivity -->
 </resources>
