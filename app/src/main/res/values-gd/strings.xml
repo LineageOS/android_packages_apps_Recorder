@@ -31,7 +31,9 @@
     <!-- Sound recorder status card title recording -->
     <!-- Sound recorder last item title -->
     <!-- Sound recorder notification channel title -->
+    <string name="sound_channel_title">Clàradh fuaime</string>
     <!-- Sound recorder notification channel description-->
+    <string name="sound_channel_desc">Brath maireannach nuair a thèid fuaim a chlàradh agus brath eile nuair a bhios e deiseil</string>
     <!-- Screen recorder -->
     <!-- Screen recorder enabled audio message -->
     <!-- Screen recorder disabled audio message -->
@@ -49,9 +51,13 @@
     <!-- Screen recorder notification overlay message -->
     <!-- Screen settings dialog title -->
     <!-- Screen recorder notification overlay channel title -->
+    <string name="screen_overlay_channel_title">Deiseil gus an sgrìn a clàradh</string>
     <!-- Screen recorder notification overlay channel description-->
+    <string name="screen_overlay_channel_desc">Brath a sheallas nuair a bhios clàradh sgrìn deiseil airson tòiseachadh</string>
     <!-- Screen recorder persistent notification channel title -->
+    <string name="screen_channel_title">Clàradh na sgrìn</string>
     <!-- Screen recorder persistent notification channel description-->
+    <string name="screen_channel_desc">Brath maireannach nuair a thèid an sgrìn a chlàradh agus brath eile nuair a bhios e deiseil</string>
     <!-- Permissions -->
     <!-- Permissions dialog title -->
     <!-- Message: microphone access denied -->

@@ -90,7 +90,7 @@
     <!-- Permissions dialog title -->
     <string name="dialog_permissions_title">Uprawnienia</string>
     <!-- Message: microphone access denied -->
-    <string name="dialog_permissions_mic">Rejestrator musi mieć uprawnienia do mikrofonu w celu nagrywania dźwięku</string>
+    <string name="dialog_permissions_mic">Rejestrator musi mieć uprawnienia do mikrofonu w celu nagrywania dźwięku </string>
     <!-- Message: storage access denied -->
     <string name="dialog_permissions_storage">Rejestrator potrzebuje dostępu do pamięci w celu zapisania nagranych plików</string>
     <!-- Message: phone status denied -->
