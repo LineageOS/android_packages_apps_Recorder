@@ -18,6 +18,7 @@
     <!-- Common actions -->
     <!-- Share action for notification -->
     <!-- Stop action for notification -->
+    <string name="stop">Stopio</string>
     <!-- Play action -->
     <!-- Delete action -->
     <!-- Cancel action -->
