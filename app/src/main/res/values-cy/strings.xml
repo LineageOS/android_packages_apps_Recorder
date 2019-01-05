@@ -34,7 +34,9 @@
     <!-- Sound recorder status card title recording -->
     <!-- Sound recorder last item title -->
     <!-- Sound recorder notification channel title -->
+    <string name="sound_channel_title">Recordio sain</string>
     <!-- Sound recorder notification channel description-->
+    <string name="sound_channel_desc">Hysbysiad cyson wrth recordio\'r sain a hysbysiad ar ôl gorffen recordio</string>
     <!-- Screen recorder -->
     <!-- Screen recorder enabled audio message -->
     <!-- Screen recorder disabled audio message -->
@@ -52,9 +54,13 @@
     <!-- Screen recorder notification overlay message -->
     <!-- Screen settings dialog title -->
     <!-- Screen recorder notification overlay channel title -->
+    <string name="screen_overlay_channel_title">Yn barod i recordio\'r sgrin</string>
     <!-- Screen recorder notification overlay channel description-->
+    <string name="screen_overlay_channel_desc">Hysbysiad yn dangos pan mae recordio\'r sgrin yn barod i ddechrau</string>
     <!-- Screen recorder persistent notification channel title -->
+    <string name="screen_channel_title">Recordio\'r sgrin</string>
     <!-- Screen recorder persistent notification channel description-->
+    <string name="screen_channel_desc">Hysbysiad cyson wrth recordio\'r sgrin a hysbysiad ar ôl gorffen recordio</string>
     <!-- Permissions -->
     <!-- Permissions dialog title -->
     <!-- Message: microphone access denied -->
