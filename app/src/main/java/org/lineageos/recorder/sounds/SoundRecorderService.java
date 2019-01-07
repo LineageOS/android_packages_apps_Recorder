@@ -30,8 +30,8 @@ import android.media.MediaRecorder;
 import android.os.Build;
 import android.os.Environment;
 import android.os.IBinder;
-import android.support.v4.app.NotificationCompat;
-import android.support.v4.content.ContextCompat;
+import androidx.core.app.NotificationCompat;
+import androidx.core.content.ContextCompat;
 import android.text.format.DateUtils;
 import android.util.Log;
 
@@ -182,7 +182,6 @@ public class SoundRecorderService extends Service {
         }
 
         if (mRecord != null) {
-            mStatus = RecorderStatus.STOPPED;
             mStatus = RecorderStatus.STOPPED;
             mRecord.stop();
             mRecord.release();

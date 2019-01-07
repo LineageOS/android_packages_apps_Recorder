@@ -32,7 +32,7 @@ import android.os.Environment;
 import android.os.IBinder;
 import android.os.StatFs;
 import android.os.SystemClock;
-import android.support.v4.app.NotificationCompat;
+import androidx.core.app.NotificationCompat;
 import android.text.format.DateUtils;
 import android.util.Log;
 import android.view.Display;
