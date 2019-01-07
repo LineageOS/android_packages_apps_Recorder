@@ -260,7 +260,7 @@ public class ScreencastService extends Service {
 
         return new NotificationCompat.Builder(this, SCREENCAST_NOTIFICATION_CHANNEL)
                 .setOngoing(true)
-                .setSmallIcon(R.drawable.ic_action_screen_record)
+                .setSmallIcon(R.drawable.ic_notification_screen)
                 .setContentTitle(getString(R.string.screen_notification_title))
                 .setContentText(getString(R.string.screen_notification_message))
                 .setContentIntent(PendingIntent.getActivity(this, 0, intent, 0))
@@ -294,7 +294,7 @@ public class ScreencastService extends Service {
 
         return new NotificationCompat.Builder(this, SCREENCAST_NOTIFICATION_CHANNEL)
                 .setWhen(System.currentTimeMillis())
-                .setSmallIcon(R.drawable.ic_action_screen_record)
+                .setSmallIcon(R.drawable.ic_notification_screen)
                 .setContentTitle(getString(R.string.screen_notification_message_done))
                 .setContentText(getString(R.string.screen_notification_message,
                         DateUtils.formatElapsedTime(timeElapsed / 1000)))

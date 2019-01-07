@@ -301,7 +301,7 @@ public class SoundRecorderService extends Service {
                 .setContentText(getString(R.string.sound_notification_message,
                         DateUtils.formatElapsedTime(mElapsedTime / 1000)))
                 .setOngoing(true)
-                .setSmallIcon(R.drawable.ic_action_sound_record)
+                .setSmallIcon(R.drawable.ic_notification_sound)
                 .setContentIntent(pi)
                 .setColor(ContextCompat.getColor(this, R.color.colorPrimary));
 
@@ -327,7 +327,7 @@ public class SoundRecorderService extends Service {
         Notification notification = new NotificationCompat.Builder(
                 this, SOUNDRECORDER_NOTIFICATION_CHANNEL)
                 .setWhen(System.currentTimeMillis())
-                .setSmallIcon(R.drawable.ic_action_sound_record)
+                .setSmallIcon(R.drawable.ic_notification_sound)
                 .setContentTitle(getString(R.string.sound_notification_title))
                 .setContentText(getString(R.string.sound_notification_message,
                         DateUtils.formatElapsedTime(mElapsedTime / 1000)))
