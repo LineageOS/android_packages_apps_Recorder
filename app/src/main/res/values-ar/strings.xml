@@ -15,58 +15,106 @@
      limitations under the License.
 -->
 <resources>
-  <!-- Common actions -->
-  <!-- Share action for notification -->
-  <!-- Stop action for notification -->
-  <!-- Play action -->
-  <!-- Delete action -->
-  <!-- Cancel action -->
-  <!-- Delete confirm title -->
-  <!-- Delete confirm message -->
-  <!-- Date for last item %1 is year, %2 month, %3 day, %4 hour, %5 min -->
-  <!-- Permissions -->
-  <!-- Sound recorder -->
-  <!-- Sound recorder notification title -->
-  <!-- Sound recorder notification message -->
-  <!-- Sound recorder status card title recording -->
-  <!-- Sound recorder last item title -->
-  <!-- Sound recorder notification channel title -->
-  <!-- Sound recorder notification channel description-->
-  <!-- Screen recorder -->
-  <!-- Screen recorder enabled audio message -->
-  <!-- Screen recorder disabled audio message -->
-  <!-- Screen recorder disabled audio toggle message -->
-  <!-- Screen recorder audio permission request card button -->
-  <!-- Screen recorder notification storage error title -->
-  <!-- Screen recorder notification storage error message -->
-  <!-- Screen recorder notification title -->
-  <!-- Screen recorder notification message -->
-  <!-- Screen recorder notification share title -->
-  <!-- Screen recorder status message -->
-  <!-- Screen recorder last item title -->
-  <!-- Screen recorder last item message -->
-  <!-- Screen recorder notification overlay title -->
-  <!-- Screen recorder notification overlay message -->
-  <!-- Screen settings dialog title -->
-  <!-- Screen recorder notification overlay channel title -->
-  <!-- Screen recorder notification overlay channel description-->
-  <!-- Screen recorder persistent notification channel title -->
-  <!-- Screen recorder persistent notification channel description-->
-  <!-- Permissions -->
-  <!-- Permissions dialog title -->
-  <!-- Message: microphone access denied -->
-  <!-- Message: storage access denied -->
-  <!-- Message: phone status denied -->
-  <!-- Message: microphone and storage access denied -->
-  <!-- Message: microphone and phone status access denied -->
-  <!-- Message: storage and phone status access denied -->
-  <!-- Message: microphone, storage and phone status access denied -->
-  <!-- Permissions dialog action: ask permissions access again -->
-  <!-- Permissions dialog action: dismiss dialog -->
-  <!-- Message: overlay permission denied. Make sure "Draw over other apps" matches settings strings -->
-  <!-- No permissions granted error -->
-  <!-- Main activity -->
-  <!-- Screen record title -->
-  <!-- Sound record title -->
-  <!-- Transition name for dialogActivity -->
+    <string name="app_name">المُسجل</string>
+    <!-- Common actions -->
+    <!-- Share action for notification -->
+    <string name="share">مشاركة</string>
+    <!-- Stop action for notification -->
+    <string name="stop">إيقاف</string>
+    <!-- Play action -->
+    <string name="play">تشغيل</string>
+    <!-- Delete action -->
+    <string name="delete">حذف</string>
+    <!-- Cancel action -->
+    <string name="cancel">إلغاء</string>
+    <!-- Delete confirm title -->
+    <string name="delete_title">حذف التسجيل</string>
+    <!-- Delete confirm message -->
+    <string name="delete_message">هل أنت متأكد من أنك تريد حذف %1$s؟ لا يمكن التراجع عن هذا</string>
+    <!-- Date for last item %1 is year, %2 month, %3 day, %4 hour, %5 min -->
+    <string name="date_format">%4$s:%5$s %1$s-%2$s-%3$s</string>
+    <!-- Permissions -->
+    <!-- Sound recorder -->
+    <!-- Sound recorder notification title -->
+    <string name="sound_notification_title">مُسجل الصوت</string>
+    <!-- Sound recorder notification message -->
+    <string name="sound_notification_message">طول الصوت: %1$s</string>
+    <!-- Sound recorder status card title recording -->
+    <string name="sound_recording_title_working">يتم التسجيل</string>
+    <!-- Sound recorder last item title -->
+    <string name="sound_last_title">التسجيل الأخير</string>
+    <!-- Sound recorder notification channel title -->
+    <string name="sound_channel_title">تسجيل الصوت</string>
+    <!-- Sound recorder notification channel description-->
+    <string name="sound_channel_desc">إشعار دائم عند تسجيل الصوت والإشعار بعد اكتماله</string>
+    <!-- Screen recorder -->
+    <!-- Screen recorder enabled audio message -->
+    <string name="screen_audio_message_on">سيتم تضمين الصوت من الميكروفون في الفيديو</string>
+    <!-- Screen recorder disabled audio message -->
+    <string name="screen_audio_message_off">لن يتم تضمين الصوت من الميكروفون في الفيديو</string>
+    <!-- Screen recorder disabled audio toggle message -->
+    <string name="screen_audio_message_disabled">لا يمكن تغيير هذا الإعداد أثناء تسجيل الشاشة</string>
+    <!-- Screen recorder audio permission request card button -->
+    <string name="screen_audio_warning_button_ask">اسأل</string>
+    <!-- Screen recorder notification storage error title -->
+    <string name="screen_insufficient_storage">مساحة التخزين غير كافية</string>
+    <!-- Screen recorder notification storage error message -->
+    <string name="screen_not_enough_storage">لا توجد مساحة كافية للتخزين</string>
+    <!-- Screen recorder notification title -->
+    <string name="screen_notification_title">مُسجل الشاشة</string>
+    <!-- Screen recorder notification message -->
+    <string name="screen_notification_message">طول الفيديو: %s</string>
+    <!-- Screen recorder notification share title -->
+    <string name="screen_notification_message_done">جاهز للمشاركة</string>
+    <!-- Screen recorder status message -->
+    <string name="screen_recording_message">يتم تسجيل الشاشة</string>
+    <!-- Screen recorder last item title -->
+    <string name="screen_last_title">التسجيل الأخير</string>
+    <!-- Screen recorder last item message -->
+    <string name="screen_last_message">التاريخ: %1$s\nالمدة: %2$d ثواني</string>
+    <!-- Screen recorder notification overlay title -->
+    <string name="screen_overlay_notif_title">مستعد للتسجيل</string>
+    <!-- Screen recorder notification overlay message -->
+    <string name="screen_overlay_notif_message">اضغط على زر التسجيل عندما تكون على استعداد للبدء</string>
+    <!-- Screen settings dialog title -->
+    <string name="screen_settings_title">ضبط إعدادات مسجل الشاشة</string>
+    <!-- Screen recorder notification overlay channel title -->
+    <string name="screen_overlay_channel_title">جاهز لتسجيل الشاشة</string>
+    <!-- Screen recorder notification overlay channel description-->
+    <string name="screen_overlay_channel_desc">عرض إشعار بأن شاشة التسجيل مستعدة للبدء</string>
+    <!-- Screen recorder persistent notification channel title -->
+    <string name="screen_channel_title">تسجيل الشاشة</string>
+    <!-- Screen recorder persistent notification channel description-->
+    <string name="screen_channel_desc">إشعار دائم عند تسجيل الشاشة والإشعار بعد اكتماله</string>
+    <!-- Permissions -->
+    <!-- Permissions dialog title -->
+    <string name="dialog_permissions_title">الأذونات</string>
+    <!-- Message: microphone access denied -->
+    <string name="dialog_permissions_mic">المُسجل يحتاج إلى إذن وصول للميكروفون لتسجيل الصوت</string>
+    <!-- Message: storage access denied -->
+    <string name="dialog_permissions_storage">المُسجل يحتاج إلى الوصول إلى مكان التخزين لحفظ الملفات المسجلة</string>
+    <!-- Message: phone status denied -->
+    <string name="dialog_permissions_phone">المُسجل يحتاج إلى الوصول إلى حالة الهاتف لمنع هذا التطبيق من التسجيل أثناء قيامك بالاتصال</string>
+    <!-- Message: microphone and storage access denied -->
+    <string name="dialog_permissions_mic_storage">المُسجل يحتاج إلى الوصول إلى الميكروفون لتسجيل الصوت والوصول إلى مكان التخزين لحفظ الملفات المسجلة</string>
+    <!-- Message: microphone and phone status access denied -->
+    <string name="dialog_permissions_mic_phone">المُسجل يحتاج إلى إذن وصول للميكروفون لتسجيل الصوت والوصول إلى حالة الهاتف لمنع هذا التطبيق من التسجيل أثناء قيامك بالاتصال</string>
+    <!-- Message: storage and phone status access denied -->
+    <string name="dialog_permissions_storage_phone">المُسجل يحتاج إلى الوصول إلى مكان التخزين لحفظ الملفات المسجلة والوصول إلى حالة الهاتف لمنع هذا التطبيق من التسجيل أثناء قيامك بالاتصال</string>
+    <!-- Message: microphone, storage and phone status access denied -->
+    <string name="dialog_permissions_mic_storage_phone">المُسجل يحتاج إلى إذن وصول للميكروفون لتسجيل الصوت والوصول إلى مكان التخزين لحفظ الملفات المسجلة والوصول إلى حالة الهاتف لمنع هذا التطبيق من التسجيل أثناء قيامك بالاتصال</string>
+    <!-- Permissions dialog action: ask permissions access again -->
+    <string name="dialog_permissions_ask">السماح مرة أخرى</string>
+    <!-- Permissions dialog action: dismiss dialog -->
+    <string name="dialog_permissions_dismiss">تجاهل</string>
+    <!-- Message: overlay permission denied. Make sure "Draw over other apps" matches settings strings -->
+    <string name="dialog_permissions_overlay">المُسجل يحتاج إلى إذن \"الرسم فوق التطبيقات الأخرى\" لتسجيل شاشتك. برجاء السماح، وتفعيل الإذن في الإعدادات ثم عُد إلى المُسجل</string>
+    <!-- No permissions granted error -->
+    <string name="snack_permissions_no_permission">تم رفض الأذونات المطلوبة، قم بتفعيلها من تطبيق الإعدادات لبدء التسجيل</string>
+    <!-- Main activity -->
+    <!-- Screen record title -->
+    <string name="main_screen_action">تسجيل الشاشة</string>
+    <!-- Sound record title -->
+    <string name="main_sound_action">تسجيل الصوت</string>
+    <!-- Transition name for dialogActivity -->
 </resources>

@@ -15,106 +15,106 @@
      limitations under the License.
 -->
 <resources>
-  <string name="app_name">녹음/녹화 도구</string>
-  <!-- Common actions -->
-  <!-- Share action for notification -->
-  <string name="share">공유</string>
-  <!-- Stop action for notification -->
-  <string name="stop">정지</string>
-  <!-- Play action -->
-  <string name="play">재생</string>
-  <!-- Delete action -->
-  <string name="delete">삭제</string>
-  <!-- Cancel action -->
-  <string name="cancel">취소</string>
-  <!-- Delete confirm title -->
-  <string name="delete_title">녹음/녹화 삭제</string>
-  <!-- Delete confirm message -->
-  <string name="delete_message">정말 %1$s 파일을 삭제하시겠습니까? 이 작업은 되돌릴 수 없습니다.</string>
-  <!-- Date for last item %1 is year, %2 month, %3 day, %4 hour, %5 min -->
-  <string name="date_format">%1$s-%2$s-%3$s %4$s:%5$s</string>
-  <!-- Permissions -->
-  <!-- Sound recorder -->
-  <!-- Sound recorder notification title -->
-  <string name="sound_notification_title">소리 녹음기</string>
-  <!-- Sound recorder notification message -->
-  <string name="sound_notification_message">오디오 길이: %1$s</string>
-  <!-- Sound recorder status card title recording -->
-  <string name="sound_recording_title_working">녹음 중</string>
-  <!-- Sound recorder last item title -->
-  <string name="sound_last_title">마지막 녹음</string>
-  <!-- Sound recorder notification channel title -->
-  <string name="sound_channel_title">소리 녹음</string>
-  <!-- Sound recorder notification channel description-->
-  <string name="sound_channel_desc">소리 녹음 중 또는 녹음 완료 시 지속적으로 표시되는 알림</string>
-  <!-- Screen recorder -->
-  <!-- Screen recorder enabled audio message -->
-  <string name="screen_audio_message_on">마이크로 녹음된 오디오가 영상에 포함됩니다.</string>
-  <!-- Screen recorder disabled audio message -->
-  <string name="screen_audio_message_off">마이크로 녹음된 오디오가 영상에 포함되지 않습니다.</string>
-  <!-- Screen recorder disabled audio toggle message -->
-  <string name="screen_audio_message_disabled">화면을 녹화하는 중에는 설정을 변경할 수 없습니다.</string>
-  <!-- Screen recorder audio permission request card button -->
-  <string name="screen_audio_warning_button_ask">묻기</string>
-  <!-- Screen recorder notification storage error title -->
-  <string name="screen_insufficient_storage">저장 공간 부족</string>
-  <!-- Screen recorder notification storage error message -->
-  <string name="screen_not_enough_storage">저장 공간이 충분하지 않습니다.</string>
-  <!-- Screen recorder notification title -->
-  <string name="screen_notification_title">화면 녹화기</string>
-  <!-- Screen recorder notification message -->
-  <string name="screen_notification_message">영상 길이: %s</string>
-  <!-- Screen recorder notification share title -->
-  <string name="screen_notification_message_done">공유 준비 완료</string>
-  <!-- Screen recorder status message -->
-  <string name="screen_recording_message">화면을 녹화하는 중\u2026</string>
-  <!-- Screen recorder last item title -->
-  <string name="screen_last_title">마지막 녹화</string>
-  <!-- Screen recorder last item message -->
-  <string name="screen_last_message">날짜: %1$s\n길이: %2$d초</string>
-  <!-- Screen recorder notification overlay title -->
-  <string name="screen_overlay_notif_title">녹화 준비 완료</string>
-  <!-- Screen recorder notification overlay message -->
-  <string name="screen_overlay_notif_message">녹화할 준비가 되면 녹화 버튼을 누르세요.</string>
-  <!-- Screen settings dialog title -->
-  <string name="screen_settings_title">화면 녹화 설정</string>
-  <!-- Screen recorder notification overlay channel title -->
-  <string name="screen_overlay_channel_title">화면 녹화 준비됨</string>
-  <!-- Screen recorder notification overlay channel description-->
-  <string name="screen_overlay_channel_desc">화면 녹화가 준비되었음을 나타내는 알림</string>
-  <!-- Screen recorder persistent notification channel title -->
-  <string name="screen_channel_title">화면 녹화</string>
-  <!-- Screen recorder persistent notification channel description-->
-  <string name="screen_channel_desc">화면 녹화 중 또는 녹화 완료 시 지속적으로 표시되는 알림</string>
-  <!-- Permissions -->
-  <!-- Permissions dialog title -->
-  <string name="dialog_permissions_title">권한</string>
-  <!-- Message: microphone access denied -->
-  <string name="dialog_permissions_mic">녹음/녹화 도구는 소리를 녹음하기 위해 마이크 사용 권한이 필요합니다.</string>
-  <!-- Message: storage access denied -->
-  <string name="dialog_permissions_storage">녹음/녹화 도구는 녹음한 파일을 저장하기 위해 저장소 사용 권한이 필요합니다.</string>
-  <!-- Message: phone status denied -->
-  <string name="dialog_permissions_phone">녹음/녹화 도구는 통화 도중에 녹음되는 것을 방지하기 위해 전화 상태 접근 권한이 필요합니다.</string>
-  <!-- Message: microphone and storage access denied -->
-  <string name="dialog_permissions_mic_storage">녹음/녹화 도구는 소리를 녹음하기 위한 마이크 사용 권한과 녹음한 파일을 저장하기 위한 저장소 사용 권한이 필요합니다.</string>
-  <!-- Message: microphone and phone status access denied -->
-  <string name="dialog_permissions_mic_phone">녹음/녹화 도구는 녹음한 파일을 저장하기 위한 저장소 사용 권한과 통화 도중에 녹음되는 것을 방지하기 위한 전화 상태 접근 권한이 필요합니다.</string>
-  <!-- Message: storage and phone status access denied -->
-  <string name="dialog_permissions_storage_phone">녹음/녹화 도구는 녹음한 파일을 저장하기 위한 저장소 사용 권한과 통화 도중에 녹음되는 것을 방지하기 위한 전화 상태 접근 권한이 필요합니다.</string>
-  <!-- Message: microphone, storage and phone status access denied -->
-  <string name="dialog_permissions_mic_storage_phone">녹음/녹화 도구는 소리를 녹음하기 위한 마이크 사용 권한, 녹음한 파일을 저장하기 위한 저장소 사용 권한과 통화 도중에 녹음되는 것을 방지하기 위한 전화 상태 접근 권한이 필요합니다.</string>
-  <!-- Permissions dialog action: ask permissions access again -->
-  <string name="dialog_permissions_ask">다시 묻기</string>
-  <!-- Permissions dialog action: dismiss dialog -->
-  <string name="dialog_permissions_dismiss">다시 묻지 않기</string>
-  <!-- Message: overlay permission denied. Make sure "Draw over other apps" matches settings strings -->
-  <string name="dialog_permissions_overlay">녹음/녹화 도구는 화면을 녹화하기 위해 \"다른 앱 위에 그리기\" 권한이 필요합니다. 설정에서 권한을 허용하고 녹음/녹화 도구로 돌아오세요.</string>
-  <!-- No permissions granted error -->
-  <string name="snack_permissions_no_permission">필요한 권한이 거부되었습니다. 설정 앱에서 권한을 허용한 다음 녹음/녹화를 시작하세요.</string>
-  <!-- Main activity -->
-  <!-- Screen record title -->
-  <string name="main_screen_action">화면 녹화</string>
-  <!-- Sound record title -->
-  <string name="main_sound_action">소리 녹음</string>
-  <!-- Transition name for dialogActivity -->
+    <string name="app_name">녹음/녹화 도구</string>
+    <!-- Common actions -->
+    <!-- Share action for notification -->
+    <string name="share">공유</string>
+    <!-- Stop action for notification -->
+    <string name="stop">정지</string>
+    <!-- Play action -->
+    <string name="play">재생</string>
+    <!-- Delete action -->
+    <string name="delete">삭제</string>
+    <!-- Cancel action -->
+    <string name="cancel">취소</string>
+    <!-- Delete confirm title -->
+    <string name="delete_title">녹음/녹화 삭제</string>
+    <!-- Delete confirm message -->
+    <string name="delete_message">정말 %1$s을(를) 삭제하시겠습니까? 이 작업은 되돌릴 수 없습니다.</string>
+    <!-- Date for last item %1 is year, %2 month, %3 day, %4 hour, %5 min -->
+    <string name="date_format">%1$s-%2$s-%3$s %4$s:%5$s</string>
+    <!-- Permissions -->
+    <!-- Sound recorder -->
+    <!-- Sound recorder notification title -->
+    <string name="sound_notification_title">소리 녹음기</string>
+    <!-- Sound recorder notification message -->
+    <string name="sound_notification_message">오디오 길이: %1$s</string>
+    <!-- Sound recorder status card title recording -->
+    <string name="sound_recording_title_working">녹음 중</string>
+    <!-- Sound recorder last item title -->
+    <string name="sound_last_title">마지막 녹음</string>
+    <!-- Sound recorder notification channel title -->
+    <string name="sound_channel_title">소리 녹음</string>
+    <!-- Sound recorder notification channel description-->
+    <string name="sound_channel_desc">소리 녹음 중 또는 녹음 완료 시 지속적으로 표시되는 알림</string>
+    <!-- Screen recorder -->
+    <!-- Screen recorder enabled audio message -->
+    <string name="screen_audio_message_on">마이크로 녹음된 오디오가 영상에 포함됩니다.</string>
+    <!-- Screen recorder disabled audio message -->
+    <string name="screen_audio_message_off">마이크로 녹음된 오디오가 영상에 포함되지 않습니다.</string>
+    <!-- Screen recorder disabled audio toggle message -->
+    <string name="screen_audio_message_disabled">화면을 녹화하는 중에는 설정을 변경할 수 없습니다.</string>
+    <!-- Screen recorder audio permission request card button -->
+    <string name="screen_audio_warning_button_ask">묻기</string>
+    <!-- Screen recorder notification storage error title -->
+    <string name="screen_insufficient_storage">저장 공간 부족</string>
+    <!-- Screen recorder notification storage error message -->
+    <string name="screen_not_enough_storage">저장 공간이 충분하지 않습니다.</string>
+    <!-- Screen recorder notification title -->
+    <string name="screen_notification_title">화면 녹화기</string>
+    <!-- Screen recorder notification message -->
+    <string name="screen_notification_message">영상 길이: %s</string>
+    <!-- Screen recorder notification share title -->
+    <string name="screen_notification_message_done">공유 준비 완료</string>
+    <!-- Screen recorder status message -->
+    <string name="screen_recording_message">화면을 녹화하는 중\u2026</string>
+    <!-- Screen recorder last item title -->
+    <string name="screen_last_title">마지막 녹화</string>
+    <!-- Screen recorder last item message -->
+    <string name="screen_last_message">날짜: %1$s\n길이: %2$d초</string>
+    <!-- Screen recorder notification overlay title -->
+    <string name="screen_overlay_notif_title">녹화 준비 완료</string>
+    <!-- Screen recorder notification overlay message -->
+    <string name="screen_overlay_notif_message">녹화할 준비가 되면 녹화 버튼을 누르세요.</string>
+    <!-- Screen settings dialog title -->
+    <string name="screen_settings_title">화면 녹화 설정</string>
+    <!-- Screen recorder notification overlay channel title -->
+    <string name="screen_overlay_channel_title">화면 녹화 준비됨</string>
+    <!-- Screen recorder notification overlay channel description-->
+    <string name="screen_overlay_channel_desc">화면 녹화가 준비되었음을 나타내는 알림</string>
+    <!-- Screen recorder persistent notification channel title -->
+    <string name="screen_channel_title">화면 녹화</string>
+    <!-- Screen recorder persistent notification channel description-->
+    <string name="screen_channel_desc">화면 녹화 중 또는 녹화 완료 시 지속적으로 표시되는 알림</string>
+    <!-- Permissions -->
+    <!-- Permissions dialog title -->
+    <string name="dialog_permissions_title">권한</string>
+    <!-- Message: microphone access denied -->
+    <string name="dialog_permissions_mic">녹음/녹화 도구는 소리를 녹음하기 위해 마이크 사용 권한이 필요합니다.</string>
+    <!-- Message: storage access denied -->
+    <string name="dialog_permissions_storage">녹음/녹화 도구는 녹음한 파일을 저장하기 위해 저장소 사용 권한이 필요합니다.</string>
+    <!-- Message: phone status denied -->
+    <string name="dialog_permissions_phone">녹음/녹화 도구는 통화 도중에 녹음되는 것을 방지하기 위해 전화 상태 접근 권한이 필요합니다.</string>
+    <!-- Message: microphone and storage access denied -->
+    <string name="dialog_permissions_mic_storage">녹음/녹화 도구는 소리를 녹음하기 위한 마이크 사용 권한과 녹음한 파일을 저장하기 위한 저장소 사용 권한이 필요합니다.</string>
+    <!-- Message: microphone and phone status access denied -->
+    <string name="dialog_permissions_mic_phone">녹음/녹화 도구는 녹음한 파일을 저장하기 위한 저장소 사용 권한과 통화 도중에 녹음되는 것을 방지하기 위한 전화 상태 접근 권한이 필요합니다.</string>
+    <!-- Message: storage and phone status access denied -->
+    <string name="dialog_permissions_storage_phone">녹음/녹화 도구는 녹음한 파일을 저장하기 위한 저장소 사용 권한과 통화 도중에 녹음되는 것을 방지하기 위한 전화 상태 접근 권한이 필요합니다.</string>
+    <!-- Message: microphone, storage and phone status access denied -->
+    <string name="dialog_permissions_mic_storage_phone">녹음/녹화 도구는 소리를 녹음하기 위한 마이크 사용 권한, 녹음한 파일을 저장하기 위한 저장소 사용 권한과 통화 도중에 녹음되는 것을 방지하기 위한 전화 상태 접근 권한이 필요합니다.</string>
+    <!-- Permissions dialog action: ask permissions access again -->
+    <string name="dialog_permissions_ask">다시 묻기</string>
+    <!-- Permissions dialog action: dismiss dialog -->
+    <string name="dialog_permissions_dismiss">다시 묻지 않기</string>
+    <!-- Message: overlay permission denied. Make sure "Draw over other apps" matches settings strings -->
+    <string name="dialog_permissions_overlay">녹음/녹화 도구는 화면을 녹화하기 위해 \"다른 앱 위에 그리기\" 권한이 필요합니다. 설정에서 권한을 허용하고 녹음/녹화 도구로 돌아오세요.</string>
+    <!-- No permissions granted error -->
+    <string name="snack_permissions_no_permission">필요한 권한이 거부되었습니다. 설정 앱에서 권한을 허용한 다음 녹음/녹화를 시작하세요.</string>
+    <!-- Main activity -->
+    <!-- Screen record title -->
+    <string name="main_screen_action">화면 녹화</string>
+    <!-- Sound record title -->
+    <string name="main_sound_action">소리 녹음</string>
+    <!-- Transition name for dialogActivity -->
 </resources>

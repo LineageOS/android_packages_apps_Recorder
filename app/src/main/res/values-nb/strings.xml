@@ -15,100 +15,100 @@
      limitations under the License.
 -->
 <resources>
-  <string name="app_name">Opptaker</string>
-  <!-- Common actions -->
-  <!-- Share action for notification -->
-  <string name="share">Del</string>
-  <!-- Stop action for notification -->
-  <string name="stop">Stopp</string>
-  <!-- Play action -->
-  <string name="play">Spill av</string>
-  <!-- Delete action -->
-  <string name="delete">Slett</string>
-  <!-- Cancel action -->
-  <string name="cancel">Avbryt</string>
-  <!-- Delete confirm title -->
-  <string name="delete_title">Sletter opptaket</string>
-  <!-- Delete confirm message -->
-  <string name="delete_message">Er du sikker på at du vil slette %1$s? Dette kan ikke angres</string>
-  <!-- Date for last item %1 is year, %2 month, %3 day, %4 hour, %5 min -->
-  <string name="date_format">%3$s-%2$s-%1$s %4$s:%5$s</string>
-  <!-- Permissions -->
-  <!-- Sound recorder -->
-  <!-- Sound recorder notification title -->
-  <string name="sound_notification_title">Lydopptaker</string>
-  <!-- Sound recorder notification message -->
-  <string name="sound_notification_message">Lydlengde: %1$s</string>
-  <!-- Sound recorder status card title recording -->
-  <string name="sound_recording_title_working">Tar opp</string>
-  <!-- Sound recorder last item title -->
-  <string name="sound_last_title">Siste opptak</string>
-  <!-- Sound recorder notification channel title -->
-  <!-- Sound recorder notification channel description-->
-  <!-- Screen recorder -->
-  <!-- Screen recorder enabled audio message -->
-  <string name="screen_audio_message_on">Lyd fra mikrofonen vil inkluderes i videoen</string>
-  <!-- Screen recorder disabled audio message -->
-  <string name="screen_audio_message_off">Lyd fra mikrofonen vil ikke inkluderes i videoen</string>
-  <!-- Screen recorder disabled audio toggle message -->
-  <string name="screen_audio_message_disabled">Det er ikke mulig å endre denne innstillingen under innspilling av skjermen</string>
-  <!-- Screen recorder audio permission request card button -->
-  <string name="screen_audio_warning_button_ask">Spør</string>
-  <!-- Screen recorder notification storage error title -->
-  <string name="screen_insufficient_storage">Ikke nok lagringsplass</string>
-  <!-- Screen recorder notification storage error message -->
-  <string name="screen_not_enough_storage">Ikke nok tilgjengelig lagringsplass</string>
-  <!-- Screen recorder notification title -->
-  <string name="screen_notification_title">Skjermopptaker</string>
-  <!-- Screen recorder notification message -->
-  <string name="screen_notification_message">Videolengde: %s</string>
-  <!-- Screen recorder notification share title -->
-  <string name="screen_notification_message_done">Klar til å dele</string>
-  <!-- Screen recorder status message -->
-  <string name="screen_recording_message">Skjermen blir tatt opp\u2026</string>
-  <!-- Screen recorder last item title -->
-  <string name="screen_last_title">Siste opptak</string>
-  <!-- Screen recorder last item message -->
-  <string name="screen_last_message">Dato: %1$s\nVarighet: %2$d sekunder</string>
-  <!-- Screen recorder notification overlay title -->
-  <string name="screen_overlay_notif_title">Klar til å ta opp</string>
-  <!-- Screen recorder notification overlay message -->
-  <string name="screen_overlay_notif_message">Trykk på opptaksknappen når du er klar til å begynne</string>
-  <!-- Screen settings dialog title -->
-  <string name="screen_settings_title">Skjerminnspiller-innstillinger</string>
-  <!-- Screen recorder notification overlay channel title -->
-  <!-- Screen recorder notification overlay channel description-->
-  <!-- Screen recorder persistent notification channel title -->
-  <!-- Screen recorder persistent notification channel description-->
-  <!-- Permissions -->
-  <!-- Permissions dialog title -->
-  <string name="dialog_permissions_title">Tillatelser</string>
-  <!-- Message: microphone access denied -->
-  <string name="dialog_permissions_mic">Opptaker trenger mikrofon tilgang for å spille inn lyd</string>
-  <!-- Message: storage access denied -->
-  <string name="dialog_permissions_storage">Opptaker trenger lagrings tilgang for å lagre innspilt lyd</string>
-  <!-- Message: phone status denied -->
-  <string name="dialog_permissions_phone">Opptaker trenger telefontilgang for å passe på at du ikke tar opp anropene dine</string>
-  <!-- Message: microphone and storage access denied -->
-  <string name="dialog_permissions_mic_storage">Opptaker trenger mikrofon tilgang for å spille inn lyd og lagrings tilgang for å lagre innspilt lyd</string>
-  <!-- Message: microphone and phone status access denied -->
-  <string name="dialog_permissions_mic_phone">Opptaker trenger mikrofontilgang for å spille inn lyd og telefontilgang for å passe på at du ikke tar opp anropene dine</string>
-  <!-- Message: storage and phone status access denied -->
-  <string name="dialog_permissions_storage_phone">Opptaker trenger lagringstilgang for å lagre innspilt lyd og telefontilgang for å passe på at du ikke tar opp anropene dine</string>
-  <!-- Message: microphone, storage and phone status access denied -->
-  <string name="dialog_permissions_mic_storage_phone">Opptaker trenger mikrofontilgang for å innspille lyd, lagringstilgang for å lagre innspilte filer og telefontilgang for å passe på at du ikke tar opp anropene dine</string>
-  <!-- Permissions dialog action: ask permissions access again -->
-  <string name="dialog_permissions_ask">Spør igjen</string>
-  <!-- Permissions dialog action: dismiss dialog -->
-  <string name="dialog_permissions_dismiss">Avvis</string>
-  <!-- Message: overlay permission denied. Make sure "Draw over other apps" matches settings strings -->
-  <string name="dialog_permissions_overlay">Opptakeren trenger tillatelsen \"Ligge over andre apper\" for å kunne filme skjermen din. Trykk Tillat, endre tillatelsen i innstillingene og kom tilbake til Opptaker-appen</string>
-  <!-- No permissions granted error -->
-  <string name="snack_permissions_no_permission">Nødvendige tillatelser ble nektet, aktiver dem fra telefonens innstillinger for å starte å ta opp lyd</string>
-  <!-- Main activity -->
-  <!-- Screen record title -->
-  <string name="main_screen_action">Ta opp skjermen</string>
-  <!-- Sound record title -->
-  <string name="main_sound_action">Ta opp lyd</string>
-  <!-- Transition name for dialogActivity -->
+    <string name="app_name">Opptaker</string>
+    <!-- Common actions -->
+    <!-- Share action for notification -->
+    <string name="share">Del</string>
+    <!-- Stop action for notification -->
+    <string name="stop">Stopp</string>
+    <!-- Play action -->
+    <string name="play">Spill av</string>
+    <!-- Delete action -->
+    <string name="delete">Slett</string>
+    <!-- Cancel action -->
+    <string name="cancel">Avbryt</string>
+    <!-- Delete confirm title -->
+    <string name="delete_title">Sletter opptaket</string>
+    <!-- Delete confirm message -->
+    <string name="delete_message">Er du sikker på at du vil slette %1$s? Dette kan ikke angres</string>
+    <!-- Date for last item %1 is year, %2 month, %3 day, %4 hour, %5 min -->
+    <string name="date_format">%3$s-%2$s-%1$s %4$s:%5$s</string>
+    <!-- Permissions -->
+    <!-- Sound recorder -->
+    <!-- Sound recorder notification title -->
+    <string name="sound_notification_title">Lydopptaker</string>
+    <!-- Sound recorder notification message -->
+    <string name="sound_notification_message">Lydlengde: %1$s</string>
+    <!-- Sound recorder status card title recording -->
+    <string name="sound_recording_title_working">Tar opp</string>
+    <!-- Sound recorder last item title -->
+    <string name="sound_last_title">Siste opptak</string>
+    <!-- Sound recorder notification channel title -->
+    <!-- Sound recorder notification channel description-->
+    <!-- Screen recorder -->
+    <!-- Screen recorder enabled audio message -->
+    <string name="screen_audio_message_on">Lyd fra mikrofonen vil inkluderes i videoen</string>
+    <!-- Screen recorder disabled audio message -->
+    <string name="screen_audio_message_off">Lyd fra mikrofonen vil ikke inkluderes i videoen</string>
+    <!-- Screen recorder disabled audio toggle message -->
+    <string name="screen_audio_message_disabled">Det er ikke mulig å endre denne innstillingen under innspilling av skjermen</string>
+    <!-- Screen recorder audio permission request card button -->
+    <string name="screen_audio_warning_button_ask">Spør</string>
+    <!-- Screen recorder notification storage error title -->
+    <string name="screen_insufficient_storage">Ikke nok lagringsplass</string>
+    <!-- Screen recorder notification storage error message -->
+    <string name="screen_not_enough_storage">Ikke nok tilgjengelig lagringsplass</string>
+    <!-- Screen recorder notification title -->
+    <string name="screen_notification_title">Skjermopptaker</string>
+    <!-- Screen recorder notification message -->
+    <string name="screen_notification_message">Videolengde: %s</string>
+    <!-- Screen recorder notification share title -->
+    <string name="screen_notification_message_done">Klar til å dele</string>
+    <!-- Screen recorder status message -->
+    <string name="screen_recording_message">Skjermen blir tatt opp\u2026</string>
+    <!-- Screen recorder last item title -->
+    <string name="screen_last_title">Siste opptak</string>
+    <!-- Screen recorder last item message -->
+    <string name="screen_last_message">Dato: %1$s\nVarighet: %2$d sekunder</string>
+    <!-- Screen recorder notification overlay title -->
+    <string name="screen_overlay_notif_title">Klar til å ta opp</string>
+    <!-- Screen recorder notification overlay message -->
+    <string name="screen_overlay_notif_message">Trykk på opptaksknappen når du er klar til å begynne</string>
+    <!-- Screen settings dialog title -->
+    <string name="screen_settings_title">Skjerminnspiller-innstillinger</string>
+    <!-- Screen recorder notification overlay channel title -->
+    <!-- Screen recorder notification overlay channel description-->
+    <!-- Screen recorder persistent notification channel title -->
+    <!-- Screen recorder persistent notification channel description-->
+    <!-- Permissions -->
+    <!-- Permissions dialog title -->
+    <string name="dialog_permissions_title">Tillatelser</string>
+    <!-- Message: microphone access denied -->
+    <string name="dialog_permissions_mic">Opptaker trenger mikrofon tilgang for å spille inn lyd</string>
+    <!-- Message: storage access denied -->
+    <string name="dialog_permissions_storage">Opptaker trenger lagrings tilgang for å lagre innspilt lyd</string>
+    <!-- Message: phone status denied -->
+    <string name="dialog_permissions_phone">Opptaker trenger telefontilgang for å passe på at du ikke tar opp anropene dine</string>
+    <!-- Message: microphone and storage access denied -->
+    <string name="dialog_permissions_mic_storage">Opptaker trenger mikrofon tilgang for å spille inn lyd og lagrings tilgang for å lagre innspilt lyd</string>
+    <!-- Message: microphone and phone status access denied -->
+    <string name="dialog_permissions_mic_phone">Opptaker trenger mikrofontilgang for å spille inn lyd og telefontilgang for å passe på at du ikke tar opp anropene dine</string>
+    <!-- Message: storage and phone status access denied -->
+    <string name="dialog_permissions_storage_phone">Opptaker trenger lagringstilgang for å lagre innspilt lyd og telefontilgang for å passe på at du ikke tar opp anropene dine</string>
+    <!-- Message: microphone, storage and phone status access denied -->
+    <string name="dialog_permissions_mic_storage_phone">Opptaker trenger mikrofontilgang for å innspille lyd, lagringstilgang for å lagre innspilte filer og telefontilgang for å passe på at du ikke tar opp anropene dine</string>
+    <!-- Permissions dialog action: ask permissions access again -->
+    <string name="dialog_permissions_ask">Spør igjen</string>
+    <!-- Permissions dialog action: dismiss dialog -->
+    <string name="dialog_permissions_dismiss">Avvis</string>
+    <!-- Message: overlay permission denied. Make sure "Draw over other apps" matches settings strings -->
+    <string name="dialog_permissions_overlay">Opptakeren trenger tillatelsen \"Ligge over andre apper\" for å kunne filme skjermen din. Trykk Tillat, endre tillatelsen i innstillingene og kom tilbake til Opptaker-appen</string>
+    <!-- No permissions granted error -->
+    <string name="snack_permissions_no_permission">Nødvendige tillatelser ble nektet, aktiver dem fra telefonens innstillinger for å starte å ta opp lyd</string>
+    <!-- Main activity -->
+    <!-- Screen record title -->
+    <string name="main_screen_action">Ta opp skjermen</string>
+    <!-- Sound record title -->
+    <string name="main_sound_action">Ta opp lyd</string>
+    <!-- Transition name for dialogActivity -->
 </resources>

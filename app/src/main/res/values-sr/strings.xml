@@ -15,106 +15,106 @@
      limitations under the License.
 -->
 <resources>
-  <string name="app_name">Снимач</string>
-  <!-- Common actions -->
-  <!-- Share action for notification -->
-  <string name="share">Дели</string>
-  <!-- Stop action for notification -->
-  <string name="stop">Заустави</string>
-  <!-- Play action -->
-  <string name="play">Пусти</string>
-  <!-- Delete action -->
-  <string name="delete">Избриши</string>
-  <!-- Cancel action -->
-  <string name="cancel">Прекини</string>
-  <!-- Delete confirm title -->
-  <string name="delete_title">Брисање снимка</string>
-  <!-- Delete confirm message -->
-  <string name="delete_message">Заиста желите да избришете „%1$s“? Ова радња је неповратна.</string>
-  <!-- Date for last item %1 is year, %2 month, %3 day, %4 hour, %5 min -->
-  <string name="date_format">%3$s. %2$s. %1$s, %4$s.%5$s</string>
-  <!-- Permissions -->
-  <!-- Sound recorder -->
-  <!-- Sound recorder notification title -->
-  <string name="sound_notification_title">Снимање звука</string>
-  <!-- Sound recorder notification message -->
-  <string name="sound_notification_message">Трајање аудио-снимка: %1$s</string>
-  <!-- Sound recorder status card title recording -->
-  <string name="sound_recording_title_working">Снимање</string>
-  <!-- Sound recorder last item title -->
-  <string name="sound_last_title">Последњи снимак</string>
-  <!-- Sound recorder notification channel title -->
-  <string name="sound_channel_title">Снимање звука</string>
-  <!-- Sound recorder notification channel description-->
-  <string name="sound_channel_desc">Трајно обавештење док се снима звук и обавештење након што се снимање заврши</string>
-  <!-- Screen recorder -->
-  <!-- Screen recorder enabled audio message -->
-  <string name="screen_audio_message_on">Звук са микрофона ће бити укључен у видео.</string>
-  <!-- Screen recorder disabled audio message -->
-  <string name="screen_audio_message_off">Звук са микрофона неће бити укључен у видео.</string>
-  <!-- Screen recorder disabled audio toggle message -->
-  <string name="screen_audio_message_disabled">Није могуће да извршити ову измену док се екран снима</string>
-  <!-- Screen recorder audio permission request card button -->
-  <string name="screen_audio_warning_button_ask">Питај</string>
-  <!-- Screen recorder notification storage error title -->
-  <string name="screen_insufficient_storage">Недовољно меморијског простора</string>
-  <!-- Screen recorder notification storage error message -->
-  <string name="screen_not_enough_storage">Нема довољно слободног простора.</string>
-  <!-- Screen recorder notification title -->
-  <string name="screen_notification_title">Снимање екрана</string>
-  <!-- Screen recorder notification message -->
-  <string name="screen_notification_message">Трајање видео-снимка: %s</string>
-  <!-- Screen recorder notification share title -->
-  <string name="screen_notification_message_done">Спремно за дељење</string>
-  <!-- Screen recorder status message -->
-  <string name="screen_recording_message">Снимам екран\u2026</string>
-  <!-- Screen recorder last item title -->
-  <string name="screen_last_title">Последњи снимак</string>
-  <!-- Screen recorder last item message -->
-  <string name="screen_last_message">Датум: %1$s\nТрајање: %2$d сек.</string>
-  <!-- Screen recorder notification overlay title -->
-  <string name="screen_overlay_notif_title">Спремно за снимање</string>
-  <!-- Screen recorder notification overlay message -->
-  <string name="screen_overlay_notif_message">Додирните дугме за снимање када будете спремни.</string>
-  <!-- Screen settings dialog title -->
-  <string name="screen_settings_title">Подешавања снимања екрана</string>
-  <!-- Screen recorder notification overlay channel title -->
-  <string name="screen_overlay_channel_title">Све спремно за снимање екрана</string>
-  <!-- Screen recorder notification overlay channel description-->
-  <string name="screen_overlay_channel_desc">Обавештење које приказује да је снимање екрана спремно</string>
-  <!-- Screen recorder persistent notification channel title -->
-  <string name="screen_channel_title">Снимање екрана</string>
-  <!-- Screen recorder persistent notification channel description-->
-  <string name="screen_channel_desc">Трајно обавештење док се снима екран и обавештење након што се снимање заврши</string>
-  <!-- Permissions -->
-  <!-- Permissions dialog title -->
-  <string name="dialog_permissions_title">Дозволе</string>
-  <!-- Message: microphone access denied -->
-  <string name="dialog_permissions_mic">Снимач захтева приступ микрофону за снимање звука.</string>
-  <!-- Message: storage access denied -->
-  <string name="dialog_permissions_storage">Снимач захтева приступ меморијском простору за чување снимљених датотека.</string>
-  <!-- Message: phone status denied -->
-  <string name="dialog_permissions_phone">Снимач захтева приступ стању телефона за паузирање снимања током позива.</string>
-  <!-- Message: microphone and storage access denied -->
-  <string name="dialog_permissions_mic_storage">Снимач захтева приступ микрофону за снимање звука и меморијском простору за чување снимљених датотека.</string>
-  <!-- Message: microphone and phone status access denied -->
-  <string name="dialog_permissions_mic_phone">Снимач захтева приступ микрофону за снимање звука и стању телефона за паузирање снимања током позива.</string>
-  <!-- Message: storage and phone status access denied -->
-  <string name="dialog_permissions_storage_phone">Снимач захтева приступ меморијском простору за чување снимљених датотека и стању телефона за паузирање снимања током позива.</string>
-  <!-- Message: microphone, storage and phone status access denied -->
-  <string name="dialog_permissions_mic_storage_phone">Снимач захтева приступ микрофону за снимање звука, меморијском простору за чување снимљених датотека и стању телефона за паузирање снимања током позива.</string>
-  <!-- Permissions dialog action: ask permissions access again -->
-  <string name="dialog_permissions_ask">Питај поново</string>
-  <!-- Permissions dialog action: dismiss dialog -->
-  <string name="dialog_permissions_dismiss">Одбаци</string>
-  <!-- Message: overlay permission denied. Make sure "Draw over other apps" matches settings strings -->
-  <string name="dialog_permissions_overlay">Снимач захтева дозволу „Приказивање преко других апликација“ за снимање екрана. Додирните дугме „Питај“, омогућите одговарајућу опцију и вратите се назад.</string>
-  <!-- No permissions granted error -->
-  <string name="snack_permissions_no_permission">Потребне дозволе су одбијене. Омогућите их у подешавањима да бисте започели снимање.</string>
-  <!-- Main activity -->
-  <!-- Screen record title -->
-  <string name="main_screen_action">Снимање екрана</string>
-  <!-- Sound record title -->
-  <string name="main_sound_action">Снимање звука</string>
-  <!-- Transition name for dialogActivity -->
+    <string name="app_name">Снимач</string>
+    <!-- Common actions -->
+    <!-- Share action for notification -->
+    <string name="share">Дели</string>
+    <!-- Stop action for notification -->
+    <string name="stop">Заустави</string>
+    <!-- Play action -->
+    <string name="play">Пусти</string>
+    <!-- Delete action -->
+    <string name="delete">Избриши</string>
+    <!-- Cancel action -->
+    <string name="cancel">Прекини</string>
+    <!-- Delete confirm title -->
+    <string name="delete_title">Брисање снимка</string>
+    <!-- Delete confirm message -->
+    <string name="delete_message">Заиста желите да избришете „%1$s“? Ова радња је неповратна.</string>
+    <!-- Date for last item %1 is year, %2 month, %3 day, %4 hour, %5 min -->
+    <string name="date_format">%3$s. %2$s. %1$s, %4$s.%5$s</string>
+    <!-- Permissions -->
+    <!-- Sound recorder -->
+    <!-- Sound recorder notification title -->
+    <string name="sound_notification_title">Снимање звука</string>
+    <!-- Sound recorder notification message -->
+    <string name="sound_notification_message">Трајање аудио-снимка: %1$s</string>
+    <!-- Sound recorder status card title recording -->
+    <string name="sound_recording_title_working">Снимање</string>
+    <!-- Sound recorder last item title -->
+    <string name="sound_last_title">Последњи снимак</string>
+    <!-- Sound recorder notification channel title -->
+    <string name="sound_channel_title">Снимање звука</string>
+    <!-- Sound recorder notification channel description-->
+    <string name="sound_channel_desc">Трајно обавештење док се снима звук и обавештење након што се снимање заврши</string>
+    <!-- Screen recorder -->
+    <!-- Screen recorder enabled audio message -->
+    <string name="screen_audio_message_on">Звук са микрофона ће бити укључен у видео.</string>
+    <!-- Screen recorder disabled audio message -->
+    <string name="screen_audio_message_off">Звук са микрофона неће бити укључен у видео.</string>
+    <!-- Screen recorder disabled audio toggle message -->
+    <string name="screen_audio_message_disabled">Није могуће да извршити ову измену док се екран снима</string>
+    <!-- Screen recorder audio permission request card button -->
+    <string name="screen_audio_warning_button_ask">Питај</string>
+    <!-- Screen recorder notification storage error title -->
+    <string name="screen_insufficient_storage">Недовољно меморијског простора</string>
+    <!-- Screen recorder notification storage error message -->
+    <string name="screen_not_enough_storage">Нема довољно слободног простора.</string>
+    <!-- Screen recorder notification title -->
+    <string name="screen_notification_title">Снимање екрана</string>
+    <!-- Screen recorder notification message -->
+    <string name="screen_notification_message">Трајање видео-снимка: %s</string>
+    <!-- Screen recorder notification share title -->
+    <string name="screen_notification_message_done">Спремно за дељење</string>
+    <!-- Screen recorder status message -->
+    <string name="screen_recording_message">Снимам екран\u2026</string>
+    <!-- Screen recorder last item title -->
+    <string name="screen_last_title">Последњи снимак</string>
+    <!-- Screen recorder last item message -->
+    <string name="screen_last_message">Датум: %1$s\nТрајање: %2$d сек.</string>
+    <!-- Screen recorder notification overlay title -->
+    <string name="screen_overlay_notif_title">Спремно за снимање</string>
+    <!-- Screen recorder notification overlay message -->
+    <string name="screen_overlay_notif_message">Додирните дугме за снимање када будете спремни.</string>
+    <!-- Screen settings dialog title -->
+    <string name="screen_settings_title">Подешавања снимања екрана</string>
+    <!-- Screen recorder notification overlay channel title -->
+    <string name="screen_overlay_channel_title">Све спремно за снимање екрана</string>
+    <!-- Screen recorder notification overlay channel description-->
+    <string name="screen_overlay_channel_desc">Обавештење које приказује да је снимање екрана спремно</string>
+    <!-- Screen recorder persistent notification channel title -->
+    <string name="screen_channel_title">Снимање екрана</string>
+    <!-- Screen recorder persistent notification channel description-->
+    <string name="screen_channel_desc">Трајно обавештење док се снима екран и обавештење након што се снимање заврши</string>
+    <!-- Permissions -->
+    <!-- Permissions dialog title -->
+    <string name="dialog_permissions_title">Дозволе</string>
+    <!-- Message: microphone access denied -->
+    <string name="dialog_permissions_mic">Снимач захтева приступ микрофону за снимање звука.</string>
+    <!-- Message: storage access denied -->
+    <string name="dialog_permissions_storage">Снимач захтева приступ меморијском простору за чување снимљених датотека.</string>
+    <!-- Message: phone status denied -->
+    <string name="dialog_permissions_phone">Снимач захтева приступ стању телефона за паузирање снимања током позива.</string>
+    <!-- Message: microphone and storage access denied -->
+    <string name="dialog_permissions_mic_storage">Снимач захтева приступ микрофону за снимање звука и меморијском простору за чување снимљених датотека.</string>
+    <!-- Message: microphone and phone status access denied -->
+    <string name="dialog_permissions_mic_phone">Снимач захтева приступ микрофону за снимање звука и стању телефона за паузирање снимања током позива.</string>
+    <!-- Message: storage and phone status access denied -->
+    <string name="dialog_permissions_storage_phone">Снимач захтева приступ меморијском простору за чување снимљених датотека и стању телефона за паузирање снимања током позива.</string>
+    <!-- Message: microphone, storage and phone status access denied -->
+    <string name="dialog_permissions_mic_storage_phone">Снимач захтева приступ микрофону за снимање звука, меморијском простору за чување снимљених датотека и стању телефона за паузирање снимања током позива.</string>
+    <!-- Permissions dialog action: ask permissions access again -->
+    <string name="dialog_permissions_ask">Питај поново</string>
+    <!-- Permissions dialog action: dismiss dialog -->
+    <string name="dialog_permissions_dismiss">Одбаци</string>
+    <!-- Message: overlay permission denied. Make sure "Draw over other apps" matches settings strings -->
+    <string name="dialog_permissions_overlay">Снимач захтева дозволу „Приказивање преко других апликација“ за снимање екрана. Додирните дугме „Питај“, омогућите одговарајућу опцију и вратите се назад.</string>
+    <!-- No permissions granted error -->
+    <string name="snack_permissions_no_permission">Потребне дозволе су одбијене. Омогућите их у подешавањима да бисте започели снимање.</string>
+    <!-- Main activity -->
+    <!-- Screen record title -->
+    <string name="main_screen_action">Снимање екрана</string>
+    <!-- Sound record title -->
+    <string name="main_sound_action">Снимање звука</string>
+    <!-- Transition name for dialogActivity -->
 </resources>

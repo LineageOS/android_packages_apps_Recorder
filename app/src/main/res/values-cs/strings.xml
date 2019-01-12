@@ -15,106 +15,106 @@
      limitations under the License.
 -->
 <resources>
-  <string name="app_name">Rekordér</string>
-  <!-- Common actions -->
-  <!-- Share action for notification -->
-  <string name="share">Sdílet</string>
-  <!-- Stop action for notification -->
-  <string name="stop">Stop</string>
-  <!-- Play action -->
-  <string name="play">Přehrát</string>
-  <!-- Delete action -->
-  <string name="delete">Odstranit</string>
-  <!-- Cancel action -->
-  <string name="cancel">Zrušit</string>
-  <!-- Delete confirm title -->
-  <string name="delete_title">Odstraňování záznamu</string>
-  <!-- Delete confirm message -->
-  <string name="delete_message">Opravdu chcete odstranit %1$s? Tato akce je nevratná</string>
-  <!-- Date for last item %1 is year, %2 month, %3 day, %4 hour, %5 min -->
-  <string name="date_format">%1$s-%2$s-%3$s %4$s:%5$s</string>
-  <!-- Permissions -->
-  <!-- Sound recorder -->
-  <!-- Sound recorder notification title -->
-  <string name="sound_notification_title">Záznam zvuku</string>
-  <!-- Sound recorder notification message -->
-  <string name="sound_notification_message">Délka zvukového záznamu: %1$s</string>
-  <!-- Sound recorder status card title recording -->
-  <string name="sound_recording_title_working">Nahrávání</string>
-  <!-- Sound recorder last item title -->
-  <string name="sound_last_title">Poslední záznam</string>
-  <!-- Sound recorder notification channel title -->
-  <string name="sound_channel_title">Záznam zvuku</string>
-  <!-- Sound recorder notification channel description-->
-  <string name="sound_channel_desc">Trvalé oznámení při záznamu zvuku a oznámení po dokončení</string>
-  <!-- Screen recorder -->
-  <!-- Screen recorder enabled audio message -->
-  <string name="screen_audio_message_on">Zvuk z mikrofonu bude uložen k videu</string>
-  <!-- Screen recorder disabled audio message -->
-  <string name="screen_audio_message_off">Zvuk z mikrofonu nebude uložen k videu</string>
-  <!-- Screen recorder disabled audio toggle message -->
-  <string name="screen_audio_message_disabled">Toto nastavení nelze při nahrávání obrazovky změnit</string>
-  <!-- Screen recorder audio permission request card button -->
-  <string name="screen_audio_warning_button_ask">Zeptat se</string>
-  <!-- Screen recorder notification storage error title -->
-  <string name="screen_insufficient_storage">Nedostatek místa</string>
-  <!-- Screen recorder notification storage error message -->
-  <string name="screen_not_enough_storage">Nedostatek místa v úložišti</string>
-  <!-- Screen recorder notification title -->
-  <string name="screen_notification_title">Nahrávání obrazovky</string>
-  <!-- Screen recorder notification message -->
-  <string name="screen_notification_message">Délka video záznamu: %s</string>
-  <!-- Screen recorder notification share title -->
-  <string name="screen_notification_message_done">Připraven ke sdílení</string>
-  <!-- Screen recorder status message -->
-  <string name="screen_recording_message">Obrazovka je zaznamenávána\u2026</string>
-  <!-- Screen recorder last item title -->
-  <string name="screen_last_title">Poslední záznam</string>
-  <!-- Screen recorder last item message -->
-  <string name="screen_last_message">Datum: %1$s\nTrvání: %2$d sekund</string>
-  <!-- Screen recorder notification overlay title -->
-  <string name="screen_overlay_notif_title">Připraveno k záznamu</string>
-  <!-- Screen recorder notification overlay message -->
-  <string name="screen_overlay_notif_message">Pokud jste připraveni začít stiskněte nahrávací tlačítko</string>
-  <!-- Screen settings dialog title -->
-  <string name="screen_settings_title">Nastavení nahrávání obrazovky</string>
-  <!-- Screen recorder notification overlay channel title -->
-  <string name="screen_overlay_channel_title">Připraveno k záznamu obrazovky</string>
-  <!-- Screen recorder notification overlay channel description-->
-  <string name="screen_overlay_channel_desc">Zobrazí se oznámení, pokud je připraveno spuštění záznamu obrazovky</string>
-  <!-- Screen recorder persistent notification channel title -->
-  <string name="screen_channel_title">Záznam obrazovky</string>
-  <!-- Screen recorder persistent notification channel description-->
-  <string name="screen_channel_desc">Trvalé oznámení při záznamu obrazovky a oznámení po dokončení</string>
-  <!-- Permissions -->
-  <!-- Permissions dialog title -->
-  <string name="dialog_permissions_title">Oprávnění</string>
-  <!-- Message: microphone access denied -->
-  <string name="dialog_permissions_mic">Pro nahrávání je vyžadováno oprávnění přístup k mikrofonu</string>
-  <!-- Message: storage access denied -->
-  <string name="dialog_permissions_storage">Pro ukládání je vyžadováno oprávnění přístupu k úložišti</string>
-  <!-- Message: phone status denied -->
-  <string name="dialog_permissions_phone">Je vyžadováno oprávnění přístupu ke stavu telefonu, aby bylo zabránění nahrávání při hovoru</string>
-  <!-- Message: microphone and storage access denied -->
-  <string name="dialog_permissions_mic_storage">Záznam zvuku vyžaduje oprávnění přístupu k mikrofonu a oprávnění k přístupu na úložiště</string>
-  <!-- Message: microphone and phone status access denied -->
-  <string name="dialog_permissions_mic_phone">Záznam zvuku vyžaduje oprávnění přístupu k mikrofonu a oprávnění k přístupu ke stavu telefonu pro zamezení nahrávání při telefonování</string>
-  <!-- Message: storage and phone status access denied -->
-  <string name="dialog_permissions_storage_phone">Záznam zvuku vyžaduje oprávnění přístupu k úložišti a oprávnění k přístupu ke stavu telefonu pro zamezení nahrávání při telefonování</string>
-  <!-- Message: microphone, storage and phone status access denied -->
-  <string name="dialog_permissions_mic_storage_phone">Záznam zvuku vyžaduje oprávnění přístupu k mikrofonu, oprávnění k přístupu na úložiště a oprávnění k přístupu ke stavu telefonu pro zamezení nahrávání při telefonování</string>
-  <!-- Permissions dialog action: ask permissions access again -->
-  <string name="dialog_permissions_ask">Vždy se ptát</string>
-  <!-- Permissions dialog action: dismiss dialog -->
-  <string name="dialog_permissions_dismiss">Neukládat</string>
-  <!-- Message: overlay permission denied. Make sure "Draw over other apps" matches settings strings -->
-  <string name="dialog_permissions_overlay">Aby mohl Rekordér nahrávat Vaší obrazovku, potřebuje oprávnění „Vykreslit okna navrchu“. Prosím, povolte toto oprávnění v nastavení a vraťte se do Rekordéru</string>
-  <!-- No permissions granted error -->
-  <string name="snack_permissions_no_permission">Požadovaná oprávnění byla odepřena, pro spuštění nahrávání je povolte v nastavení aplikace</string>
-  <!-- Main activity -->
-  <!-- Screen record title -->
-  <string name="main_screen_action">Nahrávání obrazovky</string>
-  <!-- Sound record title -->
-  <string name="main_sound_action">Nahrávání zvuku</string>
-  <!-- Transition name for dialogActivity -->
+    <string name="app_name">Rekordér</string>
+    <!-- Common actions -->
+    <!-- Share action for notification -->
+    <string name="share">Sdílet</string>
+    <!-- Stop action for notification -->
+    <string name="stop">Stop</string>
+    <!-- Play action -->
+    <string name="play">Přehrát</string>
+    <!-- Delete action -->
+    <string name="delete">Odstranit</string>
+    <!-- Cancel action -->
+    <string name="cancel">Zrušit</string>
+    <!-- Delete confirm title -->
+    <string name="delete_title">Odstraňování záznamu</string>
+    <!-- Delete confirm message -->
+    <string name="delete_message">Opravdu chcete odstranit %1$s? Tato akce je nevratná</string>
+    <!-- Date for last item %1 is year, %2 month, %3 day, %4 hour, %5 min -->
+    <string name="date_format">%1$s-%2$s-%3$s %4$s:%5$s</string>
+    <!-- Permissions -->
+    <!-- Sound recorder -->
+    <!-- Sound recorder notification title -->
+    <string name="sound_notification_title">Záznam zvuku</string>
+    <!-- Sound recorder notification message -->
+    <string name="sound_notification_message">Délka zvukového záznamu: %1$s</string>
+    <!-- Sound recorder status card title recording -->
+    <string name="sound_recording_title_working">Nahrávání</string>
+    <!-- Sound recorder last item title -->
+    <string name="sound_last_title">Poslední záznam</string>
+    <!-- Sound recorder notification channel title -->
+    <string name="sound_channel_title">Záznam zvuku</string>
+    <!-- Sound recorder notification channel description-->
+    <string name="sound_channel_desc">Trvalé oznámení při záznamu zvuku a oznámení po dokončení</string>
+    <!-- Screen recorder -->
+    <!-- Screen recorder enabled audio message -->
+    <string name="screen_audio_message_on">Zvuk z mikrofonu bude uložen k videu</string>
+    <!-- Screen recorder disabled audio message -->
+    <string name="screen_audio_message_off">Zvuk z mikrofonu nebude uložen k videu</string>
+    <!-- Screen recorder disabled audio toggle message -->
+    <string name="screen_audio_message_disabled">Toto nastavení nelze při nahrávání obrazovky změnit</string>
+    <!-- Screen recorder audio permission request card button -->
+    <string name="screen_audio_warning_button_ask">Zeptat se</string>
+    <!-- Screen recorder notification storage error title -->
+    <string name="screen_insufficient_storage">Nedostatek místa</string>
+    <!-- Screen recorder notification storage error message -->
+    <string name="screen_not_enough_storage">Nedostatek místa v úložišti</string>
+    <!-- Screen recorder notification title -->
+    <string name="screen_notification_title">Nahrávání obrazovky</string>
+    <!-- Screen recorder notification message -->
+    <string name="screen_notification_message">Délka video záznamu: %s</string>
+    <!-- Screen recorder notification share title -->
+    <string name="screen_notification_message_done">Připraven ke sdílení</string>
+    <!-- Screen recorder status message -->
+    <string name="screen_recording_message">Obrazovka je zaznamenávána\u2026</string>
+    <!-- Screen recorder last item title -->
+    <string name="screen_last_title">Poslední záznam</string>
+    <!-- Screen recorder last item message -->
+    <string name="screen_last_message">Datum: %1$s\nTrvání: %2$d sekund</string>
+    <!-- Screen recorder notification overlay title -->
+    <string name="screen_overlay_notif_title">Připraveno k záznamu</string>
+    <!-- Screen recorder notification overlay message -->
+    <string name="screen_overlay_notif_message">Pokud jste připraveni začít stiskněte nahrávací tlačítko</string>
+    <!-- Screen settings dialog title -->
+    <string name="screen_settings_title">Nastavení nahrávání obrazovky</string>
+    <!-- Screen recorder notification overlay channel title -->
+    <string name="screen_overlay_channel_title">Připraveno k záznamu obrazovky</string>
+    <!-- Screen recorder notification overlay channel description-->
+    <string name="screen_overlay_channel_desc">Zobrazí se oznámení, pokud je připraveno spuštění záznamu obrazovky</string>
+    <!-- Screen recorder persistent notification channel title -->
+    <string name="screen_channel_title">Záznam obrazovky</string>
+    <!-- Screen recorder persistent notification channel description-->
+    <string name="screen_channel_desc">Trvalé oznámení při záznamu obrazovky a oznámení po dokončení</string>
+    <!-- Permissions -->
+    <!-- Permissions dialog title -->
+    <string name="dialog_permissions_title">Oprávnění</string>
+    <!-- Message: microphone access denied -->
+    <string name="dialog_permissions_mic">Pro nahrávání je vyžadováno oprávnění přístup k mikrofonu</string>
+    <!-- Message: storage access denied -->
+    <string name="dialog_permissions_storage">Pro ukládání je vyžadováno oprávnění přístupu k úložišti</string>
+    <!-- Message: phone status denied -->
+    <string name="dialog_permissions_phone">Je vyžadováno oprávnění přístupu ke stavu telefonu, aby bylo zabránění nahrávání při hovoru</string>
+    <!-- Message: microphone and storage access denied -->
+    <string name="dialog_permissions_mic_storage">Záznam zvuku vyžaduje oprávnění přístupu k mikrofonu a oprávnění k přístupu na úložiště</string>
+    <!-- Message: microphone and phone status access denied -->
+    <string name="dialog_permissions_mic_phone">Záznam zvuku vyžaduje oprávnění přístupu k mikrofonu a oprávnění k přístupu ke stavu telefonu pro zamezení nahrávání při telefonování</string>
+    <!-- Message: storage and phone status access denied -->
+    <string name="dialog_permissions_storage_phone">Záznam zvuku vyžaduje oprávnění přístupu k úložišti a oprávnění k přístupu ke stavu telefonu pro zamezení nahrávání při telefonování</string>
+    <!-- Message: microphone, storage and phone status access denied -->
+    <string name="dialog_permissions_mic_storage_phone">Záznam zvuku vyžaduje oprávnění přístupu k mikrofonu, oprávnění k přístupu na úložiště a oprávnění k přístupu ke stavu telefonu pro zamezení nahrávání při telefonování</string>
+    <!-- Permissions dialog action: ask permissions access again -->
+    <string name="dialog_permissions_ask">Vždy se ptát</string>
+    <!-- Permissions dialog action: dismiss dialog -->
+    <string name="dialog_permissions_dismiss">Neukládat</string>
+    <!-- Message: overlay permission denied. Make sure "Draw over other apps" matches settings strings -->
+    <string name="dialog_permissions_overlay">Aby mohl Rekordér nahrávat Vaší obrazovku, potřebuje oprávnění „Vykreslit okna navrchu“. Prosím, povolte toto oprávnění v nastavení a vraťte se do Rekordéru</string>
+    <!-- No permissions granted error -->
+    <string name="snack_permissions_no_permission">Požadovaná oprávnění byla odepřena, pro spuštění nahrávání je povolte v nastavení aplikace</string>
+    <!-- Main activity -->
+    <!-- Screen record title -->
+    <string name="main_screen_action">Nahrávání obrazovky</string>
+    <!-- Sound record title -->
+    <string name="main_sound_action">Nahrávání zvuku</string>
+    <!-- Transition name for dialogActivity -->
 </resources>

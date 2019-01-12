@@ -15,106 +15,106 @@
      limitations under the License.
 -->
 <resources>
-  <string name="app_name">Grabatzailea</string>
-  <!-- Common actions -->
-  <!-- Share action for notification -->
-  <string name="share">Partekatu</string>
-  <!-- Stop action for notification -->
-  <string name="stop">Gelditu</string>
-  <!-- Play action -->
-  <string name="play">Erreproduzitu</string>
-  <!-- Delete action -->
-  <string name="delete">Ezabatu</string>
-  <!-- Cancel action -->
-  <string name="cancel">Utzi</string>
-  <!-- Delete confirm title -->
-  <string name="delete_title">Grabaketa ezabatzen</string>
-  <!-- Delete confirm message -->
-  <string name="delete_message">Ziur %1$s ezabatu nahi duzula? Hau ezin da desegin</string>
-  <!-- Date for last item %1 is year, %2 month, %3 day, %4 hour, %5 min -->
-  <string name="date_format">%1$s-%2$s-%3$s %4$s:%5$s</string>
-  <!-- Permissions -->
-  <!-- Sound recorder -->
-  <!-- Sound recorder notification title -->
-  <string name="sound_notification_title">Soinu grabagailua</string>
-  <!-- Sound recorder notification message -->
-  <string name="sound_notification_message">Audioaren iraupena: %1$s</string>
-  <!-- Sound recorder status card title recording -->
-  <string name="sound_recording_title_working">Grabatzen</string>
-  <!-- Sound recorder last item title -->
-  <string name="sound_last_title">Azken grabaketa</string>
-  <!-- Sound recorder notification channel title -->
-  <string name="sound_channel_title">Soinu grabazioa</string>
-  <!-- Sound recorder notification channel description-->
-  <string name="sound_channel_desc">Jakinarazpen iraunkorra soinua grabatzean eta jakinarazpena behin burututa</string>
-  <!-- Screen recorder -->
-  <!-- Screen recorder enabled audio message -->
-  <string name="screen_audio_message_on">Mikrofonoko audioa bideoan txertatuko da</string>
-  <!-- Screen recorder disabled audio message -->
-  <string name="screen_audio_message_off">Mikrofonoko audioa ez da bideoan txertatuko</string>
-  <!-- Screen recorder disabled audio toggle message -->
-  <string name="screen_audio_message_disabled">Ezin da ezarpen hau aldatu pantaila grabatzen ari zarela</string>
-  <!-- Screen recorder audio permission request card button -->
-  <string name="screen_audio_warning_button_ask">Galdetu</string>
-  <!-- Screen recorder notification storage error title -->
-  <string name="screen_insufficient_storage">Ez dago biltegiratze nahikorik</string>
-  <!-- Screen recorder notification storage error message -->
-  <string name="screen_not_enough_storage">Ez dago biltegiratzeko leku nahikorik</string>
-  <!-- Screen recorder notification title -->
-  <string name="screen_notification_title">Pantaila grabatzailea</string>
-  <!-- Screen recorder notification message -->
-  <string name="screen_notification_message">Bideoaren iraupena: %s</string>
-  <!-- Screen recorder notification share title -->
-  <string name="screen_notification_message_done">Partekatzeko prest</string>
-  <!-- Screen recorder status message -->
-  <string name="screen_recording_message">Pantaila grabatzen ari da\u2026</string>
-  <!-- Screen recorder last item title -->
-  <string name="screen_last_title">Azken grabaketa</string>
-  <!-- Screen recorder last item message -->
-  <string name="screen_last_message">Data: %1$s\nIraupena: %2$d segundo</string>
-  <!-- Screen recorder notification overlay title -->
-  <string name="screen_overlay_notif_title">Grabatzeko prest</string>
-  <!-- Screen recorder notification overlay message -->
-  <string name="screen_overlay_notif_message">Sakatu Grabatu botoia hasteko prest zaudenean</string>
-  <!-- Screen settings dialog title -->
-  <string name="screen_settings_title">Pantaila grabatzailearen ezarpenaqk</string>
-  <!-- Screen recorder notification overlay channel title -->
-  <string name="screen_overlay_channel_title">Pantaila grabatzeko prest</string>
-  <!-- Screen recorder notification overlay channel description-->
-  <string name="screen_overlay_channel_desc">Jakinarazpena pantaila-grabaketa hasteko prest dagoela erakusteko</string>
-  <!-- Screen recorder persistent notification channel title -->
-  <string name="screen_channel_title">Pantaila-grabaketa</string>
-  <!-- Screen recorder persistent notification channel description-->
-  <string name="screen_channel_desc">Jakinarazpen iraunkorra pantaila grabatzean eta jakinarazpena behin burututa</string>
-  <!-- Permissions -->
-  <!-- Permissions dialog title -->
-  <string name="dialog_permissions_title">Baimenak</string>
-  <!-- Message: microphone access denied -->
-  <string name="dialog_permissions_mic">Grabatzaileak mikrofonoa atzitzeko baimena behar du grabatu ahal izateko</string>
-  <!-- Message: storage access denied -->
-  <string name="dialog_permissions_storage">Grabatzaileak biltegiratzea atzitzeko baimena behar du grabatutako fitxategiak gordetzeko</string>
-  <!-- Message: phone status denied -->
-  <string name="dialog_permissions_phone">Grabatzaileak telefonoaren egoera atzitzeko baimena behar aplikazio honek dei batean zehar grabatzea ekiditeko</string>
-  <!-- Message: microphone and storage access denied -->
-  <string name="dialog_permissions_mic_storage">Grabatzaileak mikrofono atzitzeko baimena behar du audioa grabatzeko eta biltegiratzera sarbidea behar du grabatutako fitxategiak gordetzeko</string>
-  <!-- Message: microphone and phone status access denied -->
-  <string name="dialog_permissions_mic_phone">Grabatzaileak mikrofonoa atzitzeko baimena behar du audioa grabatzeko eta telefonoaren egoera atzitzeko baimena dei batean zehar grabatzea ekiditeko</string>
-  <!-- Message: storage and phone status access denied -->
-  <string name="dialog_permissions_storage_phone">Grabatzaileak biltegiratzea atzitzeko baimena behar du grabatutako fitxategiak gordetzeko eta telefonoaren egoera atzitzeko baimena dei batean zehar grabatzea ekiditeko</string>
-  <!-- Message: microphone, storage and phone status access denied -->
-  <string name="dialog_permissions_mic_storage_phone">Grabatzaileak mikrofonoa atzitzeko baimena behar du audioa grabatzeko, biltegiratzea atzitzeko baimena grabatutako fitxategiak gordetzeko, eta telefonoaren egoera atzitzeko baimena dei batean zehar grabatzea ekiditeko</string>
-  <!-- Permissions dialog action: ask permissions access again -->
-  <string name="dialog_permissions_ask">Galdetu berriro</string>
-  <!-- Permissions dialog action: dismiss dialog -->
-  <string name="dialog_permissions_dismiss">Baztertu</string>
-  <!-- Message: overlay permission denied. Make sure "Draw over other apps" matches settings strings -->
-  <string name="dialog_permissions_overlay">Grabagailuak \"Marraztu beste aplikazioen gainean\" baimena behar du zure pantaila grabatzeko. Sakatu baimendu, gaitu baimena ezarpenetan eta itzuli grabagailura</string>
-  <!-- No permissions granted error -->
-  <string name="snack_permissions_no_permission">Beharrezkoak diren baimenak ukatu dira, gaitu itzazu ezarpenen aplikaziotik grabatzen hasteko</string>
-  <!-- Main activity -->
-  <!-- Screen record title -->
-  <string name="main_screen_action">Grabatu pantaila</string>
-  <!-- Sound record title -->
-  <string name="main_sound_action">Grabatu soinua</string>
-  <!-- Transition name for dialogActivity -->
+    <string name="app_name">Grabatzailea</string>
+    <!-- Common actions -->
+    <!-- Share action for notification -->
+    <string name="share">Partekatu</string>
+    <!-- Stop action for notification -->
+    <string name="stop">Gelditu</string>
+    <!-- Play action -->
+    <string name="play">Erreproduzitu</string>
+    <!-- Delete action -->
+    <string name="delete">Ezabatu</string>
+    <!-- Cancel action -->
+    <string name="cancel">Utzi</string>
+    <!-- Delete confirm title -->
+    <string name="delete_title">Grabaketa ezabatzen</string>
+    <!-- Delete confirm message -->
+    <string name="delete_message">Ziur %1$s ezabatu nahi duzula? Hau ezin da desegin</string>
+    <!-- Date for last item %1 is year, %2 month, %3 day, %4 hour, %5 min -->
+    <string name="date_format">%1$s-%2$s-%3$s %4$s:%5$s</string>
+    <!-- Permissions -->
+    <!-- Sound recorder -->
+    <!-- Sound recorder notification title -->
+    <string name="sound_notification_title">Soinu grabagailua</string>
+    <!-- Sound recorder notification message -->
+    <string name="sound_notification_message">Audioaren iraupena: %1$s</string>
+    <!-- Sound recorder status card title recording -->
+    <string name="sound_recording_title_working">Grabatzen</string>
+    <!-- Sound recorder last item title -->
+    <string name="sound_last_title">Azken grabaketa</string>
+    <!-- Sound recorder notification channel title -->
+    <string name="sound_channel_title">Soinu grabazioa</string>
+    <!-- Sound recorder notification channel description-->
+    <string name="sound_channel_desc">Jakinarazpen iraunkorra soinua grabatzean eta jakinarazpena behin burututa</string>
+    <!-- Screen recorder -->
+    <!-- Screen recorder enabled audio message -->
+    <string name="screen_audio_message_on">Mikrofonoko audioa bideoan txertatuko da</string>
+    <!-- Screen recorder disabled audio message -->
+    <string name="screen_audio_message_off">Mikrofonoko audioa ez da bideoan txertatuko</string>
+    <!-- Screen recorder disabled audio toggle message -->
+    <string name="screen_audio_message_disabled">Ezin da ezarpen hau aldatu pantaila grabatzen ari zarela</string>
+    <!-- Screen recorder audio permission request card button -->
+    <string name="screen_audio_warning_button_ask">Galdetu</string>
+    <!-- Screen recorder notification storage error title -->
+    <string name="screen_insufficient_storage">Ez dago biltegiratze nahikorik</string>
+    <!-- Screen recorder notification storage error message -->
+    <string name="screen_not_enough_storage">Ez dago biltegiratzeko leku nahikorik</string>
+    <!-- Screen recorder notification title -->
+    <string name="screen_notification_title">Pantaila grabatzailea</string>
+    <!-- Screen recorder notification message -->
+    <string name="screen_notification_message">Bideoaren iraupena: %s</string>
+    <!-- Screen recorder notification share title -->
+    <string name="screen_notification_message_done">Partekatzeko prest</string>
+    <!-- Screen recorder status message -->
+    <string name="screen_recording_message">Pantaila grabatzen ari da\u2026</string>
+    <!-- Screen recorder last item title -->
+    <string name="screen_last_title">Azken grabaketa</string>
+    <!-- Screen recorder last item message -->
+    <string name="screen_last_message">Data: %1$s\nIraupena: %2$d segundo</string>
+    <!-- Screen recorder notification overlay title -->
+    <string name="screen_overlay_notif_title">Grabatzeko prest</string>
+    <!-- Screen recorder notification overlay message -->
+    <string name="screen_overlay_notif_message">Sakatu Grabatu botoia hasteko prest zaudenean</string>
+    <!-- Screen settings dialog title -->
+    <string name="screen_settings_title">Pantaila grabatzailearen ezarpenaqk</string>
+    <!-- Screen recorder notification overlay channel title -->
+    <string name="screen_overlay_channel_title">Pantaila grabatzeko prest</string>
+    <!-- Screen recorder notification overlay channel description-->
+    <string name="screen_overlay_channel_desc">Jakinarazpena pantaila-grabaketa hasteko prest dagoela erakusteko</string>
+    <!-- Screen recorder persistent notification channel title -->
+    <string name="screen_channel_title">Pantaila-grabaketa</string>
+    <!-- Screen recorder persistent notification channel description-->
+    <string name="screen_channel_desc">Jakinarazpen iraunkorra pantaila grabatzean eta jakinarazpena behin burututa</string>
+    <!-- Permissions -->
+    <!-- Permissions dialog title -->
+    <string name="dialog_permissions_title">Baimenak</string>
+    <!-- Message: microphone access denied -->
+    <string name="dialog_permissions_mic">Grabatzaileak mikrofonoa atzitzeko baimena behar du grabatu ahal izateko</string>
+    <!-- Message: storage access denied -->
+    <string name="dialog_permissions_storage">Grabatzaileak biltegiratzea atzitzeko baimena behar du grabatutako fitxategiak gordetzeko</string>
+    <!-- Message: phone status denied -->
+    <string name="dialog_permissions_phone">Grabatzaileak telefonoaren egoera atzitzeko baimena behar aplikazio honek dei batean zehar grabatzea ekiditeko</string>
+    <!-- Message: microphone and storage access denied -->
+    <string name="dialog_permissions_mic_storage">Grabatzaileak mikrofono atzitzeko baimena behar du audioa grabatzeko eta biltegiratzera sarbidea behar du grabatutako fitxategiak gordetzeko</string>
+    <!-- Message: microphone and phone status access denied -->
+    <string name="dialog_permissions_mic_phone">Grabatzaileak mikrofonoa atzitzeko baimena behar du audioa grabatzeko eta telefonoaren egoera atzitzeko baimena dei batean zehar grabatzea ekiditeko</string>
+    <!-- Message: storage and phone status access denied -->
+    <string name="dialog_permissions_storage_phone">Grabatzaileak biltegiratzea atzitzeko baimena behar du grabatutako fitxategiak gordetzeko eta telefonoaren egoera atzitzeko baimena dei batean zehar grabatzea ekiditeko</string>
+    <!-- Message: microphone, storage and phone status access denied -->
+    <string name="dialog_permissions_mic_storage_phone">Grabatzaileak mikrofonoa atzitzeko baimena behar du audioa grabatzeko, biltegiratzea atzitzeko baimena grabatutako fitxategiak gordetzeko, eta telefonoaren egoera atzitzeko baimena dei batean zehar grabatzea ekiditeko</string>
+    <!-- Permissions dialog action: ask permissions access again -->
+    <string name="dialog_permissions_ask">Galdetu berriro</string>
+    <!-- Permissions dialog action: dismiss dialog -->
+    <string name="dialog_permissions_dismiss">Baztertu</string>
+    <!-- Message: overlay permission denied. Make sure "Draw over other apps" matches settings strings -->
+    <string name="dialog_permissions_overlay">Grabagailuak \"Marraztu beste aplikazioen gainean\" baimena behar du zure pantaila grabatzeko. Sakatu baimendu, gaitu baimena ezarpenetan eta itzuli grabagailura</string>
+    <!-- No permissions granted error -->
+    <string name="snack_permissions_no_permission">Beharrezkoak diren baimenak ukatu dira, gaitu itzazu ezarpenen aplikaziotik grabatzen hasteko</string>
+    <!-- Main activity -->
+    <!-- Screen record title -->
+    <string name="main_screen_action">Grabatu pantaila</string>
+    <!-- Sound record title -->
+    <string name="main_sound_action">Grabatu soinua</string>
+    <!-- Transition name for dialogActivity -->
 </resources>

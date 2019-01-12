@@ -15,106 +15,106 @@
      limitations under the License.
 -->
 <resources>
-  <string name="app_name">录制器</string>
-  <!-- Common actions -->
-  <!-- Share action for notification -->
-  <string name="share">分享</string>
-  <!-- Stop action for notification -->
-  <string name="stop">停止</string>
-  <!-- Play action -->
-  <string name="play">播放</string>
-  <!-- Delete action -->
-  <string name="delete">删除</string>
-  <!-- Cancel action -->
-  <string name="cancel">取消</string>
-  <!-- Delete confirm title -->
-  <string name="delete_title">正在删除记录</string>
-  <!-- Delete confirm message -->
-  <string name="delete_message">您确定要删除 %1$s？此操作不能撤销</string>
-  <!-- Date for last item %1 is year, %2 month, %3 day, %4 hour, %5 min -->
-  <string name="date_format">%1$s-%2$s-%3$s %4$s:%5$s</string>
-  <!-- Permissions -->
-  <!-- Sound recorder -->
-  <!-- Sound recorder notification title -->
-  <string name="sound_notification_title">录音机</string>
-  <!-- Sound recorder notification message -->
-  <string name="sound_notification_message">音频长度：%1$s</string>
-  <!-- Sound recorder status card title recording -->
-  <string name="sound_recording_title_working">正在录制</string>
-  <!-- Sound recorder last item title -->
-  <string name="sound_last_title">上次录制</string>
-  <!-- Sound recorder notification channel title -->
-  <string name="sound_channel_title">录音</string>
-  <!-- Sound recorder notification channel description-->
-  <string name="sound_channel_desc">录音至完成期间的持续通知</string>
-  <!-- Screen recorder -->
-  <!-- Screen recorder enabled audio message -->
-  <string name="screen_audio_message_on">将麦克风的声音纳入视频</string>
-  <!-- Screen recorder disabled audio message -->
-  <string name="screen_audio_message_off">麦克风的音频将不会纳入视频</string>
-  <!-- Screen recorder disabled audio toggle message -->
-  <string name="screen_audio_message_disabled">在录屏时无法修改此设置</string>
-  <!-- Screen recorder audio permission request card button -->
-  <string name="screen_audio_warning_button_ask">询问</string>
-  <!-- Screen recorder notification storage error title -->
-  <string name="screen_insufficient_storage">存储空间不足</string>
-  <!-- Screen recorder notification storage error message -->
-  <string name="screen_not_enough_storage">可用存储空间不足</string>
-  <!-- Screen recorder notification title -->
-  <string name="screen_notification_title">屏幕录制器</string>
-  <!-- Screen recorder notification message -->
-  <string name="screen_notification_message">视频长度：%s</string>
-  <!-- Screen recorder notification share title -->
-  <string name="screen_notification_message_done">已准备好分享</string>
-  <!-- Screen recorder status message -->
-  <string name="screen_recording_message">录屏已开始\u2026</string>
-  <!-- Screen recorder last item title -->
-  <string name="screen_last_title">上次录制</string>
-  <!-- Screen recorder last item message -->
-  <string name="screen_last_message">日期︰%1$s\n持续时间：%2$d 秒</string>
-  <!-- Screen recorder notification overlay title -->
-  <string name="screen_overlay_notif_title">已准备好开始录制</string>
-  <!-- Screen recorder notification overlay message -->
-  <string name="screen_overlay_notif_message">当您准备好开始时请按下录制按钮</string>
-  <!-- Screen settings dialog title -->
-  <string name="screen_settings_title">屏幕录制设置</string>
-  <!-- Screen recorder notification overlay channel title -->
-  <string name="screen_overlay_channel_title">准备录制屏幕</string>
-  <!-- Screen recorder notification overlay channel description-->
-  <string name="screen_overlay_channel_desc">屏幕录制准备就绪时将显示通知</string>
-  <!-- Screen recorder persistent notification channel title -->
-  <string name="screen_channel_title">屏幕录制</string>
-  <!-- Screen recorder persistent notification channel description-->
-  <string name="screen_channel_desc">录屏至完成期间的持续通知</string>
-  <!-- Permissions -->
-  <!-- Permissions dialog title -->
-  <string name="dialog_permissions_title">权限</string>
-  <!-- Message: microphone access denied -->
-  <string name="dialog_permissions_mic">录制器需要麦克风访问权限以便录制音频</string>
-  <!-- Message: storage access denied -->
-  <string name="dialog_permissions_storage">录制器需要存储空间访问权限以便保存录音文件</string>
-  <!-- Message: phone status denied -->
-  <string name="dialog_permissions_phone">录制器需要访问手机状态权限以便在您通话时停止录音</string>
-  <!-- Message: microphone and storage access denied -->
-  <string name="dialog_permissions_mic_storage">录制器需要麦克风和存储权限以便录制声音和保存录音文件。</string>
-  <!-- Message: microphone and phone status access denied -->
-  <string name="dialog_permissions_mic_phone">录制器需要麦克风访问权限以录制语音，手机状态访问权限以避免在您通话时录制</string>
-  <!-- Message: storage and phone status access denied -->
-  <string name="dialog_permissions_storage_phone">录制器需要存储访问权限以保存录音文件，电话状态访问权限以避免在您通话时录音</string>
-  <!-- Message: microphone, storage and phone status access denied -->
-  <string name="dialog_permissions_mic_storage_phone">录制器需要麦克风权限以录制音频，存储访问权限以保存录音文件，电话状态访问权限以避免在您通话时录音</string>
-  <!-- Permissions dialog action: ask permissions access again -->
-  <string name="dialog_permissions_ask">再次询问</string>
-  <!-- Permissions dialog action: dismiss dialog -->
-  <string name="dialog_permissions_dismiss">忽略</string>
-  <!-- Message: overlay permission denied. Make sure "Draw over other apps" matches settings strings -->
-  <string name="dialog_permissions_overlay">录制器需要“出现在其他应用上”权限来录制您的屏幕。按下允许，或在设置中启用该权限并返回录制器。</string>
-  <!-- No permissions granted error -->
-  <string name="snack_permissions_no_permission">必要的权限被拒绝，在“设置”应用中启用它们才能开始录制</string>
-  <!-- Main activity -->
-  <!-- Screen record title -->
-  <string name="main_screen_action">录制屏幕</string>
-  <!-- Sound record title -->
-  <string name="main_sound_action">录制声音</string>
-  <!-- Transition name for dialogActivity -->
+    <string name="app_name">录制器</string>
+    <!-- Common actions -->
+    <!-- Share action for notification -->
+    <string name="share">分享</string>
+    <!-- Stop action for notification -->
+    <string name="stop">停止</string>
+    <!-- Play action -->
+    <string name="play">播放</string>
+    <!-- Delete action -->
+    <string name="delete">删除</string>
+    <!-- Cancel action -->
+    <string name="cancel">取消</string>
+    <!-- Delete confirm title -->
+    <string name="delete_title">正在删除记录</string>
+    <!-- Delete confirm message -->
+    <string name="delete_message">您确定要删除 %1$s？此操作不能撤销</string>
+    <!-- Date for last item %1 is year, %2 month, %3 day, %4 hour, %5 min -->
+    <string name="date_format">%1$s-%2$s-%3$s %4$s:%5$s</string>
+    <!-- Permissions -->
+    <!-- Sound recorder -->
+    <!-- Sound recorder notification title -->
+    <string name="sound_notification_title">录音机</string>
+    <!-- Sound recorder notification message -->
+    <string name="sound_notification_message">音频长度：%1$s</string>
+    <!-- Sound recorder status card title recording -->
+    <string name="sound_recording_title_working">正在录制</string>
+    <!-- Sound recorder last item title -->
+    <string name="sound_last_title">上次录制</string>
+    <!-- Sound recorder notification channel title -->
+    <string name="sound_channel_title">录音</string>
+    <!-- Sound recorder notification channel description-->
+    <string name="sound_channel_desc">录音至完成期间的持续通知</string>
+    <!-- Screen recorder -->
+    <!-- Screen recorder enabled audio message -->
+    <string name="screen_audio_message_on">将麦克风的声音纳入视频</string>
+    <!-- Screen recorder disabled audio message -->
+    <string name="screen_audio_message_off">麦克风的音频将不会纳入视频</string>
+    <!-- Screen recorder disabled audio toggle message -->
+    <string name="screen_audio_message_disabled">在录屏时无法修改此设置</string>
+    <!-- Screen recorder audio permission request card button -->
+    <string name="screen_audio_warning_button_ask">询问</string>
+    <!-- Screen recorder notification storage error title -->
+    <string name="screen_insufficient_storage">存储空间不足</string>
+    <!-- Screen recorder notification storage error message -->
+    <string name="screen_not_enough_storage">可用存储空间不足</string>
+    <!-- Screen recorder notification title -->
+    <string name="screen_notification_title">屏幕录制器</string>
+    <!-- Screen recorder notification message -->
+    <string name="screen_notification_message">视频长度：%s</string>
+    <!-- Screen recorder notification share title -->
+    <string name="screen_notification_message_done">已准备好分享</string>
+    <!-- Screen recorder status message -->
+    <string name="screen_recording_message">录屏已开始\u2026</string>
+    <!-- Screen recorder last item title -->
+    <string name="screen_last_title">上次录制</string>
+    <!-- Screen recorder last item message -->
+    <string name="screen_last_message">日期︰%1$s\n持续时间：%2$d 秒</string>
+    <!-- Screen recorder notification overlay title -->
+    <string name="screen_overlay_notif_title">已准备好开始录制</string>
+    <!-- Screen recorder notification overlay message -->
+    <string name="screen_overlay_notif_message">当您准备好开始时请按下录制按钮</string>
+    <!-- Screen settings dialog title -->
+    <string name="screen_settings_title">屏幕录制设置</string>
+    <!-- Screen recorder notification overlay channel title -->
+    <string name="screen_overlay_channel_title">准备录制屏幕</string>
+    <!-- Screen recorder notification overlay channel description-->
+    <string name="screen_overlay_channel_desc">屏幕录制准备就绪时将显示通知</string>
+    <!-- Screen recorder persistent notification channel title -->
+    <string name="screen_channel_title">屏幕录制</string>
+    <!-- Screen recorder persistent notification channel description-->
+    <string name="screen_channel_desc">录屏至完成期间的持续通知</string>
+    <!-- Permissions -->
+    <!-- Permissions dialog title -->
+    <string name="dialog_permissions_title">权限</string>
+    <!-- Message: microphone access denied -->
+    <string name="dialog_permissions_mic">录制器需要麦克风访问权限以便录制音频</string>
+    <!-- Message: storage access denied -->
+    <string name="dialog_permissions_storage">录制器需要存储空间访问权限以便保存录音文件</string>
+    <!-- Message: phone status denied -->
+    <string name="dialog_permissions_phone">录制器需要访问手机状态权限以便在您通话时停止录音</string>
+    <!-- Message: microphone and storage access denied -->
+    <string name="dialog_permissions_mic_storage">录制器需要麦克风和存储权限以便录制声音和保存录音文件。</string>
+    <!-- Message: microphone and phone status access denied -->
+    <string name="dialog_permissions_mic_phone">录制器需要麦克风访问权限以录制语音，手机状态访问权限以避免在您通话时录制</string>
+    <!-- Message: storage and phone status access denied -->
+    <string name="dialog_permissions_storage_phone">录制器需要存储访问权限以保存录音文件，电话状态访问权限以避免在您通话时录音</string>
+    <!-- Message: microphone, storage and phone status access denied -->
+    <string name="dialog_permissions_mic_storage_phone">录制器需要麦克风权限以录制音频，存储访问权限以保存录音文件，电话状态访问权限以避免在您通话时录音</string>
+    <!-- Permissions dialog action: ask permissions access again -->
+    <string name="dialog_permissions_ask">再次询问</string>
+    <!-- Permissions dialog action: dismiss dialog -->
+    <string name="dialog_permissions_dismiss">忽略</string>
+    <!-- Message: overlay permission denied. Make sure "Draw over other apps" matches settings strings -->
+    <string name="dialog_permissions_overlay">录制器需要“出现在其他应用上”权限来录制您的屏幕。按下允许，或在设置中启用该权限并返回录制器。</string>
+    <!-- No permissions granted error -->
+    <string name="snack_permissions_no_permission">必要的权限被拒绝，在“设置”应用中启用它们才能开始录制</string>
+    <!-- Main activity -->
+    <!-- Screen record title -->
+    <string name="main_screen_action">录制屏幕</string>
+    <!-- Sound record title -->
+    <string name="main_sound_action">录制声音</string>
+    <!-- Transition name for dialogActivity -->
 </resources>

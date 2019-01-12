@@ -15,58 +15,63 @@
      limitations under the License.
 -->
 <resources>
-  <!-- Common actions -->
-  <!-- Share action for notification -->
-  <!-- Stop action for notification -->
-  <!-- Play action -->
-  <!-- Delete action -->
-  <!-- Cancel action -->
-  <!-- Delete confirm title -->
-  <!-- Delete confirm message -->
-  <!-- Date for last item %1 is year, %2 month, %3 day, %4 hour, %5 min -->
-  <!-- Permissions -->
-  <!-- Sound recorder -->
-  <!-- Sound recorder notification title -->
-  <!-- Sound recorder notification message -->
-  <!-- Sound recorder status card title recording -->
-  <!-- Sound recorder last item title -->
-  <!-- Sound recorder notification channel title -->
-  <!-- Sound recorder notification channel description-->
-  <!-- Screen recorder -->
-  <!-- Screen recorder enabled audio message -->
-  <!-- Screen recorder disabled audio message -->
-  <!-- Screen recorder disabled audio toggle message -->
-  <!-- Screen recorder audio permission request card button -->
-  <!-- Screen recorder notification storage error title -->
-  <!-- Screen recorder notification storage error message -->
-  <!-- Screen recorder notification title -->
-  <!-- Screen recorder notification message -->
-  <!-- Screen recorder notification share title -->
-  <!-- Screen recorder status message -->
-  <!-- Screen recorder last item title -->
-  <!-- Screen recorder last item message -->
-  <!-- Screen recorder notification overlay title -->
-  <!-- Screen recorder notification overlay message -->
-  <!-- Screen settings dialog title -->
-  <!-- Screen recorder notification overlay channel title -->
-  <!-- Screen recorder notification overlay channel description-->
-  <!-- Screen recorder persistent notification channel title -->
-  <!-- Screen recorder persistent notification channel description-->
-  <!-- Permissions -->
-  <!-- Permissions dialog title -->
-  <!-- Message: microphone access denied -->
-  <!-- Message: storage access denied -->
-  <!-- Message: phone status denied -->
-  <!-- Message: microphone and storage access denied -->
-  <!-- Message: microphone and phone status access denied -->
-  <!-- Message: storage and phone status access denied -->
-  <!-- Message: microphone, storage and phone status access denied -->
-  <!-- Permissions dialog action: ask permissions access again -->
-  <!-- Permissions dialog action: dismiss dialog -->
-  <!-- Message: overlay permission denied. Make sure "Draw over other apps" matches settings strings -->
-  <!-- No permissions granted error -->
-  <!-- Main activity -->
-  <!-- Screen record title -->
-  <!-- Sound record title -->
-  <!-- Transition name for dialogActivity -->
+    <!-- Common actions -->
+    <!-- Share action for notification -->
+    <!-- Stop action for notification -->
+    <!-- Play action -->
+    <!-- Delete action -->
+    <!-- Cancel action -->
+    <!-- Delete confirm title -->
+    <!-- Delete confirm message -->
+    <!-- Date for last item %1 is year, %2 month, %3 day, %4 hour, %5 min -->
+    <!-- Permissions -->
+    <!-- Sound recorder -->
+    <!-- Sound recorder notification title -->
+    <!-- Sound recorder notification message -->
+    <!-- Sound recorder status card title recording -->
+    <!-- Sound recorder last item title -->
+    <!-- Sound recorder notification channel title -->
+    <string name="sound_channel_title">Heli salvestamine</string>
+    <!-- Sound recorder notification channel description-->
+    <string name="sound_channel_desc">Püsiv teade heli salvestamisel ja teade kui salvestamine on lõppenud</string>
+    <!-- Screen recorder -->
+    <!-- Screen recorder enabled audio message -->
+    <!-- Screen recorder disabled audio message -->
+    <!-- Screen recorder disabled audio toggle message -->
+    <!-- Screen recorder audio permission request card button -->
+    <!-- Screen recorder notification storage error title -->
+    <!-- Screen recorder notification storage error message -->
+    <!-- Screen recorder notification title -->
+    <!-- Screen recorder notification message -->
+    <!-- Screen recorder notification share title -->
+    <!-- Screen recorder status message -->
+    <!-- Screen recorder last item title -->
+    <!-- Screen recorder last item message -->
+    <!-- Screen recorder notification overlay title -->
+    <!-- Screen recorder notification overlay message -->
+    <!-- Screen settings dialog title -->
+    <!-- Screen recorder notification overlay channel title -->
+    <string name="screen_overlay_channel_title">Valmis ekraanikuva salvestama</string>
+    <!-- Screen recorder notification overlay channel description-->
+    <string name="screen_overlay_channel_desc">Teade, mis näitab, et ekraanikuva salvestamine on valmis alustama</string>
+    <!-- Screen recorder persistent notification channel title -->
+    <string name="screen_channel_title">Ekraanikuva salvestamine</string>
+    <!-- Screen recorder persistent notification channel description-->
+    <!-- Permissions -->
+    <!-- Permissions dialog title -->
+    <!-- Message: microphone access denied -->
+    <!-- Message: storage access denied -->
+    <!-- Message: phone status denied -->
+    <!-- Message: microphone and storage access denied -->
+    <!-- Message: microphone and phone status access denied -->
+    <!-- Message: storage and phone status access denied -->
+    <!-- Message: microphone, storage and phone status access denied -->
+    <!-- Permissions dialog action: ask permissions access again -->
+    <!-- Permissions dialog action: dismiss dialog -->
+    <!-- Message: overlay permission denied. Make sure "Draw over other apps" matches settings strings -->
+    <!-- No permissions granted error -->
+    <!-- Main activity -->
+    <!-- Screen record title -->
+    <!-- Sound record title -->
+    <!-- Transition name for dialogActivity -->
 </resources>

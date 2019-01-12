@@ -15,101 +15,101 @@
      limitations under the License.
 -->
 <resources>
-  <string name="app_name">Recorder</string>
-  <!-- Common actions -->
-  <!-- Share action for notification -->
-  <string name="share">Delen</string>
-  <!-- Stop action for notification -->
-  <string name="stop">Stoppen</string>
-  <!-- Play action -->
-  <string name="play">Afspelen</string>
-  <!-- Delete action -->
-  <string name="delete">Verwijderen</string>
-  <!-- Cancel action -->
-  <string name="cancel">Annuleren</string>
-  <!-- Delete confirm title -->
-  <string name="delete_title">Opname verwijderen</string>
-  <!-- Delete confirm message -->
-  <string name="delete_message">Weet u zeker dat u %1$s wilt verwijderen? Dit kan niet ongedaan worden gemaakt</string>
-  <!-- Date for last item %1 is year, %2 month, %3 day, %4 hour, %5 min -->
-  <string name="date_format">%3$s-%2$s-%1$s %4$s:%5$s</string>
-  <!-- Permissions -->
-  <!-- Sound recorder -->
-  <!-- Sound recorder notification title -->
-  <string name="sound_notification_title">Geluidsrecorder</string>
-  <!-- Sound recorder notification message -->
-  <string name="sound_notification_message">Audiolengte: %1$s</string>
-  <!-- Sound recorder status card title recording -->
-  <string name="sound_recording_title_working">Opnemen</string>
-  <!-- Sound recorder last item title -->
-  <string name="sound_last_title">Laatste opname</string>
-  <!-- Sound recorder notification channel title -->
-  <!-- Sound recorder notification channel description-->
-  <!-- Screen recorder -->
-  <!-- Screen recorder enabled audio message -->
-  <string name="screen_audio_message_on">Geluid van de microfoon wordt toegevoegd aan de video</string>
-  <!-- Screen recorder disabled audio message -->
-  <string name="screen_audio_message_off">Geluid van de microfoon wordt niet toegevoegd aan de video</string>
-  <!-- Screen recorder disabled audio toggle message -->
-  <string name="screen_audio_message_disabled">Het is niet mogelijk deze instelling te wijzigen tijdens het opnemen van het scherm</string>
-  <!-- Screen recorder audio permission request card button -->
-  <string name="screen_audio_warning_button_ask">Vragen</string>
-  <!-- Screen recorder notification storage error title -->
-  <string name="screen_insufficient_storage">Onvoldoende opslagruimte</string>
-  <!-- Screen recorder notification storage error message -->
-  <string name="screen_not_enough_storage">Onvoldoende opslagruimte beschikbaar</string>
-  <!-- Screen recorder notification title -->
-  <string name="screen_notification_title">Schermrecorder</string>
-  <!-- Screen recorder notification message -->
-  <string name="screen_notification_message">Videolengte: %s</string>
-  <!-- Screen recorder notification share title -->
-  <string name="screen_notification_message_done">Klaar om te delen</string>
-  <!-- Screen recorder status message -->
-  <string name="screen_recording_message">Scherm wordt opgenomen\u2026</string>
-  <!-- Screen recorder last item title -->
-  <string name="screen_last_title">Laatste opname</string>
-  <!-- Screen recorder last item message -->
-  <string name="screen_last_message">Datum: %1$s\nLengte: %2$d seconden</string>
-  <!-- Screen recorder notification overlay title -->
-  <string name="screen_overlay_notif_title">Klaar voor opname</string>
-  <!-- Screen recorder notification overlay message -->
-  <string name="screen_overlay_notif_message">Tik op de opnameknop wanneer u wilt beginnen</string>
-  <!-- Screen settings dialog title -->
-  <string name="screen_settings_title">Instellingen Schermrecorder</string>
-  <!-- Screen recorder notification overlay channel title -->
-  <!-- Screen recorder notification overlay channel description-->
-  <!-- Screen recorder persistent notification channel title -->
-  <string name="screen_channel_title">Scherm opnemen</string>
-  <!-- Screen recorder persistent notification channel description-->
-  <!-- Permissions -->
-  <!-- Permissions dialog title -->
-  <string name="dialog_permissions_title">Machtigingen</string>
-  <!-- Message: microphone access denied -->
-  <string name="dialog_permissions_mic">Recorder heeft toegang nodig tot de microfoon om geluid op te kunnen nemen</string>
-  <!-- Message: storage access denied -->
-  <string name="dialog_permissions_storage">Recorder heeft toegang nodig tot de opslag om bestanden op te kunnen slaan</string>
-  <!-- Message: phone status denied -->
-  <string name="dialog_permissions_phone">Recorder heeft toegang nodig tot de telefoonstatus om te voorkomen dat deze app opneemt tijdens oproepen</string>
-  <!-- Message: microphone and storage access denied -->
-  <string name="dialog_permissions_mic_storage">Recorder heeft toegang nodig tot de microfoon om audio op te kunnen nemen en toegang tot de opslag nodig om bestanden op te kunnen slaan</string>
-  <!-- Message: microphone and phone status access denied -->
-  <string name="dialog_permissions_mic_phone">Recorder heeft toegang nodig tot de microfoon om audio op te kunnen nemen en toegang nodig tot de telefoonstatus om te voorkomen dat deze app opneemt tijdens oproepen</string>
-  <!-- Message: storage and phone status access denied -->
-  <string name="dialog_permissions_storage_phone">Recorder heeft toegang nodig tot de opslag om bestanden op te kunnen slaan en toegang nodig tot de telefoonstatus om te voorkomen dat deze app opneemt tijdens oproepen</string>
-  <!-- Message: microphone, storage and phone status access denied -->
-  <string name="dialog_permissions_mic_storage_phone">Recorder heeft toegang nodig tot de microfoon om audio op te kunnen nemen, toegang tot de opslag nodig om bestanden op te kunnen slaan en toegang nodig tot de telefoonstatus om te voorkomen dat deze app opneemt tijdens oproepen</string>
-  <!-- Permissions dialog action: ask permissions access again -->
-  <string name="dialog_permissions_ask">Opnieuw vragen</string>
-  <!-- Permissions dialog action: dismiss dialog -->
-  <string name="dialog_permissions_dismiss">Sluiten</string>
-  <!-- Message: overlay permission denied. Make sure "Draw over other apps" matches settings strings -->
-  <string name="dialog_permissions_overlay">Recorder heeft de \"Over andere apps tekenen\"-machtiging nodig. Tik op Toestaan, schakel de machtiging in in de instellingen en keer terug naar Recorder</string>
-  <!-- No permissions granted error -->
-  <string name="snack_permissions_no_permission">Vereiste machtigingen werden geweigerd, schakel ze in bij Instellingen om opname te starten</string>
-  <!-- Main activity -->
-  <!-- Screen record title -->
-  <string name="main_screen_action">Scherm opnemen</string>
-  <!-- Sound record title -->
-  <string name="main_sound_action">Geluid opnemen</string>
-  <!-- Transition name for dialogActivity -->
+    <string name="app_name">Recorder</string>
+    <!-- Common actions -->
+    <!-- Share action for notification -->
+    <string name="share">Delen</string>
+    <!-- Stop action for notification -->
+    <string name="stop">Stoppen</string>
+    <!-- Play action -->
+    <string name="play">Afspelen</string>
+    <!-- Delete action -->
+    <string name="delete">Verwijderen</string>
+    <!-- Cancel action -->
+    <string name="cancel">Annuleren</string>
+    <!-- Delete confirm title -->
+    <string name="delete_title">Opname verwijderen</string>
+    <!-- Delete confirm message -->
+    <string name="delete_message">Weet u zeker dat u %1$s wilt verwijderen? Dit kan niet ongedaan worden gemaakt</string>
+    <!-- Date for last item %1 is year, %2 month, %3 day, %4 hour, %5 min -->
+    <string name="date_format">%3$s-%2$s-%1$s %4$s:%5$s</string>
+    <!-- Permissions -->
+    <!-- Sound recorder -->
+    <!-- Sound recorder notification title -->
+    <string name="sound_notification_title">Geluidsrecorder</string>
+    <!-- Sound recorder notification message -->
+    <string name="sound_notification_message">Audiolengte: %1$s</string>
+    <!-- Sound recorder status card title recording -->
+    <string name="sound_recording_title_working">Opnemen</string>
+    <!-- Sound recorder last item title -->
+    <string name="sound_last_title">Laatste opname</string>
+    <!-- Sound recorder notification channel title -->
+    <!-- Sound recorder notification channel description-->
+    <!-- Screen recorder -->
+    <!-- Screen recorder enabled audio message -->
+    <string name="screen_audio_message_on">Geluid van de microfoon wordt toegevoegd aan de video</string>
+    <!-- Screen recorder disabled audio message -->
+    <string name="screen_audio_message_off">Geluid van de microfoon wordt niet toegevoegd aan de video</string>
+    <!-- Screen recorder disabled audio toggle message -->
+    <string name="screen_audio_message_disabled">Het is niet mogelijk deze instelling te wijzigen tijdens het opnemen van het scherm</string>
+    <!-- Screen recorder audio permission request card button -->
+    <string name="screen_audio_warning_button_ask">Vragen</string>
+    <!-- Screen recorder notification storage error title -->
+    <string name="screen_insufficient_storage">Onvoldoende opslagruimte</string>
+    <!-- Screen recorder notification storage error message -->
+    <string name="screen_not_enough_storage">Onvoldoende opslagruimte beschikbaar</string>
+    <!-- Screen recorder notification title -->
+    <string name="screen_notification_title">Schermrecorder</string>
+    <!-- Screen recorder notification message -->
+    <string name="screen_notification_message">Videolengte: %s</string>
+    <!-- Screen recorder notification share title -->
+    <string name="screen_notification_message_done">Klaar om te delen</string>
+    <!-- Screen recorder status message -->
+    <string name="screen_recording_message">Scherm wordt opgenomen\u2026</string>
+    <!-- Screen recorder last item title -->
+    <string name="screen_last_title">Laatste opname</string>
+    <!-- Screen recorder last item message -->
+    <string name="screen_last_message">Datum: %1$s\nLengte: %2$d seconden</string>
+    <!-- Screen recorder notification overlay title -->
+    <string name="screen_overlay_notif_title">Klaar voor opname</string>
+    <!-- Screen recorder notification overlay message -->
+    <string name="screen_overlay_notif_message">Tik op de opnameknop wanneer u wilt beginnen</string>
+    <!-- Screen settings dialog title -->
+    <string name="screen_settings_title">Instellingen Schermrecorder</string>
+    <!-- Screen recorder notification overlay channel title -->
+    <!-- Screen recorder notification overlay channel description-->
+    <!-- Screen recorder persistent notification channel title -->
+    <string name="screen_channel_title">Scherm opnemen</string>
+    <!-- Screen recorder persistent notification channel description-->
+    <!-- Permissions -->
+    <!-- Permissions dialog title -->
+    <string name="dialog_permissions_title">Machtigingen</string>
+    <!-- Message: microphone access denied -->
+    <string name="dialog_permissions_mic">Recorder heeft toegang nodig tot de microfoon om geluid op te kunnen nemen</string>
+    <!-- Message: storage access denied -->
+    <string name="dialog_permissions_storage">Recorder heeft toegang nodig tot de opslag om bestanden op te kunnen slaan</string>
+    <!-- Message: phone status denied -->
+    <string name="dialog_permissions_phone">Recorder heeft toegang nodig tot de telefoonstatus om te voorkomen dat deze app opneemt tijdens oproepen</string>
+    <!-- Message: microphone and storage access denied -->
+    <string name="dialog_permissions_mic_storage">Recorder heeft toegang nodig tot de microfoon om audio op te kunnen nemen en toegang tot de opslag nodig om bestanden op te kunnen slaan</string>
+    <!-- Message: microphone and phone status access denied -->
+    <string name="dialog_permissions_mic_phone">Recorder heeft toegang nodig tot de microfoon om audio op te kunnen nemen en toegang nodig tot de telefoonstatus om te voorkomen dat deze app opneemt tijdens oproepen</string>
+    <!-- Message: storage and phone status access denied -->
+    <string name="dialog_permissions_storage_phone">Recorder heeft toegang nodig tot de opslag om bestanden op te kunnen slaan en toegang nodig tot de telefoonstatus om te voorkomen dat deze app opneemt tijdens oproepen</string>
+    <!-- Message: microphone, storage and phone status access denied -->
+    <string name="dialog_permissions_mic_storage_phone">Recorder heeft toegang nodig tot de microfoon om audio op te kunnen nemen, toegang tot de opslag nodig om bestanden op te kunnen slaan en toegang nodig tot de telefoonstatus om te voorkomen dat deze app opneemt tijdens oproepen</string>
+    <!-- Permissions dialog action: ask permissions access again -->
+    <string name="dialog_permissions_ask">Opnieuw vragen</string>
+    <!-- Permissions dialog action: dismiss dialog -->
+    <string name="dialog_permissions_dismiss">Sluiten</string>
+    <!-- Message: overlay permission denied. Make sure "Draw over other apps" matches settings strings -->
+    <string name="dialog_permissions_overlay">Recorder heeft de \"Over andere apps tekenen\"-machtiging nodig. Tik op Toestaan, schakel de machtiging in in de instellingen en keer terug naar Recorder</string>
+    <!-- No permissions granted error -->
+    <string name="snack_permissions_no_permission">Vereiste machtigingen werden geweigerd, schakel ze in bij Instellingen om opname te starten</string>
+    <!-- Main activity -->
+    <!-- Screen record title -->
+    <string name="main_screen_action">Scherm opnemen</string>
+    <!-- Sound record title -->
+    <string name="main_sound_action">Geluid opnemen</string>
+    <!-- Transition name for dialogActivity -->
 </resources>

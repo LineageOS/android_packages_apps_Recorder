@@ -15,106 +15,106 @@
      limitations under the License.
 -->
 <resources>
-  <string name="app_name">Trình ghi lại</string>
-  <!-- Common actions -->
-  <!-- Share action for notification -->
-  <string name="share">Chia sẻ</string>
-  <!-- Stop action for notification -->
-  <string name="stop">Dừng</string>
-  <!-- Play action -->
-  <string name="play">Phát</string>
-  <!-- Delete action -->
-  <string name="delete">Xóa</string>
-  <!-- Cancel action -->
-  <string name="cancel">Hủy</string>
-  <!-- Delete confirm title -->
-  <string name="delete_title">Đang xóa</string>
-  <!-- Delete confirm message -->
-  <string name="delete_message">Bạn có chắcchắn muốn xóa %1$s? Việc này không thể hoàn tác</string>
-  <!-- Date for last item %1 is year, %2 month, %3 day, %4 hour, %5 min -->
-  <string name="date_format">%1$s-%2$s-%3$s %4$s:%5$s</string>
-  <!-- Permissions -->
-  <!-- Sound recorder -->
-  <!-- Sound recorder notification title -->
-  <string name="sound_notification_title">Trình ghi âm</string>
-  <!-- Sound recorder notification message -->
-  <string name="sound_notification_message">Độ dài âm thanh: %1$s</string>
-  <!-- Sound recorder status card title recording -->
-  <string name="sound_recording_title_working">Đang ghi</string>
-  <!-- Sound recorder last item title -->
-  <string name="sound_last_title">Lần ghi cuối</string>
-  <!-- Sound recorder notification channel title -->
-  <string name="sound_channel_title">Trình ghi âm</string>
-  <!-- Sound recorder notification channel description-->
-  <string name="sound_channel_desc">Thông báo liên tục khi ghi âm và thông báo sau khi hoàn tất</string>
-  <!-- Screen recorder -->
-  <!-- Screen recorder enabled audio message -->
-  <string name="screen_audio_message_on">Âm thanh từ micro sẽ được chứa trong video</string>
-  <!-- Screen recorder disabled audio message -->
-  <string name="screen_audio_message_off">Âm thanh từ micro sẽ không được chứa trong video</string>
-  <!-- Screen recorder disabled audio toggle message -->
-  <string name="screen_audio_message_disabled">Nó không thể thay đổi cài đặt này trong khi ghi lại màn hình</string>
-  <!-- Screen recorder audio permission request card button -->
-  <string name="screen_audio_warning_button_ask">Yêu cầu</string>
-  <!-- Screen recorder notification storage error title -->
-  <string name="screen_insufficient_storage">Không đủ bộ nhớ</string>
-  <!-- Screen recorder notification storage error message -->
-  <string name="screen_not_enough_storage">Không đủ bộ nhớ khả dụng</string>
-  <!-- Screen recorder notification title -->
-  <string name="screen_notification_title">Trình quay màn hình</string>
-  <!-- Screen recorder notification message -->
-  <string name="screen_notification_message">Độ dài video: %s</string>
-  <!-- Screen recorder notification share title -->
-  <string name="screen_notification_message_done">Sẵn sàng để chia sẻ</string>
-  <!-- Screen recorder status message -->
-  <string name="screen_recording_message">Màn hình đang được ghi\u2026</string>
-  <!-- Screen recorder last item title -->
-  <string name="screen_last_title">Lần ghi cuối</string>
-  <!-- Screen recorder last item message -->
-  <string name="screen_last_message">Ngày: %1$s\nĐộ dài: %2$d giây</string>
-  <!-- Screen recorder notification overlay title -->
-  <string name="screen_overlay_notif_title">Sẵn sàng để ghi lại</string>
-  <!-- Screen recorder notification overlay message -->
-  <string name="screen_overlay_notif_message">Nhấn nút ghi âm khi bạn đã sẵn sàng để bắt đầu</string>
-  <!-- Screen settings dialog title -->
-  <string name="screen_settings_title">Cài đặt trình ghi màn hình</string>
-  <!-- Screen recorder notification overlay channel title -->
-  <string name="screen_overlay_channel_title">Sẵn sàng để ghi lại màn hình</string>
-  <!-- Screen recorder notification overlay channel description-->
-  <string name="screen_overlay_channel_desc">Thông báo cho thấy ghi hình màn hình đã sẵn sàng để bắt đầu</string>
-  <!-- Screen recorder persistent notification channel title -->
-  <string name="screen_channel_title">Ghi màn hình</string>
-  <!-- Screen recorder persistent notification channel description-->
-  <string name="screen_channel_desc">Thông báo liên tục khi ghi lại màn hình và thông báo sau khi hoàn tất</string>
-  <!-- Permissions -->
-  <!-- Permissions dialog title -->
-  <string name="dialog_permissions_title">Quyền truy cập</string>
-  <!-- Message: microphone access denied -->
-  <string name="dialog_permissions_mic">Trình ghi lại cần quyền micro để ghi lại âm thanh</string>
-  <!-- Message: storage access denied -->
-  <string name="dialog_permissions_storage">Trình ghi lại cần truy cập bộ nhớ để lưu các tập tin đã ghi</string>
-  <!-- Message: phone status denied -->
-  <string name="dialog_permissions_phone">Trình ghi lại cần truy cập trạng thái điện thoại để ngăn ứng dụng này ghi âm khi bạn đang gọi</string>
-  <!-- Message: microphone and storage access denied -->
-  <string name="dialog_permissions_mic_storage">Trình ghi lại cần quyền micro để ghi lại âm thanh và truy cập bộ nhớ để lưu các tập tin đã ghi</string>
-  <!-- Message: microphone and phone status access denied -->
-  <string name="dialog_permissions_mic_phone">Trình ghi lại cần quyền micro để ghi lại âm thanh và truy cập trạng thái điện thoại để ngăn chặn ứng dụng này ghi âm trong khi bạn đang gọi</string>
-  <!-- Message: storage and phone status access denied -->
-  <string name="dialog_permissions_storage_phone">Trình ghi lại cần truy cập bộ nhớ để lưu tập tin đã ghi âm và truy cập trạng thái điện thoại để ngăn ứng dụng này ghi âm khi bạn đang gọi</string>
-  <!-- Message: microphone, storage and phone status access denied -->
-  <string name="dialog_permissions_mic_storage_phone">Trình ghi lại cần truy cập micro để ghi âm, truy cập bộ nhớ để lưu tập tin đã ghi và truy cập trạng thái điện thoại để ngăn ứng dụng này ghi âm khi bạn đang gọi</string>
-  <!-- Permissions dialog action: ask permissions access again -->
-  <string name="dialog_permissions_ask">Hỏi lại</string>
-  <!-- Permissions dialog action: dismiss dialog -->
-  <string name="dialog_permissions_dismiss">Bỏ qua</string>
-  <!-- Message: overlay permission denied. Make sure "Draw over other apps" matches settings strings -->
-  <string name="dialog_permissions_overlay">Trình ghi âm cần quyền \"Vẽ trên các ứng dụng khác\" để ghi lại màn hình của bạn. Nhấn cho phép, kích hoạt quyền trong cài đặt và trở lại Trình ghi âm</string>
-  <!-- No permissions granted error -->
-  <string name="snack_permissions_no_permission">Quyền truy cập cần thiết đã bị từ chối, cho phép chúng từ Cài đặt ứng dụng để bắt đầu ghi âm</string>
-  <!-- Main activity -->
-  <!-- Screen record title -->
-  <string name="main_screen_action">Ghi lại màn hình</string>
-  <!-- Sound record title -->
-  <string name="main_sound_action">Ghi lại âm thanh</string>
-  <!-- Transition name for dialogActivity -->
+    <string name="app_name">Trình ghi lại</string>
+    <!-- Common actions -->
+    <!-- Share action for notification -->
+    <string name="share">Chia sẻ</string>
+    <!-- Stop action for notification -->
+    <string name="stop">Dừng</string>
+    <!-- Play action -->
+    <string name="play">Phát</string>
+    <!-- Delete action -->
+    <string name="delete">Xóa</string>
+    <!-- Cancel action -->
+    <string name="cancel">Hủy</string>
+    <!-- Delete confirm title -->
+    <string name="delete_title">Đang xóa</string>
+    <!-- Delete confirm message -->
+    <string name="delete_message">Bạn có chắcchắn muốn xóa %1$s? Việc này không thể hoàn tác</string>
+    <!-- Date for last item %1 is year, %2 month, %3 day, %4 hour, %5 min -->
+    <string name="date_format">%1$s-%2$s-%3$s %4$s:%5$s</string>
+    <!-- Permissions -->
+    <!-- Sound recorder -->
+    <!-- Sound recorder notification title -->
+    <string name="sound_notification_title">Trình ghi âm</string>
+    <!-- Sound recorder notification message -->
+    <string name="sound_notification_message">Độ dài âm thanh: %1$s</string>
+    <!-- Sound recorder status card title recording -->
+    <string name="sound_recording_title_working">Đang ghi</string>
+    <!-- Sound recorder last item title -->
+    <string name="sound_last_title">Lần ghi cuối</string>
+    <!-- Sound recorder notification channel title -->
+    <string name="sound_channel_title">Trình ghi âm</string>
+    <!-- Sound recorder notification channel description-->
+    <string name="sound_channel_desc">Thông báo liên tục khi ghi âm và thông báo sau khi hoàn tất</string>
+    <!-- Screen recorder -->
+    <!-- Screen recorder enabled audio message -->
+    <string name="screen_audio_message_on">Âm thanh từ micro sẽ được chứa trong video</string>
+    <!-- Screen recorder disabled audio message -->
+    <string name="screen_audio_message_off">Âm thanh từ micro sẽ không được chứa trong video</string>
+    <!-- Screen recorder disabled audio toggle message -->
+    <string name="screen_audio_message_disabled">Nó không thể thay đổi cài đặt này trong khi ghi lại màn hình</string>
+    <!-- Screen recorder audio permission request card button -->
+    <string name="screen_audio_warning_button_ask">Yêu cầu</string>
+    <!-- Screen recorder notification storage error title -->
+    <string name="screen_insufficient_storage">Không đủ bộ nhớ</string>
+    <!-- Screen recorder notification storage error message -->
+    <string name="screen_not_enough_storage">Không đủ bộ nhớ khả dụng</string>
+    <!-- Screen recorder notification title -->
+    <string name="screen_notification_title">Trình quay màn hình</string>
+    <!-- Screen recorder notification message -->
+    <string name="screen_notification_message">Độ dài video: %s</string>
+    <!-- Screen recorder notification share title -->
+    <string name="screen_notification_message_done">Sẵn sàng để chia sẻ</string>
+    <!-- Screen recorder status message -->
+    <string name="screen_recording_message">Màn hình đang được ghi\u2026</string>
+    <!-- Screen recorder last item title -->
+    <string name="screen_last_title">Lần ghi cuối</string>
+    <!-- Screen recorder last item message -->
+    <string name="screen_last_message">Ngày: %1$s\nĐộ dài: %2$d giây</string>
+    <!-- Screen recorder notification overlay title -->
+    <string name="screen_overlay_notif_title">Sẵn sàng để ghi lại</string>
+    <!-- Screen recorder notification overlay message -->
+    <string name="screen_overlay_notif_message">Nhấn nút ghi âm khi bạn đã sẵn sàng để bắt đầu</string>
+    <!-- Screen settings dialog title -->
+    <string name="screen_settings_title">Cài đặt trình ghi màn hình</string>
+    <!-- Screen recorder notification overlay channel title -->
+    <string name="screen_overlay_channel_title">Sẵn sàng để ghi lại màn hình</string>
+    <!-- Screen recorder notification overlay channel description-->
+    <string name="screen_overlay_channel_desc">Thông báo cho thấy ghi hình màn hình đã sẵn sàng để bắt đầu</string>
+    <!-- Screen recorder persistent notification channel title -->
+    <string name="screen_channel_title">Ghi màn hình</string>
+    <!-- Screen recorder persistent notification channel description-->
+    <string name="screen_channel_desc">Thông báo liên tục khi ghi lại màn hình và thông báo sau khi hoàn tất</string>
+    <!-- Permissions -->
+    <!-- Permissions dialog title -->
+    <string name="dialog_permissions_title">Quyền truy cập</string>
+    <!-- Message: microphone access denied -->
+    <string name="dialog_permissions_mic">Trình ghi lại cần quyền micro để ghi lại âm thanh</string>
+    <!-- Message: storage access denied -->
+    <string name="dialog_permissions_storage">Trình ghi lại cần truy cập bộ nhớ để lưu các tập tin đã ghi</string>
+    <!-- Message: phone status denied -->
+    <string name="dialog_permissions_phone">Trình ghi lại cần truy cập trạng thái điện thoại để ngăn ứng dụng này ghi âm khi bạn đang gọi</string>
+    <!-- Message: microphone and storage access denied -->
+    <string name="dialog_permissions_mic_storage">Trình ghi lại cần quyền micro để ghi lại âm thanh và truy cập bộ nhớ để lưu các tập tin đã ghi</string>
+    <!-- Message: microphone and phone status access denied -->
+    <string name="dialog_permissions_mic_phone">Trình ghi lại cần quyền micro để ghi lại âm thanh và truy cập trạng thái điện thoại để ngăn chặn ứng dụng này ghi âm trong khi bạn đang gọi</string>
+    <!-- Message: storage and phone status access denied -->
+    <string name="dialog_permissions_storage_phone">Trình ghi lại cần truy cập bộ nhớ để lưu tập tin đã ghi âm và truy cập trạng thái điện thoại để ngăn ứng dụng này ghi âm khi bạn đang gọi</string>
+    <!-- Message: microphone, storage and phone status access denied -->
+    <string name="dialog_permissions_mic_storage_phone">Trình ghi lại cần truy cập micro để ghi âm, truy cập bộ nhớ để lưu tập tin đã ghi và truy cập trạng thái điện thoại để ngăn ứng dụng này ghi âm khi bạn đang gọi</string>
+    <!-- Permissions dialog action: ask permissions access again -->
+    <string name="dialog_permissions_ask">Hỏi lại</string>
+    <!-- Permissions dialog action: dismiss dialog -->
+    <string name="dialog_permissions_dismiss">Bỏ qua</string>
+    <!-- Message: overlay permission denied. Make sure "Draw over other apps" matches settings strings -->
+    <string name="dialog_permissions_overlay">Trình ghi âm cần quyền \"Vẽ trên các ứng dụng khác\" để ghi lại màn hình của bạn. Nhấn cho phép, kích hoạt quyền trong cài đặt và trở lại Trình ghi âm</string>
+    <!-- No permissions granted error -->
+    <string name="snack_permissions_no_permission">Quyền truy cập cần thiết đã bị từ chối, cho phép chúng từ Cài đặt ứng dụng để bắt đầu ghi âm</string>
+    <!-- Main activity -->
+    <!-- Screen record title -->
+    <string name="main_screen_action">Ghi lại màn hình</string>
+    <!-- Sound record title -->
+    <string name="main_sound_action">Ghi lại âm thanh</string>
+    <!-- Transition name for dialogActivity -->
 </resources>

@@ -15,93 +15,106 @@
      limitations under the License.
 -->
 <resources>
-  <string name="app_name">Grabadora</string>
-  <!-- Common actions -->
-  <!-- Share action for notification -->
-  <string name="share">Compartir</string>
-  <!-- Stop action for notification -->
-  <string name="stop">Parar</string>
-  <!-- Play action -->
-  <string name="play">Reproducir</string>
-  <!-- Delete action -->
-  <string name="delete">Desaniciar</string>
-  <!-- Cancel action -->
-  <!-- Delete confirm title -->
-  <string name="delete_title">Desaniciando grabación</string>
-  <!-- Delete confirm message -->
-  <string name="delete_message">¿De xuru que quies desaniciar %1$s? Esto nun pue desfacese</string>
-  <!-- Date for last item %1 is year, %2 month, %3 day, %4 hour, %5 min -->
-  <string name="date_format">%1$s-%2$s-%3$s %4$s:%5$s</string>
-  <!-- Permissions -->
-  <!-- Sound recorder -->
-  <!-- Sound recorder notification title -->
-  <string name="sound_notification_title">Grabadora de soníu</string>
-  <!-- Sound recorder notification message -->
-  <string name="sound_notification_message">Duración d\'audiu: %1$s</string>
-  <!-- Sound recorder status card title recording -->
-  <string name="sound_recording_title_working">Grabando</string>
-  <!-- Sound recorder last item title -->
-  <string name="sound_last_title">Grabación cabera</string>
-  <!-- Sound recorder notification channel title -->
-  <!-- Sound recorder notification channel description-->
-  <!-- Screen recorder -->
-  <!-- Screen recorder enabled audio message -->
-  <string name="screen_audio_message_on">Incluyiráse nel videu l\'audiu del micrófonu</string>
-  <!-- Screen recorder disabled audio message -->
-  <string name="screen_audio_message_off">Nun s\'incluyirá nel videu l\'audiu del micrófonu</string>
-  <!-- Screen recorder disabled audio toggle message -->
-  <!-- Screen recorder audio permission request card button -->
-  <string name="screen_audio_warning_button_ask">Entrugar</string>
-  <!-- Screen recorder notification storage error title -->
-  <string name="screen_insufficient_storage">Almacenamientu insufiente</string>
-  <!-- Screen recorder notification storage error message -->
-  <string name="screen_not_enough_storage">Nun hai espaciu abondo disponible</string>
-  <!-- Screen recorder notification title -->
-  <string name="screen_notification_title">Grabadora de pantalla</string>
-  <!-- Screen recorder notification message -->
-  <string name="screen_notification_message">Duración del videu: %s</string>
-  <!-- Screen recorder notification share title -->
-  <!-- Screen recorder status message -->
-  <string name="screen_recording_message">Ta grabándose la pantalla\u2026</string>
-  <!-- Screen recorder last item title -->
-  <string name="screen_last_title">Grabación cabera</string>
-  <!-- Screen recorder last item message -->
-  <string name="screen_last_message">Data: %1$s\nDuración: %2$d segundos</string>
-  <!-- Screen recorder notification overlay title -->
-  <string name="screen_overlay_notif_title">Preparada pa grabar</string>
-  <!-- Screen recorder notification overlay message -->
-  <string name="screen_overlay_notif_message">Primi\'l botón de grabar cuando teas preparáu</string>
-  <!-- Screen settings dialog title -->
-  <!-- Screen recorder notification overlay channel title -->
-  <!-- Screen recorder notification overlay channel description-->
-  <!-- Screen recorder persistent notification channel title -->
-  <!-- Screen recorder persistent notification channel description-->
-  <!-- Permissions -->
-  <!-- Permissions dialog title -->
-  <string name="dialog_permissions_title">Permisos</string>
-  <!-- Message: microphone access denied -->
-  <string name="dialog_permissions_mic">Grabadora precisa\'l permisu del micrófonu pa grabar audiu</string>
-  <!-- Message: storage access denied -->
-  <string name="dialog_permissions_storage">Grabadora precisa\'l permisu d\'almacenamientu pa guardar ficheros grabaos</string>
-  <!-- Message: phone status denied -->
-  <string name="dialog_permissions_phone">Grabadora precisa\'l permisu del estáu del teléfonu pa evitar qu\'esta aplicación grabe entrín teas llamando</string>
-  <!-- Message: microphone and storage access denied -->
-  <string name="dialog_permissions_mic_storage">Grabadora precisa\'l permisu del micrófonu y del accesu al almacenamientu pa guardar audios grabaos</string>
-  <!-- Message: microphone and phone status access denied -->
-  <string name="dialog_permissions_mic_phone">Grabadora precisa\'l permisu\'l micrófonu pa grabar audiu y l\'accesu al estáu del teléfonu pa evitar qu\'esta aplicación grabe entrín teas llamando</string>
-  <!-- Message: storage and phone status access denied -->
-  <string name="dialog_permissions_storage_phone">Grabadora precisa l\'accesu d\'almacenamientu pa guardar los ficheros grabaos y accesu al estáu\'l teléfonu pa evitar qu\'esta aplicación grabe entrín teas nun llamada</string>
-  <!-- Message: microphone, storage and phone status access denied -->
-  <string name="dialog_permissions_mic_storage_phone">Grabadora precisa\'l permisu de grabar audiu, accesu al almacenamientu pa guardar ficheros grabaos y accesu al estáu\'l teléfonu pa evitar qu\'esta aplicación grabe entrín teas nuna llamada</string>
-  <!-- Permissions dialog action: ask permissions access again -->
-  <string name="dialog_permissions_ask">Entrugar de nueves</string>
-  <!-- Permissions dialog action: dismiss dialog -->
-  <string name="dialog_permissions_dismiss">Escartar</string>
-  <!-- Message: overlay permission denied. Make sure "Draw over other apps" matches settings strings -->
-  <!-- No permissions granted error -->
-  <string name="snack_permissions_no_permission">Ñegáronse permisos riquíos, habilítalos dende Axustes pa entamar a grabar</string>
-  <!-- Main activity -->
-  <!-- Screen record title -->
-  <!-- Sound record title -->
-  <!-- Transition name for dialogActivity -->
+    <string name="app_name">Grabadora</string>
+    <!-- Common actions -->
+    <!-- Share action for notification -->
+    <string name="share">Compartir</string>
+    <!-- Stop action for notification -->
+    <string name="stop">Parar</string>
+    <!-- Play action -->
+    <string name="play">Reproducir</string>
+    <!-- Delete action -->
+    <string name="delete">Desaniciar</string>
+    <!-- Cancel action -->
+    <string name="cancel">Encaboxar</string>
+    <!-- Delete confirm title -->
+    <string name="delete_title">Desaniciando grabación</string>
+    <!-- Delete confirm message -->
+    <string name="delete_message">¿De xuru que quies desaniciar %1$s? Esto nun pue desfacese</string>
+    <!-- Date for last item %1 is year, %2 month, %3 day, %4 hour, %5 min -->
+    <string name="date_format">%1$s-%2$s-%3$s %4$s:%5$s</string>
+    <!-- Permissions -->
+    <!-- Sound recorder -->
+    <!-- Sound recorder notification title -->
+    <string name="sound_notification_title">Grabadora de soníu</string>
+    <!-- Sound recorder notification message -->
+    <string name="sound_notification_message">Duración d\'audiu: %1$s</string>
+    <!-- Sound recorder status card title recording -->
+    <string name="sound_recording_title_working">Grabando</string>
+    <!-- Sound recorder last item title -->
+    <string name="sound_last_title">Grabación cabera</string>
+    <!-- Sound recorder notification channel title -->
+    <string name="sound_channel_title">Grabación de soníu</string>
+    <!-- Sound recorder notification channel description-->
+    <string name="sound_channel_desc">Notificación persistente na grabación de soníu y notificación cuando tea fecha</string>
+    <!-- Screen recorder -->
+    <!-- Screen recorder enabled audio message -->
+    <string name="screen_audio_message_on">Incluyiráse nel videu l\'audiu del micrófonu</string>
+    <!-- Screen recorder disabled audio message -->
+    <string name="screen_audio_message_off">Nun s\'incluyirá nel videu l\'audiu del micrófonu</string>
+    <!-- Screen recorder disabled audio toggle message -->
+    <string name="screen_audio_message_disabled">Nun ye posible camudar esta configuración mentanto se ta grabando la pantalla</string>
+    <!-- Screen recorder audio permission request card button -->
+    <string name="screen_audio_warning_button_ask">Entrugar</string>
+    <!-- Screen recorder notification storage error title -->
+    <string name="screen_insufficient_storage">Almacenamientu insufiente</string>
+    <!-- Screen recorder notification storage error message -->
+    <string name="screen_not_enough_storage">Nun hai espaciu abondo disponible</string>
+    <!-- Screen recorder notification title -->
+    <string name="screen_notification_title">Grabadora de pantalla</string>
+    <!-- Screen recorder notification message -->
+    <string name="screen_notification_message">Duración del videu: %s</string>
+    <!-- Screen recorder notification share title -->
+    <string name="screen_notification_message_done">Preparada pa compartir</string>
+    <!-- Screen recorder status message -->
+    <string name="screen_recording_message">Ta grabándose la pantalla\u2026</string>
+    <!-- Screen recorder last item title -->
+    <string name="screen_last_title">Grabación cabera</string>
+    <!-- Screen recorder last item message -->
+    <string name="screen_last_message">Data: %1$s\nDuración: %2$d segundos</string>
+    <!-- Screen recorder notification overlay title -->
+    <string name="screen_overlay_notif_title">Preparada pa grabar</string>
+    <!-- Screen recorder notification overlay message -->
+    <string name="screen_overlay_notif_message">Primi\'l botón de grabar cuando teas preparáu</string>
+    <!-- Screen settings dialog title -->
+    <string name="screen_settings_title">Axustes de grabación de la pantalla</string>
+    <!-- Screen recorder notification overlay channel title -->
+    <string name="screen_overlay_channel_title">Preparáu pa grabar la pantalla</string>
+    <!-- Screen recorder notification overlay channel description-->
+    <string name="screen_overlay_channel_desc">Avisu qu\'amuesa que la grabación de pantalla ta preparada p\'aniciase</string>
+    <!-- Screen recorder persistent notification channel title -->
+    <string name="screen_channel_title">Grabación de pantalla</string>
+    <!-- Screen recorder persistent notification channel description-->
+    <string name="screen_channel_desc">Notificación persistente na grabación de soníu y notificación cuando tea fecha</string>
+    <!-- Permissions -->
+    <!-- Permissions dialog title -->
+    <string name="dialog_permissions_title">Permisos</string>
+    <!-- Message: microphone access denied -->
+    <string name="dialog_permissions_mic">Grabadora precisa\'l permisu del micrófonu pa grabar audiu</string>
+    <!-- Message: storage access denied -->
+    <string name="dialog_permissions_storage">Grabadora precisa\'l permisu d\'almacenamientu pa guardar ficheros grabaos</string>
+    <!-- Message: phone status denied -->
+    <string name="dialog_permissions_phone">Grabadora precisa\'l permisu del estáu del teléfonu pa evitar qu\'esta aplicación grabe entrín teas llamando</string>
+    <!-- Message: microphone and storage access denied -->
+    <string name="dialog_permissions_mic_storage">Grabadora precisa\'l permisu del micrófonu y del accesu al almacenamientu pa guardar audios grabaos</string>
+    <!-- Message: microphone and phone status access denied -->
+    <string name="dialog_permissions_mic_phone">Grabadora precisa\'l permisu\'l micrófonu pa grabar audiu y l\'accesu al estáu del teléfonu pa evitar qu\'esta aplicación grabe entrín teas llamando</string>
+    <!-- Message: storage and phone status access denied -->
+    <string name="dialog_permissions_storage_phone">Grabadora precisa l\'accesu d\'almacenamientu pa guardar los ficheros grabaos y accesu al estáu\'l teléfonu pa evitar qu\'esta aplicación grabe entrín teas nun llamada</string>
+    <!-- Message: microphone, storage and phone status access denied -->
+    <string name="dialog_permissions_mic_storage_phone">Grabadora precisa\'l permisu de grabar audiu, accesu al almacenamientu pa guardar ficheros grabaos y accesu al estáu\'l teléfonu pa evitar qu\'esta aplicación grabe entrín teas nuna llamada</string>
+    <!-- Permissions dialog action: ask permissions access again -->
+    <string name="dialog_permissions_ask">Entrugar de nueves</string>
+    <!-- Permissions dialog action: dismiss dialog -->
+    <string name="dialog_permissions_dismiss">Escartar</string>
+    <!-- Message: overlay permission denied. Make sure "Draw over other apps" matches settings strings -->
+    <string name="dialog_permissions_overlay">La grabadora necesita permisu pa «Amosase penriba d\'otres aplicaciones» y grabar la to pantalla. Calca permitir, activa\'l permisu nos axustes y torna a la grabadora</string>
+    <!-- No permissions granted error -->
+    <string name="snack_permissions_no_permission">Ñegáronse permisos riquíos, habilítalos dende Axustes pa entamar a grabar</string>
+    <!-- Main activity -->
+    <!-- Screen record title -->
+    <string name="main_screen_action">Grabar la pantalla</string>
+    <!-- Sound record title -->
+    <string name="main_sound_action">Grabar el soníu</string>
+    <!-- Transition name for dialogActivity -->
 </resources>

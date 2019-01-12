@@ -15,106 +15,106 @@
      limitations under the License.
 -->
 <resources>
-  <string name="app_name">Kaydedici</string>
-  <!-- Common actions -->
-  <!-- Share action for notification -->
-  <string name="share">Paylaş</string>
-  <!-- Stop action for notification -->
-  <string name="stop">Durdur</string>
-  <!-- Play action -->
-  <string name="play">Oynat</string>
-  <!-- Delete action -->
-  <string name="delete">Sil</string>
-  <!-- Cancel action -->
-  <string name="cancel">İptal</string>
-  <!-- Delete confirm title -->
-  <string name="delete_title">Kayıt siliniyor</string>
-  <!-- Delete confirm message -->
-  <string name="delete_message">%1$s silmek istediğinizden emin misiniz? Bu geri alınamaz</string>
-  <!-- Date for last item %1 is year, %2 month, %3 day, %4 hour, %5 min -->
-  <string name="date_format">%1$s-%2$s-%3$s %4$s:%5$s</string>
-  <!-- Permissions -->
-  <!-- Sound recorder -->
-  <!-- Sound recorder notification title -->
-  <string name="sound_notification_title">Ses Kaydedici</string>
-  <!-- Sound recorder notification message -->
-  <string name="sound_notification_message">Ses uzunluğu: %1$s</string>
-  <!-- Sound recorder status card title recording -->
-  <string name="sound_recording_title_working">Kaydediliyor</string>
-  <!-- Sound recorder last item title -->
-  <string name="sound_last_title">Son kayıt</string>
-  <!-- Sound recorder notification channel title -->
-  <string name="sound_channel_title">Ses kaydı</string>
-  <!-- Sound recorder notification channel description-->
-  <string name="sound_channel_desc">Ses kaydedilirken kalıcı bildirim göster ve tamamlandıktan sonra bildirim göster</string>
-  <!-- Screen recorder -->
-  <!-- Screen recorder enabled audio message -->
-  <string name="screen_audio_message_on">Mikrofondaki ses videoya dahil edilecek</string>
-  <!-- Screen recorder disabled audio message -->
-  <string name="screen_audio_message_off">Mikrofondan gelen ses videoya dahil edilmeyecek</string>
-  <!-- Screen recorder disabled audio toggle message -->
-  <string name="screen_audio_message_disabled">Ekranı kaydederken bu ayarı değiştirmek mümkün değildir</string>
-  <!-- Screen recorder audio permission request card button -->
-  <string name="screen_audio_warning_button_ask">Sor</string>
-  <!-- Screen recorder notification storage error title -->
-  <string name="screen_insufficient_storage">Yetersiz depolama</string>
-  <!-- Screen recorder notification storage error message -->
-  <string name="screen_not_enough_storage">Yeterli kullanılabilir depolama alanı yok</string>
-  <!-- Screen recorder notification title -->
-  <string name="screen_notification_title">Ekran Kaydedici</string>
-  <!-- Screen recorder notification message -->
-  <string name="screen_notification_message">Video uzunluğu: %s</string>
-  <!-- Screen recorder notification share title -->
-  <string name="screen_notification_message_done">Paylaşmak için hazır</string>
-  <!-- Screen recorder status message -->
-  <string name="screen_recording_message">Ekran kaydediliyor\u2026</string>
-  <!-- Screen recorder last item title -->
-  <string name="screen_last_title">Son kayıt</string>
-  <!-- Screen recorder last item message -->
-  <string name="screen_last_message">Tarih: %1$s\nSüre: %2$d saniye</string>
-  <!-- Screen recorder notification overlay title -->
-  <string name="screen_overlay_notif_title">Kayıt yapmaya hazır</string>
-  <!-- Screen recorder notification overlay message -->
-  <string name="screen_overlay_notif_message">Başlamaya hazır olduğunuzda kayıt düğmesine basın</string>
-  <!-- Screen settings dialog title -->
-  <string name="screen_settings_title">Ekran kaydedici ayarları</string>
-  <!-- Screen recorder notification overlay channel title -->
-  <string name="screen_overlay_channel_title">Ekran kaydetmek için hazır</string>
-  <!-- Screen recorder notification overlay channel description-->
-  <string name="screen_overlay_channel_desc">Ekran kaydını gösteren bildirim başlatmaya hazır</string>
-  <!-- Screen recorder persistent notification channel title -->
-  <string name="screen_channel_title">Ekran kaydı</string>
-  <!-- Screen recorder persistent notification channel description-->
-  <string name="screen_channel_desc">Ekran kaydedilirken kalıcı bildirim göster ve tamamlandıktan sonra bildirim göster</string>
-  <!-- Permissions -->
-  <!-- Permissions dialog title -->
-  <string name="dialog_permissions_title">İzinler</string>
-  <!-- Message: microphone access denied -->
-  <string name="dialog_permissions_mic">Kaydedici ses kaydetmek için mikrofon iznine ihtiyaç duyuyor</string>
-  <!-- Message: storage access denied -->
-  <string name="dialog_permissions_storage">Kaydedici kayıtları saklamak için depolama erişimi iznine ihtiyaç duyuyor</string>
-  <!-- Message: phone status denied -->
-  <string name="dialog_permissions_phone">Arama esnasında bu uygulamanın kayıt yapmasını önlemek için kaydedicinin telefon durumu erişimine ihtiyacı var</string>
-  <!-- Message: microphone and storage access denied -->
-  <string name="dialog_permissions_mic_storage">Kaydedici ses kaydetmek için mikrofon iznine ve kaydedilmiş dosyaları saklamak için depolama erişimi iznine ihtiyaç duyuyor</string>
-  <!-- Message: microphone and phone status access denied -->
-  <string name="dialog_permissions_mic_phone">Kaydedici, arama esnasında kayıt yapmayı önlemek için mikrofon iznine ve telefon durumu erişimine ihtiyaç duyar</string>
-  <!-- Message: storage and phone status access denied -->
-  <string name="dialog_permissions_storage_phone">Kaydedici, dosyaları saklamak için depolama erişimine ve arama esnasında bu uygulamanın kayıt yapmasını engellemek için telefon durum erişimine ihtiyacı var</string>
-  <!-- Message: microphone, storage and phone status access denied -->
-  <string name="dialog_permissions_mic_storage_phone">Kaydedici, ses kaydetmek için mikrofon iznine, kayıtlı dosyaları saklamak için depolama erişimine ve telefon görüşmesi yaparken bu uygulamanın kayıt yapmasını önlemek için telefon durumu erişimine ihtiyaç duyar</string>
-  <!-- Permissions dialog action: ask permissions access again -->
-  <string name="dialog_permissions_ask">Tekrar sor</string>
-  <!-- Permissions dialog action: dismiss dialog -->
-  <string name="dialog_permissions_dismiss">Reddet</string>
-  <!-- Message: overlay permission denied. Make sure "Draw over other apps" matches settings strings -->
-  <string name="dialog_permissions_overlay">Kaydedici, ekranınızı kaydetmek için \"Diğer uygulamalar üzerinde görüntüle\" iznine ihtiyaç duyar. İzin ver tuşuna basın, ayarların izinlerini etkinleştirin ve Kaydediciye geri dönün</string>
-  <!-- No permissions granted error -->
-  <string name="snack_permissions_no_permission">Gerekli izinler reddedildi, kayda başlamak için bunları Ayarlar uygulamasından etkinleştirin</string>
-  <!-- Main activity -->
-  <!-- Screen record title -->
-  <string name="main_screen_action">Ekranı kaydet</string>
-  <!-- Sound record title -->
-  <string name="main_sound_action">Ses kaydet</string>
-  <!-- Transition name for dialogActivity -->
+    <string name="app_name">Kaydedici</string>
+    <!-- Common actions -->
+    <!-- Share action for notification -->
+    <string name="share">Paylaş</string>
+    <!-- Stop action for notification -->
+    <string name="stop">Durdur</string>
+    <!-- Play action -->
+    <string name="play">Oynat</string>
+    <!-- Delete action -->
+    <string name="delete">Sil</string>
+    <!-- Cancel action -->
+    <string name="cancel">İptal</string>
+    <!-- Delete confirm title -->
+    <string name="delete_title">Kayıt siliniyor</string>
+    <!-- Delete confirm message -->
+    <string name="delete_message">%1$s silmek istediğinizden emin misiniz? Bu geri alınamaz</string>
+    <!-- Date for last item %1 is year, %2 month, %3 day, %4 hour, %5 min -->
+    <string name="date_format">%1$s-%2$s-%3$s %4$s:%5$s</string>
+    <!-- Permissions -->
+    <!-- Sound recorder -->
+    <!-- Sound recorder notification title -->
+    <string name="sound_notification_title">Ses Kaydedici</string>
+    <!-- Sound recorder notification message -->
+    <string name="sound_notification_message">Ses uzunluğu: %1$s</string>
+    <!-- Sound recorder status card title recording -->
+    <string name="sound_recording_title_working">Kaydediliyor</string>
+    <!-- Sound recorder last item title -->
+    <string name="sound_last_title">Son kayıt</string>
+    <!-- Sound recorder notification channel title -->
+    <string name="sound_channel_title">Ses kaydı</string>
+    <!-- Sound recorder notification channel description-->
+    <string name="sound_channel_desc">Ses kaydedilirken kalıcı bildirim göster ve tamamlandıktan sonra bildirim göster</string>
+    <!-- Screen recorder -->
+    <!-- Screen recorder enabled audio message -->
+    <string name="screen_audio_message_on">Mikrofondaki ses videoya dahil edilecek</string>
+    <!-- Screen recorder disabled audio message -->
+    <string name="screen_audio_message_off">Mikrofondan gelen ses videoya dahil edilmeyecek</string>
+    <!-- Screen recorder disabled audio toggle message -->
+    <string name="screen_audio_message_disabled">Ekranı kaydederken bu ayarı değiştirmek mümkün değildir</string>
+    <!-- Screen recorder audio permission request card button -->
+    <string name="screen_audio_warning_button_ask">Sor</string>
+    <!-- Screen recorder notification storage error title -->
+    <string name="screen_insufficient_storage">Yetersiz depolama</string>
+    <!-- Screen recorder notification storage error message -->
+    <string name="screen_not_enough_storage">Yeterli kullanılabilir depolama alanı yok</string>
+    <!-- Screen recorder notification title -->
+    <string name="screen_notification_title">Ekran Kaydedici</string>
+    <!-- Screen recorder notification message -->
+    <string name="screen_notification_message">Video uzunluğu: %s</string>
+    <!-- Screen recorder notification share title -->
+    <string name="screen_notification_message_done">Paylaşmak için hazır</string>
+    <!-- Screen recorder status message -->
+    <string name="screen_recording_message">Ekran kaydediliyor\u2026</string>
+    <!-- Screen recorder last item title -->
+    <string name="screen_last_title">Son kayıt</string>
+    <!-- Screen recorder last item message -->
+    <string name="screen_last_message">Tarih: %1$s\nSüre: %2$d saniye</string>
+    <!-- Screen recorder notification overlay title -->
+    <string name="screen_overlay_notif_title">Kayıt yapmaya hazır</string>
+    <!-- Screen recorder notification overlay message -->
+    <string name="screen_overlay_notif_message">Başlamaya hazır olduğunuzda kayıt düğmesine basın</string>
+    <!-- Screen settings dialog title -->
+    <string name="screen_settings_title">Ekran kaydedici ayarları</string>
+    <!-- Screen recorder notification overlay channel title -->
+    <string name="screen_overlay_channel_title">Ekran kaydetmek için hazır</string>
+    <!-- Screen recorder notification overlay channel description-->
+    <string name="screen_overlay_channel_desc">Ekran kaydını gösteren bildirim başlatmaya hazır</string>
+    <!-- Screen recorder persistent notification channel title -->
+    <string name="screen_channel_title">Ekran kaydı</string>
+    <!-- Screen recorder persistent notification channel description-->
+    <string name="screen_channel_desc">Ekran kaydedilirken kalıcı bildirim göster ve tamamlandıktan sonra bildirim göster</string>
+    <!-- Permissions -->
+    <!-- Permissions dialog title -->
+    <string name="dialog_permissions_title">İzinler</string>
+    <!-- Message: microphone access denied -->
+    <string name="dialog_permissions_mic">Kaydedici ses kaydetmek için mikrofon iznine ihtiyaç duyuyor</string>
+    <!-- Message: storage access denied -->
+    <string name="dialog_permissions_storage">Kaydedici kayıtları saklamak için depolama erişimi iznine ihtiyaç duyuyor</string>
+    <!-- Message: phone status denied -->
+    <string name="dialog_permissions_phone">Arama esnasında bu uygulamanın kayıt yapmasını önlemek için kaydedicinin telefon durumu erişimine ihtiyacı var</string>
+    <!-- Message: microphone and storage access denied -->
+    <string name="dialog_permissions_mic_storage">Kaydedici ses kaydetmek için mikrofon iznine ve kaydedilmiş dosyaları saklamak için depolama erişimi iznine ihtiyaç duyuyor</string>
+    <!-- Message: microphone and phone status access denied -->
+    <string name="dialog_permissions_mic_phone">Kaydedici, arama esnasında kayıt yapmayı önlemek için mikrofon iznine ve telefon durumu erişimine ihtiyaç duyar</string>
+    <!-- Message: storage and phone status access denied -->
+    <string name="dialog_permissions_storage_phone">Kaydedici, dosyaları saklamak için depolama erişimine ve arama esnasında bu uygulamanın kayıt yapmasını engellemek için telefon durum erişimine ihtiyacı var</string>
+    <!-- Message: microphone, storage and phone status access denied -->
+    <string name="dialog_permissions_mic_storage_phone">Kaydedici, ses kaydetmek için mikrofon iznine, kayıtlı dosyaları saklamak için depolama erişimine ve telefon görüşmesi yaparken bu uygulamanın kayıt yapmasını önlemek için telefon durumu erişimine ihtiyaç duyar</string>
+    <!-- Permissions dialog action: ask permissions access again -->
+    <string name="dialog_permissions_ask">Tekrar sor</string>
+    <!-- Permissions dialog action: dismiss dialog -->
+    <string name="dialog_permissions_dismiss">Reddet</string>
+    <!-- Message: overlay permission denied. Make sure "Draw over other apps" matches settings strings -->
+    <string name="dialog_permissions_overlay">Kaydedici, ekranınızı kaydetmek için \"Diğer uygulamalar üzerinde görüntüle\" iznine ihtiyaç duyar. İzin ver tuşuna basın, ayarların izinlerini etkinleştirin ve Kaydediciye geri dönün</string>
+    <!-- No permissions granted error -->
+    <string name="snack_permissions_no_permission">Gerekli izinler reddedildi, kayda başlamak için bunları Ayarlar uygulamasından etkinleştirin</string>
+    <!-- Main activity -->
+    <!-- Screen record title -->
+    <string name="main_screen_action">Ekranı kaydet</string>
+    <!-- Sound record title -->
+    <string name="main_sound_action">Ses kaydet</string>
+    <!-- Transition name for dialogActivity -->
 </resources>

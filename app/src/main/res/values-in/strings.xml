@@ -15,106 +15,106 @@
      limitations under the License.
 -->
 <resources>
-  <string name="app_name">Perekam</string>
-  <!-- Common actions -->
-  <!-- Share action for notification -->
-  <string name="share">Bagikan</string>
-  <!-- Stop action for notification -->
-  <string name="stop">Hentikan</string>
-  <!-- Play action -->
-  <string name="play">Putar</string>
-  <!-- Delete action -->
-  <string name="delete">Hapus</string>
-  <!-- Cancel action -->
-  <string name="cancel">Batal</string>
-  <!-- Delete confirm title -->
-  <string name="delete_title">Menghapus rekaman</string>
-  <!-- Delete confirm message -->
-  <string name="delete_message">Apakah Anda yakin ingin menghapus %1$s? Ini tidak dapat dibatalkan</string>
-  <!-- Date for last item %1 is year, %2 month, %3 day, %4 hour, %5 min -->
-  <string name="date_format">%3$s-%2$s-%1$s %4$s:%5$s</string>
-  <!-- Permissions -->
-  <!-- Sound recorder -->
-  <!-- Sound recorder notification title -->
-  <string name="sound_notification_title">Perekam Suara</string>
-  <!-- Sound recorder notification message -->
-  <string name="sound_notification_message">Durasi audio: %1$s</string>
-  <!-- Sound recorder status card title recording -->
-  <string name="sound_recording_title_working">Merekam</string>
-  <!-- Sound recorder last item title -->
-  <string name="sound_last_title">Rekaman terakhir</string>
-  <!-- Sound recorder notification channel title -->
-  <string name="sound_channel_title">Rekaman suara</string>
-  <!-- Sound recorder notification channel description-->
-  <string name="sound_channel_desc">Pemberitahuan tetap saat merekam suara dan pemberitahuan setelah selesai</string>
-  <!-- Screen recorder -->
-  <!-- Screen recorder enabled audio message -->
-  <string name="screen_audio_message_on">Audio dari mikrofon akan disertakan dalam video</string>
-  <!-- Screen recorder disabled audio message -->
-  <string name="screen_audio_message_off">Audio dari mikrofon tidak akan disertakan dalam video</string>
-  <!-- Screen recorder disabled audio toggle message -->
-  <string name="screen_audio_message_disabled">Tidak mungkin merubah setelan ini saat merekam layar</string>
-  <!-- Screen recorder audio permission request card button -->
-  <string name="screen_audio_warning_button_ask">Minta izin</string>
-  <!-- Screen recorder notification storage error title -->
-  <string name="screen_insufficient_storage">Penyimpanan tidak cukup</string>
-  <!-- Screen recorder notification storage error message -->
-  <string name="screen_not_enough_storage">Penyimpanan yang tersedia tidak cukup</string>
-  <!-- Screen recorder notification title -->
-  <string name="screen_notification_title">Perekam Layar</string>
-  <!-- Screen recorder notification message -->
-  <string name="screen_notification_message">Durasi video: %s</string>
-  <!-- Screen recorder notification share title -->
-  <string name="screen_notification_message_done">Siap untuk dibagikan</string>
-  <!-- Screen recorder status message -->
-  <string name="screen_recording_message">Layar sedang direkam\u2026</string>
-  <!-- Screen recorder last item title -->
-  <string name="screen_last_title">Rekaman terakhir</string>
-  <!-- Screen recorder last item message -->
-  <string name="screen_last_message">Tanggal: %1$s\nDurasi: %2$d detik</string>
-  <!-- Screen recorder notification overlay title -->
-  <string name="screen_overlay_notif_title">Siap untuk merekam</string>
-  <!-- Screen recorder notification overlay message -->
-  <string name="screen_overlay_notif_message">Tekan tombol rekam saat anda siap untuk memulai</string>
-  <!-- Screen settings dialog title -->
-  <string name="screen_settings_title">Setelan perekam layar</string>
-  <!-- Screen recorder notification overlay channel title -->
-  <string name="screen_overlay_channel_title">Siap merekam layar</string>
-  <!-- Screen recorder notification overlay channel description-->
-  <string name="screen_overlay_channel_desc">Pemberitahuan yang menampilkan perekaman layar sudah siap untuk dimulai</string>
-  <!-- Screen recorder persistent notification channel title -->
-  <string name="screen_channel_title">Rekaman layar</string>
-  <!-- Screen recorder persistent notification channel description-->
-  <string name="screen_channel_desc">Pemberitahuan tetap saat merekam layar dan pemberitahuan setelah selesai</string>
-  <!-- Permissions -->
-  <!-- Permissions dialog title -->
-  <string name="dialog_permissions_title">Izin</string>
-  <!-- Message: microphone access denied -->
-  <string name="dialog_permissions_mic">Perekam membutuhkan izin mikrofon untuk merekam audio</string>
-  <!-- Message: storage access denied -->
-  <string name="dialog_permissions_storage">Perekam membutuhkan akses ke penyimpanan untuk menyimpan file rekaman</string>
-  <!-- Message: phone status denied -->
-  <string name="dialog_permissions_phone">Perekam membutuhkan akses ke status telepon untuk mencegah aplikasi ini merekam saat Anda melakukan panggilan</string>
-  <!-- Message: microphone and storage access denied -->
-  <string name="dialog_permissions_mic_storage">Perekam membutuhkan izin mikrofon untuk merekam audio, dan akses ke penyimpanan untuk menyimpan file rekaman</string>
-  <!-- Message: microphone and phone status access denied -->
-  <string name="dialog_permissions_mic_phone">Perekam membutuhkan izin mikrofon untuk merekam audio, dan akses ke status telepon untuk mencegah aplikasi ini merekam saat Anda melakukan panggilan</string>
-  <!-- Message: storage and phone status access denied -->
-  <string name="dialog_permissions_storage_phone">Perekam membutuhkan akses ke penyimpanan untuk menyimpan file rekaman, dan akses ke status telepon untuk mencegah aplikasi ini merekam saat Anda melakukan panggilan</string>
-  <!-- Message: microphone, storage and phone status access denied -->
-  <string name="dialog_permissions_mic_storage_phone">Perekam membutuhkan izin mikrofon untuk merekam audio, akses ke penyimpanan untuk menyimpan file rekaman, dan akses ke status telepon untuk mencegah aplikasi ini merekam saat Anda melakukan panggilan</string>
-  <!-- Permissions dialog action: ask permissions access again -->
-  <string name="dialog_permissions_ask">Minta izin lagi</string>
-  <!-- Permissions dialog action: dismiss dialog -->
-  <string name="dialog_permissions_dismiss">Tutup</string>
-  <!-- Message: overlay permission denied. Make sure "Draw over other apps" matches settings strings -->
-  <string name="dialog_permissions_overlay">Perekam membutuhkan izin \"Menarik di atas aplikasi lain\" untuk merekam layar anda. Tekan izinkan, hidupkan perizinan di setelan dan kembali ke Perekam</string>
-  <!-- No permissions granted error -->
-  <string name="snack_permissions_no_permission">Izin yang diperlukan ditolak, hidupkan dari aplikasi Pengaturan untuk mulai merekam</string>
-  <!-- Main activity -->
-  <!-- Screen record title -->
-  <string name="main_screen_action">Rekam layar</string>
-  <!-- Sound record title -->
-  <string name="main_sound_action">Rekam suara</string>
-  <!-- Transition name for dialogActivity -->
+    <string name="app_name">Perekam</string>
+    <!-- Common actions -->
+    <!-- Share action for notification -->
+    <string name="share">Bagikan</string>
+    <!-- Stop action for notification -->
+    <string name="stop">Hentikan</string>
+    <!-- Play action -->
+    <string name="play">Putar</string>
+    <!-- Delete action -->
+    <string name="delete">Hapus</string>
+    <!-- Cancel action -->
+    <string name="cancel">Batal</string>
+    <!-- Delete confirm title -->
+    <string name="delete_title">Menghapus rekaman</string>
+    <!-- Delete confirm message -->
+    <string name="delete_message">Apakah Anda yakin ingin menghapus %1$s? Ini tidak dapat dibatalkan</string>
+    <!-- Date for last item %1 is year, %2 month, %3 day, %4 hour, %5 min -->
+    <string name="date_format">%3$s-%2$s-%1$s %4$s:%5$s</string>
+    <!-- Permissions -->
+    <!-- Sound recorder -->
+    <!-- Sound recorder notification title -->
+    <string name="sound_notification_title">Perekam Suara</string>
+    <!-- Sound recorder notification message -->
+    <string name="sound_notification_message">Durasi audio: %1$s</string>
+    <!-- Sound recorder status card title recording -->
+    <string name="sound_recording_title_working">Merekam</string>
+    <!-- Sound recorder last item title -->
+    <string name="sound_last_title">Rekaman terakhir</string>
+    <!-- Sound recorder notification channel title -->
+    <string name="sound_channel_title">Rekaman suara</string>
+    <!-- Sound recorder notification channel description-->
+    <string name="sound_channel_desc">Pemberitahuan tetap saat merekam suara dan pemberitahuan setelah selesai</string>
+    <!-- Screen recorder -->
+    <!-- Screen recorder enabled audio message -->
+    <string name="screen_audio_message_on">Audio dari mikrofon akan disertakan dalam video</string>
+    <!-- Screen recorder disabled audio message -->
+    <string name="screen_audio_message_off">Audio dari mikrofon tidak akan disertakan dalam video</string>
+    <!-- Screen recorder disabled audio toggle message -->
+    <string name="screen_audio_message_disabled">Tidak mungkin merubah setelan ini saat merekam layar</string>
+    <!-- Screen recorder audio permission request card button -->
+    <string name="screen_audio_warning_button_ask">Minta izin</string>
+    <!-- Screen recorder notification storage error title -->
+    <string name="screen_insufficient_storage">Penyimpanan tidak cukup</string>
+    <!-- Screen recorder notification storage error message -->
+    <string name="screen_not_enough_storage">Penyimpanan yang tersedia tidak cukup</string>
+    <!-- Screen recorder notification title -->
+    <string name="screen_notification_title">Perekam Layar</string>
+    <!-- Screen recorder notification message -->
+    <string name="screen_notification_message">Durasi video: %s</string>
+    <!-- Screen recorder notification share title -->
+    <string name="screen_notification_message_done">Siap untuk dibagikan</string>
+    <!-- Screen recorder status message -->
+    <string name="screen_recording_message">Layar sedang direkam\u2026</string>
+    <!-- Screen recorder last item title -->
+    <string name="screen_last_title">Rekaman terakhir</string>
+    <!-- Screen recorder last item message -->
+    <string name="screen_last_message">Tanggal: %1$s\nDurasi: %2$d detik</string>
+    <!-- Screen recorder notification overlay title -->
+    <string name="screen_overlay_notif_title">Siap untuk merekam</string>
+    <!-- Screen recorder notification overlay message -->
+    <string name="screen_overlay_notif_message">Tekan tombol rekam saat anda siap untuk memulai</string>
+    <!-- Screen settings dialog title -->
+    <string name="screen_settings_title">Setelan perekam layar</string>
+    <!-- Screen recorder notification overlay channel title -->
+    <string name="screen_overlay_channel_title">Siap merekam layar</string>
+    <!-- Screen recorder notification overlay channel description-->
+    <string name="screen_overlay_channel_desc">Pemberitahuan yang menampilkan perekaman layar sudah siap untuk dimulai</string>
+    <!-- Screen recorder persistent notification channel title -->
+    <string name="screen_channel_title">Rekaman layar</string>
+    <!-- Screen recorder persistent notification channel description-->
+    <string name="screen_channel_desc">Pemberitahuan tetap saat merekam layar dan pemberitahuan setelah selesai</string>
+    <!-- Permissions -->
+    <!-- Permissions dialog title -->
+    <string name="dialog_permissions_title">Izin</string>
+    <!-- Message: microphone access denied -->
+    <string name="dialog_permissions_mic">Perekam membutuhkan izin mikrofon untuk merekam audio</string>
+    <!-- Message: storage access denied -->
+    <string name="dialog_permissions_storage">Perekam membutuhkan akses ke penyimpanan untuk menyimpan file rekaman</string>
+    <!-- Message: phone status denied -->
+    <string name="dialog_permissions_phone">Perekam membutuhkan akses ke status telepon untuk mencegah aplikasi ini merekam saat Anda melakukan panggilan</string>
+    <!-- Message: microphone and storage access denied -->
+    <string name="dialog_permissions_mic_storage">Perekam membutuhkan izin mikrofon untuk merekam audio, dan akses ke penyimpanan untuk menyimpan file rekaman</string>
+    <!-- Message: microphone and phone status access denied -->
+    <string name="dialog_permissions_mic_phone">Perekam membutuhkan izin mikrofon untuk merekam audio, dan akses ke status telepon untuk mencegah aplikasi ini merekam saat Anda melakukan panggilan</string>
+    <!-- Message: storage and phone status access denied -->
+    <string name="dialog_permissions_storage_phone">Perekam membutuhkan akses ke penyimpanan untuk menyimpan file rekaman, dan akses ke status telepon untuk mencegah aplikasi ini merekam saat Anda melakukan panggilan</string>
+    <!-- Message: microphone, storage and phone status access denied -->
+    <string name="dialog_permissions_mic_storage_phone">Perekam membutuhkan izin mikrofon untuk merekam audio, akses ke penyimpanan untuk menyimpan file rekaman, dan akses ke status telepon untuk mencegah aplikasi ini merekam saat Anda melakukan panggilan</string>
+    <!-- Permissions dialog action: ask permissions access again -->
+    <string name="dialog_permissions_ask">Minta izin lagi</string>
+    <!-- Permissions dialog action: dismiss dialog -->
+    <string name="dialog_permissions_dismiss">Tutup</string>
+    <!-- Message: overlay permission denied. Make sure "Draw over other apps" matches settings strings -->
+    <string name="dialog_permissions_overlay">Perekam membutuhkan izin \"Menarik di atas aplikasi lain\" untuk merekam layar anda. Tekan izinkan, hidupkan perizinan di setelan dan kembali ke Perekam</string>
+    <!-- No permissions granted error -->
+    <string name="snack_permissions_no_permission">Izin yang diperlukan ditolak, hidupkan dari aplikasi Pengaturan untuk mulai merekam</string>
+    <!-- Main activity -->
+    <!-- Screen record title -->
+    <string name="main_screen_action">Rekam layar</string>
+    <!-- Sound record title -->
+    <string name="main_sound_action">Rekam suara</string>
+    <!-- Transition name for dialogActivity -->
 </resources>

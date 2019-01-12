@@ -15,106 +15,106 @@
      limitations under the License.
 -->
 <resources>
-  <string name="app_name">Recorder</string>
-  <!-- Common actions -->
-  <!-- Share action for notification -->
-  <string name="share">Share</string>
-  <!-- Stop action for notification -->
-  <string name="stop">Stop</string>
-  <!-- Play action -->
-  <string name="play">Play</string>
-  <!-- Delete action -->
-  <string name="delete">Delete</string>
-  <!-- Cancel action -->
-  <string name="cancel">Cancel</string>
-  <!-- Delete confirm title -->
-  <string name="delete_title">Deleting record</string>
-  <!-- Delete confirm message -->
-  <string name="delete_message">Are you sure you want to delete %1$s? This cannot be undone</string>
-  <!-- Date for last item %1 is year, %2 month, %3 day, %4 hour, %5 min -->
-  <string name="date_format">%1$s-%2$s-%3$s %4$s:%5$s</string>
-  <!-- Permissions -->
-  <!-- Sound recorder -->
-  <!-- Sound recorder notification title -->
-  <string name="sound_notification_title">Sound Recorder</string>
-  <!-- Sound recorder notification message -->
-  <string name="sound_notification_message">Audio length: %1$s</string>
-  <!-- Sound recorder status card title recording -->
-  <string name="sound_recording_title_working">Recording</string>
-  <!-- Sound recorder last item title -->
-  <string name="sound_last_title">Last record</string>
-  <!-- Sound recorder notification channel title -->
-  <string name="sound_channel_title">Sound recording</string>
-  <!-- Sound recorder notification channel description-->
-  <string name="sound_channel_desc">Persistent notification when recording sound and notification after it is complete</string>
-  <!-- Screen recorder -->
-  <!-- Screen recorder enabled audio message -->
-  <string name="screen_audio_message_on">Audio from the microphone will be included in the video</string>
-  <!-- Screen recorder disabled audio message -->
-  <string name="screen_audio_message_off">Audio from microphone won\'t be included in the video</string>
-  <!-- Screen recorder disabled audio toggle message -->
-  <string name="screen_audio_message_disabled">It\'s not possible to change this setting while recording the screen</string>
-  <!-- Screen recorder audio permission request card button -->
-  <string name="screen_audio_warning_button_ask">Ask</string>
-  <!-- Screen recorder notification storage error title -->
-  <string name="screen_insufficient_storage">Insufficient storage</string>
-  <!-- Screen recorder notification storage error message -->
-  <string name="screen_not_enough_storage">Not enough storage available</string>
-  <!-- Screen recorder notification title -->
-  <string name="screen_notification_title">Screen Recorder</string>
-  <!-- Screen recorder notification message -->
-  <string name="screen_notification_message">Video length: %s</string>
-  <!-- Screen recorder notification share title -->
-  <string name="screen_notification_message_done">Ready to share</string>
-  <!-- Screen recorder status message -->
-  <string name="screen_recording_message">Screen is being recorded\u2026</string>
-  <!-- Screen recorder last item title -->
-  <string name="screen_last_title">Last record</string>
-  <!-- Screen recorder last item message -->
-  <string name="screen_last_message">Date: %1$s\nDuration: %2$d seconds</string>
-  <!-- Screen recorder notification overlay title -->
-  <string name="screen_overlay_notif_title">Ready to record</string>
-  <!-- Screen recorder notification overlay message -->
-  <string name="screen_overlay_notif_message">Press the record button when you\'re ready to start</string>
-  <!-- Screen settings dialog title -->
-  <string name="screen_settings_title">Screen recorder settings</string>
-  <!-- Screen recorder notification overlay channel title -->
-  <string name="screen_overlay_channel_title">Ready to record screen</string>
-  <!-- Screen recorder notification overlay channel description-->
-  <string name="screen_overlay_channel_desc">Notification showing screen recording is ready to start</string>
-  <!-- Screen recorder persistent notification channel title -->
-  <string name="screen_channel_title">Screen recording</string>
-  <!-- Screen recorder persistent notification channel description-->
-  <string name="screen_channel_desc">Persistent notification when recording the screen and notification after it is complete</string>
-  <!-- Permissions -->
-  <!-- Permissions dialog title -->
-  <string name="dialog_permissions_title">Permissions</string>
-  <!-- Message: microphone access denied -->
-  <string name="dialog_permissions_mic">Recorder needs microphone permission to record audio</string>
-  <!-- Message: storage access denied -->
-  <string name="dialog_permissions_storage">Recorder needs storage access to save recorded files</string>
-  <!-- Message: phone status denied -->
-  <string name="dialog_permissions_phone">Recorder needs phone status access to prevent this app from recording while you\'re calling</string>
-  <!-- Message: microphone and storage access denied -->
-  <string name="dialog_permissions_mic_storage">Recorder needs microphone permission to record audio and storage access to save recorded files</string>
-  <!-- Message: microphone and phone status access denied -->
-  <string name="dialog_permissions_mic_phone">Recorder needs microphone permission to record audio and phone status access to prevent this app from recording while you\'re calling</string>
-  <!-- Message: storage and phone status access denied -->
-  <string name="dialog_permissions_storage_phone">Recorder needs storage access to save recorded files and phone status access to prevent this app from recording while you\'re calling</string>
-  <!-- Message: microphone, storage and phone status access denied -->
-  <string name="dialog_permissions_mic_storage_phone">Recorder needs microphone permission to record audio, storage access to save recorded files and phone status access to prevent this app from recording while you\'re calling</string>
-  <!-- Permissions dialog action: ask permissions access again -->
-  <string name="dialog_permissions_ask">Ask again</string>
-  <!-- Permissions dialog action: dismiss dialog -->
-  <string name="dialog_permissions_dismiss">Dismiss</string>
-  <!-- Message: overlay permission denied. Make sure "Draw over other apps" matches settings strings -->
-  <string name="dialog_permissions_overlay">Recorder needs \"Draw over other apps\" permission to record your screen. Press allow, enable the permission in the settings and come back to Recorder</string>
-  <!-- No permissions granted error -->
-  <string name="snack_permissions_no_permission">Required permissions were denied, enable them from Settings app to start recording</string>
-  <!-- Main activity -->
-  <!-- Screen record title -->
-  <string name="main_screen_action">Record screen</string>
-  <!-- Sound record title -->
-  <string name="main_sound_action">Record sound</string>
-  <!-- Transition name for dialogActivity -->
+    <string name="app_name">Recorder</string>
+    <!-- Common actions -->
+    <!-- Share action for notification -->
+    <string name="share">Share</string>
+    <!-- Stop action for notification -->
+    <string name="stop">Stop</string>
+    <!-- Play action -->
+    <string name="play">Play</string>
+    <!-- Delete action -->
+    <string name="delete">Delete</string>
+    <!-- Cancel action -->
+    <string name="cancel">Cancel</string>
+    <!-- Delete confirm title -->
+    <string name="delete_title">Deleting record</string>
+    <!-- Delete confirm message -->
+    <string name="delete_message">Are you sure you want to delete %1$s? This cannot be undone</string>
+    <!-- Date for last item %1 is year, %2 month, %3 day, %4 hour, %5 min -->
+    <string name="date_format">%1$s-%2$s-%3$s %4$s:%5$s</string>
+    <!-- Permissions -->
+    <!-- Sound recorder -->
+    <!-- Sound recorder notification title -->
+    <string name="sound_notification_title">Sound Recorder</string>
+    <!-- Sound recorder notification message -->
+    <string name="sound_notification_message">Audio length: %1$s</string>
+    <!-- Sound recorder status card title recording -->
+    <string name="sound_recording_title_working">Recording</string>
+    <!-- Sound recorder last item title -->
+    <string name="sound_last_title">Last record</string>
+    <!-- Sound recorder notification channel title -->
+    <string name="sound_channel_title">Sound recording</string>
+    <!-- Sound recorder notification channel description-->
+    <string name="sound_channel_desc">Persistent notification when recording sound and notification after it is complete</string>
+    <!-- Screen recorder -->
+    <!-- Screen recorder enabled audio message -->
+    <string name="screen_audio_message_on">Audio from the microphone will be included in the video</string>
+    <!-- Screen recorder disabled audio message -->
+    <string name="screen_audio_message_off">Audio from microphone won\'t be included in the video</string>
+    <!-- Screen recorder disabled audio toggle message -->
+    <string name="screen_audio_message_disabled">It\'s not possible to change this setting while recording the screen</string>
+    <!-- Screen recorder audio permission request card button -->
+    <string name="screen_audio_warning_button_ask">Ask</string>
+    <!-- Screen recorder notification storage error title -->
+    <string name="screen_insufficient_storage">Insufficient storage</string>
+    <!-- Screen recorder notification storage error message -->
+    <string name="screen_not_enough_storage">Not enough storage available</string>
+    <!-- Screen recorder notification title -->
+    <string name="screen_notification_title">Screen Recorder</string>
+    <!-- Screen recorder notification message -->
+    <string name="screen_notification_message">Video length: %s</string>
+    <!-- Screen recorder notification share title -->
+    <string name="screen_notification_message_done">Ready to share</string>
+    <!-- Screen recorder status message -->
+    <string name="screen_recording_message">Screen is being recorded\u2026</string>
+    <!-- Screen recorder last item title -->
+    <string name="screen_last_title">Last record</string>
+    <!-- Screen recorder last item message -->
+    <string name="screen_last_message">Date: %1$s\nDuration: %2$d seconds</string>
+    <!-- Screen recorder notification overlay title -->
+    <string name="screen_overlay_notif_title">Ready to record</string>
+    <!-- Screen recorder notification overlay message -->
+    <string name="screen_overlay_notif_message">Press the record button when you\'re ready to start</string>
+    <!-- Screen settings dialog title -->
+    <string name="screen_settings_title">Screen recorder settings</string>
+    <!-- Screen recorder notification overlay channel title -->
+    <string name="screen_overlay_channel_title">Ready to record screen</string>
+    <!-- Screen recorder notification overlay channel description-->
+    <string name="screen_overlay_channel_desc">Notification showing screen recording is ready to start</string>
+    <!-- Screen recorder persistent notification channel title -->
+    <string name="screen_channel_title">Screen recording</string>
+    <!-- Screen recorder persistent notification channel description-->
+    <string name="screen_channel_desc">Persistent notification when recording the screen and notification after it is complete</string>
+    <!-- Permissions -->
+    <!-- Permissions dialog title -->
+    <string name="dialog_permissions_title">Permissions</string>
+    <!-- Message: microphone access denied -->
+    <string name="dialog_permissions_mic">Recorder needs microphone permission to record audio</string>
+    <!-- Message: storage access denied -->
+    <string name="dialog_permissions_storage">Recorder needs storage access to save recorded files</string>
+    <!-- Message: phone status denied -->
+    <string name="dialog_permissions_phone">Recorder needs phone status access to prevent this app from recording while you\'re calling</string>
+    <!-- Message: microphone and storage access denied -->
+    <string name="dialog_permissions_mic_storage">Recorder needs microphone permission to record audio and storage access to save recorded files</string>
+    <!-- Message: microphone and phone status access denied -->
+    <string name="dialog_permissions_mic_phone">Recorder needs microphone permission to record audio and phone status access to prevent this app from recording while you\'re calling</string>
+    <!-- Message: storage and phone status access denied -->
+    <string name="dialog_permissions_storage_phone">Recorder needs storage access to save recorded files and phone status access to prevent this app from recording while you\'re calling</string>
+    <!-- Message: microphone, storage and phone status access denied -->
+    <string name="dialog_permissions_mic_storage_phone">Recorder needs microphone permission to record audio, storage access to save recorded files and phone status access to prevent this app from recording while you\'re calling</string>
+    <!-- Permissions dialog action: ask permissions access again -->
+    <string name="dialog_permissions_ask">Ask again</string>
+    <!-- Permissions dialog action: dismiss dialog -->
+    <string name="dialog_permissions_dismiss">Dismiss</string>
+    <!-- Message: overlay permission denied. Make sure "Draw over other apps" matches settings strings -->
+    <string name="dialog_permissions_overlay">Recorder needs \"Draw over other apps\" permission to record your screen. Press allow, enable the permission in the settings and come back to Recorder</string>
+    <!-- No permissions granted error -->
+    <string name="snack_permissions_no_permission">Required permissions were denied, enable them from Settings app to start recording</string>
+    <!-- Main activity -->
+    <!-- Screen record title -->
+    <string name="main_screen_action">Record screen</string>
+    <!-- Sound record title -->
+    <string name="main_sound_action">Record sound</string>
+    <!-- Transition name for dialogActivity -->
 </resources>

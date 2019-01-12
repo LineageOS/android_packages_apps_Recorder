@@ -15,106 +15,106 @@
      limitations under the License.
 -->
 <resources>
-  <string name="app_name">Magnétophone</string>
-  <!-- Common actions -->
-  <!-- Share action for notification -->
-  <string name="share">Partager</string>
-  <!-- Stop action for notification -->
-  <string name="stop">Arrêter</string>
-  <!-- Play action -->
-  <string name="play">Lecture</string>
-  <!-- Delete action -->
-  <string name="delete">Supprimer</string>
-  <!-- Cancel action -->
-  <string name="cancel">Annuler</string>
-  <!-- Delete confirm title -->
-  <string name="delete_title">Suppression de l’enregistrement</string>
-  <!-- Delete confirm message -->
-  <string name="delete_message">Êtes-vous sûr de vouloir supprimer %1$s? Cette action est irréversible</string>
-  <!-- Date for last item %1 is year, %2 month, %3 day, %4 hour, %5 min -->
-  <string name="date_format">%1$s-%2$s-%3$s %4$s:%5$s</string>
-  <!-- Permissions -->
-  <!-- Sound recorder -->
-  <!-- Sound recorder notification title -->
-  <string name="sound_notification_title">Enregistreur audio</string>
-  <!-- Sound recorder notification message -->
-  <string name="sound_notification_message">Durée de l\'audio : %1$s</string>
-  <!-- Sound recorder status card title recording -->
-  <string name="sound_recording_title_working">Enregistrement en cours</string>
-  <!-- Sound recorder last item title -->
-  <string name="sound_last_title">Dernier enregistrement</string>
-  <!-- Sound recorder notification channel title -->
-  <string name="sound_channel_title">Enregistreur audio</string>
-  <!-- Sound recorder notification channel description-->
-  <string name="sound_channel_desc">Notification persistante lors de l\'enregistrement audio et notification après la fin de ce dernier</string>
-  <!-- Screen recorder -->
-  <!-- Screen recorder enabled audio message -->
-  <string name="screen_audio_message_on">L\'enregistrement audio du microphone sera inclus dans la vidéo</string>
-  <!-- Screen recorder disabled audio message -->
-  <string name="screen_audio_message_off">L\'enregistrement audio du microphone ne sera pas inclus dans la vidéo</string>
-  <!-- Screen recorder disabled audio toggle message -->
-  <string name="screen_audio_message_disabled">Il est impossible de modifier ce paramètre pendant l\'enregistrement de l\'écran</string>
-  <!-- Screen recorder audio permission request card button -->
-  <string name="screen_audio_warning_button_ask">Demander</string>
-  <!-- Screen recorder notification storage error title -->
-  <string name="screen_insufficient_storage">Espace de stockage insuffisant</string>
-  <!-- Screen recorder notification storage error message -->
-  <string name="screen_not_enough_storage">Espace de stockage insuffisant</string>
-  <!-- Screen recorder notification title -->
-  <string name="screen_notification_title">Enregistreur d\'écran</string>
-  <!-- Screen recorder notification message -->
-  <string name="screen_notification_message">Durée de la vidéo : %s</string>
-  <!-- Screen recorder notification share title -->
-  <string name="screen_notification_message_done">Prêt à partager</string>
-  <!-- Screen recorder status message -->
-  <string name="screen_recording_message">Écran en cours d\'enregistrement\u2026</string>
-  <!-- Screen recorder last item title -->
-  <string name="screen_last_title">Dernier enregistrement</string>
-  <!-- Screen recorder last item message -->
-  <string name="screen_last_message">Date: %1$s\nDurée: %2$d secondes</string>
-  <!-- Screen recorder notification overlay title -->
-  <string name="screen_overlay_notif_title">Prêt à enregistrer</string>
-  <!-- Screen recorder notification overlay message -->
-  <string name="screen_overlay_notif_message">Appuyez sur le bouton enregistrer quand vous êtes prêt à démarrer</string>
-  <!-- Screen settings dialog title -->
-  <string name="screen_settings_title">Paramètres de capture vidéo</string>
-  <!-- Screen recorder notification overlay channel title -->
-  <string name="screen_overlay_channel_title">Prêt à enregistrer l\'écran</string>
-  <!-- Screen recorder notification overlay channel description-->
-  <string name="screen_overlay_channel_desc">Notification indiquant que l\'enregistrement d\'écran est prêt à démarrer</string>
-  <!-- Screen recorder persistent notification channel title -->
-  <string name="screen_channel_title">Enregistrement d\'écran</string>
-  <!-- Screen recorder persistent notification channel description-->
-  <string name="screen_channel_desc">Notification persistante lors de l\'enregistrement d\'écran et notification après la fin de ce dernier</string>
-  <!-- Permissions -->
-  <!-- Permissions dialog title -->
-  <string name="dialog_permissions_title">Autorisations</string>
-  <!-- Message: microphone access denied -->
-  <string name="dialog_permissions_mic">Le magnétophone a besoin d\'accéder au microphone pour enregistrer l\'audio</string>
-  <!-- Message: storage access denied -->
-  <string name="dialog_permissions_storage">Le magnétophone a besoin d’accéder au stockage pour sauvegarder les fichiers enregistrés</string>
-  <!-- Message: phone status denied -->
-  <string name="dialog_permissions_phone">Le magnétophone a besoin d\'accéder à l\'état du téléphone pour empêcher l\'application d\'enregistrer pendant un appel</string>
-  <!-- Message: microphone and storage access denied -->
-  <string name="dialog_permissions_mic_storage">Le magnétophone a besoin d’accéder au microphone pour enregistrer l\'audio et au stockage pour sauvegarder les fichiers enregistrés</string>
-  <!-- Message: microphone and phone status access denied -->
-  <string name="dialog_permissions_mic_phone">Le magnétophone a besoin d’accéder au microphone pour enregistrer l\'audio et à l\'état du téléphone pour empêcher l\'application d\'enregistrer pendant un appel</string>
-  <!-- Message: storage and phone status access denied -->
-  <string name="dialog_permissions_storage_phone">Le magnétophone a besoin d\'accéder au stockage pour sauvegarder les fichiers enregistrés et à l\'état du téléphone pour empêcher l\'application d\'enregistrer pendant un appel</string>
-  <!-- Message: microphone, storage and phone status access denied -->
-  <string name="dialog_permissions_mic_storage_phone">Le magnétophone a besoin d’accéder au microphone pour enregistrer l\'audio, au stockage pour sauvegarder les fichiers enregistrés et à l\'état du téléphone pour empêcher l\'application d\'enregistrer pendant un appel</string>
-  <!-- Permissions dialog action: ask permissions access again -->
-  <string name="dialog_permissions_ask">Demander à nouveau</string>
-  <!-- Permissions dialog action: dismiss dialog -->
-  <string name="dialog_permissions_dismiss">Fermer</string>
-  <!-- Message: overlay permission denied. Make sure "Draw over other apps" matches settings strings -->
-  <string name="dialog_permissions_overlay">Magnétophone a besoin de la permission \"Se superposer aux autres applis\" pour enregistrer votre écran. Choisissez autoriser, activez la permission dans les paramètres et revenez dans Magnétophone</string>
-  <!-- No permissions granted error -->
-  <string name="snack_permissions_no_permission">Les autorisations requises ont été refusées, activez-les depuis les Paramètres pour commencer à enregistrer</string>
-  <!-- Main activity -->
-  <!-- Screen record title -->
-  <string name="main_screen_action">Enregistrer l\'écran</string>
-  <!-- Sound record title -->
-  <string name="main_sound_action">Enregistrement vocal</string>
-  <!-- Transition name for dialogActivity -->
+    <string name="app_name">Magnétophone</string>
+    <!-- Common actions -->
+    <!-- Share action for notification -->
+    <string name="share">Partager</string>
+    <!-- Stop action for notification -->
+    <string name="stop">Arrêter</string>
+    <!-- Play action -->
+    <string name="play">Lecture</string>
+    <!-- Delete action -->
+    <string name="delete">Supprimer</string>
+    <!-- Cancel action -->
+    <string name="cancel">Annuler</string>
+    <!-- Delete confirm title -->
+    <string name="delete_title">Suppression de l’enregistrement</string>
+    <!-- Delete confirm message -->
+    <string name="delete_message">Êtes-vous sûr de vouloir supprimer %1$s? Cette action est irréversible</string>
+    <!-- Date for last item %1 is year, %2 month, %3 day, %4 hour, %5 min -->
+    <string name="date_format">%1$s-%2$s-%3$s %4$s:%5$s</string>
+    <!-- Permissions -->
+    <!-- Sound recorder -->
+    <!-- Sound recorder notification title -->
+    <string name="sound_notification_title">Enregistreur audio</string>
+    <!-- Sound recorder notification message -->
+    <string name="sound_notification_message">Durée de l\'audio : %1$s</string>
+    <!-- Sound recorder status card title recording -->
+    <string name="sound_recording_title_working">Enregistrement en cours</string>
+    <!-- Sound recorder last item title -->
+    <string name="sound_last_title">Dernier enregistrement</string>
+    <!-- Sound recorder notification channel title -->
+    <string name="sound_channel_title">Enregistreur audio</string>
+    <!-- Sound recorder notification channel description-->
+    <string name="sound_channel_desc">Notification persistante lors de l\'enregistrement audio et notification après la fin de ce dernier</string>
+    <!-- Screen recorder -->
+    <!-- Screen recorder enabled audio message -->
+    <string name="screen_audio_message_on">L\'enregistrement audio du microphone sera inclus dans la vidéo</string>
+    <!-- Screen recorder disabled audio message -->
+    <string name="screen_audio_message_off">L\'enregistrement audio du microphone ne sera pas inclus dans la vidéo</string>
+    <!-- Screen recorder disabled audio toggle message -->
+    <string name="screen_audio_message_disabled">Il est impossible de modifier ce paramètre pendant l\'enregistrement de l\'écran</string>
+    <!-- Screen recorder audio permission request card button -->
+    <string name="screen_audio_warning_button_ask">Demander</string>
+    <!-- Screen recorder notification storage error title -->
+    <string name="screen_insufficient_storage">Espace de stockage insuffisant</string>
+    <!-- Screen recorder notification storage error message -->
+    <string name="screen_not_enough_storage">Espace de stockage insuffisant</string>
+    <!-- Screen recorder notification title -->
+    <string name="screen_notification_title">Enregistreur d\'écran</string>
+    <!-- Screen recorder notification message -->
+    <string name="screen_notification_message">Durée de la vidéo : %s</string>
+    <!-- Screen recorder notification share title -->
+    <string name="screen_notification_message_done">Prêt à partager</string>
+    <!-- Screen recorder status message -->
+    <string name="screen_recording_message">Écran en cours d\'enregistrement\u2026</string>
+    <!-- Screen recorder last item title -->
+    <string name="screen_last_title">Dernier enregistrement</string>
+    <!-- Screen recorder last item message -->
+    <string name="screen_last_message">Date: %1$s\nDurée: %2$d secondes</string>
+    <!-- Screen recorder notification overlay title -->
+    <string name="screen_overlay_notif_title">Prêt à enregistrer</string>
+    <!-- Screen recorder notification overlay message -->
+    <string name="screen_overlay_notif_message">Appuyez sur le bouton enregistrer quand vous êtes prêt à démarrer</string>
+    <!-- Screen settings dialog title -->
+    <string name="screen_settings_title">Paramètres de capture vidéo</string>
+    <!-- Screen recorder notification overlay channel title -->
+    <string name="screen_overlay_channel_title">Prêt à enregistrer l\'écran</string>
+    <!-- Screen recorder notification overlay channel description-->
+    <string name="screen_overlay_channel_desc">Notification indiquant que l\'enregistrement d\'écran est prêt à démarrer</string>
+    <!-- Screen recorder persistent notification channel title -->
+    <string name="screen_channel_title">Enregistrement d\'écran</string>
+    <!-- Screen recorder persistent notification channel description-->
+    <string name="screen_channel_desc">Notification persistante lors de l\'enregistrement d\'écran et notification après la fin de ce dernier</string>
+    <!-- Permissions -->
+    <!-- Permissions dialog title -->
+    <string name="dialog_permissions_title">Autorisations</string>
+    <!-- Message: microphone access denied -->
+    <string name="dialog_permissions_mic">Le magnétophone a besoin d\'accéder au microphone pour enregistrer l\'audio</string>
+    <!-- Message: storage access denied -->
+    <string name="dialog_permissions_storage">Le magnétophone a besoin d’accéder au stockage pour sauvegarder les fichiers enregistrés</string>
+    <!-- Message: phone status denied -->
+    <string name="dialog_permissions_phone">Le magnétophone a besoin d\'accéder à l\'état du téléphone pour empêcher l\'application d\'enregistrer pendant un appel</string>
+    <!-- Message: microphone and storage access denied -->
+    <string name="dialog_permissions_mic_storage">Le magnétophone a besoin d’accéder au microphone pour enregistrer l\'audio et au stockage pour sauvegarder les fichiers enregistrés</string>
+    <!-- Message: microphone and phone status access denied -->
+    <string name="dialog_permissions_mic_phone">Le magnétophone a besoin d’accéder au microphone pour enregistrer l\'audio et à l\'état du téléphone pour empêcher l\'application d\'enregistrer pendant un appel</string>
+    <!-- Message: storage and phone status access denied -->
+    <string name="dialog_permissions_storage_phone">Le magnétophone a besoin d\'accéder au stockage pour sauvegarder les fichiers enregistrés et à l\'état du téléphone pour empêcher l\'application d\'enregistrer pendant un appel</string>
+    <!-- Message: microphone, storage and phone status access denied -->
+    <string name="dialog_permissions_mic_storage_phone">Le magnétophone a besoin d’accéder au microphone pour enregistrer l\'audio, au stockage pour sauvegarder les fichiers enregistrés et à l\'état du téléphone pour empêcher l\'application d\'enregistrer pendant un appel</string>
+    <!-- Permissions dialog action: ask permissions access again -->
+    <string name="dialog_permissions_ask">Demander à nouveau</string>
+    <!-- Permissions dialog action: dismiss dialog -->
+    <string name="dialog_permissions_dismiss">Fermer</string>
+    <!-- Message: overlay permission denied. Make sure "Draw over other apps" matches settings strings -->
+    <string name="dialog_permissions_overlay">Magnétophone a besoin de la permission \"Se superposer aux autres applis\" pour enregistrer votre écran. Choisissez autoriser, activez la permission dans les paramètres et revenez dans Magnétophone</string>
+    <!-- No permissions granted error -->
+    <string name="snack_permissions_no_permission">Les autorisations requises ont été refusées, activez-les depuis les Paramètres pour commencer à enregistrer</string>
+    <!-- Main activity -->
+    <!-- Screen record title -->
+    <string name="main_screen_action">Enregistrer l\'écran</string>
+    <!-- Sound record title -->
+    <string name="main_sound_action">Enregistrement vocal</string>
+    <!-- Transition name for dialogActivity -->
 </resources>
