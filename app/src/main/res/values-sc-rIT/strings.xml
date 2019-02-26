@@ -35,6 +35,7 @@
     <!-- Sound recorder status card title recording -->
     <!-- Sound recorder last item title -->
     <!-- Sound recorder notification channel title -->
+    <string name="sound_channel_title">Registratzione àudio</string>
     <!-- Sound recorder notification channel description-->
     <!-- Screen recorder -->
     <!-- Screen recorder enabled audio message -->
@@ -55,6 +56,7 @@
     <!-- Screen recorder notification overlay channel title -->
     <!-- Screen recorder notification overlay channel description-->
     <!-- Screen recorder persistent notification channel title -->
+    <string name="screen_channel_title">Registratzione de s\'ischermu</string>
     <!-- Screen recorder persistent notification channel description-->
     <!-- Permissions -->
     <!-- Permissions dialog title -->

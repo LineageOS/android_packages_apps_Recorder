@@ -47,6 +47,7 @@
     <!-- Screen recorder notification storage error message -->
     <!-- Screen recorder notification title -->
     <!-- Screen recorder notification message -->
+    <string name="screen_notification_message">Hyd y fideo: %s</string>
     <!-- Screen recorder notification share title -->
     <!-- Screen recorder status message -->
     <!-- Screen recorder last item title -->
