@@ -15,71 +15,52 @@
      limitations under the License.
 -->
 <resources>
-    <!-- Common actions -->
-    <!-- Share action for notification -->
-    <!-- Stop action for notification -->
+    <string name="app_name">Recordydd</string>
+    <string name="share">Rhannu</string>
     <string name="stop">Stopio</string>
-    <!-- Play action -->
-    <!-- Delete action -->
-    <!-- Cancel action -->
+    <string name="play">Chwarae</string>
+    <string name="delete">Dileu</string>
     <string name="cancel">Diddymu</string>
-    <!-- Delete confirm title -->
-    <!-- Delete confirm message -->
-    <!-- Date for last item %1 is year, %2 month, %3 day, %4 hour, %5 min -->
-    <!-- Permissions -->
-    <!-- Sound recorder -->
-    <!-- Sound recorder notification title -->
+    <string name="delete_title">Yn dileu\'r recordiad</string>
+    <string name="delete_message">Wyt ti\'n siŵr dy fod eisiau dileu %1$s? Ni ellir dadwneud hyn.</string>
+    <string name="date_format">%1$s-%2$s-%3$s %4$s:%5$s</string>
     <string name="sound_notification_title">Recordydd Sain</string>
-    <!-- Sound recorder notification message -->
-    <!-- Sound recorder status card title recording -->
+    <string name="sound_notification_message">Hyd sain: %1$s</string>
     <string name="sound_recording_title_working">Yn recordio</string>
-    <!-- Sound recorder last item title -->
-    <!-- Sound recorder notification channel title -->
+    <string name="sound_last_title">Recordiad diwethaf</string>
     <string name="sound_channel_title">Recordio sain</string>
-    <!-- Sound recorder notification channel description-->
     <string name="sound_channel_desc">Hysbysiad cyson wrth recordio\'r sain a hysbysiad ar ôl gorffen recordio</string>
-    <!-- Screen recorder -->
-    <!-- Screen recorder enabled audio message -->
-    <!-- Screen recorder disabled audio message -->
-    <!-- Screen recorder disabled audio toggle message -->
-    <!-- Screen recorder audio permission request card button -->
-    <!-- Screen recorder notification storage error title -->
-    <!-- Screen recorder notification storage error message -->
-    <!-- Screen recorder notification title -->
-    <!-- Screen recorder notification message -->
+    <string name="screen_audio_message_on">Caiff sain o\'r meicroffon ei chynnwys yn y fideo</string>
+    <string name="screen_audio_message_off">Ni chaiff sain o\'r meicroffon ei chynnwys yn y fideo</string>
+    <string name="screen_audio_message_disabled">Nid yw\'n bosib newid y gosodiad hwn ar ganol recordio’r sgrin</string>
+    <string name="screen_audio_warning_button_ask">Gofyn</string>
+    <string name="screen_insufficient_storage">Dim digon o storfa</string>
+    <string name="screen_not_enough_storage">Dim digon o storfa\'n rhydd</string>
+    <string name="screen_notification_title">Recordydd sgrîn</string>
     <string name="screen_notification_message">Hyd y fideo: %s</string>
-    <!-- Screen recorder notification share title -->
-    <!-- Screen recorder status message -->
-    <!-- Screen recorder last item title -->
-    <!-- Screen recorder last item message -->
-    <!-- Screen recorder notification overlay title -->
-    <!-- Screen recorder notification overlay message -->
-    <!-- Screen settings dialog title -->
-    <!-- Screen recorder notification overlay channel title -->
+    <string name="screen_notification_message_done">Yn barod i rannu</string>
+    <string name="screen_recording_message">Mae\'r sgrin yn cael ei recordio\u2026</string>
+    <string name="screen_last_title">Recordiad diwethaf</string>
+    <string name="screen_last_message">Dyddiad: %1$s\nHyd: %2$d eiliad</string>
+    <string name="screen_overlay_notif_title">Yn barod i recordio</string>
+    <string name="screen_overlay_notif_message">Pwysa\'r botwm recordio pan wyt ti\'n barod i ddechrau</string>
+    <string name="screen_settings_title">Gosodiadau\'r recordydd sgrin</string>
     <string name="screen_overlay_channel_title">Yn barod i recordio\'r sgrin</string>
-    <!-- Screen recorder notification overlay channel description-->
     <string name="screen_overlay_channel_desc">Hysbysiad yn dangos pan mae recordio\'r sgrin yn barod i ddechrau</string>
-    <!-- Screen recorder persistent notification channel title -->
     <string name="screen_channel_title">Recordio\'r sgrin</string>
-    <!-- Screen recorder persistent notification channel description-->
     <string name="screen_channel_desc">Hysbysiad cyson wrth recordio\'r sgrin a hysbysiad ar ôl gorffen recordio</string>
-    <!-- Permissions -->
-    <!-- Permissions dialog title -->
-    <!-- Message: microphone access denied -->
-    <!-- Message: storage access denied -->
-    <!-- Message: phone status denied -->
-    <!-- Message: microphone and storage access denied -->
-    <!-- Message: microphone and phone status access denied -->
-    <!-- Message: storage and phone status access denied -->
-    <!-- Message: microphone, storage and phone status access denied -->
-    <!-- Permissions dialog action: ask permissions access again -->
-    <!-- Permissions dialog action: dismiss dialog -->
-    <!-- Message: overlay permission denied. Make sure "Draw over other apps" matches settings strings -->
-    <!-- No permissions granted error -->
-    <!-- Main activity -->
-    <!-- Screen record title -->
+    <string name="dialog_permissions_title">Caniatâd</string>
+    <string name="dialog_permissions_mic">Mae ar Recordydd angen mynediad i\'r meicroffon i recordio sain.</string>
+    <string name="dialog_permissions_storage">Mae ar Recordydd angen mynediad i storfa er mwyn cadw ffeiliau a recordiwyd.</string>
+    <string name="dialog_permissions_phone">Mae ar Rcordydd angen mynediad i statws y ffôn er mwyn sicrhau nad yw\'r ap hwn yn recordio tra dy fod mewn galwad.</string>
+    <string name="dialog_permissions_mic_storage">Mae ar Recordydd angen mynediad i\'r meicroffon i fedru recordio sain a mynediad i\'r storfa i gadw ffeiliau recordiadau.</string>
+    <string name="dialog_permissions_mic_phone">Mae ar Recordydd angen mynediad i\'r meicroffon i fedru recordio sain, mynediad i statws y ffôn er mwyn sicrhau nad yw\'r ap hwn yn recordio tra dy fod mewn galwad.</string>
+    <string name="dialog_permissions_storage_phone">Mae ar Recordydd angen mynediad i\'r storfa i gadw ffeiliau recordiadau ac i statws y ffôn er mwyn sicrhau nad yw\'r ap hwn yn recordio tra dy fod mewn galwad.</string>
+    <string name="dialog_permissions_mic_storage_phone">Mae ar Recordydd angen mynediad i\'r meicroffon i fedru recordio sain, mynediad i\'r storfa i gadw ffeiliau recordiadau, ac i statws y ffôn er mwyn sicrhau nad yw\'r ap hwn yn recordio tra dy fod mewn galwad.</string>
+    <string name="dialog_permissions_ask">Gofyn eto</string>
+    <string name="dialog_permissions_dismiss">Diystyru</string>
+    <string name="dialog_permissions_overlay">Mae ar Recordydd angen caniatâd \"Llunio dros ben apiau eraill\" er mwyn recordio dy sgrin. Rho ganiatâd yn y gosodiadau a dod nôl i\'r Recordydd.</string>
+    <string name="snack_permissions_no_permission">Gwrthodwyd peth caniatad sydd ei angen. Rho ganiatâd yn Gosodiadau er mwyn dechrau recordio.</string>
     <string name="main_screen_action">Recordio\'r sgrin</string>
-    <!-- Sound record title -->
     <string name="main_sound_action">Recordio sain</string>
-    <!-- Transition name for dialogActivity -->
 </resources>
