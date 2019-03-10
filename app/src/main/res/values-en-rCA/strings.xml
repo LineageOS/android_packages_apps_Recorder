@@ -40,8 +40,27 @@
     <string name="screen_notification_message">Video length: %s</string>
     <string name="screen_notification_message_done">Ready to share</string>
     <string name="screen_recording_message">Screen is being recorded\u2026</string>
+    <string name="screen_last_title">Last record</string>
+    <string name="screen_last_message">Date: %1$s\nDuration: %2$d seconds</string>
+    <string name="screen_overlay_notif_title">Ready to record</string>
+    <string name="screen_overlay_notif_message">Press the record button when you\'re ready to start</string>
+    <string name="screen_settings_title">Screen recorder settings</string>
     <string name="screen_overlay_channel_title">Ready to record screen</string>
     <string name="screen_overlay_channel_desc">Notification showing screen recording is ready to start</string>
     <string name="screen_channel_title">Screen recording</string>
     <string name="screen_channel_desc">Persistent notification when recording the screen and notification after it is complete</string>
+    <string name="dialog_permissions_title">Permissions</string>
+    <string name="dialog_permissions_mic">Recorder needs microphone permission to record audio</string>
+    <string name="dialog_permissions_storage">Recorder needs storage access to save recorded files</string>
+    <string name="dialog_permissions_phone">Recorder needs phone status access to prevent this app from recording while you\'re calling</string>
+    <string name="dialog_permissions_mic_storage">Recorder needs microphone permission to record audio and storage access to save recorded files</string>
+    <string name="dialog_permissions_mic_phone">Recorder needs microphone permission to record audio and phone status access to prevent this app from recording while you\'re calling</string>
+    <string name="dialog_permissions_storage_phone">Recorder needs storage access to save recorded files and phone status access to prevent this app from recording while you\'re calling</string>
+    <string name="dialog_permissions_mic_storage_phone">Recorder needs microphone permission to record audio, storage access to save recorded files and phone status access to prevent this app from recording while you\'re calling</string>
+    <string name="dialog_permissions_ask">Ask again</string>
+    <string name="dialog_permissions_dismiss">Dismiss</string>
+    <string name="dialog_permissions_overlay">Recorder needs \"Draw over other apps\" permission to record your screen. Press allow, enable the permission in the settings and come back to Recorder</string>
+    <string name="snack_permissions_no_permission">Required permissions were denied, enable them from Settings app to start recording</string>
+    <string name="main_screen_action">Record screen</string>
+    <string name="main_sound_action">Record sound</string>
 </resources>
