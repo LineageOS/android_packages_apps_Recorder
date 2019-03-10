@@ -15,52 +15,46 @@
      limitations under the License.
 -->
 <resources>
-  <!-- Common actions -->
-  <!-- Share action for notification -->
-  <!-- Stop action for notification -->
-  <!-- Play action -->
-  <!-- Delete action -->
-  <!-- Cancel action -->
-  <!-- Delete confirm title -->
-  <!-- Delete confirm message -->
-  <!-- Date for last item %1 is year, %2 month, %3 day, %4 hour, %5 min -->
-  <!-- Permissions -->
-  <!-- Sound recorder -->
-  <!-- Sound recorder notification title -->
-  <!-- Sound recorder notification message -->
-  <!-- Sound recorder status card title recording -->
-  <!-- Sound recorder last item title -->
-  <!-- Screen recorder -->
-  <!-- Screen recorder enabled audio message -->
-  <!-- Screen recorder disabled audio message -->
-  <!-- Screen recorder disabled audio toggle message -->
-  <!-- Screen recorder audio permission request card button -->
-  <!-- Screen recorder notification storage error title -->
-  <!-- Screen recorder notification storage error message -->
-  <!-- Screen recorder notification title -->
-  <!-- Screen recorder notification message -->
-  <!-- Screen recorder notification share title -->
-  <!-- Screen recorder status message -->
-  <!-- Screen recorder last item title -->
-  <!-- Screen recorder last item message -->
-  <!-- Screen recorder notification overlay title -->
-  <!-- Screen recorder notification overlay message -->
-  <!-- Screen settings dialog title -->
-  <!-- Permissions -->
-  <!-- Permissions dialog title -->
-  <!-- Message: microphone access denied -->
-  <!-- Message: storage access denied -->
-  <!-- Message: phone status denied -->
-  <!-- Message: microphone and storage access denied -->
-  <!-- Message: microphone and phone status access denied -->
-  <!-- Message: storage and phone status access denied -->
-  <!-- Message: microphone, storage and phone status access denied -->
-  <!-- Permissions dialog action: ask permissions access again -->
-  <!-- Permissions dialog action: dismiss dialog -->
-  <!-- Message: overlay permission denied. Make sure "Draw over other apps" matches settings strings -->
-  <!-- No permissions granted error -->
-  <!-- Main activity -->
-  <!-- Screen record title -->
-  <!-- Sound record title -->
-  <!-- Transition name for dialogActivity -->
+    <string name="app_name">المُسجل</string>
+    <string name="share">مشاركة</string>
+    <string name="stop">إيقاف</string>
+    <string name="play">تشغيل</string>
+    <string name="delete">حذف</string>
+    <string name="cancel">إلغاء</string>
+    <string name="delete_title">حذف التسجيل</string>
+    <string name="delete_message">هل أنت متأكد من أنك تريد حذف %1$s؟ لا يمكن التراجع عن هذا</string>
+    <string name="date_format">%4$s:%5$s %1$s-%2$s-%3$s</string>
+    <string name="sound_notification_title">مُسجل الصوت</string>
+    <string name="sound_notification_message">طول الصوت: %1$s</string>
+    <string name="sound_recording_title_working">يتم التسجيل</string>
+    <string name="sound_last_title">التسجيل الأخير</string>
+    <string name="screen_audio_message_on">سيتم تضمين الصوت من الميكروفون في الفيديو</string>
+    <string name="screen_audio_message_off">لن يتم تضمين الصوت من الميكروفون في الفيديو</string>
+    <string name="screen_audio_message_disabled">لا يمكن تغيير هذا الإعداد أثناء تسجيل الشاشة</string>
+    <string name="screen_audio_warning_button_ask">اسأل</string>
+    <string name="screen_insufficient_storage">مساحة التخزين غير كافية</string>
+    <string name="screen_not_enough_storage">لا توجد مساحة كافية للتخزين</string>
+    <string name="screen_notification_title">مُسجل الشاشة</string>
+    <string name="screen_notification_message">طول الفيديو: %s</string>
+    <string name="screen_notification_message_done">جاهز للمشاركة</string>
+    <string name="screen_recording_message">يتم تسجيل الشاشة</string>
+    <string name="screen_last_title">التسجيل الأخير</string>
+    <string name="screen_last_message">التاريخ: %1$s\nالمدة: %2$d ثواني</string>
+    <string name="screen_overlay_notif_title">مستعد للتسجيل</string>
+    <string name="screen_overlay_notif_message">اضغط على زر التسجيل عندما تكون على استعداد للبدء</string>
+    <string name="screen_settings_title">ضبط إعدادات مسجل الشاشة</string>
+    <string name="dialog_permissions_title">الأذونات</string>
+    <string name="dialog_permissions_mic">المُسجل يحتاج إلى إذن وصول للميكروفون لتسجيل الصوت</string>
+    <string name="dialog_permissions_storage">المُسجل يحتاج إلى الوصول إلى مكان التخزين لحفظ الملفات المسجلة</string>
+    <string name="dialog_permissions_phone">المُسجل يحتاج إلى الوصول إلى حالة الهاتف لمنع هذا التطبيق من التسجيل أثناء قيامك بالاتصال</string>
+    <string name="dialog_permissions_mic_storage">المُسجل يحتاج إلى الوصول إلى الميكروفون لتسجيل الصوت والوصول إلى مكان التخزين لحفظ الملفات المسجلة</string>
+    <string name="dialog_permissions_mic_phone">المُسجل يحتاج إلى إذن وصول للميكروفون لتسجيل الصوت والوصول إلى حالة الهاتف لمنع هذا التطبيق من التسجيل أثناء قيامك بالاتصال</string>
+    <string name="dialog_permissions_storage_phone">المُسجل يحتاج إلى الوصول إلى مكان التخزين لحفظ الملفات المسجلة والوصول إلى حالة الهاتف لمنع هذا التطبيق من التسجيل أثناء قيامك بالاتصال</string>
+    <string name="dialog_permissions_mic_storage_phone">المُسجل يحتاج إلى إذن وصول للميكروفون لتسجيل الصوت والوصول إلى مكان التخزين لحفظ الملفات المسجلة والوصول إلى حالة الهاتف لمنع هذا التطبيق من التسجيل أثناء قيامك بالاتصال</string>
+    <string name="dialog_permissions_ask">السماح مرة أخرى</string>
+    <string name="dialog_permissions_dismiss">تجاهل</string>
+    <string name="dialog_permissions_overlay">المُسجل يحتاج إلى إذن \"الرسم فوق التطبيقات الأخرى\" لتسجيل شاشتك. برجاء السماح، وتفعيل الإذن في الإعدادات ثم عُد إلى المُسجل</string>
+    <string name="snack_permissions_no_permission">تم رفض الأذونات المطلوبة، قم بتفعيلها من تطبيق الإعدادات لبدء التسجيل</string>
+    <string name="main_screen_action">تسجيل الشاشة</string>
+    <string name="main_sound_action">تسجيل الصوت</string>
 </resources>
