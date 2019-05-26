@@ -43,7 +43,7 @@
     <string name="screen_last_title">Последняя запись</string>
     <string name="screen_last_message">Дата: %1$s\nДлительность: %2$d сек.</string>
     <string name="screen_overlay_notif_title">Готов к записи</string>
-    <string name="screen_overlay_notif_message">Нажмите кнопку записи, когда будете готовы</string>
+    <string name="screen_overlay_notif_message">Нажмите кнопку записи, когда будете готовы начать</string>
     <string name="screen_settings_title">Настройки записи экрана</string>
     <string name="screen_overlay_channel_title">Готово к записи экрана</string>
     <string name="screen_overlay_channel_desc">Уведомление, показывающее готовность записи экрана</string>
@@ -59,7 +59,7 @@
     <string name="dialog_permissions_mic_storage_phone">Рекордеру требуется доступ к микрофону для записи звука, доступ к хранилищу для сохранения записанных файлов и доступ к данным о состоянии телефона, чтобы прекращать запись во время звонка</string>
     <string name="dialog_permissions_ask">Спросить снова</string>
     <string name="dialog_permissions_dismiss">Пропустить</string>
-    <string name="dialog_permissions_overlay">Рекордеру требуется разрешение «Показывать поверх других окон» для осуществления записи экрана. Нажмите кнопку «Запросить разрешения» ниже, включите соответствующую опцию для приложения и вернитесь назад</string>
+    <string name="dialog_permissions_overlay">Рекордеру требуется разрешение \'Наложение поверх других окон\'. Нажмите \'Разрешить\' в настройках и вернитесь к приложению</string>
     <string name="snack_permissions_no_permission">Отказано в необходимых разрешениях. Включите их в настройках, чтобы начать запись</string>
     <string name="main_screen_action">Запись экрана</string>
     <string name="main_sound_action">Запись звука</string>
