@@ -20,4 +20,5 @@
     <string name="screen_overlay_channel_title">Valmis ekraanikuva salvestama</string>
     <string name="screen_overlay_channel_desc">Teade, mis näitab, et ekraanikuva salvestamine on valmis alustama</string>
     <string name="screen_channel_title">Ekraanikuva salvestamine</string>
+    <string name="screen_channel_desc">Püsiv teade ekraanikuva salvestamisel ja teade kui salvestamine on lõppenud</string>
 </resources>
