@@ -61,9 +61,6 @@ public class SoundRecorderService extends Service {
             "soundrecorder_notification_channel";
 
     private static final String TAG = "SoundRecorderService";
-    private static final File RECORDINGS_DIR =
-            new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_MUSIC),
-                    "SoundRecords");
     private static final int SAMPLING_RATE = 44100;
     private static final int CHANNEL_IN = AudioFormat.CHANNEL_IN_DEFAULT;
     private static final int FORMAT = AudioFormat.ENCODING_PCM_16BIT;
@@ -214,11 +211,12 @@ public class SoundRecorderService extends Service {
     private File createNewAudioFile() {
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd-HH-mm-ss",
                 Locale.getDefault());
-        File file = new File(RECORDINGS_DIR,
-                "SoundRecord-" + dateFormat.format(new Date()) + EXTENSION);
-        if (!RECORDINGS_DIR.exists()) {
+        File file = new File(getExternalFilesDir(Environment.DIRECTORY_MUSIC),
+                "SoundRecords/SoundRecord-" + dateFormat.format(new Date()) + EXTENSION);
+        File recordingDir = file.getParentFile();
+        if (!recordingDir.exists()) {
             //noinspection ResultOfMethodCallIgnored
-            RECORDINGS_DIR.mkdirs();
+            recordingDir.mkdirs();
         }
         return file;
     }

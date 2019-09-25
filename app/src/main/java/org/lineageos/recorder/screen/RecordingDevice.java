@@ -38,9 +38,6 @@ import java.util.concurrent.Semaphore;
 
 class RecordingDevice extends EncoderDevice {
     private static final String LOGTAG = "RecordingDevice";
-    private static final File RECORDINGS_DIR =
-            new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_MOVIES),
-                    "ScreenRecords");
     private final boolean mRecordAudio;
     private final File mPath;
 
@@ -51,7 +48,8 @@ class RecordingDevice extends EncoderDevice {
         String videoDate = new SimpleDateFormat("yyyy-MM-dd-HH-mm-ss", Locale.getDefault())
                 .format(new Date());
         // the directory which holds all recording files
-        mPath = new File(RECORDINGS_DIR, "ScreenRecord-" + videoDate + ".mp4");
+        mPath = new File(context.getExternalFilesDir(Environment.DIRECTORY_MOVIES),
+                "ScreenRecords/ScreenRecord-" + videoDate + ".mp4");
     }
 
     /**
