@@ -65,12 +65,8 @@ public class RecorderActivity extends AppCompatActivity implements
     private static final int[] PERMISSION_ERROR_MESSAGE_RES_IDS = {
             0,
             R.string.dialog_permissions_mic,
-            R.string.dialog_permissions_storage,
-            R.string.dialog_permissions_mic_storage,
             R.string.dialog_permissions_phone,
             R.string.dialog_permissions_mic_phone,
-            R.string.dialog_permissions_storage_phone,
-            R.string.dialog_permissions_mic_storage_phone
     };
 
     private ServiceConnection mConnection;
@@ -175,7 +171,6 @@ public class RecorderActivity extends AppCompatActivity implements
         }
 
         if (shouldShowRequestPermissionRationale(Manifest.permission.RECORD_AUDIO) ||
-                shouldShowRequestPermissionRationale(Manifest.permission.WRITE_EXTERNAL_STORAGE) ||
                 shouldShowRequestPermissionRationale(Manifest.permission.READ_PHONE_STATE)) {
             // Explain the user why the denied permission is needed
             int error = 0;
@@ -183,11 +178,8 @@ public class RecorderActivity extends AppCompatActivity implements
             if (!hasAudioPermission()) {
                 error |= 1;
             }
-            if (!hasStoragePermission()) {
-                error |= 1 << 1;
-            }
             if (!hasPhoneReaderPermission()) {
-                error |= 1 << 2;
+                error |= 1 << 1;
             }
 
             String message = getString(PERMISSION_ERROR_MESSAGE_RES_IDS[error]);
@@ -329,11 +321,6 @@ public class RecorderActivity extends AppCompatActivity implements
         set.applyTo(mConstraintRoot);
     }
 
-    private boolean hasStoragePermission() {
-        int result = checkSelfPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE);
-        return result == PackageManager.PERMISSION_GRANTED;
-    }
-
     private boolean hasAudioPermission() {
         int result = checkSelfPermission(Manifest.permission.RECORD_AUDIO);
         return result == PackageManager.PERMISSION_GRANTED;
@@ -349,19 +336,16 @@ public class RecorderActivity extends AppCompatActivity implements
     }
 
     private boolean hasAllAudioRecorderPermissions() {
-        return hasStoragePermission() && hasAudioPermission() && hasPhoneReaderPermission();
+        return hasAudioPermission() && hasPhoneReaderPermission();
     }
 
     private boolean hasAllScreenRecorderPermissions() {
-        return hasStoragePermission();
+        // None for now
+        return true;
     }
 
     private boolean checkSoundRecPermissions() {
         ArrayList<String> permissions = new ArrayList<>();
-
-        if (!hasStoragePermission()) {
-            permissions.add(Manifest.permission.WRITE_EXTERNAL_STORAGE);
-        }
 
         if (!hasAudioPermission()) {
             permissions.add(Manifest.permission.RECORD_AUDIO);
@@ -393,12 +377,6 @@ public class RecorderActivity extends AppCompatActivity implements
             return true;
         }
 
-        if (hasStoragePermission()) {
-            return false;
-        }
-
-        final String[] perms = {Manifest.permission.WRITE_EXTERNAL_STORAGE};
-        requestPermissions(perms, REQUEST_SCREEN_REC_PERMS);
         return true;
     }
 
