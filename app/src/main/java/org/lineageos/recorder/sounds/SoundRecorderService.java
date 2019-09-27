@@ -38,6 +38,7 @@ import android.util.Log;
 import org.lineageos.recorder.R;
 import org.lineageos.recorder.RecorderActivity;
 import org.lineageos.recorder.utils.LastRecordHelper;
+import org.lineageos.recorder.utils.MediaProviderHelper;
 import org.lineageos.recorder.utils.Utils;
 
 import java.io.BufferedOutputStream;
@@ -200,6 +201,8 @@ public class SoundRecorderService extends Service {
             //noinspection ResultOfMethodCallIgnored
             oldFile.delete();
         }
+
+        MediaProviderHelper.addSoundToContentProvider(getContentResolver(), new File(mOutFilePath));
 
         mStatus = RecorderStatus.STOPPED;
         Intent intent = new Intent(ACTION_STOPPED);
