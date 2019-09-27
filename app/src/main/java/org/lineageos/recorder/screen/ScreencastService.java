@@ -16,6 +16,7 @@
  */
 package org.lineageos.recorder.screen;
 
+import android.app.Activity;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
@@ -24,35 +25,46 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
-import android.graphics.Point;
 import android.hardware.display.DisplayManager;
 import android.hardware.display.VirtualDisplay;
-import android.os.Build;
+import android.media.MediaRecorder;
+import android.media.projection.MediaProjection;
+import android.media.projection.MediaProjectionManager;
 import android.os.Environment;
 import android.os.IBinder;
 import android.os.StatFs;
 import android.os.SystemClock;
-import androidx.core.app.NotificationCompat;
 import android.text.format.DateUtils;
+import android.util.DisplayMetrics;
 import android.util.Log;
-import android.view.Display;
+import android.view.Surface;
 import android.widget.Toast;
+
+import androidx.core.app.NotificationCompat;
 
 import org.lineageos.recorder.R;
 import org.lineageos.recorder.RecorderActivity;
 import org.lineageos.recorder.utils.LastRecordHelper;
 import org.lineageos.recorder.utils.Utils;
 
-import java.lang.reflect.Method;
+import java.io.File;
+import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Locale;
 import java.util.Timer;
 import java.util.TimerTask;
 
 public class ScreencastService extends Service {
+    private static final String LOGTAG = "ScreencastService";
 
     private static final String SCREENCAST_NOTIFICATION_CHANNEL =
             "screencast_notification_channel";
 
-    public static final String EXTRA_WITHAUDIO = "withaudio";
+    public static final String EXTRA_RESULT_CODE = "extra_resultCode";
+    public static final String EXTRA_DATA = "extra_data";
+    public static final String EXTRA_USE_AUDIO = "extra_useAudio";
+
     public static final String ACTION_START_SCREENCAST =
             "org.lineageos.recorder.screen.ACTION_START_SCREENCAST";
     public static final String ACTION_STOP_SCREENCAST =
@@ -61,14 +73,25 @@ public class ScreencastService extends Service {
             "org.lineageos.recorder.server.display.SCAN";
     private static final String ACTION_STOP_SCAN =
             "org.lineageos.recorder.server.display.STOP_SCAN";
-    static final String SCREENCASTER_NAME = "hidden:screen-recording";
+
+    private static final int TOTAL_NUM_TRACKS = 1;
+    private static final int VIDEO_BIT_RATE = 6000000;
+    private static final int VIDEO_FRAME_RATE = 30;
+    private static final int AUDIO_BIT_RATE = 16;
+    private static final int AUDIO_SAMPLE_RATE = 44100;
+
     public static final int NOTIFICATION_ID = 61;
-    private static final String LOGTAG = "ScreencastService";
     private long mStartTime;
     private Timer mTimer;
     private NotificationCompat.Builder mBuilder;
-    private RecordingDevice mRecorder;
+    private MediaProjectionManager mMediaProjectionManager;
+    private MediaProjection mMediaProjection;
+    private Surface mInputSurface;
+    private VirtualDisplay mVirtualDisplay;
+    private MediaRecorder mMediaRecorder;
     private NotificationManager mNotificationManager;
+    private boolean mUseAudio;
+    private File mPath;
     private final BroadcastReceiver mBroadcastReceiver = new BroadcastReceiver() {
         @Override
         public void onReceive(Context context, Intent intent) {
@@ -79,6 +102,15 @@ public class ScreencastService extends Service {
             }
         }
     };
+
+    public static Intent getStartIntent(Context context, int resultCode, Intent data,
+                                        boolean useAudio) {
+        return new Intent(context, ScreencastService.class)
+                .setAction(ACTION_START_SCREENCAST)
+                .putExtra(EXTRA_RESULT_CODE, resultCode)
+                .putExtra(EXTRA_DATA, data)
+                .putExtra(EXTRA_USE_AUDIO, useAudio);
+    }
 
     @Override
     public IBinder onBind(Intent intent) {
@@ -114,6 +146,22 @@ public class ScreencastService extends Service {
     public void onCreate() {
         super.onCreate();
 
+        // Prepare all the output metadata
+        String videoDate = new SimpleDateFormat("yyyy-MM-dd-HH-mm-ss", Locale.getDefault())
+                .format(new Date());
+        // the directory which holds all recording files
+        mPath = new File(getExternalFilesDir(Environment.DIRECTORY_MOVIES),
+                "ScreenRecords/ScreenRecord-" + videoDate + ".mp4");
+
+        File recordingDir = mPath.getParentFile();
+        //noinspection ResultOfMethodCallIgnored
+        recordingDir.mkdirs();
+        if (!(recordingDir.exists() && recordingDir.canWrite())) {
+            throw new SecurityException("Cannot write to " + recordingDir);
+        }
+
+        mMediaProjectionManager = getSystemService(MediaProjectionManager.class);
+
         IntentFilter filter = new IntentFilter();
         filter.addAction(Intent.ACTION_USER_BACKGROUND);
         filter.addAction(Intent.ACTION_SHUTDOWN);
@@ -121,9 +169,8 @@ public class ScreencastService extends Service {
 
         mNotificationManager = getSystemService(NotificationManager.class);
 
-        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.O ||
-                mNotificationManager == null || mNotificationManager.getNotificationChannel(
-                        SCREENCAST_NOTIFICATION_CHANNEL) != null) {
+        if (mNotificationManager == null || mNotificationManager.getNotificationChannel(
+                SCREENCAST_NOTIFICATION_CHANNEL) != null) {
             return;
         }
 
@@ -144,33 +191,85 @@ public class ScreencastService extends Service {
     }
 
     private int startScreencasting(Intent intent) {
-        try {
-            if (hasNoAvailableSpace()) {
-                Toast.makeText(this, R.string.screen_insufficient_storage,
-                        Toast.LENGTH_LONG).show();
-                return START_NOT_STICKY;
-            }
-
-            mStartTime = SystemClock.elapsedRealtime();
-            registerScreencaster(intent.getBooleanExtra(EXTRA_WITHAUDIO, false));
-            mBuilder = createNotificationBuilder();
-            mTimer = new Timer();
-            mTimer.scheduleAtFixedRate(new TimerTask() {
-                @Override
-                public void run() {
-                    updateNotification();
-                }
-            }, 100, 1000);
-
-            Utils.setStatus(getApplicationContext(), Utils.PREF_RECORDING_SCREEN);
-
-            startForeground(NOTIFICATION_ID, mBuilder.build());
-            return START_STICKY;
-        } catch (Exception e) {
-            Log.e(LOGTAG, e.getMessage());
+        if (hasNoAvailableSpace()) {
+            Toast.makeText(this, R.string.screen_insufficient_storage,
+                    Toast.LENGTH_LONG).show();
+            return START_NOT_STICKY;
         }
 
-        return START_NOT_STICKY;
+        mStartTime = SystemClock.elapsedRealtime();
+        mBuilder = createNotificationBuilder();
+        mTimer = new Timer();
+        mTimer.scheduleAtFixedRate(new TimerTask() {
+            @Override
+            public void run() {
+                updateNotification();
+            }
+        }, 100, 1000);
+
+        Utils.setStatus(getApplicationContext(), Utils.PREF_RECORDING_SCREEN);
+
+        startForeground(NOTIFICATION_ID, mBuilder.build());
+
+        int resultCode = intent.getIntExtra(EXTRA_RESULT_CODE, Activity.RESULT_CANCELED);
+        mUseAudio = intent.getBooleanExtra(EXTRA_USE_AUDIO, false);
+        Intent data = intent.getParcelableExtra(EXTRA_DATA);
+        if (data != null) {
+            mMediaProjection = mMediaProjectionManager.getMediaProjection(resultCode, data);
+            startRecording();
+        }
+        return START_STICKY;
+    }
+
+    private void startRecording() {
+        try {
+            Log.d(LOGTAG, "Writing video output to: " + mPath.getAbsolutePath());
+
+            // Set up media recorder
+            mMediaRecorder = new MediaRecorder();
+            if (mUseAudio) {
+                mMediaRecorder.setAudioSource(MediaRecorder.AudioSource.MIC);
+            }
+            mMediaRecorder.setVideoSource(MediaRecorder.VideoSource.SURFACE);
+            mMediaRecorder.setOutputFormat(MediaRecorder.OutputFormat.MPEG_4);
+
+            // Set up video
+            DisplayMetrics metrics = getResources().getDisplayMetrics();
+            int screenWidth = metrics.widthPixels;
+            int screenHeight = metrics.heightPixels;
+            mMediaRecorder.setVideoEncoder(MediaRecorder.VideoEncoder.H264);
+            mMediaRecorder.setVideoSize(screenWidth, screenHeight);
+            mMediaRecorder.setVideoFrameRate(VIDEO_FRAME_RATE);
+            mMediaRecorder.setVideoEncodingBitRate(VIDEO_BIT_RATE);
+
+            // Set up audio
+            if (mUseAudio) {
+                mMediaRecorder.setAudioEncoder(MediaRecorder.AudioEncoder.AMR_NB);
+                mMediaRecorder.setAudioChannels(TOTAL_NUM_TRACKS);
+                mMediaRecorder.setAudioEncodingBitRate(AUDIO_BIT_RATE);
+                mMediaRecorder.setAudioSamplingRate(AUDIO_SAMPLE_RATE);
+            }
+
+            mMediaRecorder.setOutputFile(mPath);
+            mMediaRecorder.prepare();
+
+            // Create surface
+            mInputSurface = mMediaRecorder.getSurface();
+            mVirtualDisplay = mMediaProjection.createVirtualDisplay(
+                    "Recording Display",
+                    screenWidth,
+                    screenHeight,
+                    metrics.densityDpi,
+                    DisplayManager.VIRTUAL_DISPLAY_FLAG_AUTO_MIRROR,
+                    mInputSurface,
+                    null,
+                    null);
+
+            mMediaRecorder.start();
+        } catch (IOException e) {
+            e.printStackTrace();
+            throw new RuntimeException(e);
+        }
     }
 
     private boolean hasNoAvailableSpace() {
@@ -187,66 +286,28 @@ public class ScreencastService extends Service {
         mNotificationManager.notify(NOTIFICATION_ID, mBuilder.build());
     }
 
-    private Point getNativeResolution() {
-        DisplayManager dm = getSystemService(DisplayManager.class);
-        if (dm == null) {
-            return null;
-        }
+    private void stopRecording() {
+        mMediaRecorder.stop();
+        mMediaRecorder.release();
+        mMediaRecorder = null;
+        mMediaProjection.stop();
+        mMediaProjection = null;
+        mInputSurface.release();
+        mVirtualDisplay.release();
 
-        Display display = dm.getDisplay(Display.DEFAULT_DISPLAY);
-        Point ret = new Point();
-        try {
-            display.getRealSize(ret);
-        } catch (Exception e) {
-            try {
-                //noinspection JavaReflectionMemberAccess
-                Method mGetRawH = Display.class.getMethod("getRawHeight");
-                //noinspection JavaReflectionMemberAccess
-                Method mGetRawW = Display.class.getMethod("getRawWidth");
-                ret.x = (Integer) mGetRawW.invoke(display);
-                ret.y = (Integer) mGetRawH.invoke(display);
-            } catch (Exception ex) {
-                display.getSize(ret);
-            }
-        }
-        return ret;
-    }
-
-    private void cleanup() {
-        String recorderPath = null;
-        if (mRecorder != null) {
-            recorderPath = mRecorder.getRecordingFilePath();
-            mRecorder.stop();
-            mRecorder = null;
-        }
         if (mTimer != null) {
             mTimer.cancel();
             mTimer = null;
         }
         stopForeground(true);
-        if (recorderPath != null) {
-            sendShareNotification(recorderPath);
-        }
-    }
-
-
-    private void registerScreencaster(boolean withAudio) {
-        assert mRecorder == null;
-        Point size = getNativeResolution();
-        if (size == null) {
-            return;
-        }
-
-        mRecorder = new RecordingDevice(this, size.x, size.y, withAudio);
-        VirtualDisplay vd = mRecorder.registerVirtualDisplay(this);
-        if (vd == null) {
-            cleanup();
+        if (mPath != null) {
+            sendShareNotification(mPath.getPath());
         }
     }
 
     private void stopCasting() {
         Utils.setStatus(getApplicationContext(), Utils.PREF_RECORDING_NOTHING);
-        cleanup();
+        stopRecording();
 
         if (hasNoAvailableSpace()) {
             Toast.makeText(this, R.string.screen_not_enough_storage, Toast.LENGTH_LONG).show();

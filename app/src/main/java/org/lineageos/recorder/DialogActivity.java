@@ -169,7 +169,7 @@ public class DialogActivity extends AppCompatActivity implements
 
     private void setupAsSettingsScreen() {
         View view = createContentView(R.layout.dialog_content_screen_settings);
-        mAudioSwitch = view.findViewById(R.id.dialog_content_screen_settings_switch);
+        mAudioSwitch = view.findViewById(R.id.dialog_content_screen_settings_switch_audio);
         mAudioSwitch.setOnCheckedChangeListener((button, isChecked) -> {
             if (hasAudioPermission()) {
                 setScreenWithAudio(isChecked);
