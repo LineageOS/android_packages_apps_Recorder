@@ -44,6 +44,7 @@ import androidx.core.app.NotificationCompat;
 
 import org.lineageos.recorder.R;
 import org.lineageos.recorder.RecorderActivity;
+import org.lineageos.recorder.utils.MediaProviderHelper;
 import org.lineageos.recorder.utils.LastRecordHelper;
 import org.lineageos.recorder.utils.Utils;
 
@@ -294,6 +295,8 @@ public class ScreencastService extends Service {
         mMediaProjection = null;
         mInputSurface.release();
         mVirtualDisplay.release();
+
+        MediaProviderHelper.addVideoToContentProvider(getContentResolver(), mPath);
 
         if (mTimer != null) {
             mTimer.cancel();
