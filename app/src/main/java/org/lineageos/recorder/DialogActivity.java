@@ -169,7 +169,7 @@ public class DialogActivity extends AppCompatActivity implements
 
     private void setupAsSettingsScreen() {
         View view = createContentView(R.layout.dialog_content_screen_settings);
-        mAudioSwitch = view.findViewById(R.id.dialog_content_screen_settings_switch);
+        mAudioSwitch = view.findViewById(R.id.dialog_content_screen_settings_switch_audio);
         mAudioSwitch.setOnCheckedChangeListener((button, isChecked) -> {
             if (hasAudioPermission()) {
                 setScreenWithAudio(isChecked);
@@ -188,6 +188,27 @@ public class DialogActivity extends AppCompatActivity implements
         if (Utils.isScreenRecording(this)) {
             mAudioSwitch.setEnabled(false);
             mAudioSwitch.setText(getString(R.string.screen_audio_message_disabled));
+        }
+
+        Switch tapsSwitch = view.findViewById(R.id.dialog_content_screen_settings_switch_taps);
+        tapsSwitch.setOnCheckedChangeListener((button, isChecked) -> {
+            if (hasAudioPermission()) {
+                setWithTaps(isChecked);
+            } else if (isChecked) {
+                askAudioPermission();
+            } else {
+                setScreenWithAudio(false);
+            }
+        });
+
+        isEnabled = getWithTaps();
+        tapsSwitch.setChecked(isEnabled);
+        tapsSwitch.setText(getString(isEnabled ?
+                R.string.screen_taps_message_on : R.string.screen_taps_message_off));
+
+        if (Utils.isScreenRecording(this)) {
+            tapsSwitch.setEnabled(false);
+            tapsSwitch.setText(getString(R.string.screen_audio_message_disabled));
         }
     }
 
@@ -212,5 +233,13 @@ public class DialogActivity extends AppCompatActivity implements
 
     private boolean getScreenWithAudio() {
         return mPrefs.getBoolean(Utils.PREF_SCREEN_WITH_AUDIO, false);
+    }
+
+    private void setWithTaps(boolean enabled) {
+        mPrefs.edit().putBoolean(Utils.PREF_SCREEN_WITH_TAPS, enabled).apply();
+    }
+
+    private boolean getWithTaps() {
+        return mPrefs.getBoolean(Utils.PREF_SCREEN_WITH_TAPS, false);
     }
 }

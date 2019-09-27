@@ -116,4 +116,6 @@
 
     <!-- Transition name for dialogActivity -->
     <string name="transition_dialog_name" translatable="false">transition_dialog_activity</string>
+    <string name="screen_taps_message_off">Taps won\'t be shown</string>
+    <string name="screen_taps_message_on">Taps will be shown</string>
 </resources>

@@ -24,26 +24,29 @@ import android.content.IntentFilter;
 import android.content.ServiceConnection;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
+import android.media.projection.MediaProjectionManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.IBinder;
 import android.provider.Settings;
-import androidx.annotation.NonNull;
-import androidx.constraintlayout.widget.ConstraintLayout;
-import androidx.constraintlayout.widget.ConstraintSet;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import androidx.transition.TransitionManager;
-import androidx.core.app.ActivityCompat;
-import androidx.core.app.ActivityOptionsCompat;
-import androidx.core.content.ContextCompat;
-import androidx.appcompat.app.AlertDialog;
-import androidx.appcompat.app.AppCompatActivity;
 import android.telephony.TelephonyManager;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.constraintlayout.widget.ConstraintSet;
+import androidx.core.app.ActivityCompat;
+import androidx.core.app.ActivityOptionsCompat;
+import androidx.core.content.ContextCompat;
+import androidx.transition.TransitionManager;
+
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import org.lineageos.recorder.screen.OverlayService;
 import org.lineageos.recorder.screen.ScreencastService;
@@ -273,12 +276,23 @@ public class RecorderActivity extends AppCompatActivity implements
         } else {
             // Start
             new Handler().postDelayed(() -> {
-                Intent intent = new Intent(this, OverlayService.class);
-                intent.putExtra(OverlayService.EXTRA_HAS_AUDIO, isAudioAllowedWithScreen());
-                startService(intent);
+                MediaProjectionManager mediaProjectionManager = getSystemService(
+                        MediaProjectionManager.class);
+                Intent permissionIntent = mediaProjectionManager.createScreenCaptureIntent();
+                startActivityForResult(permissionIntent, 0);
                 onBackPressed();
             }, 500);
         }
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        Intent intent = new Intent(data);
+        intent.setClass(this, OverlayService.class);
+        intent.putExtra(OverlayService.EXTRA_HAS_AUDIO, isAudioAllowedWithScreen());
+        intent.putExtra(OverlayService.EXTRA_HAS_TAPS, areTapsEnabled());
+        startService(intent);
     }
 
     private void refresh() {
@@ -359,7 +373,7 @@ public class RecorderActivity extends AppCompatActivity implements
             return false;
         }
 
-        String[] permissionArray = permissions.toArray(new String[permissions.size()]);
+        String[] permissionArray = permissions.toArray(new String[0]);
         requestPermissions(permissionArray, REQUEST_SOUND_REC_PERMS);
         return true;
     }
@@ -382,6 +396,10 @@ public class RecorderActivity extends AppCompatActivity implements
 
     private boolean isAudioAllowedWithScreen() {
         return mPrefs.getBoolean(Utils.PREF_SCREEN_WITH_AUDIO, false);
+    }
+
+    private boolean areTapsEnabled() {
+        return mPrefs.getBoolean(Utils.PREF_SCREEN_WITH_TAPS, false);
     }
 
     private void setupConnection() {
