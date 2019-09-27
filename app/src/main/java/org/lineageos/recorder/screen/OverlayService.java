@@ -21,8 +21,8 @@ import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.app.Service;
 import android.content.Intent;
-import android.os.Build;
 import android.os.IBinder;
+
 import androidx.core.app.NotificationCompat;
 
 import org.lineageos.recorder.R;
@@ -52,9 +52,7 @@ public class OverlayService extends Service {
 
         mLayer = new OverlayLayer(this);
         mLayer.setOnActionClickListener(() -> {
-            Intent fabIntent = new Intent(ScreencastService.ACTION_START_SCREENCAST);
-            fabIntent.putExtra(ScreencastService.EXTRA_WITHAUDIO, hasAudio);
-            startService(fabIntent.setClass(this, ScreencastService.class));
+            startService(ScreencastService.getStartIntent(this, 0, intent, hasAudio));
             Utils.setStatus(getApplication(), Utils.UiStatus.SCREEN);
             onDestroy();
         });
@@ -84,8 +82,7 @@ public class OverlayService extends Service {
 
         NotificationManager notificationManager = getSystemService(NotificationManager.class);
 
-        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.O ||
-                notificationManager == null || notificationManager
+        if (notificationManager == null || notificationManager
                 .getNotificationChannel(SCREENCAST_OVERLAY_NOTIFICATION_CHANNEL) != null) {
             return;
         }
