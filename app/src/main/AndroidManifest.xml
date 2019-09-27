@@ -17,8 +17,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="org.lineageos.recorder">
 
-    <uses-permission android:name="android.permission.CAPTURE_SECURE_VIDEO_OUTPUT" />
-    <uses-permission android:name="android.permission.CAPTURE_VIDEO_OUTPUT" />
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE"/>
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <uses-permission android:name="android.permission.RECORD_AUDIO" />
@@ -27,8 +25,7 @@
     <uses-permission android:name="android.permission.WRITE_SETTINGS" />
 
     <!-- This is needed for aosp build env -->
-    <uses-sdk android:minSdkVersion="24"
-        tools:ignore="GradleOverrides" />
+    <uses-sdk tools:ignore="GradleOverrides" />
 
     <application
         android:allowBackup="false"

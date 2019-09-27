@@ -19,8 +19,15 @@
     android:orientation="vertical">
 
     <Switch
-        android:id="@+id/dialog_content_screen_settings_switch"
+        android:id="@+id/dialog_content_screen_settings_switch_audio"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/screen_audio_message_off" />
+
+    <Switch
+        android:id="@+id/dialog_content_screen_settings_switch_taps"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/screen_taps_message_off" />
+
 </LinearLayout>

@@ -30,6 +30,7 @@ public class Utils {
     public static final String PREF_RECORDING_SCREEN = "screen";
     private static final String PREF_RECORDING_SOUND = "sound";
     public static final String PREF_SCREEN_WITH_AUDIO = "screen_with_audio";
+    public static final String PREF_SCREEN_WITH_TAPS = "screen_with_taps";
 
     private Utils() {
     }
