@@ -37,7 +37,6 @@
     <string name="screen_notification_message_done">พร้อมแชร์</string>
     <string name="screen_recording_message">หน้าจอกำลังถูกบันทึก\u2026</string>
     <string name="screen_last_title">บันทึกล่าสุด</string>
-    <string name="screen_last_message">วันที่: %1$s\nระยะเวลา: %2$d วินาที</string>
     <string name="screen_overlay_channel_title">พร้อมที่จะบันทึกหน้าจอ</string>
     <string name="screen_overlay_channel_desc">แสดงการแจ้งเตือนเมื่อพร้อมที่จะบันทึกหน้าจอ</string>
     <string name="screen_channel_title">บันทึกหน้าจอ</string>

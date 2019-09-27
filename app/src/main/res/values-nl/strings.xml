@@ -39,7 +39,6 @@
     <string name="screen_notification_message_done">Klaar om te delen</string>
     <string name="screen_recording_message">Scherm wordt opgenomen\u2026</string>
     <string name="screen_last_title">Laatste opname</string>
-    <string name="screen_last_message">Datum: %1$s\nLengte: %2$d seconden</string>
     <string name="screen_overlay_notif_title">Klaar voor opname</string>
     <string name="screen_overlay_notif_message">Tik op de opnameknop wanneer u wilt beginnen</string>
     <string name="screen_settings_title">Instellingen Schermrecorder</string>

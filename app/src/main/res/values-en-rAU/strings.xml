@@ -41,7 +41,6 @@
     <string name="screen_notification_message_done">Ready to share</string>
     <string name="screen_recording_message">Screen is being recorded\u2026</string>
     <string name="screen_last_title">Last record</string>
-    <string name="screen_last_message">Date: %1$s\nDuration: %2$d seconds</string>
     <string name="screen_overlay_notif_title">Ready to record</string>
     <string name="screen_overlay_notif_message">Press the record button when you\'re ready to start</string>
     <string name="screen_settings_title">Screen recorder settings</string>

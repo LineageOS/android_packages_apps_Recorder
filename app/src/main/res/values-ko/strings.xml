@@ -41,7 +41,6 @@
     <string name="screen_notification_message_done">공유 준비 완료</string>
     <string name="screen_recording_message">화면을 녹화하는 중\u2026</string>
     <string name="screen_last_title">마지막 녹화</string>
-    <string name="screen_last_message">날짜: %1$s\n길이: %2$d초</string>
     <string name="screen_overlay_notif_title">녹화 준비 완료</string>
     <string name="screen_overlay_notif_message">녹화할 준비가 되면 녹화 버튼을 누르세요.</string>
     <string name="screen_settings_title">화면 녹화 설정</string>

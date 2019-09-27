@@ -41,7 +41,6 @@
     <string name="screen_notification_message_done">Спремно за дељење</string>
     <string name="screen_recording_message">Снимам екран\u2026</string>
     <string name="screen_last_title">Последњи снимак</string>
-    <string name="screen_last_message">Датум: %1$s\nТрајање: %2$d сек.</string>
     <string name="screen_overlay_notif_title">Спремно за снимање</string>
     <string name="screen_overlay_notif_message">Додирните дугме за снимање када будете спремни.</string>
     <string name="screen_settings_title">Подешавања снимања екрана</string>

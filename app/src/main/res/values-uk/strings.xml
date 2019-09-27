@@ -39,7 +39,6 @@
     <string name="screen_notification_message_done">Готово, аби поділитися</string>
     <string name="screen_recording_message">Триває запис з екрану\u2026</string>
     <string name="screen_last_title">Останній запис</string>
-    <string name="screen_last_message">Дата: %1$s\nТривалість: %2$d сек</string>
     <string name="screen_overlay_notif_title">Готово для запису</string>
     <string name="screen_overlay_notif_message">Натисніть кнопку запису, щоб почати</string>
     <string name="dialog_permissions_title">Дозволи</string>

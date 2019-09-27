@@ -41,7 +41,6 @@
     <string name="screen_notification_message_done">Preparada pa compartir</string>
     <string name="screen_recording_message">Ta grabándose la pantalla\u2026</string>
     <string name="screen_last_title">Grabación cabera</string>
-    <string name="screen_last_message">Data: %1$s\nDuración: %2$d segundos</string>
     <string name="screen_overlay_notif_title">Preparada pa grabar</string>
     <string name="screen_overlay_notif_message">Primi\'l botón de grabar cuando teas preparáu</string>
     <string name="screen_settings_title">Axustes de grabación de la pantalla</string>

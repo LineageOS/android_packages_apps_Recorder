@@ -39,7 +39,6 @@
     <string name="screen_notification_message_done">Klar til å dele</string>
     <string name="screen_recording_message">Skjermen blir tatt opp\u2026</string>
     <string name="screen_last_title">Siste opptak</string>
-    <string name="screen_last_message">Dato: %1$s\nVarighet: %2$d sekunder</string>
     <string name="screen_overlay_notif_title">Klar til å ta opp</string>
     <string name="screen_overlay_notif_message">Trykk på opptaksknappen når du er klar til å begynne</string>
     <string name="screen_settings_title">Skjerminnspiller-innstillinger</string>

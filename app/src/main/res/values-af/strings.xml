@@ -37,7 +37,6 @@
     <string name="screen_notification_message_done">Gereed om te deel</string>
     <string name="screen_recording_message">Skerm word opgeneem\u2026</string>
     <string name="screen_last_title">Laaste opname</string>
-    <string name="screen_last_message">Datum: %1$s\nLengte: %2$d sekondes</string>
     <string name="screen_overlay_notif_title">Gereed om op te neem</string>
     <string name="screen_overlay_notif_message">Druk die opneem-knoppie wanneer jy gereed is om te begin</string>
     <string name="dialog_permissions_title">Toestemmings</string>

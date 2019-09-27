@@ -41,7 +41,6 @@
     <string name="screen_notification_message_done">Listo para compartir</string>
     <string name="screen_recording_message">A pantalla está a ser gravada\u2026</string>
     <string name="screen_last_title">Última grabación</string>
-    <string name="screen_last_message">Data: %1$s\nDuración: %2$d segundos</string>
     <string name="screen_overlay_notif_title">Listo para gravar</string>
     <string name="screen_overlay_notif_message">Preme o botón gravar cando desexes comezar</string>
     <string name="screen_settings_title">Axustes do gravador de pantalla</string>

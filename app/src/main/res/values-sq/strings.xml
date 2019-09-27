@@ -41,7 +41,6 @@
     <string name="screen_notification_message_done">Gati për t\'u ndarë</string>
     <string name="screen_recording_message">Ekrani është duke u regjistruar\u2026</string>
     <string name="screen_last_title">Regjistrimi i fundit</string>
-    <string name="screen_last_message">Data: %1$s\nKohëzgjatja: %2$d sekonda</string>
     <string name="screen_overlay_notif_title">Gati për të regjistruar</string>
     <string name="screen_overlay_notif_message">Shtyp butonin e regjistrimit kur të jesh gati për të filluar</string>
     <string name="screen_settings_title">Cilësimet e regjistrimit të ekranit</string>

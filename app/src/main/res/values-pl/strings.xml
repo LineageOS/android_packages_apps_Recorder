@@ -41,7 +41,6 @@
     <string name="screen_notification_message_done">Gotowy do udostępniania</string>
     <string name="screen_recording_message">Ekran jest nagrywany\u2026</string>
     <string name="screen_last_title">Ostatnie nagranie</string>
-    <string name="screen_last_message">Data: %1$s\nCzas trwania: %2$d sekund</string>
     <string name="screen_overlay_notif_title">Gotowy do nagrywania</string>
     <string name="screen_overlay_notif_message">Naciśnij przycisk nagrywania, gdy jesteś gotowy rozpocząć</string>
     <string name="screen_settings_title">Ustawienia nagrywania ekranu</string>

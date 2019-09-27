@@ -41,7 +41,6 @@
     <string name="screen_notification_message_done">Paylaşmaq üçün hazırdır</string>
     <string name="screen_recording_message">Ekran yazılmağa başladı\u2026</string>
     <string name="screen_last_title">Son yazma</string>
-    <string name="screen_last_message">Tarix: %1$s\nMüddəti: %2$d saniyə</string>
     <string name="screen_overlay_notif_title">Yazmaq üçün hazırdır</string>
     <string name="screen_overlay_notif_message">Başlamağa hazır olanda yazma düyməsinə basın</string>
     <string name="screen_settings_title">Ekran yazma tənzimləmələri</string>

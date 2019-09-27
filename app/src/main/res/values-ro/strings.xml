@@ -41,7 +41,6 @@
     <string name="screen_notification_message_done">Gata pentru distribuire</string>
     <string name="screen_recording_message">Ecranul este înregistrat\u2026</string>
     <string name="screen_last_title">Ultima înregistrare</string>
-    <string name="screen_last_message">Data: %1$s\nDurata: %2$d secunde</string>
     <string name="screen_overlay_notif_title">Gata de înregistrare</string>
     <string name="screen_overlay_notif_message">Apăsaţi butonul de înregistrare atunci când sunteţi gata pentru a începe</string>
     <string name="screen_settings_title">Setări înregistrare ecran</string>

@@ -41,7 +41,6 @@
     <string name="screen_notification_message_done">Paylaşmak için hazır</string>
     <string name="screen_recording_message">Ekran kaydediliyor\u2026</string>
     <string name="screen_last_title">Son kayıt</string>
-    <string name="screen_last_message">Tarih: %1$s\nSüre: %2$d saniye</string>
     <string name="screen_overlay_notif_title">Kayıt yapmaya hazır</string>
     <string name="screen_overlay_notif_message">Başlamaya hazır olduğunuzda kayıt düğmesine basın</string>
     <string name="screen_settings_title">Ekran kaydedici ayarları</string>

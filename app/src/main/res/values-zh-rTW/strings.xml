@@ -41,7 +41,6 @@
     <string name="screen_notification_message_done">準備分享</string>
     <string name="screen_recording_message">已開始錄製螢幕畫面\u2026</string>
     <string name="screen_last_title">最後一筆記錄</string>
-    <string name="screen_last_message">日期︰%1$s\n持續時間︰%2$d 秒</string>
     <string name="screen_overlay_notif_title">準備錄製</string>
     <string name="screen_overlay_notif_message">準備開始時按下錄製按鍵</string>
     <string name="screen_settings_title">螢幕錄製設定</string>

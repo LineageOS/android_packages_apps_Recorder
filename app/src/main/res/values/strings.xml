@@ -74,7 +74,7 @@
     <!-- Screen recorder last item title -->
     <string name="screen_last_title">Last record</string>
     <!-- Screen recorder last item message -->
-    <string name="screen_last_message">Date: %1$s\nDuration: %2$d seconds</string>
+    <string name="screen_last_message">Duration: %1$d seconds</string>
     <!-- Screen recorder notification overlay title -->
     <string name="screen_overlay_notif_title">Ready to record</string>
     <!-- Screen recorder notification overlay message -->

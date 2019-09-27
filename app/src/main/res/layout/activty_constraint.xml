@@ -57,6 +57,7 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:background="@color/sound"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHeight_default="percent"
         app:layout_constraintHeight_percent="0.5"
         app:layout_constraintLeft_toLeftOf="parent"

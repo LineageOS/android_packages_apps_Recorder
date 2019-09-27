@@ -41,7 +41,6 @@
     <string name="screen_notification_message_done">Έτοιμο για κοινή χρήση</string>
     <string name="screen_recording_message">Γίνεται εγγραφή της οθόνης\u2026</string>
     <string name="screen_last_title">Τελευταία εγγραφή</string>
-    <string name="screen_last_message">Ημερομηνία: %1$s\nΔιάρκεια: %2$d δευτερόλεπτα</string>
     <string name="screen_overlay_notif_title">Έτοιμο για εγγραφή</string>
     <string name="screen_overlay_notif_message">Πατήστε το πλήκτρο εγγραφής όταν είστε έτοιμοι να ξεκινήσετε</string>
     <string name="screen_settings_title">Ρυθμίσεις εγγραφής της οθόνης</string>

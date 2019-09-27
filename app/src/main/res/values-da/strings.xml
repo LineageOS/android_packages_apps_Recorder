@@ -39,7 +39,6 @@
     <string name="screen_notification_message_done">Klar til deling</string>
     <string name="screen_recording_message">Skærmen optages</string>
     <string name="screen_last_title">Sidste optagelse</string>
-    <string name="screen_last_message">Dato: %1$s\nVarighed: %2$d sekunder</string>
     <string name="screen_overlay_notif_title">Klar til at optage</string>
     <string name="screen_overlay_notif_message">Tryk på optage-knappen, når du er klar til at starte</string>
     <string name="screen_settings_title">Skærmoptager-indstillinger</string>

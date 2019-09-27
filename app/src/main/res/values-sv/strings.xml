@@ -39,7 +39,6 @@
     <string name="screen_notification_message_done">Redo att dela</string>
     <string name="screen_recording_message">Skärmen spelas in\u2026</string>
     <string name="screen_last_title">Senaste inspelning</string>
-    <string name="screen_last_message">Datum: %1$s\nLöptid: %2$d sekunder</string>
     <string name="screen_overlay_notif_title">Redo att spela in</string>
     <string name="screen_overlay_notif_message">Tryck på inspelningsknappen när du är redo att börja</string>
     <string name="screen_overlay_channel_title">Redo att spela in skärmen</string>

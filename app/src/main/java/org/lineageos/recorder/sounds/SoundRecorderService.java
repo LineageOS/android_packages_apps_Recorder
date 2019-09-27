@@ -27,9 +27,12 @@ import android.content.IntentFilter;
 import android.media.AudioFormat;
 import android.media.AudioRecord;
 import android.media.MediaRecorder;
+import android.net.Uri;
 import android.os.Build;
 import android.os.Environment;
 import android.os.IBinder;
+
+import androidx.annotation.Nullable;
 import androidx.core.app.NotificationCompat;
 import androidx.core.content.ContextCompat;
 import android.text.format.DateUtils;
@@ -38,6 +41,7 @@ import android.util.Log;
 import org.lineageos.recorder.R;
 import org.lineageos.recorder.RecorderActivity;
 import org.lineageos.recorder.utils.LastRecordHelper;
+import org.lineageos.recorder.utils.MediaProviderHelper;
 import org.lineageos.recorder.utils.Utils;
 
 import java.io.BufferedOutputStream;
@@ -50,7 +54,7 @@ import java.util.Locale;
 import java.util.Timer;
 import java.util.TimerTask;
 
-public class SoundRecorderService extends Service {
+public class SoundRecorderService extends Service implements MediaProviderHelper.OnContentWritten {
 
     static final String EXTENSION = ".pcm";
     private static final String ACTION_STARTED = "org.lineageos.recorder.sounds.STARTED_SOUND";
@@ -134,6 +138,17 @@ public class SoundRecorderService extends Service {
         super.onDestroy();
     }
 
+    @Override
+    public void onContentWritten(@Nullable String uri) {
+        mStatus = RecorderStatus.STOPPED;
+        mOutFilePath = uri;
+        Intent intent = new Intent(ACTION_STOPPED);
+        intent.putExtra(EXTRA_FILE, mOutFilePath);
+        sendBroadcast(intent);
+        createShareNotification();
+        stopForeground(true);
+    }
+
     public boolean isRecording() {
         return mStatus == RecorderStatus.RECORDING;
     }
@@ -201,11 +216,8 @@ public class SoundRecorderService extends Service {
             oldFile.delete();
         }
 
-        mStatus = RecorderStatus.STOPPED;
-        Intent intent = new Intent(ACTION_STOPPED);
-        intent.putExtra(EXTRA_FILE, mOutFilePath);
-        sendBroadcast(intent);
-        stopForeground(true);
+        MediaProviderHelper.addSoundToContentProvider(
+                getContentResolver(), new File(mOutFilePath), this);
     }
 
     private File createNewAudioFile() {
@@ -307,14 +319,15 @@ public class SoundRecorderService extends Service {
     }
 
     public void createShareNotification() {
+        Uri outFileUri = Uri.parse(mOutFilePath);
         Intent intent = new Intent(this, RecorderActivity.class);
         PendingIntent pi = PendingIntent.getActivity(this, 0, intent, 0);
 
         PendingIntent playPIntent = PendingIntent.getActivity(this, 0,
-                LastRecordHelper.getOpenIntent(this, mOutFilePath, "audio/wav"),
+                LastRecordHelper.getOpenIntent(outFileUri, "audio/wav"),
                 PendingIntent.FLAG_CANCEL_CURRENT);
         PendingIntent sharePIntent = PendingIntent.getActivity(this, 0,
-                LastRecordHelper.getShareIntent(this, mOutFilePath, "audio/wav"),
+                LastRecordHelper.getShareIntent(outFileUri, "audio/wav"),
                 PendingIntent.FLAG_CANCEL_CURRENT);
         PendingIntent deletePIntent = PendingIntent.getActivity(this, 0,
                 LastRecordHelper.getDeleteIntent(this, true),
