@@ -1,0 +1,96 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "e68199db_a14d61bb",
+        "filename": "app/src/main/java/org/lineageos/recorder/utils/MediaProviderHelper.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2019-09-27T18:50:56Z",
+      "side": 1,
+      "message": "Remove",
+      "range": {
+        "startLine": 33,
+        "startChar": 68,
+        "endLine": 33,
+        "endChar": 73
+      },
+      "revId": "c9b8fbdc38a0090e4c1c685ccd962e55f520a3bf",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "edb833d3_c5c4e464",
+        "filename": "app/src/main/java/org/lineageos/recorder/utils/MediaProviderHelper.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2019-09-27T18:50:56Z",
+      "side": 1,
+      "message": "Remove",
+      "range": {
+        "startLine": 34,
+        "startChar": 71,
+        "endLine": 34,
+        "endChar": 76
+      },
+      "revId": "c9b8fbdc38a0090e4c1c685ccd962e55f520a3bf",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "1c4b3dd2_b8cae3e0",
+        "filename": "app/src/main/java/org/lineageos/recorder/utils/MediaProviderHelper.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2019-09-27T18:50:56Z",
+      "side": 1,
+      "message": "SOUND_REL_PATH",
+      "range": {
+        "startLine": 49,
+        "startChar": 57,
+        "endLine": 49,
+        "endChar": 92
+      },
+      "revId": "c9b8fbdc38a0090e4c1c685ccd962e55f520a3bf",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "0c40f2f5_545d156c",
+        "filename": "app/src/main/java/org/lineageos/recorder/utils/MediaProviderHelper.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2019-09-27T18:50:56Z",
+      "side": 1,
+      "message": "SCREEN_REL_PATH",
+      "range": {
+        "startLine": 64,
+        "startChar": 57,
+        "endLine": 64,
+        "endChar": 93
+      },
+      "revId": "c9b8fbdc38a0090e4c1c685ccd962e55f520a3bf",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    }
+  ]
+}
