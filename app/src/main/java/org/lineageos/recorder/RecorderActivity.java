@@ -253,7 +253,6 @@ public class RecorderActivity extends AppCompatActivity implements
         if (mSoundService.isRecording()) {
             // Stop
             mSoundService.stopRecording();
-            mSoundService.createShareNotification();
             stopService(new Intent(this, SoundRecorderService.class));
             Utils.setStatus(this, Utils.UiStatus.NOTHING);
         } else {
@@ -432,8 +431,8 @@ public class RecorderActivity extends AppCompatActivity implements
     }
 
     private void updateLastItemStatus() {
-        String lastScreen = LastRecordHelper.getLastItemPath(this, false);
-        String lastSound = LastRecordHelper.getLastItemPath(this, true);
+        String lastScreen = LastRecordHelper.getLastItemUri(this, false);
+        String lastSound = LastRecordHelper.getLastItemUri(this, true);
 
         if (lastScreen == null) {
             mScreenLast.setVisibility(View.GONE);

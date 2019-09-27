@@ -20,7 +20,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.net.Uri;
-import androidx.core.content.FileProvider;
+
 import androidx.appcompat.app.AlertDialog;
 
 import org.lineageos.recorder.DialogActivity;
@@ -41,16 +41,12 @@ public class LastRecordHelper {
     private LastRecordHelper() {
     }
 
-    public static AlertDialog deleteFile(Context context, final String path, boolean isSound) {
+    public static AlertDialog deleteFile(Context context, final String uri, boolean isSound) {
         return new AlertDialog.Builder(context)
                 .setTitle(R.string.delete_title)
-                .setMessage(context.getString(R.string.delete_message, path))
+                .setMessage(context.getString(R.string.delete_message, uri))
                 .setPositiveButton(R.string.delete, (dialog, which) -> {
-                    File record = new File(path);
-                    if (record.exists()) {
-                        //noinspection ResultOfMethodCallIgnored
-                        record.delete();
-                    }
+                    MediaProviderHelper.remove(context.getContentResolver(), uri);
                     NotificationManager nm = context.getSystemService(NotificationManager.class);
                     if (nm == null) {
                         return;
@@ -67,22 +63,17 @@ public class LastRecordHelper {
                 .create();
     }
 
-    public static Intent getShareIntent(Context context, String filePath, String mimeType) {
-        File file = new File(filePath);
-        Uri uri = FileProvider.getUriForFile(context, FILE_PROVIDER, file);
+    public static Intent getShareIntent(String uri, String mimeType) {
         Intent intent = new Intent(Intent.ACTION_SEND);
-        intent.setType(mimeType);
-        intent.putExtra(Intent.EXTRA_STREAM, uri);
-        intent.putExtra(Intent.EXTRA_SUBJECT, file.getName());
+        intent.setDataAndType(Uri.parse(uri), mimeType);
         Intent chooserIntent = Intent.createChooser(intent, null);
         chooserIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
         return chooserIntent;
     }
 
-    public static Intent getOpenIntent(Context context, String filePath, String mimeType) {
-        Uri uri = FileProvider.getUriForFile(context, FILE_PROVIDER, new File(filePath));
+    public static Intent getOpenIntent(String uri, String mimeType) {
         Intent intent = new Intent(Intent.ACTION_VIEW);
-        intent.setDataAndType(uri, mimeType);
+        intent.setDataAndType(Uri.parse(uri), mimeType);
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_GRANT_READ_URI_PERMISSION);
         return intent;
     }
@@ -106,7 +97,7 @@ public class LastRecordHelper {
                 .apply();
     }
 
-    public static String getLastItemPath(Context context, boolean isSound) {
+    public static String getLastItemUri(Context context, boolean isSound) {
         SharedPreferences prefs = context.getSharedPreferences(PREFS, 0);
         return prefs.getString(isSound ? KEY_LAST_SOUND : KEY_LAST_SCREEN, null);
     }
@@ -117,19 +108,16 @@ public class LastRecordHelper {
     }
 
     private static String getLastItemDate(Context context, boolean isSound) {
-        String path = getLastItemPath(context, isSound);
-        String[] pathParts = path.split("/");
-        String[] date = pathParts[pathParts.length - 1]
-                .replace(isSound ? ".wav" : ".mp4", "")
-                .replace(isSound ? "SoundRecord" : "ScreenRecord", "")
-                .split("-");
-        return context.getString(R.string.date_format, date[1], date[2], date[3],
-                date[4], date[5]);
+        return "Today";
     }
 
     public static String getLastItemDescription(Context context, boolean isSound) {
         return context.getString(R.string.screen_last_message,
                 getLastItemDate(context, isSound),
                 getLastItemDuration(context, isSound) / 1000);
+    }
+
+    private static void deleteLast() {
+
     }
 }

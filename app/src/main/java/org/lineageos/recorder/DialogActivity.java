@@ -24,6 +24,8 @@ import androidx.annotation.LayoutRes;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -88,7 +90,7 @@ public class DialogActivity extends AppCompatActivity implements
             setupAsSettingsScreen();
         }
 
-        animateAppareance();
+        animateAppearance();
 
         boolean deleteLastRecording = intent.getBooleanExtra(EXTRA_DELETE_LAST_RECORDING, false);
         if (deleteLastRecording) {
@@ -126,7 +128,7 @@ public class DialogActivity extends AppCompatActivity implements
         }
     }
 
-    private void animateAppareance() {
+    private void animateAppearance() {
         mRootView.setAlpha(0f);
         mRootView.animate()
                 .alpha(1f)
@@ -150,21 +152,24 @@ public class DialogActivity extends AppCompatActivity implements
 
     private void playLastItem(boolean isSound) {
         String type = isSound ? TYPE_AUDIO : TYPE_VIDEO;
-        String path = LastRecordHelper.getLastItemPath(this, isSound);
-        startActivityForResult(LastRecordHelper.getOpenIntent(this, path, type), 0);
+        String uri = LastRecordHelper.getLastItemUri(this, isSound);
+        Intent intent = LastRecordHelper.getOpenIntent(uri, type);
+        if (intent != null) {
+            startActivityForResult(intent, 0);
+        }
     }
 
     private void deleteLastItem(boolean isSound) {
-        String path = LastRecordHelper.getLastItemPath(this, isSound);
-        AlertDialog dialog = LastRecordHelper.deleteFile(this, path, isSound);
+        String uri = LastRecordHelper.getLastItemUri(this, isSound);
+        AlertDialog dialog = LastRecordHelper.deleteFile(this, uri, isSound);
         dialog.setOnDismissListener(d -> finish());
         dialog.show();
     }
 
     private void shareLastItem(boolean isSound) {
         String type = isSound ? TYPE_AUDIO : TYPE_VIDEO;
-        String path = LastRecordHelper.getLastItemPath(this, isSound);
-        startActivity(LastRecordHelper.getShareIntent(this, path, type));
+        String uri = LastRecordHelper.getLastItemUri(this, isSound);
+        startActivity(LastRecordHelper.getShareIntent(uri, type));
     }
 
     private void setupAsSettingsScreen() {

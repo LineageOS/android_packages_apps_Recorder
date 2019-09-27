@@ -40,10 +40,12 @@ import android.util.Log;
 import android.view.Surface;
 import android.widget.Toast;
 
+import androidx.annotation.Nullable;
 import androidx.core.app.NotificationCompat;
 
 import org.lineageos.recorder.R;
 import org.lineageos.recorder.RecorderActivity;
+import org.lineageos.recorder.utils.MediaProviderHelper;
 import org.lineageos.recorder.utils.LastRecordHelper;
 import org.lineageos.recorder.utils.Utils;
 
@@ -55,7 +57,7 @@ import java.util.Locale;
 import java.util.Timer;
 import java.util.TimerTask;
 
-public class ScreencastService extends Service {
+public class ScreencastService extends Service implements MediaProviderHelper.OnContentWritten {
     private static final String LOGTAG = "ScreencastService";
 
     private static final String SCREENCAST_NOTIFICATION_CHANNEL =
@@ -190,6 +192,14 @@ public class ScreencastService extends Service {
         super.onDestroy();
     }
 
+    @Override
+    public void onContentWritten(@Nullable String uri) {
+        stopForeground(true);
+        if (uri != null) {
+            sendShareNotification(uri);
+        }
+    }
+
     private int startScreencasting(Intent intent) {
         if (hasNoAvailableSpace()) {
             Toast.makeText(this, R.string.screen_insufficient_storage,
@@ -299,10 +309,8 @@ public class ScreencastService extends Service {
             mTimer.cancel();
             mTimer = null;
         }
-        stopForeground(true);
-        if (mPath != null) {
-            sendShareNotification(mPath.getPath());
-        }
+
+        MediaProviderHelper.addVideoToContentProvider(getContentResolver(), mPath, this);
     }
 
     private void stopCasting() {
@@ -334,24 +342,24 @@ public class ScreencastService extends Service {
         mNotificationManager.notify(NOTIFICATION_ID, mBuilder.build());
     }
 
-    private NotificationCompat.Builder createShareNotificationBuilder(String file) {
+    private NotificationCompat.Builder createShareNotificationBuilder(String uri) {
         Intent intent = new Intent(this, RecorderActivity.class);
         PendingIntent pi = PendingIntent.getActivity(this, 0, intent, 0);
 
         PendingIntent playPIntent = PendingIntent.getActivity(this, 0,
-                LastRecordHelper.getOpenIntent(this, file, "video/mp4"),
+                LastRecordHelper.getOpenIntent(uri, "video/mp4"),
                 PendingIntent.FLAG_CANCEL_CURRENT);
         PendingIntent sharePIntent = PendingIntent.getActivity(this, 0,
-                LastRecordHelper.getShareIntent(this, file, "video/mp4"),
+                LastRecordHelper.getShareIntent(uri, "video/mp4"),
                 PendingIntent.FLAG_CANCEL_CURRENT);
         PendingIntent deletePIntent = PendingIntent.getActivity(this, 0,
                 LastRecordHelper.getDeleteIntent(this, false),
                 PendingIntent.FLAG_CANCEL_CURRENT);
 
         long timeElapsed = SystemClock.elapsedRealtime() - mStartTime;
-        LastRecordHelper.setLastItem(this, file, timeElapsed, false);
+        LastRecordHelper.setLastItem(this, uri, timeElapsed, false);
 
-        Log.i(LOGTAG, "Video complete: " + file);
+        Log.i(LOGTAG, "Video complete: " + uri);
 
         return new NotificationCompat.Builder(this, SCREENCAST_NOTIFICATION_CHANNEL)
                 .setWhen(System.currentTimeMillis())
