@@ -1,0 +1,123 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "cb081368_ecf9d1de",
+        "filename": "app/src/main/java/org/lineageos/recorder/utils/LastRecordHelper.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 1063
+      },
+      "writtenOn": "2019-09-27T20:34:45Z",
+      "side": 1,
+      "message": "String -\u003e Uri",
+      "revId": "342d35e3af5d287fffeabffc41964d0a9b4b7d2c",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "9df570a0_f512dd51",
+        "filename": "app/src/main/java/org/lineageos/recorder/utils/LastRecordHelper.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 1063
+      },
+      "writtenOn": "2019-09-27T20:34:45Z",
+      "side": 1,
+      "message": "String -\u003e Uri?",
+      "revId": "342d35e3af5d287fffeabffc41964d0a9b4b7d2c",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "0f3fd568_b24edd2b",
+        "filename": "app/src/main/java/org/lineageos/recorder/utils/LastRecordHelper.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 1063
+      },
+      "writtenOn": "2019-09-27T20:34:45Z",
+      "side": 1,
+      "message": "String -\u003e Uri?",
+      "revId": "342d35e3af5d287fffeabffc41964d0a9b4b7d2c",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "805cd255_00ff69b6",
+        "filename": "app/src/main/java/org/lineageos/recorder/utils/LastRecordHelper.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 1063
+      },
+      "writtenOn": "2019-09-27T20:34:45Z",
+      "side": 1,
+      "message": "String -\u003e Uri?",
+      "revId": "342d35e3af5d287fffeabffc41964d0a9b4b7d2c",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "4500c389_42aff635",
+        "filename": "app/src/main/java/org/lineageos/recorder/utils/MediaProviderHelper.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 1063
+      },
+      "writtenOn": "2019-09-27T20:34:45Z",
+      "side": 1,
+      "message": "String -\u003e Uri?",
+      "revId": "342d35e3af5d287fffeabffc41964d0a9b4b7d2c",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "839c5df3_8eb342d3",
+        "filename": "app/src/main/java/org/lineageos/recorder/utils/MediaProviderHelper.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 156,
+      "author": {
+        "id": 1063
+      },
+      "writtenOn": "2019-09-27T20:34:45Z",
+      "side": 1,
+      "message": "OnContentWrittenListener",
+      "revId": "342d35e3af5d287fffeabffc41964d0a9b4b7d2c",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c32c9312_49ee1774",
+        "filename": "app/src/main/java/org/lineageos/recorder/utils/MediaProviderHelper.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 157,
+      "author": {
+        "id": 1063
+      },
+      "writtenOn": "2019-09-27T20:34:45Z",
+      "side": 1,
+      "message": "Shouldn\u0027t this rather be of type Uri?",
+      "revId": "342d35e3af5d287fffeabffc41964d0a9b4b7d2c",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    }
+  ]
+}
