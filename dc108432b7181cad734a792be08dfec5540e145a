@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "81250864_b64844dd",
+        "filename": "app/src/main/java/org/lineageos/recorder/utils/MediaProviderHelper.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2019-09-27T18:40:36Z",
+      "side": 1,
+      "message": "Build.VERSION.SDK_INT \u003c Build.VERSION_CODES.Q",
+      "range": {
+        "startLine": 41,
+        "startChar": 12,
+        "endLine": 41,
+        "endChar": 38
+      },
+      "revId": "dc108432b7181cad734a792be08dfec5540e145a",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "48002c40_4cdc725c",
+        "filename": "app/src/main/java/org/lineageos/recorder/utils/MediaProviderHelper.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2019-09-27T18:40:36Z",
+      "side": 1,
+      "message": "Build.VERSION.SDK_INT \u003c Build.VERSION_CODES.Q",
+      "range": {
+        "startLine": 57,
+        "startChar": 12,
+        "endLine": 57,
+        "endChar": 38
+      },
+      "revId": "dc108432b7181cad734a792be08dfec5540e145a",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    }
+  ]
+}
