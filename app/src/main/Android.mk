@@ -35,11 +35,7 @@ LOCAL_STATIC_ANDROID_LIBRARIES += \
     com.google.android.material_material \
 
 LOCAL_PACKAGE_NAME := Recorder
-LOCAL_CERTIFICATE := platform
-LOCAL_PRIVILEGED_MODULE := true
-#LOCAL_PROGUARD_FLAG_FILES := $(LOCAL_PATH)/../../proguard-rules.pro
-
-LOCAL_PRIVATE_PLATFORM_APIS := true
+LOCAL_SDK_VERSION := current
 
 include $(BUILD_PACKAGE)
 
