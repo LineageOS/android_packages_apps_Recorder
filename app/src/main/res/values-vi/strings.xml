@@ -23,7 +23,6 @@
     <string name="cancel">Hủy</string>
     <string name="delete_title">Đang xóa</string>
     <string name="delete_message">Bạn có chắcchắn muốn xóa %1$s? Việc này không thể hoàn tác</string>
-    <string name="date_format">%1$s-%2$s-%3$s %4$s:%5$s</string>
     <string name="sound_notification_title">Trình ghi âm</string>
     <string name="sound_notification_message">Độ dài âm thanh: %1$s</string>
     <string name="sound_recording_title_working">Đang ghi</string>
@@ -50,12 +49,8 @@
     <string name="screen_channel_desc">Thông báo liên tục khi ghi lại màn hình và thông báo sau khi hoàn tất</string>
     <string name="dialog_permissions_title">Quyền truy cập</string>
     <string name="dialog_permissions_mic">Trình ghi lại cần quyền micro để ghi lại âm thanh</string>
-    <string name="dialog_permissions_storage">Trình ghi lại cần truy cập bộ nhớ để lưu các tập tin đã ghi</string>
     <string name="dialog_permissions_phone">Trình ghi lại cần truy cập trạng thái điện thoại để ngăn ứng dụng này ghi âm khi bạn đang gọi</string>
-    <string name="dialog_permissions_mic_storage">Trình ghi lại cần quyền micro để ghi lại âm thanh và truy cập bộ nhớ để lưu các tập tin đã ghi</string>
     <string name="dialog_permissions_mic_phone">Trình ghi lại cần quyền micro để ghi lại âm thanh và truy cập trạng thái điện thoại để ngăn chặn ứng dụng này ghi âm trong khi bạn đang gọi</string>
-    <string name="dialog_permissions_storage_phone">Trình ghi lại cần truy cập bộ nhớ để lưu tập tin đã ghi âm và truy cập trạng thái điện thoại để ngăn ứng dụng này ghi âm khi bạn đang gọi</string>
-    <string name="dialog_permissions_mic_storage_phone">Trình ghi lại cần truy cập micro để ghi âm, truy cập bộ nhớ để lưu tập tin đã ghi và truy cập trạng thái điện thoại để ngăn ứng dụng này ghi âm khi bạn đang gọi</string>
     <string name="dialog_permissions_ask">Hỏi lại</string>
     <string name="dialog_permissions_dismiss">Bỏ qua</string>
     <string name="dialog_permissions_overlay">Trình ghi âm cần quyền \"Vẽ trên các ứng dụng khác\" để ghi lại màn hình của bạn. Nhấn cho phép, kích hoạt quyền trong cài đặt và trở lại Trình ghi âm</string>

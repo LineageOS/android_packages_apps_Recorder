@@ -23,7 +23,6 @@
     <string name="cancel">取消</string>
     <string name="delete_title">正在删除记录</string>
     <string name="delete_message">您确定要删除 %1$s？此操作不能撤销</string>
-    <string name="date_format">%1$s-%2$s-%3$s %4$s:%5$s</string>
     <string name="sound_notification_title">录音机</string>
     <string name="sound_notification_message">音频长度：%1$s</string>
     <string name="sound_recording_title_working">正在录制</string>
@@ -50,12 +49,8 @@
     <string name="screen_channel_desc">录屏至完成期间的持续通知</string>
     <string name="dialog_permissions_title">权限</string>
     <string name="dialog_permissions_mic">录制器需要麦克风访问权限以便录制音频</string>
-    <string name="dialog_permissions_storage">录制器需要存储空间访问权限以便保存录音文件</string>
     <string name="dialog_permissions_phone">录制器需要访问手机状态权限以便在您通话时停止录音</string>
-    <string name="dialog_permissions_mic_storage">录制器需要麦克风和存储权限以便录制声音和保存录音文件。</string>
     <string name="dialog_permissions_mic_phone">录制器需要麦克风访问权限以录制语音，手机状态访问权限以避免在您通话时录制</string>
-    <string name="dialog_permissions_storage_phone">录制器需要存储访问权限以保存录音文件，电话状态访问权限以避免在您通话时录音</string>
-    <string name="dialog_permissions_mic_storage_phone">录制器需要麦克风权限以录制音频，存储访问权限以保存录音文件，电话状态访问权限以避免在您通话时录音</string>
     <string name="dialog_permissions_ask">再次询问</string>
     <string name="dialog_permissions_dismiss">忽略</string>
     <string name="dialog_permissions_overlay">录制器需要“出现在其他应用上”权限来录制您的屏幕。按下允许，或在设置中启用该权限并返回录制器。</string>

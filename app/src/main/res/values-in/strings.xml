@@ -23,7 +23,6 @@
     <string name="cancel">Batal</string>
     <string name="delete_title">Menghapus rekaman</string>
     <string name="delete_message">Apakah Anda yakin ingin menghapus %1$s? Ini tidak dapat dibatalkan</string>
-    <string name="date_format">%3$s-%2$s-%1$s %4$s:%5$s</string>
     <string name="sound_notification_title">Perekam Suara</string>
     <string name="sound_notification_message">Durasi audio: %1$s</string>
     <string name="sound_recording_title_working">Merekam</string>
@@ -50,12 +49,8 @@
     <string name="screen_channel_desc">Pemberitahuan tetap saat merekam layar dan pemberitahuan setelah selesai</string>
     <string name="dialog_permissions_title">Izin</string>
     <string name="dialog_permissions_mic">Perekam membutuhkan izin mikrofon untuk merekam audio</string>
-    <string name="dialog_permissions_storage">Perekam membutuhkan akses ke penyimpanan untuk menyimpan file rekaman</string>
     <string name="dialog_permissions_phone">Perekam membutuhkan akses ke status telepon untuk mencegah aplikasi ini merekam saat Anda melakukan panggilan</string>
-    <string name="dialog_permissions_mic_storage">Perekam membutuhkan izin mikrofon untuk merekam audio, dan akses ke penyimpanan untuk menyimpan file rekaman</string>
     <string name="dialog_permissions_mic_phone">Perekam membutuhkan izin mikrofon untuk merekam audio, dan akses ke status telepon untuk mencegah aplikasi ini merekam saat Anda melakukan panggilan</string>
-    <string name="dialog_permissions_storage_phone">Perekam membutuhkan akses ke penyimpanan untuk menyimpan file rekaman, dan akses ke status telepon untuk mencegah aplikasi ini merekam saat Anda melakukan panggilan</string>
-    <string name="dialog_permissions_mic_storage_phone">Perekam membutuhkan izin mikrofon untuk merekam audio, akses ke penyimpanan untuk menyimpan file rekaman, dan akses ke status telepon untuk mencegah aplikasi ini merekam saat Anda melakukan panggilan</string>
     <string name="dialog_permissions_ask">Minta izin lagi</string>
     <string name="dialog_permissions_dismiss">Tutup</string>
     <string name="dialog_permissions_overlay">Perekam membutuhkan izin \"Menarik di atas aplikasi lain\" untuk merekam layar anda. Tekan izinkan, hidupkan perizinan di setelan dan kembali ke Perekam</string>

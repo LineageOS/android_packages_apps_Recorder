@@ -64,11 +64,11 @@ public class ScreencastService extends Service implements MediaProviderHelper.On
     private static final String SCREENCAST_NOTIFICATION_CHANNEL =
             "screencast_notification_channel";
 
-    public static final String EXTRA_RESULT_CODE = "extra_resultCode";
-    public static final String EXTRA_DATA = "extra_data";
-    public static final String EXTRA_USE_AUDIO = "extra_useAudio";
+    private static final String EXTRA_RESULT_CODE = "extra_resultCode";
+    private static final String EXTRA_DATA = "extra_data";
+    private static final String EXTRA_USE_AUDIO = "extra_useAudio";
 
-    public static final String ACTION_START_SCREENCAST =
+    private static final String ACTION_START_SCREENCAST =
             "org.lineageos.recorder.screen.ACTION_START_SCREENCAST";
     public static final String ACTION_STOP_SCREENCAST =
             "org.lineageos.recorder.screen.ACTION_STOP_SCREENCAST";
@@ -157,6 +157,9 @@ public class ScreencastService extends Service implements MediaProviderHelper.On
                 "ScreenRecords/ScreenRecord-" + videoDate + ".mp4");
 
         File recordingDir = mPath.getParentFile();
+        if (recordingDir == null) {
+            throw new SecurityException("Cannot access scoped Movies/ScreenRecords directory");
+        }
         //noinspection ResultOfMethodCallIgnored
         recordingDir.mkdirs();
         if (!(recordingDir.exists() && recordingDir.canWrite())) {
@@ -284,7 +287,7 @@ public class ScreencastService extends Service implements MediaProviderHelper.On
     }
 
     private boolean hasNoAvailableSpace() {
-        StatFs stat = new StatFs(Environment.getExternalStorageDirectory().getPath());
+        StatFs stat = new StatFs(Environment.getDataDirectory().getPath());
         long bytesAvailable = stat.getBlockSizeLong() * stat.getBlockCountLong();
         long megAvailable = bytesAvailable / 1048576;
         return megAvailable < 100;

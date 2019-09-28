@@ -18,7 +18,6 @@ package org.lineageos.recorder.ui;
 import android.app.Activity;
 import android.content.Context;
 import android.graphics.drawable.GradientDrawable;
-import androidx.core.content.ContextCompat;
 import android.util.AttributeSet;
 import android.view.Gravity;
 import android.view.View;
@@ -26,6 +25,8 @@ import android.view.ViewGroup;
 import android.view.animation.AccelerateDecelerateInterpolator;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
+
+import androidx.core.content.ContextCompat;
 
 import org.lineageos.recorder.R;
 import org.lineageos.recorder.sounds.OnAudioLevelUpdatedListener;

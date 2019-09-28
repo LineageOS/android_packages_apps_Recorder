@@ -23,7 +23,6 @@
     <string name="cancel">Annuleren</string>
     <string name="delete_title">Opname verwijderen</string>
     <string name="delete_message">Weet u zeker dat u %1$s wilt verwijderen? Dit kan niet ongedaan worden gemaakt</string>
-    <string name="date_format">%3$s-%2$s-%1$s %4$s:%5$s</string>
     <string name="sound_notification_title">Geluidsrecorder</string>
     <string name="sound_notification_message">Audiolengte: %1$s</string>
     <string name="sound_recording_title_working">Opnemen</string>
@@ -45,12 +44,8 @@
     <string name="screen_channel_title">Scherm opnemen</string>
     <string name="dialog_permissions_title">Machtigingen</string>
     <string name="dialog_permissions_mic">Recorder heeft toegang nodig tot de microfoon om geluid op te kunnen nemen</string>
-    <string name="dialog_permissions_storage">Recorder heeft toegang nodig tot de opslag om bestanden op te kunnen slaan</string>
     <string name="dialog_permissions_phone">Recorder heeft toegang nodig tot de telefoonstatus om te voorkomen dat deze app opneemt tijdens oproepen</string>
-    <string name="dialog_permissions_mic_storage">Recorder heeft toegang nodig tot de microfoon om audio op te kunnen nemen en toegang tot de opslag nodig om bestanden op te kunnen slaan</string>
     <string name="dialog_permissions_mic_phone">Recorder heeft toegang nodig tot de microfoon om audio op te kunnen nemen en toegang nodig tot de telefoonstatus om te voorkomen dat deze app opneemt tijdens oproepen</string>
-    <string name="dialog_permissions_storage_phone">Recorder heeft toegang nodig tot de opslag om bestanden op te kunnen slaan en toegang nodig tot de telefoonstatus om te voorkomen dat deze app opneemt tijdens oproepen</string>
-    <string name="dialog_permissions_mic_storage_phone">Recorder heeft toegang nodig tot de microfoon om audio op te kunnen nemen, toegang tot de opslag nodig om bestanden op te kunnen slaan en toegang nodig tot de telefoonstatus om te voorkomen dat deze app opneemt tijdens oproepen</string>
     <string name="dialog_permissions_ask">Opnieuw vragen</string>
     <string name="dialog_permissions_dismiss">Sluiten</string>
     <string name="dialog_permissions_overlay">Recorder heeft de \"Over andere apps tekenen\"-machtiging nodig. Tik op Toestaan, schakel de machtiging in in de instellingen en keer terug naar Recorder</string>

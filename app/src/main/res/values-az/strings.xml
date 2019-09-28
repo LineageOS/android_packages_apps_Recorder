@@ -23,7 +23,6 @@
     <string name="cancel">İmtina</string>
     <string name="delete_title">Səsyazma silinir</string>
     <string name="delete_message">%1$s silmək istədiyinizə əminsiniz? Bu geri qaytarıla bilməyəcək</string>
-    <string name="date_format">%1$s-%2$s-%3$s %4$s:%5$s</string>
     <string name="sound_notification_title">Səs Yazma</string>
     <string name="sound_notification_message">Səs uzunluğu: %1$s</string>
     <string name="sound_recording_title_working">Səs yazılır</string>
@@ -50,12 +49,8 @@
     <string name="screen_channel_desc">Ekran videosunu çəkəndə davamlı bildiriş göstər və tamamlandıqdan sonra bildiriş göstər</string>
     <string name="dialog_permissions_title">İcazələr</string>
     <string name="dialog_permissions_mic">Səsyazan-ın, səsi yazmaq üçün mikrofon icazəsinə ehtiyacı var</string>
-    <string name="dialog_permissions_storage">Səsyazan-ın, yazılmış faylları saxlamağı üçün anbara müraciətinə ehtiyacı var</string>
     <string name="dialog_permissions_phone">Zəng əsnasında bu tətbiqin yazmasını əngəlləmək üçün \"Səsyazan\" telefon vəziyyətinə müraciət etməlidir.</string>
-    <string name="dialog_permissions_mic_storage">Səsyazan-ın, səs yazmaq üçün mikrofona və yazılmış faylları saxlamaq üçün anbara müraciətə ehtiyacı var</string>
     <string name="dialog_permissions_mic_phone">Səsyazan-ın, zəng əsnasında yazmağı əngəlləmək üçün mikrofon icazəsinə və telefon vəziyyətinə müraciətə ehtiyacı yaranar</string>
-    <string name="dialog_permissions_storage_phone">Səsyazan-ın, faylları saxlamaq anbar müraciətinə və zəng əsnasında bu tətbiqin yazmasını əngəlləmək üçün telefon vəziyyətinə müraciətə ehtiyacı var</string>
-    <string name="dialog_permissions_mic_storage_phone">Səsyazan-ın, səs yazmaq üçün mikrofon icazəsinə, saxlanılmış faylları saxlamaq üçün anbar müraciətinə və zəng əsnasında bu tətbiqin səs yazmasını əngəlləmək üçün telefon vəziyətinə müraciətinə ehtiyacı var</string>
     <string name="dialog_permissions_ask">Təkrar soruş</string>
     <string name="dialog_permissions_dismiss">Rədd et</string>
     <string name="dialog_permissions_overlay">Səsyazan-ın, ekranınızı yazması üçün \"Digər tətbiqlərin üzərində görüntülə\" icazəsinə ehtiyacı var. İcazə ver düyməsinə basın, tənzimləmələrin icazələrini fəallaşdırın və Səsyazan-a geri qayıdın</string>

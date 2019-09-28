@@ -27,6 +27,7 @@
         android:layout_width="48dp"
         android:layout_height="48dp"
         android:background="@drawable/background_screen_recorder_overlay_main"
+        android:contentDescription="@string/main_screen_action"
         android:padding="12dp"
         android:src="@drawable/ic_action_screen_record"
         android:tint="@color/white" />

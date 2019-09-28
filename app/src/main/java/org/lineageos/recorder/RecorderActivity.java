@@ -358,6 +358,7 @@ public class RecorderActivity extends AppCompatActivity implements
         return hasAudioPermission() && hasPhoneReaderPermission();
     }
 
+    @SuppressWarnings("SameReturnValue")
     private boolean hasAllScreenRecorderPermissions() {
         // None for now
         return true;

@@ -41,7 +41,6 @@ class PcmConverter {
         byte[] data = new byte[bufferSize];
 
         try {
-            Log.d(TAG, inputPath);
             input = new FileInputStream(inputPath.replace(WAV_EXTENSION, EXTENSION));
             output = new FileOutputStream(inputPath);
             long audioLength = input.getChannel().size();
@@ -52,7 +51,7 @@ class PcmConverter {
                 output.write(data);
             }
         } catch (IOException e) {
-            Log.e(TAG, e.getMessage());
+            Log.e(TAG, "Failed to convert to wav", e);
         } finally {
             Utils.closeQuietly(input);
             Utils.closeQuietly(output);

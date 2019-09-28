@@ -23,7 +23,6 @@
     <string name="cancel">Ακύρωση</string>
     <string name="delete_title">Διαγραφή εγγραφής</string>
     <string name="delete_message">Είστε βέβαιοι ότι θέλετε να διαγράψετε το %1$s; Αυτό δεν μπορεί να αναιρεθεί</string>
-    <string name="date_format">%3$s-%2$s-%1$s-%4$s-%5$s</string>
     <string name="sound_notification_title">Εγγραφή ήχου</string>
     <string name="sound_notification_message">Μήκος ήχου: %1$s</string>
     <string name="sound_recording_title_working">Γίνεται εγγραφή</string>
@@ -50,12 +49,8 @@
     <string name="screen_channel_desc">Συνεχής ειδοποίηση κατά την εγγραφή της οθόνης και ειδοποίηση αφού έχει ολοκληρωθεί</string>
     <string name="dialog_permissions_title">Δικαιώματα</string>
     <string name="dialog_permissions_mic">Η Εγγραφή χρειάζεται πρόσβαση στο μικρόφωνο για την εγγραφή ήχου</string>
-    <string name="dialog_permissions_storage">Η Εγγραφή χρειάζεται πρόσβαση στον αποθηκευτικό χώρο για την αποθήκευση εγγεγραμμένων αρχείων</string>
     <string name="dialog_permissions_phone">Η Εγγραφή χρειάζεται πρόσβαση στην κατάσταση του τηλεφώνου προκειμένου να μην ηχογραφεί κατά την διάρκεια κλήσεων</string>
-    <string name="dialog_permissions_mic_storage">Η Εγγραφή χρειάζεται πρόσβαση στο μικρόφωνο για την εγγραφή ήχου και πρόσβαση στον αποθηκευτικό χώρο για την αποθήκευση των εγγεγραμμένων αρχείων</string>
     <string name="dialog_permissions_mic_phone">Η Εγγραφή χρειάζεται πρόσβαση στο μικρόφωνο για την εγγραφή ήχου και πρόσβαση στην κατάσταση τηλεφώνου προκειμένου να μην ηχογραφεί κατά την διάρκεια κλήσεων</string>
-    <string name="dialog_permissions_storage_phone">Η Εγγραφή χρειάζεται πρόσβαση στον αποθηκευτικό χώρο για την αποθήκευση εγγεγραμμένων αρχείων και πρόσβαση στην κατάσταση τηλεφώνου προκειμένου να μην ηχογραφεί κατά την διάρκεια κλήσεων</string>
-    <string name="dialog_permissions_mic_storage_phone">Η Εγγραφή χρειάζεται πρόσβαση στο μικρόφωνο για την εγγραφή ήχου, πρόσβαση στον αποθηκευτικό χώρο για την αποθήκευση εγγεγραμμένων αρχείων και πρόσβαση στην κατάσταση τηλεφώνου προκειμένου να μην ηχογραφεί κατά την διάρκεια κλήσεων</string>
     <string name="dialog_permissions_ask">Ερώτηση ξανά</string>
     <string name="dialog_permissions_dismiss">Παράβλεψη</string>
     <string name="dialog_permissions_overlay">Η Εγγραφή χρειάζεται την άδεια \"Σχεδίαση πάνω από άλλες εφαρμογές\" για να κάνει εγγραφή της οθόνης σας. Παρακαλούμε επιτρέψτε, ενεργοποιήστε αυτή την άδεια στις ρυθμίσεις και ελάτε πίσω στην Εγγραφή</string>

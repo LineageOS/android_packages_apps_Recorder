@@ -23,7 +23,6 @@
     <string name="cancel">Скасувати</string>
     <string name="delete_title">Видалення записів</string>
     <string name="delete_message">Ви впевнені, що хочете видалити %1$s? Цю дію неможливо буде скасувати</string>
-    <string name="date_format">%3$s-%2$s-%1$s %4$s:%5$s</string>
     <string name="sound_notification_title">Запис звуку</string>
     <string name="sound_notification_message">Тривалість аудіо запису: %1$s</string>
     <string name="sound_recording_title_working">Запис</string>
@@ -43,12 +42,8 @@
     <string name="screen_overlay_notif_message">Натисніть кнопку запису, щоб почати</string>
     <string name="dialog_permissions_title">Дозволи</string>
     <string name="dialog_permissions_mic">Додаток «Звукозаписувач» потребує доступ до мікрофону для здійснення звукозапису</string>
-    <string name="dialog_permissions_storage">Додатку «Recorder» потрібен доступ до накопичувача для збереження записаних файлів</string>
     <string name="dialog_permissions_phone">Додатку «Recorder» потрібен доступ до стану телефону, щоб припиняти аудіозапис під час дзвінка</string>
-    <string name="dialog_permissions_mic_storage">Додатку «Recorder» потрібен доступ до мікрофону для аудіозапису і доступ до накопичувача для збереження записаних файлів</string>
     <string name="dialog_permissions_mic_phone">Додатку «Recorder» потрібен доступ до мікрофону для аудіозапису і доступ до стану телефону, щоб припиняти аудіозапис під час дзвінка</string>
-    <string name="dialog_permissions_storage_phone">Додатку «Recorder» потрібен доступ до накопичувача для збереження записаних файлів і доступ до стану телефону, щоб припиняти аудіозапис під час дзвінка</string>
-    <string name="dialog_permissions_mic_storage_phone">Додатку «Recorder» потрібен доступ до мікрофона для аудіозапису, доступ до накопичувача для збереження записаних файлів і доступ до стану телефону, щоб припиняти аудіозапис під час дзвінка</string>
     <string name="dialog_permissions_ask">Запитайте ще раз</string>
     <string name="dialog_permissions_dismiss">Відхилити</string>
     <string name="dialog_permissions_overlay">Запис екрану потребує дозволу «Відображати поверх інших програм». Натисніть \"Дозволити\" в налаштуваннях та поверніться до запису</string>

@@ -23,7 +23,6 @@
     <string name="cancel">Annuler</string>
     <string name="delete_title">Suppression de l’enregistrement</string>
     <string name="delete_message">Êtes-vous sûr de vouloir supprimer %1$s? Cette action est irréversible</string>
-    <string name="date_format">%1$s-%2$s-%3$s %4$s:%5$s</string>
     <string name="sound_notification_title">Enregistreur audio</string>
     <string name="sound_notification_message">Durée de l\'audio : %1$s</string>
     <string name="sound_recording_title_working">Enregistrement en cours</string>
@@ -50,12 +49,8 @@
     <string name="screen_channel_desc">Notification persistante lors de l\'enregistrement d\'écran et notification après la fin de ce dernier</string>
     <string name="dialog_permissions_title">Autorisations</string>
     <string name="dialog_permissions_mic">Le magnétophone a besoin d\'accéder au microphone pour enregistrer l\'audio</string>
-    <string name="dialog_permissions_storage">Le magnétophone a besoin d’accéder au stockage pour sauvegarder les fichiers enregistrés</string>
     <string name="dialog_permissions_phone">Le magnétophone a besoin d\'accéder à l\'état du téléphone pour empêcher l\'application d\'enregistrer pendant un appel</string>
-    <string name="dialog_permissions_mic_storage">Le magnétophone a besoin d’accéder au microphone pour enregistrer l\'audio et au stockage pour sauvegarder les fichiers enregistrés</string>
     <string name="dialog_permissions_mic_phone">Le magnétophone a besoin d’accéder au microphone pour enregistrer l\'audio et à l\'état du téléphone pour empêcher l\'application d\'enregistrer pendant un appel</string>
-    <string name="dialog_permissions_storage_phone">Le magnétophone a besoin d\'accéder au stockage pour sauvegarder les fichiers enregistrés et à l\'état du téléphone pour empêcher l\'application d\'enregistrer pendant un appel</string>
-    <string name="dialog_permissions_mic_storage_phone">Le magnétophone a besoin d’accéder au microphone pour enregistrer l\'audio, au stockage pour sauvegarder les fichiers enregistrés et à l\'état du téléphone pour empêcher l\'application d\'enregistrer pendant un appel</string>
     <string name="dialog_permissions_ask">Demander à nouveau</string>
     <string name="dialog_permissions_dismiss">Fermer</string>
     <string name="dialog_permissions_overlay">Magnétophone a besoin de la permission \"Se superposer aux autres applis\" pour enregistrer votre écran. Choisissez autoriser, activez la permission dans les paramètres et revenez dans Magnétophone</string>

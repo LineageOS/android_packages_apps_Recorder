@@ -23,7 +23,6 @@
     <string name="cancel">Cancel</string>
     <string name="delete_title">Deleting record</string>
     <string name="delete_message">Are you sure you want to delete %1$s? This cannot be undone</string>
-    <string name="date_format">%1$s-%2$s-%3$s %4$s:%5$s</string>
     <string name="sound_notification_title">Sound Recorder</string>
     <string name="sound_notification_message">Audio length: %1$s</string>
     <string name="sound_recording_title_working">Recording</string>
@@ -50,12 +49,8 @@
     <string name="screen_channel_desc">Persistent notification when recording the screen and notification after it is complete</string>
     <string name="dialog_permissions_title">Permissions</string>
     <string name="dialog_permissions_mic">Recorder needs microphone permission to record audio</string>
-    <string name="dialog_permissions_storage">Recorder needs storage access to save recorded files</string>
     <string name="dialog_permissions_phone">Recorder needs phone status access to prevent this app from recording while you\'re calling</string>
-    <string name="dialog_permissions_mic_storage">Recorder needs microphone permission to record audio and storage access to save recorded files</string>
     <string name="dialog_permissions_mic_phone">Recorder needs microphone permission to record audio and phone status access to prevent this app from recording while you\'re calling</string>
-    <string name="dialog_permissions_storage_phone">Recorder needs storage access to save recorded files and phone status access to prevent this app from recording while you\'re calling</string>
-    <string name="dialog_permissions_mic_storage_phone">Recorder needs microphone permission to record audio, storage access to save recorded files and phone status access to prevent this app from recording while you\'re calling</string>
     <string name="dialog_permissions_ask">Ask again</string>
     <string name="dialog_permissions_dismiss">Dismiss</string>
     <string name="dialog_permissions_overlay">Recorder needs \"Draw over other apps\" permission to record your screen. Press allow, enable the permission in the settings and come back to Recorder</string>

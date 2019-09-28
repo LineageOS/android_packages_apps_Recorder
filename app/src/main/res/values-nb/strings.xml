@@ -23,7 +23,6 @@
     <string name="cancel">Avbryt</string>
     <string name="delete_title">Sletter opptaket</string>
     <string name="delete_message">Er du sikker på at du vil slette %1$s? Dette kan ikke angres</string>
-    <string name="date_format">%3$s-%2$s-%1$s %4$s:%5$s</string>
     <string name="sound_notification_title">Lydopptaker</string>
     <string name="sound_notification_message">Lydlengde: %1$s</string>
     <string name="sound_recording_title_working">Tar opp</string>
@@ -44,12 +43,8 @@
     <string name="screen_settings_title">Skjerminnspiller-innstillinger</string>
     <string name="dialog_permissions_title">Tillatelser</string>
     <string name="dialog_permissions_mic">Opptaker trenger mikrofon tilgang for å spille inn lyd</string>
-    <string name="dialog_permissions_storage">Opptaker trenger lagrings tilgang for å lagre innspilt lyd</string>
     <string name="dialog_permissions_phone">Opptaker trenger telefontilgang for å passe på at du ikke tar opp anropene dine</string>
-    <string name="dialog_permissions_mic_storage">Opptaker trenger mikrofon tilgang for å spille inn lyd og lagrings tilgang for å lagre innspilt lyd</string>
     <string name="dialog_permissions_mic_phone">Opptaker trenger mikrofontilgang for å spille inn lyd og telefontilgang for å passe på at du ikke tar opp anropene dine</string>
-    <string name="dialog_permissions_storage_phone">Opptaker trenger lagringstilgang for å lagre innspilt lyd og telefontilgang for å passe på at du ikke tar opp anropene dine</string>
-    <string name="dialog_permissions_mic_storage_phone">Opptaker trenger mikrofontilgang for å innspille lyd, lagringstilgang for å lagre innspilte filer og telefontilgang for å passe på at du ikke tar opp anropene dine</string>
     <string name="dialog_permissions_ask">Spør igjen</string>
     <string name="dialog_permissions_dismiss">Avvis</string>
     <string name="dialog_permissions_overlay">Opptakeren trenger tillatelsen \"Ligge over andre apper\" for å kunne filme skjermen din. Trykk Tillat, endre tillatelsen i innstillingene og kom tilbake til Opptaker-appen</string>

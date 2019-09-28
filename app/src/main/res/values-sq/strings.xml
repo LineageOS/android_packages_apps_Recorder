@@ -23,7 +23,6 @@
     <string name="cancel">Anullo</string>
     <string name="delete_title">Duke fshirë regjistrimin</string>
     <string name="delete_message">Jeni të sigurt që doni të fshini %1$s? Ky veprim nuk mund të zhbëhet</string>
-    <string name="date_format">%1$s-%2$s-%3$s %4$s:%5$s</string>
     <string name="sound_notification_title">Regjistruesi i Tingujve</string>
     <string name="sound_notification_message">Gjatësia e audios: %1$s</string>
     <string name="sound_recording_title_working">Duke regjistruar</string>
@@ -50,12 +49,8 @@
     <string name="screen_channel_desc">Njoftim i vazhdueshëm kur regjistron ekranin dhe njofto pasi të përfundojë</string>
     <string name="dialog_permissions_title">Lejet</string>
     <string name="dialog_permissions_mic">Regjistruesi kërkon leje aksesi tek mikrofoni për të regjistruar audio</string>
-    <string name="dialog_permissions_storage">Regjistruesi kërkon akses te memoria për të ruajtur skedarët e regjistruar</string>
     <string name="dialog_permissions_phone">Regjistruesi kërkon akses te statusi i telefonit për të parandaluar aplikacionin që të regjistrojë gjatë një telefonate</string>
-    <string name="dialog_permissions_mic_storage">Regjistruesi kërkon akses te mikrofoni për të regjistruar audio si dhe akses te memoria për të ruajtur skedarët e regjistruar</string>
     <string name="dialog_permissions_mic_phone">Regjistruesi kërkon leje për përdorimin e mikrofonit që të regjistrojë audio dhe akses te statusi i telefonit për të parandaluar aplikacionin që të regjistrojë gjatë një telefonate</string>
-    <string name="dialog_permissions_storage_phone">Regjistruesi kërkon akses te memoria për të ruajtur regjistrimet dhe akses te statusi i telefonit për të parandaluar aplikacionin që të regjistrojë gjatë një telefonate</string>
-    <string name="dialog_permissions_mic_storage_phone">Regjistruesi kërkon leje për përdorimin e mikrofonit që të regjistrojë audio, akses te memoria për të ruajtur regjistrimet dhe akses te statusi i telefonit për të parandaluar aplikacionin që të regjistrojë gjatë një telefonate</string>
     <string name="dialog_permissions_ask">Pyet përsëri</string>
     <string name="dialog_permissions_dismiss">Largo</string>
     <string name="dialog_permissions_overlay">Regjistruesi kërkon lejen \"Mbivendos mbi aplikacionet e tjera\" për të regjistruar ekranin. Shtyp butonin Lejo, aktivizo lejen te parametrat dhe kthehu përsëri te Regjistruesi</string>

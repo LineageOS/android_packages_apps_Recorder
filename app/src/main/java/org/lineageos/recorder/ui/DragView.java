@@ -15,17 +15,16 @@
  */
 package org.lineageos.recorder.ui;
 
-import android.annotation.SuppressLint;
 import android.content.Context;
 import android.util.AttributeSet;
-import android.widget.ImageButton;
+
+import androidx.appcompat.widget.AppCompatImageButton;
 
 /**
  * Custom ImageButton implementation to avoid
  * performClick() warnings
  */
-@SuppressLint("AppCompatCustomView")
-class DragView extends ImageButton {
+class DragView extends AppCompatImageButton {
 
     public DragView(Context context, AttributeSet attrs) {
         super(context, attrs, 0);

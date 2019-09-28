@@ -28,8 +28,6 @@ import org.lineageos.recorder.R;
 import org.lineageos.recorder.screen.ScreencastService;
 import org.lineageos.recorder.sounds.SoundRecorderService;
 
-import java.io.File;
-
 public class LastRecordHelper {
     private static final String PREFS = "preferences";
     private static final String KEY_LAST_SOUND = "sound_last_path";

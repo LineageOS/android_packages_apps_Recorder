@@ -23,7 +23,6 @@
     <string name="cancel">Anuluj</string>
     <string name="delete_title">Usuwanie nagrania</string>
     <string name="delete_message">Czy na pewno chcesz usunąć %1$s? Tej operacji nie da się cofnąć</string>
-    <string name="date_format">%1$s-%2$s-%3$s %4$s:%5$s</string>
     <string name="sound_notification_title">Rejestrator dźwięku</string>
     <string name="sound_notification_message">Długość dźwięku: %1$s</string>
     <string name="sound_recording_title_working">Nagrywanie</string>
@@ -50,12 +49,8 @@
     <string name="screen_channel_desc">Stałe powiadomienie podczas nagrywania ekranu i powiadomienie po jego ukończeniu</string>
     <string name="dialog_permissions_title">Uprawnienia</string>
     <string name="dialog_permissions_mic">Rejestrator musi mieć uprawnienia do mikrofonu w celu nagrywania dźwięku </string>
-    <string name="dialog_permissions_storage">Rejestrator potrzebuje dostępu do pamięci w celu zapisania nagranych plików</string>
     <string name="dialog_permissions_phone">Rejestrator potrzebuje dostępu do stanu telefonu, aby zapobiec nagrywaniu w trakcie wykonywania połączenia</string>
-    <string name="dialog_permissions_mic_storage">Rejestrator potrzebuje uprawnień mikrofonu w celu nagrywania dźwięku i dostępu do pamięci w celu zapisania nagranych plików</string>
     <string name="dialog_permissions_mic_phone">Rejestrator potrzebuje uprawnień mikrofonu w celu nagrywania dźwięku i dostępu do statusu telefonu, aby zapobiec nagrywaniu w trakcie wykonywania połączenia</string>
-    <string name="dialog_permissions_storage_phone">Rejestrator dźwięku potrzebuje dostępu do pamięci w celu zapisania nagranych plików i do statusu telefonu, aby zapobiec nagrywaniu w trakcie wykonywania połączenia</string>
-    <string name="dialog_permissions_mic_storage_phone">Rejestrator potrzebuje dostępu do mikrofonu w celu nagrywania dźwięku, do pamięci w celu zapisania nagranych plików i do stanu telefonu, aby zapobiec nagrywaniu w trakcie wykonywania połączenia</string>
     <string name="dialog_permissions_ask">Zapytaj ponownie</string>
     <string name="dialog_permissions_dismiss">Odrzuć</string>
     <string name="dialog_permissions_overlay">Rejestrator potrzebuje zezwolenia na „wyświetlanie nad innymi aplikacjami” w celu rejestrowania ekranu. Proszę wydać zezwolenie w ustawieniach i powrócić do Rejestratora</string>

@@ -23,7 +23,6 @@
     <string name="cancel">Cancelar</string>
     <string name="delete_title">Excluir gravação</string>
     <string name="delete_message">Tem certeza de que deseja excluir %1$s? Esta ação não poderá ser revertida</string>
-    <string name="date_format">%1$s-%2$s-%3$s %4$s:%5$s</string>
     <string name="sound_notification_title">Gravador de som</string>
     <string name="sound_notification_message">Duração do áudio: %1$s</string>
     <string name="sound_recording_title_working">Gravando</string>
@@ -50,12 +49,8 @@
     <string name="screen_channel_desc">Notificação persistente durante a gravação de tela e notificação após a conclusão</string>
     <string name="dialog_permissions_title">Permissões</string>
     <string name="dialog_permissions_mic">O gravador requer acesso ao microfone para gravar áudio</string>
-    <string name="dialog_permissions_storage">O gravador requer acesso ao armazenamento para salvar as gravações</string>
     <string name="dialog_permissions_phone">O gravador requer acesso ao estado do telefone para impedir que este aplicativo grave enquanto você estiver em uma ligação</string>
-    <string name="dialog_permissions_mic_storage">O gravador requer acesso ao microfone para gravar áudio e acesso ao armazenamento para salvar as gravações</string>
     <string name="dialog_permissions_mic_phone">O gravador requer acesso ao microfone para gravar áudio e acesso ao estado do telefone para impedir este aplicativo de gravar enquanto você estiver em uma ligação</string>
-    <string name="dialog_permissions_storage_phone">O gravador requer acesso ao armazenamento para salvar as gravações e acesso ao estado do telefone para impedir este aplicativo de gravar enquanto você estiver em uma ligação</string>
-    <string name="dialog_permissions_mic_storage_phone">O gravador requer acesso ao microfone para gravar áudio, acesso ao armazenamento para salvar as gravações e acesso ao estado do telefone para impedir este aplicativo de gravar enquanto você estiver em uma ligação</string>
     <string name="dialog_permissions_ask">Permitir novamente</string>
     <string name="dialog_permissions_dismiss">Dispensar</string>
     <string name="dialog_permissions_overlay">O gravador requer a permissão de \"sobrepor a outros apps\" para gravar a tela. Pressione permitir, ative a permissão nas configurações e volte ao aplicativo</string>

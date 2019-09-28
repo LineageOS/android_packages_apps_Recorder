@@ -23,7 +23,6 @@
     <string name="cancel">Cancelar</string>
     <string name="delete_title">A apagar a gravação</string>
     <string name="delete_message">Tem a certeza que quer apagar %1$s? Esta ação não pode ser revertida</string>
-    <string name="date_format">%3$s-%2$s-%1$s %4$s:%5$s</string>
     <string name="sound_notification_title">Gravador de som</string>
     <string name="sound_notification_message">Tamanho do áudio: %1$s</string>
     <string name="sound_recording_title_working">A gravar</string>
@@ -50,12 +49,8 @@
     <string name="screen_channel_desc">Notificação persistente durante a gravação do ecrã e notificação depois de completa</string>
     <string name="dialog_permissions_title">Permissões</string>
     <string name="dialog_permissions_mic">O Gravador precisa de acesso ao microfone para gravar áudio</string>
-    <string name="dialog_permissions_storage">O Gravador precisa de acesso ao armazenamento para guardar os ficheiros gravados</string>
     <string name="dialog_permissions_phone">O Gravador precisa de acesso ao estado do telefone para impedir que esta aplicação grave enquanto está numa chamada</string>
-    <string name="dialog_permissions_mic_storage">O Gravador precisa de acesso ao microfone para gravar som e de acesso ao armazenamento para guardar os ficheiros gravados</string>
     <string name="dialog_permissions_mic_phone">O Gravador precisa de acesso ao microfone para gravar som e de acesso ao estado do telefone para impedir que esta aplicação grave enquanto está numa chamada</string>
-    <string name="dialog_permissions_storage_phone">O Gravador precisa de acesso ao armazenamento para guardar os ficheiros gravados e de acesso ao estado do telefone para impedir que esta aplicação grave enquanto está numa chamada</string>
-    <string name="dialog_permissions_mic_storage_phone">O Gravador precisa de acesso ao microfone para gravar áudio, acesso ao armazenamento para guardar os ficheiros gravados e de acesso ao estado do telefone para impedir que esta aplicação grave enquanto está numa chamada</string>
     <string name="dialog_permissions_ask">Voltar a perguntar</string>
     <string name="dialog_permissions_dismiss">Ignorar</string>
     <string name="dialog_permissions_overlay">O Gravador precisa da permissão de \"Sobrepor a outras aplicações\" para poder gravar o ecrã. Toque em permitir, ative a permissão nas definições e volte ao Gravador</string>
