@@ -23,7 +23,6 @@
     <string name="cancel">Отмена</string>
     <string name="delete_title">Удаление записи</string>
     <string name="delete_message">Действительно удалить «%1$s»? Это действие не может быть отменено.</string>
-    <string name="date_format">%3$s.%2$s.%1$s, %4$s:%5$s</string>
     <string name="sound_notification_title">Запись звука</string>
     <string name="sound_notification_message">Длительность аудио: %1$s</string>
     <string name="sound_recording_title_working">Запись</string>
@@ -50,12 +49,8 @@
     <string name="screen_channel_desc">Постоянное уведомление при записи экрана и уведомление после его завершения</string>
     <string name="dialog_permissions_title">Разрешения</string>
     <string name="dialog_permissions_mic">Рекордеру требуется доступ к микрофону для записи звука</string>
-    <string name="dialog_permissions_storage">Рекордеру требуется доступ к хранилищу для сохранения записанных файлов</string>
     <string name="dialog_permissions_phone">Рекордеру требуется доступ к данным о состоянии телефона, чтобы прекращать запись во время звонка</string>
-    <string name="dialog_permissions_mic_storage">Рекордеру требуется доступ к микрофону для записи звука и доступ к хранилищу для сохранения записанных файлов</string>
     <string name="dialog_permissions_mic_phone">Рекордеру требуется доступ к микрофону для записи звука и доступ к данным о состоянии телефона, чтобы прекращать запись во время звонка</string>
-    <string name="dialog_permissions_storage_phone">Рекордеру требуется доступ к хранилищу для сохранения записанных файлов и доступ к данным о состоянии телефона, чтобы прекращать запись во время звонка</string>
-    <string name="dialog_permissions_mic_storage_phone">Рекордеру требуется доступ к микрофону для записи звука, доступ к хранилищу для сохранения записанных файлов и доступ к данным о состоянии телефона, чтобы прекращать запись во время звонка</string>
     <string name="dialog_permissions_ask">Спросить снова</string>
     <string name="dialog_permissions_dismiss">Пропустить</string>
     <string name="dialog_permissions_overlay">Рекордеру требуется разрешение \'Наложение поверх других окон\'. Нажмите \'Разрешить\' в настройках и вернитесь к приложению</string>

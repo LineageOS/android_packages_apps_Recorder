@@ -23,7 +23,6 @@
     <string name="cancel">Afbryd</string>
     <string name="delete_title">Sletter optagelse</string>
     <string name="delete_message">Er du sikker på, at du ønsker at slette %1$s? Dette kan ikke fortrydes</string>
-    <string name="date_format">%3$s-%2$s-%1$s %4$s:%5$s</string>
     <string name="sound_notification_title">Lydoptager</string>
     <string name="sound_notification_message">Audiovarighed: %1$s</string>
     <string name="sound_recording_title_working">Optager</string>
@@ -44,12 +43,8 @@
     <string name="screen_settings_title">Skærmoptager-indstillinger</string>
     <string name="dialog_permissions_title">Tilladelser</string>
     <string name="dialog_permissions_mic">Lydoptager skal have adgang til mikrofonen for at optage lyd</string>
-    <string name="dialog_permissions_storage">Lydoptager skal have lagringsadgang for at gemme optagelser</string>
     <string name="dialog_permissions_phone">Optager behøver telefonstatus-adgang, for at forhindre denne app i at optage, imens du ringer</string>
-    <string name="dialog_permissions_mic_storage">Lydoptager skal bruge adgang til mikrofonen for at optage lyd og lagringsadgang for at gemme optagelser</string>
     <string name="dialog_permissions_mic_phone">Optager behøver mikrofon-tilladelse, for at optage lyd og telefonstatus-adgang, for at forhindre denne app i at optage, imens du ringer</string>
-    <string name="dialog_permissions_storage_phone">Optager behøver lager-adgang, for at gemme optagede filer og telefonstatus-adgang, for at forhindre denne app i at optage, imens du ringer</string>
-    <string name="dialog_permissions_mic_storage_phone">Optager behøver mikrofon-tilladelse, for at optage lyd og lager-adgang, for at gemme optagede filer og telefonstatus-adgang, for at forhindre denne app i at optage, imens du ringer</string>
     <string name="dialog_permissions_ask">Spørg igen</string>
     <string name="dialog_permissions_dismiss">Afvis</string>
     <string name="dialog_permissions_overlay">Lydoptager skal bruge tilladelsen \"Tegne over andre apps\" til at optage skærmen. Tryk på Tillad, aktivér tilladelsen i indstillingerne og vend tilbage til Lydoptager</string>

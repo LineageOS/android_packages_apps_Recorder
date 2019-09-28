@@ -23,7 +23,6 @@
     <string name="cancel">Cancelar</string>
     <string name="delete_title">Borrando grabación</string>
     <string name="delete_message">¿Quieres borrar %1$s? Esto no puede deshacerse</string>
-    <string name="date_format">%3$s/%2$s/%1$s %4$s:%5$s</string>
     <string name="sound_notification_title">Grabadora de sonidos</string>
     <string name="sound_notification_message">Duración del audio: %1$s</string>
     <string name="sound_recording_title_working">Grabando</string>
@@ -50,12 +49,8 @@
     <string name="screen_channel_desc">Notificación persistente al grabar la pantalla y notificación al completar</string>
     <string name="dialog_permissions_title">Permisos</string>
     <string name="dialog_permissions_mic">La grabadora necesita acceder al micrófono para grabar el audio</string>
-    <string name="dialog_permissions_storage">La grabadora necesita acceder a la memoria para guardar las grabaciones</string>
     <string name="dialog_permissions_phone">La grabadora de sonidos necesita acceder al estado del teléfono para evitar grabar durante una llamada</string>
-    <string name="dialog_permissions_mic_storage">La grabadora necesita acceder al micrófono para grabar el audio y al almacenamiento para guardar las grabaciones</string>
     <string name="dialog_permissions_mic_phone">La grabadora necesita acceder al micrófono para grabar audio y al estado del teléfono para evitar grabar durante una llamada</string>
-    <string name="dialog_permissions_storage_phone">La grabadora de sonidos necesita acceder al almacenamiento para guardar las grabaciones y al estado del teléfono para evitar grabar durante una llamada</string>
-    <string name="dialog_permissions_mic_storage_phone">La grabadora necesita acceder al micrófono para grabar el audio, al almacenamiento para guardar las grabaciones y al estado del teléfono para evitar grabar durante una llamada</string>
     <string name="dialog_permissions_ask">Preguntar de nuevo</string>
     <string name="dialog_permissions_dismiss">Descartar</string>
     <string name="dialog_permissions_overlay">La grabadora necesita el permiso «Mostrarse sobre otras aplicaciones» para grabar la pantalla. Pulsa en conceder, para activar los permisos en los ajustes y volver a la grabadora</string>

@@ -19,7 +19,6 @@ import android.content.ContentResolver;
 import android.content.ContentValues;
 import android.net.Uri;
 import android.os.AsyncTask;
-import android.os.Build;
 import android.os.ParcelFileDescriptor;
 import android.provider.MediaStore;
 import android.util.Log;
@@ -43,7 +42,7 @@ public final class MediaProviderHelper {
             @Nullable ContentResolver cr,
             @Nullable File file,
             @NonNull OnContentWritten listener) {
-        if (Build.VERSION.SDK_INT < 29 || cr == null || file == null) {
+        if (cr == null || file == null) {
             return;
         }
 
@@ -71,7 +70,7 @@ public final class MediaProviderHelper {
             @Nullable ContentResolver cr,
             @Nullable File file,
             @NonNull OnContentWritten listener) {
-        if (Build.VERSION.SDK_INT < 29 || cr == null || file == null) {
+        if (cr == null || file == null) {
             return;
         }
 
@@ -98,15 +97,15 @@ public final class MediaProviderHelper {
     }
 
     @RequiresApi(29)
-    public static class WriterTask extends AsyncTask<Void, Void, String> {
+    static class WriterTask extends AsyncTask<Void, Void, String> {
         @NonNull
-        private File file;
+        private final File file;
         @NonNull
-        private Uri uri;
+        private final Uri uri;
         @NonNull
-        private ContentResolver cr;
+        private final ContentResolver cr;
         @NonNull
-        private OnContentWritten listener;
+        private final OnContentWritten listener;
 
         /* synthetic */ WriterTask(@NonNull File file,
                                    @NonNull Uri uri,

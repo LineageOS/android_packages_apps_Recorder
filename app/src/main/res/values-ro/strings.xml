@@ -23,7 +23,6 @@
     <string name="cancel">Anulare</string>
     <string name="delete_title">Ștergere înregistrare</string>
     <string name="delete_message">Sunteţi sigur(ă) că doriţi să ştergeţi %1$s? Această acţiune nu poate fi modificată ulterior</string>
-    <string name="date_format">%1$s-%2$s-%3$s %4$s:%5$s</string>
     <string name="sound_notification_title">Înregistrare Sunet</string>
     <string name="sound_notification_message">Lungime audio: %1$s</string>
     <string name="sound_recording_title_working">Înregistrare</string>
@@ -50,12 +49,8 @@
     <string name="screen_channel_desc">Notificare persistentă când se înregistrează ecranul și notificare când acțiunea este completă</string>
     <string name="dialog_permissions_title">Permisiuni</string>
     <string name="dialog_permissions_mic">Recorder are nevoie de permisiunea de microfon pentru a înregistra audio</string>
-    <string name="dialog_permissions_storage">Recorder are nevoie de acces la stocare pentru a salva fișierele înregistrate</string>
     <string name="dialog_permissions_phone">Recorder are nevoie de acces la starea telefonului pentru a împiedica aplicația să înregistreze în timpul apelurilor</string>
-    <string name="dialog_permissions_mic_storage">Recorder are nevoie de permisiunea de microfon pentru a înregistra audio și acces la stocare pentru a salva fișierele înregistrate</string>
     <string name="dialog_permissions_mic_phone">Recorder are nevoie de permisiunea de microfon pentru a înregistra audio și acces la starea telefonului pentru a împiedica aplicația să înregistreze când apelați</string>
-    <string name="dialog_permissions_storage_phone">Recorder are nevoie de acces la stocare pentru a salva fișierele înregistrate și acces la starea telefonului pentru a împiedica aplicația să înregistreze când apelați</string>
-    <string name="dialog_permissions_mic_storage_phone">Recorder are nevoie de permisiunea de microfon pentru a înregistra audio, acces la stocare pentru a salva fișierele înregistrate și acces la starea telefonului pentru a împiedica aplicația să înregistreze când apelați</string>
     <string name="dialog_permissions_ask">Cere din nou</string>
     <string name="dialog_permissions_dismiss">Renunţaţi</string>
     <string name="dialog_permissions_overlay">Recorder are nevoie de permisiunea \"Afișează peste alte aplicații\" pentru a înregistra ecranul dvs. Atingeți permite, activați permisiunea în setări şi întoarceți-vă la Recorder</string>

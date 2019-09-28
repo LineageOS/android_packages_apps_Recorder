@@ -23,7 +23,6 @@
     <string name="cancel">إلغاء</string>
     <string name="delete_title">حذف التسجيل</string>
     <string name="delete_message">هل أنت متأكد من أنك تريد حذف %1$s؟ لا يمكن التراجع عن هذا</string>
-    <string name="date_format">%4$s:%5$s %1$s-%2$s-%3$s</string>
     <string name="sound_notification_title">مُسجل الصوت</string>
     <string name="sound_notification_message">طول الصوت: %1$s</string>
     <string name="sound_recording_title_working">يتم التسجيل</string>
@@ -50,12 +49,8 @@
     <string name="screen_channel_desc">إشعار دائم عند تسجيل الشاشة والإشعار بعد اكتماله</string>
     <string name="dialog_permissions_title">الأذونات</string>
     <string name="dialog_permissions_mic">المُسجل يحتاج إلى إذن وصول للميكروفون لتسجيل الصوت</string>
-    <string name="dialog_permissions_storage">المُسجل يحتاج إلى الوصول إلى مكان التخزين لحفظ الملفات المسجلة</string>
     <string name="dialog_permissions_phone">المُسجل يحتاج إلى الوصول إلى حالة الهاتف لمنع هذا التطبيق من التسجيل أثناء قيامك بالاتصال</string>
-    <string name="dialog_permissions_mic_storage">المُسجل يحتاج إلى الوصول إلى الميكروفون لتسجيل الصوت والوصول إلى مكان التخزين لحفظ الملفات المسجلة</string>
     <string name="dialog_permissions_mic_phone">المُسجل يحتاج إلى إذن وصول للميكروفون لتسجيل الصوت والوصول إلى حالة الهاتف لمنع هذا التطبيق من التسجيل أثناء قيامك بالاتصال</string>
-    <string name="dialog_permissions_storage_phone">المُسجل يحتاج إلى الوصول إلى مكان التخزين لحفظ الملفات المسجلة والوصول إلى حالة الهاتف لمنع هذا التطبيق من التسجيل أثناء قيامك بالاتصال</string>
-    <string name="dialog_permissions_mic_storage_phone">المُسجل يحتاج إلى إذن وصول للميكروفون لتسجيل الصوت والوصول إلى مكان التخزين لحفظ الملفات المسجلة والوصول إلى حالة الهاتف لمنع هذا التطبيق من التسجيل أثناء قيامك بالاتصال</string>
     <string name="dialog_permissions_ask">السماح مرة أخرى</string>
     <string name="dialog_permissions_dismiss">تجاهل</string>
     <string name="dialog_permissions_overlay">المُسجل يحتاج إلى إذن \"الرسم فوق التطبيقات الأخرى\" لتسجيل شاشتك. برجاء السماح، وتفعيل الإذن في الإعدادات ثم عُد إلى المُسجل</string>

@@ -23,7 +23,6 @@
     <string name="cancel">Prekliči</string>
     <string name="delete_title">Brisanje posnetka</string>
     <string name="delete_message">Ali ste prepričani, da želite izbrisati %1$s? Tega ni mogoče razveljaviti</string>
-    <string name="date_format">%1$s-%2$s-%3$s %4$s:%5$s</string>
     <string name="sound_notification_title">Snemalnik zvoka</string>
     <string name="sound_notification_message">Dolžina zvoka: %1$s</string>
     <string name="sound_recording_title_working">Snemanje</string>
@@ -50,12 +49,8 @@
     <string name="screen_channel_desc">Trajno obvestilo med snemanjem zaslona in obvestilo, ko je končano</string>
     <string name="dialog_permissions_title">Dovoljenja</string>
     <string name="dialog_permissions_mic">Snemalnik potrebuje dovoljenje za mikrofon za snemanje zvoka</string>
-    <string name="dialog_permissions_storage">Snemalnik potrebuje dostop do pomnilniške naprave za shranjevanje datotek s posnetki</string>
     <string name="dialog_permissions_phone">Snemalnik potrebuje dostop do stanja telefona, da tej aplikaciji prepreči snemanje med klicem</string>
-    <string name="dialog_permissions_mic_storage">Snemalnik potrebuje dovoljenje za mikrofon za snemanje zvoka in dostop do pomnilniške naprave za shranjevanje datotek s posnetki</string>
     <string name="dialog_permissions_mic_phone">Snemalnik potrebuje dovoljenje za mikrofon za snemanje zvoka in dostop do stanja telefona, da tej aplikaciji prepreči snemanje med klicem</string>
-    <string name="dialog_permissions_storage_phone">Snemalnik potrebuje dostop do pomnilniške naprave za shranjevanje datotek s posnetki in dostop do stanja telefona, da tej aplikaciji prepreči snemanje med klicem</string>
-    <string name="dialog_permissions_mic_storage_phone">Snemalnik potrebuje dovoljenje za mikrofon za snemanje zvoka, dostop do pomnilniške naprave za shranjevanje datotek s posnetki in dostop do stanja telefona, da tej aplikaciji prepreči snemanje med klicem</string>
     <string name="dialog_permissions_ask">Ponovno vprašaj</string>
     <string name="dialog_permissions_dismiss">Opusti</string>
     <string name="dialog_permissions_overlay">Snemalnik potrebuje dovoljenje \"risanje preko ostalih aplikacij\" za snemanje zaslona. Pritisnite dovoli, omogočite dovoljenje v nastavitvah in se vrnite v snemalnik</string>

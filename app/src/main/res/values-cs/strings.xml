@@ -23,7 +23,6 @@
     <string name="cancel">Zrušit</string>
     <string name="delete_title">Odstraňování záznamu</string>
     <string name="delete_message">Opravdu chcete odstranit %1$s? Tato akce je nevratná</string>
-    <string name="date_format">%1$s-%2$s-%3$s %4$s:%5$s</string>
     <string name="sound_notification_title">Záznam zvuku</string>
     <string name="sound_notification_message">Délka zvukového záznamu: %1$s</string>
     <string name="sound_recording_title_working">Nahrávání</string>
@@ -50,12 +49,8 @@
     <string name="screen_channel_desc">Trvalé oznámení při záznamu obrazovky a oznámení po dokončení</string>
     <string name="dialog_permissions_title">Oprávnění</string>
     <string name="dialog_permissions_mic">Pro nahrávání je vyžadováno oprávnění přístup k mikrofonu</string>
-    <string name="dialog_permissions_storage">Pro ukládání je vyžadováno oprávnění přístupu k úložišti</string>
     <string name="dialog_permissions_phone">Je vyžadováno oprávnění přístupu ke stavu telefonu, aby bylo zabránění nahrávání při hovoru</string>
-    <string name="dialog_permissions_mic_storage">Záznam zvuku vyžaduje oprávnění přístupu k mikrofonu a oprávnění k přístupu na úložiště</string>
     <string name="dialog_permissions_mic_phone">Záznam zvuku vyžaduje oprávnění přístupu k mikrofonu a oprávnění k přístupu ke stavu telefonu pro zamezení nahrávání při telefonování</string>
-    <string name="dialog_permissions_storage_phone">Záznam zvuku vyžaduje oprávnění přístupu k úložišti a oprávnění k přístupu ke stavu telefonu pro zamezení nahrávání při telefonování</string>
-    <string name="dialog_permissions_mic_storage_phone">Záznam zvuku vyžaduje oprávnění přístupu k mikrofonu, oprávnění k přístupu na úložiště a oprávnění k přístupu ke stavu telefonu pro zamezení nahrávání při telefonování</string>
     <string name="dialog_permissions_ask">Vždy se ptát</string>
     <string name="dialog_permissions_dismiss">Neukládat</string>
     <string name="dialog_permissions_overlay">Aby mohl Rekordér nahrávat Vaší obrazovku, potřebuje oprávnění „Vykreslit okna navrchu“. Prosím, povolte toto oprávnění v nastavení a vraťte se do Rekordéru</string>

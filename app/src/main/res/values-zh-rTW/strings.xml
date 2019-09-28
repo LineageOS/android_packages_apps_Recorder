@@ -23,7 +23,6 @@
     <string name="cancel">取消</string>
     <string name="delete_title">正在刪除記錄</string>
     <string name="delete_message">您確定要刪除「%1$s」？此項動作是無法還原的</string>
-    <string name="date_format">%1$s-%2$s-%3$s %4$s:%5$s</string>
     <string name="sound_notification_title">錄音機</string>
     <string name="sound_notification_message">音訊長度︰%1$s</string>
     <string name="sound_recording_title_working">錄製中</string>
@@ -50,12 +49,8 @@
     <string name="screen_channel_desc">在螢幕錄製完後保持通知</string>
     <string name="dialog_permissions_title">權限</string>
     <string name="dialog_permissions_mic">錄製工具需要麥克風錄製音訊的權限</string>
-    <string name="dialog_permissions_storage">錄製工具需要存取儲存空間以儲存錄音檔案</string>
     <string name="dialog_permissions_phone">錄製工具需要存取手機狀態以避免程式在您通話時錄音</string>
-    <string name="dialog_permissions_mic_storage">錄製工具需要存取麥克風權限和儲存空間以錄製並儲存音訊檔案。</string>
     <string name="dialog_permissions_mic_phone">錄製工具需要存取麥克風權限和手機狀態以錄製音訊檔案並避免程式在您通話時錄音。</string>
-    <string name="dialog_permissions_storage_phone">錄製工具需要存取儲存空間和手機狀態以儲存音訊檔案並避免程式在您通話時錄音</string>
-    <string name="dialog_permissions_mic_storage_phone">錄製工具需要存取麥克風權限、儲存空間和手機狀態以錄製和儲存音訊檔案並避免在您通話時錄音</string>
     <string name="dialog_permissions_ask">再次詢問</string>
     <string name="dialog_permissions_dismiss">忽略</string>
     <string name="dialog_permissions_overlay">錄製工具需要存取「在其他應用程式上層繪製內容」權限以錄製您的螢幕畫面。 按下「允許」，在設定中啟用權限並返回到錄製工具</string>

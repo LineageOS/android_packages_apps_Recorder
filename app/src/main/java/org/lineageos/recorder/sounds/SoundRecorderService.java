@@ -28,7 +28,6 @@ import android.media.AudioFormat;
 import android.media.AudioRecord;
 import android.media.MediaRecorder;
 import android.net.Uri;
-import android.os.Build;
 import android.os.Environment;
 import android.os.IBinder;
 
@@ -117,9 +116,8 @@ public class SoundRecorderService extends Service implements MediaProviderHelper
 
         mNotificationManager = getSystemService(NotificationManager.class);
 
-        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.O ||
-                mNotificationManager == null || mNotificationManager.getNotificationChannel(
-                        SOUNDRECORDER_NOTIFICATION_CHANNEL) != null) {
+        if (mNotificationManager == null || mNotificationManager.getNotificationChannel(
+                SOUNDRECORDER_NOTIFICATION_CHANNEL) != null) {
             return;
         }
 
@@ -226,7 +224,7 @@ public class SoundRecorderService extends Service implements MediaProviderHelper
         File file = new File(getExternalFilesDir(Environment.DIRECTORY_MUSIC),
                 "SoundRecords/SoundRecord-" + dateFormat.format(new Date()) + EXTENSION);
         File recordingDir = file.getParentFile();
-        if (!recordingDir.exists()) {
+        if (recordingDir != null && !recordingDir.exists()) {
             //noinspection ResultOfMethodCallIgnored
             recordingDir.mkdirs();
         }
@@ -250,7 +248,7 @@ public class SoundRecorderService extends Service implements MediaProviderHelper
 
                 }
             } catch (IOException e) {
-                Log.e(TAG, e.getMessage());
+                Log.e(TAG, "Failed to write audio stream", e);
             } finally {
                 Utils.closeQuietly(out);
             }
@@ -263,8 +261,8 @@ public class SoundRecorderService extends Service implements MediaProviderHelper
             while (isRecording()) {
                 try {
                     Thread.sleep(150L);
-                } catch (InterruptedException e) {
-                    Log.e(TAG, e.getMessage());
+                } catch (InterruptedException ignored) {
+                    // Ignore
                 }
 
                 double val = 0d;
@@ -318,7 +316,7 @@ public class SoundRecorderService extends Service implements MediaProviderHelper
         return builder.build();
     }
 
-    public void createShareNotification() {
+    private void createShareNotification() {
         Uri outFileUri = Uri.parse(mOutFilePath);
         Intent intent = new Intent(this, RecorderActivity.class);
         PendingIntent pi = PendingIntent.getActivity(this, 0, intent, 0);

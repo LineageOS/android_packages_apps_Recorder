@@ -23,7 +23,6 @@
     <string name="cancel">Zrušiť</string>
     <string name="delete_title">Mazanie záznamu</string>
     <string name="delete_message">Ste si istý, že chcete vymazať %1$s? Táto akcia sa nedá vrátiť späť</string>
-    <string name="date_format">%1$s-%2$s-%3$s %4$s:%5$s</string>
     <string name="sound_notification_title">Nahrávanie zvuku</string>
     <string name="sound_notification_message">Dĺžka zvukového záznamu: %1$s</string>
     <string name="sound_recording_title_working">Nahrávanie</string>
@@ -50,12 +49,8 @@
     <string name="screen_channel_desc">Trvalé upozornenie pri nahrávaní obrazovky a upozornenie po jeho dokončení</string>
     <string name="dialog_permissions_title">Oprávnenia</string>
     <string name="dialog_permissions_mic">Rekordér potrebuje prístup k mikrofónu</string>
-    <string name="dialog_permissions_storage">Rekordér potrebuje prístup k úložisku na ukladanie nahratých súborov</string>
     <string name="dialog_permissions_phone">Rekordér potrebuje prístup k stavu telefónu pre zabránenie nahrávaniu počas hovoru</string>
-    <string name="dialog_permissions_mic_storage">Rekordér potrebuje prístup k mikrofónu pre záznam zvuku a prístup k úložisku na ukladanie nahraných súborov</string>
     <string name="dialog_permissions_mic_phone">Rekordér potrebuje prístup k mikrofónu pre záznam zvuku a prístup k stavu telefónu na zabránenie nahrávaniu počas hovoru</string>
-    <string name="dialog_permissions_storage_phone">Rekordér potrebuje prístup k úložisku na ukladanie nahraných súborov a k stavu telefónu pre zabránenie nahrávaniu počas hovoru</string>
-    <string name="dialog_permissions_mic_storage_phone">Rekordér potrebuje prístup k mikrofónu pre záznam zvuku, prístup k úložisku na ukladanie nahraných súborov a prístup s stavu telefónu pre zabránenie nahrávania počas hovoru</string>
     <string name="dialog_permissions_ask">Opýtať sa znovu</string>
     <string name="dialog_permissions_dismiss">Odmietnuť</string>
     <string name="dialog_permissions_overlay">Pre nahrávanie obrazovky potrebuje rekordér získať oprávenie \"Vykresliť cez ďalšie aplikácie\". Stlačte povoliť v nastaveniach a vráťte sa do rekordér</string>

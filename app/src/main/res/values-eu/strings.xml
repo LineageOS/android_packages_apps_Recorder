@@ -23,7 +23,6 @@
     <string name="cancel">Utzi</string>
     <string name="delete_title">Grabaketa ezabatzen</string>
     <string name="delete_message">Ziur %1$s ezabatu nahi duzula? Hau ezin da desegin</string>
-    <string name="date_format">%1$s-%2$s-%3$s %4$s:%5$s</string>
     <string name="sound_notification_title">Soinu grabagailua</string>
     <string name="sound_notification_message">Audioaren iraupena: %1$s</string>
     <string name="sound_recording_title_working">Grabatzen</string>
@@ -50,12 +49,8 @@
     <string name="screen_channel_desc">Jakinarazpen iraunkorra pantaila grabatzean eta jakinarazpena behin burututa</string>
     <string name="dialog_permissions_title">Baimenak</string>
     <string name="dialog_permissions_mic">Grabatzaileak mikrofonoa atzitzeko baimena behar du grabatu ahal izateko</string>
-    <string name="dialog_permissions_storage">Grabatzaileak biltegiratzea atzitzeko baimena behar du grabatutako fitxategiak gordetzeko</string>
     <string name="dialog_permissions_phone">Grabatzaileak telefonoaren egoera atzitzeko baimena behar aplikazio honek dei batean zehar grabatzea ekiditeko</string>
-    <string name="dialog_permissions_mic_storage">Grabatzaileak mikrofono atzitzeko baimena behar du audioa grabatzeko eta biltegiratzera sarbidea behar du grabatutako fitxategiak gordetzeko</string>
     <string name="dialog_permissions_mic_phone">Grabatzaileak mikrofonoa atzitzeko baimena behar du audioa grabatzeko eta telefonoaren egoera atzitzeko baimena dei batean zehar grabatzea ekiditeko</string>
-    <string name="dialog_permissions_storage_phone">Grabatzaileak biltegiratzea atzitzeko baimena behar du grabatutako fitxategiak gordetzeko eta telefonoaren egoera atzitzeko baimena dei batean zehar grabatzea ekiditeko</string>
-    <string name="dialog_permissions_mic_storage_phone">Grabatzaileak mikrofonoa atzitzeko baimena behar du audioa grabatzeko, biltegiratzea atzitzeko baimena grabatutako fitxategiak gordetzeko, eta telefonoaren egoera atzitzeko baimena dei batean zehar grabatzea ekiditeko</string>
     <string name="dialog_permissions_ask">Galdetu berriro</string>
     <string name="dialog_permissions_dismiss">Baztertu</string>
     <string name="dialog_permissions_overlay">Grabagailuak \"Marraztu beste aplikazioen gainean\" baimena behar du zure pantaila grabatzeko. Sakatu baimendu, gaitu baimena ezarpenetan eta itzuli grabagailura</string>

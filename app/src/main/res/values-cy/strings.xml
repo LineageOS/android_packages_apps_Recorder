@@ -23,7 +23,6 @@
     <string name="cancel">Diddymu</string>
     <string name="delete_title">Yn dileu\'r recordiad</string>
     <string name="delete_message">Wyt ti\'n siŵr dy fod eisiau dileu %1$s? Ni ellir dadwneud hyn.</string>
-    <string name="date_format">%1$s-%2$s-%3$s %4$s:%5$s</string>
     <string name="sound_notification_title">Recordydd Sain</string>
     <string name="sound_notification_message">Hyd sain: %1$s</string>
     <string name="sound_recording_title_working">Yn recordio</string>
@@ -50,12 +49,8 @@
     <string name="screen_channel_desc">Hysbysiad cyson wrth recordio\'r sgrin a hysbysiad ar ôl gorffen recordio</string>
     <string name="dialog_permissions_title">Caniatâd</string>
     <string name="dialog_permissions_mic">Mae ar Recordydd angen mynediad i\'r meicroffon i recordio sain.</string>
-    <string name="dialog_permissions_storage">Mae ar Recordydd angen mynediad i storfa er mwyn cadw ffeiliau a recordiwyd.</string>
     <string name="dialog_permissions_phone">Mae ar Rcordydd angen mynediad i statws y ffôn er mwyn sicrhau nad yw\'r ap hwn yn recordio tra dy fod mewn galwad.</string>
-    <string name="dialog_permissions_mic_storage">Mae ar Recordydd angen mynediad i\'r meicroffon i fedru recordio sain a mynediad i\'r storfa i gadw ffeiliau recordiadau.</string>
     <string name="dialog_permissions_mic_phone">Mae ar Recordydd angen mynediad i\'r meicroffon i fedru recordio sain, mynediad i statws y ffôn er mwyn sicrhau nad yw\'r ap hwn yn recordio tra dy fod mewn galwad.</string>
-    <string name="dialog_permissions_storage_phone">Mae ar Recordydd angen mynediad i\'r storfa i gadw ffeiliau recordiadau ac i statws y ffôn er mwyn sicrhau nad yw\'r ap hwn yn recordio tra dy fod mewn galwad.</string>
-    <string name="dialog_permissions_mic_storage_phone">Mae ar Recordydd angen mynediad i\'r meicroffon i fedru recordio sain, mynediad i\'r storfa i gadw ffeiliau recordiadau, ac i statws y ffôn er mwyn sicrhau nad yw\'r ap hwn yn recordio tra dy fod mewn galwad.</string>
     <string name="dialog_permissions_ask">Gofyn eto</string>
     <string name="dialog_permissions_dismiss">Diystyru</string>
     <string name="dialog_permissions_overlay">Mae ar Recordydd angen caniatâd \"Llunio dros ben apiau eraill\" er mwyn recordio dy sgrin. Rho ganiatâd yn y gosodiadau a dod nôl i\'r Recordydd.</string>

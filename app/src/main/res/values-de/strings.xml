@@ -23,7 +23,6 @@
     <string name="cancel">Abbrechen</string>
     <string name="delete_title">Aufnahme löschen</string>
     <string name="delete_message">Sind Sie sicher, dass Sie %1$s löschen möchten? Dies kann nicht rückgängig gemacht werden</string>
-    <string name="date_format">%3$s.%2$s.%1$s %4$s:%5$s</string>
     <string name="sound_notification_title">Soundrekorder</string>
     <string name="sound_notification_message">Audiolänge: %1$s</string>
     <string name="sound_recording_title_working">Wird aufgenommen</string>
@@ -50,12 +49,8 @@
     <string name="screen_channel_desc">Dauerhafte Benachrichtigung bei der Bildschirmaufnahme und Benachrichtigung nach Abschluss der Aufnahme</string>
     <string name="dialog_permissions_title">Berechtigungen</string>
     <string name="dialog_permissions_mic">Rekorder benötigt Zugriff auf das Mikrofon, um Ton aufzunehmen</string>
-    <string name="dialog_permissions_storage">Rekorder benötigt Zugriff auf den Speicher, um aufgezeichnete Dateien zu speichern</string>
     <string name="dialog_permissions_phone">Rekorder benötigt Zugriff auf den Telefonstatus, um zu verhindern, dass diese App Ihre Anrufe aufzeichnet</string>
-    <string name="dialog_permissions_mic_storage">Rekorder benötigt Zugriff auf das Mikrofon, um Aufnahmen zu erstellen und Speicherzugriff, um aufgezeichnete Dateien zu sichern</string>
     <string name="dialog_permissions_mic_phone">Rekorder benötigt Zugriff auf das Mikrofon, um Aufnahmen zu erstellen und Zugriff auf den Telefonstatus, um zu verhindern, dass diese App Aufzeichnungen erstellt, während Sie telefonieren</string>
-    <string name="dialog_permissions_storage_phone">Rekorder benötigt Zugriff auf den Speicher, um aufgezeichnete Dateien zu sichern und Zugriff auf den Telefonstatus, damit von dieser App keine Aufnahme erstellt wird, während Sie telefonieren</string>
-    <string name="dialog_permissions_mic_storage_phone">Rekorder benötigt Zugriff auf das Mikrofon, um Aufnahmen zu erstellen, Speicherzugriff, um aufgezeichnete Dateien zu speichern und Zugriff auf den Telefonstatus, damit von dieser App keine Aufnahme erstellt wird, während Sie telefonieren</string>
     <string name="dialog_permissions_ask">Erneut nachfragen</string>
     <string name="dialog_permissions_dismiss">Verwerfen</string>
     <string name="dialog_permissions_overlay">Rekorder benötigt die Berechtigung \"Über anderen Apps einblenden\", um den Bildschirm aufzuzeichnen. Lassen Sie die Berechtigung in den Einstellungen zu und kehren zu Rekorder zurück</string>

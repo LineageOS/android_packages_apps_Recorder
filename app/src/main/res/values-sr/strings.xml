@@ -23,7 +23,6 @@
     <string name="cancel">Прекини</string>
     <string name="delete_title">Брисање снимка</string>
     <string name="delete_message">Заиста желите да избришете „%1$s“? Ова радња је неповратна.</string>
-    <string name="date_format">%3$s. %2$s. %1$s, %4$s.%5$s</string>
     <string name="sound_notification_title">Снимање звука</string>
     <string name="sound_notification_message">Трајање аудио-снимка: %1$s</string>
     <string name="sound_recording_title_working">Снимање</string>
@@ -50,12 +49,8 @@
     <string name="screen_channel_desc">Трајно обавештење док се снима екран и обавештење након што се снимање заврши</string>
     <string name="dialog_permissions_title">Дозволе</string>
     <string name="dialog_permissions_mic">Снимач захтева приступ микрофону за снимање звука.</string>
-    <string name="dialog_permissions_storage">Снимач захтева приступ меморијском простору за чување снимљених датотека.</string>
     <string name="dialog_permissions_phone">Снимач захтева приступ стању телефона за паузирање снимања током позива.</string>
-    <string name="dialog_permissions_mic_storage">Снимач захтева приступ микрофону за снимање звука и меморијском простору за чување снимљених датотека.</string>
     <string name="dialog_permissions_mic_phone">Снимач захтева приступ микрофону за снимање звука и стању телефона за паузирање снимања током позива.</string>
-    <string name="dialog_permissions_storage_phone">Снимач захтева приступ меморијском простору за чување снимљених датотека и стању телефона за паузирање снимања током позива.</string>
-    <string name="dialog_permissions_mic_storage_phone">Снимач захтева приступ микрофону за снимање звука, меморијском простору за чување снимљених датотека и стању телефона за паузирање снимања током позива.</string>
     <string name="dialog_permissions_ask">Питај поново</string>
     <string name="dialog_permissions_dismiss">Одбаци</string>
     <string name="dialog_permissions_overlay">Снимач захтева дозволу „Приказивање преко других апликација“ за снимање екрана. Додирните дугме „Питај“, омогућите одговарајућу опцију и вратите се назад.</string>

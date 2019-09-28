@@ -23,7 +23,6 @@
     <string name="cancel">Cancel·la</string>
     <string name="delete_title">S\'està eliminant el registre</string>
     <string name="delete_message">Estàs segur que vols eliminar %1$s? Aquesta acció no podrà desfer-se</string>
-    <string name="date_format">%1$s-%2$s-%3$s %4$s:%5$s</string>
     <string name="sound_notification_title">Gravadora de so</string>
     <string name="sound_notification_message">Durada de l\'àudio: %1$s</string>
     <string name="sound_recording_title_working">S\'està gravant</string>
@@ -50,12 +49,8 @@
     <string name="screen_channel_desc">Notificació persistent quan s\'està enregistrant la pantalla i notificació quan s\'hagi acabat</string>
     <string name="dialog_permissions_title">Permisos</string>
     <string name="dialog_permissions_mic">La gravadora necessita permís d\'accés al micròfon per enregistrar so</string>
-    <string name="dialog_permissions_storage">La gravadora de sons necessita accés a l\'emmagatzematge per desar els fitxers enregistrats</string>
     <string name="dialog_permissions_phone">La gravadora necessita accedir a l\'estat del telèfon per evitar que aquesta aplicació enregistri mentre estàs trucant</string>
-    <string name="dialog_permissions_mic_storage">La gravadora de sons necessita accés al micròfon per enregistrar so i accés a l\'emmagatzematge per desar els fitxers enregistrats</string>
     <string name="dialog_permissions_mic_phone">La gravadora de sons necessita permís d\'accés al micròfon per enregistrar so i d\'accés a l\'estat del telèfon per evitar que aquesta aplicació enregistri mentre estàs trucant</string>
-    <string name="dialog_permissions_storage_phone">La gravadora de sons necessita accés a l\'emmagatzematge per desar els fitxers enregistrats i accés a l\'estat del telèfon per evitar que aquesta aplicació enregistri mentre estàs trucant</string>
-    <string name="dialog_permissions_mic_storage_phone">La gravadora necessita permisos d\'accés al micròfon per enregistrar so, d\'accés a l\'emmagatzematge per desar els fitxers enregistrats i d\'accés a l\'estat del telèfon per evitar que aquesta aplicació enregistri mentre estàs trucant</string>
     <string name="dialog_permissions_ask">Torna a preguntar</string>
     <string name="dialog_permissions_dismiss">Descarta</string>
     <string name="dialog_permissions_overlay">La gravadora necessita el permís «Dibuixar sobre altres aplicacions» per gravar la pantalla. Prem permetre per habilitar el permís a la configuració i torneu a la gravadora</string>

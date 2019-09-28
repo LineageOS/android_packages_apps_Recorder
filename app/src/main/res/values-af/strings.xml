@@ -22,7 +22,6 @@
     <string name="delete">Verwyder</string>
     <string name="delete_title">Verwyde opname</string>
     <string name="delete_message">Is jy seker jy wil %1$s verwyder? Dit kan nie ongedaan gemaak word nie</string>
-    <string name="date_format">%3$s.%2$s.%1$s %4$s:%5$s</string>
     <string name="sound_notification_title">Klankopnemer</string>
     <string name="sound_notification_message">Oudio-lengte: %1$s</string>
     <string name="sound_recording_title_working">Neem tans op</string>
@@ -41,12 +40,8 @@
     <string name="screen_overlay_notif_message">Druk die opneem-knoppie wanneer jy gereed is om te begin</string>
     <string name="dialog_permissions_title">Toestemmings</string>
     <string name="dialog_permissions_mic">Opnemer benodig mikrofoon toestemming om oudio op te neem</string>
-    <string name="dialog_permissions_storage">Opnemer benodig stoor toegang om opgeneemde lêers te stoor</string>
     <string name="dialog_permissions_phone">Opnemer het foon status toegang nodig om te voorkom dat hierdie toep jou opneem terwyl jy bel</string>
-    <string name="dialog_permissions_mic_storage">Opnemer benodig mikrofoon toegang om oudio op te neem en stoor spasie toegang om opgeneemde lêers te stoor</string>
     <string name="dialog_permissions_mic_phone">Opnemer benodig mikrofoon toegang om oudio op te neem en foon status toegang om te verhoed dat hierdie toep jou oproep opneem terwyl jy bel</string>
-    <string name="dialog_permissions_storage_phone">Opnemer benodig stoor spasie toegang om opgeneemde leërs te stoor en foon status toegang om te verhoed dat hierdie toep jou oproep opneem terwyl jy bel</string>
-    <string name="dialog_permissions_mic_storage_phone">Klankopnemer het mikrofoon toestemming nodig om oudio op te neem, stoor spasie nodig om leërs te stoor en foon status toegang om te verhoed dat hierdie toep jou oproep opneem terwyl jy bel</string>
     <string name="dialog_permissions_ask">Vra weer</string>
     <string name="dialog_permissions_dismiss">Maak toe</string>
     <string name="dialog_permissions_overlay">Opnemer benodig \"Trek oor ander toepassings\" toestemming om jou skerm op te neem. Druk toelaat, aktiveer die toestemming in die instellings en kom terug na Opnemer</string>

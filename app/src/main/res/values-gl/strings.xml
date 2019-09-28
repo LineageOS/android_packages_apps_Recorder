@@ -23,7 +23,6 @@
     <string name="cancel">Cancelar</string>
     <string name="delete_title">Eliminando rexistro</string>
     <string name="delete_message">Tes a certeza de querer eliminar %1$s? Isto non poderá desfacerse</string>
-    <string name="date_format">%1$s-%2$s-%3$s %4$s:%5$s</string>
     <string name="sound_notification_title">Gravador de son</string>
     <string name="sound_notification_message">Duración do son: %1$s</string>
     <string name="sound_recording_title_working">Gravando</string>
@@ -50,12 +49,8 @@
     <string name="screen_channel_desc">Notificación persistente durante a gravación da pantalla e notificación ao se completar</string>
     <string name="dialog_permissions_title">Permisos</string>
     <string name="dialog_permissions_mic">Gravadora necesita permisos para acceder ao micrófono e poder gravar o audio</string>
-    <string name="dialog_permissions_storage">O gravador de son precisa acceder ao almacenamento para gardar os ficheiros gravados</string>
     <string name="dialog_permissions_phone">O gravador de son precisa acceder ao estado do teléfono para evitar que este grave mentres estás a chamar</string>
-    <string name="dialog_permissions_mic_storage">O gravador precisa permiso ao micrófono para gravar audio mais ó almacenamento para gardar os ficheiros gravados</string>
     <string name="dialog_permissions_mic_phone">O gravador precisa permisos para o micrófono para gravar audio mais ó estado do teléfono para evitar que este grave mentres estás a chamar</string>
-    <string name="dialog_permissions_storage_phone">A grabadora necesita acceso do almacenamiento para gardar os archivos grabados e acceso ó estado do teléfono para evitar que esta aplicación grabe mentras usted está chamando</string>
-    <string name="dialog_permissions_mic_storage_phone">A grabadora necesita permisos para o micrófono para grabar o audio, acceso ao almacenamiento para gardar archivos grabados y acceso ao estado do teléfono para evitar que esta aplicación grabe mentras usted encuentrase en una chamada telefónica</string>
     <string name="dialog_permissions_ask">Preguntar de novo</string>
     <string name="dialog_permissions_dismiss">Rexeitar</string>
     <string name="dialog_permissions_overlay">O gravador precisa do permiso de \"Debuxar sobre outras aplicacións\" para gravar a pantalla. Preme sobre permitir, activa o permiso nos axustes e volve ao gravador</string>

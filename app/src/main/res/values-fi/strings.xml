@@ -23,7 +23,6 @@
     <string name="cancel">Peruuta</string>
     <string name="delete_title">Poistetaan nauhoitusta</string>
     <string name="delete_message">Oletko varma, että haluat poistaa %1$s? Toimintoa ei voi peruuttaa</string>
-    <string name="date_format">%1$s-%2$s-%3$s %4$s:%5$s</string>
     <string name="sound_notification_title">Ääninauhuri</string>
     <string name="sound_notification_message">Äänen kesto: %1$s</string>
     <string name="sound_recording_title_working">Nauhoitetaan</string>
@@ -50,12 +49,8 @@
     <string name="screen_channel_desc">Jatkuva ilmoitus näytön nauhoittamisesta ja ilmoitus kun se on valmis</string>
     <string name="dialog_permissions_title">Käyttöoikeudet</string>
     <string name="dialog_permissions_mic">Nauhoitus tarvitsee pääsyn mikrofoniin nauhoittaakseen ääntä</string>
-    <string name="dialog_permissions_storage">Nauhoitus tarvitsee tallennustilan käyttöoikeuden tallentaakseen tiedostoja</string>
     <string name="dialog_permissions_phone">Nauhoitus tarvitsee puhelimen käyttöoikeuden estääkseen nauhoituksen puhelun aikana</string>
-    <string name="dialog_permissions_mic_storage">Nauhoitus tarvitsee pääsyn mikrofoniin nauhoittaakseen ääntä ja tallennustilaan tallentaakseen tiedostoja</string>
     <string name="dialog_permissions_mic_phone">Nauhoitus tarvitsee pääsyn mikrofoniin nauhoittaakseen ääntä ja puhelimen tilaan estääkseen nauhoituksen puhelun aikana</string>
-    <string name="dialog_permissions_storage_phone">Nauhoitus tarvitsee pääsyn tallennustilaan tallentaakseen tiedostoja ja puhelimen tilaan estääkseen nauhoituksen puhelun aikan</string>
-    <string name="dialog_permissions_mic_storage_phone">Nauhoitus tarvitsee pääsyn mikrofoniin nauhoittaakseen ääntä, tallennustilaan tallentaakseen tiedostoja ja puhelimen tilaan estääkseen nauhoituksen puhelun aikana</string>
     <string name="dialog_permissions_ask">Kysy uudelleen</string>
     <string name="dialog_permissions_dismiss">Hylkää</string>
     <string name="dialog_permissions_overlay">Nauhoitus tarvitsee käyttöoikeuden muiden sovellusten päälle piirtämiseen näytön nauhoittamiseksi. Paina Salli, anna käyttöoikeus asetuksissa ja palaa takaisin Nauhoitukseen</string>

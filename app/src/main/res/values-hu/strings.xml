@@ -23,7 +23,6 @@
     <string name="cancel">Mégse</string>
     <string name="delete_title">Felvétel törlése</string>
     <string name="delete_message">Biztosan törli: %1$s? Ez nem vonható vissza</string>
-    <string name="date_format">%1$s.%2$s.%3$s. %4$s:%5$s</string>
     <string name="sound_notification_title">Hangrögzítő</string>
     <string name="sound_notification_message">Audio hossza: %1$s</string>
     <string name="sound_recording_title_working">Felvétel</string>
@@ -50,12 +49,8 @@
     <string name="screen_channel_desc">Állandó értesítés képernyőfelvétel közben és értesítés befejezéskor</string>
     <string name="dialog_permissions_title">Jogosultságok</string>
     <string name="dialog_permissions_mic">Felvevőnek a mikrofonhoz való hozzáférés kell a hang rögzítéséhez</string>
-    <string name="dialog_permissions_storage">Felvevőnek a tárhelyhez való hozzáférés kell a rögzített hang mentéséhez</string>
     <string name="dialog_permissions_phone">Felvevőnek a telefon állapotához való hozzáférésre van szüksége a telefonálás közbeni rögzítés megakadályozására</string>
-    <string name="dialog_permissions_mic_storage">Felvevőnek a mikrofonhoz való hozzáférés kell a hang rögzítéséhez és a tárhelyhez való hozzáférés kell a rögzített fájlok mentéséhez</string>
     <string name="dialog_permissions_mic_phone">Felvevőnek a mikrofonhoz való hozzáférésre van szüksége a hang rögzítéséhez és a telefon állapotához való hozzáférésre a telefonálás közbeni rögzítés megakadályozására</string>
-    <string name="dialog_permissions_storage_phone">Felvevőnek a telefon tárhelyéhez való hozzáférésre van szüksége a rögzített hang mentéséhez és a telefon állapotához való hozzáférésre a telefonálás közbeni rögzítés megakadályozására</string>
-    <string name="dialog_permissions_mic_storage_phone">Felvevőnek van a mikrofonhoz való hozzáférésre van szüksége a hang rögzítéséhez, a telefon tárhelyéhez való hozzáférésre a rögzített hang mentéséhez és a telefon állapotához való hozzáférésre a telefonálás közbeni rögzítés megakadályozására</string>
     <string name="dialog_permissions_ask">Kérdezze meg újra</string>
     <string name="dialog_permissions_dismiss">Elvetés</string>
     <string name="dialog_permissions_overlay">A Felvevőnek szüksége van az \"Átfedő ablakok rajzolása\" engedélyre a képernyőfelvétel készítéséhez. Nyomja meg az engedélyez gombot, a beállításokban engedélyezze azt, és térjen vissza a Felvevőhöz</string>

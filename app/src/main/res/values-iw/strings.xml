@@ -25,7 +25,6 @@
     <string name="delete_message">למחוק את הקובץ הבא?\n
 %1$s 
 זוהי פעולה בילתי הפיכה</string>
-    <string name="date_format">%1$s-%2$s-%3$s %4$s:%5$s</string>
     <string name="sound_notification_title">מקליט שמע</string>
     <string name="sound_notification_message">אורך השמע: %1$s</string>
     <string name="sound_recording_title_working">מקליט</string>
@@ -52,12 +51,8 @@
     <string name="screen_channel_desc">התראה קבועה בעת הקלטת המסך והתראה בסיום ההקלטה</string>
     <string name="dialog_permissions_title">הרשאות</string>
     <string name="dialog_permissions_mic">המקליט זקוק לגישה למיקרופון על מנת להקליט שמע</string>
-    <string name="dialog_permissions_storage">המקליט זקוק לגישה לאחסון על מנת לשמור את קבצי ההקלטות</string>
     <string name="dialog_permissions_phone">המקליט זקוק לגישה למצב השיחה על מנת למנוע הקלטה בעת חיוג</string>
-    <string name="dialog_permissions_mic_storage">המקליט זקוק לגישה למיקרופון על מנת להקליט שמע, וגישה לאחסון על מנת לשמור הקלטות</string>
     <string name="dialog_permissions_mic_phone">המקליט זקוק לגישה למיקרופון על מנת להקליט שמע, וגישה למצב השיחה על מנת למנוע הקלטה בעת החיוג</string>
-    <string name="dialog_permissions_storage_phone">המקליט זקוק לגישה לאחסון על מנת לשמור הקלטות, וגישה למצב השיחה על מנת למנוע הקלטה בעת חיוג</string>
-    <string name="dialog_permissions_mic_storage_phone">הרשמקול זקוק לגישה למיקרופון על מנת להקליט שמע, גישה לאחסון על מנת לשמור הקלטות וגישה למצב השיחה על מנת למנוע הקלטה בעת חיוג</string>
     <string name="dialog_permissions_ask">שאל שוב</string>
     <string name="dialog_permissions_dismiss">דחה</string>
     <string name="dialog_permissions_overlay">כדי להקליט את המסך המקליט צריך לקבל הרשאה להצגה מעל אפליקציות אחרות. לחץ אפשר, הפעל את ההרשאה במסך שהופיע ואז חזור אל המקליט</string>
