@@ -55,21 +55,19 @@ import java.util.TimerTask;
 
 public class SoundRecorderService extends Service implements MediaProviderHelper.OnContentWritten {
 
+    public static final int NOTIFICATION_ID = 60;
     static final String EXTENSION = ".pcm";
     private static final String ACTION_STARTED = "org.lineageos.recorder.sounds.STARTED_SOUND";
     private static final String ACTION_STOPPED = "org.lineageos.recorder.sounds.STOPPED_SOUND";
     private static final String EXTRA_FILE = "extra_filename";
-
     private static final String SOUNDRECORDER_NOTIFICATION_CHANNEL =
             "soundrecorder_notification_channel";
-
     private static final String TAG = "SoundRecorderService";
     private static final int SAMPLING_RATE = 44100;
     private static final int CHANNEL_IN = AudioFormat.CHANNEL_IN_DEFAULT;
     private static final int FORMAT = AudioFormat.ENCODING_PCM_16BIT;
     private static final int BUFFER_SIZE = AudioRecord.getMinBufferSize(SAMPLING_RATE,
             CHANNEL_IN, FORMAT);
-    public static final int NOTIFICATION_ID = 60;
     private final IBinder mBinder = new RecorderBinder(this);
     private int mElapsedTime;
     private TimerTask mTask;
@@ -82,13 +80,13 @@ public class SoundRecorderService extends Service implements MediaProviderHelper
     private Thread mVisualizerThread;
     private byte[] mData;
     private RecorderStatus mStatus = RecorderStatus.STOPPED;
-    private NotificationManager mNotificationManager;
     private final BroadcastReceiver mShutdownReceiver = new BroadcastReceiver() {
         @Override
         public void onReceive(Context context, Intent intent) {
             stopRecording();
         }
     };
+    private NotificationManager mNotificationManager;
 
     @Override
     public IBinder onBind(Intent mIntent) {

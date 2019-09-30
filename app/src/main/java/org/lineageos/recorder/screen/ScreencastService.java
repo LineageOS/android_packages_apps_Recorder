@@ -46,8 +46,8 @@ import androidx.core.app.NotificationCompat;
 
 import org.lineageos.recorder.R;
 import org.lineageos.recorder.RecorderActivity;
-import org.lineageos.recorder.utils.MediaProviderHelper;
 import org.lineageos.recorder.utils.LastRecordHelper;
+import org.lineageos.recorder.utils.MediaProviderHelper;
 import org.lineageos.recorder.utils.Utils;
 
 import java.io.File;
@@ -59,31 +59,26 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 public class ScreencastService extends Service implements MediaProviderHelper.OnContentWritten {
+    public static final String ACTION_STOP_SCREENCAST =
+            "org.lineageos.recorder.screen.ACTION_STOP_SCREENCAST";
+    public static final int NOTIFICATION_ID = 61;
     private static final String LOGTAG = "ScreencastService";
-
     private static final String SCREENCAST_NOTIFICATION_CHANNEL =
             "screencast_notification_channel";
-
     private static final String EXTRA_RESULT_CODE = "extra_resultCode";
     private static final String EXTRA_DATA = "extra_data";
     private static final String EXTRA_USE_AUDIO = "extra_useAudio";
-
     private static final String ACTION_START_SCREENCAST =
             "org.lineageos.recorder.screen.ACTION_START_SCREENCAST";
-    public static final String ACTION_STOP_SCREENCAST =
-            "org.lineageos.recorder.screen.ACTION_STOP_SCREENCAST";
     private static final String ACTION_SCAN =
             "org.lineageos.recorder.server.display.SCAN";
     private static final String ACTION_STOP_SCAN =
             "org.lineageos.recorder.server.display.STOP_SCAN";
-
     private static final int TOTAL_NUM_TRACKS = 1;
     private static final int VIDEO_BIT_RATE = 6000000;
     private static final int VIDEO_FRAME_RATE = 30;
     private static final int AUDIO_BIT_RATE = 16;
     private static final int AUDIO_SAMPLE_RATE = 44100;
-
-    public static final int NOTIFICATION_ID = 61;
     private long mStartTime;
     private Timer mTimer;
     private NotificationCompat.Builder mBuilder;

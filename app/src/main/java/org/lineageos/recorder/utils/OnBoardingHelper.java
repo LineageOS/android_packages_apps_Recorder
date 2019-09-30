@@ -18,10 +18,11 @@ package org.lineageos.recorder.utils;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Handler;
-import androidx.annotation.NonNull;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+
+import androidx.annotation.NonNull;
 
 import org.lineageos.recorder.R;
 

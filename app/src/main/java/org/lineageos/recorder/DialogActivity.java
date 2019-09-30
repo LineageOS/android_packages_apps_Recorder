@@ -207,15 +207,15 @@ public class DialogActivity extends AppCompatActivity implements
     }
 
     private void askAudioPermission() {
-        requestPermissions(new String[]{ Manifest.permission.RECORD_AUDIO },
+        requestPermissions(new String[]{Manifest.permission.RECORD_AUDIO},
                 REQUEST_RECORD_AUDIO_PERMS);
-    }
-
-    private void setScreenWithAudio(boolean enabled) {
-        mPrefs.edit().putBoolean(Utils.PREF_SCREEN_WITH_AUDIO, enabled).apply();
     }
 
     private boolean getScreenWithAudio() {
         return mPrefs.getBoolean(Utils.PREF_SCREEN_WITH_AUDIO, false);
+    }
+
+    private void setScreenWithAudio(boolean enabled) {
+        mPrefs.edit().putBoolean(Utils.PREF_SCREEN_WITH_AUDIO, enabled).apply();
     }
 }

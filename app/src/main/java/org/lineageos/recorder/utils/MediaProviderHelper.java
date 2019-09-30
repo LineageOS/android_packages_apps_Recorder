@@ -96,6 +96,10 @@ public final class MediaProviderHelper {
         cr.delete(uri, null, null);
     }
 
+    public interface OnContentWritten {
+        void onContentWritten(@Nullable String uri);
+    }
+
     @RequiresApi(29)
     static class WriterTask extends AsyncTask<Void, Void, String> {
         @NonNull
@@ -149,9 +153,5 @@ public final class MediaProviderHelper {
         protected void onPostExecute(String s) {
             listener.onContentWritten(s);
         }
-    }
-
-    public interface OnContentWritten {
-        void onContentWritten(@Nullable String uri);
     }
 }
