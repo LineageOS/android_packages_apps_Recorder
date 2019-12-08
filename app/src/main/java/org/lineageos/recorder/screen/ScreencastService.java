@@ -47,8 +47,8 @@ import androidx.core.app.NotificationCompat;
 
 import org.lineageos.recorder.R;
 import org.lineageos.recorder.RecorderActivity;
-import org.lineageos.recorder.utils.MediaProviderHelper;
 import org.lineageos.recorder.utils.LastRecordHelper;
+import org.lineageos.recorder.utils.MediaProviderHelper;
 import org.lineageos.recorder.utils.Utils;
 
 import java.io.File;
@@ -231,7 +231,7 @@ public class ScreencastService extends Service implements MediaProviderHelper.On
         Intent data = intent.getParcelableExtra(EXTRA_DATA);
         if (data != null) {
             mMediaProjection = mMediaProjectionManager.getMediaProjection(resultCode, data);
-            startRecording();
+            new Thread(this::startRecording).start();
         }
         return START_STICKY;
     }
