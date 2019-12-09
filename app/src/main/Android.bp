@@ -21,6 +21,8 @@ android_app {
 
     srcs: ["java/**/*.java"],
 
+    product_specific: true,
+
     static_libs: [
         "androidx.annotation_annotation",
         "androidx-constraintlayout_constraintlayout",
