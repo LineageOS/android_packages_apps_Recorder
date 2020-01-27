@@ -49,8 +49,8 @@
     <string name="screen_channel_desc">Ekran videosunu çəkəndə davamlı bildiriş göstər və tamamlandıqdan sonra bildiriş göstər</string>
     <string name="dialog_permissions_title">İcazələr</string>
     <string name="dialog_permissions_mic">Səsyazan-ın, səsi yazmaq üçün mikrofon icazəsinə ehtiyacı var</string>
-    <string name="dialog_permissions_phone">Zəng əsnasında bu tətbiqin yazmasını əngəlləmək üçün \"Səsyazan\" telefon vəziyyətinə müraciət etməlidir.</string>
-    <string name="dialog_permissions_mic_phone">Səsyazan-ın, zəng əsnasında yazmağı əngəlləmək üçün mikrofon icazəsinə və telefon vəziyyətinə müraciətə ehtiyacı yaranar</string>
+    <string name="dialog_permissions_phone">Zəng əsnasında bu tətbiqin yazmasını əngəlləmək üçün \"Səsyazan\" telefon vəziyyətinə müraciət etməlidir</string>
+    <string name="dialog_permissions_mic_phone">Səsyazan-ın, zəng əsnasında yazmağı əngəlləmək üçün mikrofon icazəsinə və telefon vəziyyətinə müraciətə ehtiyacı var</string>
     <string name="dialog_permissions_ask">Təkrar soruş</string>
     <string name="dialog_permissions_dismiss">Rədd et</string>
     <string name="dialog_permissions_overlay">Səsyazan-ın, ekranınızı yazması üçün \"Digər tətbiqlərin üzərində görüntülə\" icazəsinə ehtiyacı var. İcazə ver düyməsinə basın, tənzimləmələrin icazələrini fəallaşdırın və Səsyazan-a geri qayıdın</string>

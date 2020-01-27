@@ -40,6 +40,7 @@
     <string name="screen_notification_message_done">Готово к отправке</string>
     <string name="screen_recording_message">Идет запись с экрана</string>
     <string name="screen_last_title">Последняя запись</string>
+    <string name="screen_last_message">Продолжительность: %1$d секунд</string>
     <string name="screen_overlay_notif_title">Готов к записи</string>
     <string name="screen_overlay_notif_message">Нажмите кнопку записи, когда будете готовы начать</string>
     <string name="screen_settings_title">Настройки записи экрана</string>

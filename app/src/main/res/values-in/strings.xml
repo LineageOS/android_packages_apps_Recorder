@@ -40,6 +40,7 @@
     <string name="screen_notification_message_done">Siap untuk dibagikan</string>
     <string name="screen_recording_message">Layar sedang direkam\u2026</string>
     <string name="screen_last_title">Rekaman terakhir</string>
+    <string name="screen_last_message">Durasi: %1$d detik</string>
     <string name="screen_overlay_notif_title">Siap untuk merekam</string>
     <string name="screen_overlay_notif_message">Tekan tombol rekam saat anda siap untuk memulai</string>
     <string name="screen_settings_title">Setelan perekam layar</string>

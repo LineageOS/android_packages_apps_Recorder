@@ -40,6 +40,7 @@
     <string name="screen_notification_message_done">Megosztásra kész</string>
     <string name="screen_recording_message">Képernyőfelvétel\u2026</string>
     <string name="screen_last_title">Utolsó felvétel</string>
+    <string name="screen_last_message">%1$d másodperc hosszú</string>
     <string name="screen_overlay_notif_title">Felvételre kész</string>
     <string name="screen_overlay_notif_message">Nyomja meg a felvétel gombot, ha készen áll az indításhoz</string>
     <string name="screen_settings_title">A Képernyővideó-felvevő beállításai</string>

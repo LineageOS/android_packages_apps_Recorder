@@ -40,6 +40,7 @@
     <string name="screen_notification_message_done">Pronto a condividere</string>
     <string name="screen_recording_message">Registro schermo\u2026</string>
     <string name="screen_last_title">Ultima registrazione</string>
+    <string name="screen_last_message">Durata: %1$d secondi</string>
     <string name="screen_overlay_notif_title">Pronto per registrare</string>
     <string name="screen_overlay_notif_message">Premi il pulsante registra per iniziare la registrazione</string>
     <string name="screen_settings_title">Impostazioni registratore schermo</string>

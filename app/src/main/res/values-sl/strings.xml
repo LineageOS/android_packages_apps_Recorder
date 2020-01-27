@@ -40,6 +40,7 @@
     <string name="screen_notification_message_done">Pripravljen za souporabo</string>
     <string name="screen_recording_message">Snemanje zaslona\u2026</string>
     <string name="screen_last_title">Zadnji posnetek</string>
+    <string name="screen_last_message">Trajanje: %1$d sekund</string>
     <string name="screen_overlay_notif_title">Pripravljen za snemanje</string>
     <string name="screen_overlay_notif_message">Ko ste pripravljeni začeti, pritisnite gumb za snemanje</string>
     <string name="screen_settings_title">Nastavitve snemalnika zaslona</string>

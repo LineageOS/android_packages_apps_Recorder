@@ -40,6 +40,7 @@
     <string name="screen_notification_message_done">已准备好分享</string>
     <string name="screen_recording_message">录屏已开始\u2026</string>
     <string name="screen_last_title">上次录制</string>
+    <string name="screen_last_message">持续时间 %1$d 秒</string>
     <string name="screen_overlay_notif_title">已准备好开始录制</string>
     <string name="screen_overlay_notif_message">当您准备好开始时请按下录制按钮</string>
     <string name="screen_settings_title">屏幕录制设置</string>

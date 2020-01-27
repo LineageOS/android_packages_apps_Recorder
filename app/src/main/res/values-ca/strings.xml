@@ -40,6 +40,7 @@
     <string name="screen_notification_message_done">A punt per compartir</string>
     <string name="screen_recording_message">La pantalla està sent gravada\u2026</string>
     <string name="screen_last_title">Darrer enregistrament</string>
+    <string name="screen_last_message">Durada: %1$d segons</string>
     <string name="screen_overlay_notif_title">Preparat per enregistrar</string>
     <string name="screen_overlay_notif_message">Prem el botó de gravació quan estiguis a punt per començar</string>
     <string name="screen_settings_title">Configuració de l\'enregistrador de pantalla</string>
