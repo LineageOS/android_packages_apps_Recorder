@@ -358,10 +358,8 @@ public class RecorderActivity extends AppCompatActivity implements
         return hasAudioPermission() && hasPhoneReaderPermission();
     }
 
-    @SuppressWarnings("SameReturnValue")
     private boolean hasAllScreenRecorderPermissions() {
-        // None for now
-        return true;
+        return hasAudioPermission();
     }
 
     private boolean checkSoundRecPermissions() {
@@ -385,6 +383,12 @@ public class RecorderActivity extends AppCompatActivity implements
     }
 
     private boolean checkScreenRecPermissions() {
+        if (!hasAudioPermission()) {
+            final String[] permissions = new String[]{ Manifest.permission.RECORD_AUDIO };
+            requestPermissions(permissions, REQUEST_SCREEN_REC_PERMS);
+            return true;
+        }
+
         if (!hasDrawOverOtherAppsPermission()) {
             Intent overlayIntent = new Intent(Settings.ACTION_MANAGE_OVERLAY_PERMISSION,
                     Uri.parse("package:" + getPackageName()));
