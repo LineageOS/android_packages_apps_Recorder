@@ -15,11 +15,13 @@
 -->
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="org.lineageos.recorder">
+    package="org.lineageos.recorder"
+    android:sharedUserId="android.uid.system">
 
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.CAPTURE_AUDIO_OUTPUT" />
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
 

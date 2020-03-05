@@ -27,6 +27,14 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.hardware.display.DisplayManager;
 import android.hardware.display.VirtualDisplay;
+import android.media.AudioAttributes;
+import android.media.AudioFormat;
+import android.media.AudioPlaybackCaptureConfiguration;
+import android.media.AudioRecord;
+import android.media.MediaCodec;
+import android.media.MediaCodecInfo;
+import android.media.MediaFormat;
+import android.media.MediaMuxer;
 import android.media.MediaRecorder;
 import android.media.projection.MediaProjection;
 import android.media.projection.MediaProjectionManager;
@@ -38,10 +46,12 @@ import android.os.SystemClock;
 import android.text.format.DateUtils;
 import android.util.DisplayMetrics;
 import android.util.Log;
+import android.view.Display;
 import android.view.Surface;
 import android.view.WindowManager;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.core.app.NotificationCompat;
 
@@ -53,6 +63,7 @@ import org.lineageos.recorder.utils.Utils;
 
 import java.io.File;
 import java.io.IOException;
+import java.nio.ByteBuffer;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
@@ -78,24 +89,40 @@ public class ScreencastService extends Service implements MediaProviderHelper.On
     private static final String ACTION_STOP_SCAN =
             "org.lineageos.recorder.server.display.STOP_SCAN";
 
-    private static final int TOTAL_NUM_TRACKS = 1;
-    private static final int VIDEO_BIT_RATE = 6000000;
+    private static final int VIDEO_BIT_RATE = 10 * 1000 * 1000;
     private static final int VIDEO_FRAME_RATE = 30;
-    private static final int AUDIO_BIT_RATE = 16;
-    private static final int AUDIO_SAMPLE_RATE = 44100;
+    private static final int VIDEO_I_FRAME_INTERVAL = 1;
+    private static final int AUDIO_BIT_RATE = 128 * 1000;
+    private static final int AUDIO_SAMPLE_RATE = 16000;
+    private static final int AUDIO_CHANNELS = AudioFormat.CHANNEL_IN_MONO;
 
     public static final int NOTIFICATION_ID = 61;
+
     private long mStartTime;
     private Timer mTimer;
     private NotificationCompat.Builder mBuilder;
+    private NotificationManager mNotificationManager;
+    private File mPath;
+
     private MediaProjectionManager mMediaProjectionManager;
     private MediaProjection mMediaProjection;
+
     private Surface mInputSurface;
     private VirtualDisplay mVirtualDisplay;
-    private MediaRecorder mMediaRecorder;
-    private NotificationManager mNotificationManager;
-    private boolean mUseAudio;
-    private File mPath;
+
+    private AudioRecord mAudioRecord;
+
+    private MediaCodec mAudioEncoder;
+    private MediaCodec mVideoEncoder;
+    private MediaMuxer mMediaMuxer;
+
+    private int mAudioTrackIndex = -1;
+    private int mVideoTrackIndex = -1;
+    private boolean mMediaMuxerStarted = false;
+    private boolean mMediaMuxerStopping = false;
+
+    private long mCurrentTimestamp = 0;
+
     private final BroadcastReceiver mBroadcastReceiver = new BroadcastReceiver() {
         @Override
         public void onReceive(Context context, Intent intent) {
@@ -227,11 +254,10 @@ public class ScreencastService extends Service implements MediaProviderHelper.On
         startForeground(NOTIFICATION_ID, mBuilder.build());
 
         int resultCode = intent.getIntExtra(EXTRA_RESULT_CODE, Activity.RESULT_CANCELED);
-        mUseAudio = intent.getBooleanExtra(EXTRA_USE_AUDIO, false);
         Intent data = intent.getParcelableExtra(EXTRA_DATA);
         if (data != null) {
             mMediaProjection = mMediaProjectionManager.getMediaProjection(resultCode, data);
-            new Thread(this::startRecording).start();
+            startRecording();
         }
         return START_STICKY;
     }
@@ -240,38 +266,149 @@ public class ScreencastService extends Service implements MediaProviderHelper.On
         try {
             Log.d(LOGTAG, "Writing video output to: " + mPath.getAbsolutePath());
 
-            // Set up media recorder
-            mMediaRecorder = new MediaRecorder();
-            if (mUseAudio) {
-                mMediaRecorder.setAudioSource(MediaRecorder.AudioSource.MIC);
-            }
-            mMediaRecorder.setVideoSource(MediaRecorder.VideoSource.SURFACE);
-            mMediaRecorder.setOutputFormat(MediaRecorder.OutputFormat.MPEG_4);
-
-            // Set up video
             DisplayMetrics metrics = new DisplayMetrics();
             WindowManager wm = getSystemService(WindowManager.class);
-            wm.getDefaultDisplay().getRealMetrics(metrics);
+            Display display = wm.getDefaultDisplay();
+            display.getRealMetrics(metrics);
+            int rotation = display.getRotation();
             int screenWidth = metrics.widthPixels;
             int screenHeight = metrics.heightPixels;
-            mMediaRecorder.setVideoEncoder(MediaRecorder.VideoEncoder.H264);
-            mMediaRecorder.setVideoSize(screenWidth, screenHeight);
-            mMediaRecorder.setVideoFrameRate(VIDEO_FRAME_RATE);
-            mMediaRecorder.setVideoEncodingBitRate(VIDEO_BIT_RATE);
+
+            // Set up muxer
+            mMediaMuxer = new MediaMuxer(mPath.getPath(), MediaMuxer.OutputFormat.MUXER_OUTPUT_MPEG_4);
+            mMediaMuxer.setOrientationHint(rotation);
+
+            // Set up video
+            MediaFormat video = MediaFormat.createVideoFormat(MediaFormat.MIMETYPE_VIDEO_AVC,
+                    screenWidth, screenHeight);
+            video.setInteger(MediaFormat.KEY_COLOR_FORMAT, MediaCodecInfo.CodecCapabilities.COLOR_FormatSurface);
+            video.setInteger(MediaFormat.KEY_FRAME_RATE, VIDEO_FRAME_RATE);
+            video.setInteger(MediaFormat.KEY_I_FRAME_INTERVAL, VIDEO_I_FRAME_INTERVAL);
+            video.setInteger(MediaFormat.KEY_BIT_RATE, VIDEO_BIT_RATE);
+            mVideoEncoder = MediaCodec.createEncoderByType(MediaFormat.MIMETYPE_VIDEO_AVC);
+            mVideoEncoder.configure(video, null, null, MediaCodec.CONFIGURE_FLAG_ENCODE);
+            mVideoEncoder.setCallback(new MediaCodec.Callback() {
+                @Override
+                public void onInputBufferAvailable(@NonNull MediaCodec codec, int index) {
+                }
+
+                @Override
+                public void onOutputBufferAvailable(@NonNull MediaCodec codec, int index, @NonNull MediaCodec.BufferInfo info) {
+                    if (mMediaMuxerStopping) {
+                        Log.d(LOGTAG, "Video ends");
+                        mVideoTrackIndex = -1;
+                        if (mAudioTrackIndex == -1) {
+                            finishRecording();
+                        }
+                    } else {
+                        ByteBuffer buffer = codec.getOutputBuffer(index);
+                        if (buffer != null) {
+                            if (mMediaMuxerStarted) {
+                                mMediaMuxer.writeSampleData(mVideoTrackIndex, buffer, info);
+                                mCurrentTimestamp = info.presentationTimeUs;
+                            }
+                            codec.releaseOutputBuffer(index, false);
+                        }
+                    }
+                }
+
+                @Override
+                public void onError(@NonNull MediaCodec codec, @NonNull MediaCodec.CodecException e) {
+                }
+
+                @Override
+                public void onOutputFormatChanged(@NonNull MediaCodec codec, @NonNull MediaFormat format) {
+                    mVideoTrackIndex = mMediaMuxer.addTrack(format);
+                    Log.d(LOGTAG, "Video track ready: " + mVideoTrackIndex);
+                    if (mAudioTrackIndex != -1 && mVideoTrackIndex != -1) {
+                        mMediaMuxer.start();
+                        mMediaMuxerStarted = true;
+                        Log.d(LOGTAG, "Start output");
+                    }
+                }
+            });
 
             // Set up audio
-            if (mUseAudio) {
-                mMediaRecorder.setAudioEncoder(MediaRecorder.AudioEncoder.AMR_NB);
-                mMediaRecorder.setAudioChannels(TOTAL_NUM_TRACKS);
-                mMediaRecorder.setAudioEncodingBitRate(AUDIO_BIT_RATE);
-                mMediaRecorder.setAudioSamplingRate(AUDIO_SAMPLE_RATE);
-            }
+            AudioPlaybackCaptureConfiguration playbackCapture = new AudioPlaybackCaptureConfiguration.Builder(mMediaProjection)
+                    .addMatchingUsage(AudioAttributes.USAGE_UNKNOWN)
+//                    .addMatchingUsage(AudioAttributes.USAGE_GAME)
+//                    .addMatchingUsage(AudioAttributes.USAGE_MEDIA)
+                    .build();
+//            mAudioRecord = new AudioRecord.Builder()
+//                    .setAudioFormat(new AudioFormat.Builder()
+//                            .setEncoding(AudioFormat.ENCODING_PCM_16BIT)
+//                            .setSampleRate(AUDIO_SAMPLE_RATE)
+//                            .setChannelMask(AUDIO_CHANNELS)
+//                            .build())
+//                    .setBufferSizeInBytes(AudioRecord.getMinBufferSize(
+//                            AUDIO_SAMPLE_RATE, AUDIO_CHANNELS, AudioFormat.ENCODING_PCM_16BIT))
+//                    .setAudioPlaybackCaptureConfig(playbackCapture)
+//                    .build();
+            mAudioRecord = new AudioRecord(MediaRecorder.AudioSource.REMOTE_SUBMIX,
+                    AUDIO_SAMPLE_RATE, AUDIO_CHANNELS, AudioFormat.ENCODING_PCM_16BIT,
+                    AudioRecord.getMinBufferSize(
+                            AUDIO_SAMPLE_RATE, AUDIO_CHANNELS, AudioFormat.ENCODING_PCM_16BIT));
+            MediaFormat audio = MediaFormat.createAudioFormat(MediaFormat.MIMETYPE_AUDIO_AAC,
+                    mAudioRecord.getSampleRate(), mAudioRecord.getChannelCount());
+            audio.setInteger(MediaFormat.KEY_AAC_PROFILE, MediaCodecInfo.CodecProfileLevel.AACObjectLC);
+            audio.setInteger(MediaFormat.KEY_BIT_RATE, AUDIO_BIT_RATE);
+            mAudioEncoder = MediaCodec.createEncoderByType(MediaFormat.MIMETYPE_AUDIO_AAC);
+            mAudioEncoder.configure(audio, null, null, MediaCodec.CONFIGURE_FLAG_ENCODE);
+            mAudioEncoder.setCallback(new MediaCodec.Callback() {
+                @Override
+                public void onInputBufferAvailable(@NonNull MediaCodec codec, int index) {
+                    ByteBuffer buffer = codec.getInputBuffer(index);
+                    if (buffer != null && mAudioRecord != null) {
+                        int read = mAudioRecord.read(buffer, buffer.capacity(), AudioRecord.READ_NON_BLOCKING);
+                        if (read >= 0) {
+                            codec.queueInputBuffer(index, 0, read, 0, 0);
+                        } else {
+                            mAudioTrackIndex = -1;
+                            if (mVideoTrackIndex == -1) {
+                                finishRecording();
+                            }
+                        }
+                    }
+                }
 
-            mMediaRecorder.setOutputFile(mPath);
-            mMediaRecorder.prepare();
+                @Override
+                public void onOutputBufferAvailable(@NonNull MediaCodec codec, int index, @NonNull MediaCodec.BufferInfo info) {
+                    if (mMediaMuxerStopping) {
+                        Log.d(LOGTAG, "Audio ends");
+                        mAudioTrackIndex = -1;
+                        if (mVideoTrackIndex == -1) {
+                            finishRecording();
+                        }
+                    } else {
+                        ByteBuffer buffer = codec.getOutputBuffer(index);
+                        if (buffer != null) {
+                            info.presentationTimeUs = mCurrentTimestamp;
+                            if (mMediaMuxerStarted) {
+                                mMediaMuxer.writeSampleData(mAudioTrackIndex, buffer, info);
+                            }
+                            codec.releaseOutputBuffer(index, false);
+                        }
+                    }
+                }
+
+                @Override
+                public void onError(@NonNull MediaCodec codec, @NonNull MediaCodec.CodecException e) {
+                }
+
+                @Override
+                public void onOutputFormatChanged(@NonNull MediaCodec codec, @NonNull MediaFormat format) {
+                    mAudioTrackIndex = mMediaMuxer.addTrack(format);
+                    Log.d(LOGTAG, "Audio track ready: " + mAudioTrackIndex);
+                    if (mAudioTrackIndex != -1 && mVideoTrackIndex != -1) {
+                        mMediaMuxer.start();
+                        mMediaMuxerStarted = true;
+                        Log.d(LOGTAG, "Start output");
+                    }
+                }
+            });
 
             // Create surface
-            mInputSurface = mMediaRecorder.getSurface();
+            mInputSurface = mVideoEncoder.createInputSurface();
             mVirtualDisplay = mMediaProjection.createVirtualDisplay(
                     "Recording Display",
                     screenWidth,
@@ -282,7 +419,17 @@ public class ScreencastService extends Service implements MediaProviderHelper.On
                     null,
                     null);
 
-            mMediaRecorder.start();
+            mMediaMuxerStarted = false;
+            mMediaMuxerStopping = false;
+
+            mVideoTrackIndex = -1;
+            mAudioTrackIndex = -1;
+
+            mVideoEncoder.start();
+            mAudioEncoder.start();
+            mAudioRecord.startRecording();
+
+            mCurrentTimestamp = System.currentTimeMillis() / 100;
         } catch (IOException e) {
             e.printStackTrace();
             throw new RuntimeException(e);
@@ -304,13 +451,44 @@ public class ScreencastService extends Service implements MediaProviderHelper.On
     }
 
     private void stopRecording() {
-        mMediaRecorder.stop();
-        mMediaRecorder.release();
-        mMediaRecorder = null;
+        if (mMediaMuxerStopping || mMediaProjection == null) {
+            return;
+        }
+
         mMediaProjection.stop();
         mMediaProjection = null;
+
         mInputSurface.release();
+        mInputSurface = null;
+
         mVirtualDisplay.release();
+        mVirtualDisplay = null;
+
+        mMediaMuxerStopping = true;
+    }
+
+    private void finishRecording() {
+        if (!mMediaMuxerStopping) {
+            return;
+        }
+
+        mMediaMuxerStopping = false;
+
+        mAudioRecord.stop();
+        mAudioRecord.release();
+        mAudioRecord = null;
+
+        mVideoEncoder.stop();
+        mVideoEncoder.release();
+        mVideoEncoder = null;
+
+        mAudioEncoder.stop();
+        mAudioEncoder.release();
+        mAudioEncoder = null;
+
+        mMediaMuxer.stop();
+        mMediaMuxer.release();
+        mMediaMuxer = null;
 
         if (mTimer != null) {
             mTimer.cancel();
