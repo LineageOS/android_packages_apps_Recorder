@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9eb29e19_e0d65d62",
+        "filename": "app/src/main/java/org/lineageos/recorder/screen/ScreencastService.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 230,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2020-03-06T10:23:15Z",
+      "side": 0,
+      "message": "We still need to follow this setting.",
+      "revId": "a413186dda9195a8e7c04c03414d048be9ba9d56",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    }
+  ]
+}

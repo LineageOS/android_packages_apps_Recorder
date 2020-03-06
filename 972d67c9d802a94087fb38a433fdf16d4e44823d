@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0ff6575e_fd2f1373",
+        "filename": "app/src/main/java/org/lineageos/recorder/screen/ScreencastService.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 346,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2020-03-06T10:23:15Z",
+      "side": 1,
+      "message": "to clean",
+      "range": {
+        "startLine": 332,
+        "startChar": 0,
+        "endLine": 346,
+        "endChar": 31
+      },
+      "revId": "972d67c9d802a94087fb38a433fdf16d4e44823d",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    }
+  ]
+}
