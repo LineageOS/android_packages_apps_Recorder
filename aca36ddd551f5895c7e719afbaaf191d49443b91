@@ -40,6 +40,29 @@
       "revId": "aca36ddd551f5895c7e719afbaaf191d49443b91",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6d0ff195_2f19b9db",
+        "filename": "app/src/main/java/org/lineageos/recorder/screen/ScreencastService.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 458,
+      "author": {
+        "id": 15525
+      },
+      "writtenOn": "2020-03-06T13:10:49Z",
+      "side": 1,
+      "message": "No a good idea. May causes \"do not support out of order frames (timestamp: 9317459 \u003c last: 9317504 for Audio track\" some time.",
+      "range": {
+        "startLine": 458,
+        "startChar": 28,
+        "endLine": 458,
+        "endChar": 72
+      },
+      "revId": "aca36ddd551f5895c7e719afbaaf191d49443b91",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
     }
   ]
 }
