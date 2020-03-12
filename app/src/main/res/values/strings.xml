@@ -50,12 +50,6 @@
     <string name="sound_channel_desc">Persistent notification when recording sound and notification after it is complete</string>
 
     <!-- Screen recorder -->
-    <!-- Screen recorder enabled audio message -->
-    <string name="screen_audio_message_on">Audio from the microphone will be included in the video</string>
-    <!-- Screen recorder disabled audio message -->
-    <string name="screen_audio_message_off">Audio from microphone won\'t be included in the video</string>
-    <!-- Screen recorder disabled audio toggle message -->
-    <string name="screen_audio_message_disabled">It\'s not possible to change this setting while recording the screen</string>
     <!-- Screen recorder audio permission request card button -->
     <string name="screen_audio_warning_button_ask">Ask</string>
     <!-- Screen recorder notification storage error title -->
@@ -78,8 +72,6 @@
     <string name="screen_overlay_notif_title">Ready to record</string>
     <!-- Screen recorder notification overlay message -->
     <string name="screen_overlay_notif_message">Press the record button when you\'re ready to start</string>
-    <!-- Screen settings dialog title -->
-    <string name="screen_settings_title">Screen recorder settings</string>
     <!-- Screen recorder notification overlay channel title -->
     <string name="screen_overlay_channel_title">Ready to record screen</string>
     <!-- Screen recorder notification overlay channel description-->
@@ -88,6 +80,18 @@
     <string name="screen_channel_title">Screen recording</string>
     <!-- Screen recorder persistent notification channel description-->
     <string name="screen_channel_desc">Persistent notification when recording the screen and notification after it is complete</string>
+
+    <!-- Settings -->
+    <!-- Settings: dialog title -->
+    <string name="settings_title">Recorder settings</string>
+    <!-- Settings: add audio in screen recordings -->
+    <string name="settings_audio_message_on">Audio from the microphone will be included in screen recordings</string>
+    <!-- Settings: do not add audio in screen recordings -->
+    <string name="settings_audio_message_off">Audio from microphone won\'t be included in screen recordings</string>
+    <!-- Settings: tag recordings with current location -->
+    <string name="settings_location_message_on">Your recordings will be tagged with your current position</string>
+    <!-- Settings: do not tag recordings with current location -->
+    <string name="settings_location_message_off">Your recordings will not be tagged  your current position</string>
 
     <!-- Permissions -->
     <!-- Permissions dialog title -->
@@ -98,6 +102,8 @@
     <string name="dialog_permissions_phone">Recorder needs phone status access to prevent this app from recording while you\'re calling</string>
     <!-- Message: microphone and phone status access denied -->
     <string name="dialog_permissions_mic_phone">Recorder needs microphone permission to record audio and phone status access to prevent this app from recording while you\'re calling</string>
+    <!-- Message: phone status denied -->
+    <string name="dialog_permissions_location">Recorder uses your location to automatically tag your recordings to help you organize them</string>
     <!-- Permissions dialog action: ask permissions access again -->
     <string name="dialog_permissions_ask">Ask again</string>
     <!-- Permissions dialog action: dismiss dialog -->

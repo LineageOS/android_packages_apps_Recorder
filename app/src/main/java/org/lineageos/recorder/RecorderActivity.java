@@ -55,6 +55,7 @@ import org.lineageos.recorder.sounds.RecorderBinder;
 import org.lineageos.recorder.sounds.SoundRecorderService;
 import org.lineageos.recorder.ui.SoundVisualizer;
 import org.lineageos.recorder.utils.LastRecordHelper;
+import org.lineageos.recorder.utils.LocationHelper;
 import org.lineageos.recorder.utils.OnBoardingHelper;
 import org.lineageos.recorder.utils.Utils;
 
@@ -90,6 +91,8 @@ public class RecorderActivity extends AppCompatActivity implements
     private RelativeLayout mRecordingLayout;
     private TextView mRecordingText;
     private SoundVisualizer mRecordingVisualizer;
+
+    private LocationHelper mLocationHelper;
 
     private final BroadcastReceiver mTelephonyReceiver = new BroadcastReceiver() {
         @Override
@@ -130,6 +133,8 @@ public class RecorderActivity extends AppCompatActivity implements
 
         mPrefs = getSharedPreferences(Utils.PREFS, 0);
         mPrefs.registerOnSharedPreferenceChangeListener(this);
+
+        mLocationHelper = new LocationHelper(this);
 
         bindSoundRecService();
 
@@ -258,7 +263,7 @@ public class RecorderActivity extends AppCompatActivity implements
         } else {
             // Start
             startService(new Intent(this, SoundRecorderService.class));
-            mSoundService.startRecording();
+            mSoundService.startRecording(mLocationHelper.getCurrentLocationName());
             Utils.setStatus(this, Utils.UiStatus.SOUND);
         }
         refresh();
@@ -492,7 +497,7 @@ public class RecorderActivity extends AppCompatActivity implements
 
     private void openScreenSettings() {
         Intent intent = new Intent(this, DialogActivity.class);
-        intent.putExtra(DialogActivity.EXTRA_TITLE, R.string.screen_settings_title);
+        intent.putExtra(DialogActivity.EXTRA_TITLE, R.string.settings_title);
         intent.putExtra(DialogActivity.EXTRA_SETTINGS_SCREEN, true);
         showDialog(intent, mScreenSettings);
     }

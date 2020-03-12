@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- Copyright (c) 2017 The LineageOS Project
+<?xml version="1.0" encoding="utf-8"?><!-- Copyright (c) 2017 The LineageOS Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -37,8 +36,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:maxLines="2"
-            android:paddingEnd="16dp"
             android:paddingStart="16dp"
+            android:paddingEnd="16dp"
             android:textAlignment="center"
             android:textColor="@color/white"
             android:textSize="28sp" />
@@ -75,8 +74,8 @@
         <ImageView
             android:id="@+id/sound_last_icon"
             style="@style/AppTheme.ImageButton"
-            android:layout_alignParentBottom="true"
             android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
             android:layout_margin="16dp"
             android:contentDescription="@string/sound_last_title"
             android:src="@drawable/ic_last_sound" />
@@ -106,8 +105,8 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="36dp"
-            android:layout_alignParentBottom="true"
             android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
             android:layout_margin="16dp"
             android:orientation="horizontal">
 
@@ -116,13 +115,16 @@
                 style="@style/AppTheme.ImageButton"
                 android:contentDescription="@string/screen_last_title"
                 android:src="@drawable/ic_last_screen" />
-
-            <ImageView
-                android:id="@+id/screen_settings_icon"
-                style="@style/AppTheme.ImageButton"
-                android:layout_marginStart="8dp"
-                android:contentDescription="@string/screen_settings_title"
-                android:src="@drawable/ic_settings" />
         </LinearLayout>
     </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/screen_settings_icon"
+        style="@style/AppTheme.ImageButton"
+        android:layout_margin="16dp"
+        android:layout_marginStart="8dp"
+        android:contentDescription="@string/settings_title"
+        android:src="@drawable/ic_settings"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
