@@ -99,7 +99,7 @@ public class SoundRecorderService extends Service implements MediaProviderHelper
     public int onStartCommand(Intent intent, int flags, int startId) {
         if (intent != null) {
             if (ACTION_STARTED.equals(intent.getAction())) {
-                startRecording();
+                startRecording(intent.getStringExtra(EXTRA_FILE));
             } else if (ACTION_STOPPED.equals(intent.getAction())) {
                 stopRecording();
             }
@@ -151,7 +151,7 @@ public class SoundRecorderService extends Service implements MediaProviderHelper
         return mStatus == RecorderStatus.RECORDING;
     }
 
-    public void startRecording() {
+    public void startRecording(@Nullable String locationName) {
         Log.d(TAG, "Sound recorder service started recording\u2026");
         mElapsedTime = 0;
 
@@ -159,11 +159,7 @@ public class SoundRecorderService extends Service implements MediaProviderHelper
             return;
         }
 
-        File file = createNewAudioFile();
-        if (file == null) {
-            return;
-        }
-
+        File file = createNewAudioFile(locationName);
         mFilePath = file.getAbsolutePath();
         String fileName = file.getName().replace(EXTENSION, "");
 
@@ -218,11 +214,14 @@ public class SoundRecorderService extends Service implements MediaProviderHelper
                 getContentResolver(), new File(mOutFilePath), this);
     }
 
-    private File createNewAudioFile() {
+    private File createNewAudioFile(@Nullable String locationName) {
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd-HH-mm-ss",
                 Locale.getDefault());
+        final String baseName = "SoundRecords/%1$s (%2$s)%3$s";
+
         File file = new File(getExternalFilesDir(Environment.DIRECTORY_MUSIC),
-                "SoundRecords/SoundRecord-" + dateFormat.format(new Date()) + EXTENSION);
+                String.format(baseName, locationName == null ? "Sound record" : locationName,
+                        dateFormat.format(new Date()), EXTENSION));
         File recordingDir = file.getParentFile();
         if (recordingDir != null && !recordingDir.exists()) {
             //noinspection ResultOfMethodCallIgnored

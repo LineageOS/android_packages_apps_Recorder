@@ -51,6 +51,14 @@
     <!-- Sound recorder last item message -->
     <string name="sound_last_message">Duration: %1$d seconds</string>
 
+    <!-- Settings -->
+    <!-- Settings: dialog title -->
+    <string name="settings_title">Settings</string>
+    <!-- Settings: tag recordings with current location -->
+    <string name="settings_location_message_on">Your recordings will be tagged with your current position</string>
+    <!-- Settings: do not tag recordings with current location -->
+    <string name="settings_location_message_off">Your recordings will not be tagged with your current position</string>
+
     <!-- Permissions -->
     <!-- Permissions dialog title -->
     <string name="dialog_permissions_title">Permissions</string>
@@ -60,6 +68,8 @@
     <string name="dialog_permissions_phone">Recorder needs phone status access to prevent this app from recording while you\'re calling</string>
     <!-- Message: microphone and phone status access denied -->
     <string name="dialog_permissions_mic_phone">Recorder needs microphone permission to record audio and phone status access to prevent this app from recording while you\'re calling</string>
+    <!-- Message: phone status denied -->
+    <string name="dialog_permissions_location">Recorder uses your location to automatically tag your recordings to help you organize them</string>
     <!-- Permissions dialog action: ask permissions access again -->
     <string name="dialog_permissions_ask">Ask again</string>
     <!-- Permissions dialog action: dismiss dialog -->

@@ -71,4 +71,14 @@
         app:layout_constraintBottom_toBottomOf="@id/main_bottom_container"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@id/main_bottom_container" />
+
+    <ImageView
+        android:id="@+id/sound_settings"
+        style="@style/AppTheme.ImageButton"
+        android:layout_marginEnd="16dp"
+        android:contentDescription="@string/sound_last_title"
+        android:src="@drawable/ic_settings"
+        app:layout_constraintBottom_toBottomOf="@id/main_bottom_container"
+        app:layout_constraintEnd_toStartOf="@id/sound_last_icon"
+        app:layout_constraintTop_toTopOf="@id/main_bottom_container" />
 </androidx.constraintlayout.widget.ConstraintLayout>

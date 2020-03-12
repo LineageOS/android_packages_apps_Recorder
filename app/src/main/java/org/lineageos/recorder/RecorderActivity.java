@@ -45,6 +45,7 @@ import org.lineageos.recorder.sounds.RecorderBinder;
 import org.lineageos.recorder.sounds.SoundRecorderService;
 import org.lineageos.recorder.ui.WaveFormView;
 import org.lineageos.recorder.utils.LastRecordHelper;
+import org.lineageos.recorder.utils.LocationHelper;
 import org.lineageos.recorder.utils.OnBoardingHelper;
 import org.lineageos.recorder.utils.Utils;
 
@@ -68,9 +69,12 @@ public class RecorderActivity extends AppCompatActivity implements
 
     private FloatingActionButton mSoundFab;
     private ImageView mSoundLast;
+    private ImageView mSettings;
 
     private TextView mRecordingText;
     private WaveFormView mRecordingVisualizer;
+
+    private LocationHelper mLocationHelper;
 
     private final BroadcastReceiver mTelephonyReceiver = new BroadcastReceiver() {
         @Override
@@ -92,15 +96,19 @@ public class RecorderActivity extends AppCompatActivity implements
 
         mSoundFab = findViewById(R.id.sound_fab);
         mSoundLast = findViewById(R.id.sound_last_icon);
+        mSettings = findViewById(R.id.sound_settings);
 
         mRecordingText = findViewById(R.id.main_title);
         mRecordingVisualizer = findViewById(R.id.main_recording_visualizer);
 
         mSoundFab.setOnClickListener(v -> toggleSoundRecorder());
         mSoundLast.setOnClickListener(v -> openLastSound());
+        mSettings.setOnClickListener(v -> openSettings());
 
         mPrefs = getSharedPreferences(Utils.PREFS, 0);
         mPrefs.registerOnSharedPreferenceChangeListener(this);
+
+        mLocationHelper = new LocationHelper(this);
 
         bindSoundRecService();
     }
@@ -214,7 +222,7 @@ public class RecorderActivity extends AppCompatActivity implements
         } else {
             // Start
             startService(new Intent(this, SoundRecorderService.class));
-            mSoundService.startRecording();
+            mSoundService.startRecording(mLocationHelper.getCurrentLocationName());
             Utils.setStatus(this, Utils.UiStatus.SOUND);
         }
         refresh();
@@ -325,6 +333,13 @@ public class RecorderActivity extends AppCompatActivity implements
                 view, transitionName);
         ActivityCompat.startActivityForResult(this, intent,
                 REQUEST_DIALOG_ACTIVITY, options.toBundle());
+    }
+
+    private void openSettings() {
+        Intent intent = new Intent(this, DialogActivity.class);
+        intent.putExtra(DialogActivity.EXTRA_TITLE, R.string.settings_title);
+        intent.putExtra(DialogActivity.EXTRA_SETTINGS_SCREEN, true);
+        showDialog(intent, mSettings);
     }
 
     private void openLastSound() {

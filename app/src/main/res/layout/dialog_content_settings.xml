@@ -13,5 +13,12 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical">
+
+    <androidx.appcompat.widget.SwitchCompat
+        android:id="@+id/dialog_content_settings_location_switch"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        tools:text="@string/settings_location_message_off" />
 </LinearLayout>
