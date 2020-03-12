@@ -50,4 +50,14 @@
         app:layout_constraintHeight_percent="0.5"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent" />
+
+    <!-- Settings - Invisible -->
+    <View
+        android:id="@+id/screen_settings_icon"
+        style="@style/AppTheme.ImageButton"
+        android:layout_margin="16dp"
+        android:layout_marginStart="8dp"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -46,12 +46,14 @@ public class DialogActivity extends AppCompatActivity implements
     public static final String EXTRA_SETTINGS_SCREEN = "settingsScreen";
     public static final String EXTRA_DELETE_LAST_RECORDING = "deleteLastItem";
     private static final int REQUEST_RECORD_AUDIO_PERMS = 213;
+    private static final int REQUEST_LOCATION_PERMS = 214;
     private static final String TYPE_AUDIO = "audio/wav";
     private static final String TYPE_VIDEO = "video/mp4";
 
     private LinearLayout mRootView;
     private FrameLayout mContent;
     private Switch mAudioSwitch;
+    private Switch mLocationSwitch;
 
     private SharedPreferences mPrefs;
 
@@ -107,12 +109,18 @@ public class DialogActivity extends AppCompatActivity implements
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions,
                                            @NonNull int[] results) {
-        if (requestCode != REQUEST_RECORD_AUDIO_PERMS) {
-            return;
+        switch (requestCode) {
+            case REQUEST_RECORD_AUDIO_PERMS:
+                boolean audioStatus = hasAudioPermission();
+                mAudioSwitch.setChecked(audioStatus);
+                setScreenWithAudio(audioStatus);
+                break;
+            case REQUEST_LOCATION_PERMS:
+                boolean locationStatus = hasLocationPermission();
+                mLocationSwitch.setChecked(locationStatus);
+                setTagWithLocation(locationStatus);
+                break;
         }
-
-        mAudioSwitch.setChecked(hasAudioPermission());
-        setScreenWithAudio(hasAudioPermission());
     }
 
     @Override
@@ -122,9 +130,16 @@ public class DialogActivity extends AppCompatActivity implements
 
     @Override
     public void onSharedPreferenceChanged(SharedPreferences prefs, String key) {
-        if (key.equals(Utils.PREF_SCREEN_WITH_AUDIO)) {
-            mAudioSwitch.setText(getString(getScreenWithAudio() ?
-                    R.string.screen_audio_message_on : R.string.screen_audio_message_off));
+        switch (key) {
+            case Utils.PREF_SCREEN_WITH_AUDIO:
+                mAudioSwitch.setText(getString(getScreenWithAudio() ?
+                        R.string.settings_audio_message_on : R.string.settings_audio_message_off));
+                break;
+            case Utils.PREF_TAG_WITH_LOCATION:
+                mLocationSwitch.setText(getTagWithLocation() ?
+                        R.string.settings_location_message_on :
+                        R.string.settings_location_message_off);
+                break;
         }
     }
 
@@ -154,9 +169,7 @@ public class DialogActivity extends AppCompatActivity implements
         String type = isSound ? TYPE_AUDIO : TYPE_VIDEO;
         Uri uri = LastRecordHelper.getLastItemUri(this, isSound);
         Intent intent = LastRecordHelper.getOpenIntent(uri, type);
-        if (intent != null) {
-            startActivityForResult(intent, 0);
-        }
+        startActivityForResult(intent, 0);
     }
 
     private void deleteLastItem(boolean isSound) {
@@ -173,8 +186,10 @@ public class DialogActivity extends AppCompatActivity implements
     }
 
     private void setupAsSettingsScreen() {
-        View view = createContentView(R.layout.dialog_content_screen_settings);
-        mAudioSwitch = view.findViewById(R.id.dialog_content_screen_settings_switch);
+        final View view = createContentView(R.layout.dialog_content_screen_settings);
+
+        mAudioSwitch = view.findViewById(R.id.dialog_content_settings_screen_audio_switch);
+        mAudioSwitch.setChecked(getScreenWithAudio());
         mAudioSwitch.setOnCheckedChangeListener((button, isChecked) -> {
             if (hasAudioPermission()) {
                 setScreenWithAudio(isChecked);
@@ -184,15 +199,27 @@ public class DialogActivity extends AppCompatActivity implements
                 setScreenWithAudio(false);
             }
         });
+        mAudioSwitch.setText(getString(getScreenWithAudio() ?
+                R.string.settings_audio_message_on : R.string.settings_audio_message_off));
 
-        boolean isEnabled = getScreenWithAudio();
-        mAudioSwitch.setChecked(isEnabled);
-        mAudioSwitch.setText(getString(isEnabled ?
-                R.string.screen_audio_message_on : R.string.screen_audio_message_off));
+        mLocationSwitch = view.findViewById(R.id.dialog_content_settings_location_switch);
+        mLocationSwitch.setChecked(getTagWithLocation());
+        mLocationSwitch.setOnCheckedChangeListener((button, isChecked) -> {
+            if (hasLocationPermission()) {
+                setTagWithLocation(isChecked);
+            } else if (isChecked) {
+                askLocationPermission();
+            } else {
+                setTagWithLocation(false);
+            }
+        });
+        mLocationSwitch.setText(getTagWithLocation() ?
+                R.string.settings_location_message_on :
+                R.string.settings_location_message_off);
 
         if (Utils.isScreenRecording(this)) {
             mAudioSwitch.setEnabled(false);
-            mAudioSwitch.setText(getString(R.string.screen_audio_message_disabled));
+            mLocationSwitch.setEnabled(false);
         }
     }
 
@@ -211,11 +238,29 @@ public class DialogActivity extends AppCompatActivity implements
                 REQUEST_RECORD_AUDIO_PERMS);
     }
 
+    private boolean hasLocationPermission() {
+        int result = checkSelfPermission(Manifest.permission.ACCESS_FINE_LOCATION);
+        return result == PackageManager.PERMISSION_GRANTED;
+    }
+
+    private void askLocationPermission() {
+        requestPermissions(new String[]{ Manifest.permission.ACCESS_FINE_LOCATION },
+                REQUEST_RECORD_AUDIO_PERMS);
+    }
+
     private void setScreenWithAudio(boolean enabled) {
         mPrefs.edit().putBoolean(Utils.PREF_SCREEN_WITH_AUDIO, enabled).apply();
     }
 
     private boolean getScreenWithAudio() {
         return mPrefs.getBoolean(Utils.PREF_SCREEN_WITH_AUDIO, false);
+    }
+
+    private void setTagWithLocation(boolean enabled) {
+        mPrefs.edit().putBoolean(Utils.PREF_TAG_WITH_LOCATION, enabled).apply();
+    }
+
+    private boolean getTagWithLocation() {
+        return mPrefs.getBoolean(Utils.PREF_TAG_WITH_LOCATION, false);
     }
 }
