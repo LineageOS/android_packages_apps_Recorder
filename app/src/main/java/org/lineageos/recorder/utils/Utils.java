@@ -26,6 +26,7 @@ public class Utils {
     public static final String KEY_RECORDING = "recording";
     public static final String PREF_RECORDING_NOTHING = "nothing";
     private static final String PREF_RECORDING_SOUND = "sound";
+    public static final String PREF_TAG_WITH_LOCATION = "tag_with_location";
 
     private Utils() {
     }
