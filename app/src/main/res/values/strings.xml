@@ -52,6 +52,12 @@
     <!-- Screen recorder last item message -->
     <string name="screen_last_message">Duration: %1$d seconds</string>
 
+    <!-- Settings -->
+    <!-- Settings: dialog title -->
+    <string name="settings_title">Settings</string>
+    <!-- Settings: tag recordings with current location -->
+    <string name="settings_location_message">Tag your recordings with your current position</string>
+
     <!-- Permissions -->
     <!-- Permissions dialog title -->
     <string name="dialog_permissions_title">Permissions</string>
@@ -61,12 +67,16 @@
     <string name="dialog_permissions_phone">Recorder needs phone status access to prevent this app from recording while you\'re calling</string>
     <!-- Message: microphone and phone status access denied -->
     <string name="dialog_permissions_mic_phone">Recorder needs microphone permission to record audio and phone status access to prevent this app from recording while you\'re calling</string>
+    <!-- Message: location permission denied -->
+    <string name="dialog_permissions_location">Recorder needs location permission to automatically tag your recordings to help you organize them</string>
     <!-- Permissions dialog action: ask permissions access again -->
     <string name="dialog_permissions_ask">Ask again</string>
     <!-- Permissions dialog action: dismiss dialog -->
     <string name="dialog_permissions_dismiss">Dismiss</string>
     <!-- No permissions granted error -->
     <string name="snack_permissions_no_permission">Required permissions were denied, enable them from Settings app to start recording</string>
+    <!-- User denied location access -->
+    <string name="snack_permissions_no_permission_location">Location permission was denied, enable it from Settings app to tag your recordings</string>
 
     <!-- Main activity -->
     <!-- Sound record title -->
