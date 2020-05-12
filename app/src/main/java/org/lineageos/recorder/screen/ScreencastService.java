@@ -96,6 +96,7 @@ public class ScreencastService extends Service implements MediaProviderHelper.On
     private NotificationManager mNotificationManager;
     private boolean mUseAudio;
     private File mPath;
+    private boolean mStopped;
     private final BroadcastReceiver mBroadcastReceiver = new BroadcastReceiver() {
         @Override
         public void onReceive(Context context, Intent intent) {
@@ -321,6 +322,11 @@ public class ScreencastService extends Service implements MediaProviderHelper.On
     }
 
     private void stopCasting() {
+        if (mStopped) {
+            return;
+        }
+
+        mStopped = true;
         Utils.setStatus(getApplicationContext(), Utils.PREF_RECORDING_NOTHING);
         stopRecording();
 
