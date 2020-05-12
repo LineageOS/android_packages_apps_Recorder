@@ -102,7 +102,7 @@ public class ScreencastService extends Service implements MediaProviderHelper.On
             final String action = intent.getAction();
             if (Intent.ACTION_USER_BACKGROUND.equals(action) ||
                     Intent.ACTION_SHUTDOWN.equals(action)) {
-                stopCasting();
+                stopSelf();
             }
         }
     };
@@ -139,8 +139,8 @@ public class ScreencastService extends Service implements MediaProviderHelper.On
             case ACTION_START_SCREENCAST:
                 return startScreencasting(intent);
             case ACTION_STOP_SCREENCAST:
-                stopCasting();
-                return START_STICKY;
+                stopSelf();
+                return START_NOT_STICKY;
             default:
                 return START_NOT_STICKY;
         }
@@ -303,7 +303,9 @@ public class ScreencastService extends Service implements MediaProviderHelper.On
         mNotificationManager.notify(NOTIFICATION_ID, mBuilder.build());
     }
 
-    private void stopRecording() {
+    private void stopCasting() {
+        Utils.setStatus(getApplicationContext(), Utils.PREF_RECORDING_NOTHING);
+
         mMediaRecorder.stop();
         mMediaRecorder.release();
         mMediaRecorder = null;
@@ -311,19 +313,10 @@ public class ScreencastService extends Service implements MediaProviderHelper.On
         mMediaProjection = null;
         mInputSurface.release();
         mVirtualDisplay.release();
-
-        if (mTimer != null) {
-            mTimer.cancel();
-            mTimer = null;
-        }
+        mTimer.cancel();
+        mTimer = null;
 
         MediaProviderHelper.addVideoToContentProvider(getContentResolver(), mPath, this);
-    }
-
-    private void stopCasting() {
-        Utils.setStatus(getApplicationContext(), Utils.PREF_RECORDING_NOTHING);
-        stopRecording();
-
         if (hasNoAvailableSpace()) {
             Toast.makeText(this, R.string.screen_not_enough_storage, Toast.LENGTH_LONG).show();
         }
