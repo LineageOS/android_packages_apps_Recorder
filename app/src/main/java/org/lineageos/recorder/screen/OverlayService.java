@@ -69,7 +69,7 @@ public class OverlayService extends Service {
                 .build();
 
         startForeground(FG_ID, notification);
-        return START_NOT_STICKY;
+        return START_STICKY;
     }
 
     @Override
