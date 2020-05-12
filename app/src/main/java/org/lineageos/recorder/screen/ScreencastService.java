@@ -304,11 +304,15 @@ public class ScreencastService extends Service implements MediaProviderHelper.On
     }
 
     private void stopRecording() {
-        mMediaRecorder.stop();
-        mMediaRecorder.release();
-        mMediaRecorder = null;
-        mMediaProjection.stop();
-        mMediaProjection = null;
+        if (mMediaRecorder != null) {
+            mMediaRecorder.stop();
+            mMediaRecorder.release();
+            mMediaRecorder = null;
+        }
+        if (mMediaProjection != null) {
+            mMediaProjection.stop();
+            mMediaProjection = null;
+        }
         mInputSurface.release();
         mVirtualDisplay.release();
 
