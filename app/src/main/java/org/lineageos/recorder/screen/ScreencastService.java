@@ -21,10 +21,8 @@ import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.app.Service;
-import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
-import android.content.IntentFilter;
 import android.hardware.display.DisplayManager;
 import android.hardware.display.VirtualDisplay;
 import android.media.MediaRecorder;
@@ -96,16 +94,6 @@ public class ScreencastService extends Service implements MediaProviderHelper.On
     private NotificationManager mNotificationManager;
     private boolean mUseAudio;
     private File mPath;
-    private final BroadcastReceiver mBroadcastReceiver = new BroadcastReceiver() {
-        @Override
-        public void onReceive(Context context, Intent intent) {
-            final String action = intent.getAction();
-            if (Intent.ACTION_USER_BACKGROUND.equals(action) ||
-                    Intent.ACTION_SHUTDOWN.equals(action)) {
-                stopCasting();
-            }
-        }
-    };
 
     public static Intent getStartIntent(Context context, int resultCode, Intent data,
                                         boolean useAudio) {
@@ -139,7 +127,7 @@ public class ScreencastService extends Service implements MediaProviderHelper.On
             case ACTION_START_SCREENCAST:
                 return startScreencasting(intent);
             case ACTION_STOP_SCREENCAST:
-                stopCasting();
+                stopSelf();
                 return START_STICKY;
             default:
                 return START_NOT_STICKY;
@@ -168,12 +156,6 @@ public class ScreencastService extends Service implements MediaProviderHelper.On
         }
 
         mMediaProjectionManager = getSystemService(MediaProjectionManager.class);
-
-        IntentFilter filter = new IntentFilter();
-        filter.addAction(Intent.ACTION_USER_BACKGROUND);
-        filter.addAction(Intent.ACTION_SHUTDOWN);
-        registerReceiver(mBroadcastReceiver, filter);
-
         mNotificationManager = getSystemService(NotificationManager.class);
 
         if (mNotificationManager == null || mNotificationManager.getNotificationChannel(
@@ -193,7 +175,6 @@ public class ScreencastService extends Service implements MediaProviderHelper.On
     @Override
     public void onDestroy() {
         stopCasting();
-        unregisterReceiver(mBroadcastReceiver);
         super.onDestroy();
     }
 
@@ -303,7 +284,9 @@ public class ScreencastService extends Service implements MediaProviderHelper.On
         mNotificationManager.notify(NOTIFICATION_ID, mBuilder.build());
     }
 
-    private void stopRecording() {
+    private void stopCasting() {
+        Utils.setStatus(getApplicationContext(), Utils.PREF_RECORDING_NOTHING);
+
         mMediaRecorder.stop();
         mMediaRecorder.release();
         mMediaRecorder = null;
@@ -311,19 +294,10 @@ public class ScreencastService extends Service implements MediaProviderHelper.On
         mMediaProjection = null;
         mInputSurface.release();
         mVirtualDisplay.release();
-
-        if (mTimer != null) {
-            mTimer.cancel();
-            mTimer = null;
-        }
+        mTimer.cancel();
+        mTimer = null;
 
         MediaProviderHelper.addVideoToContentProvider(getContentResolver(), mPath, this);
-    }
-
-    private void stopCasting() {
-        Utils.setStatus(getApplicationContext(), Utils.PREF_RECORDING_NOTHING);
-        stopRecording();
-
         if (hasNoAvailableSpace()) {
             Toast.makeText(this, R.string.screen_not_enough_storage, Toast.LENGTH_LONG).show();
         }
