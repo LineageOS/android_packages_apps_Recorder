@@ -75,6 +75,7 @@ public class RecorderActivity extends AppCompatActivity implements
     };
 
     private ServiceConnection mConnection;
+    private boolean mBound;
     private SoundRecorderService mSoundService;
     private SharedPreferences mPrefs;
 
@@ -411,11 +412,13 @@ public class RecorderActivity extends AppCompatActivity implements
             public void onServiceConnected(ComponentName name, IBinder binder) {
                 mSoundService = ((RecorderBinder) binder).getService();
                 mSoundService.setAudioListener(mRecordingVisualizer);
+                mBound = true;
             }
 
             @Override
             public void onServiceDisconnected(ComponentName name) {
                 mSoundService = null;
+                mBound = false;
             }
         };
     }
@@ -430,7 +433,7 @@ public class RecorderActivity extends AppCompatActivity implements
 
     private void stopOverlayService() {
         // Stop overlay service if running
-        if (OverlayService.isRunning) {
+        if (mBound) {
             stopService(new Intent(this, OverlayService.class));
         }
     }

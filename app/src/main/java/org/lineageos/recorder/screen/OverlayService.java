@@ -41,12 +41,6 @@ public class OverlayService extends Service {
     public static final String EXTRA_RESULT_DATA = "extra_result_data";
     private final static int FG_ID = 123;
 
-    /* Horrible hack to determine whether the service is running:
-     * the ActivityManager.getRunningServices() method has been nuked on api 26+
-     * so we're unable to properly determine if this service is currently running
-     */
-    public static boolean isRunning = false;
-
     private OverlayLayer mLayer;
 
     @Override
@@ -75,7 +69,6 @@ public class OverlayService extends Service {
                 .build();
 
         startForeground(FG_ID, notification);
-        isRunning = true;
         return START_NOT_STICKY;
     }
 
@@ -112,7 +105,6 @@ public class OverlayService extends Service {
         }
 
         stopForeground(true);
-        isRunning = false;
         super.onDestroy();
     }
 }
