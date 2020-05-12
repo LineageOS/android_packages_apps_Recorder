@@ -172,7 +172,6 @@ public class ScreencastService extends Service implements MediaProviderHelper.On
         IntentFilter filter = new IntentFilter();
         filter.addAction(Intent.ACTION_USER_BACKGROUND);
         filter.addAction(Intent.ACTION_SHUTDOWN);
-        registerReceiver(mBroadcastReceiver, filter);
 
         mNotificationManager = getSystemService(NotificationManager.class);
 
@@ -188,13 +187,6 @@ public class ScreencastService extends Service implements MediaProviderHelper.On
                         name, NotificationManager.IMPORTANCE_LOW);
         notificationChannel.setDescription(description);
         mNotificationManager.createNotificationChannel(notificationChannel);
-    }
-
-    @Override
-    public void onDestroy() {
-        stopCasting();
-        unregisterReceiver(mBroadcastReceiver);
-        super.onDestroy();
     }
 
     @Override
@@ -232,6 +224,7 @@ public class ScreencastService extends Service implements MediaProviderHelper.On
         if (data != null) {
             mMediaProjection = mMediaProjectionManager.getMediaProjection(resultCode, data);
             startRecording();
+            registerReceiver(mBroadcastReceiver, filter);
         }
         return START_STICKY;
     }
@@ -303,7 +296,9 @@ public class ScreencastService extends Service implements MediaProviderHelper.On
         mNotificationManager.notify(NOTIFICATION_ID, mBuilder.build());
     }
 
-    private void stopRecording() {
+    private void stopCasting() {
+        Utils.setStatus(getApplicationContext(), Utils.PREF_RECORDING_NOTHING);
+
         mMediaRecorder.stop();
         mMediaRecorder.release();
         mMediaRecorder = null;
@@ -311,22 +306,16 @@ public class ScreencastService extends Service implements MediaProviderHelper.On
         mMediaProjection = null;
         mInputSurface.release();
         mVirtualDisplay.release();
-
-        if (mTimer != null) {
-            mTimer.cancel();
-            mTimer = null;
-        }
+        mTimer.cancel();
+        mTimer = null;
 
         MediaProviderHelper.addVideoToContentProvider(getContentResolver(), mPath, this);
-    }
-
-    private void stopCasting() {
-        Utils.setStatus(getApplicationContext(), Utils.PREF_RECORDING_NOTHING);
-        stopRecording();
-
         if (hasNoAvailableSpace()) {
             Toast.makeText(this, R.string.screen_not_enough_storage, Toast.LENGTH_LONG).show();
         }
+
+        unregisterReceiver(mBroadcastReceiver);
+        stopSelf();
     }
 
     private NotificationCompat.Builder createNotificationBuilder() {
