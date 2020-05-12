@@ -231,7 +231,7 @@ public class ScreencastService extends Service implements MediaProviderHelper.On
         Intent data = intent.getParcelableExtra(EXTRA_DATA);
         if (data != null) {
             mMediaProjection = mMediaProjectionManager.getMediaProjection(resultCode, data);
-            new Thread(this::startRecording).start();
+            startRecording();
         }
         return START_STICKY;
     }
