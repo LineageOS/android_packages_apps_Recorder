@@ -31,6 +31,8 @@
     <string name="screen_audio_message_on">เสียงจากไมโครโฟนจะรวมอยู่ในวิดีโอ</string>
     <string name="screen_audio_message_off">เสียงจากไมโครโฟนจะไม่รวมอยู่ในวิดีโอ</string>
     <string name="screen_audio_warning_button_ask">ถาม</string>
+    <string name="screen_insufficient_storage">พื้นที่จัดเก็บไม่เพียงพอ</string>
+    <string name="screen_not_enough_storage">พื้นที่เก็บข้อมูลไม่เพียงพอ</string>
     <string name="screen_notification_title">บันทึกหน้าจอ</string>
     <string name="screen_notification_message">ความยาววิดีโอ: %s</string>
     <string name="screen_notification_message_done">พร้อมแชร์</string>
