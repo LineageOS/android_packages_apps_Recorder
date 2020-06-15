@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2019 The LineageOS Project
+ * Copyright (C) 2019-2020 The LineageOS Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -124,11 +124,11 @@ public final class MediaProviderHelper {
                 if (pfd == null) {
                     return null;
                 }
+
                 final FileOutputStream oStream = new FileOutputStream(pfd.getFileDescriptor());
-                oStream.write(Files.readAllBytes(file.toPath()));
+                Files.copy(file.toPath(), oStream);
                 oStream.close();
                 pfd.close();
-
 
                 final ContentValues values = new ContentValues();
                 values.put(MediaStore.MediaColumns.IS_PENDING, 0);
