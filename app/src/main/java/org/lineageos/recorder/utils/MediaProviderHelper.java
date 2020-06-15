@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2019 The LineageOS Project
+ * Copyright (C) 2019-2020 The LineageOS Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,9 +28,10 @@ import androidx.annotation.Nullable;
 import androidx.annotation.RequiresApi;
 
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileOutputStream;
+import java.io.InputStream;
 import java.io.IOException;
-import java.nio.file.Files;
 
 public final class MediaProviderHelper {
     private static final String TAG = "MediaProviderHelper";
@@ -124,11 +125,17 @@ public final class MediaProviderHelper {
                 if (pfd == null) {
                     return null;
                 }
+
                 final FileOutputStream oStream = new FileOutputStream(pfd.getFileDescriptor());
-                oStream.write(Files.readAllBytes(file.toPath()));
+                final InputStream iStream = new FileInputStream(file);
+                byte[] buf = new byte[1048576]; // 1MB at a time
+                int len;
+                while ((len = iStream.read(buf)) > 0) {
+                    Log.d("MICHAEL", "writing another " + len + " bytes");
+                    oStream.write(buf, 0, len);
+                }
                 oStream.close();
                 pfd.close();
-
 
                 final ContentValues values = new ContentValues();
                 values.put(MediaStore.MediaColumns.IS_PENDING, 0);
