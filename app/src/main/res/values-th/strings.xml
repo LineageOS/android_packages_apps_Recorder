@@ -39,11 +39,14 @@
     <string name="screen_recording_message">หน้าจอกำลังถูกบันทึก\u2026</string>
     <string name="screen_last_title">บันทึกล่าสุด</string>
     <string name="screen_last_message">ช่วงเวลา: %1$d วินาที</string>
+    <string name="screen_overlay_notif_title">พร้อมบันทึก</string>
+    <string name="screen_settings_title">การตั้งค่าการอัดหน้าจอ</string>
     <string name="screen_overlay_channel_title">พร้อมที่จะบันทึกหน้าจอ</string>
     <string name="screen_overlay_channel_desc">แสดงการแจ้งเตือนเมื่อพร้อมที่จะบันทึกหน้าจอ</string>
     <string name="screen_channel_title">บันทึกหน้าจอ</string>
     <string name="screen_channel_desc">การแจ้งเตือนแบบต่อเนื่องเมื่อบันทึกหน้าจอและการแจ้งเตือนหลังจากเสร็จสิ้น</string>
     <string name="dialog_permissions_title">การอนุญาต</string>
+    <string name="dialog_permissions_ask">ถามอีกครั้ง</string>
     <string name="dialog_permissions_dismiss">ยกเลิก</string>
     <string name="main_screen_action">บันทึกหน้าจอ</string>
     <string name="main_sound_action">บันทึกเสียง</string>
