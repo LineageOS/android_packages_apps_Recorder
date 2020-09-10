@@ -39,6 +39,7 @@
     <string name="screen_notification_message_done">Prêt à partager</string>
     <string name="screen_recording_message">Écran en cours d\'enregistrement\u2026</string>
     <string name="screen_last_title">Dernier enregistrement</string>
+    <string name="screen_last_message">Durée : %1$d secondes</string>
     <string name="screen_overlay_notif_title">Prêt à enregistrer</string>
     <string name="screen_overlay_notif_message">Appuyez sur le bouton enregistrer quand vous êtes prêt à démarrer</string>
     <string name="screen_settings_title">Paramètres de capture vidéo</string>
