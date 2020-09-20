@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2017 The LineageOS Project
+ * Copyright (C) 2017-2021 The LineageOS Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,23 +20,15 @@ import android.content.SharedPreferences;
 import android.os.Handler;
 import androidx.annotation.NonNull;
 import android.view.View;
-import android.view.animation.Animation;
-import android.view.animation.AnimationUtils;
-
-import org.lineageos.recorder.R;
 
 public class OnBoardingHelper {
-    private static final String ONBOARD_SCREEN_SETTINGS = "onboard_screen_settings";
-    private static final String ONBOARD_SCREEN_LAST = "onboard_screen_last";
     private static final String ONBOARD_SOUND_LAST = "onboard_sound_last";
     private static final long RIPPLE_DELAY = 500;
     private static final long RIPPLE_REPEAT = 4;
-    private static final long ROTATION_DELAY = 500;
-    private static final int ROTATION_OPEN_APP_WAIT = 2;
 
-    public static void onBoardLastItem(Context context, View view, boolean isSound) {
+    public static void onBoardLastItem(Context context, View view) {
         SharedPreferences prefs = getPrefs(context);
-        String key = isSound ? ONBOARD_SOUND_LAST : ONBOARD_SCREEN_LAST;
+        String key = ONBOARD_SOUND_LAST;
         if (prefs.getBoolean(key, false)) {
             return;
         }
@@ -49,20 +41,6 @@ public class OnBoardingHelper {
         }
     }
 
-    public static void onBoardScreenSettings(Context context, View view) {
-        SharedPreferences prefs = getPrefs(context);
-        int appOpenTimes = prefs.getInt(ONBOARD_SCREEN_SETTINGS, 0);
-
-        // Wait for the user to open the app 3 times before exposing this
-        if (appOpenTimes <= ROTATION_OPEN_APP_WAIT) {
-            prefs.edit().putInt(ONBOARD_SCREEN_SETTINGS, appOpenTimes + 1).apply();
-        }
-
-        if (appOpenTimes == ROTATION_OPEN_APP_WAIT) {
-            new Handler().postDelayed(rotationAnimation(context, view), ROTATION_DELAY);
-        }
-    }
-
     private static SharedPreferences getPrefs(Context context) {
         return context.getSharedPreferences(Utils.PREFS, 0);
     }
@@ -72,14 +50,6 @@ public class OnBoardingHelper {
         return () -> {
             view.setPressed(true);
             view.postOnAnimationDelayed(() -> view.setPressed(false), RIPPLE_DELAY + 100);
-        };
-    }
-
-    @NonNull
-    private static Runnable rotationAnimation(Context context, View view) {
-        return () -> {
-            Animation animation = AnimationUtils.loadAnimation(context, R.anim.rotation);
-            view.startAnimation(animation);
         };
     }
 }
