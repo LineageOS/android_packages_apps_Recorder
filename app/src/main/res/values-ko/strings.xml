@@ -30,7 +30,7 @@
     <string name="sound_channel_title">소리 녹음</string>
     <string name="sound_channel_desc">소리 녹음 중 또는 녹음 완료 시 지속적으로 표시되는 알림</string>
     <string name="screen_audio_message_on">마이크로 녹음된 오디오가 영상에 포함됩니다.</string>
-    <string name="screen_audio_message_off">마이크로 녹음된 오디오가 영상에 포함되지 않습니다.</string>
+    <string name="screen_audio_message_off">마이크로 녹음된 오디오는 영상에서 제외</string>
     <string name="screen_audio_message_disabled">화면을 녹화하는 중에는 설정을 변경할 수 없습니다.</string>
     <string name="screen_audio_warning_button_ask">묻기</string>
     <string name="screen_insufficient_storage">저장 공간 부족</string>
