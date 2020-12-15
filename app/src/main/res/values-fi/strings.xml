@@ -39,6 +39,7 @@
     <string name="screen_notification_message_done">Valmis jakamaan</string>
     <string name="screen_recording_message">Näyttötallennus on käynnissä\u2026</string>
     <string name="screen_last_title">Viimeisin nauhoitus</string>
+    <string name="screen_last_message">Kesto: %1$d sekuntia</string>
     <string name="screen_overlay_notif_title">Valmis tallentamaan</string>
     <string name="screen_overlay_notif_message">Paina Tallenna-painiketta, kun olet valmis aloittamaan</string>
     <string name="screen_settings_title">Muuta näytön videotallennuksen asetuksia</string>
