@@ -55,7 +55,8 @@ public class LastRecordHelper {
 
     public static Intent getShareIntent(Uri uri, String mimeType) {
         Intent intent = new Intent(Intent.ACTION_SEND);
-        intent.setDataAndType(uri, mimeType);
+        intent.setType(mimeType);
+        intent.putExtra(Intent.EXTRA_STREAM, uri);
         Intent chooserIntent = Intent.createChooser(intent, null);
         chooserIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
         return chooserIntent;
