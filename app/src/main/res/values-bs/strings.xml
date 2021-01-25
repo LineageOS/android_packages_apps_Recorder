@@ -15,6 +15,4 @@
 -->
 <resources>
     <string name="sound_channel_title">Snimanje zvuka</string>
-    <string name="screen_overlay_channel_title">Spremno za snimanje ekrana</string>
-    <string name="screen_channel_title">Snimanje ekrana</string>
 </resources>

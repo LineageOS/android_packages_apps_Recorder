@@ -66,32 +66,6 @@ public final class MediaProviderHelper {
         new WriterTask(file, uri, cr, listener).execute();
     }
 
-    public static void addVideoToContentProvider(
-            @Nullable ContentResolver cr,
-            @Nullable File file,
-            @NonNull OnContentWritten listener) {
-        if (cr == null || file == null) {
-            return;
-        }
-
-        final ContentValues values = new ContentValues();
-        values.put(MediaStore.Video.Media.DISPLAY_NAME, file.getName());
-        values.put(MediaStore.Video.Media.TITLE, file.getName());
-        values.put(MediaStore.Video.Media.MIME_TYPE, "video/mp4");
-        values.put(MediaStore.Video.Media.DATE_ADDED, System.currentTimeMillis() / 1000L);
-        values.put(MediaStore.Video.Media.RELATIVE_PATH, "Movies/Screen records");
-        values.put(MediaStore.Audio.Media.IS_PENDING, 1);
-
-        final Uri uri = cr.insert(MediaStore.Video.Media.getContentUri(
-                MediaStore.VOLUME_EXTERNAL_PRIMARY), values);
-        if (uri == null) {
-            Log.e(TAG, "Failed to insert " + file.getAbsolutePath());
-            return;
-        }
-
-        new WriterTask(file, uri, cr, listener).execute();
-    }
-
     static void remove(@NonNull ContentResolver cr, @NonNull Uri uri) {
         cr.delete(uri, null, null);
     }

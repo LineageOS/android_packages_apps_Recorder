@@ -17,7 +17,6 @@ package org.lineageos.recorder.utils;
 
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.graphics.Color;
 import android.util.DisplayMetrics;
 
 import java.io.Closeable;
@@ -27,9 +26,7 @@ public class Utils {
     public static final String PREFS = "preferences";
     public static final String KEY_RECORDING = "recording";
     public static final String PREF_RECORDING_NOTHING = "nothing";
-    public static final String PREF_RECORDING_SCREEN = "screen";
     private static final String PREF_RECORDING_SOUND = "sound";
-    public static final String PREF_SCREEN_WITH_AUDIO = "screen_with_audio";
 
     private Utils() {
     }
@@ -40,10 +37,8 @@ public class Utils {
     }
 
     public static void setStatus(Context context, UiStatus status) {
-        if (status.equals(UiStatus.SOUND)) {
+        if (status == UiStatus.SOUND) {
             setStatus(context, PREF_RECORDING_SOUND);
-        } else if (status.equals(UiStatus.SCREEN)) {
-            setStatus(context, PREF_RECORDING_SCREEN);
         } else {
             setStatus(context, PREF_RECORDING_NOTHING);
         }
@@ -62,27 +57,10 @@ public class Utils {
         return PREF_RECORDING_SOUND.equals(getStatus(context));
     }
 
-    public static boolean isScreenRecording(Context context) {
-        return PREF_RECORDING_SCREEN.equals(getStatus(context));
-    }
-
     @SuppressWarnings("SameParameterValue")
     public static int convertDp2Px(Context context, int dp) {
         DisplayMetrics metrics = context.getResources().getDisplayMetrics();
         return Math.round(dp * metrics.density + 0.5f);
-    }
-
-    public static int darkenedColor(int color) {
-        int alpha = Color.alpha(color);
-        int red = getDarkenedColorValue(Color.red(color));
-        int green = getDarkenedColorValue(Color.green(color));
-        int blue = getDarkenedColorValue(Color.blue(color));
-        return Color.argb(alpha, red, green, blue);
-    }
-
-    private static int getDarkenedColorValue(int value) {
-        float dark = 0.8f; // -20% lightness
-        return Math.min(Math.round(value * dark), 255);
     }
 
     /**
@@ -122,7 +100,5 @@ public class Utils {
     public enum UiStatus {
         NOTHING,
         SOUND,
-        SCREEN
     }
-
 }

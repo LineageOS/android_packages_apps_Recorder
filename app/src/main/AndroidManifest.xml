@@ -20,7 +20,6 @@
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <uses-permission android:name="android.permission.RECORD_AUDIO" />
-    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
 
     <!-- This is needed for aosp build env -->
@@ -57,32 +56,5 @@
 
         <!-- Sound recorder -->
         <service android:name=".sounds.SoundRecorderService" />
-
-        <!-- Screen recorder -->
-        <service
-            android:name=".screen.ScreencastService"
-            android:enabled="true"
-            android:foregroundServiceType="mediaProjection" />
-
-        <!-- Screen recorder overlay -->
-        <service
-            android:name=".screen.OverlayService" />
-
-        <receiver
-            android:name=".screen.ScreencastStartReceiver"
-            android:permission="android.permission.CAPTURE_SECURE_VIDEO_OUTPUT">
-            <intent-filter>
-                <action android:name="org.lineageos.recorder.screen.ACTION_START_SCREENCAST" />
-                <action android:name="org.lineageos.recorder.screen.ACTION_STOP_SCREENCAST" />
-            </intent-filter>
-        </receiver>
-
-        <receiver
-            android:name=".screen.ScreencastControlReceiver"
-            android:permission="android.permission.CAPTURE_SECURE_VIDEO_OUTPUT">
-            <intent-filter>
-                <action android:name="org.lineageos.recorder.screen.ACTION_STOP_SCREENCAST" />
-            </intent-filter>
-        </receiver>
     </application>
 </manifest>

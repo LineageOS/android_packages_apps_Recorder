@@ -328,10 +328,10 @@ public class SoundRecorderService extends Service implements MediaProviderHelper
                 LastRecordHelper.getShareIntent(outFileUri, "audio/wav"),
                 PendingIntent.FLAG_CANCEL_CURRENT);
         PendingIntent deletePIntent = PendingIntent.getActivity(this, 0,
-                LastRecordHelper.getDeleteIntent(this, true),
+                LastRecordHelper.getDeleteIntent(this),
                 PendingIntent.FLAG_CANCEL_CURRENT);
 
-        LastRecordHelper.setLastItem(this, mOutFilePath, mElapsedTime, true);
+        LastRecordHelper.setLastItem(this, mOutFilePath, mElapsedTime);
 
         Notification notification = new NotificationCompat.Builder(
                 this, SOUNDRECORDER_NOTIFICATION_CHANNEL)

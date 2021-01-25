@@ -16,6 +16,5 @@
 <resources>
     <string name="cancel">გაუქმება</string>
     <string name="sound_last_title">ბოლო ჩანაწერი</string>
-    <string name="screen_last_title">ბოლო ჩანაწერი</string>
     <string name="dialog_permissions_title">ნებართვები</string>
 </resources>

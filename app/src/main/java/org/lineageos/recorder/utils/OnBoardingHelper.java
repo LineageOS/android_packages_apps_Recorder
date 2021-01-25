@@ -26,22 +26,20 @@ import android.view.animation.AnimationUtils;
 import org.lineageos.recorder.R;
 
 public class OnBoardingHelper {
-    private static final String ONBOARD_SCREEN_SETTINGS = "onboard_screen_settings";
-    private static final String ONBOARD_SCREEN_LAST = "onboard_screen_last";
+    private static final String ONBOARD_SETTINGS = "onboard_settings";
     private static final String ONBOARD_SOUND_LAST = "onboard_sound_last";
     private static final long RIPPLE_DELAY = 500;
     private static final long RIPPLE_REPEAT = 4;
     private static final long ROTATION_DELAY = 500;
     private static final int ROTATION_OPEN_APP_WAIT = 2;
 
-    public static void onBoardLastItem(Context context, View view, boolean isSound) {
+    public static void onBoardLastItem(Context context, View view) {
         SharedPreferences prefs = getPrefs(context);
-        String key = isSound ? ONBOARD_SOUND_LAST : ONBOARD_SCREEN_LAST;
-        if (prefs.getBoolean(key, false)) {
+        if (prefs.getBoolean(ONBOARD_SOUND_LAST, false)) {
             return;
         }
 
-        prefs.edit().putBoolean(key, true).apply();
+        prefs.edit().putBoolean(ONBOARD_SOUND_LAST, true).apply();
 
         // Animate using ripple effect
         for (int i = 1; i <= RIPPLE_REPEAT; i++) {
@@ -49,13 +47,13 @@ public class OnBoardingHelper {
         }
     }
 
-    public static void onBoardScreenSettings(Context context, View view) {
+    public static void onBoardSettings(Context context, View view) {
         SharedPreferences prefs = getPrefs(context);
-        int appOpenTimes = prefs.getInt(ONBOARD_SCREEN_SETTINGS, 0);
+        int appOpenTimes = prefs.getInt(ONBOARD_SETTINGS, 0);
 
         // Wait for the user to open the app 3 times before exposing this
         if (appOpenTimes <= ROTATION_OPEN_APP_WAIT) {
-            prefs.edit().putInt(ONBOARD_SCREEN_SETTINGS, appOpenTimes + 1).apply();
+            prefs.edit().putInt(ONBOARD_SETTINGS, appOpenTimes + 1).apply();
         }
 
         if (appOpenTimes == ROTATION_OPEN_APP_WAIT) {
