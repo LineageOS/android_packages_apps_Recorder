@@ -17,7 +17,6 @@ package org.lineageos.recorder.utils;
 
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.util.DisplayMetrics;
 
 import java.io.Closeable;
 import java.io.IOException;
@@ -51,12 +50,6 @@ public class Utils {
 
     public static boolean isRecording(Context context) {
         return !PREF_RECORDING_NOTHING.equals(getStatus(context));
-    }
-
-    @SuppressWarnings("SameParameterValue")
-    public static int convertDp2Px(Context context, int dp) {
-        DisplayMetrics metrics = context.getResources().getDisplayMetrics();
-        return Math.round(dp * metrics.density + 0.5f);
     }
 
     /**

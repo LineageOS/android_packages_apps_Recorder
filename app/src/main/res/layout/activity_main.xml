@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Copyright (c) 2017-2021 The LineageOS Project
+<!--
+     Copyright (c) 2017-2021 The LineageOS Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -53,11 +54,13 @@
             android:src="@drawable/ic_action_sound_record" />
     </FrameLayout>
 
-    <org.lineageos.recorder.ui.SoundVisualizer
+    <org.lineageos.recorder.ui.WaveFormView
         android:id="@+id/main_recording_visualizer"
         android:layout_width="0dp"
         android:layout_height="128dp"
         android:visibility="invisible"
+        app:wavesColor="@color/wave"
+        app:maxAudioValue="@integer/max_audio_value"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
