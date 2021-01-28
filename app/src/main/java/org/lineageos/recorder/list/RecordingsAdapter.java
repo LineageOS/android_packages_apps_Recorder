@@ -71,4 +71,11 @@ public class RecordingsAdapter extends RecyclerView.Adapter<RecordingItemViewHol
         mData.remove(index);
         notifyItemRemoved(index);
     }
+
+    public void onRename(int index, @NonNull String newTitle) {
+        RecordingData oldData = mData.get(index);
+        mData.set(index, new RecordingData(oldData.getUri(), newTitle, oldData.getDate(),
+                oldData.getDuration()));
+        notifyItemChanged(index);
+    }
 }

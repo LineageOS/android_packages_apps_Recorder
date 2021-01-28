@@ -100,4 +100,22 @@ public class ListActivity extends AppCompatActivity implements RecordingItemCall
                 this, uri, () -> mAdapter.onDelete(index));
         dialog.show();
     }
+
+    @Override
+    public void onRename(int index, @NonNull Uri uri, @NonNull String currentTitle) {
+        final AlertDialog dialog = LastRecordHelper.promptRename(
+                this,
+                currentTitle,
+                newTitle -> MediaProviderHelper.rename(
+                        getContentResolver(),
+                        uri,
+                        newTitle,
+                        success -> {
+                            if (success) {
+                                mAdapter.onRename(index, newTitle);
+                            }
+                        })
+        );
+        dialog.show();
+    }
 }

@@ -85,6 +85,13 @@ public final class MediaProviderHelper {
         cr.delete(uri, null, null);
     }
 
+    public static void rename(@NonNull ContentResolver cr,
+                              @NonNull Uri uri,
+                              @NonNull String newName,
+                              @NonNull OnContentRenamed listener) {
+        new RenameTask(cr, listener, uri).execute(newName);
+    }
+
     @RequiresApi(29)
     static class WriterTask extends AsyncTask<Void, Void, String> {
         @NonNull
@@ -195,11 +202,48 @@ public final class MediaProviderHelper {
         }
     }
 
+    @RequiresApi(29)
+    static class RenameTask extends AsyncTask<String, Void, Boolean> {
+        @NonNull
+        private final ContentResolver cr;
+        @NonNull
+        private final OnContentRenamed listener;
+        @NonNull
+        private final Uri uri;
+
+        /* synthetic */ RenameTask(@NonNull ContentResolver cr,
+                                   @NonNull OnContentRenamed listener,
+                                   @NonNull Uri uri) {
+            this.cr = cr;
+            this.listener = listener;
+            this.uri = uri;
+        }
+
+        @Override
+        protected Boolean doInBackground(String... strings) {
+            String newName = strings[0];
+            ContentValues cv = new ContentValues();
+            cv.put(MediaStore.Audio.Media.DISPLAY_NAME, newName);
+            cv.put(MediaStore.Audio.Media.TITLE, newName);
+            int updated = cr.update(uri, cv, null, null);
+            return updated == 1;
+        }
+
+        @Override
+        protected void onPostExecute(Boolean result) {
+            listener.onContentRenamed(result);
+        }
+    }
+
     public interface OnContentWritten {
         void onContentWritten(@Nullable String uri);
     }
 
     public interface OnContentLoaded {
         void onContentLoaded(@NonNull List<RecordingData> list);
+    }
+
+    public interface OnContentRenamed {
+        void onContentRenamed(boolean success);
     }
 }
