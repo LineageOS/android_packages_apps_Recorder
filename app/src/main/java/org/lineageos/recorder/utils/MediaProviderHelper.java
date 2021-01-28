@@ -16,7 +16,9 @@
 package org.lineageos.recorder.utils;
 
 import android.content.ContentResolver;
+import android.content.ContentUris;
 import android.content.ContentValues;
+import android.database.Cursor;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.ParcelFileDescriptor;
@@ -27,13 +29,21 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.annotation.RequiresApi;
 
+import org.lineageos.recorder.list.RecordingData;
+
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.nio.file.Files;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
 
 public final class MediaProviderHelper {
     private static final String TAG = "MediaProviderHelper";
+
+    private static final String MY_RECORDS_SORT =
+            MediaStore.Audio.Media.DATE_ADDED + " DESC";
 
     private MediaProviderHelper() {
     }
@@ -66,7 +76,12 @@ public final class MediaProviderHelper {
         new WriterTask(file, uri, cr, listener).execute();
     }
 
-    static void remove(@NonNull ContentResolver cr, @NonNull Uri uri) {
+    public static void requestMyRecordings(@NonNull ContentResolver cr,
+                                           @NonNull OnContentLoaded listener) {
+        new LoaderTask(cr, listener).execute();
+    }
+
+    public static void remove(@NonNull ContentResolver cr, @NonNull Uri uri) {
         cr.delete(uri, null, null);
     }
 
@@ -125,7 +140,66 @@ public final class MediaProviderHelper {
         }
     }
 
+    @RequiresApi(29)
+    static class LoaderTask extends AsyncTask<Void, Void, List<RecordingData>> {
+
+        @NonNull
+        private final ContentResolver cr;
+        @NonNull
+        private final OnContentLoaded listener;
+
+        /* synthetic */ LoaderTask(@NonNull ContentResolver cr,
+                                   @NonNull OnContentLoaded listener) {
+            this.cr = cr;
+            this.listener = listener;
+        }
+
+        @Override
+        protected List<RecordingData> doInBackground(Void... voids) {
+            final List<RecordingData> list = new ArrayList<>();
+
+            final String[] projection = new String[] {
+                    MediaStore.Audio.Media._ID,
+                    MediaStore.Audio.Media.DISPLAY_NAME,
+                    MediaStore.Audio.Media.DATE_ADDED,
+                    MediaStore.Audio.Media.DURATION,
+            };
+            final Cursor cursor = cr.query(
+                    MediaStore.Audio.Media.getContentUri(MediaStore.VOLUME_EXTERNAL_PRIMARY),
+                    projection,
+                    null,
+                    null,
+                    MY_RECORDS_SORT
+            );
+
+            if (cursor.moveToFirst()) {
+                do {
+                    final long id = cursor.getLong(0);
+                    final Uri uri = ContentUris.withAppendedId(
+                            MediaStore.Audio.Media.EXTERNAL_CONTENT_URI, id);
+                    final String name = cursor.getString(1);
+                    final long timeStamp = cursor.getLong(2) * 1000L;
+                    final Date date = new Date(timeStamp);
+                    final long duration = cursor.getLong(3);
+                    list.add(new RecordingData(uri, name, date, duration));
+                } while(cursor.moveToNext());
+            }
+            cursor.close();
+
+            return list;
+        }
+
+        @Override
+        protected void onPostExecute(List<RecordingData> list) {
+            listener.onContentLoaded(list);
+        }
+    }
+
     public interface OnContentWritten {
         void onContentWritten(@Nullable String uri);
+    }
+
+    public interface OnContentLoaded {
+        void onContentLoaded(@NonNull List<RecordingData> list);
     }
 }

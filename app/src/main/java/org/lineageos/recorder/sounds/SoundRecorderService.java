@@ -37,6 +37,7 @@ import androidx.annotation.Nullable;
 import androidx.core.app.NotificationCompat;
 import androidx.core.content.ContextCompat;
 
+import org.lineageos.recorder.ListActivity;
 import org.lineageos.recorder.R;
 import org.lineageos.recorder.RecorderActivity;
 import org.lineageos.recorder.utils.LastRecordHelper;
@@ -317,7 +318,7 @@ public class SoundRecorderService extends Service implements MediaProviderHelper
 
     private void createShareNotification() {
         Uri outFileUri = Uri.parse(mOutFilePath);
-        Intent intent = new Intent(this, RecorderActivity.class);
+        Intent intent = new Intent(this, ListActivity.class);
         PendingIntent pi = PendingIntent.getActivity(this, 0, intent, 0);
 
         PendingIntent playPIntent = PendingIntent.getActivity(this, 0,
@@ -330,7 +331,7 @@ public class SoundRecorderService extends Service implements MediaProviderHelper
                 LastRecordHelper.getDeleteIntent(this),
                 PendingIntent.FLAG_CANCEL_CURRENT);
 
-        LastRecordHelper.setLastItem(this, mOutFilePath, mElapsedTime);
+        LastRecordHelper.setLastItem(this, mOutFilePath);
 
         Notification notification = new NotificationCompat.Builder(
                 this, SOUNDRECORDER_NOTIFICATION_CHANNEL)

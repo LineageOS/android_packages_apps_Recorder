@@ -27,23 +27,27 @@ import org.lineageos.recorder.R;
 
 public class OnBoardingHelper {
     private static final String ONBOARD_SETTINGS = "onboard_settings";
-    private static final String ONBOARD_SOUND_LAST = "onboard_sound_last";
+    private static final String ONBOARD_SOUND_LIST = "onboard_list";
     private static final long RIPPLE_DELAY = 500;
     private static final long RIPPLE_REPEAT = 4;
+    private static final int RIPPLE_OPEN_APP_WAIT = 1;
     private static final long ROTATION_DELAY = 500;
-    private static final int ROTATION_OPEN_APP_WAIT = 2;
+    private static final int ROTATION_OPEN_APP_WAIT = 3;
 
-    public static void onBoardLastItem(Context context, View view) {
+    public static void onBoardList(Context context, View view) {
         SharedPreferences prefs = getPrefs(context);
-        if (prefs.getBoolean(ONBOARD_SOUND_LAST, false)) {
-            return;
+        int appOpenTimes = prefs.getInt(ONBOARD_SOUND_LIST, 0);
+
+        // Wait for the user to open the app 2 times before exposing this
+        if (appOpenTimes <= RIPPLE_OPEN_APP_WAIT) {
+            prefs.edit().putInt(ONBOARD_SOUND_LIST, appOpenTimes + 1).apply();
         }
 
-        prefs.edit().putBoolean(ONBOARD_SOUND_LAST, true).apply();
-
-        // Animate using ripple effect
-        for (int i = 1; i <= RIPPLE_REPEAT; i++) {
-            new Handler().postDelayed(pressRipple(view), i * RIPPLE_DELAY);
+        if (appOpenTimes == RIPPLE_OPEN_APP_WAIT) {
+            // Animate using ripple effect
+            for (int i = 1; i <= RIPPLE_REPEAT; i++) {
+                new Handler().postDelayed(pressRipple(view), i * RIPPLE_DELAY);
+            }
         }
     }
 
@@ -51,7 +55,7 @@ public class OnBoardingHelper {
         SharedPreferences prefs = getPrefs(context);
         int appOpenTimes = prefs.getInt(ONBOARD_SETTINGS, 0);
 
-        // Wait for the user to open the app 3 times before exposing this
+        // Wait for the user to open the app 4 times before exposing this
         if (appOpenTimes <= ROTATION_OPEN_APP_WAIT) {
             prefs.edit().putInt(ONBOARD_SETTINGS, appOpenTimes + 1).apply();
         }
