@@ -24,7 +24,6 @@ import android.content.IntentFilter;
 import android.content.ServiceConnection;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
-import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.IBinder;
@@ -44,7 +43,6 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import org.lineageos.recorder.sounds.RecorderBinder;
 import org.lineageos.recorder.sounds.SoundRecorderService;
 import org.lineageos.recorder.ui.WaveFormView;
-import org.lineageos.recorder.utils.LastRecordHelper;
 import org.lineageos.recorder.utils.LocationHelper;
 import org.lineageos.recorder.utils.OnBoardingHelper;
 import org.lineageos.recorder.utils.Utils;
@@ -68,7 +66,7 @@ public class RecorderActivity extends AppCompatActivity implements
     private SharedPreferences mPrefs;
 
     private FloatingActionButton mSoundFab;
-    private ImageView mSoundLast;
+    private ImageView mSoundList;
     private ImageView mSettings;
 
     private TextView mRecordingText;
@@ -95,14 +93,14 @@ public class RecorderActivity extends AppCompatActivity implements
         setContentView(R.layout.activity_main);
 
         mSoundFab = findViewById(R.id.sound_fab);
-        mSoundLast = findViewById(R.id.sound_last_icon);
+        mSoundList = findViewById(R.id.sound_list_icon);
         mSettings = findViewById(R.id.sound_settings);
 
         mRecordingText = findViewById(R.id.main_title);
         mRecordingVisualizer = findViewById(R.id.main_recording_visualizer);
 
         mSoundFab.setOnClickListener(v -> toggleSoundRecorder());
-        mSoundLast.setOnClickListener(v -> openLastSound());
+        mSoundList.setOnClickListener(v -> openList());
         mSettings.setOnClickListener(v -> openSettings());
 
         mPrefs = getSharedPreferences(Utils.PREFS, 0);
@@ -111,6 +109,9 @@ public class RecorderActivity extends AppCompatActivity implements
         mLocationHelper = new LocationHelper(this);
 
         bindSoundRecService();
+
+        OnBoardingHelper.onBoardList(this, mSoundList);
+        OnBoardingHelper.onBoardSettings(this, mSettings);
     }
 
     @Override
@@ -248,8 +249,6 @@ public class RecorderActivity extends AppCompatActivity implements
                 mSoundService.setAudioListener(null);
             }
         }
-
-        updateLastItemStatus();
     }
 
     private boolean hasAudioPermission() {
@@ -310,17 +309,6 @@ public class RecorderActivity extends AppCompatActivity implements
         }
     }
 
-    private void updateLastItemStatus() {
-        Uri lastSound = LastRecordHelper.getLastItemUri(this);
-
-        if (lastSound == null) {
-            mSoundLast.setVisibility(View.GONE);
-        } else {
-            mSoundLast.setVisibility(View.VISIBLE);
-            OnBoardingHelper.onBoardLastItem(this, mSoundLast);
-        }
-    }
-
     private void showDialog(Intent intent, View view) {
         String transitionName = getString(R.string.transition_dialog_name);
         view.setTransitionName(transitionName);
@@ -337,9 +325,7 @@ public class RecorderActivity extends AppCompatActivity implements
         showDialog(intent, mSettings);
     }
 
-    private void openLastSound() {
-        Intent intent = new Intent(this, DialogActivity.class);
-        intent.putExtra(DialogActivity.EXTRA_TITLE, R.string.sound_last_title);
-        showDialog(intent, mSoundLast);
+    private void openList() {
+        startActivity(new Intent(this, ListActivity.class));
     }
 }

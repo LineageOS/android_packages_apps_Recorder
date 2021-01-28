@@ -20,24 +20,48 @@ import android.content.SharedPreferences;
 import android.os.Handler;
 import androidx.annotation.NonNull;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+
+import org.lineageos.recorder.R;
 
 public class OnBoardingHelper {
-    private static final String ONBOARD_SOUND_LAST = "onboard_sound_last";
+    private static final String ONBOARD_SETTINGS = "onboard_settings";
+    private static final String ONBOARD_SOUND_LIST = "onboard_list";
     private static final long RIPPLE_DELAY = 500;
     private static final long RIPPLE_REPEAT = 4;
+    private static final int RIPPLE_OPEN_APP_WAIT = 1;
+    private static final long ROTATION_DELAY = 500;
+    private static final int ROTATION_OPEN_APP_WAIT = 3;
 
-    public static void onBoardLastItem(Context context, View view) {
+    public static void onBoardList(Context context, View view) {
         SharedPreferences prefs = getPrefs(context);
-        String key = ONBOARD_SOUND_LAST;
-        if (prefs.getBoolean(key, false)) {
-            return;
+        int appOpenTimes = prefs.getInt(ONBOARD_SOUND_LIST, 0);
+
+        // Wait for the user to open the app 2 times before exposing this
+        if (appOpenTimes <= RIPPLE_OPEN_APP_WAIT) {
+            prefs.edit().putInt(ONBOARD_SOUND_LIST, appOpenTimes + 1).apply();
         }
 
-        prefs.edit().putBoolean(key, true).apply();
+        if (appOpenTimes == RIPPLE_OPEN_APP_WAIT) {
+            // Animate using ripple effect
+            for (int i = 1; i <= RIPPLE_REPEAT; i++) {
+                new Handler().postDelayed(pressRipple(view), i * RIPPLE_DELAY);
+            }
+        }
+    }
 
-        // Animate using ripple effect
-        for (int i = 1; i <= RIPPLE_REPEAT; i++) {
-            new Handler().postDelayed(pressRipple(view), i * RIPPLE_DELAY);
+    public static void onBoardSettings(Context context, View view) {
+        SharedPreferences prefs = getPrefs(context);
+        int appOpenTimes = prefs.getInt(ONBOARD_SETTINGS, 0);
+
+        // Wait for the user to open the app 4 times before exposing this
+        if (appOpenTimes <= ROTATION_OPEN_APP_WAIT) {
+            prefs.edit().putInt(ONBOARD_SETTINGS, appOpenTimes + 1).apply();
+        }
+
+        if (appOpenTimes == ROTATION_OPEN_APP_WAIT) {
+            new Handler().postDelayed(rotationAnimation(context, view), ROTATION_DELAY);
         }
     }
 
@@ -50,6 +74,14 @@ public class OnBoardingHelper {
         return () -> {
             view.setPressed(true);
             view.postOnAnimationDelayed(() -> view.setPressed(false), RIPPLE_DELAY + 100);
+        };
+    }
+
+    @NonNull
+    private static Runnable rotationAnimation(Context context, View view) {
+        return () -> {
+            Animation animation = AnimationUtils.loadAnimation(context, R.anim.rotation);
+            view.startAnimation(animation);
         };
     }
 }
