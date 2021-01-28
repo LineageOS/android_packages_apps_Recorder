@@ -30,7 +30,6 @@ import org.lineageos.recorder.sounds.SoundRecorderService;
 public class LastRecordHelper {
     private static final String PREFS = "preferences";
     private static final String KEY_LAST_SOUND = "sound_last_path";
-    private static final String KEY_LAST_SOUND_TIME = "sound_last_duration";
 
     private LastRecordHelper() {
     }
@@ -46,11 +45,32 @@ public class LastRecordHelper {
                         return;
                     }
                     nm.cancel(SoundRecorderService.NOTIFICATION_ID);
-                    setLastItem(context, null, 0);
+                    setLastItem(context, null);
                 })
                 .setNegativeButton(R.string.cancel, null)
                 .create();
     }
+
+    public static AlertDialog promptFileDeletion(Context context,
+                                                 final Uri uri,
+                                                 Runnable onDelete) {
+        return new AlertDialog.Builder(context)
+                .setTitle(R.string.delete_title)
+                .setMessage(context.getString(R.string.delete_message, uri))
+                .setPositiveButton(R.string.delete, (dialog, which) -> {
+                    NotificationManager nm = context.getSystemService(NotificationManager.class);
+                    if (nm == null) {
+                        return;
+                    }
+
+                    nm.cancel(SoundRecorderService.NOTIFICATION_ID);
+                    MediaProviderHelper.remove(context.getContentResolver(), uri);
+                    onDelete.run();
+                })
+                .setNegativeButton(R.string.cancel, null)
+                .create();
+    }
+
 
     public static Intent getShareIntent(Uri uri, String mimeType) {
         Intent intent = new Intent(Intent.ACTION_SEND);
@@ -75,11 +95,10 @@ public class LastRecordHelper {
         return intent;
     }
 
-    public static void setLastItem(Context context, String path, long duration) {
+    public static void setLastItem(Context context, String path) {
         SharedPreferences prefs = context.getSharedPreferences(PREFS, 0);
         prefs.edit()
                 .putString(KEY_LAST_SOUND, path)
-                .putLong(KEY_LAST_SOUND_TIME, duration)
                 .apply();
     }
 
@@ -87,15 +106,5 @@ public class LastRecordHelper {
         SharedPreferences prefs = context.getSharedPreferences(PREFS, 0);
         String uriStr = prefs.getString(KEY_LAST_SOUND, null);
         return uriStr == null ? null : Uri.parse(uriStr);
-    }
-
-    private static long getLastItemDuration(Context context) {
-        SharedPreferences prefs = context.getSharedPreferences(PREFS, 0);
-        return prefs.getLong(KEY_LAST_SOUND_TIME, -1);
-    }
-
-    public static String getLastItemDescription(Context context) {
-        return context.getString(R.string.screen_last_message,
-                getLastItemDuration(context) / 1000);
     }
 }
