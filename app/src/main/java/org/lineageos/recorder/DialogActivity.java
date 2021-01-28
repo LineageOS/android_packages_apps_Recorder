@@ -26,7 +26,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -41,10 +40,9 @@ import org.lineageos.recorder.utils.Utils;
 
 public class DialogActivity extends AppCompatActivity {
     public static final String EXTRA_TITLE = "dialogTitle";
-    public static final String EXTRA_DELETE_LAST_RECORDING = "deleteLastItem";
     public static final String EXTRA_SETTINGS_SCREEN = "settingsScreen";
+    public static final String EXTRA_DELETE_LAST_RECORDING = "deleteLastItem";
     private static final int REQUEST_LOCATION_PERMS = 214;
-    private static final String TYPE_AUDIO = "audio/wav";
 
     private LinearLayout mRootView;
     private FrameLayout mContent;
@@ -79,8 +77,6 @@ public class DialogActivity extends AppCompatActivity {
 
         if (isSettingsScreen) {
             setupAsSettingsScreen();
-        } else {
-            setupAsLastItem();
         }
 
         animateAppearance();
@@ -140,38 +136,11 @@ public class DialogActivity extends AppCompatActivity {
                 .start();
     }
 
-    private void setupAsLastItem() {
-        View view = createContentView(R.layout.dialog_content_last_item);
-        TextView description = view.findViewById(R.id.dialog_content_last_description);
-        ImageView play = view.findViewById(R.id.dialog_content_last_play);
-        ImageView delete = view.findViewById(R.id.dialog_content_last_delete);
-        ImageView share = view.findViewById(R.id.dialog_content_last_share);
-
-        description.setText(LastRecordHelper.getLastItemDescription(this));
-
-        play.setOnClickListener(v -> playLastItem());
-        delete.setOnClickListener(v -> deleteLastItem());
-        share.setOnClickListener(v -> shareLastItem());
-    }
-
-    private void playLastItem() {
-        Uri uri = LastRecordHelper.getLastItemUri(this);
-        Intent intent = LastRecordHelper.getOpenIntent(uri, TYPE_AUDIO);
-        if (intent != null) {
-            startActivityForResult(intent, 0);
-        }
-    }
-
     private void deleteLastItem() {
         Uri uri = LastRecordHelper.getLastItemUri(this);
         AlertDialog dialog = LastRecordHelper.deleteFile(this, uri);
         dialog.setOnDismissListener(d -> finish());
         dialog.show();
-    }
-
-    private void shareLastItem() {
-        Uri uri = LastRecordHelper.getLastItemUri(this);
-        startActivity(LastRecordHelper.getShareIntent(uri, TYPE_AUDIO));
     }
 
     private void setupAsSettingsScreen() {
