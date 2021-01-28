@@ -30,7 +30,7 @@
     <!-- Delete confirm title -->
     <string name="delete_title">Deleting record</string>
     <!-- Delete confirm message -->
-    <string name="delete_message">Are you sure you want to delete %1$s? This cannot be undone</string>
+    <string name="delete_recording_message">Are you sure you want to delete this recording? This cannot be undone</string>
     <!-- Date for last item %1 is year, %2 month, %3 day, %4 hour, %5 min -->
 
     <!-- Permissions -->
