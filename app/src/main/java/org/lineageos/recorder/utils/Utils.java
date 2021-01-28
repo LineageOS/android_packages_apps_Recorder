@@ -17,6 +17,7 @@ package org.lineageos.recorder.utils;
 
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.view.inputmethod.InputMethodManager;
 
 import java.io.Closeable;
 import java.io.IOException;
@@ -86,6 +87,16 @@ public class Utils {
         }
     }
 
+
+    public static void showKeyboard(Context context) {
+        InputMethodManager inputMethodManager = context.getSystemService(InputMethodManager.class);
+        inputMethodManager.toggleSoftInput(InputMethodManager.SHOW_FORCED, 0);
+    }
+
+    public static void closeKeyboard(Context context) {
+        InputMethodManager inputMethodManager = context.getSystemService(InputMethodManager.class);
+        inputMethodManager.toggleSoftInput(InputMethodManager.HIDE_IMPLICIT_ONLY, 0);
+    }
 
     public enum UiStatus {
         NOTHING,
