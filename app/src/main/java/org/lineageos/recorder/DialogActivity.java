@@ -55,21 +55,28 @@ public class DialogActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstance) {
         super.onCreate(savedInstance);
 
-        setContentView(R.layout.dialog_base);
         setFinishOnTouchOutside(true);
-
-        mRootView = findViewById(R.id.dialog_root);
-        TextView title = findViewById(R.id.dialog_title);
-        mContent = findViewById(R.id.dialog_content);
 
         mPrefs = getSharedPreferences(Utils.PREFS, 0);
 
         Intent intent = getIntent();
-        int dialogTitle = intent.getIntExtra(EXTRA_TITLE, 0);
-        boolean isSettingsScreen = intent.getBooleanExtra(EXTRA_SETTINGS_SCREEN, false);
+        boolean deleteLastRecording = intent.getBooleanExtra(EXTRA_DELETE_LAST_RECORDING, false);
+
+        if (deleteLastRecording) {
+            deleteLastItem();
+            return;
+        }
+
+        setContentView(R.layout.dialog_base);
+        mRootView = findViewById(R.id.dialog_root);
+        TextView title = findViewById(R.id.dialog_title);
+        mContent = findViewById(R.id.dialog_content);
 
         getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT,
                 ViewGroup.LayoutParams.WRAP_CONTENT);
+
+        int dialogTitle = intent.getIntExtra(EXTRA_TITLE, 0);
+        boolean isSettingsScreen = intent.getBooleanExtra(EXTRA_SETTINGS_SCREEN, false);
 
         if (dialogTitle != 0) {
             title.setText(dialogTitle);
@@ -80,11 +87,6 @@ public class DialogActivity extends AppCompatActivity {
         }
 
         animateAppearance();
-
-        boolean deleteLastRecording = intent.getBooleanExtra(EXTRA_DELETE_LAST_RECORDING, false);
-        if (deleteLastRecording) {
-            deleteLastItem();
-        }
     }
 
     @Override
