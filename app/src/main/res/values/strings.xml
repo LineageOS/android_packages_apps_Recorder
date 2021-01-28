@@ -84,6 +84,11 @@
     <!-- Sound record title -->
     <string name="main_sound_action">Record sound</string>
 
+    <!-- List activity -->
+    <!-- List activity title -->
+    <string name="list_title">My recordings</string>
+    <string name="list_error_empty">All your recordings will be shown here</string>
+
     <!-- Transition name for dialogActivity -->
     <string name="transition_dialog_name" translatable="false">transition_dialog_activity</string>
 </resources>
