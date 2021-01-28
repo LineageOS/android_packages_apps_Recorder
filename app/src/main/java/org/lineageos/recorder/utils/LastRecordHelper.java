@@ -37,7 +37,7 @@ public class LastRecordHelper {
     public static AlertDialog deleteFile(Context context, final Uri uri) {
         return new AlertDialog.Builder(context)
                 .setTitle(R.string.delete_title)
-                .setMessage(context.getString(R.string.delete_message, uri))
+                .setMessage(context.getString(R.string.delete_message))
                 .setPositiveButton(R.string.delete, (dialog, which) -> {
                     MediaProviderHelper.remove(context.getContentResolver(), uri);
                     NotificationManager nm = context.getSystemService(NotificationManager.class);
