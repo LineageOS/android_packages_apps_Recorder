@@ -23,4 +23,5 @@ public interface RecordingItemCallbacks {
     void onPlay(@NonNull Uri uri);
     void onShare(@NonNull Uri uri);
     void onDelete(int index, @NonNull Uri uri);
+    void onRename(int index, @NonNull Uri uri, @NonNull String currentName);
 }

@@ -45,11 +45,14 @@ public class RecordingItemViewHolder extends RecyclerView.ViewHolder {
         mTitleView = itemView.findViewById(R.id.item_title);
         mSummaryView = itemView.findViewById(R.id.item_date);
         ImageView playView = itemView.findViewById(R.id.item_play);
+        ImageView editView = itemView.findViewById(R.id.item_edit);
         ImageView shareView = itemView.findViewById(R.id.item_share);
         ImageView deleteView = itemView.findViewById(R.id.item_delete);
 
         itemView.setOnClickListener(v -> callbacks.onPlay(mUri));
         playView.setOnClickListener(v -> callbacks.onPlay(mUri));
+        editView.setOnClickListener(v ->
+                callbacks.onRename(getAdapterPosition(), mUri, mTitleView.getText().toString()));
         shareView.setOnClickListener(v -> callbacks.onShare(mUri));
         deleteView.setOnClickListener(v -> callbacks.onDelete(getAdapterPosition(), mUri));
     }
