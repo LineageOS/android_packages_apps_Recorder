@@ -27,6 +27,8 @@
     <string name="delete">Delete</string>
     <!-- Cancel action -->
     <string name="cancel">Cancel</string>
+    <!-- Edit action -->
+    <string name="edit">Edit</string>
     <!-- Delete confirm title -->
     <string name="delete_title">Deleting record</string>
     <!-- Delete confirm message -->
@@ -85,6 +87,10 @@
     <!-- List activity title -->
     <string name="list_title">My recordings</string>
     <string name="list_error_empty">All your recordings will be shown here</string>
+    <!-- Edit recording title -->
+    <string name="list_edit_title">Edit recording name</string>
+    <!-- Edit recording confirm action -->
+    <string name="list_edit_confirm">Change</string>
 
     <!-- Transition name for dialogActivity -->
     <string name="transition_dialog_name" translatable="false">transition_dialog_activity</string>

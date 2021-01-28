@@ -18,8 +18,6 @@ package org.lineageos.recorder;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.ProgressBar;
 import android.widget.TextView;
@@ -29,7 +27,6 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.view.ActionMode;
 import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -92,6 +89,24 @@ public class ListActivity extends AppCompatActivity implements RecordingItemCall
     public void onDelete(int index, @NonNull Uri uri) {
         final AlertDialog dialog = LastRecordHelper.promptFileDeletion(
                 this, uri, () -> mAdapter.onDelete(index));
+        dialog.show();
+    }
+
+    @Override
+    public void onRename(int index, @NonNull Uri uri, @NonNull String currentTitle) {
+        final AlertDialog dialog = LastRecordHelper.promptRename(
+                this,
+                currentTitle,
+                newTitle -> MediaProviderHelper.rename(
+                        getContentResolver(),
+                        uri,
+                        newTitle,
+                        success -> {
+                            if (success) {
+                                mAdapter.onRename(index, newTitle);
+                            }
+                        })
+        );
         dialog.show();
     }
 }
