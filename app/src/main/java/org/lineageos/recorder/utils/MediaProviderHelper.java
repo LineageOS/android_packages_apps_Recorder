@@ -59,7 +59,7 @@ public final class MediaProviderHelper {
         final ContentValues values = new ContentValues();
         values.put(MediaStore.Audio.Media.DISPLAY_NAME, file.getName());
         values.put(MediaStore.Audio.Media.TITLE, file.getName());
-        values.put(MediaStore.Audio.Media.MIME_TYPE, "audio/x-wav");
+        values.put(MediaStore.Audio.Media.MIME_TYPE, "audio/ogg");
         values.put(MediaStore.Audio.Media.ARTIST, "Recorder");
         values.put(MediaStore.Audio.Media.ALBUM, "Sound records");
         values.put(MediaStore.Audio.Media.DATE_ADDED, System.currentTimeMillis() / 1000L);
