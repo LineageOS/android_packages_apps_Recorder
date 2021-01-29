@@ -27,6 +27,7 @@ public class Utils {
     public static final String KEY_RECORDING = "recording";
     public static final String PREF_RECORDING_NOTHING = "nothing";
     private static final String PREF_RECORDING_SOUND = "sound";
+    private static final String PREF_RECORDING_PAUSED = "paused";
     public static final String PREF_TAG_WITH_LOCATION = "tag_with_location";
 
     private Utils() {
@@ -38,10 +39,16 @@ public class Utils {
     }
 
     public static void setStatus(Context context, UiStatus status) {
-        if (status == UiStatus.SOUND) {
-            setStatus(context, PREF_RECORDING_SOUND);
-        } else {
-            setStatus(context, PREF_RECORDING_NOTHING);
+        switch (status) {
+            case SOUND:
+                setStatus(context, PREF_RECORDING_SOUND);
+                break;
+            case PAUSED:
+                setStatus(context, PREF_RECORDING_PAUSED);
+                break;
+            default:
+                setStatus(context, PREF_RECORDING_NOTHING);
+                break;
         }
     }
 
@@ -56,6 +63,10 @@ public class Utils {
 
     public static boolean isSoundRecording(Context context) {
         return PREF_RECORDING_SOUND.equals(getStatus(context));
+    }
+
+    public static boolean isPaused(Context context) {
+        return PREF_RECORDING_PAUSED.equals(getStatus(context));
     }
 
     @SuppressWarnings("SameParameterValue")
@@ -101,5 +112,6 @@ public class Utils {
     public enum UiStatus {
         NOTHING,
         SOUND,
+        PAUSED,
     }
 }

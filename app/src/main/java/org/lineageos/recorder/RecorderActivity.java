@@ -66,6 +66,7 @@ public class RecorderActivity extends AppCompatActivity implements
     private SharedPreferences mPrefs;
 
     private FloatingActionButton mSoundFab;
+    private ImageView mPauseResume;
     private ImageView mSoundList;
     private ImageView mSettings;
 
@@ -93,6 +94,7 @@ public class RecorderActivity extends AppCompatActivity implements
         setContentView(R.layout.activty_main);
 
         mSoundFab = findViewById(R.id.sound_fab);
+        mPauseResume = findViewById(R.id.sound_pause_resume);
         mSoundList = findViewById(R.id.sound_list_icon);
         mSettings = findViewById(R.id.sound_settings);
 
@@ -100,6 +102,7 @@ public class RecorderActivity extends AppCompatActivity implements
         mRecordingVisualizer = findViewById(R.id.main_recording_visualizer);
 
         mSoundFab.setOnClickListener(v -> toggleSoundRecorder());
+        mPauseResume.setOnClickListener(v -> togglePause());
         mSoundList.setOnClickListener(v -> openList());
         mSettings.setOnClickListener(v -> openSettings());
 
@@ -230,6 +233,22 @@ public class RecorderActivity extends AppCompatActivity implements
         }
     }
 
+    private void togglePause() {
+        if (!Utils.isRecording(this)) {
+            return;
+        }
+
+        if (Utils.isPaused(this)) {
+            Intent resumeIntent = new Intent(this, SoundRecorderService.class)
+                    .setAction(SoundRecorderService.ACTION_RESUME);
+            startService(resumeIntent);
+        } else {
+            Intent pauseIntent = new Intent(this, SoundRecorderService.class)
+                    .setAction(SoundRecorderService.ACTION_PAUSE);
+            startService(pauseIntent);
+        }
+    }
+
     private void refresh() {
         if (Utils.isRecording(this)) {
             mRecordingText.setText(getString(R.string.sound_recording_title_working));
@@ -237,6 +256,15 @@ public class RecorderActivity extends AppCompatActivity implements
             mSoundFab.setImageResource(R.drawable.ic_stop_sound);
             mSoundFab.setContentDescription(getString(R.string.stop));
             mSoundFab.setSelected(true);
+
+            mPauseResume.setVisibility(View.VISIBLE);
+            if (Utils.isPaused(this)) {
+                mPauseResume.setImageResource(R.drawable.ic_resume);
+                mPauseResume.setContentDescription(getString(R.string.resume));
+            } else {
+                mPauseResume.setImageResource(R.drawable.ic_pause);
+                mPauseResume.setContentDescription(getString(R.string.pause));
+            }
 
             mRecordingVisualizer.setVisibility(View.VISIBLE);
             mRecordingVisualizer.setAmplitude(0);
@@ -249,6 +277,8 @@ public class RecorderActivity extends AppCompatActivity implements
             mSoundFab.setImageResource(R.drawable.ic_action_sound_record);
             mSoundFab.setContentDescription(getString(R.string.main_sound_action));
             mSoundFab.setSelected(false);
+
+            mPauseResume.setVisibility(View.GONE);
 
             mRecordingVisualizer.setVisibility(View.GONE);
             if (mSoundService != null) {

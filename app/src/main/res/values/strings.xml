@@ -23,6 +23,10 @@
     <string name="stop">Stop</string>
     <!-- Play action -->
     <string name="play">Play</string>
+    <!-- Pause action -->
+    <string name="pause">Pause</string>
+    <!-- Resume action -->
+    <string name="resume">Resume</string>
     <!-- Delete action -->
     <string name="delete">Delete</string>
     <!-- Cancel action -->
