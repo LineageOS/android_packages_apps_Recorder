@@ -17,7 +17,7 @@
 
     <!--
         Max audio value reported by the device. Tune by looking at the values given in
-        the SoundRecorderService.startVisualizerThread method
+        the MediaRecorder.getMaxAmplitude method
      -->
-    <integer name="max_audio_value">50</integer>
+    <integer name="max_audio_value">1500</integer>
 </resources>

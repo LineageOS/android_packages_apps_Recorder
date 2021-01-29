@@ -40,8 +40,8 @@ import androidx.core.app.ActivityOptionsCompat;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
-import org.lineageos.recorder.sounds.RecorderBinder;
-import org.lineageos.recorder.sounds.SoundRecorderService;
+import org.lineageos.recorder.service.RecorderBinder;
+import org.lineageos.recorder.service.SoundRecorderService;
 import org.lineageos.recorder.ui.WaveFormView;
 import org.lineageos.recorder.utils.LocationHelper;
 import org.lineageos.recorder.utils.OnBoardingHelper;
@@ -215,18 +215,19 @@ public class RecorderActivity extends AppCompatActivity implements
             return;
         }
 
-        if (mSoundService.isRecording()) {
+        if (Utils.isRecording(this)) {
             // Stop
-            mSoundService.stopRecording();
-            stopService(new Intent(this, SoundRecorderService.class));
-            Utils.setStatus(this, Utils.UiStatus.NOTHING);
+            Intent stopIntent = new Intent(this, SoundRecorderService.class)
+                    .setAction(SoundRecorderService.ACTION_STOP);
+            startService(stopIntent);
         } else {
             // Start
-            startService(new Intent(this, SoundRecorderService.class));
-            mSoundService.startRecording(mLocationHelper.getCurrentLocationName());
-            Utils.setStatus(this, Utils.UiStatus.SOUND);
+            Intent startIntent = new Intent(this, SoundRecorderService.class)
+                    .setAction(SoundRecorderService.ACTION_START)
+                    .putExtra(SoundRecorderService.EXTRA_LOCATION,
+                            mLocationHelper.getCurrentLocationName());
+            startService(startIntent);
         }
-        refresh();
     }
 
     private void refresh() {
@@ -238,7 +239,7 @@ public class RecorderActivity extends AppCompatActivity implements
             mSoundFab.setSelected(true);
 
             mRecordingVisualizer.setVisibility(View.VISIBLE);
-            mRecordingVisualizer.onAudioLevelUpdated(0);
+            mRecordingVisualizer.setAmplitude(0);
             if (mSoundService != null) {
                 mSoundService.setAudioListener(mRecordingVisualizer);
             }
