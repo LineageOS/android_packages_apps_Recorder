@@ -26,12 +26,12 @@ import android.util.AttributeSet;
 import android.view.View;
 
 import org.lineageos.recorder.R;
-import org.lineageos.recorder.sounds.OnAudioLevelUpdatedListener;
+import org.lineageos.recorder.service.IAudioVisualizer;
 
-public class WaveFormView extends View implements OnAudioLevelUpdatedListener {
+public class WaveFormView extends View implements IAudioVisualizer {
     private static final int DEFAULT_NUMBER_OF_WAVES = 5;
 
-    private static final int DEFAULT_MAX_AUDIO_VALUE = 50;
+    private static final int DEFAULT_MAX_AUDIO_VALUE = 1500;
 
     private static final float DEFAULT_FREQUENCY = 1.5f;
     private static final float DEFAULT_AMPLITUDE = 1f;
@@ -137,9 +137,9 @@ public class WaveFormView extends View implements OnAudioLevelUpdatedListener {
     }
 
     @Override
-    public void onAudioLevelUpdated(int value) {
+    public void setAmplitude(int amplitude) {
         synchronized (mAmpLock) {
-            mAmplitude = Math.min(value / mMaxAudioValue, mIdleAmplitude);
+            mAmplitude = Math.min(amplitude / mMaxAudioValue, mIdleAmplitude);
         }
     }
 }
