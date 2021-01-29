@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2017 The LineageOS Project
+ * Copyright (C) 2021 The LineageOS Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,19 +13,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.lineageos.recorder.sounds;
+package org.lineageos.recorder.service;
 
-import android.os.Binder;
+public interface IAudioVisualizer {
 
-public class RecorderBinder extends Binder {
-    private final SoundRecorderService mService;
-
-    RecorderBinder(SoundRecorderService service) {
-        super();
-        mService = service;
-    }
-
-    public SoundRecorderService getService() {
-        return mService;
-    }
+    void setAmplitude(int amplitude);
 }
