@@ -29,7 +29,7 @@ import androidx.appcompat.app.AlertDialog;
 
 import org.lineageos.recorder.DialogActivity;
 import org.lineageos.recorder.R;
-import org.lineageos.recorder.sounds.SoundRecorderService;
+import org.lineageos.recorder.service.SoundRecorderService;
 
 import java.util.function.Consumer;
 
