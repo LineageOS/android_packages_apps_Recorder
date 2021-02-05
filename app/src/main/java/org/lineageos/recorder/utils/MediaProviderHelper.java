@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2019-2020 The LineageOS Project
+ * Copyright (C) 2019-2021 The LineageOS Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -57,32 +57,6 @@ public final class MediaProviderHelper {
         values.put(MediaStore.Audio.Media.IS_PENDING, 1);
 
         final Uri uri = cr.insert(MediaStore.Audio.Media.getContentUri(
-                MediaStore.VOLUME_EXTERNAL_PRIMARY), values);
-        if (uri == null) {
-            Log.e(TAG, "Failed to insert " + file.getAbsolutePath());
-            return;
-        }
-
-        new WriterTask(file, uri, cr, listener).execute();
-    }
-
-    public static void addVideoToContentProvider(
-            @Nullable ContentResolver cr,
-            @Nullable File file,
-            @NonNull OnContentWritten listener) {
-        if (cr == null || file == null) {
-            return;
-        }
-
-        final ContentValues values = new ContentValues();
-        values.put(MediaStore.Video.Media.DISPLAY_NAME, file.getName());
-        values.put(MediaStore.Video.Media.TITLE, file.getName());
-        values.put(MediaStore.Video.Media.MIME_TYPE, "video/mp4");
-        values.put(MediaStore.Video.Media.DATE_ADDED, System.currentTimeMillis() / 1000L);
-        values.put(MediaStore.Video.Media.RELATIVE_PATH, "Movies/Screen records");
-        values.put(MediaStore.Audio.Media.IS_PENDING, 1);
-
-        final Uri uri = cr.insert(MediaStore.Video.Media.getContentUri(
                 MediaStore.VOLUME_EXTERNAL_PRIMARY), values);
         if (uri == null) {
             Log.e(TAG, "Failed to insert " + file.getAbsolutePath());
