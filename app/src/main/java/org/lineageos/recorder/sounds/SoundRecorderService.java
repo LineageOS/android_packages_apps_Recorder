@@ -144,7 +144,7 @@ public class SoundRecorderService extends Service implements MediaProviderHelper
         intent.putExtra(EXTRA_FILE, mOutFilePath);
         sendBroadcast(intent);
         createShareNotification();
-        stopForeground(true);
+        stopForeground(false);
     }
 
     public boolean isRecording() {
