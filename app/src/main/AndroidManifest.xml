@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Copyright (c) 2017 The LineageOS Project
+<!-- Copyright (c) 2017-2021 The LineageOS Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -57,32 +57,5 @@
 
         <!-- Sound recorder -->
         <service android:name=".sounds.SoundRecorderService" />
-
-        <!-- Screen recorder -->
-        <service
-            android:name=".screen.ScreencastService"
-            android:enabled="true"
-            android:foregroundServiceType="mediaProjection" />
-
-        <!-- Screen recorder overlay -->
-        <service
-            android:name=".screen.OverlayService" />
-
-        <receiver
-            android:name=".screen.ScreencastStartReceiver"
-            android:permission="android.permission.CAPTURE_SECURE_VIDEO_OUTPUT">
-            <intent-filter>
-                <action android:name="org.lineageos.recorder.screen.ACTION_START_SCREENCAST" />
-                <action android:name="org.lineageos.recorder.screen.ACTION_STOP_SCREENCAST" />
-            </intent-filter>
-        </receiver>
-
-        <receiver
-            android:name=".screen.ScreencastControlReceiver"
-            android:permission="android.permission.CAPTURE_SECURE_VIDEO_OUTPUT">
-            <intent-filter>
-                <action android:name="org.lineageos.recorder.screen.ACTION_STOP_SCREENCAST" />
-            </intent-filter>
-        </receiver>
     </application>
 </manifest>
