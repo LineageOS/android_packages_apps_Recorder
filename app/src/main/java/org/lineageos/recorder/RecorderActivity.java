@@ -189,6 +189,8 @@ public class RecorderActivity extends AppCompatActivity implements
     public void onSharedPreferenceChanged(SharedPreferences prefs, String key) {
         if (Utils.KEY_RECORDING.equals(key)) {
             refresh();
+        } else if (LastRecordHelper.KEY_LAST_SOUND.equals(key)) {
+            updateLastItemStatus();
         }
     }
 
