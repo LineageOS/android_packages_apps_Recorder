@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2017 The LineageOS Project
+ * Copyright (C) 2017-2021 The LineageOS Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -328,10 +328,10 @@ public class SoundRecorderService extends Service implements MediaProviderHelper
                 LastRecordHelper.getShareIntent(outFileUri, "audio/wav"),
                 PendingIntent.FLAG_CANCEL_CURRENT);
         PendingIntent deletePIntent = PendingIntent.getActivity(this, 0,
-                LastRecordHelper.getDeleteIntent(this, true),
+                LastRecordHelper.getDeleteIntent(this),
                 PendingIntent.FLAG_CANCEL_CURRENT);
 
-        LastRecordHelper.setLastItem(this, mOutFilePath, mElapsedTime, true);
+        LastRecordHelper.setLastItem(this, mOutFilePath, mElapsedTime);
 
         Notification notification = new NotificationCompat.Builder(
                 this, SOUNDRECORDER_NOTIFICATION_CHANNEL)
