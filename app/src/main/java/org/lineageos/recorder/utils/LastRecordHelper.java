@@ -28,8 +28,9 @@ import org.lineageos.recorder.R;
 import org.lineageos.recorder.sounds.SoundRecorderService;
 
 public class LastRecordHelper {
+    public static final String KEY_LAST_SOUND = "sound_last_path";
+
     private static final String PREFS = "preferences";
-    private static final String KEY_LAST_SOUND = "sound_last_path";
     private static final String KEY_LAST_SOUND_TIME = "sound_last_duration";
 
     private LastRecordHelper() {
