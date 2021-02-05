@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2017 The LineageOS Project
+ * Copyright (C) 2017-2021 The LineageOS Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,7 +16,6 @@
 package org.lineageos.recorder;
 
 import android.Manifest;
-import android.app.Activity;
 import android.content.BroadcastReceiver;
 import android.content.ComponentName;
 import android.content.Context;
@@ -25,16 +24,13 @@ import android.content.IntentFilter;
 import android.content.ServiceConnection;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
-import android.media.projection.MediaProjectionManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.IBinder;
-import android.provider.Settings;
 import android.telephony.TelephonyManager;
 import android.view.View;
 import android.widget.ImageView;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -49,8 +45,6 @@ import androidx.transition.TransitionManager;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
-import org.lineageos.recorder.screen.OverlayService;
-import org.lineageos.recorder.screen.ScreencastService;
 import org.lineageos.recorder.sounds.RecorderBinder;
 import org.lineageos.recorder.sounds.SoundRecorderService;
 import org.lineageos.recorder.ui.SoundVisualizer;
@@ -62,10 +56,8 @@ import java.util.ArrayList;
 
 public class RecorderActivity extends AppCompatActivity implements
         SharedPreferences.OnSharedPreferenceChangeListener {
-    private static final int REQUEST_SCREEN_REC_PERMS = 439;
     private static final int REQUEST_SOUND_REC_PERMS = 440;
     private static final int REQUEST_DIALOG_ACTIVITY = 441;
-    private static final int REQUEST_AUDIO_VIDEO = 442;
 
     private static final int[] PERMISSION_ERROR_MESSAGE_RES_IDS = {
             0,
@@ -80,14 +72,9 @@ public class RecorderActivity extends AppCompatActivity implements
 
     private ConstraintLayout mConstraintRoot;
 
-    private FloatingActionButton mScreenFab;
-    private ImageView mScreenSettings;
-    private ImageView mScreenLast;
-
     private FloatingActionButton mSoundFab;
     private ImageView mSoundLast;
 
-    private RelativeLayout mRecordingLayout;
     private TextView mRecordingText;
     private SoundVisualizer mRecordingVisualizer;
 
@@ -111,29 +98,19 @@ public class RecorderActivity extends AppCompatActivity implements
 
         mConstraintRoot = findViewById(R.id.main_root);
 
-        mScreenFab = findViewById(R.id.screen_fab);
-        mScreenSettings = findViewById(R.id.screen_settings_icon);
-        mScreenLast = findViewById(R.id.screen_last_icon);
-
         mSoundFab = findViewById(R.id.sound_fab);
         mSoundLast = findViewById(R.id.sound_last_icon);
 
-        mRecordingLayout = findViewById(R.id.main_recording);
         mRecordingText = findViewById(R.id.main_recording_text);
         mRecordingVisualizer = findViewById(R.id.main_recording_visualizer);
 
-        mScreenFab.setOnClickListener(v -> toggleScreenRecorder());
         mSoundFab.setOnClickListener(v -> toggleSoundRecorder());
-        mScreenSettings.setOnClickListener(v -> openScreenSettings());
-        mScreenLast.setOnClickListener(v -> openLastScreen());
         mSoundLast.setOnClickListener(v -> openLastSound());
 
         mPrefs = getSharedPreferences(Utils.PREFS, 0);
         mPrefs.registerOnSharedPreferenceChangeListener(this);
 
         bindSoundRecService();
-
-        OnBoardingHelper.onBoardScreenSettings(this, mScreenSettings);
     }
 
     @Override
@@ -161,7 +138,6 @@ public class RecorderActivity extends AppCompatActivity implements
     @Override
     protected void onResume() {
         super.onResume();
-        stopOverlayService();
         refresh();
         clearTransitionNames();
     }
@@ -169,8 +145,8 @@ public class RecorderActivity extends AppCompatActivity implements
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions,
                                            @NonNull int[] results) {
-        if (requestCode == REQUEST_SCREEN_REC_PERMS && hasAllScreenRecorderPermissions() ||
-                requestCode == REQUEST_SOUND_REC_PERMS && hasAllAudioRecorderPermissions()) {
+
+        if (hasAllAudioRecorderPermissions()) {
             toggleAfterPermissionRequest(requestCode);
             return;
         }
@@ -223,9 +199,6 @@ public class RecorderActivity extends AppCompatActivity implements
                 bindSoundRecService();
                 new Handler().postDelayed(this::toggleSoundRecorder, 500);
                 break;
-            case REQUEST_SCREEN_REC_PERMS:
-                toggleScreenRecorder();
-                break;
         }
     }
 
@@ -233,9 +206,6 @@ public class RecorderActivity extends AppCompatActivity implements
         switch (requestCode) {
             case REQUEST_SOUND_REC_PERMS:
                 checkSoundRecPermissions();
-                break;
-            case REQUEST_SCREEN_REC_PERMS:
-                checkScreenRecPermissions();
                 break;
         }
     }
@@ -264,70 +234,21 @@ public class RecorderActivity extends AppCompatActivity implements
         refresh();
     }
 
-    private void toggleScreenRecorder() {
-        if (checkScreenRecPermissions()) {
-            return;
-        }
-
-        if (Utils.isScreenRecording(this)) {
-            // Stop
-            Utils.setStatus(this, Utils.UiStatus.NOTHING);
-            startService(new Intent(ScreencastService.ACTION_STOP_SCREENCAST)
-                    .setClass(this, ScreencastService.class));
-        } else {
-            // Start
-            MediaProjectionManager mediaProjectionManager = getSystemService(
-                    MediaProjectionManager.class);
-            if (mediaProjectionManager == null) {
-                return;
-            }
-
-            Intent permissionIntent = mediaProjectionManager.createScreenCaptureIntent();
-            startActivityForResult(permissionIntent, REQUEST_AUDIO_VIDEO);
-        }
-    }
-
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-        if (requestCode == REQUEST_AUDIO_VIDEO && resultCode == Activity.RESULT_OK) {
-            Intent intent = new Intent(this, OverlayService.class);
-            intent.putExtra(OverlayService.EXTRA_HAS_AUDIO, isAudioAllowedWithScreen());
-            intent.putExtra(OverlayService.EXTRA_RESULT_CODE, resultCode);
-            intent.putExtra(OverlayService.EXTRA_RESULT_DATA, data);
-            startService(intent);
-            finish();
-        }
-    }
-
     private void refresh() {
         ConstraintSet set = new ConstraintSet();
         if (Utils.isRecording(this)) {
-            boolean screenRec = Utils.isScreenRecording(this);
-
-            mRecordingText.setText(getString(screenRec ?
-                    R.string.screen_recording_message : R.string.sound_recording_title_working));
-            mRecordingLayout.setBackgroundColor(ContextCompat.getColor(this, screenRec ?
-                    R.color.screen : R.color.sound));
-            mRecordingVisualizer.setVisibility(screenRec ? View.GONE : View.VISIBLE);
-            mScreenFab.setSelected(screenRec);
-            mSoundFab.setSelected(!screenRec);
-
-            if (screenRec) {
-                mScreenFab.setImageResource(R.drawable.ic_stop_screen);
-                set.clone(this, R.layout.constraint_screen);
-            } else {
-                mSoundFab.setImageResource(R.drawable.ic_stop_sound);
-                mRecordingVisualizer.onAudioLevelUpdated(0);
-                if (mSoundService != null) {
-                    mSoundService.setAudioListener(mRecordingVisualizer);
-                }
-                set.clone(this, R.layout.constraint_sound);
+            mRecordingText.setText(getString(R.string.sound_recording_title_working));
+            mSoundFab.setImageResource(R.drawable.ic_stop_sound);
+            mSoundFab.setSelected(true);
+            mRecordingVisualizer.setVisibility(View.VISIBLE);
+            mRecordingVisualizer.onAudioLevelUpdated(0);
+            if (mSoundService != null) {
+                mSoundService.setAudioListener(mRecordingVisualizer);
             }
+            set.clone(this, R.layout.constraint_sound);
         } else {
-            mScreenFab.setImageResource(R.drawable.ic_action_screen_record);
+            mRecordingText.setText(getString(R.string.main_sound_action));
             mSoundFab.setImageResource(R.drawable.ic_action_sound_record);
-            mScreenFab.setSelected(false);
             mSoundFab.setSelected(false);
             mRecordingVisualizer.setVisibility(View.GONE);
             set.clone(this, R.layout.constraint_default);
@@ -350,18 +271,8 @@ public class RecorderActivity extends AppCompatActivity implements
         return result == PackageManager.PERMISSION_GRANTED;
     }
 
-    private boolean hasDrawOverOtherAppsPermission() {
-        return Settings.canDrawOverlays(this);
-    }
-
     private boolean hasAllAudioRecorderPermissions() {
         return hasAudioPermission() && hasPhoneReaderPermission();
-    }
-
-    @SuppressWarnings("SameReturnValue")
-    private boolean hasAllScreenRecorderPermissions() {
-        // None for now
-        return true;
     }
 
     private boolean checkSoundRecPermissions() {
@@ -382,26 +293,6 @@ public class RecorderActivity extends AppCompatActivity implements
         String[] permissionArray = permissions.toArray(new String[0]);
         requestPermissions(permissionArray, REQUEST_SOUND_REC_PERMS);
         return true;
-    }
-
-    private boolean checkScreenRecPermissions() {
-        if (!hasDrawOverOtherAppsPermission()) {
-            Intent overlayIntent = new Intent(Settings.ACTION_MANAGE_OVERLAY_PERMISSION,
-                    Uri.parse("package:" + getPackageName()));
-            new AlertDialog.Builder(this)
-                    .setTitle(R.string.dialog_permissions_title)
-                    .setMessage(getString(R.string.dialog_permissions_overlay))
-                    .setPositiveButton(getString(R.string.screen_audio_warning_button_ask),
-                            (dialog, which) -> startActivityForResult(overlayIntent, 443))
-                    .show();
-            return true;
-        }
-
-        return false;
-    }
-
-    private boolean isAudioAllowedWithScreen() {
-        return mPrefs.getBoolean(Utils.PREF_SCREEN_WITH_AUDIO, false);
     }
 
     private void setupConnection() {
@@ -428,29 +319,14 @@ public class RecorderActivity extends AppCompatActivity implements
         }
     }
 
-    private void stopOverlayService() {
-        // Stop overlay service if running
-        if (OverlayService.isRunning) {
-            stopService(new Intent(this, OverlayService.class));
-        }
-    }
-
     private void updateLastItemStatus() {
-        Uri lastScreen = LastRecordHelper.getLastItemUri(this, false);
-        Uri lastSound = LastRecordHelper.getLastItemUri(this, true);
-
-        if (lastScreen == null) {
-            mScreenLast.setVisibility(View.GONE);
-        } else {
-            mScreenLast.setVisibility(View.VISIBLE);
-            OnBoardingHelper.onBoardLastItem(this, mScreenLast, false);
-        }
+        Uri lastSound = LastRecordHelper.getLastItemUri(this);
 
         if (lastSound == null) {
             mSoundLast.setVisibility(View.GONE);
         } else {
             mSoundLast.setVisibility(View.VISIBLE);
-            OnBoardingHelper.onBoardLastItem(this, mSoundLast, true);
+            OnBoardingHelper.onBoardLastItem(this, mSoundLast);
         }
     }
 
@@ -458,22 +334,14 @@ public class RecorderActivity extends AppCompatActivity implements
         int statusBarColor;
         int navigationBarColor;
 
-        if (Utils.isRecording(this)) {
-            statusBarColor = ContextCompat.getColor(this, Utils.isScreenRecording(this) ?
-                    R.color.screen : R.color.sound);
-            navigationBarColor = statusBarColor;
-        } else {
-            statusBarColor = ContextCompat.getColor(this, R.color.screen);
-            navigationBarColor = ContextCompat.getColor(this, R.color.sound);
-        }
+        statusBarColor = ContextCompat.getColor(this, R.color.sound);
+        navigationBarColor = statusBarColor;
 
         getWindow().setStatusBarColor(Utils.darkenedColor(statusBarColor));
         getWindow().setNavigationBarColor(Utils.darkenedColor(navigationBarColor));
     }
 
     private void clearTransitionNames() {
-        mScreenSettings.setTransitionName("");
-        mScreenLast.setTransitionName("");
         mSoundLast.setTransitionName("");
     }
 
@@ -484,20 +352,6 @@ public class RecorderActivity extends AppCompatActivity implements
                 view, transitionName);
         ActivityCompat.startActivityForResult(this, intent,
                 REQUEST_DIALOG_ACTIVITY, options.toBundle());
-    }
-
-    private void openScreenSettings() {
-        Intent intent = new Intent(this, DialogActivity.class);
-        intent.putExtra(DialogActivity.EXTRA_TITLE, R.string.screen_settings_title);
-        intent.putExtra(DialogActivity.EXTRA_SETTINGS_SCREEN, true);
-        showDialog(intent, mScreenSettings);
-    }
-
-    private void openLastScreen() {
-        Intent intent = new Intent(this, DialogActivity.class);
-        intent.putExtra(DialogActivity.EXTRA_TITLE, R.string.screen_last_title);
-        intent.putExtra(DialogActivity.EXTRA_LAST_SCREEN, true);
-        showDialog(intent, mScreenLast);
     }
 
     private void openLastSound() {
