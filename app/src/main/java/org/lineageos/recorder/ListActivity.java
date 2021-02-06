@@ -60,6 +60,15 @@ public class ListActivity extends AppCompatActivity implements RecordingItemCall
         }
 
         mAdapter = new RecordingsAdapter(this);
+        mAdapter.registerAdapterDataObserver(new RecyclerView.AdapterDataObserver() {
+            @Override
+            public void onItemRangeRemoved(int positionStart, int itemCount) {
+                super.onItemRangeRemoved(positionStart, itemCount);
+                if (mAdapter.getItemCount() == 0) {
+                    emptyText.setVisibility(View.VISIBLE);
+                }
+            }
+        });
         listView.setLayoutManager(new LinearLayoutManager(this));
         listView.setAdapter(mAdapter);
 
