@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Copyright (c) 2017 The LineageOS Project
+<!-- Copyright (c) 2021 The LineageOS Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -14,15 +14,14 @@
      limitations under the License.
 -->
 <resources>
-    <color name="colorPrimary">#f8f8f8</color>
-    <color name="colorPrimaryDark">#e0e0e0</color>
-    <color name="colorAccent">#167c80</color>
 
-    <color name="white">#fafafa</color>
-    <color name="black">#333333</color>
-
-    <color name="screen">#4e888a</color>
-    <color name="sound">#f19645</color>
-    <color name="wave">#12000000</color>
-    <color name="icon">#56000000</color>
+    <declare-styleable name="WaveFormView">
+        <attr name="numOfWaves" format="integer" />
+        <attr name="density" format="float" />
+        <attr name="wavesColor" format="color" />
+        <attr name="maxAudioValue" format="integer" />
+        <attr name="defaultFrequency" format="float" />
+        <attr name="defaultAmplitude" format="float" />
+        <attr name="defaultPhaseShift" format="float" />
+    </declare-styleable>
 </resources>

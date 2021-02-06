@@ -43,7 +43,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import org.lineageos.recorder.sounds.RecorderBinder;
 import org.lineageos.recorder.sounds.SoundRecorderService;
-import org.lineageos.recorder.ui.SoundVisualizer;
+import org.lineageos.recorder.ui.WaveFormView;
 import org.lineageos.recorder.utils.LastRecordHelper;
 import org.lineageos.recorder.utils.OnBoardingHelper;
 import org.lineageos.recorder.utils.Utils;
@@ -70,7 +70,7 @@ public class RecorderActivity extends AppCompatActivity implements
     private ImageView mSoundLast;
 
     private TextView mRecordingText;
-    private SoundVisualizer mRecordingVisualizer;
+    private WaveFormView mRecordingVisualizer;
 
     private final BroadcastReceiver mTelephonyReceiver = new BroadcastReceiver() {
         @Override
