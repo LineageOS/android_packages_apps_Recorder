@@ -18,8 +18,6 @@ package org.lineageos.recorder;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.ProgressBar;
 import android.widget.TextView;
@@ -29,7 +27,6 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.view.ActionMode;
 import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -63,6 +60,15 @@ public class ListActivity extends AppCompatActivity implements RecordingItemCall
         }
 
         mAdapter = new RecordingsAdapter(this);
+        mAdapter.registerAdapterDataObserver(new RecyclerView.AdapterDataObserver() {
+            @Override
+            public void onItemRangeRemoved(int positionStart, int itemCount) {
+                super.onItemRangeRemoved(positionStart, itemCount);
+                if (mAdapter.getItemCount() == 0) {
+                    emptyText.setVisibility(View.VISIBLE);
+                }
+            }
+        });
         listView.setLayoutManager(new LinearLayoutManager(this));
         listView.setAdapter(mAdapter);
 
