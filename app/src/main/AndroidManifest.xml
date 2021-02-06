@@ -66,6 +66,13 @@
             android:theme="@style/AppTheme.DialogActivity" />
 
         <!-- Sound recorder -->
-        <service android:name=".sounds.SoundRecorderService" />
+        <service
+            android:name=".service.SoundRecorderService"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="org.lineageos.recorder.service.START" />
+                <action android:name="org.lineageos.recorder.service.STOP" />
+            </intent-filter>
+        </service>
     </application>
 </manifest>
