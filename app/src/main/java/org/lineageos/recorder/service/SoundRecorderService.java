@@ -57,6 +57,8 @@ public class SoundRecorderService extends Service {
 
     public static final String ACTION_START = "org.lineageos.recorder.service.START";
     public static final String ACTION_STOP = "org.lineageos.recorder.service.STOP";
+    public static final String ACTION_PAUSE = "org.lineageos.recorder.service.PAUSE";
+    public static final String ACTION_RESUME = "org.lineageos.recorder.service.RESUME";
 
     public static final String EXTRA_LOCATION = "extra_filename";
     private static final String FILE_NAME_BASE = "SoundRecords/%1$s (%2$s).%3$s";
@@ -78,6 +80,7 @@ public class SoundRecorderService extends Service {
     @Nullable
     private IAudioVisualizer mAudioVisualizer;
 
+    private boolean mIsPaused;
     private TimerTask mElapsedTimeTask;
     private final AtomicLong mElapsedTime = new AtomicLong();
     private final StringBuilder mSbRecycle = new StringBuilder();
@@ -125,6 +128,10 @@ public class SoundRecorderService extends Service {
                     return startRecording(locationName);
                 case ACTION_STOP:
                     return stopRecording();
+                case ACTION_PAUSE:
+                    return pauseRecording();
+                case ACTION_RESUME:
+                    return resumeRecording();
             }
         }
 
@@ -137,6 +144,7 @@ public class SoundRecorderService extends Service {
 
     private int startRecording(@Nullable String locationName) {
         mRecordFile = createNewAudioFile(locationName);
+        mIsPaused = false;
         mElapsedTime.set(0);
 
         mRecorder = new MediaRecorder();
@@ -153,8 +161,7 @@ public class SoundRecorderService extends Service {
         }
         mRecorder.start();
 
-        startElapsedTimeTask();
-        startVisualizerTask();
+        startTimers();
         startForeground(NOTIFICATION_ID, createRecordingNotification());
         Utils.setStatus(this, Utils.UiStatus.SOUND);
         return START_STICKY;
@@ -169,8 +176,12 @@ public class SoundRecorderService extends Service {
             return START_NOT_STICKY;
         }
 
-        mElapsedTimeTask.cancel();
-        mVisualizerTask.cancel();
+        if (mIsPaused) {
+            mIsPaused = false;
+            mRecorder.resume();
+        }
+
+        stopTimers();
 
         mRecorder.stop();
         mRecorder.release();
@@ -184,6 +195,63 @@ public class SoundRecorderService extends Service {
                 this::onRecordCompleted);
         Utils.setStatus(this, Utils.UiStatus.NOTHING);
         return START_STICKY;
+    }
+
+    private int pauseRecording() {
+        if (mIsPaused) {
+            return START_NOT_STICKY;
+        }
+
+        if (mRecorder == null) {
+            if (Utils.isRecording(this)) {
+                // Old crash?
+                Utils.setStatus(this, Utils.UiStatus.NOTHING);
+            }
+            return START_NOT_STICKY;
+        }
+
+        if (mAudioVisualizer != null) {
+            mAudioVisualizer.setAmplitude(0);
+        }
+        stopTimers();
+        mRecorder.pause();
+        mIsPaused = true;
+        mNotificationManager.notify(NOTIFICATION_ID, createRecordingNotification());
+        Utils.setStatus(this, Utils.UiStatus.PAUSED);
+
+        return START_STICKY;
+    }
+
+    private int resumeRecording() {
+        if (!mIsPaused) {
+            return START_NOT_STICKY;
+        }
+
+        if (mRecorder == null) {
+            if (!Utils.isRecording(this)) {
+                // Old crash?
+                Utils.setStatus(this, Utils.UiStatus.NOTHING);
+            }
+            return START_NOT_STICKY;
+        }
+
+        mRecorder.resume();
+        startTimers();
+        mIsPaused = false;
+        mNotificationManager.notify(NOTIFICATION_ID, createRecordingNotification());
+        Utils.setStatus(this, Utils.UiStatus.SOUND);
+
+        return START_STICKY;
+    }
+
+    private void startTimers() {
+        startElapsedTimeTask();
+        startVisualizerTask();
+    }
+
+    private void stopTimers() {
+        mElapsedTimeTask.cancel();
+        mVisualizerTask.cancel();
     }
 
     private void onRecordCompleted(@Nullable String uri) {
@@ -214,15 +282,25 @@ public class SoundRecorderService extends Service {
                 0);
 
         String duration = DateUtils.formatElapsedTime(mSbRecycle, mElapsedTime.get());
-        return new NotificationCompat.Builder(this, NOTIFICATION_CHANNEL)
+        NotificationCompat.Builder nb = new NotificationCompat.Builder(this, NOTIFICATION_CHANNEL)
                 .setOngoing(true)
                 .setContentTitle(getString(R.string.sound_notification_title))
                 .setContentText(getString(R.string.sound_notification_message, duration))
                 .setSmallIcon(R.drawable.ic_notification_sound)
                 .setColor(ContextCompat.getColor(this, R.color.sound))
-                .setContentIntent(pi)
-                .addAction(R.drawable.ic_stop, getString(R.string.stop), stopPIntent)
-                .build();
+                .setContentIntent(pi);
+
+        if (mIsPaused) {
+            PendingIntent resumePIntent = PendingIntent.getService(this, 0,
+                    new Intent(this, SoundRecorderService.class).setAction(ACTION_RESUME), 0);
+            nb.addAction(R.drawable.ic_resume, getString(R.string.resume), resumePIntent);
+        } else {
+            PendingIntent pausePIntent = PendingIntent.getService(this, 0,
+                    new Intent(this, SoundRecorderService.class).setAction(ACTION_PAUSE), 0);
+            nb.addAction(R.drawable.ic_pause, getString(R.string.pause), pausePIntent);
+        }
+        nb.addAction(R.drawable.ic_stop, getString(R.string.stop), stopPIntent);
+        return nb.build();
     }
 
     private void createShareNotification(@Nullable String uri) {
