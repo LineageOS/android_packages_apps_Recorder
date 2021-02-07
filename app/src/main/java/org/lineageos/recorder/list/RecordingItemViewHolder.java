@@ -15,12 +15,18 @@
  */
 package org.lineageos.recorder.list;
 
+import android.annotation.SuppressLint;
 import android.net.Uri;
+import android.view.ContextThemeWrapper;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.view.menu.MenuBuilder;
+import androidx.appcompat.view.menu.MenuPopupHelper;
+import androidx.appcompat.widget.PopupMenu;
 import androidx.recyclerview.widget.RecyclerView;
 
 import org.lineageos.recorder.R;
@@ -34,6 +40,8 @@ public class RecordingItemViewHolder extends RecyclerView.ViewHolder {
     private final SimpleDateFormat mDateFormat;
     private final TextView mTitleView;
     private final TextView mSummaryView;
+    @NonNull
+    private final RecordingItemCallbacks mCallbacks;
     private Uri mUri;
 
     public RecordingItemViewHolder(@NonNull View itemView,
@@ -41,20 +49,21 @@ public class RecordingItemViewHolder extends RecyclerView.ViewHolder {
                                    @NonNull SimpleDateFormat dateFormat) {
         super(itemView);
 
+        mCallbacks = callbacks;
+
         mDateFormat = dateFormat;
         mTitleView = itemView.findViewById(R.id.item_title);
         mSummaryView = itemView.findViewById(R.id.item_date);
-        ImageView playView = itemView.findViewById(R.id.item_play);
-        ImageView editView = itemView.findViewById(R.id.item_edit);
-        ImageView shareView = itemView.findViewById(R.id.item_share);
-        ImageView deleteView = itemView.findViewById(R.id.item_delete);
+        final ImageView playView = itemView.findViewById(R.id.item_play);
+        final ImageView menuView = itemView.findViewById(R.id.item_menu);
 
-        itemView.setOnClickListener(v -> callbacks.onPlay(mUri));
-        playView.setOnClickListener(v -> callbacks.onPlay(mUri));
-        editView.setOnClickListener(v ->
-                callbacks.onRename(getAdapterPosition(), mUri, mTitleView.getText().toString()));
-        shareView.setOnClickListener(v -> callbacks.onShare(mUri));
-        deleteView.setOnClickListener(v -> callbacks.onDelete(getAdapterPosition(), mUri));
+        playView.setOnClickListener(v -> mCallbacks.onPlay(mUri));
+        menuView.setOnClickListener(this::showPopupMenu);
+        itemView.setOnClickListener(v -> mCallbacks.onPlay(mUri));
+        itemView.setOnLongClickListener(v -> {
+            showPopupMenu(menuView);
+            return true;
+        });
     }
 
     public void setData(@NonNull RecordingData data) {
@@ -65,5 +74,38 @@ public class RecordingItemViewHolder extends RecyclerView.ViewHolder {
         seconds -= (minutes * 60);
         mSummaryView.setText(String.format(Locale.getDefault(), SUMMARY_FORMAT,
                 mDateFormat.format(data.getDate()), minutes, seconds));
+    }
+
+    @SuppressLint("RestrictedApi")
+    private void showPopupMenu(@NonNull View view) {
+        final ContextThemeWrapper wrapper = new ContextThemeWrapper(
+                itemView.getContext(),
+                R.style.AppTheme_ListActivity_PopupMenuOverlapAnchor
+        );
+        final PopupMenu popupMenu = new PopupMenu(wrapper, view, Gravity.NO_GRAVITY,
+                R.attr.actionOverflowButtonStyle, 0);
+        popupMenu.inflate(R.menu.menu_list_item);
+        popupMenu.setOnMenuItemClickListener(item -> onActionSelected(item.getItemId()));
+        final MenuPopupHelper helper = new MenuPopupHelper(
+                wrapper,
+                (MenuBuilder) popupMenu.getMenu(),
+                view
+        );
+        helper.setForceShowIcon(true);
+        helper.show();
+    }
+
+    private boolean onActionSelected(int actionId) {
+        final int index = getAdapterPosition();
+        if (actionId == R.id.action_rename) {
+            mCallbacks.onRename(index, mUri, mTitleView.getText().toString());
+        } else if (actionId == R.id.action_share) {
+            mCallbacks.onShare(mUri);
+        } else if (actionId == R.id.action_delete) {
+            mCallbacks.onDelete(index, mUri);
+        } else {
+            return false;
+        }
+        return true;
     }
 }
