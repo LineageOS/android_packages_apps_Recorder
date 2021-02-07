@@ -31,8 +31,8 @@
     <string name="delete">Delete</string>
     <!-- Cancel action -->
     <string name="cancel">Cancel</string>
-    <!-- Edit action -->
-    <string name="edit">Edit</string>
+    <!-- Rename action -->
+    <string name="rename">Rename</string>
     <!-- Delete confirm title -->
     <string name="delete_title">Deleting record</string>
     <!-- Delete confirm message -->
@@ -98,6 +98,8 @@
     <string name="list_edit_title">Edit recording name</string>
     <!-- Edit recording confirm action -->
     <string name="list_edit_confirm">Change</string>
+    <!-- List item menu actions description for a11y -->
+    <string name="list_item_menu">More actions</string>
 
     <!-- Transition name for dialogActivity -->
     <string name="transition_dialog_name" translatable="false">transition_dialog_activity</string>
