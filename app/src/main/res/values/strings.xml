@@ -65,6 +65,11 @@
     <string name="settings_location_message_on">Your recordings will be tagged with your current position</string>
     <!-- Settings: do not tag recordings with current location -->
     <string name="settings_location_message_off">Your recordings will not be tagged with your current position</string>
+    <!-- Settings: recording in high quality -->
+    <string name="settings_quality_high">Record in high quality (wav format). Uses more space</string>
+    <!-- Settings: recording in good quality -->
+    <string name="settings_quality_good">Record in good quality (ogg format). Saves space</string>
+
 
     <!-- Permissions -->
     <!-- Permissions dialog title -->
