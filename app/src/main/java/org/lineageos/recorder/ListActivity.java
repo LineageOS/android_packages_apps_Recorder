@@ -84,6 +84,12 @@ public class ListActivity extends AppCompatActivity implements RecordingItemCall
     }
 
     @Override
+    public void onBackPressed() {
+        finish();
+        overridePendingTransition(0, 0);
+    }
+
+    @Override
     public void onPlay(@NonNull Uri uri) {
         final Intent intent = LastRecordHelper.getOpenIntent(uri, TYPE_AUDIO);
         startActivityForResult(intent, 0);
