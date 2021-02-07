@@ -21,7 +21,6 @@ import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
-import android.os.Handler;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -169,8 +168,15 @@ public class DialogActivity extends AppCompatActivity {
             }
         });
 
+        SwitchCompat highQualitySwitch =
+                view.findViewById(R.id.dialog_content_settings_high_quality_switch);
+        boolean highQuality = Utils.getRecordInHighQuality(this);
+        highQualitySwitch.setChecked(highQuality);
+        highQualitySwitch.setOnCheckedChangeListener(((buttonView, isChecked) ->
+                Utils.setRecordingHighQuality(this, isChecked)));
         if (Utils.isRecording(this)) {
             mLocationSwitch.setEnabled(false);
+            highQualitySwitch.setEnabled(false);
         }
     }
 
