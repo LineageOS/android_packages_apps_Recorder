@@ -25,6 +25,7 @@ public class Utils {
     private static final String PREF_RECORDING_SOUND = "sound";
     private static final String PREF_RECORDING_PAUSED = "paused";
     public static final String PREF_TAG_WITH_LOCATION = "tag_with_location";
+    public static final String PREF_RECORDING_QUALITY = "recording_quality";
 
     private Utils() {
     }
@@ -59,6 +60,16 @@ public class Utils {
 
     public static boolean isPaused(Context context) {
         return PREF_RECORDING_PAUSED.equals(getStatus(context));
+    }
+
+    public static void setRecordingHighQuality(Context context, boolean highQuality) {
+        SharedPreferences prefs = context.getSharedPreferences(PREFS, 0);
+        prefs.edit().putInt(PREF_RECORDING_QUALITY, highQuality ? 1 : 0).apply();
+    }
+
+    public static boolean getRecordInHighQuality(Context context) {
+        SharedPreferences prefs = context.getSharedPreferences(PREFS, 0);
+        return prefs.getInt(PREF_RECORDING_QUALITY, 0) == 1;
     }
 
     public enum UiStatus {
