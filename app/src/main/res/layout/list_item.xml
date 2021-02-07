@@ -26,39 +26,27 @@
     android:paddingBottom="8dp">
 
     <ImageView
-        android:id="@+id/item_delete"
-        style="@style/AppTheme.ImageButton"
-        android:contentDescription="@string/delete"
-        android:src="@drawable/ic_delete"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageView
-        android:id="@+id/item_share"
-        style="@style/AppTheme.ImageButton"
-        android:contentDescription="@string/share"
-        android:src="@drawable/ic_share"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/item_delete"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageView
-        android:id="@+id/item_edit"
-        style="@style/AppTheme.ImageButton"
-        android:contentDescription="@string/edit"
-        android:src="@drawable/ic_edit"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/item_share"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageView
         android:id="@+id/item_play"
         style="@style/AppTheme.ImageButton"
         android:contentDescription="@string/play"
-        android:src="@drawable/ic_play"
+        android:src="@drawable/ic_play_circle_outline"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:paddingStart="2dp"
+        android:paddingEnd="2dp"
+        android:paddingTop="2dp"
+        android:paddingBottom="2dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/item_edit"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/item_menu"
+        style="@style/AppTheme.ImageButton"
+        android:contentDescription="@string/list_item_menu"
+        android:src="@drawable/ic_menu"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
@@ -66,8 +54,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:paddingTop="8dp"
+        android:layout_marginStart="16dp"
         android:textColor="?android:attr/textColorSecondary"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toEndOf="@id/item_play"
         app:layout_constraintTop_toBottomOf="@id/item_title"
         tools:text="1970-01-01" />
 
@@ -77,11 +66,12 @@
         android:layout_height="wrap_content"
         android:ellipsize="marquee"
         android:singleLine="true"
-        android:paddingEnd="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
         android:textColor="?android:attr/textColorPrimary"
         android:textSize="16sp"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toEndOf="@id/item_play"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/item_play"
+        app:layout_constraintEnd_toStartOf="@id/item_menu"
         tools:text="Recording name" />
 </androidx.constraintlayout.widget.ConstraintLayout>
