@@ -24,6 +24,7 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.media.AudioFormat;
 import android.media.MediaRecorder;
 import android.net.Uri;
 import android.os.Environment;
@@ -64,8 +65,10 @@ public class SoundRecorderService extends Service {
     private static final String FILE_NAME_BASE = "SoundRecords/%1$s (%2$s).%3$s";
     private static final String FILE_NAME_LOCATION_FALLBACK = "Sound record";
     private static final String FILE_NAME_DATE_FORMAT = "yyyy-MM-dd HH:mm:ss";
-    private static final String FILE_NAME_EXTENSION = "ogg";
-    private static final String FILE_MIME_TYPE = "audio/ogg";
+    private static final String FILE_NAME_EXTENSION_OGG = "ogg";
+    private static final String FILE_NAME_EXTENSION_WAV = "wav";
+    private static final String FILE_MIME_TYPE_OGG = "audio/ogg";
+    private static final String FILE_MIME_TYPE_WAV = "audio/wav";
 
     public static final int NOTIFICATION_ID = 60;
     private static final String NOTIFICATION_CHANNEL = "soundrecorder_notification_channel";
@@ -75,6 +78,7 @@ public class SoundRecorderService extends Service {
     private final IBinder mBinder = new RecorderBinder(this);
     private MediaRecorder mRecorder = null;
     private File mRecordFile = null;
+    private boolean mHighQuality = false;
 
     private TimerTask mVisualizerTask;
     @Nullable
@@ -143,15 +147,25 @@ public class SoundRecorderService extends Service {
     }
 
     private int startRecording(@Nullable String locationName) {
+        mHighQuality = Utils.getRecordInHighQuality(this);
+
         mRecordFile = createNewAudioFile(locationName);
         mIsPaused = false;
         mElapsedTime.set(0);
 
         mRecorder = new MediaRecorder();
         mRecorder.setAudioSource(MediaRecorder.AudioSource.MIC);
-        mRecorder.setOutputFormat(MediaRecorder.OutputFormat.OGG);
-        mRecorder.setAudioEncoder(MediaRecorder.AudioEncoder.OPUS);
         mRecorder.setOutputFile(mRecordFile);
+        if (mHighQuality) {
+            mRecorder.setOutputFormat(AudioFormat.ENCODING_PCM_16BIT);
+            mRecorder.setAudioEncoder(MediaRecorder.AudioEncoder.AAC);
+            mRecorder.setAudioChannels(1);
+            mRecorder.setAudioEncodingBitRate(128000);
+            mRecorder.setAudioSamplingRate(48000);
+        } else {
+            mRecorder.setOutputFormat(MediaRecorder.OutputFormat.OGG);
+            mRecorder.setAudioEncoder(MediaRecorder.AudioEncoder.OPUS);
+        }
 
         try {
             mRecorder.prepare();
@@ -192,7 +206,8 @@ public class SoundRecorderService extends Service {
         MediaProviderHelper.addSoundToContentProvider(
                 getContentResolver(),
                 mRecordFile,
-                this::onRecordCompleted);
+                this::onRecordCompleted,
+                mHighQuality ? FILE_MIME_TYPE_WAV : FILE_MIME_TYPE_OGG);
         Utils.setStatus(this, Utils.UiStatus.NOTHING);
         return START_STICKY;
     }
@@ -310,14 +325,15 @@ public class SoundRecorderService extends Service {
 
         Uri fileUri = Uri.parse(uri);
         LastRecordHelper.setLastItem(this, uri);
+        String mimeType = mHighQuality ? FILE_MIME_TYPE_WAV : FILE_MIME_TYPE_OGG;
 
         Intent intent = new Intent(this, ListActivity.class);
         PendingIntent pi = PendingIntent.getActivity(this, 0, intent, 0);
         PendingIntent playPIntent = PendingIntent.getActivity(this, 0,
-                LastRecordHelper.getOpenIntent(fileUri, FILE_MIME_TYPE),
+                LastRecordHelper.getOpenIntent(fileUri, mimeType),
                 PendingIntent.FLAG_CANCEL_CURRENT);
         PendingIntent sharePIntent = PendingIntent.getActivity(this, 0,
-                LastRecordHelper.getShareIntent(fileUri, FILE_MIME_TYPE),
+                LastRecordHelper.getShareIntent(fileUri, mimeType),
                 PendingIntent.FLAG_CANCEL_CURRENT);
         PendingIntent deletePIntent = PendingIntent.getActivity(this, 0,
                 LastRecordHelper.getDeleteIntent(this),
@@ -342,7 +358,7 @@ public class SoundRecorderService extends Service {
         String fileName = String.format(FILE_NAME_BASE,
                 locationName == null ? FILE_NAME_LOCATION_FALLBACK : locationName,
                 mDateFormat.format(new Date()),
-                FILE_NAME_EXTENSION);
+                mHighQuality ? FILE_NAME_EXTENSION_WAV : FILE_NAME_EXTENSION_OGG);
         File file = new File(getExternalFilesDir(Environment.DIRECTORY_MUSIC), fileName);
         File recordingDir = file.getParentFile();
         if (recordingDir != null && !recordingDir.exists()) {

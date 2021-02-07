@@ -63,6 +63,8 @@
     <string name="settings_title">Settings</string>
     <!-- Settings: tag recordings with current location -->
     <string name="settings_location_message">Tag your recordings with your current position</string>
+    <!-- Settings: recording in high quality -->
+    <string name="settings_quality_high">Record in high quality</string>
 
     <!-- Permissions -->
     <!-- Permissions dialog title -->
