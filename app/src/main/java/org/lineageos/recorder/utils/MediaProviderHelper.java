@@ -51,7 +51,8 @@ public final class MediaProviderHelper {
     public static void addSoundToContentProvider(
             @Nullable ContentResolver cr,
             @Nullable File file,
-            @NonNull OnContentWritten listener) {
+            @NonNull OnContentWritten listener,
+            @NonNull String mimeType) {
         if (cr == null || file == null) {
             return;
         }
@@ -59,7 +60,7 @@ public final class MediaProviderHelper {
         final ContentValues values = new ContentValues();
         values.put(MediaStore.Audio.Media.DISPLAY_NAME, file.getName());
         values.put(MediaStore.Audio.Media.TITLE, file.getName());
-        values.put(MediaStore.Audio.Media.MIME_TYPE, "audio/ogg");
+        values.put(MediaStore.Audio.Media.MIME_TYPE, mimeType);
         values.put(MediaStore.Audio.Media.ARTIST, "Recorder");
         values.put(MediaStore.Audio.Media.ALBUM, "Sound records");
         values.put(MediaStore.Audio.Media.DATE_ADDED, System.currentTimeMillis() / 1000L);
