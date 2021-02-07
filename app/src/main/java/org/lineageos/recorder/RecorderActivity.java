@@ -356,5 +356,6 @@ public class RecorderActivity extends AppCompatActivity implements
 
     private void openList() {
         startActivity(new Intent(this, ListActivity.class));
+        overridePendingTransition(0, 0);
     }
 }
