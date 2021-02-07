@@ -37,7 +37,7 @@ import org.lineageos.recorder.utils.LastRecordHelper;
 import org.lineageos.recorder.utils.MediaProviderHelper;
 
 public class ListActivity extends AppCompatActivity implements RecordingItemCallbacks {
-    private static final String TYPE_AUDIO = "audio/ogg";
+    private static final String TYPE_AUDIO = "audio/*";
 
     private RecordingsAdapter mAdapter;
 

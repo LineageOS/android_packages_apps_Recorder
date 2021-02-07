@@ -21,7 +21,6 @@ import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
-import android.os.Handler;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -49,6 +48,7 @@ public class DialogActivity extends AppCompatActivity implements
     private FrameLayout mContent;
 
     private SwitchCompat mLocationSwitch;
+    private SwitchCompat mHighQualitySwitch;
 
     private SharedPreferences mPrefs;
 
@@ -134,10 +134,17 @@ public class DialogActivity extends AppCompatActivity implements
 
     @Override
     public void onSharedPreferenceChanged(SharedPreferences prefs, String key) {
-        if (Utils.PREF_TAG_WITH_LOCATION.equals(key)) {
-            mLocationSwitch.setText(getTagWithLocation() ?
-                    R.string.settings_location_message_on :
-                    R.string.settings_location_message_off);
+        switch (key) {
+            case Utils.PREF_TAG_WITH_LOCATION:
+                mLocationSwitch.setText(getTagWithLocation() ?
+                        R.string.settings_location_message_on :
+                        R.string.settings_location_message_off);
+                break;
+            case Utils.PREF_RECORDING_QUALITY:
+                mHighQualitySwitch.setText(Utils.getRecordInHighQuality(this) ?
+                        R.string.settings_quality_high :
+                        R.string.settings_quality_good);
+                break;
         }
     }
 
@@ -175,8 +182,19 @@ public class DialogActivity extends AppCompatActivity implements
                 R.string.settings_location_message_on :
                 R.string.settings_location_message_off);
 
+        mHighQualitySwitch =
+                view.findViewById(R.id.dialog_content_settings_high_quality_switch);
+        boolean highQuality = Utils.getRecordInHighQuality(this);
+        mHighQualitySwitch.setChecked(highQuality);
+        mHighQualitySwitch.setOnCheckedChangeListener(((buttonView, isChecked) ->
+                Utils.setRecordingHighQuality(this, isChecked)));
+        mHighQualitySwitch.setText(highQuality ?
+                getString(R.string.settings_quality_high) :
+                getString(R.string.settings_quality_good));
+
         if (Utils.isRecording(this)) {
             mLocationSwitch.setEnabled(false);
+            mHighQualitySwitch.setEnabled(false);
         }
     }
 
