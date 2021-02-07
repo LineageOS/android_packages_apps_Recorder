@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bfad02da_526a17e8",
+        "filename": "app/src/main/java/org/lineageos/recorder/service/SoundRecorderService.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 161,
+      "author": {
+        "id": 11801
+      },
+      "writtenOn": "2021-02-07T17:44:00Z",
+      "side": 1,
+      "message": "Yeah...this isn\u0027t WAV. I want WAV specifically because nothing is stripped. 128kbps AAC is good, but it\u0027s not untouched.",
+      "revId": "f193b482e891e8f7fb88d6d21bf0483f67fa27eb",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5a222dc7_437b9143",
+        "filename": "app/src/main/java/org/lineageos/recorder/service/SoundRecorderService.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 164,
+      "author": {
+        "id": 11801
+      },
+      "writtenOn": "2021-02-07T17:44:00Z",
+      "side": 1,
+      "message": "Any reason we don\u0027t set these params for opus/ogg? Heck, 128kbps AAC might make a better default option, since it\u0027s likely to be more compatible with other devices.",
+      "revId": "f193b482e891e8f7fb88d6d21bf0483f67fa27eb",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    }
+  ]
+}
