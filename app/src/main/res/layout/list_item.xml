@@ -25,30 +25,12 @@
     android:paddingBottom="8dp">
 
     <ImageView
-        android:id="@+id/item_delete"
+        android:id="@+id/item_menu"
         style="@style/AppTheme.ImageButton"
-        android:contentDescription="@string/delete"
-        android:src="@drawable/ic_delete"
+        android:contentDescription="@string/list_item_menu"
+        android:src="@drawable/ic_menu"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageView
-        android:id="@+id/item_share"
-        style="@style/AppTheme.ImageButton"
-        android:contentDescription="@string/share"
-        android:src="@drawable/ic_share"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/item_delete"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageView
-        android:id="@+id/item_edit"
-        style="@style/AppTheme.ImageButton"
-        android:contentDescription="@string/edit"
-        android:src="@drawable/ic_edit"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/item_share"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
@@ -57,7 +39,7 @@
         android:contentDescription="@string/play"
         android:src="@drawable/ic_play"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/item_edit"
+        app:layout_constraintEnd_toStartOf="@id/item_menu"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
