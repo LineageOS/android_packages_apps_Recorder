@@ -24,8 +24,6 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
-import android.media.AudioFormat;
-import android.media.MediaRecorder;
 import android.net.Uri;
 import android.os.Environment;
 import android.os.IBinder;
@@ -65,10 +63,6 @@ public class SoundRecorderService extends Service {
     private static final String FILE_NAME_BASE = "SoundRecords/%1$s (%2$s).%3$s";
     private static final String FILE_NAME_LOCATION_FALLBACK = "Sound record";
     private static final String FILE_NAME_DATE_FORMAT = "yyyy-MM-dd HH:mm:ss";
-    private static final String FILE_NAME_EXTENSION_OGG = "ogg";
-    private static final String FILE_NAME_EXTENSION_WAV = "wav";
-    private static final String FILE_MIME_TYPE_OGG = "audio/ogg";
-    private static final String FILE_MIME_TYPE_WAV = "audio/wav";
 
     public static final int NOTIFICATION_ID = 60;
     private static final String NOTIFICATION_CHANNEL = "soundrecorder_notification_channel";
@@ -76,9 +70,8 @@ public class SoundRecorderService extends Service {
     private NotificationManager mNotificationManager;
 
     private final IBinder mBinder = new RecorderBinder(this);
-    private MediaRecorder mRecorder = null;
+    private SoundRecording mRecorder = null;
     private File mRecordFile = null;
-    private boolean mHighQuality = false;
 
     private TimerTask mVisualizerTask;
     @Nullable
@@ -147,33 +140,19 @@ public class SoundRecorderService extends Service {
     }
 
     private int startRecording(@Nullable String locationName) {
-        mHighQuality = Utils.getRecordInHighQuality(this);
+        boolean highQuality = Utils.getRecordInHighQuality(this);
+        mRecorder = highQuality ? new HighQualityRecorder() : new GoodQualityRecorder();
 
-        mRecordFile = createNewAudioFile(locationName);
+        mRecordFile = createNewAudioFile(locationName, mRecorder.getFileExtension());
         mIsPaused = false;
         mElapsedTime.set(0);
 
-        mRecorder = new MediaRecorder();
-        mRecorder.setAudioSource(MediaRecorder.AudioSource.MIC);
-        mRecorder.setOutputFile(mRecordFile);
-        if (mHighQuality) {
-            mRecorder.setOutputFormat(AudioFormat.ENCODING_PCM_16BIT);
-            mRecorder.setAudioEncoder(MediaRecorder.AudioEncoder.AAC);
-            mRecorder.setAudioChannels(1);
-            mRecorder.setAudioEncodingBitRate(128000);
-            mRecorder.setAudioSamplingRate(48000);
-        } else {
-            mRecorder.setOutputFormat(MediaRecorder.OutputFormat.OGG);
-            mRecorder.setAudioEncoder(MediaRecorder.AudioEncoder.OPUS);
-        }
-
         try {
-            mRecorder.prepare();
+            mRecorder.startRecording(mRecordFile);
         } catch (IOException e) {
-            Log.e(TAG, "Error while preparing the media recorder", e);
+            Log.e(TAG, "Error while starting the media recorder", e);
             return START_NOT_STICKY;
         }
-        mRecorder.start();
 
         startTimers();
         startForeground(NOTIFICATION_ID, createRecordingNotification());
@@ -192,14 +171,13 @@ public class SoundRecorderService extends Service {
 
         if (mIsPaused) {
             mIsPaused = false;
-            mRecorder.resume();
+            mRecorder.resumeRecording();
         }
 
         stopTimers();
 
-        mRecorder.stop();
-        mRecorder.release();
-        if (mRecordFile == null) {
+        boolean success = mRecorder.stopRecording();
+        if (!success || mRecordFile == null) {
             return START_NOT_STICKY;
         }
 
@@ -207,7 +185,7 @@ public class SoundRecorderService extends Service {
                 getContentResolver(),
                 mRecordFile,
                 this::onRecordCompleted,
-                mHighQuality ? FILE_MIME_TYPE_WAV : FILE_MIME_TYPE_OGG);
+                mRecorder.getMimeType());
         Utils.setStatus(this, Utils.UiStatus.NOTHING);
         return START_STICKY;
     }
@@ -229,7 +207,11 @@ public class SoundRecorderService extends Service {
             mAudioVisualizer.setAmplitude(0);
         }
         stopTimers();
-        mRecorder.pause();
+
+        if (!mRecorder.pauseRecording()) {
+            return START_NOT_STICKY;
+        }
+
         mIsPaused = true;
         mNotificationManager.notify(NOTIFICATION_ID, createRecordingNotification());
         Utils.setStatus(this, Utils.UiStatus.PAUSED);
@@ -250,7 +232,10 @@ public class SoundRecorderService extends Service {
             return START_NOT_STICKY;
         }
 
-        mRecorder.resume();
+        if (!mRecorder.resumeRecording()) {
+            return START_NOT_STICKY;
+        }
+
         startTimers();
         mIsPaused = false;
         mNotificationManager.notify(NOTIFICATION_ID, createRecordingNotification());
@@ -325,7 +310,7 @@ public class SoundRecorderService extends Service {
 
         Uri fileUri = Uri.parse(uri);
         LastRecordHelper.setLastItem(this, uri);
-        String mimeType = mHighQuality ? FILE_MIME_TYPE_WAV : FILE_MIME_TYPE_OGG;
+        String mimeType = mRecorder.getMimeType();
 
         Intent intent = new Intent(this, ListActivity.class);
         PendingIntent pi = PendingIntent.getActivity(this, 0, intent, 0);
@@ -354,11 +339,12 @@ public class SoundRecorderService extends Service {
         mNotificationManager.notify(NOTIFICATION_ID, notification);
     }
 
-    private File createNewAudioFile(@Nullable String locationName) {
+    private File createNewAudioFile(@Nullable String locationName,
+                                    @NonNull String extension) {
         String fileName = String.format(FILE_NAME_BASE,
                 locationName == null ? FILE_NAME_LOCATION_FALLBACK : locationName,
                 mDateFormat.format(new Date()),
-                mHighQuality ? FILE_NAME_EXTENSION_WAV : FILE_NAME_EXTENSION_OGG);
+                extension);
         File file = new File(getExternalFilesDir(Environment.DIRECTORY_MUSIC), fileName);
         File recordingDir = file.getParentFile();
         if (recordingDir != null && !recordingDir.exists()) {
@@ -386,7 +372,7 @@ public class SoundRecorderService extends Service {
             @Override
             public void run() {
                 if (mAudioVisualizer != null) {
-                    mAudioVisualizer.setAmplitude(mRecorder.getMaxAmplitude());
+                    mAudioVisualizer.setAmplitude(mRecorder.getCurrentAmplitude());
                 }
             }
         };
