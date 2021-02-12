@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "121b014b_a21f2e69",
+        "filename": "app/src/main/java/org/lineageos/recorder/DialogActivity.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 187,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2021-02-12T17:54:55Z",
+      "side": 1,
+      "message": "if (tagWithLocation \u0026\u0026 !hasLocationPerm) {\n                setTagWithLocation(false);\n                tagWithLocation \u003d false;\n        }",
+      "range": {
+        "startLine": 182,
+        "startChar": 0,
+        "endLine": 187,
+        "endChar": 9
+      },
+      "revId": "8bf26cba0d3556b5d2f1a41ffeb7b46e951a278a",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    }
+  ]
+}
