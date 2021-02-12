@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "a357f8fe_c5433391",
+        "filename": "app/src/main/java/org/lineageos/recorder/DialogActivity.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2021-02-12T13:09:19Z",
+      "side": 1,
+      "message": "I\u0027m pretty sure you need to call the \"super\" method\nsuper.onRequestPermissionsResult(requestCode, permissions, grantResults);\n\nHas no real effect afaik, but it\u0027s a lint warning\nSee https://review.lineageos.org/c/LineageOS/android_packages_apps_Jelly/+/285944",
+      "revId": "0e97870748ee20bdaee00324bbedb4fe8c7381b5",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    }
+  ]
+}
