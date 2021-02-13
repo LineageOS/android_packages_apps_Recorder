@@ -21,8 +21,8 @@ import java.io.File;
 import java.io.IOException;
 
 public class GoodQualityRecorder implements SoundRecording {
-    private static final String FILE_NAME_EXTENSION_OGG = "ogg";
-    private static final String FILE_MIME_TYPE_OGG = "audio/ogg";
+    private static final String FILE_NAME_EXTENSION_AAC = "aac";
+    private static final String FILE_MIME_TYPE_AAC = "audio/mp4a-latm";
 
     private MediaRecorder mRecorder = null;
     private boolean mIsPaused = false;
@@ -32,8 +32,8 @@ public class GoodQualityRecorder implements SoundRecording {
         mRecorder = new MediaRecorder();
         mRecorder.setOutputFile(file);
         mRecorder.setAudioSource(MediaRecorder.AudioSource.MIC);
-        mRecorder.setOutputFormat(MediaRecorder.OutputFormat.OGG);
-        mRecorder.setAudioEncoder(MediaRecorder.AudioEncoder.OPUS);
+        mRecorder.setOutputFormat(MediaRecorder.OutputFormat.MPEG_4);
+        mRecorder.setAudioEncoder(MediaRecorder.AudioEncoder.AAC);
 
         mRecorder.prepare();
         mRecorder.start();
@@ -84,11 +84,11 @@ public class GoodQualityRecorder implements SoundRecording {
 
     @Override
     public String getMimeType() {
-        return FILE_MIME_TYPE_OGG;
+        return FILE_MIME_TYPE_AAC;
     }
 
     @Override
     public String getFileExtension() {
-        return FILE_NAME_EXTENSION_OGG;
+        return FILE_NAME_EXTENSION_AAC;
     }
 }
