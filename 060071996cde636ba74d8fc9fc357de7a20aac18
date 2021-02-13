@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "b353fbcc_06164b5b",
+        "filename": "app/src/main/java/org/lineageos/recorder/service/GoodQualityRecorder.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 16208
+      },
+      "writtenOn": "2021-02-13T09:27:50Z",
+      "side": 1,
+      "message": "From https://developer.android.com/guide/topics/media/media-formats, I think .aac should use adts format (audio/aac-adts)?",
+      "revId": "060071996cde636ba74d8fc9fc357de7a20aac18",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    }
+  ]
+}
