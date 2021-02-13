@@ -26,7 +26,7 @@ public class PcmConverter {
     private static final long SAMPLE_RATE = 44100;
     private static final int RECORDER_BPP = 16;
     private static final int CHANNELS = 1;
-    private static final long BYTE_RATE = RECORDER_BPP * 441000 * CHANNELS / 8;
+    private static final long BYTE_RATE = CHANNELS * SAMPLE_RATE * RECORDER_BPP / 8;
     private static final String TAG = "PcmConverter";
 
     public static void convertToWave(File file, int bufferSize) {
@@ -115,7 +115,7 @@ public class PcmConverter {
         header[29] = (byte) ((BYTE_RATE >> 8) & 0xff);
         header[30] = (byte) ((BYTE_RATE >> 16) & 0xff);
         header[31] = (byte) (0L);
-        header[32] = (byte) (2 * 16 / 8);  // block align
+        header[32] = (byte) (CHANNELS * RECORDER_BPP / 8);  // block align
         header[33] = 0;
         header[34] = RECORDER_BPP;  // bits per sample
         header[35] = 0;
