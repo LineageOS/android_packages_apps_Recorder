@@ -28,6 +28,7 @@ import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.coordinatorlayout.widget.CoordinatorLayout;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -35,6 +36,7 @@ import org.lineageos.recorder.list.RecordingItemCallbacks;
 import org.lineageos.recorder.list.RecordingsAdapter;
 import org.lineageos.recorder.utils.LastRecordHelper;
 import org.lineageos.recorder.utils.MediaProviderHelper;
+import org.lineageos.recorder.utils.Utils;
 
 public class ListActivity extends AppCompatActivity implements RecordingItemCallbacks {
     private static final String TYPE_AUDIO = "audio/*";
@@ -47,6 +49,7 @@ public class ListActivity extends AppCompatActivity implements RecordingItemCall
 
         setContentView(R.layout.activity_list);
 
+        final CoordinatorLayout coordinatorLayout = findViewById(R.id.coordinator);
         final Toolbar toolbar = findViewById(R.id.toolbar);
         final RecyclerView listView = findViewById(R.id.list_view);
         final ProgressBar progressBar = findViewById(R.id.list_loading);
@@ -81,6 +84,9 @@ public class ListActivity extends AppCompatActivity implements RecordingItemCall
                 mAdapter.setData(list);
             }
         });
+
+        Utils.setFullScreen(coordinatorLayout);
+        Utils.setVerticalInsets(listView);
     }
 
     @Override

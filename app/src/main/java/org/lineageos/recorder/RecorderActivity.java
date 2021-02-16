@@ -35,6 +35,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.core.app.ActivityCompat;
 import androidx.core.app.ActivityOptionsCompat;
 
@@ -93,6 +94,7 @@ public class RecorderActivity extends AppCompatActivity implements
         super.onCreate(savedInstance);
         setContentView(R.layout.activity_main);
 
+        ConstraintLayout mainView = findViewById(R.id.main_root);
         mSoundFab = findViewById(R.id.sound_fab);
         mPauseResume = findViewById(R.id.sound_pause_resume);
         mSoundList = findViewById(R.id.sound_list_icon);
@@ -105,6 +107,9 @@ public class RecorderActivity extends AppCompatActivity implements
         mPauseResume.setOnClickListener(v -> togglePause());
         mSoundList.setOnClickListener(v -> openList());
         mSettings.setOnClickListener(v -> openSettings());
+
+        Utils.setFullScreen(mainView);
+        Utils.setVerticalInsets(mainView);
 
         mPrefs = getSharedPreferences(Utils.PREFS, 0);
         mPrefs.registerOnSharedPreferenceChangeListener(this);
