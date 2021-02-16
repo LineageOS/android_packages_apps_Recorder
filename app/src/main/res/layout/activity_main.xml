@@ -21,7 +21,8 @@
     android:id="@+id/main_root"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/sound">
+    android:background="@color/sound"
+    android:clipToPadding="false">
 
     <TextView
         android:id="@+id/main_title"

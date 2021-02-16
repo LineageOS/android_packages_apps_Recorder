@@ -29,8 +29,7 @@
         android:paddingBottom="18dp"
         android:paddingEnd="?attr/dialogPreferredPadding"
         android:paddingStart="?attr/dialogPreferredPadding"
-        android:paddingTop="18dp"
-        android:theme="@style/AppTheme.NoActionBar">
+        android:paddingTop="18dp">
 
         <TextView
             android:id="@+id/dialog_title"
