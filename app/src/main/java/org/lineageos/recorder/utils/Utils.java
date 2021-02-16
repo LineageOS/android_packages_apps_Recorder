@@ -17,7 +17,11 @@ package org.lineageos.recorder.utils;
 
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.view.View;
 import android.view.inputmethod.InputMethodManager;
+
+import androidx.core.graphics.Insets;
+import androidx.core.view.ViewCompat;
 
 import java.io.Closeable;
 import java.io.IOException;
@@ -64,6 +68,23 @@ public class Utils {
 
     public static boolean isPaused(Context context) {
         return PREF_RECORDING_PAUSED.equals(getStatus(context));
+    }
+
+    public static void setFullScreen(View view) {
+        int flags = view.getSystemUiVisibility();
+        flags |= View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+                | View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+                | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION;
+        view.setSystemUiVisibility(flags);
+    }
+
+    public static void setVerticalInsets(View view) {
+        ViewCompat.setOnApplyWindowInsetsListener(view, (v, insets) -> {
+            Insets systemInsets = insets.getSystemWindowInsets();
+            v.setPadding(v.getPaddingLeft(), systemInsets.top,
+                    v.getPaddingRight(), systemInsets.bottom);
+            return insets;
+        });
     }
 
     /**
