@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "a92fec37_130a3138",
+        "filename": "app/src/main/java/org/lineageos/recorder/RecorderActivity.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 8461
+      },
+      "writtenOn": "2021-02-17T09:27:24Z",
+      "side": 1,
+      "message": "Unused imports?",
+      "range": {
+        "startLine": 41,
+        "startChar": 0,
+        "endLine": 43,
+        "endChar": 0
+      },
+      "revId": "143f70a3761f826da0d2d854df56af54eff21e5e",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    }
+  ]
+}
