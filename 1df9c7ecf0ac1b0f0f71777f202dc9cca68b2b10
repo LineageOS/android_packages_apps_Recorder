@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "db2e255e_7b6678cb",
+        "filename": ".gitignore",
+        "patchSetId": 1
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 8461
+      },
+      "writtenOn": "2021-02-23T20:16:31Z",
+      "side": 1,
+      "message": "Keep the newline",
+      "revId": "1df9c7ecf0ac1b0f0f71777f202dc9cca68b2b10",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "461324b0_387afe9f",
+        "filename": "WORKSPACE",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 8461
+      },
+      "writtenOn": "2021-02-23T20:16:31Z",
+      "side": 1,
+      "message": "Missing copyright",
+      "revId": "1df9c7ecf0ac1b0f0f71777f202dc9cca68b2b10",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c060a08b_3a573959",
+        "filename": "app/src/main/BUILD.bazel",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 8461
+      },
+      "writtenOn": "2021-02-23T20:16:31Z",
+      "side": 1,
+      "message": "Missing copyright",
+      "revId": "1df9c7ecf0ac1b0f0f71777f202dc9cca68b2b10",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    }
+  ]
+}
