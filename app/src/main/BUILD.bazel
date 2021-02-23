@@ -1,0 +1,38 @@
+load("@rules_android//android:rules.bzl", "android_binary", "android_library")
+
+android_library(
+    name = "recorder_lib",
+    manifest = "AndroidManifest.xml",
+    srcs =  glob([
+        "java/org/lineageos/recorder/**/*.java",
+        "gen/**/*.java",
+    ]),
+    resource_files = glob([
+        "res/**",
+    ]),
+    custom_package = "org.lineageos.recorder",
+    visibility = [
+        "//app/src/main:__pkg__",
+    ],
+    deps = [
+        "@maven//:androidx_annotation_annotation",
+        "@maven//:androidx_appcompat_appcompat",
+        "@maven//:androidx_cardview_cardview",
+        "@maven//:androidx_constraintlayout_constraintlayout",
+        "@maven//:androidx_coordinatorlayout_coordinatorlayout",
+        "@maven//:androidx_core_core",
+        "@maven//:androidx_recyclerview_recyclerview",
+        "@maven//:com_google_android_material_material",
+    ],
+)
+
+android_binary(
+    name = "recorder",
+    manifest = "AppManifest.xml",
+    visibility = [
+        "//visibility:public",
+    ],
+    deps = [
+        ":recorder_lib",
+    ],
+)

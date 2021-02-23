@@ -23,8 +23,10 @@
     <uses-permission android:name="android.permission.RECORD_AUDIO" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
 
-    <!-- This is needed for aosp build env -->
-    <uses-sdk tools:ignore="GradleOverrides" />
+    <!-- This is needed for aosp and bazel build env -->
+    <uses-sdk
+        android:minSdkVersion="29"
+        tools:ignore="GradleOverrides" />
 
     <application
         android:allowBackup="false"
