@@ -18,10 +18,12 @@ package org.lineageos.recorder.utils;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Handler;
-import androidx.annotation.NonNull;
+import android.os.Looper;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+
+import androidx.annotation.NonNull;
 
 import org.lineageos.recorder.R;
 
@@ -46,7 +48,8 @@ public class OnBoardingHelper {
         if (appOpenTimes == RIPPLE_OPEN_APP_WAIT) {
             // Animate using ripple effect
             for (int i = 1; i <= RIPPLE_REPEAT; i++) {
-                new Handler().postDelayed(pressRipple(view), i * RIPPLE_DELAY);
+                new Handler(Looper.getMainLooper())
+                        .postDelayed(pressRipple(view), i * RIPPLE_DELAY);
             }
         }
     }
@@ -61,7 +64,8 @@ public class OnBoardingHelper {
         }
 
         if (appOpenTimes == ROTATION_OPEN_APP_WAIT) {
-            new Handler().postDelayed(rotationAnimation(context, view), ROTATION_DELAY);
+            new Handler(Looper.getMainLooper())
+                    .postDelayed(rotationAnimation(context, view), ROTATION_DELAY);
         }
     }
 
