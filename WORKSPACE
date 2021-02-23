@@ -1,7 +1,7 @@
 load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
 
 # Android
-ANDROID_API_LEVEL = 29
+ANDROID_API_LEVEL = 30
 ANDROID_BUILD_TOOLS = "30.0.3"
 # Rules
 RULES_ANDROID_TAG = "0.1.1"
