@@ -21,8 +21,11 @@ import android.content.ContentValues;
 import android.database.Cursor;
 import android.net.Uri;
 import android.os.AsyncTask;
+import android.os.Handler;
+import android.os.Looper;
 import android.os.ParcelFileDescriptor;
 import android.provider.MediaStore;
+import android.telecom.Call;
 import android.util.Log;
 
 import androidx.annotation.NonNull;
@@ -39,12 +42,23 @@ import java.nio.file.Files;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.concurrent.Callable;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.Future;
+import java.util.concurrent.FutureTask;
+import java.util.concurrent.TimeUnit;
+import java.util.concurrent.TimeoutException;
+import java.util.function.Consumer;
 
 public final class MediaProviderHelper {
     private static final String TAG = "MediaProviderHelper";
 
     private static final String MY_RECORDS_SORT =
             MediaStore.Audio.Media.DATE_ADDED + " DESC";
+
+    private static final ExecutorService executor = Executors.newFixedThreadPool(1);
 
     private MediaProviderHelper() {
     }
@@ -75,12 +89,13 @@ public final class MediaProviderHelper {
             return;
         }
 
-        new WriterTask(file, uri, cr, listener).execute();
+        runTask(new WriterTask(cr, uri, file), listener);
     }
 
     public static void requestMyRecordings(@NonNull ContentResolver cr,
                                            @NonNull OnContentLoaded listener) {
-        new LoaderTask(cr, listener).execute();
+
+        runTask(new LoaderTask(cr), listener);
     }
 
     public static void remove(@NonNull ContentResolver cr, @NonNull Uri uri) {
@@ -91,32 +106,47 @@ public final class MediaProviderHelper {
                               @NonNull Uri uri,
                               @NonNull String newName,
                               @NonNull OnContentRenamed listener) {
-        new RenameTask(cr, listener, uri).execute(newName);
+        runTask(new RenameTask(cr, uri, newName), listener);
+    }
+
+    private static <T> void runTask(Callable<T> callable, Consumer<T> consumer) {
+        Handler handler = new Handler(Looper.getMainLooper());
+        FutureTask<T> future = new FutureTask<T>(callable) {
+            @Override
+            protected void done() {
+                try {
+                    T result = get(1, TimeUnit.MINUTES);
+                    handler.post(() -> consumer.accept(result));
+                } catch (InterruptedException e) {
+                    Log.w(TAG, e);
+                } catch (ExecutionException | TimeoutException e) {
+                    throw new RuntimeException("An error occurred while executing task",
+                            e.getCause());
+                }
+            }
+        };
+        executor.execute(future);
     }
 
     @RequiresApi(29)
-    static class WriterTask extends AsyncTask<Void, Void, String> {
-        @NonNull
-        private final File file;
-        @NonNull
-        private final Uri uri;
+    static class WriterTask implements Callable<String> {
         @NonNull
         private final ContentResolver cr;
         @NonNull
-        private final OnContentWritten listener;
+        private final Uri uri;
+        @NonNull
+        private final File file;
 
-        /* synthetic */ WriterTask(@NonNull File file,
-                                   @NonNull Uri uri,
-                                   @NonNull ContentResolver cr,
-                                   @NonNull OnContentWritten listener) {
-            this.file = file;
-            this.uri = uri;
+        WriterTask(@NonNull ContentResolver cr,
+                   @NonNull Uri uri,
+                   @NonNull File file) {
             this.cr = cr;
-            this.listener = listener;
+            this.uri = uri;
+            this.file = file;
         }
 
         @Override
-        protected String doInBackground(Void... voids) {
+        public String call() {
             try {
                 final ParcelFileDescriptor pfd = cr.openFileDescriptor(uri, "w", null);
                 if (pfd == null) {
@@ -142,29 +172,19 @@ public final class MediaProviderHelper {
                 return null;
             }
         }
-
-        @Override
-        protected void onPostExecute(String s) {
-            listener.onContentWritten(s);
-        }
     }
 
-    @RequiresApi(29)
-    static class LoaderTask extends AsyncTask<Void, Void, List<RecordingData>> {
+    static class LoaderTask implements Callable<List<RecordingData>> {
 
         @NonNull
         private final ContentResolver cr;
-        @NonNull
-        private final OnContentLoaded listener;
 
-        /* synthetic */ LoaderTask(@NonNull ContentResolver cr,
-                                   @NonNull OnContentLoaded listener) {
+        LoaderTask(@NonNull ContentResolver cr) {
             this.cr = cr;
-            this.listener = listener;
         }
 
         @Override
-        protected List<RecordingData> doInBackground(Void... voids) {
+        public List<RecordingData> call() {
             final List<RecordingData> list = new ArrayList<>();
 
             final String[] projection = new String[] {
@@ -197,55 +217,41 @@ public final class MediaProviderHelper {
 
             return list;
         }
-
-        @Override
-        protected void onPostExecute(List<RecordingData> list) {
-            listener.onContentLoaded(list);
-        }
     }
 
     @RequiresApi(29)
-    static class RenameTask extends AsyncTask<String, Void, Boolean> {
+    static class RenameTask implements Callable<Boolean> {
         @NonNull
         private final ContentResolver cr;
         @NonNull
-        private final OnContentRenamed listener;
-        @NonNull
         private final Uri uri;
+        @NonNull
+        private final String newName;
 
-        /* synthetic */ RenameTask(@NonNull ContentResolver cr,
-                                   @NonNull OnContentRenamed listener,
-                                   @NonNull Uri uri) {
+        RenameTask(@NonNull ContentResolver cr,
+                   @NonNull Uri uri,
+                   @NonNull String newName) {
             this.cr = cr;
-            this.listener = listener;
             this.uri = uri;
+            this.newName = newName;
         }
 
         @Override
-        protected Boolean doInBackground(String... strings) {
-            String newName = strings[0];
+        public Boolean call() {
             ContentValues cv = new ContentValues();
             cv.put(MediaStore.Audio.Media.DISPLAY_NAME, newName);
             cv.put(MediaStore.Audio.Media.TITLE, newName);
             int updated = cr.update(uri, cv, null, null);
             return updated == 1;
         }
-
-        @Override
-        protected void onPostExecute(Boolean result) {
-            listener.onContentRenamed(result);
-        }
     }
 
-    public interface OnContentWritten {
-        void onContentWritten(@Nullable String uri);
+    public interface OnContentWritten extends Consumer<String> {
     }
 
-    public interface OnContentLoaded {
-        void onContentLoaded(@NonNull List<RecordingData> list);
+    public interface OnContentLoaded extends Consumer<List<RecordingData>>{
     }
 
-    public interface OnContentRenamed {
-        void onContentRenamed(boolean success);
+    public interface OnContentRenamed extends Consumer<Boolean> {
     }
 }

@@ -110,7 +110,7 @@ public class RecorderActivity extends AppCompatActivity implements
         mSoundList.setOnClickListener(v -> openList());
         mSettings.setOnClickListener(v -> openSettings());
 
-        Utils.setFullScreen(mainView);
+        Utils.setFullScreen(getWindow(), mainView);
         Utils.setVerticalInsets(mainView);
 
         mPrefs = getSharedPreferences(Utils.PREFS, 0);
@@ -206,7 +206,7 @@ public class RecorderActivity extends AppCompatActivity implements
     private void toggleAfterPermissionRequest(int requestCode) {
         if (requestCode == REQUEST_SOUND_REC_PERMS) {
             bindSoundRecService();
-            new Handler().postDelayed(this::toggleSoundRecorder, 500);
+            new Handler(Looper.getMainLooper()).postDelayed(this::toggleSoundRecorder, 500);
         }
     }
 

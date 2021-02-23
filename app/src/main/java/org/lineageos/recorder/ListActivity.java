@@ -87,7 +87,7 @@ public class ListActivity extends AppCompatActivity implements RecordingItemCall
             }
         });
 
-        Utils.setFullScreen(coordinatorLayout);
+        Utils.setFullScreen(getWindow(), coordinatorLayout);
         Utils.setVerticalInsets(listView);
     }
 
