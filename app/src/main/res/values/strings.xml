@@ -102,7 +102,4 @@
     <string name="list_edit_confirm">Change</string>
     <!-- List item menu actions description for a11y -->
     <string name="list_item_menu">More actions</string>
-
-    <!-- Transition name for dialogActivity -->
-    <string name="transition_dialog_name" translatable="false">transition_dialog_activity</string>
 </resources>
