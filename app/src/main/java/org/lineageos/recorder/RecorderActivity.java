@@ -258,16 +258,17 @@ public class RecorderActivity extends AppCompatActivity implements
 
     private void refresh() {
         if (Utils.isRecording(this)) {
-            mRecordingText.setText(getString(R.string.sound_recording_title_working));
             mSoundFab.setImageResource(R.drawable.ic_stop_sound);
             mSoundFab.setSelected(true);
             mRecordingVisualizer.setVisibility(View.VISIBLE);
             mRecordingVisualizer.setAmplitude(0);
             mPauseResume.setVisibility(View.VISIBLE);
             if (Utils.isPaused(this)) {
+                mRecordingText.setText(getString(R.string.sound_recording_title_paused));
                 mPauseResume.setImageResource(R.drawable.ic_resume);
                 mPauseResume.setContentDescription(getString(R.string.resume));
             } else {
+                mRecordingText.setText(getString(R.string.sound_recording_title_working));
                 mPauseResume.setImageResource(R.drawable.ic_pause);
                 mPauseResume.setContentDescription(getString(R.string.pause));
             }
