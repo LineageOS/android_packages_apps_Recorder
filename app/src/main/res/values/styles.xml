@@ -15,7 +15,7 @@
 -->
 <resources>
 
-    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+    <style name="AppTheme" parent="Theme.AppCompat.DayNight.NoActionBar">
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
@@ -30,19 +30,11 @@
         <item name="android:windowIsFloating">true</item>
     </style>
 
-    <style name="AppTheme.ListActivity" parent="Theme.AppCompat.DayNight.NoActionBar">
-        <item name="android:navigationBarColor">@color/listNavigationBarColor</item>
+    <style name="AppTheme.Main">
+        <item name="android:navigationBarColor">@color/navigationBarColor</item>
         <item name="android:statusBarColor">@android:color/transparent</item>
         <item name="android:windowLightNavigationBar">@bool/is_day</item>
         <item name="android:windowLightStatusBar">@bool/is_day</item>
-    </style>
-
-    <style name="AppTheme.RecorderActivity">
-        <item name="android:navigationBarColor">@color/recorderNavigationBarColor</item>
-        <item name="android:statusBarColor">@android:color/transparent</item>
-        <item name="android:windowBackground">@color/sound</item>
-        <item name="android:windowLightNavigationBar">true</item>
-        <item name="android:windowLightStatusBar">true</item>
     </style>
 
     <style name="AppTheme.RecordTitle">
@@ -52,7 +44,7 @@
         <item name="android:paddingBottom">24dp</item>
         <item name="android:paddingStart">16dp</item>
         <item name="android:paddingEnd">16dp</item>
-        <item name="android:textColor">@color/icon</item>
+        <item name="android:textColor">?android:attr/colorAccent</item>
         <item name="android:textSize">36sp</item>
         <item name="android:maxLines">1</item>
     </style>
@@ -62,7 +54,7 @@
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_margin">16dp</item>
         <item name="android:stateListAnimator">@animator/lift_on_touch</item>
-        <item name="backgroundTint">@color/white</item>
+        <item name="backgroundTint">?android:attr/colorAccent</item>
         <item name="android:layout_centerInParent">true</item>
     </style>
 
@@ -83,7 +75,7 @@
         <item name="android:background">?attr/selectableItemBackgroundBorderless</item>
     </style>
 
-    <style name="AppTheme.ListActivity.PopupMenuOverlapAnchor">
+    <style name="AppTheme.Main.PopupMenuOverlapAnchor">
         <item name="android:overlapAnchor">true</item>
         <item name="android:dropDownVerticalOffset">0dp</item>
         <item name="android:dropDownHorizontalOffset">0dp</item>

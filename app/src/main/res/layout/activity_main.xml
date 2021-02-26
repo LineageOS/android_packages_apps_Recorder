@@ -21,7 +21,6 @@
     android:id="@+id/main_root"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/sound"
     android:clipToPadding="false">
 
     <TextView
@@ -31,7 +30,7 @@
         android:layout_height="wrap_content"
         android:text="@string/app_name"
         android:textAlignment="center"
-        android:textColor="@color/white"
+        android:textColor="?android:attr/textColorPrimary"
         app:layout_constraintBottom_toTopOf="@id/main_recording_visualizer"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -52,7 +51,7 @@
             style="@style/AppTheme.RecordFab"
             android:layout_gravity="center"
             android:contentDescription="@null"
-            android:src="@drawable/ic_action_sound_record" />
+            android:src="@drawable/ic_action_record" />
     </FrameLayout>
 
     <org.lineageos.recorder.ui.WaveFormView
