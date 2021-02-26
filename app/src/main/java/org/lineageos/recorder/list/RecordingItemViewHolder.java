@@ -80,7 +80,7 @@ public class RecordingItemViewHolder extends RecyclerView.ViewHolder {
     private void showPopupMenu(@NonNull View view) {
         final ContextThemeWrapper wrapper = new ContextThemeWrapper(
                 itemView.getContext(),
-                R.style.AppTheme_ListActivity_PopupMenuOverlapAnchor
+                R.style.AppTheme_Main_PopupMenuOverlapAnchor
         );
         final PopupMenu popupMenu = new PopupMenu(wrapper, view, Gravity.NO_GRAVITY,
                 R.attr.actionOverflowButtonStyle, 0);

@@ -287,7 +287,7 @@ public class SoundRecorderService extends Service {
                 .setContentTitle(getString(R.string.sound_notification_title))
                 .setContentText(getString(R.string.sound_notification_message, duration))
                 .setSmallIcon(R.drawable.ic_notification_sound)
-                .setColor(ContextCompat.getColor(this, R.color.sound))
+                .setColor(ContextCompat.getColor(this, R.color.colorAccent))
                 .setContentIntent(pi);
 
         if (mIsPaused) {
@@ -330,7 +330,7 @@ public class SoundRecorderService extends Service {
                 .setContentTitle(getString(R.string.sound_notification_title))
                 .setContentText(getString(R.string.sound_notification_message, duration))
                 .setSmallIcon(R.drawable.ic_notification_sound)
-                .setColor(ContextCompat.getColor(this, R.color.sound))
+                .setColor(ContextCompat.getColor(this, R.color.colorAccent))
                 .addAction(R.drawable.ic_play, getString(R.string.play), playPIntent)
                 .addAction(R.drawable.ic_share, getString(R.string.share), sharePIntent)
                 .addAction(R.drawable.ic_delete, getString(R.string.delete), deletePIntent)

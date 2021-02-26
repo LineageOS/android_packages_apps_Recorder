@@ -37,8 +37,6 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
-import androidx.core.app.ActivityCompat;
-import androidx.core.app.ActivityOptionsCompat;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
@@ -54,7 +52,6 @@ import java.util.ArrayList;
 public class RecorderActivity extends AppCompatActivity implements
         SharedPreferences.OnSharedPreferenceChangeListener {
     private static final int REQUEST_SOUND_REC_PERMS = 440;
-    private static final int REQUEST_DIALOG_ACTIVITY = 441;
 
     private static final int[] PERMISSION_ERROR_MESSAGE_RES_IDS = {
             0,
@@ -69,8 +66,6 @@ public class RecorderActivity extends AppCompatActivity implements
 
     private FloatingActionButton mSoundFab;
     private ImageView mPauseResume;
-    private ImageView mSoundList;
-    private ImageView mSettings;
 
     private TextView mRecordingText;
     private WaveFormView mRecordingVisualizer;
@@ -98,16 +93,16 @@ public class RecorderActivity extends AppCompatActivity implements
         ConstraintLayout mainView = findViewById(R.id.main_root);
         mSoundFab = findViewById(R.id.sound_fab);
         mPauseResume = findViewById(R.id.sound_pause_resume);
-        mSoundList = findViewById(R.id.sound_list_icon);
-        mSettings = findViewById(R.id.sound_settings);
+        ImageView soundList = findViewById(R.id.sound_list_icon);
+        ImageView settings = findViewById(R.id.sound_settings);
 
         mRecordingText = findViewById(R.id.main_title);
         mRecordingVisualizer = findViewById(R.id.main_recording_visualizer);
 
         mSoundFab.setOnClickListener(v -> toggleSoundRecorder());
         mPauseResume.setOnClickListener(v -> togglePause());
-        mSoundList.setOnClickListener(v -> openList());
-        mSettings.setOnClickListener(v -> openSettings());
+        soundList.setOnClickListener(v -> openList());
+        settings.setOnClickListener(v -> openSettings());
 
         Utils.setFullScreen(getWindow(), mainView);
         Utils.setVerticalInsets(mainView);
@@ -119,8 +114,8 @@ public class RecorderActivity extends AppCompatActivity implements
 
         bindSoundRecService();
 
-        OnBoardingHelper.onBoardList(this, mSoundList);
-        OnBoardingHelper.onBoardSettings(this, mSettings);
+        OnBoardingHelper.onBoardList(this, soundList);
+        OnBoardingHelper.onBoardSettings(this, settings);
     }
 
     @Override
@@ -258,7 +253,7 @@ public class RecorderActivity extends AppCompatActivity implements
 
     private void refresh() {
         if (Utils.isRecording(this)) {
-            mSoundFab.setImageResource(R.drawable.ic_stop_sound);
+            mSoundFab.setImageResource(R.drawable.ic_action_stop);
             mSoundFab.setSelected(true);
             mRecordingVisualizer.setVisibility(View.VISIBLE);
             mRecordingVisualizer.setAmplitude(0);
@@ -277,7 +272,7 @@ public class RecorderActivity extends AppCompatActivity implements
             }
         } else {
             mRecordingText.setText(getString(R.string.main_sound_action));
-            mSoundFab.setImageResource(R.drawable.ic_action_sound_record);
+            mSoundFab.setImageResource(R.drawable.ic_action_record);
             mSoundFab.setSelected(false);
             mRecordingVisualizer.setVisibility(View.INVISIBLE);
             mPauseResume.setVisibility(View.GONE);
@@ -345,20 +340,10 @@ public class RecorderActivity extends AppCompatActivity implements
         }
     }
 
-    private void showDialog(Intent intent, View view) {
-        String transitionName = getString(R.string.transition_dialog_name);
-        view.setTransitionName(transitionName);
-        ActivityOptionsCompat options = ActivityOptionsCompat.makeSceneTransitionAnimation(this,
-                view, transitionName);
-        ActivityCompat.startActivityForResult(this, intent,
-                REQUEST_DIALOG_ACTIVITY, options.toBundle());
-    }
-
     private void openSettings() {
         Intent intent = new Intent(this, DialogActivity.class);
         intent.putExtra(DialogActivity.EXTRA_TITLE, R.string.settings_title);
-        intent.putExtra(DialogActivity.EXTRA_SETTINGS_SCREEN, true);
-        showDialog(intent, mSettings);
+        startActivity(intent);
     }
 
     private void openList() {

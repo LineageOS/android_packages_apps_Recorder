@@ -14,5 +14,5 @@
      limitations under the License.
 -->
 <resources>
-    <color name="listNavigationBarColor">@android:color/transparent</color>
+    <color name="navigationBarColor">@android:color/transparent</color>
 </resources>
