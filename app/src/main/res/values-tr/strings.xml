@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Copyright (c) 2017 The LineageOS Project
+<!-- Copyright (c) 2017-2021 The LineageOS Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -21,40 +21,19 @@
     <string name="delete">Sil</string>
     <string name="cancel">İptal</string>
     <string name="delete_title">Kayıt siliniyor</string>
-    <string name="delete_message">%1$s silmek istediğinizden emin misiniz? Bu geri alınamaz</string>
     <string name="sound_notification_title">Ses Kaydedici</string>
     <string name="sound_notification_message">Ses uzunluğu: %1$s</string>
     <string name="sound_recording_title_working">Kaydediliyor</string>
     <string name="sound_last_title">Son kayıt</string>
     <string name="sound_channel_title">Ses kaydı</string>
     <string name="sound_channel_desc">Ses kaydedilirken kalıcı bildirim göster ve tamamlandıktan sonra bildirim göster</string>
-    <string name="screen_audio_message_on">Mikrofondaki ses videoya dahil edilecek</string>
-    <string name="screen_audio_message_off">Mikrofondan gelen ses videoya dahil edilmeyecek</string>
-    <string name="screen_audio_message_disabled">Ekranı kaydederken bu ayarı değiştirmek mümkün değildir</string>
-    <string name="screen_audio_warning_button_ask">Sor</string>
-    <string name="screen_insufficient_storage">Yetersiz depolama</string>
-    <string name="screen_not_enough_storage">Yeterli kullanılabilir depolama alanı yok</string>
-    <string name="screen_notification_title">Ekran Kaydedici</string>
-    <string name="screen_notification_message">Video uzunluğu: %s</string>
-    <string name="screen_notification_message_done">Paylaşmak için hazır</string>
-    <string name="screen_recording_message">Ekran kaydediliyor\u2026</string>
-    <string name="screen_last_title">Son kayıt</string>
     <string name="screen_last_message">Süre: %1$d saniye</string>
-    <string name="screen_overlay_notif_title">Kayıt yapmaya hazır</string>
-    <string name="screen_overlay_notif_message">Başlamaya hazır olduğunuzda kayıt düğmesine basın</string>
-    <string name="screen_settings_title">Ekran kaydedici ayarları</string>
-    <string name="screen_overlay_channel_title">Ekran kaydetmek için hazır</string>
-    <string name="screen_overlay_channel_desc">Ekran kaydını gösteren bildirim başlatmaya hazır</string>
-    <string name="screen_channel_title">Ekran kaydı</string>
-    <string name="screen_channel_desc">Ekran kaydedilirken kalıcı bildirim göster ve tamamlandıktan sonra bildirim göster</string>
     <string name="dialog_permissions_title">İzinler</string>
     <string name="dialog_permissions_mic">Kaydedici ses kaydetmek için mikrofon iznine ihtiyaç duyuyor</string>
     <string name="dialog_permissions_phone">Arama esnasında bu uygulamanın kayıt yapmasını önlemek için kaydedicinin telefon durumu erişimine ihtiyacı var</string>
     <string name="dialog_permissions_mic_phone">Kaydedici, arama esnasında kayıt yapmayı önlemek için mikrofon iznine ve telefon durumu erişimine ihtiyaç duyar</string>
     <string name="dialog_permissions_ask">Tekrar sor</string>
     <string name="dialog_permissions_dismiss">Reddet</string>
-    <string name="dialog_permissions_overlay">Kaydedici, ekranınızı kaydetmek için \"Diğer uygulamalar üzerinde görüntüle\" iznine ihtiyaç duyar. İzin ver tuşuna basın, ayarların izinlerini etkinleştirin ve Kaydediciye geri dönün</string>
     <string name="snack_permissions_no_permission">Gerekli izinler reddedildi, kayda başlamak için bunları Ayarlar uygulamasından etkinleştirin</string>
-    <string name="main_screen_action">Ekranı kaydet</string>
     <string name="main_sound_action">Ses kaydet</string>
 </resources>

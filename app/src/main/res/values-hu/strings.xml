@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Copyright (c) 2017 The LineageOS Project
+<!-- Copyright (c) 2017-2021 The LineageOS Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -21,40 +21,19 @@
     <string name="delete">Törlés</string>
     <string name="cancel">Mégse</string>
     <string name="delete_title">Felvétel törlése</string>
-    <string name="delete_message">Biztosan törli: %1$s? Ez nem vonható vissza</string>
     <string name="sound_notification_title">Hangrögzítő</string>
     <string name="sound_notification_message">Audio hossza: %1$s</string>
     <string name="sound_recording_title_working">Felvétel</string>
     <string name="sound_last_title">Utolsó felvétel</string>
     <string name="sound_channel_title">Hangrögzítés</string>
     <string name="sound_channel_desc">Állandó értesítés hangfelvétel közben és értesítés befejezéskor</string>
-    <string name="screen_audio_message_on">A mikrofonon keresztüli hang a videó része lesz</string>
-    <string name="screen_audio_message_off">A mikrofonon keresztüli hang nem lesz a videó része</string>
-    <string name="screen_audio_message_disabled">Nem lehet megváltoztatni ezt a beállítást, miközben képernyőrögzítés van folyamatban</string>
-    <string name="screen_audio_warning_button_ask">Rákérdez</string>
-    <string name="screen_insufficient_storage">Nincs elég tárhely</string>
-    <string name="screen_not_enough_storage">Nincs elég tárhely</string>
-    <string name="screen_notification_title">Képernyőfelvevő</string>
-    <string name="screen_notification_message">Videó hossza: %s</string>
-    <string name="screen_notification_message_done">Megosztásra kész</string>
-    <string name="screen_recording_message">Képernyőfelvétel\u2026</string>
-    <string name="screen_last_title">Utolsó felvétel</string>
     <string name="screen_last_message">%1$d másodperc hosszú</string>
-    <string name="screen_overlay_notif_title">Felvételre kész</string>
-    <string name="screen_overlay_notif_message">Nyomja meg a felvétel gombot, ha készen áll az indításhoz</string>
-    <string name="screen_settings_title">A Képernyővideó-felvevő beállításai</string>
-    <string name="screen_overlay_channel_title">Képernyőfelvételre felkészültség jelzése</string>
-    <string name="screen_overlay_channel_desc">Értesítés megjelenítése amikor a képernyőfelvétel elindítható</string>
-    <string name="screen_channel_title">Képernyőfelvétel</string>
-    <string name="screen_channel_desc">Állandó értesítés képernyőfelvétel közben és értesítés befejezéskor</string>
     <string name="dialog_permissions_title">Jogosultságok</string>
     <string name="dialog_permissions_mic">Felvevőnek a mikrofonhoz való hozzáférés kell a hang rögzítéséhez</string>
     <string name="dialog_permissions_phone">Felvevőnek a telefon állapotához való hozzáférésre van szüksége a telefonálás közbeni rögzítés megakadályozására</string>
     <string name="dialog_permissions_mic_phone">Felvevőnek a mikrofonhoz való hozzáférésre van szüksége a hang rögzítéséhez és a telefon állapotához való hozzáférésre a telefonálás közbeni rögzítés megakadályozására</string>
     <string name="dialog_permissions_ask">Kérdezze meg újra</string>
     <string name="dialog_permissions_dismiss">Elvetés</string>
-    <string name="dialog_permissions_overlay">A Felvevőnek szüksége van az \"Átfedő ablakok rajzolása\" engedélyre a képernyőfelvétel készítéséhez. Nyomja meg az engedélyez gombot, a beállításokban engedélyezze azt, és térjen vissza a Felvevőhöz</string>
     <string name="snack_permissions_no_permission">Szükséges engedélyek megtagadva, engedélyezze őket a Beállításokban a felvétel megkezdéséhez</string>
-    <string name="main_screen_action">Képernyővideó-felvétel</string>
     <string name="main_sound_action">Hangrögzítés</string>
 </resources>

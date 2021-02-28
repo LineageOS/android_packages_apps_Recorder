@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Copyright (c) 2017 The LineageOS Project
+<!-- Copyright (c) 2017-2021 The LineageOS Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -14,14 +14,7 @@
      limitations under the License.
 -->
 <resources>
-    <string name="delete_message">Ertu viss um að þú viljir eyða %1$s? Þessi aðgerð er ekki afturkallanleg</string>
-    <string name="screen_audio_message_on">Hljóð frá hljóðnema verður innifalið í myndskeiðinu</string>
-    <string name="screen_audio_message_off">Hljóð frá hljóðnema verður ekki innifalið í myndskeiðinu</string>
-    <string name="screen_audio_message_disabled">Það er ekki hægt að breyta þessari stillingu á meðan verið er að taka upp af skjánum</string>
-    <string name="screen_insufficient_storage">Ónógt geymslupláss</string>
-    <string name="screen_overlay_notif_message">Ýttu á upptökuhnappinn þegar þú ert til í að byrja</string>
     <string name="dialog_permissions_mic">Upptökuforitið þarf heimild fyrir aðgang að hljóðnema til að taka upp hljóð</string>
     <string name="dialog_permissions_phone">Upptökuforitið þarf heimild fyrir aðgang að stöðu símans til að koma í veg fyrir hljóðupptöku á meðan símtölum stendur</string>
     <string name="dialog_permissions_mic_phone">Upptökuforitið þarf heimild fyrir aðgang að hljóðnema til að taka upp hljóð og að stöðu símans til að koma í veg fyrir hljóðupptöku á meðan símtölum stendur</string>
-    <string name="dialog_permissions_overlay">Upptökuforitið þarf heimild til að \"Teikna yfir önnur forrit\" til að taka upp af skjánum þínum. Ýttu á \'Leyfa\', virkjaðu heimildir í stillingunum og komdu svo til baka í upptökuforitið</string>
 </resources>

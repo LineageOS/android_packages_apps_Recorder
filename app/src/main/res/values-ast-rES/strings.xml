@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Copyright (c) 2017 The LineageOS Project
+<!-- Copyright (c) 2017-2021 The LineageOS Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -21,39 +21,18 @@
     <string name="delete">Desaniciar</string>
     <string name="cancel">Encaboxar</string>
     <string name="delete_title">Desaniciando grabación</string>
-    <string name="delete_message">¿De xuru que quies desaniciar %1$s? Esto nun pue desfacese</string>
     <string name="sound_notification_title">Grabadora de soníu</string>
     <string name="sound_notification_message">Duración d\'audiu: %1$s</string>
     <string name="sound_recording_title_working">Grabando</string>
     <string name="sound_last_title">Grabación cabera</string>
     <string name="sound_channel_title">Grabación de soníu</string>
     <string name="sound_channel_desc">Notificación persistente na grabación de soníu y notificación cuando tea fecha</string>
-    <string name="screen_audio_message_on">Incluyiráse nel videu l\'audiu del micrófonu</string>
-    <string name="screen_audio_message_off">Nun s\'incluyirá nel videu l\'audiu del micrófonu</string>
-    <string name="screen_audio_message_disabled">Nun ye posible camudar esta configuración mentanto se ta grabando la pantalla</string>
-    <string name="screen_audio_warning_button_ask">Entrugar</string>
-    <string name="screen_insufficient_storage">Almacenamientu insufiente</string>
-    <string name="screen_not_enough_storage">Nun hai espaciu abondo disponible</string>
-    <string name="screen_notification_title">Grabadora de pantalla</string>
-    <string name="screen_notification_message">Duración del videu: %s</string>
-    <string name="screen_notification_message_done">Preparada pa compartir</string>
-    <string name="screen_recording_message">Ta grabándose la pantalla\u2026</string>
-    <string name="screen_last_title">Grabación cabera</string>
-    <string name="screen_overlay_notif_title">Preparada pa grabar</string>
-    <string name="screen_overlay_notif_message">Primi\'l botón de grabar cuando teas preparáu</string>
-    <string name="screen_settings_title">Axustes de grabación de la pantalla</string>
-    <string name="screen_overlay_channel_title">Preparáu pa grabar la pantalla</string>
-    <string name="screen_overlay_channel_desc">Avisu qu\'amuesa que la grabación de pantalla ta preparada p\'aniciase</string>
-    <string name="screen_channel_title">Grabación de pantalla</string>
-    <string name="screen_channel_desc">Notificación persistente na grabación de soníu y notificación cuando tea fecha</string>
     <string name="dialog_permissions_title">Permisos</string>
     <string name="dialog_permissions_mic">Grabadora precisa\'l permisu del micrófonu pa grabar audiu</string>
     <string name="dialog_permissions_phone">Grabadora precisa\'l permisu del estáu del teléfonu pa evitar qu\'esta aplicación grabe entrín teas llamando</string>
     <string name="dialog_permissions_mic_phone">Grabadora precisa\'l permisu\'l micrófonu pa grabar audiu y l\'accesu al estáu del teléfonu pa evitar qu\'esta aplicación grabe entrín teas llamando</string>
     <string name="dialog_permissions_ask">Entrugar de nueves</string>
     <string name="dialog_permissions_dismiss">Escartar</string>
-    <string name="dialog_permissions_overlay">La grabadora necesita permisu pa «Amosase penriba d\'otres aplicaciones» y grabar la to pantalla. Calca permitir, activa\'l permisu nos axustes y torna a la grabadora</string>
     <string name="snack_permissions_no_permission">Ñegáronse permisos riquíos, habilítalos dende Axustes pa entamar a grabar</string>
-    <string name="main_screen_action">Grabar la pantalla</string>
     <string name="main_sound_action">Grabar el soníu</string>
 </resources>

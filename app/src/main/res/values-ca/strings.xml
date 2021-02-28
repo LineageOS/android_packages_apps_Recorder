@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Copyright (c) 2017 The LineageOS Project
+<!-- Copyright (c) 2017-2021 The LineageOS Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -21,40 +21,19 @@
     <string name="delete">Elimina</string>
     <string name="cancel">Cancel·la</string>
     <string name="delete_title">S\'està eliminant el registre</string>
-    <string name="delete_message">Estàs segur que vols eliminar %1$s? Aquesta acció no podrà desfer-se</string>
     <string name="sound_notification_title">Gravadora de so</string>
     <string name="sound_notification_message">Durada de l\'àudio: %1$s</string>
     <string name="sound_recording_title_working">S\'està gravant</string>
     <string name="sound_last_title">Darrer enregistrament</string>
     <string name="sound_channel_title">Enregistrament de so</string>
     <string name="sound_channel_desc">Notificació persistent quan s\'està enregistrant so i notificació quan s\'hagi acabat</string>
-    <string name="screen_audio_message_on">L\'àudio del micròfon s\'inclourà al vídeo</string>
-    <string name="screen_audio_message_off">L\'àudio del micròfon no s\'inclourà al vídeo</string>
-    <string name="screen_audio_message_disabled">No és possible canviar aquesta configuració mentre s\'enregistra la pantalla</string>
-    <string name="screen_audio_warning_button_ask">Pregunta</string>
-    <string name="screen_insufficient_storage">Emmagatzematge insuficient</string>
-    <string name="screen_not_enough_storage">No hi ha prou emmagatzematge disponible</string>
-    <string name="screen_notification_title">Gravadora de pantalla</string>
-    <string name="screen_notification_message">Durada del vídeo: %s</string>
-    <string name="screen_notification_message_done">A punt per compartir</string>
-    <string name="screen_recording_message">La pantalla està sent gravada\u2026</string>
-    <string name="screen_last_title">Darrer enregistrament</string>
     <string name="screen_last_message">Durada: %1$d segons</string>
-    <string name="screen_overlay_notif_title">Preparat per enregistrar</string>
-    <string name="screen_overlay_notif_message">Prem el botó de gravació quan estiguis a punt per començar</string>
-    <string name="screen_settings_title">Configuració de l\'enregistrador de pantalla</string>
-    <string name="screen_overlay_channel_title">Preparat per enregistrar la pantalla</string>
-    <string name="screen_overlay_channel_desc">Es mostrarà una notificació quan l\'enregistrament de pantalla estigui llest per començar</string>
-    <string name="screen_channel_title">Enregistrament de pantalla</string>
-    <string name="screen_channel_desc">Notificació persistent quan s\'està enregistrant la pantalla i notificació quan s\'hagi acabat</string>
     <string name="dialog_permissions_title">Permisos</string>
     <string name="dialog_permissions_mic">La gravadora necessita permís d\'accés al micròfon per enregistrar so</string>
     <string name="dialog_permissions_phone">La gravadora necessita accedir a l\'estat del telèfon per evitar que aquesta aplicació enregistri mentre estàs trucant</string>
     <string name="dialog_permissions_mic_phone">La gravadora de sons necessita permís d\'accés al micròfon per enregistrar so i d\'accés a l\'estat del telèfon per evitar que aquesta aplicació enregistri mentre estàs trucant</string>
     <string name="dialog_permissions_ask">Torna a preguntar</string>
     <string name="dialog_permissions_dismiss">Descarta</string>
-    <string name="dialog_permissions_overlay">La gravadora necessita el permís «Dibuixar sobre altres aplicacions» per gravar la pantalla. Prem permetre per habilitar el permís a la configuració i torneu a la gravadora</string>
     <string name="snack_permissions_no_permission">Els permisos necessaris han estat denegats, habilita\'ls des de l\'aplicació Configuració per iniciar l\'enregistrament</string>
-    <string name="main_screen_action">Enregistra la pantalla</string>
     <string name="main_sound_action">Enregistra el so</string>
 </resources>

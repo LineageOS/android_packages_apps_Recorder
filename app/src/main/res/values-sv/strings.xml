@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Copyright (c) 2017 The LineageOS Project
+<!-- Copyright (c) 2017-2021 The LineageOS Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -21,27 +21,12 @@
     <string name="delete">Radera</string>
     <string name="cancel">Avbryt</string>
     <string name="delete_title">Ta bort inspelning</string>
-    <string name="delete_message">Är du säker på att du vill ta bort %1$s? Denna åtgärd kan inte ångras</string>
     <string name="sound_notification_title">Ljudinspelare</string>
     <string name="sound_notification_message">Ljudlängd: %1$s</string>
     <string name="sound_recording_title_working">Spelar in</string>
     <string name="sound_last_title">Senaste inspelning</string>
     <string name="sound_channel_title">Ljudinspelning</string>
-    <string name="screen_audio_message_on">Ljud från mikrofonen kommer inkluderas i videon</string>
-    <string name="screen_audio_message_off">Ljud från mikrofonen kommer inte inkluderas i videon</string>
-    <string name="screen_audio_warning_button_ask">Fråga</string>
-    <string name="screen_insufficient_storage">Otillräckligt med utrymme</string>
-    <string name="screen_not_enough_storage">Inte tillräckligt med lagringsutrymme ledigt</string>
-    <string name="screen_notification_title">Skärminspelare</string>
-    <string name="screen_notification_message">Videolängd: %s</string>
-    <string name="screen_notification_message_done">Redo att dela</string>
-    <string name="screen_recording_message">Skärmen spelas in\u2026</string>
-    <string name="screen_last_title">Senaste inspelning</string>
     <string name="screen_last_message">Varaktighet: %1$d sekunder</string>
-    <string name="screen_overlay_notif_title">Redo att spela in</string>
-    <string name="screen_overlay_notif_message">Tryck på inspelningsknappen när du är redo att börja</string>
-    <string name="screen_overlay_channel_title">Redo att spela in skärmen</string>
-    <string name="screen_channel_title">Skärminspelning</string>
     <string name="dialog_permissions_title">Behörigheter</string>
     <string name="dialog_permissions_mic">Inspelare behöver mikrofonbehörighet för att spela in ljud</string>
     <string name="dialog_permissions_phone">Inspelaren behöver samtalsstatus åtkomst för att hindra appen från att spela in medans du är i ett samtal</string>
@@ -49,6 +34,5 @@
     <string name="dialog_permissions_ask">Fråga igen</string>
     <string name="dialog_permissions_dismiss">Avvisa</string>
     <string name="snack_permissions_no_permission">Nödvändiga behörigheter nekades, aktivera dem i appens inställningar för att starta inspelningen</string>
-    <string name="main_screen_action">Spela in skärmen</string>
     <string name="main_sound_action">Spela in ljud</string>
 </resources>

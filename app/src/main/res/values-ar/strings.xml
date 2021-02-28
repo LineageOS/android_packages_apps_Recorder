@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Copyright (c) 2017 The LineageOS Project
+<!-- Copyright (c) 2017-2021 The LineageOS Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -21,39 +21,18 @@
     <string name="delete">حذف</string>
     <string name="cancel">إلغاء</string>
     <string name="delete_title">حذف التسجيل</string>
-    <string name="delete_message">هل أنت متأكد من أنك تريد حذف %1$s؟ لا يمكن التراجع عن هذا</string>
     <string name="sound_notification_title">مُسجل الصوت</string>
     <string name="sound_notification_message">طول الصوت: %1$s</string>
     <string name="sound_recording_title_working">يتم التسجيل</string>
     <string name="sound_last_title">التسجيل الأخير</string>
     <string name="sound_channel_title">تسجيل الصوت</string>
     <string name="sound_channel_desc">إشعار دائم عند تسجيل الصوت والإشعار بعد اكتماله</string>
-    <string name="screen_audio_message_on">سيتم تضمين الصوت من الميكروفون في الفيديو</string>
-    <string name="screen_audio_message_off">لن يتم تضمين الصوت من الميكروفون في الفيديو</string>
-    <string name="screen_audio_message_disabled">لا يمكن تغيير هذا الإعداد أثناء تسجيل الشاشة</string>
-    <string name="screen_audio_warning_button_ask">اسأل</string>
-    <string name="screen_insufficient_storage">مساحة التخزين غير كافية</string>
-    <string name="screen_not_enough_storage">لا توجد مساحة كافية للتخزين</string>
-    <string name="screen_notification_title">مُسجل الشاشة</string>
-    <string name="screen_notification_message">طول الفيديو: %s</string>
-    <string name="screen_notification_message_done">جاهز للمشاركة</string>
-    <string name="screen_recording_message">يتم تسجيل الشاشة</string>
-    <string name="screen_last_title">التسجيل الأخير</string>
-    <string name="screen_overlay_notif_title">مستعد للتسجيل</string>
-    <string name="screen_overlay_notif_message">اضغط على زر التسجيل عندما تكون على استعداد للبدء</string>
-    <string name="screen_settings_title">ضبط إعدادات مسجل الشاشة</string>
-    <string name="screen_overlay_channel_title">جاهز لتسجيل الشاشة</string>
-    <string name="screen_overlay_channel_desc">عرض إشعار بأن شاشة التسجيل مستعدة للبدء</string>
-    <string name="screen_channel_title">تسجيل الشاشة</string>
-    <string name="screen_channel_desc">إشعار دائم عند تسجيل الشاشة والإشعار بعد اكتماله</string>
     <string name="dialog_permissions_title">الأذونات</string>
     <string name="dialog_permissions_mic">المُسجل يحتاج إلى إذن وصول للميكروفون لتسجيل الصوت</string>
     <string name="dialog_permissions_phone">المُسجل يحتاج إلى الوصول إلى حالة الهاتف لمنع هذا التطبيق من التسجيل أثناء قيامك بالاتصال</string>
     <string name="dialog_permissions_mic_phone">المُسجل يحتاج إلى إذن وصول للميكروفون لتسجيل الصوت والوصول إلى حالة الهاتف لمنع هذا التطبيق من التسجيل أثناء قيامك بالاتصال</string>
     <string name="dialog_permissions_ask">السماح مرة أخرى</string>
     <string name="dialog_permissions_dismiss">تجاهل</string>
-    <string name="dialog_permissions_overlay">المُسجل يحتاج إلى إذن \"الرسم فوق التطبيقات الأخرى\" لتسجيل شاشتك. برجاء السماح، وتفعيل الإذن في الإعدادات ثم عُد إلى المُسجل</string>
     <string name="snack_permissions_no_permission">تم رفض الأذونات المطلوبة، قم بتفعيلها من تطبيق الإعدادات لبدء التسجيل</string>
-    <string name="main_screen_action">تسجيل الشاشة</string>
     <string name="main_sound_action">تسجيل الصوت</string>
 </resources>

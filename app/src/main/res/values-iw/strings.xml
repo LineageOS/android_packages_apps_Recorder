@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Copyright (c) 2017 The LineageOS Project
+<!-- Copyright (c) 2017-2021 The LineageOS Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -21,41 +21,18 @@
     <string name="delete">מחק</string>
     <string name="cancel">ביטול</string>
     <string name="delete_title">מחיקת הקלטה</string>
-    <string name="delete_message">למחוק את הקובץ הבא?\n
-%1$s 
-זוהי פעולה בילתי הפיכה</string>
     <string name="sound_notification_title">מקליט שמע</string>
     <string name="sound_notification_message">אורך השמע: %1$s</string>
     <string name="sound_recording_title_working">מקליט</string>
     <string name="sound_last_title">הקלטה אחרונה</string>
     <string name="sound_channel_title">הקלטת שמע</string>
     <string name="sound_channel_desc">התראה קבועה בעת הקלטת השמע והתראה בסיום ההקלטה</string>
-    <string name="screen_audio_message_on">שמע מהמיקרופון יהיה כלול בוידאו</string>
-    <string name="screen_audio_message_off">שמע מהמיקרופון לא יהיה כלול בוידאו</string>
-    <string name="screen_audio_message_disabled">אין אפשרות לשנות הגדרה זו תוך כדי הקלטת המסך</string>
-    <string name="screen_audio_warning_button_ask">בקש גישה</string>
-    <string name="screen_insufficient_storage">אין מספיק מקום אחסון</string>
-    <string name="screen_not_enough_storage">אין מספיק מקום אחסון זמין</string>
-    <string name="screen_notification_title">מקליט מסך</string>
-    <string name="screen_notification_message">אורך הוידאו: %s</string>
-    <string name="screen_notification_message_done">מוכן לשיתוף</string>
-    <string name="screen_recording_message">המסך מוקלט\u2026</string>
-    <string name="screen_last_title">הקלטה אחרונה</string>
-    <string name="screen_overlay_notif_title">מוכן להקלטה</string>
-    <string name="screen_overlay_notif_message">לחץ על כפתור ההקלטה כשאתה מוכל להתחיל להקליט</string>
-    <string name="screen_settings_title">הגדרות מקליט מסך</string>
-    <string name="screen_overlay_channel_title">מוכן להקלטת מסך</string>
-    <string name="screen_overlay_channel_desc">התראה תראה שהקלטת המסך מוכנה להפעלה</string>
-    <string name="screen_channel_title">הקלטת מסך</string>
-    <string name="screen_channel_desc">התראה קבועה בעת הקלטת המסך והתראה בסיום ההקלטה</string>
     <string name="dialog_permissions_title">הרשאות</string>
     <string name="dialog_permissions_mic">המקליט זקוק לגישה למיקרופון על מנת להקליט שמע</string>
     <string name="dialog_permissions_phone">המקליט זקוק לגישה למצב השיחה על מנת למנוע הקלטה בעת חיוג</string>
     <string name="dialog_permissions_mic_phone">המקליט זקוק לגישה למיקרופון על מנת להקליט שמע, וגישה למצב השיחה על מנת למנוע הקלטה בעת החיוג</string>
     <string name="dialog_permissions_ask">שאל שוב</string>
     <string name="dialog_permissions_dismiss">דחה</string>
-    <string name="dialog_permissions_overlay">כדי להקליט את המסך המקליט צריך לקבל הרשאה להצגה מעל אפליקציות אחרות. לחץ אפשר, הפעל את ההרשאה במסך שהופיע ואז חזור אל המקליט</string>
     <string name="snack_permissions_no_permission">ההרשאות הנדרשות נדחו, הפעל אותם מההגדרות כדי להתחיל בהקלטה</string>
-    <string name="main_screen_action">הקלט מסך</string>
     <string name="main_sound_action">הקלט קול</string>
 </resources>

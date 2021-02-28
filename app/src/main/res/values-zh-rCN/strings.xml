@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Copyright (c) 2017 The LineageOS Project
+<!-- Copyright (c) 2017-2021 The LineageOS Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -21,40 +21,19 @@
     <string name="delete">删除</string>
     <string name="cancel">取消</string>
     <string name="delete_title">正在删除记录</string>
-    <string name="delete_message">您确定要删除 %1$s？此操作不能撤销</string>
     <string name="sound_notification_title">录音机</string>
     <string name="sound_notification_message">音频长度：%1$s</string>
     <string name="sound_recording_title_working">正在录制</string>
     <string name="sound_last_title">上次录制</string>
     <string name="sound_channel_title">录音</string>
     <string name="sound_channel_desc">录音至完成期间的持续通知</string>
-    <string name="screen_audio_message_on">将麦克风的声音纳入视频</string>
-    <string name="screen_audio_message_off">麦克风的音频将不会纳入视频</string>
-    <string name="screen_audio_message_disabled">在录屏时无法修改此设置</string>
-    <string name="screen_audio_warning_button_ask">询问</string>
-    <string name="screen_insufficient_storage">存储空间不足</string>
-    <string name="screen_not_enough_storage">可用存储空间不足</string>
-    <string name="screen_notification_title">屏幕录制器</string>
-    <string name="screen_notification_message">视频长度：%s</string>
-    <string name="screen_notification_message_done">已准备好分享</string>
-    <string name="screen_recording_message">录屏已开始\u2026</string>
-    <string name="screen_last_title">上次录制</string>
     <string name="screen_last_message">持续时间 %1$d 秒</string>
-    <string name="screen_overlay_notif_title">已准备好开始录制</string>
-    <string name="screen_overlay_notif_message">当您准备好开始时请按下录制按钮</string>
-    <string name="screen_settings_title">屏幕录制设置</string>
-    <string name="screen_overlay_channel_title">准备录制屏幕</string>
-    <string name="screen_overlay_channel_desc">屏幕录制准备就绪时将显示通知</string>
-    <string name="screen_channel_title">屏幕录制</string>
-    <string name="screen_channel_desc">录屏至完成期间的持续通知</string>
     <string name="dialog_permissions_title">权限</string>
     <string name="dialog_permissions_mic">录制器需要麦克风访问权限以便录制音频</string>
     <string name="dialog_permissions_phone">录制器需要访问手机状态权限以便在您通话时停止录音</string>
     <string name="dialog_permissions_mic_phone">录制器需要麦克风访问权限以录制语音，手机状态访问权限以避免在您通话时录制</string>
     <string name="dialog_permissions_ask">再次询问</string>
     <string name="dialog_permissions_dismiss">忽略</string>
-    <string name="dialog_permissions_overlay">录制器需要“出现在其他应用上”权限来录制您的屏幕。按下允许，或在设置中启用该权限并返回录制器。</string>
     <string name="snack_permissions_no_permission">必要的权限被拒绝，在“设置”应用中启用它们才能开始录制</string>
-    <string name="main_screen_action">录制屏幕</string>
     <string name="main_sound_action">录制声音</string>
 </resources>

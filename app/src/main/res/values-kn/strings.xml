@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Copyright (c) 2017 The LineageOS Project
+<!-- Copyright (c) 2017-2021 The LineageOS Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -16,8 +16,4 @@
 <resources>
     <string name="sound_channel_title">ಧ್ವನಿಮುದ್ರಣ</string>
     <string name="sound_channel_desc">ಧ್ವನಿಮುದ್ರಿಸುವಾಗ ನಿರಂತರ ಸೂಚನೆ ಮತ್ತು ಅಂತ್ಯವಾದಾಗ ಸೂಚನೆ</string>
-    <string name="screen_overlay_channel_title">ಪರದೆಯನ್ನು ದಾಖಲಿಸಲು ಸಿದ್ಧ</string>
-    <string name="screen_overlay_channel_desc">ಪರದೆ ಮುದ್ರಣ ಸಿದ್ಧವೆಂದು ತೋರಿಸುವ ಸೂಚನೆ</string>
-    <string name="screen_channel_title">ಪರದೆ ದಾಖಲತ್ತು</string>
-    <string name="screen_channel_desc">ಪರದೆಯನ್ನು ದಾಖಲಿಸುವಾಗ ನಿರಂತರ ಸೂಚನೆ ಮತ್ತು ಅಂತ್ಯವಾದಾಗ ಸೂಚನೆ</string>
 </resources>

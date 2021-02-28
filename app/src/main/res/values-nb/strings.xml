@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Copyright (c) 2017 The LineageOS Project
+<!-- Copyright (c) 2017-2021 The LineageOS Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -21,33 +21,16 @@
     <string name="delete">Slett</string>
     <string name="cancel">Avbryt</string>
     <string name="delete_title">Sletter opptaket</string>
-    <string name="delete_message">Er du sikker på at du vil slette %1$s? Dette kan ikke angres</string>
     <string name="sound_notification_title">Lydopptaker</string>
     <string name="sound_notification_message">Lydlengde: %1$s</string>
     <string name="sound_recording_title_working">Tar opp</string>
     <string name="sound_last_title">Siste opptak</string>
-    <string name="screen_audio_message_on">Lyd fra mikrofonen vil inkluderes i videoen</string>
-    <string name="screen_audio_message_off">Lyd fra mikrofonen vil ikke inkluderes i videoen</string>
-    <string name="screen_audio_message_disabled">Det er ikke mulig å endre denne innstillingen under innspilling av skjermen</string>
-    <string name="screen_audio_warning_button_ask">Spør</string>
-    <string name="screen_insufficient_storage">Ikke nok lagringsplass</string>
-    <string name="screen_not_enough_storage">Ikke nok tilgjengelig lagringsplass</string>
-    <string name="screen_notification_title">Skjermopptaker</string>
-    <string name="screen_notification_message">Videolengde: %s</string>
-    <string name="screen_notification_message_done">Klar til å dele</string>
-    <string name="screen_recording_message">Skjermen blir tatt opp\u2026</string>
-    <string name="screen_last_title">Siste opptak</string>
-    <string name="screen_overlay_notif_title">Klar til å ta opp</string>
-    <string name="screen_overlay_notif_message">Trykk på opptaksknappen når du er klar til å begynne</string>
-    <string name="screen_settings_title">Skjerminnspiller-innstillinger</string>
     <string name="dialog_permissions_title">Tillatelser</string>
     <string name="dialog_permissions_mic">Opptaker trenger mikrofon tilgang for å spille inn lyd</string>
     <string name="dialog_permissions_phone">Opptaker trenger telefontilgang for å passe på at du ikke tar opp anropene dine</string>
     <string name="dialog_permissions_mic_phone">Opptaker trenger mikrofontilgang for å spille inn lyd og telefontilgang for å passe på at du ikke tar opp anropene dine</string>
     <string name="dialog_permissions_ask">Spør igjen</string>
     <string name="dialog_permissions_dismiss">Avvis</string>
-    <string name="dialog_permissions_overlay">Opptakeren trenger tillatelsen \"Ligge over andre apper\" for å kunne filme skjermen din. Trykk Tillat, endre tillatelsen i innstillingene og kom tilbake til Opptaker-appen</string>
     <string name="snack_permissions_no_permission">Nødvendige tillatelser ble nektet, aktiver dem fra telefonens innstillinger for å starte å ta opp lyd</string>
-    <string name="main_screen_action">Ta opp skjermen</string>
     <string name="main_sound_action">Ta opp lyd</string>
 </resources>

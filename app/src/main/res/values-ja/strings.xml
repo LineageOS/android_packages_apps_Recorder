@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Copyright (c) 2017 The LineageOS Project
+<!-- Copyright (c) 2017-2021 The LineageOS Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -21,39 +21,18 @@
     <string name="delete">削除</string>
     <string name="cancel">キャンセル</string>
     <string name="delete_title">記録の削除</string>
-    <string name="delete_message">%1$s を削除しますか? この操作は元に戻せません。</string>
     <string name="sound_notification_title">音声レコーダー</string>
     <string name="sound_notification_message">音声の長さ: %1$s</string>
     <string name="sound_recording_title_working">録音中</string>
     <string name="sound_last_title">最後の記録</string>
     <string name="sound_channel_title">音声録音</string>
     <string name="sound_channel_desc">録音中の通知を完了後も表示し続ける</string>
-    <string name="screen_audio_message_on">マイクからの音声が動画に含まれます</string>
-    <string name="screen_audio_message_off">マイクからの音声は動画に含まれません</string>
-    <string name="screen_audio_message_disabled">画面の録画中はこの設定を変更できません</string>
-    <string name="screen_audio_warning_button_ask">要求する</string>
-    <string name="screen_insufficient_storage">ストレージ容量不足</string>
-    <string name="screen_not_enough_storage">十分な容量がありません</string>
-    <string name="screen_notification_title">画面の録画</string>
-    <string name="screen_notification_message">動画の長さ: %s</string>
-    <string name="screen_notification_message_done">共有する準備ができました</string>
-    <string name="screen_recording_message">画面を録画中...</string>
-    <string name="screen_last_title">最後の記録</string>
-    <string name="screen_overlay_notif_title">録音準備OK</string>
-    <string name="screen_overlay_notif_message">開始する準備ができたら録画ボタンを押してください</string>
-    <string name="screen_settings_title">スクリーンレコード設定</string>
-    <string name="screen_overlay_channel_title">画面録画の準備完了</string>
-    <string name="screen_overlay_channel_desc">画面の録画の準備が完了したら通知を表示</string>
-    <string name="screen_channel_title">画面の録画中</string>
-    <string name="screen_channel_desc">録音中の通知を完了後も表示し続ける</string>
     <string name="dialog_permissions_title">権限</string>
     <string name="dialog_permissions_mic">レコーダーは音声を録音するためにマイクの権限を必要とします。</string>
     <string name="dialog_permissions_phone">レコーダーは通話中に録音を停止するために端末の状態の権限が必要とします。</string>
     <string name="dialog_permissions_mic_phone">レコーダーは音声を録音するためにマイクの権限と、通話中に録音を停止するために端末の状態の権限を必要とします。</string>
     <string name="dialog_permissions_ask">次回も確認する</string>
     <string name="dialog_permissions_dismiss">閉じる</string>
-    <string name="dialog_permissions_overlay">レコーダーには画面を録画するために「他のアプリの上に重ねて表示」権限が必要です。設定で権限を許可してからレコーダーを起動し直してください。</string>
     <string name="snack_permissions_no_permission">必要な権限が拒否されました。録音を開始するには設定アプリから権限を有効にしてください。</string>
-    <string name="main_screen_action">画面の録画</string>
     <string name="main_sound_action">サウンドの録音</string>
 </resources>

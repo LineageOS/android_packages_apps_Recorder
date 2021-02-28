@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Copyright (c) 2017 The LineageOS Project
+<!-- Copyright (c) 2017-2021 The LineageOS Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -21,32 +21,16 @@
     <string name="delete">Видалити</string>
     <string name="cancel">Скасувати</string>
     <string name="delete_title">Видалення записів</string>
-    <string name="delete_message">Ви впевнені, що хочете видалити %1$s? Цю дію неможливо буде скасувати</string>
     <string name="sound_notification_title">Запис звуку</string>
     <string name="sound_notification_message">Тривалість аудіо запису: %1$s</string>
     <string name="sound_recording_title_working">Запис</string>
     <string name="sound_last_title">Останній запис</string>
-    <string name="screen_audio_message_on">Звук з мікрофону буде додано у відео</string>
-    <string name="screen_audio_message_off">Звук з мікрофону не буде додано у відео</string>
-    <string name="screen_audio_message_disabled">Під час запису екрану змінити ці налаштування неможливо</string>
-    <string name="screen_audio_warning_button_ask">Запитувати</string>
-    <string name="screen_insufficient_storage">Недостатньо пам\'яті</string>
-    <string name="screen_not_enough_storage">Недостатньо вільної пам\'яті</string>
-    <string name="screen_notification_title">Запис екрану</string>
-    <string name="screen_notification_message">Тривалість відео: %s</string>
-    <string name="screen_notification_message_done">Готово, аби поділитися</string>
-    <string name="screen_recording_message">Триває запис з екрану\u2026</string>
-    <string name="screen_last_title">Останній запис</string>
-    <string name="screen_overlay_notif_title">Готово для запису</string>
-    <string name="screen_overlay_notif_message">Натисніть кнопку запису, щоб почати</string>
     <string name="dialog_permissions_title">Дозволи</string>
     <string name="dialog_permissions_mic">Додаток «Звукозаписувач» потребує доступ до мікрофону для здійснення звукозапису</string>
     <string name="dialog_permissions_phone">Додатку «Recorder» потрібен доступ до стану телефону, щоб припиняти аудіозапис під час дзвінка</string>
     <string name="dialog_permissions_mic_phone">Додатку «Recorder» потрібен доступ до мікрофону для аудіозапису і доступ до стану телефону, щоб припиняти аудіозапис під час дзвінка</string>
     <string name="dialog_permissions_ask">Запитайте ще раз</string>
     <string name="dialog_permissions_dismiss">Відхилити</string>
-    <string name="dialog_permissions_overlay">Запис екрану потребує дозволу «Відображати поверх інших програм». Натисніть \"Дозволити\" в налаштуваннях та поверніться до запису</string>
     <string name="snack_permissions_no_permission">Відмовлено в необхідних дозволах. Увімкніть їх у налаштуваннях, щоб почати запис</string>
-    <string name="main_screen_action">Запис з екрану</string>
     <string name="main_sound_action">Запис звуку</string>
 </resources>

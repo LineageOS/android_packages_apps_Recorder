@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Copyright (c) 2017 The LineageOS Project
+<!-- Copyright (c) 2017-2021 The LineageOS Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -21,40 +21,19 @@
     <string name="delete">Избриши</string>
     <string name="cancel">Прекини</string>
     <string name="delete_title">Брисање снимка</string>
-    <string name="delete_message">Заиста желите да избришете „%1$s“? Ова радња је неповратна.</string>
     <string name="sound_notification_title">Снимање звука</string>
     <string name="sound_notification_message">Трајање аудио-снимка: %1$s</string>
     <string name="sound_recording_title_working">Снимање</string>
     <string name="sound_last_title">Последњи снимак</string>
     <string name="sound_channel_title">Снимање звука</string>
     <string name="sound_channel_desc">Трајно обавештење док се снима звук и обавештење након што се снимање заврши</string>
-    <string name="screen_audio_message_on">Звук са микрофона ће бити укључен у видео.</string>
-    <string name="screen_audio_message_off">Звук са микрофона неће бити укључен у видео.</string>
-    <string name="screen_audio_message_disabled">Није могуће да извршити ову измену док се екран снима</string>
-    <string name="screen_audio_warning_button_ask">Питај</string>
-    <string name="screen_insufficient_storage">Недовољно меморијског простора</string>
-    <string name="screen_not_enough_storage">Нема довољно слободног простора.</string>
-    <string name="screen_notification_title">Снимање екрана</string>
-    <string name="screen_notification_message">Трајање видео-снимка: %s</string>
-    <string name="screen_notification_message_done">Спремно за дељење</string>
-    <string name="screen_recording_message">Снимам екран\u2026</string>
-    <string name="screen_last_title">Последњи снимак</string>
     <string name="screen_last_message">Трајања: %1$d сек.</string>
-    <string name="screen_overlay_notif_title">Спремно за снимање</string>
-    <string name="screen_overlay_notif_message">Додирните дугме за снимање када будете спремни.</string>
-    <string name="screen_settings_title">Подешавања снимања екрана</string>
-    <string name="screen_overlay_channel_title">Све спремно за снимање екрана</string>
-    <string name="screen_overlay_channel_desc">Обавештење које приказује да је снимање екрана спремно</string>
-    <string name="screen_channel_title">Снимање екрана</string>
-    <string name="screen_channel_desc">Трајно обавештење док се снима екран и обавештење након што се снимање заврши</string>
     <string name="dialog_permissions_title">Дозволе</string>
     <string name="dialog_permissions_mic">Снимач захтева приступ микрофону за снимање звука.</string>
     <string name="dialog_permissions_phone">Снимач захтева приступ стању телефона за паузирање снимања током позива.</string>
     <string name="dialog_permissions_mic_phone">Снимач захтева приступ микрофону за снимање звука и стању телефона за паузирање снимања током позива.</string>
     <string name="dialog_permissions_ask">Питај поново</string>
     <string name="dialog_permissions_dismiss">Одбаци</string>
-    <string name="dialog_permissions_overlay">Снимач захтева дозволу „Приказивање преко других апликација“ за снимање екрана. Додирните дугме „Питај“, омогућите одговарајућу опцију и вратите се назад.</string>
     <string name="snack_permissions_no_permission">Потребне дозволе су одбијене. Омогућите их у подешавањима да бисте започели снимање.</string>
-    <string name="main_screen_action">Снимање екрана</string>
     <string name="main_sound_action">Снимање звука</string>
 </resources>

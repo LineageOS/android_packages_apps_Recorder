@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Copyright (c) 2017 The LineageOS Project
+<!-- Copyright (c) 2017-2021 The LineageOS Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -16,8 +16,5 @@
 <resources>
     <string name="sound_channel_title">Heli salvestamine</string>
     <string name="sound_channel_desc">Püsiv teade heli salvestamisel ja teade kui salvestamine on lõppenud</string>
-    <string name="screen_overlay_channel_title">Valmis ekraanikuva salvestama</string>
-    <string name="screen_overlay_channel_desc">Teade, mis näitab, et ekraanikuva salvestamine on valmis alustama</string>
-    <string name="screen_channel_title">Ekraanikuva salvestamine</string>
-    <string name="screen_channel_desc">Püsiv teade ekraanikuva salvestamisel ja teade kui salvestamine on lõppenud</string>
+    <string name="screen_last_message">Kestus: %1$d sekundit</string>
 </resources>
