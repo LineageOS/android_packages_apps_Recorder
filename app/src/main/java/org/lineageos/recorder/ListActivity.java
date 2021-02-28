@@ -34,6 +34,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import org.lineageos.recorder.list.RecordingItemCallbacks;
 import org.lineageos.recorder.list.RecordingsAdapter;
+import org.lineageos.recorder.ui.BounceScrollEdgeFactory;
 import org.lineageos.recorder.utils.LastRecordHelper;
 import org.lineageos.recorder.utils.MediaProviderHelper;
 import org.lineageos.recorder.utils.Utils;
@@ -73,6 +74,7 @@ public class ListActivity extends AppCompatActivity implements RecordingItemCall
             }
         });
         listView.setLayoutManager(new LinearLayoutManager(this));
+        listView.setEdgeEffectFactory(new BounceScrollEdgeFactory());
         listView.setAdapter(mAdapter);
 
         MediaProviderHelper.requestMyRecordings(getContentResolver(), list -> {
