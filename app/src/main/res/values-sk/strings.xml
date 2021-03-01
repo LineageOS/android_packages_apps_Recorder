@@ -39,6 +39,7 @@
     <string name="screen_notification_message_done">Pripravený na zdieľanie</string>
     <string name="screen_recording_message">Obrazovka sa nahráva\u2026</string>
     <string name="screen_last_title">Posledný záznam</string>
+    <string name="screen_last_message">Trvanie: %1$d sekúnd</string>
     <string name="screen_overlay_notif_title">Pripravený nahrávať</string>
     <string name="screen_overlay_notif_message">Ak ste pripravení začať, stlačte tlačidlo nahrávania</string>
     <string name="screen_settings_title">Nastavenia nahrávánia obrazovky</string>
