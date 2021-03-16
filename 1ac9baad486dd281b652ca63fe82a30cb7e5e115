@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "f86cb872_fcdf1c34",
+        "filename": "app/src/main/java/org/lineageos/recorder/utils/OnBoardingHelper.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2021-03-16T11:33:18Z",
+      "side": 1,
+      "message": "Remove new line and move androidx.* import further down.",
+      "revId": "1ac9baad486dd281b652ca63fe82a30cb7e5e115",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    }
+  ]
+}
