@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "a56e8fe4_68a055bd",
+        "filename": "app/src/main/java/org/lineageos/recorder/DialogActivity.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2021-03-16T12:07:34Z",
+      "side": 1,
+      "message": "unused",
+      "revId": "6b787fb908bb304659f2e7f0b8c0a2152045da8f",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "9462c87a_af812658",
+        "filename": "app/src/main/java/org/lineageos/recorder/ListActivity.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2021-03-16T12:07:34Z",
+      "side": 1,
+      "message": "should be squashed to the other change",
+      "revId": "6b787fb908bb304659f2e7f0b8c0a2152045da8f",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d69b2bc3_fcdc113b",
+        "filename": "app/src/main/java/org/lineageos/recorder/RecorderActivity.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2021-03-16T12:07:34Z",
+      "side": 1,
+      "message": "not related",
+      "revId": "6b787fb908bb304659f2e7f0b8c0a2152045da8f",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    }
+  ]
+}
