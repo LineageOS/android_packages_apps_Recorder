@@ -18,9 +18,13 @@
     <string name="share">Paylaş</string>
     <string name="stop">Dayandır</string>
     <string name="play">Oynat</string>
+    <string name="pause">Fasilə ver</string>
+    <string name="resume">Davam etdir</string>
     <string name="delete">Sil</string>
     <string name="cancel">İmtina</string>
+    <string name="rename">Yenidən adlandır</string>
     <string name="delete_title">Səsyazma silinir</string>
+    <string name="delete_recording_message">Bu səsyazmanı silmək istədiyinizə əminsiniz? Bu, geri qaytarıla bilməyəcək</string>
     <string name="sound_notification_title">Səs Yazma</string>
     <string name="sound_notification_message">Səs uzunluğu: %1$s</string>
     <string name="sound_recording_title_working">Səs yazılır</string>
@@ -28,12 +32,22 @@
     <string name="sound_channel_title">Səs yazma</string>
     <string name="sound_channel_desc">Səs yazanda davamlı bildiriş göstər və tamamlandıqdan sonra bildiriş göstər</string>
     <string name="screen_last_message">Müddət: %1$d saniyə</string>
+    <string name="settings_title">Tənzimləmələr</string>
+    <string name="settings_location_message">Səsyazmalarınızı mövcud mövqeyinizlə etiketləyin</string>
+    <string name="settings_quality_high">Yüksək keyfiyyətdə səsyazma</string>
     <string name="dialog_permissions_title">İcazələr</string>
     <string name="dialog_permissions_mic">Səsyazan-ın, səsi yazmaq üçün mikrofon icazəsinə ehtiyacı var</string>
     <string name="dialog_permissions_phone">Zəng əsnasında bu tətbiqin yazmasını əngəlləmək üçün \"Səsyazan\" telefon vəziyyətinə müraciət etməlidir</string>
     <string name="dialog_permissions_mic_phone">Səsyazan-ın, zəng əsnasında yazmağı əngəlləmək üçün mikrofon icazəsinə və telefon vəziyyətinə müraciətə ehtiyacı var</string>
+    <string name="dialog_permissions_location">Səsyazanın, yazılmış qeydləri nizama salmanıza kömək etməsi üzrə avtomatik etiketləməsi üçün yerləşmə icazəsinə ehtiyac var</string>
     <string name="dialog_permissions_ask">Təkrar soruş</string>
     <string name="dialog_permissions_dismiss">Rədd et</string>
     <string name="snack_permissions_no_permission">Tələb edilən icazələr rədd edildi, səsyazmağa başlamaq üçün Tənzimləmələr tətbiqindən icazələri fəallaşdırın</string>
+    <string name="snack_permissions_no_permission_location">Yerləşmə icazəsi rədd edildi, səsyazmalarınızı etiketləmək üçün Tənzimləmələrdən fəallaşdırın</string>
     <string name="main_sound_action">Səs yaz</string>
+    <string name="list_title">Səsyazmalarım</string>
+    <string name="list_error_empty">Bütün yazılmış səsləriniz burada görünəcək</string>
+    <string name="list_edit_title">Yazılmış səsin adına düzəliş edin</string>
+    <string name="list_edit_confirm">Dəyişdir</string>
+    <string name="list_item_menu">Daha çox əməliyyat</string>
 </resources>
