@@ -18,9 +18,13 @@
     <string name="share">Zdieľať</string>
     <string name="stop">Zastaviť</string>
     <string name="play">Prehrať</string>
+    <string name="pause">Pozastaviť</string>
+    <string name="resume">Pokračovať</string>
     <string name="delete">Vymazať</string>
     <string name="cancel">Zrušiť</string>
+    <string name="rename">Premenovať</string>
     <string name="delete_title">Mazanie záznamu</string>
+    <string name="delete_recording_message">Naozaj chcete vymazať tento záznam? Táto akcia je nevratná</string>
     <string name="sound_notification_title">Nahrávanie zvuku</string>
     <string name="sound_notification_message">Dĺžka zvukového záznamu: %1$s</string>
     <string name="sound_recording_title_working">Nahrávanie</string>
@@ -28,12 +32,22 @@
     <string name="sound_channel_title">Nahrávanie zvuku</string>
     <string name="sound_channel_desc">Trvalé upozornenie pri nahrávaní zvuku a upozornenie po jeho dokončení</string>
     <string name="screen_last_message">Trvanie: %1$d sekúnd</string>
+    <string name="settings_title">Nastavenia</string>
+    <string name="settings_location_message">Označte svoje nahrávky vašou aktuálnou pozíciou</string>
+    <string name="settings_quality_high">Nahrávanie vo vysokej kvalite</string>
     <string name="dialog_permissions_title">Oprávnenia</string>
     <string name="dialog_permissions_mic">Rekordér potrebuje prístup k mikrofónu</string>
     <string name="dialog_permissions_phone">Rekordér potrebuje prístup k stavu telefónu pre zabránenie nahrávaniu počas hovoru</string>
     <string name="dialog_permissions_mic_phone">Rekordér potrebuje prístup k mikrofónu pre záznam zvuku a prístup k stavu telefónu na zabránenie nahrávaniu počas hovoru</string>
+    <string name="dialog_permissions_location">Pre možnosť automatického označenia nahrávky a lepšie organizovanie potrebuje Záznamník oprávnenia prístupu k polohe</string>
     <string name="dialog_permissions_ask">Opýtať sa znovu</string>
     <string name="dialog_permissions_dismiss">Odmietnuť</string>
     <string name="snack_permissions_no_permission">Požadované povolenia boli zamietnuté, pre spustenie záznamu ich musíte povoliť v nastaveniach aplikácie</string>
+    <string name="snack_permissions_no_permission_location">Prístup k polohe bol odmietnutý, povoľte ho v Nastaveniach aplikácie a označte svoje nahrávky</string>
     <string name="main_sound_action">Nahrávanie zvuku</string>
+    <string name="list_title">Moje nahrávky</string>
+    <string name="list_error_empty">Všetky vaše nahrávky budú zobrazené tu</string>
+    <string name="list_edit_title">Upraviť názov nahrávky</string>
+    <string name="list_edit_confirm">Zmeniť</string>
+    <string name="list_item_menu">Ďalšie akcie</string>
 </resources>

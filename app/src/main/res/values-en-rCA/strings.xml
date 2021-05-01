@@ -18,9 +18,13 @@
     <string name="share">Share</string>
     <string name="stop">Stop</string>
     <string name="play">Play</string>
+    <string name="pause">Pause</string>
+    <string name="resume">Resume</string>
     <string name="delete">Delete</string>
     <string name="cancel">Cancel</string>
+    <string name="rename">Rename</string>
     <string name="delete_title">Deleting record</string>
+    <string name="delete_recording_message">Are you sure you want to delete this recording? This cannot be undone</string>
     <string name="sound_notification_title">Sound Recorder</string>
     <string name="sound_notification_message">Audio length: %1$s</string>
     <string name="sound_recording_title_working">Recording</string>
@@ -28,12 +32,22 @@
     <string name="sound_channel_title">Sound recording</string>
     <string name="sound_channel_desc">Persistent notification when recording sound and notification after it is complete</string>
     <string name="screen_last_message">Duration: %1$d seconds</string>
+    <string name="settings_title">Settings</string>
+    <string name="settings_location_message">Tag your recordings with your current position</string>
+    <string name="settings_quality_high">Record in high quality</string>
     <string name="dialog_permissions_title">Permissions</string>
     <string name="dialog_permissions_mic">Recorder needs microphone permission to record audio</string>
     <string name="dialog_permissions_phone">Recorder needs phone status access to prevent this app from recording while you\'re calling</string>
     <string name="dialog_permissions_mic_phone">Recorder needs microphone permission to record audio and phone status access to prevent this app from recording while you\'re calling</string>
+    <string name="dialog_permissions_location">Recorder needs location permission to automatically tag your recordings to help you organize them</string>
     <string name="dialog_permissions_ask">Ask again</string>
     <string name="dialog_permissions_dismiss">Dismiss</string>
     <string name="snack_permissions_no_permission">Required permissions were denied, enable them from Settings app to start recording</string>
+    <string name="snack_permissions_no_permission_location">Location permission was denied, enable it from Settings app to tag your recordings</string>
     <string name="main_sound_action">Record sound</string>
+    <string name="list_title">My recordings</string>
+    <string name="list_error_empty">All your recordings will be shown here</string>
+    <string name="list_edit_title">Edit recording name</string>
+    <string name="list_edit_confirm">Change</string>
+    <string name="list_item_menu">More actions</string>
 </resources>

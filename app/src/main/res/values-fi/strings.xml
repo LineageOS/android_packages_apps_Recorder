@@ -18,9 +18,13 @@
     <string name="share">Jaa</string>
     <string name="stop">Lopeta</string>
     <string name="play">Toista</string>
+    <string name="pause">Tauko</string>
+    <string name="resume">Jatka</string>
     <string name="delete">Poista</string>
     <string name="cancel">Peruuta</string>
+    <string name="rename">Uudelleennimeä</string>
     <string name="delete_title">Poistetaan nauhoitusta</string>
+    <string name="delete_recording_message">Haluatko varmasti poistaa tämän nauhoitteen? Poistoa ei voi peruuttaa!</string>
     <string name="sound_notification_title">Ääninauhuri</string>
     <string name="sound_notification_message">Äänen kesto: %1$s</string>
     <string name="sound_recording_title_working">Nauhoitetaan</string>
@@ -28,12 +32,22 @@
     <string name="sound_channel_title">Ääninauhuri</string>
     <string name="sound_channel_desc">Jatkuva ilmoitus äänen tallentamisesta ja ilmoitus kun se on valmis</string>
     <string name="screen_last_message">Kesto: %1$d sekuntia</string>
+    <string name="settings_title">Asetukset</string>
+    <string name="settings_location_message">Merkitse nauhoitukset nykyisellä sijainnilla</string>
+    <string name="settings_quality_high">Nauhoita korkealla laadulla</string>
     <string name="dialog_permissions_title">Käyttöoikeudet</string>
     <string name="dialog_permissions_mic">Nauhoitus tarvitsee pääsyn mikrofoniin nauhoittaakseen ääntä</string>
     <string name="dialog_permissions_phone">Nauhoitus tarvitsee puhelimen käyttöoikeuden estääkseen nauhoituksen puhelun aikana</string>
     <string name="dialog_permissions_mic_phone">Nauhoitus tarvitsee pääsyn mikrofoniin nauhoittaakseen ääntä ja puhelimen tilaan estääkseen nauhoituksen puhelun aikana</string>
+    <string name="dialog_permissions_location">Nauhoitus tarvitsee sijainnin käyttöoikeuden nauhoituksen sijainnin merkitsemiseksi</string>
     <string name="dialog_permissions_ask">Kysy uudelleen</string>
     <string name="dialog_permissions_dismiss">Hylkää</string>
     <string name="snack_permissions_no_permission">Tarvittavat käyttöoikeudet hylättiin, ota ne käyttöön Asetukset-sovelluksesta aloittaaksesi nauhoituksen</string>
+    <string name="snack_permissions_no_permission_location">Sijainnin käyttöoikeudet hylättiin, ota ne käyttöön Asetukset-sovelluksesta merkitäksesi nauhoitukset</string>
     <string name="main_sound_action">Nauhoita ääntä</string>
+    <string name="list_title">Omat nauhoitukset</string>
+    <string name="list_error_empty">Kaikki nauhoituksesi näkyvät täällä</string>
+    <string name="list_edit_title">Muokkaa nauhoituksen nimeä</string>
+    <string name="list_edit_confirm">Muuta</string>
+    <string name="list_item_menu">Lisää toimintoja</string>
 </resources>

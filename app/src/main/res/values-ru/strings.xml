@@ -18,9 +18,13 @@
     <string name="share">Отправить</string>
     <string name="stop">Остановить</string>
     <string name="play">Воспроизвести</string>
+    <string name="pause">Приостановить</string>
+    <string name="resume">Возобновить</string>
     <string name="delete">Удалить</string>
     <string name="cancel">Отмена</string>
+    <string name="rename">Переименовать</string>
     <string name="delete_title">Удаление записи</string>
+    <string name="delete_recording_message">Вы уверены, что хотите удалить эту запись? Действие не может быть отменено</string>
     <string name="sound_notification_title">Запись звука</string>
     <string name="sound_notification_message">Длительность аудио: %1$s</string>
     <string name="sound_recording_title_working">Запись</string>
@@ -28,12 +32,22 @@
     <string name="sound_channel_title">Запись звука</string>
     <string name="sound_channel_desc">Постоянное уведомление при записи звука и уведомление после его завершения</string>
     <string name="screen_last_message">Продолжительность: %1$d секунд</string>
+    <string name="settings_title">Настройки</string>
+    <string name="settings_location_message">Добавляйте метки расположения к своим записям</string>
+    <string name="settings_quality_high">Запись в высоком качестве</string>
     <string name="dialog_permissions_title">Разрешения</string>
     <string name="dialog_permissions_mic">Рекордеру требуется доступ к микрофону для записи звука</string>
     <string name="dialog_permissions_phone">Рекордеру требуется доступ к данным о состоянии телефона, чтобы прекращать запись во время звонка</string>
     <string name="dialog_permissions_mic_phone">Рекордеру требуется доступ к микрофону для записи звука и доступ к данным о состоянии телефона, чтобы прекращать запись во время звонка</string>
+    <string name="dialog_permissions_location">Рекордеру требуется разрешение на доступ к местоположению для автоматического создания меток ваших записей, чтобы помочь вам организовать их</string>
     <string name="dialog_permissions_ask">Спросить снова</string>
     <string name="dialog_permissions_dismiss">Пропустить</string>
     <string name="snack_permissions_no_permission">Отказано в необходимых разрешениях. Включите их в настройках, чтобы начать запись</string>
+    <string name="snack_permissions_no_permission_location">Разрешение на доступ к местоположению было отклонено. Включите его в настройках для автоматического создания меток ваших записей</string>
     <string name="main_sound_action">Запись звука</string>
+    <string name="list_title">Мои записи</string>
+    <string name="list_error_empty">Здесь будут показаны все ваши записи</string>
+    <string name="list_edit_title">Изменить название записи</string>
+    <string name="list_edit_confirm">Изменить</string>
+    <string name="list_item_menu">Другие действия</string>
 </resources>
