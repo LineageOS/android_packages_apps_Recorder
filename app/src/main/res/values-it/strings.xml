@@ -18,9 +18,13 @@
     <string name="share">Condividi</string>
     <string name="stop">Stop</string>
     <string name="play">Play</string>
+    <string name="pause">Pausa</string>
+    <string name="resume">Riprendi</string>
     <string name="delete">Elimina</string>
     <string name="cancel">Annulla</string>
+    <string name="rename">Rinomina</string>
     <string name="delete_title">Elimina registrazione</string>
+    <string name="delete_recording_message">Sei sicuro di cancellare questa registrazione? Quest\'azione non può essere annullata</string>
     <string name="sound_notification_title">Registratore suoni</string>
     <string name="sound_notification_message">Durata audio: %1$s</string>
     <string name="sound_recording_title_working">Registrazione in corso</string>
@@ -28,12 +32,22 @@
     <string name="sound_channel_title">Registrazione audio</string>
     <string name="sound_channel_desc">Notifica persistente durante la registrazione audio e notifica dopo averla completata</string>
     <string name="screen_last_message">Durata: %1$d secondi</string>
+    <string name="settings_title">Impostazioni</string>
+    <string name="settings_location_message">Etichetta le tue registrazioni con la tua posizione attuale</string>
+    <string name="settings_quality_high">Registra in alta qualità</string>
     <string name="dialog_permissions_title">Permessi</string>
     <string name="dialog_permissions_mic">Registratore deve accedere al microfono per registrare l\'audio</string>
     <string name="dialog_permissions_phone">Registratore deve accedere allo stato del telefono per prevenire le registrazioni audio durante le telefonate</string>
     <string name="dialog_permissions_mic_phone">Registratore deve accedere al microfono per registrare audio e allo stato del telefono per impedire registrazioni audio durante le telefonate</string>
+    <string name="dialog_permissions_location">Il registratore ha bisogno dei permessi di localizzazione per etichettare automaticamente le tue registrazioni, per aiutarti ad organizzarle</string>
     <string name="dialog_permissions_ask">Chiedi di nuovo</string>
     <string name="dialog_permissions_dismiss">Annulla</string>
     <string name="snack_permissions_no_permission">I permessi richiesti sono stati negati, abilitali dall\'app Impostazioni per iniziare a registrare</string>
+    <string name="snack_permissions_no_permission_location">I permessi di localizzazione sono stati rifiutati, abilitali dall\'app Impostazioni per etichettare le tue registrazioni</string>
     <string name="main_sound_action">Registra suoni</string>
+    <string name="list_title">Le mie registrazioni</string>
+    <string name="list_error_empty">Tutte le tue registrazioni saranno mostrate qui</string>
+    <string name="list_edit_title">Modifica nome registrazione</string>
+    <string name="list_edit_confirm">Modifica</string>
+    <string name="list_item_menu">Altre azioni</string>
 </resources>

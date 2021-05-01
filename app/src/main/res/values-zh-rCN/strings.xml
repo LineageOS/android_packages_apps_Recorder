@@ -18,9 +18,13 @@
     <string name="share">分享</string>
     <string name="stop">停止</string>
     <string name="play">播放</string>
+    <string name="pause">暂停</string>
+    <string name="resume">继续</string>
     <string name="delete">删除</string>
     <string name="cancel">取消</string>
+    <string name="rename">重命名</string>
     <string name="delete_title">正在删除记录</string>
+    <string name="delete_recording_message">你确定要删除此录音吗？ 此操作不可撤销</string>
     <string name="sound_notification_title">录音机</string>
     <string name="sound_notification_message">音频长度：%1$s</string>
     <string name="sound_recording_title_working">正在录制</string>
@@ -28,12 +32,22 @@
     <string name="sound_channel_title">录音</string>
     <string name="sound_channel_desc">录音至完成期间的持续通知</string>
     <string name="screen_last_message">持续时间 %1$d 秒</string>
+    <string name="settings_title">设置</string>
+    <string name="settings_location_message">以你当前的位置标记你的录音</string>
+    <string name="settings_quality_high">高质量录音</string>
     <string name="dialog_permissions_title">权限</string>
     <string name="dialog_permissions_mic">录制器需要麦克风访问权限以便录制音频</string>
     <string name="dialog_permissions_phone">录制器需要访问手机状态权限以便在您通话时停止录音</string>
     <string name="dialog_permissions_mic_phone">录制器需要麦克风访问权限以录制语音，手机状态访问权限以避免在您通话时录制</string>
+    <string name="dialog_permissions_location">为了让录音机自动帮您整理您的录音，您需要授予录音机位置权限。</string>
     <string name="dialog_permissions_ask">再次询问</string>
     <string name="dialog_permissions_dismiss">忽略</string>
     <string name="snack_permissions_no_permission">必要的权限被拒绝，在“设置”应用中启用它们才能开始录制</string>
+    <string name="snack_permissions_no_permission_location">位置权限被拒绝，请在“设置”应用中将其启用以标记你的录音</string>
     <string name="main_sound_action">录制声音</string>
+    <string name="list_title">我的录音</string>
+    <string name="list_error_empty">你的所有录音文件都会显示在这里</string>
+    <string name="list_edit_title">编辑录音名称</string>
+    <string name="list_edit_confirm">更改</string>
+    <string name="list_item_menu">更多操作</string>
 </resources>

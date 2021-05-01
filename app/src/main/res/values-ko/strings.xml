@@ -18,9 +18,13 @@
     <string name="share">공유</string>
     <string name="stop">정지</string>
     <string name="play">재생</string>
+    <string name="pause">일시 중지</string>
+    <string name="resume">재개</string>
     <string name="delete">삭제</string>
     <string name="cancel">취소</string>
+    <string name="rename">이름 바꾸기</string>
     <string name="delete_title">녹음/녹화 삭제</string>
+    <string name="delete_recording_message">정말 이 녹음을 삭제하시겠습니까? 이 작업은 되돌릴 수 없습니다.</string>
     <string name="sound_notification_title">소리 녹음기</string>
     <string name="sound_notification_message">오디오 길이: %1$s</string>
     <string name="sound_recording_title_working">녹음 중</string>
@@ -28,12 +32,22 @@
     <string name="sound_channel_title">소리 녹음</string>
     <string name="sound_channel_desc">소리 녹음 중 또는 녹음 완료 시 지속적으로 표시되는 알림</string>
     <string name="screen_last_message">길이 : %1$d 초</string>
+    <string name="settings_title">설정</string>
+    <string name="settings_location_message">현재 위치를 녹음 태그에 기록</string>
+    <string name="settings_quality_high">고품질로 녹음</string>
     <string name="dialog_permissions_title">권한</string>
     <string name="dialog_permissions_mic">녹음/녹화 도구는 소리를 녹음하기 위해 마이크 사용 권한이 필요합니다.</string>
     <string name="dialog_permissions_phone">녹음/녹화 도구는 통화 도중에 녹음되는 것을 방지하기 위해 전화 상태 접근 권한이 필요합니다.</string>
     <string name="dialog_permissions_mic_phone">녹음/녹화 도구는 녹음한 파일을 저장하기 위한 저장소 사용 권한과 통화 도중에 녹음되는 것을 방지하기 위한 전화 상태 접근 권한이 필요합니다.</string>
+    <string name="dialog_permissions_location">녹음에 자동으로 태그를 기록하여 정리를 돕기 위해 위치 권한이 필요합니다.</string>
     <string name="dialog_permissions_ask">다시 묻기</string>
     <string name="dialog_permissions_dismiss">다시 묻지 않기</string>
     <string name="snack_permissions_no_permission">필요한 권한이 거부되었습니다. 설정 앱에서 권한을 허용한 다음 녹음/녹화를 시작하세요.</string>
+    <string name="snack_permissions_no_permission_location">위치 권한이 거부되었습니다. 녹음에 위치를 태그하려면 설정 앱에서 권한을 허용하세요.</string>
     <string name="main_sound_action">소리 녹음</string>
+    <string name="list_title">내 녹음</string>
+    <string name="list_error_empty">모든 녹음이 여기에 표시됩니다.</string>
+    <string name="list_edit_title">녹음 이름 편집</string>
+    <string name="list_edit_confirm">변경</string>
+    <string name="list_item_menu">추가 작업</string>
 </resources>

@@ -18,9 +18,13 @@
     <string name="share">Paylaş</string>
     <string name="stop">Durdur</string>
     <string name="play">Oynat</string>
+    <string name="pause">Duraklat</string>
+    <string name="resume">Devam et</string>
     <string name="delete">Sil</string>
     <string name="cancel">İptal</string>
+    <string name="rename">Yeniden adlandır</string>
     <string name="delete_title">Kayıt siliniyor</string>
+    <string name="delete_recording_message">Bu kaydı silmek istediğinizden emin misiniz? Bu eylem geri alınamaz!</string>
     <string name="sound_notification_title">Ses Kaydedici</string>
     <string name="sound_notification_message">Ses uzunluğu: %1$s</string>
     <string name="sound_recording_title_working">Kaydediliyor</string>
@@ -28,12 +32,22 @@
     <string name="sound_channel_title">Ses kaydı</string>
     <string name="sound_channel_desc">Ses kaydedilirken kalıcı bildirim göster ve tamamlandıktan sonra bildirim göster</string>
     <string name="screen_last_message">Süre: %1$d saniye</string>
+    <string name="settings_title">Ayarlar</string>
+    <string name="settings_location_message">Kayıtlarınızı mevcut konumunuzla etiketleyin</string>
+    <string name="settings_quality_high">Yüksek kalitede kayıt</string>
     <string name="dialog_permissions_title">İzinler</string>
     <string name="dialog_permissions_mic">Kaydedici ses kaydetmek için mikrofon iznine ihtiyaç duyuyor</string>
     <string name="dialog_permissions_phone">Arama esnasında bu uygulamanın kayıt yapmasını önlemek için kaydedicinin telefon durumu erişimine ihtiyacı var</string>
     <string name="dialog_permissions_mic_phone">Kaydedici, arama esnasında kayıt yapmayı önlemek için mikrofon iznine ve telefon durumu erişimine ihtiyaç duyar</string>
+    <string name="dialog_permissions_location">Kaydedicinin, kayıtlarınızı düzenlemenize yardımcı olmak üzere otomatik olarak etiketlemesi için konum iznine ihtiyacı var</string>
     <string name="dialog_permissions_ask">Tekrar sor</string>
     <string name="dialog_permissions_dismiss">Reddet</string>
     <string name="snack_permissions_no_permission">Gerekli izinler reddedildi, kayda başlamak için bunları Ayarlar uygulamasından etkinleştirin</string>
+    <string name="snack_permissions_no_permission_location">Konum izni reddedildi, kayıtlarınızı etiketlemek için Ayarlar uygulamasından etkinleştirin</string>
     <string name="main_sound_action">Ses kaydet</string>
+    <string name="list_title">Kayıtlarım</string>
+    <string name="list_error_empty">Tüm kayıtlarınız burada gösterilecek</string>
+    <string name="list_edit_title">Kayıt adını düzenleyin</string>
+    <string name="list_edit_confirm">Değiştir</string>
+    <string name="list_item_menu">Diğer işlemler</string>
 </resources>

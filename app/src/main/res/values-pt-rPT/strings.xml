@@ -18,9 +18,13 @@
     <string name="share">Partilhar</string>
     <string name="stop">Parar</string>
     <string name="play">Reproduzir</string>
+    <string name="pause">Pausar</string>
+    <string name="resume">Retomar</string>
     <string name="delete">Apagar</string>
     <string name="cancel">Cancelar</string>
+    <string name="rename">Mudar o nome</string>
     <string name="delete_title">A apagar a gravação</string>
+    <string name="delete_recording_message">Tem a certeza que deseja eliminar esta gravação? Isto não pode ser desfeito.</string>
     <string name="sound_notification_title">Gravador de som</string>
     <string name="sound_notification_message">Tamanho do áudio: %1$s</string>
     <string name="sound_recording_title_working">A gravar</string>
@@ -28,12 +32,22 @@
     <string name="sound_channel_title">Gravador de som</string>
     <string name="sound_channel_desc">Notificação persistente durante a gravação de som e notificação depois de completa</string>
     <string name="screen_last_message">Duração: %1$d segundos</string>
+    <string name="settings_title">Definições</string>
+    <string name="settings_location_message">Marca as tuas gravações com a tua localização atual</string>
+    <string name="settings_quality_high">Gravação de alta qualidade</string>
     <string name="dialog_permissions_title">Permissões</string>
     <string name="dialog_permissions_mic">O Gravador precisa de acesso ao microfone para gravar áudio</string>
     <string name="dialog_permissions_phone">O Gravador precisa de acesso ao estado do telefone para impedir que esta aplicação grave enquanto está numa chamada</string>
     <string name="dialog_permissions_mic_phone">O Gravador precisa de acesso ao microfone para gravar som e de acesso ao estado do telefone para impedir que esta aplicação grave enquanto está numa chamada</string>
+    <string name="dialog_permissions_location">O gravador precisa de permissão de localização para marcar automaticamente as tuas gravações, para te ajudar a organizá-las</string>
     <string name="dialog_permissions_ask">Voltar a perguntar</string>
     <string name="dialog_permissions_dismiss">Ignorar</string>
     <string name="snack_permissions_no_permission">As permissões necessárias foram negadas. Ative-as nas definições da aplicação para iniciar a gravação</string>
+    <string name="snack_permissions_no_permission_location">A permissão de localização foi negada. Ativa-a nas definições da aplicação para marcares a tua gravação</string>
     <string name="main_sound_action">Gravar som</string>
+    <string name="list_title">As minhas gravações</string>
+    <string name="list_error_empty">Todas as tuas gravações serão exibidas aqui</string>
+    <string name="list_edit_title">Editar o nome da gravação</string>
+    <string name="list_edit_confirm">Alterar</string>
+    <string name="list_item_menu">Mais ações</string>
 </resources>

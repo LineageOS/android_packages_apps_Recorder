@@ -18,9 +18,13 @@
     <string name="share">Distribuiți</string>
     <string name="stop">Stop</string>
     <string name="play">Redați</string>
+    <string name="pause">Pauză</string>
+    <string name="resume">Reia</string>
     <string name="delete">Ștergeți</string>
     <string name="cancel">Anulare</string>
+    <string name="rename">Redenumire</string>
     <string name="delete_title">Ștergere înregistrare</string>
+    <string name="delete_recording_message">Sunteți sigur(ă) că doriți să ștergeți înregistrarea? Această acțiune este ireversibilă</string>
     <string name="sound_notification_title">Înregistrare Sunet</string>
     <string name="sound_notification_message">Lungime audio: %1$s</string>
     <string name="sound_recording_title_working">Înregistrare</string>
@@ -28,12 +32,22 @@
     <string name="sound_channel_title">Înregistrare sunet</string>
     <string name="sound_channel_desc">Notificare persistentă când se înregistrează sunetul și notificare când acțiunea este completă</string>
     <string name="screen_last_message">Durată: %1$d (de) secunde</string>
+    <string name="settings_title">Setări</string>
+    <string name="settings_location_message">Etichetați înregistrările cu poziția dvs. curentă</string>
+    <string name="settings_quality_high">Înregistrare la calitate înaltă</string>
     <string name="dialog_permissions_title">Permisiuni</string>
     <string name="dialog_permissions_mic">Recorder are nevoie de permisiunea de microfon pentru a înregistra audio</string>
     <string name="dialog_permissions_phone">Recorder are nevoie de acces la starea telefonului pentru a împiedica aplicația să înregistreze în timpul apelurilor</string>
     <string name="dialog_permissions_mic_phone">Recorder are nevoie de permisiunea de microfon pentru a înregistra audio și acces la starea telefonului pentru a împiedica aplicația să înregistreze când apelați</string>
+    <string name="dialog_permissions_location">Aplicația Înregistrare are nevoie de permisiuni de localizare pentru a vă eticheta automat înregistrările pentru a vă ajuta să le organizați</string>
     <string name="dialog_permissions_ask">Cere din nou</string>
     <string name="dialog_permissions_dismiss">Renunţaţi</string>
     <string name="snack_permissions_no_permission">Permisiunile necesare au fost refuzate, activați-le din aplicația Setări pentru a începe înregistrarea</string>
+    <string name="snack_permissions_no_permission_location">Permisiunea de localizare a fost refuzată, activați-o din aplicația Setări pentru a vă eticheta înregistrările</string>
     <string name="main_sound_action">Înregistrare sunet</string>
+    <string name="list_title">Înregistrările mele</string>
+    <string name="list_error_empty">Toate înregistrările dvs. vor fi afișate aici</string>
+    <string name="list_edit_title">Editare nume înregistrare</string>
+    <string name="list_edit_confirm">Schimbați</string>
+    <string name="list_item_menu">Mai multe acțiuni</string>
 </resources>

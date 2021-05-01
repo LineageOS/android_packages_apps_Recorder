@@ -18,9 +18,13 @@
     <string name="share">Souporaba</string>
     <string name="stop">Ustavi</string>
     <string name="play">Predvajaj</string>
+    <string name="pause">Premor</string>
+    <string name="resume">Nadaljuj</string>
     <string name="delete">Izbriši</string>
     <string name="cancel">Prekliči</string>
+    <string name="rename">Preimenuj</string>
     <string name="delete_title">Brisanje posnetka</string>
+    <string name="delete_recording_message">Ali ste prepričani, da želite izbrisati ta posnetek? Tega ni mogoče razveljaviti</string>
     <string name="sound_notification_title">Snemalnik zvoka</string>
     <string name="sound_notification_message">Dolžina zvoka: %1$s</string>
     <string name="sound_recording_title_working">Snemanje</string>
@@ -28,12 +32,22 @@
     <string name="sound_channel_title">Snemanje zvoka</string>
     <string name="sound_channel_desc">Trajno obvestilo med snemanjem zvoka in obvestilo, ko je končano</string>
     <string name="screen_last_message">Trajanje: %1$d sekund</string>
+    <string name="settings_title">Nastavitve</string>
+    <string name="settings_location_message">Označite vaše posnetke z vašo trenutno lokacijo</string>
+    <string name="settings_quality_high">Snemaj v visoki kakovosti</string>
     <string name="dialog_permissions_title">Dovoljenja</string>
     <string name="dialog_permissions_mic">Snemalnik potrebuje dovoljenje za mikrofon za snemanje zvoka</string>
     <string name="dialog_permissions_phone">Snemalnik potrebuje dostop do stanja telefona, da tej aplikaciji prepreči snemanje med klicem</string>
     <string name="dialog_permissions_mic_phone">Snemalnik potrebuje dovoljenje za mikrofon za snemanje zvoka in dostop do stanja telefona, da tej aplikaciji prepreči snemanje med klicem</string>
+    <string name="dialog_permissions_location">Snemalnik potrebuje dovoljenje za lokacijo za samodejno označevanje vaših posnetkov za pomoč pri organiziranju</string>
     <string name="dialog_permissions_ask">Ponovno vprašaj</string>
     <string name="dialog_permissions_dismiss">Opusti</string>
     <string name="snack_permissions_no_permission">Zahtevana dovoljenja so bila zavrnjena, omogočite jih v aplikaciji Nastavitve, da začnete snemati</string>
+    <string name="snack_permissions_no_permission_location">Dovoljenje za lokacijo je bilo zavrnjeno, omogočite ga iz aplikacije Nastavitve, da označite vaše posnetke</string>
     <string name="main_sound_action">Snemanje zvoka</string>
+    <string name="list_title">Moji posnetki</string>
+    <string name="list_error_empty">Vsi vaši posnetki bodo prikazani tukaj</string>
+    <string name="list_edit_title">Uredi ime posnetka</string>
+    <string name="list_edit_confirm">Spremeni</string>
+    <string name="list_item_menu">Več dejanj</string>
 </resources>

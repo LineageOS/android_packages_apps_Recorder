@@ -18,8 +18,10 @@
     <string name="share">Compartilhar</string>
     <string name="stop">Parar</string>
     <string name="play">Reproduzir</string>
+    <string name="pause">Pausar</string>
     <string name="delete">Excluir</string>
     <string name="cancel">Cancelar</string>
+    <string name="rename">Renomear</string>
     <string name="delete_title">Excluir gravação</string>
     <string name="sound_notification_title">Gravador de som</string>
     <string name="sound_notification_message">Duração do áudio: %1$s</string>
@@ -28,12 +30,19 @@
     <string name="sound_channel_title">Gravação de som</string>
     <string name="sound_channel_desc">Notificação persistente durante a gravação de som e notificação após gravar</string>
     <string name="screen_last_message">Duração: %1$d segundos</string>
+    <string name="settings_title">Configurações</string>
+    <string name="settings_quality_high">Gravar em alta qualidade</string>
     <string name="dialog_permissions_title">Permissões</string>
     <string name="dialog_permissions_mic">O gravador requer acesso ao microfone para gravar áudio</string>
     <string name="dialog_permissions_phone">O gravador requer acesso ao estado do telefone para impedir que este aplicativo grave enquanto você estiver em uma ligação</string>
     <string name="dialog_permissions_mic_phone">O gravador requer acesso ao microfone para gravar áudio e acesso ao estado do telefone para impedir este aplicativo de gravar enquanto você estiver em uma ligação</string>
+    <string name="dialog_permissions_location">O gravador requer a permissão de localização para marcar automaticamente as suas gravações, ajudando a organizá-las</string>
     <string name="dialog_permissions_ask">Permitir novamente</string>
     <string name="dialog_permissions_dismiss">Dispensar</string>
     <string name="snack_permissions_no_permission">As permissões necessárias foram negadas, ative-as no aplicativo Configurações para iniciar a gravação</string>
+    <string name="snack_permissions_no_permission_location">A permissão de localização foi negada. Ative-a nas configurações para poder marcar as suas gravações</string>
     <string name="main_sound_action">Gravar o som</string>
+    <string name="list_title">Minhas gravações</string>
+    <string name="list_error_empty">Todas as suas gravações serão exibidas aqui</string>
+    <string name="list_edit_title">Editar nome da gravação</string>
 </resources>
