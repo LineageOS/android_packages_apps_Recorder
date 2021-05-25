@@ -35,6 +35,7 @@ import androidx.annotation.Nullable;
 import androidx.core.app.NotificationCompat;
 import androidx.core.content.ContextCompat;
 
+import org.lineageos.recorder.BuildConfig;
 import org.lineageos.recorder.ListActivity;
 import org.lineageos.recorder.R;
 import org.lineageos.recorder.RecorderActivity;
@@ -54,10 +55,10 @@ import java.util.concurrent.atomic.AtomicLong;
 public class SoundRecorderService extends Service {
     private static final String TAG = "SoundRecorderService";
 
-    public static final String ACTION_START = "org.lineageos.recorder.service.START";
-    public static final String ACTION_STOP = "org.lineageos.recorder.service.STOP";
-    public static final String ACTION_PAUSE = "org.lineageos.recorder.service.PAUSE";
-    public static final String ACTION_RESUME = "org.lineageos.recorder.service.RESUME";
+    public static final String ACTION_START = BuildConfig.APPLICATION_ID + ".service.START";
+    public static final String ACTION_STOP = BuildConfig.APPLICATION_ID + ".service.STOP";
+    public static final String ACTION_PAUSE = BuildConfig.APPLICATION_ID + ".service.PAUSE";
+    public static final String ACTION_RESUME = BuildConfig.APPLICATION_ID + ".service.RESUME";
 
     public static final String EXTRA_LOCATION = "extra_filename";
     private static final String FILE_NAME_BASE = "SoundRecords/%1$s (%2$s).%3$s";
