@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (c) 2017-2021 The LineageOS Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+         http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="org.lineageos.recorder">
+
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+
+    <application
+        android:allowBackup="false"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+
+        <activity
+            android:name=".RecorderActivity"
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme.Main">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.PHONE_STATE" />
+                <action android:name="android.provider.MediaStore.RECORD_SOUND" />
+                <action android:name="org.lineageos.recorder.server.display.SCAN" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.app.shortcuts"
+                android:resource="@xml/shortcuts" />
+        </activity>
+
+        <activity
+            android:name=".ListActivity"
+            android:label="@string/list_title"
+            android:parentActivityName=".RecorderActivity"
+            android:theme="@style/AppTheme.Main" />
+
+        <activity
+            android:name=".DialogActivity"
+            android:excludeFromRecents="true"
+            android:theme="@style/AppTheme.DialogActivity" />
+
+        <!-- Sound recorder -->
+        <service
+            android:name=".service.SoundRecorderService"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="org.lineageos.recorder.service.START" />
+                <action android:name="org.lineageos.recorder.service.STOP" />
+                <action android:name="org.lineageos.recorder.service.PAUSE" />
+                <action android:name="org.lineageos.recorder.service.RESUME" />
+            </intent-filter>
+        </service>
+    </application>
+</manifest>
