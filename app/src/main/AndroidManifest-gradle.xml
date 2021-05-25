@@ -37,7 +37,7 @@
                 <action android:name="android.intent.action.MAIN" />
                 <action android:name="android.intent.action.PHONE_STATE" />
                 <action android:name="android.provider.MediaStore.RECORD_SOUND" />
-                <action android:name="org.lineageos.recorder.server.display.SCAN" />
+                <action android:name="${applicationId}.server.display.SCAN" />
 
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -64,10 +64,10 @@
             android:name=".service.SoundRecorderService"
             android:exported="false">
             <intent-filter>
-                <action android:name="org.lineageos.recorder.service.START" />
-                <action android:name="org.lineageos.recorder.service.STOP" />
-                <action android:name="org.lineageos.recorder.service.PAUSE" />
-                <action android:name="org.lineageos.recorder.service.RESUME" />
+                <action android:name="${applicationId}.service.START" />
+                <action android:name="${applicationId}.service.STOP" />
+                <action android:name="${applicationId}.service.PAUSE" />
+                <action android:name="${applicationId}.service.RESUME" />
             </intent-filter>
         </service>
     </application>
