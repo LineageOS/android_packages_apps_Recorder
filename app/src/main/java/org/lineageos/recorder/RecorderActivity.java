@@ -104,7 +104,7 @@ public class RecorderActivity extends AppCompatActivity implements
         soundList.setOnClickListener(v -> openList());
         settings.setOnClickListener(v -> openSettings());
 
-        Utils.setFullScreen(getWindow(), mainView);
+        Utils.setFullScreen(getWindow());
         Utils.setVerticalInsets(mainView);
 
         mPrefs = getSharedPreferences(Utils.PREFS, 0);
