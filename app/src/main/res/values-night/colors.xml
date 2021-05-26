@@ -14,12 +14,9 @@
      limitations under the License.
 -->
 <resources>
-
     <color name="colorPrimary">#121212</color>
     <color name="colorPrimaryDark">#000000</color>
     <color name="colorAccent">#F2B077</color>
 
     <color name="wave">#12FFFFFF</color>
-
-    <color name="navigationBarColor">#B3121212</color>
 </resources>
