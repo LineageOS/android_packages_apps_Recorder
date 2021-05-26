@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3b4fd50d_78dee7df",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 4550
+      },
+      "writtenOn": "2021-05-26T21:52:04Z",
+      "side": 1,
+      "message": "Not sure if this is a legit issue or Android Studio false warning",
+      "range": {
+        "startLine": 9,
+        "startChar": 0,
+        "endLine": 9,
+        "endChar": 59
+      },
+      "revId": "31e572ce0ad4b40c9d185a0b73f5156b658ceaef",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    }
+  ]
+}
