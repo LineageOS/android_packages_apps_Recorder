@@ -17,7 +17,6 @@ package org.lineageos.recorder.utils;
 
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.os.Build;
 import android.view.View;
 import android.view.Window;
 import android.view.inputmethod.InputMethodManager;
@@ -72,17 +71,8 @@ public class Utils {
         return PREF_RECORDING_PAUSED.equals(getStatus(context));
     }
 
-    public static void setFullScreen(Window window, View view) {
-        if (Build.VERSION.SDK_INT >= 30) {
-            window.setDecorFitsSystemWindows(false);
-            return;
-        }
-
-        int flags = view.getSystemUiVisibility();
-        flags |= View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
-                | View.SYSTEM_UI_FLAG_LAYOUT_STABLE
-                | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION;
-        view.setSystemUiVisibility(flags);
+    public static void setFullScreen(Window window) {
+        window.setDecorFitsSystemWindows(false);
     }
 
     public static void setVerticalInsets(View view) {
