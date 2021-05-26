@@ -57,9 +57,6 @@
     <!-- Sound recorder notification channel description-->
     <string name="sound_channel_desc">Persistent notification when recording sound and notification after it is complete</string>
 
-    <!-- Screen recorder last item message -->
-    <string name="screen_last_message">Duration: %1$d seconds</string>
-
     <!-- Settings -->
     <!-- Settings: dialog title -->
     <string name="settings_title">Settings</string>
