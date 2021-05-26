@@ -150,6 +150,7 @@ public class RecorderActivity extends AppCompatActivity implements
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions,
                                            @NonNull int[] results) {
 
+        super.onRequestPermissionsResult(requestCode, permissions, results);
         if (hasAllAudioRecorderPermissions()) {
             toggleAfterPermissionRequest(requestCode);
             return;
