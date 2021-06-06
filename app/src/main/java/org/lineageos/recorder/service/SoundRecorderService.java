@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package org.lineageos.recorder.service;
 
 import android.app.Notification;
@@ -277,10 +278,11 @@ public class SoundRecorderService extends Service {
         }
 
         Intent intent = new Intent(this, RecorderActivity.class);
-        PendingIntent pi = PendingIntent.getActivity(this, 0, intent, 0);
+        PendingIntent pi = PendingIntent.getActivity(this, 0, intent,
+                PendingIntent.FLAG_IMMUTABLE);
         PendingIntent stopPIntent = PendingIntent.getService(this, 0,
                 new Intent(this, SoundRecorderService.class).setAction(ACTION_STOP),
-                0);
+                        PendingIntent.FLAG_IMMUTABLE);
 
         String duration = DateUtils.formatElapsedTime(mSbRecycle, mElapsedTime.get());
         NotificationCompat.Builder nb = new NotificationCompat.Builder(this, NOTIFICATION_CHANNEL)
@@ -293,11 +295,13 @@ public class SoundRecorderService extends Service {
 
         if (mIsPaused) {
             PendingIntent resumePIntent = PendingIntent.getService(this, 0,
-                    new Intent(this, SoundRecorderService.class).setAction(ACTION_RESUME), 0);
+                    new Intent(this, SoundRecorderService.class).setAction(ACTION_RESUME),
+                            PendingIntent.FLAG_IMMUTABLE);
             nb.addAction(R.drawable.ic_resume, getString(R.string.resume), resumePIntent);
         } else {
             PendingIntent pausePIntent = PendingIntent.getService(this, 0,
-                    new Intent(this, SoundRecorderService.class).setAction(ACTION_PAUSE), 0);
+                    new Intent(this, SoundRecorderService.class).setAction(ACTION_PAUSE),
+                            PendingIntent.FLAG_IMMUTABLE);
             nb.addAction(R.drawable.ic_pause, getString(R.string.pause), pausePIntent);
         }
         nb.addAction(R.drawable.ic_stop, getString(R.string.stop), stopPIntent);
@@ -314,16 +318,17 @@ public class SoundRecorderService extends Service {
         String mimeType = mRecorder.getMimeType();
 
         Intent intent = new Intent(this, ListActivity.class);
-        PendingIntent pi = PendingIntent.getActivity(this, 0, intent, 0);
+        PendingIntent pi = PendingIntent.getActivity(this, 0, intent,
+                PendingIntent.FLAG_IMMUTABLE);
         PendingIntent playPIntent = PendingIntent.getActivity(this, 0,
                 LastRecordHelper.getOpenIntent(fileUri, mimeType),
-                PendingIntent.FLAG_CANCEL_CURRENT);
+                PendingIntent.FLAG_CANCEL_CURRENT | PendingIntent.FLAG_IMMUTABLE);
         PendingIntent sharePIntent = PendingIntent.getActivity(this, 0,
                 LastRecordHelper.getShareIntent(fileUri, mimeType),
-                PendingIntent.FLAG_CANCEL_CURRENT);
+                PendingIntent.FLAG_CANCEL_CURRENT | PendingIntent.FLAG_IMMUTABLE);
         PendingIntent deletePIntent = PendingIntent.getActivity(this, 0,
                 LastRecordHelper.getDeleteIntent(this),
-                PendingIntent.FLAG_CANCEL_CURRENT);
+                PendingIntent.FLAG_CANCEL_CURRENT | PendingIntent.FLAG_IMMUTABLE);
 
         String duration = DateUtils.formatElapsedTime(mSbRecycle, mElapsedTime.get());
         Notification notification = new NotificationCompat.Builder(this, NOTIFICATION_CHANNEL)
