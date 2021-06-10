@@ -36,6 +36,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
@@ -92,7 +93,7 @@ public class RecorderActivity extends AppCompatActivity implements
     };
 
     @Override
-    public void onCreate(Bundle savedInstance) {
+    public void onCreate(@Nullable Bundle savedInstance) {
         super.onCreate(savedInstance);
         setContentView(R.layout.activity_main);
 

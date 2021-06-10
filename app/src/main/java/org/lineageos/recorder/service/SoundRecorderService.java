@@ -272,6 +272,7 @@ public class SoundRecorderService extends Service {
         mNotificationManager.createNotificationChannel(notificationChannel);
     }
 
+    @NonNull
     private Notification createRecordingNotification() {
         if (mNotificationManager == null) {
             return null;
@@ -345,6 +346,7 @@ public class SoundRecorderService extends Service {
         mNotificationManager.notify(NOTIFICATION_ID, notification);
     }
 
+    @NonNull
     private File createNewAudioFile(@Nullable String locationName,
                                     @NonNull String extension) {
         String fileName = String.format(FILE_NAME_BASE,

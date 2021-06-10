@@ -69,7 +69,8 @@ public class OnBoardingHelper {
         }
     }
 
-    private static SharedPreferences getPrefs(Context context) {
+    @NonNull
+    private static SharedPreferences getPrefs(@NonNull Context context) {
         return context.getSharedPreferences(Utils.PREFS, 0);
     }
 

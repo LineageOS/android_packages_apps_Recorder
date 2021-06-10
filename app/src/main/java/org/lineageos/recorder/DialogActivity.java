@@ -25,6 +25,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SwitchCompat;
@@ -42,7 +43,7 @@ public class DialogActivity extends AppCompatActivity {
     private SharedPreferences mPrefs;
 
     @Override
-    protected void onCreate(Bundle savedInstance) {
+    protected void onCreate(@Nullable Bundle savedInstance) {
         super.onCreate(savedInstance);
 
         setFinishOnTouchOutside(true);
@@ -119,6 +120,7 @@ public class DialogActivity extends AppCompatActivity {
         dialog.show();
     }
 
+    @NonNull
     private View setupAsSettingsScreen() {
         LayoutInflater inflater = getLayoutInflater();
         final View view = inflater.inflate(R.layout.dialog_content_settings, null);
