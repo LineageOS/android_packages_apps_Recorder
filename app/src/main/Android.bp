@@ -31,7 +31,6 @@ android_app {
         "androidx-constraintlayout_constraintlayout",
         "androidx-constraintlayout_constraintlayout-solver",
         "androidx.appcompat_appcompat",
-        "androidx.cardview_cardview",
         "androidx.recyclerview_recyclerview",
         "com.google.android.material_material",
     ],
