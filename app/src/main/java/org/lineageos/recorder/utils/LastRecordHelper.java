@@ -45,7 +45,7 @@ public class LastRecordHelper {
                 .setTitle(R.string.delete_title)
                 .setMessage(context.getString(R.string.delete_recording_message))
                 .setPositiveButton(R.string.delete, (dialog, which) -> {
-                    MediaProviderHelper.remove(context.getContentResolver(), uri);
+                    MediaProviderHelper.remove(context, uri);
                     NotificationManager nm = context.getSystemService(NotificationManager.class);
                     if (nm == null) {
                         return;
@@ -70,7 +70,7 @@ public class LastRecordHelper {
                     }
 
                     nm.cancel(SoundRecorderService.NOTIFICATION_ID);
-                    MediaProviderHelper.remove(context.getContentResolver(), uri);
+                    MediaProviderHelper.remove(context, uri);
                     onDelete.run();
                 })
                 .setNegativeButton(R.string.cancel, null)

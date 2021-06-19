@@ -43,6 +43,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import org.lineageos.recorder.service.RecorderBinder;
 import org.lineageos.recorder.service.SoundRecorderService;
 import org.lineageos.recorder.ui.WaveFormView;
+import org.lineageos.recorder.utils.LastRecordHelper;
 import org.lineageos.recorder.utils.LocationHelper;
 import org.lineageos.recorder.utils.OnBoardingHelper;
 import org.lineageos.recorder.utils.Utils;
@@ -138,6 +139,15 @@ public class RecorderActivity extends AppCompatActivity implements
     protected void onStop() {
         super.onStop();
         unregisterReceiver(mTelephonyReceiver);
+    }
+
+    @Override
+    public void onBackPressed() {
+        if (LastRecordHelper.getLastItemUri(this) != null) {
+            setResult(RESULT_OK, new Intent().setData(LastRecordHelper.getLastItemUri(this)));
+            LastRecordHelper.setLastItem(this, null); // forget what the last recording was
+        }
+        super.onBackPressed();
     }
 
     @Override
