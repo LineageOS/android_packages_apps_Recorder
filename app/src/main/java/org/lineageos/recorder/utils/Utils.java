@@ -15,12 +15,15 @@
  */
 package org.lineageos.recorder.utils;
 
+import android.app.NotificationManager;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Build;
 import android.view.View;
 import android.view.Window;
 import android.view.inputmethod.InputMethodManager;
+
+import org.lineageos.recorder.service.SoundRecorderService;
 
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
@@ -151,5 +154,13 @@ public class Utils {
         NOTHING,
         SOUND,
         PAUSED,
+    }
+
+    public static void cancelShareNotification(Context context) {
+        NotificationManager nm = context.getSystemService(NotificationManager.class);
+        if (nm == null) {
+            return;
+        }
+        nm.cancel(SoundRecorderService.NOTIFICATION_ID);
     }
 }

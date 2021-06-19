@@ -15,6 +15,8 @@
  */
 package org.lineageos.recorder;
 
+import static android.provider.MediaStore.Audio.Media.RECORD_SOUND_ACTION;
+
 import android.Manifest;
 import android.content.BroadcastReceiver;
 import android.content.ComponentName;
@@ -45,6 +47,7 @@ import org.lineageos.recorder.service.SoundRecorderService;
 import org.lineageos.recorder.ui.WaveFormView;
 import org.lineageos.recorder.utils.LastRecordHelper;
 import org.lineageos.recorder.utils.LocationHelper;
+import org.lineageos.recorder.utils.MediaProviderHelper;
 import org.lineageos.recorder.utils.OnBoardingHelper;
 import org.lineageos.recorder.utils.Utils;
 
@@ -72,6 +75,9 @@ public class RecorderActivity extends AppCompatActivity implements
     private WaveFormView mRecordingVisualizer;
 
     private LocationHelper mLocationHelper;
+
+    private boolean mReturnAudio;
+    private boolean mHasRecordedAudio;
 
     private final BroadcastReceiver mTelephonyReceiver = new BroadcastReceiver() {
         @Override
@@ -113,6 +119,12 @@ public class RecorderActivity extends AppCompatActivity implements
 
         mLocationHelper = new LocationHelper(this);
 
+        if (RECORD_SOUND_ACTION.equals(getIntent().getAction())) {
+            mReturnAudio = true;
+            soundList.setVisibility(View.GONE);
+            settings.setVisibility(View.GONE);
+        }
+
         bindSoundRecService();
 
         OnBoardingHelper.onBoardList(this, soundList);
@@ -139,15 +151,6 @@ public class RecorderActivity extends AppCompatActivity implements
     protected void onStop() {
         super.onStop();
         unregisterReceiver(mTelephonyReceiver);
-    }
-
-    @Override
-    public void onBackPressed() {
-        if (LastRecordHelper.getLastItemUri(this) != null) {
-            setResult(RESULT_OK, new Intent().setData(LastRecordHelper.getLastItemUri(this)));
-            LastRecordHelper.setLastItem(this, null); // forget what the last recording was
-        }
-        super.onBackPressed();
     }
 
     @Override
@@ -204,6 +207,9 @@ public class RecorderActivity extends AppCompatActivity implements
     public void onSharedPreferenceChanged(SharedPreferences prefs, String key) {
         if (Utils.KEY_RECORDING.equals(key)) {
             refresh();
+            if (mReturnAudio && mHasRecordedAudio) {
+                promptUser();
+            }
         }
     }
 
@@ -236,6 +242,7 @@ public class RecorderActivity extends AppCompatActivity implements
             Intent stopIntent = new Intent(this, SoundRecorderService.class)
                     .setAction(SoundRecorderService.ACTION_STOP);
             startService(stopIntent);
+            mHasRecordedAudio = true;
         } else {
             // Start
             Intent startIntent = new Intent(this, SoundRecorderService.class)
@@ -359,5 +366,47 @@ public class RecorderActivity extends AppCompatActivity implements
 
     private void openList() {
         startActivity(new Intent(this, ListActivity.class));
+    }
+
+    private void confirmLastResultIfExists(boolean quit) {
+        if (mHasRecordedAudio) {
+            Intent resultIntent = new Intent().setData(LastRecordHelper.getLastItemUri(this));
+            setResult(RESULT_OK, resultIntent);
+            // forget what the last recording was
+            LastRecordHelper.setLastItem(this, null);
+            if (quit) {
+                finish();
+            }
+        } else {
+            cancelResult(quit);
+        }
+    }
+
+    private void cancelResult(boolean quit) {
+        setResult(RESULT_CANCELED, new Intent());
+        mHasRecordedAudio = false;
+        if (quit) {
+            finish();
+        }
+    }
+
+    private void promptUser() {
+        final Context context = this;
+        new AlertDialog.Builder(context)
+                .setTitle(R.string.confirm_result_title)
+                .setMessage(R.string.confirm_result_message)
+                .setPositiveButton(R.string.confirm, (dialog, which) -> {
+                    Utils.cancelShareNotification(context);
+                    confirmLastResultIfExists(true);
+                })
+                .setNegativeButton(R.string.discard, (dialog, which) -> {
+                    LastRecordHelper.deleteRecording(context,
+                            LastRecordHelper.getLastItemUri(context), true);
+                    cancelResult(true);
+                })
+                .setNeutralButton(R.string.record_again, (dialog, which) -> {
+                    cancelResult(false);
+                })
+                .show();
     }
 }

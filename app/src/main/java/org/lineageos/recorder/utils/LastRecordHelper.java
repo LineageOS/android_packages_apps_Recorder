@@ -15,7 +15,6 @@
  */
 package org.lineageos.recorder.utils;
 
-import android.app.NotificationManager;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -29,7 +28,6 @@ import androidx.appcompat.app.AlertDialog;
 
 import org.lineageos.recorder.DialogActivity;
 import org.lineageos.recorder.R;
-import org.lineageos.recorder.service.SoundRecorderService;
 
 import java.util.function.Consumer;
 
@@ -44,17 +42,18 @@ public class LastRecordHelper {
         return new AlertDialog.Builder(context)
                 .setTitle(R.string.delete_title)
                 .setMessage(context.getString(R.string.delete_recording_message))
-                .setPositiveButton(R.string.delete, (dialog, which) -> {
-                    MediaProviderHelper.remove(context, uri);
-                    NotificationManager nm = context.getSystemService(NotificationManager.class);
-                    if (nm == null) {
-                        return;
-                    }
-                    nm.cancel(SoundRecorderService.NOTIFICATION_ID);
-                    setLastItem(context, null);
-                })
+                .setPositiveButton(R.string.delete,
+                        (dialog, which) -> deleteRecording(context, uri, true))
                 .setNegativeButton(R.string.cancel, null)
                 .create();
+    }
+
+    public static void deleteRecording(Context context, Uri uri, boolean clearLastItem) {
+        MediaProviderHelper.remove(context, uri);
+        Utils.cancelShareNotification(context);
+        if (clearLastItem) {
+            setLastItem(context, null);
+        }
     }
 
     public static AlertDialog promptFileDeletion(Context context,
@@ -64,13 +63,7 @@ public class LastRecordHelper {
                 .setTitle(R.string.delete_title)
                 .setMessage(context.getString(R.string.delete_recording_message))
                 .setPositiveButton(R.string.delete, (dialog, which) -> {
-                    NotificationManager nm = context.getSystemService(NotificationManager.class);
-                    if (nm == null) {
-                        return;
-                    }
-
-                    nm.cancel(SoundRecorderService.NOTIFICATION_ID);
-                    MediaProviderHelper.remove(context, uri);
+                    deleteRecording(context, uri, false);
                     onDelete.run();
                 })
                 .setNegativeButton(R.string.cancel, null)
