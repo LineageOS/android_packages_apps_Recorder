@@ -37,9 +37,16 @@
     <string name="delete_title">Deleting record</string>
     <!-- Delete confirm message -->
     <string name="delete_recording_message">Are you sure you want to delete this recording? This cannot be undone</string>
-    <!-- Date for last item %1 is year, %2 month, %3 day, %4 hour, %5 min -->
-
-    <!-- Permissions -->
+    <!-- Confirm result action-->
+    <string name="confirm">Confirm</string>
+    <!-- Discard the last recording -->
+    <string name="discard">Discard</string>
+    <!-- Record again action-->
+    <string name="record_again">Record again</string>
+    <!-- Confirm result title -->
+    <string name="confirm_result_title">Use recording?</string>
+    <!-- Confirm result dialog text -->
+    <string name="confirm_result_message">Do you want to use the last recording?</string>
 
     <!-- Sound recorder -->
     <!-- Sound recorder notification title -->

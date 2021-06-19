@@ -188,7 +188,6 @@ public class SoundRecorderService extends Service {
                 mRecordFile,
                 this::onRecordCompleted,
                 mRecorder.getMimeType());
-        Utils.setStatus(this, Utils.UiStatus.NOTHING);
         return START_STICKY;
     }
 
@@ -261,6 +260,7 @@ public class SoundRecorderService extends Service {
         if (uri != null) {
             createShareNotification(uri);
         }
+        Utils.setStatus(this, Utils.UiStatus.NOTHING);
     }
 
     private void createNotificationChannel() {
