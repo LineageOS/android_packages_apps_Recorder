@@ -29,6 +29,8 @@
     <string name="resume">Resume</string>
     <!-- Delete action -->
     <string name="delete">Delete</string>
+    <!-- Delete all action -->
+    <string name="delete_all">Delete all</string>
     <!-- Cancel action -->
     <string name="cancel">Cancel</string>
     <!-- Rename action -->
@@ -106,4 +108,8 @@
     <string name="list_edit_confirm">Change</string>
     <!-- List item menu actions description for a11y -->
     <string name="list_item_menu">More actions</string>
+    <!-- Delete all message title -->
+    <string name="delete_all_title">Delete all records</string>
+    <!-- Delete all message -->
+    <string name="delete_all_message">Are you sure you want to delete all recording? This cannot be undone</string>
 </resources>

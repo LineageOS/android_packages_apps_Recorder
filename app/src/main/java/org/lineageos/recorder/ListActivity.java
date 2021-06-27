@@ -17,6 +17,9 @@ package org.lineageos.recorder;
 
 import android.net.Uri;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ProgressBar;
 import android.widget.TextView;
@@ -31,16 +34,24 @@ import androidx.coordinatorlayout.widget.CoordinatorLayout;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import org.lineageos.recorder.list.RecordingData;
 import org.lineageos.recorder.list.RecordingItemCallbacks;
 import org.lineageos.recorder.list.RecordingsAdapter;
 import org.lineageos.recorder.utils.LastRecordHelper;
 import org.lineageos.recorder.utils.MediaProviderHelper;
 import org.lineageos.recorder.utils.Utils;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class ListActivity extends AppCompatActivity implements RecordingItemCallbacks {
     private static final String TYPE_AUDIO = "audio/*";
 
     private RecordingsAdapter mAdapter;
+
+    private RecyclerView mListView;
+    private ProgressBar mProgressBar;
+    private TextView mEmptyText;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -50,9 +61,9 @@ public class ListActivity extends AppCompatActivity implements RecordingItemCall
 
         final CoordinatorLayout coordinatorLayout = findViewById(R.id.coordinator);
         final Toolbar toolbar = findViewById(R.id.toolbar);
-        final RecyclerView listView = findViewById(R.id.list_view);
-        final ProgressBar progressBar = findViewById(R.id.list_loading);
-        final TextView emptyText = findViewById(R.id.list_empty);
+        mListView = findViewById(R.id.list_view);
+        mProgressBar = findViewById(R.id.list_loading);
+        mEmptyText = findViewById(R.id.list_empty);
 
         setSupportActionBar(toolbar);
         ActionBar actionBar = getSupportActionBar();
@@ -67,25 +78,17 @@ public class ListActivity extends AppCompatActivity implements RecordingItemCall
             public void onItemRangeRemoved(int positionStart, int itemCount) {
                 super.onItemRangeRemoved(positionStart, itemCount);
                 if (mAdapter.getItemCount() == 0) {
-                    emptyText.setVisibility(View.VISIBLE);
+                    mEmptyText.setVisibility(View.VISIBLE);
                 }
             }
         });
-        listView.setLayoutManager(new LinearLayoutManager(this));
-        listView.setAdapter(mAdapter);
+        mListView.setLayoutManager(new LinearLayoutManager(this));
+        mListView.setAdapter(mAdapter);
 
-        MediaProviderHelper.requestMyRecordings(getContentResolver(), list -> {
-            progressBar.setVisibility(View.GONE);
-            if (list.isEmpty()) {
-                emptyText.setVisibility(View.VISIBLE);
-            } else {
-                listView.setVisibility(View.VISIBLE);
-                mAdapter.setData(list);
-            }
-        });
+        loadRecordings();
 
         Utils.setFullScreen(getWindow(), coordinatorLayout);
-        Utils.setVerticalInsets(listView);
+        Utils.setVerticalInsets(mListView);
     }
 
     @Override
@@ -121,5 +124,57 @@ public class ListActivity extends AppCompatActivity implements RecordingItemCall
                         })
         );
         dialog.show();
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        super.onCreateOptionsMenu(menu);
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu_list, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onPrepareOptionsMenu(Menu menu) {
+        MenuItem item = menu.findItem(R.id.action_delete_all);
+        item.setEnabled(mAdapter.getItemCount() > 0);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (item.getItemId() == R.id.action_delete_all) {
+            deleteAllRecordings();
+            return true;
+        } else {
+            return super.onOptionsItemSelected(item);
+        }
+    }
+
+    private void loadRecordings() {
+        MediaProviderHelper.requestMyRecordings(getContentResolver(), list -> {
+            mProgressBar.setVisibility(View.GONE);
+            if (list.isEmpty()) {
+                List<RecordingData> listEmpty = new ArrayList<>();
+                mAdapter.setData(listEmpty);
+                mEmptyText.setVisibility(View.VISIBLE);
+            } else {
+                mListView.setVisibility(View.VISIBLE);
+                mAdapter.setData(list);
+            }
+        });
+    }
+
+    private void deleteAllRecordings() {
+        new AlertDialog.Builder(this)
+                .setTitle(R.string.delete_all_title)
+                .setMessage(getString(R.string.delete_all_message))
+                .setPositiveButton(R.string.delete, (dialog, which) -> {
+                    MediaProviderHelper.removeAll(getContentResolver());
+                    Utils.cancelShareNotification(this);
+                    loadRecordings();
+                })
+                .setNegativeButton(R.string.cancel, null)
+                .show();
     }
 }
