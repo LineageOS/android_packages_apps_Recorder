@@ -15,7 +15,6 @@
  */
 package org.lineageos.recorder;
 
-import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
@@ -91,8 +90,7 @@ public class ListActivity extends AppCompatActivity implements RecordingItemCall
 
     @Override
     public void onPlay(@NonNull Uri uri) {
-        final Intent intent = LastRecordHelper.getOpenIntent(uri, TYPE_AUDIO);
-        startActivityForResult(intent, 0);
+        startActivity(LastRecordHelper.getOpenIntent(uri, TYPE_AUDIO));
     }
 
     @Override
