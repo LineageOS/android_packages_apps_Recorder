@@ -67,9 +67,21 @@ public class RecordingsAdapter extends RecyclerView.Adapter<RecordingItemViewHol
         notifyDataSetChanged();
     }
 
+    @NonNull
+    public List<RecordingData> getData() {
+        return new ArrayList<>(mData);
+    }
+
     public void onDelete(int index) {
         mData.remove(index);
         notifyItemRemoved(index);
+    }
+
+    public void onDelete(@NonNull RecordingData item) {
+        final int index = mData.indexOf(item);
+        if (index >= 0) {
+            onDelete(index);
+        }
     }
 
     public void onRename(int index, @NonNull String newTitle) {
