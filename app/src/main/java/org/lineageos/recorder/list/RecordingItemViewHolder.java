@@ -38,6 +38,7 @@ public class RecordingItemViewHolder extends RecyclerView.ViewHolder {
     private static final String SUMMARY_FORMAT = "%s - %02d:%02d";
 
     private final SimpleDateFormat mDateFormat;
+    private final ImageView mIconView;
     private final TextView mTitleView;
     private final TextView mSummaryView;
     @NonNull
@@ -52,21 +53,15 @@ public class RecordingItemViewHolder extends RecyclerView.ViewHolder {
         mCallbacks = callbacks;
 
         mDateFormat = dateFormat;
+        mIconView = itemView.findViewById(R.id.item_play);
         mTitleView = itemView.findViewById(R.id.item_title);
         mSummaryView = itemView.findViewById(R.id.item_date);
-        final ImageView playView = itemView.findViewById(R.id.item_play);
         final ImageView menuView = itemView.findViewById(R.id.item_menu);
-
-        playView.setOnClickListener(v -> mCallbacks.onPlay(mUri));
         menuView.setOnClickListener(this::showPopupMenu);
-        itemView.setOnClickListener(v -> mCallbacks.onPlay(mUri));
-        itemView.setOnLongClickListener(v -> {
-            showPopupMenu(menuView);
-            return true;
-        });
     }
 
-    public void setData(@NonNull RecordingData data) {
+    public void setData(@NonNull RecordingData data,
+                        @ListItemStatus int selection) {
         mUri = data.getUri();
         mTitleView.setText(data.getTitle());
         long seconds = data.getDuration() / 1000;
@@ -74,6 +69,22 @@ public class RecordingItemViewHolder extends RecyclerView.ViewHolder {
         seconds -= (minutes * 60);
         mSummaryView.setText(String.format(Locale.getDefault(), SUMMARY_FORMAT,
                 mDateFormat.format(data.getDate()), minutes, seconds));
+
+        switch (selection) {
+            case ListItemStatus.DEFAULT:
+                mIconView.setImageResource(R.drawable.ic_play_circle_outline);
+                break;
+            case ListItemStatus.UNCHECKED:
+                mIconView.setImageResource(R.drawable.ic_list_unchecked);
+                break;
+            case ListItemStatus.CHECKED:
+                mIconView.setImageResource(R.drawable.ic_list_checked);
+                break;
+        }
+    }
+
+    public Uri getUri() {
+        return mUri;
     }
 
     @SuppressLint("RestrictedApi")
