@@ -17,6 +17,7 @@ package org.lineageos.recorder;
 
 import android.net.Uri;
 import android.os.Bundle;
+import android.view.ActionMode;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -34,8 +35,9 @@ import androidx.coordinatorlayout.widget.CoordinatorLayout;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import org.lineageos.recorder.list.ListActionModeCallback;
 import org.lineageos.recorder.list.RecordingData;
-import org.lineageos.recorder.list.RecordingItemCallbacks;
+import org.lineageos.recorder.list.RecordingListCallbacks;
 import org.lineageos.recorder.list.RecordingsAdapter;
 import org.lineageos.recorder.utils.LastRecordHelper;
 import org.lineageos.recorder.utils.MediaProviderHelper;
@@ -44,14 +46,17 @@ import org.lineageos.recorder.utils.Utils;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ListActivity extends AppCompatActivity implements RecordingItemCallbacks {
+public class ListActivity extends AppCompatActivity implements RecordingListCallbacks {
     private static final String TYPE_AUDIO = "audio/*";
 
     private RecordingsAdapter mAdapter;
 
+    private Toolbar mToolbar;
     private RecyclerView mListView;
     private ProgressBar mProgressBar;
     private TextView mEmptyText;
+
+    private ActionMode mActionMode;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -60,12 +65,12 @@ public class ListActivity extends AppCompatActivity implements RecordingItemCall
         setContentView(R.layout.activity_list);
 
         final CoordinatorLayout coordinatorLayout = findViewById(R.id.coordinator);
-        final Toolbar toolbar = findViewById(R.id.toolbar);
+        mToolbar = findViewById(R.id.toolbar);
         mListView = findViewById(R.id.list_view);
         mProgressBar = findViewById(R.id.list_loading);
         mEmptyText = findViewById(R.id.list_empty);
 
-        setSupportActionBar(toolbar);
+        setSupportActionBar(mToolbar);
         ActionBar actionBar = getSupportActionBar();
         if (actionBar != null) {
             actionBar.setDisplayShowHomeEnabled(true);
@@ -136,19 +141,51 @@ public class ListActivity extends AppCompatActivity implements RecordingItemCall
 
     @Override
     public boolean onPrepareOptionsMenu(Menu menu) {
-        MenuItem item = menu.findItem(R.id.action_delete_all);
-        item.setEnabled(mAdapter.getItemCount() > 0);
+        MenuItem selectItem = menu.findItem(R.id.action_select);
+        MenuItem deleteAllItem = menu.findItem(R.id.action_delete_all);
+        boolean hasItems = mAdapter.getItemCount() > 0;
+        selectItem.setEnabled(hasItems);
+        deleteAllItem.setEnabled(hasItems);
         return true;
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        if (item.getItemId() == R.id.action_delete_all) {
+        int id = item.getItemId();
+        if (id == R.id.action_delete_all) {
             deleteAllRecordings();
+            return true;
+        } else if (id == R.id.action_select) {
+            startSelectionMode();
             return true;
         } else {
             return super.onOptionsItemSelected(item);
         }
+    }
+
+    @Override
+    public void startSelectionMode() {
+        // Clear previous (should do nothing), but be sure
+        endSelectionMode();
+        // Start action mode
+        mActionMode = mToolbar.startActionMode(new ListActionModeCallback(
+                this::deleteSelectedRecordings));
+        mAdapter.enterSelectionMode();
+    }
+
+    @Override
+    public void endSelectionMode() {
+        if (mActionMode != null) {
+            mActionMode.finish();
+            mActionMode = null;
+        }
+        mAdapter.exitSelectionMode();
+    }
+
+    @Override
+    public void onActionModeFinished(@NonNull ActionMode mode) {
+        super.onActionModeFinished(mode);
+        endSelectionMode();
     }
 
     private void loadRecordings() {
@@ -165,7 +202,31 @@ public class ListActivity extends AppCompatActivity implements RecordingItemCall
         });
     }
 
+    private void deleteSelectedRecordings() {
+        final List<RecordingData> selectedItems = mAdapter.getSelected();
+        if (selectedItems.isEmpty()) {
+            return;
+        }
+
+        new AlertDialog.Builder(this)
+                .setTitle(R.string.delete_selected_title)
+                .setMessage(getString(R.string.delete_selected_message))
+                .setPositiveButton(R.string.delete, (dialog, which) -> {
+                    selectedItems.forEach(item -> {
+                        MediaProviderHelper.remove(this, item.getUri());
+                        mAdapter.onDelete(item);
+                    });
+                    Utils.cancelShareNotification(this);
+                })
+                .setNegativeButton(R.string.cancel, null)
+                .show();
+    }
+
     private void deleteAllRecordings() {
+        if (mAdapter.getItemCount() == 0) {
+            return;
+        }
+
         new AlertDialog.Builder(this)
                 .setTitle(R.string.delete_all_title)
                 .setMessage(getString(R.string.delete_all_message))
