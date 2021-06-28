@@ -31,6 +31,8 @@
     <string name="delete">Delete</string>
     <!-- Delete all action -->
     <string name="delete_all">Delete all</string>
+    <!-- Delete selected action -->
+    <string name="delete_selected">Delete selected</string>
     <!-- Cancel action -->
     <string name="cancel">Cancel</string>
     <!-- Rename action -->
@@ -112,4 +114,8 @@
     <string name="delete_all_title">Delete all</string>
     <!-- Delete all message -->
     <string name="delete_all_message">Are you sure you want to delete all recordings? This cannot be undone</string>
+    <!-- Delete selected message title -->
+    <string name="delete_selected_title">Delete selected</string>
+    <!-- Delete all message -->
+    <string name="delete_selected_message">Are you sure you want to delete the selected recordings? This cannot be undone</string>
 </resources>
