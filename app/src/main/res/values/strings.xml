@@ -19,6 +19,8 @@
     <!-- Common actions -->
     <!-- Share action for notification -->
     <string name="share">Share</string>
+    <!-- Share selected action -->
+    <string name="share_selected">Share selected</string>
     <!-- Stop action for notification -->
     <string name="stop">Stop</string>
     <!-- Play action -->
