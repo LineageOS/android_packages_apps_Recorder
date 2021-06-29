@@ -44,7 +44,9 @@ import org.lineageos.recorder.utils.MediaProviderHelper;
 import org.lineageos.recorder.utils.Utils;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class ListActivity extends AppCompatActivity implements RecordingListCallbacks {
     private static final String TYPE_AUDIO = "audio/*";
@@ -165,7 +167,8 @@ public class ListActivity extends AppCompatActivity implements RecordingListCall
         endSelectionMode();
         // Start action mode
         mActionMode = mToolbar.startActionMode(new ListActionModeCallback(
-                this::deleteSelectedRecordings));
+                this::deleteSelectedRecordings,
+                this::shareSelectedRecordings));
         mAdapter.enterSelectionMode();
     }
 
@@ -196,6 +199,18 @@ public class ListActivity extends AppCompatActivity implements RecordingListCall
                 mAdapter.setData(list);
             }
         });
+    }
+
+    private void shareSelectedRecordings() {
+        final List<RecordingData> selectedItems = mAdapter.getSelected();
+        if (selectedItems.isEmpty()) {
+            return;
+        }
+
+        final ArrayList<Uri> uris = selectedItems.stream()
+                .map(RecordingData::getUri)
+                .collect(Collectors.toCollection(ArrayList::new));
+        startActivity(LastRecordHelper.getShareIntents(uris, TYPE_AUDIO));
     }
 
     private void deleteSelectedRecordings() {

@@ -31,6 +31,7 @@ import androidx.appcompat.app.AlertDialog;
 import org.lineageos.recorder.DialogActivity;
 import org.lineageos.recorder.R;
 
+import java.util.ArrayList;
 import java.util.function.Consumer;
 
 public class LastRecordHelper {
@@ -109,6 +110,16 @@ public class LastRecordHelper {
         Intent intent = new Intent(Intent.ACTION_SEND);
         intent.setType(mimeType);
         intent.putExtra(Intent.EXTRA_STREAM, uri);
+        Intent chooserIntent = Intent.createChooser(intent, null);
+        chooserIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+        return chooserIntent;
+    }
+
+    @NonNull
+    public static Intent getShareIntents(ArrayList<Uri> uris, String mimeType) {
+        Intent intent = new Intent(Intent.ACTION_SEND_MULTIPLE);
+        intent.setType(mimeType);
+        intent.putParcelableArrayListExtra(Intent.EXTRA_STREAM, uris);
         Intent chooserIntent = Intent.createChooser(intent, null);
         chooserIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
         return chooserIntent;
