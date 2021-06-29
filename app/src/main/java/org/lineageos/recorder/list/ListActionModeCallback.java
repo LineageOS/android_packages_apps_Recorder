@@ -28,9 +28,13 @@ public class ListActionModeCallback implements ActionMode.Callback {
 
     @NonNull
     private final Runnable mDeleteSelected;
+    @NonNull
+    private final Runnable mShareSelected;
 
-    public ListActionModeCallback(@NonNull Runnable deleteSelected) {
+    public ListActionModeCallback(@NonNull Runnable deleteSelected,
+                                  @NonNull Runnable shareSelected) {
         mDeleteSelected = deleteSelected;
+        mShareSelected = shareSelected;
     }
 
     @Override
@@ -47,8 +51,12 @@ public class ListActionModeCallback implements ActionMode.Callback {
 
     @Override
     public boolean onActionItemClicked(ActionMode mode, MenuItem item) {
-        if (item.getItemId() == R.id.action_delete_selected) {
+        int id = item.getItemId();
+        if (id == R.id.action_delete_selected) {
             mDeleteSelected.run();
+            return true;
+        } else if (id == R.id.action_share_selected) {
+            mShareSelected.run();
             return true;
         } else {
             return false;
