@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "25fc3c74_97b768f0",
+        "filename": "app/src/main/res/menu/menu_list.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2021-07-10T10:31:22Z",
+      "side": 1,
+      "message": "i don\u0027t like having a dedicated menu item for the selection. other apps also don\u0027t do this",
+      "revId": "44848d2ffdddc302d1f6a818401b6bd4cd8ea1cc",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    }
+  ]
+}
