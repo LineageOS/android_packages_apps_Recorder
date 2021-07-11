@@ -101,10 +101,6 @@ public final class MediaProviderHelper {
         cr.delete(uri, null, null);
     }
 
-    public static void removeAll(@NonNull ContentResolver cr) {
-        runTask(new RemovalTask(cr), i -> {});
-    }
-
     public static void rename(@NonNull ContentResolver cr,
                               @NonNull Uri uri,
                               @NonNull String newName,
@@ -246,24 +242,6 @@ public final class MediaProviderHelper {
             cv.put(MediaStore.Audio.Media.TITLE, newName);
             int updated = cr.update(uri, cv, null, null);
             return updated == 1;
-        }
-    }
-
-    static class RemovalTask implements Callable<Integer> {
-        @NonNull
-        private final ContentResolver cr;
-
-        RemovalTask(@NonNull ContentResolver cr) {
-            this.cr = cr;
-        }
-
-        @Override
-        public Integer call() {
-            return cr.delete(
-                    MediaStore.Audio.Media.getContentUri(MediaStore.VOLUME_EXTERNAL_PRIMARY),
-                    MediaStore.Audio.Media.OWNER_PACKAGE_NAME + "=?",
-                    new String[]{ BuildConfig.APPLICATION_ID }
-            );
         }
     }
 

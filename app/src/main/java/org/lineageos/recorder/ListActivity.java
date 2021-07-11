@@ -242,7 +242,11 @@ public class ListActivity extends AppCompatActivity implements RecordingListCall
                 .setTitle(R.string.delete_all_title)
                 .setMessage(getString(R.string.delete_all_message))
                 .setPositiveButton(R.string.delete, (dialog, which) -> {
-                    MediaProviderHelper.removeAll(getContentResolver());
+                    final List<RecordingData> items = new ArrayList<>(mAdapter.getData());
+                    items.forEach(item -> {
+                        MediaProviderHelper.remove(this, item.getUri());
+                        mAdapter.onDelete(item);
+                    });
                     Utils.cancelShareNotification(this);
                     loadRecordings();
                 })
