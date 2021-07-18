@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "4a1f44ec_b316ac6b",
+        "filename": "app/src/main/java/org/lineageos/recorder/list/RecordingsAdapter.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2021-07-18T20:24:25Z",
+      "side": 1,
+      "message": "why do we need to duplicate it?\nthe list will be shared in deleteAllRecordings so the items will consume ( be removed ) as soon as iterated over.\nthis way we can just call onDelete(0) as the next item to remove should be the first in the list.\nshould be faster~",
+      "revId": "0002b612dde2308c3b59ab2f859ea72d7e53e690",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    }
+  ]
+}
