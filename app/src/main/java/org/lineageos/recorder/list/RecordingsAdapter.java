@@ -32,16 +32,21 @@ import java.util.Locale;
 public class RecordingsAdapter extends RecyclerView.Adapter<RecordingItemViewHolder> {
 
     @NonNull
-    private final RecordingItemCallbacks mCallbacks;
+    private final RecordingListCallbacks mCallbacks;
     @NonNull
     private final SimpleDateFormat mDateFormat = new SimpleDateFormat(
             "yyyy-MM-dd HH:mm", Locale.getDefault());
     @NonNull
     private List<RecordingData> mData;
+    @NonNull
+    private List<RecordingData> mSelected;
+    private boolean mInSelectionMode;
 
-    public RecordingsAdapter(@NonNull RecordingItemCallbacks callbacks) {
+    public RecordingsAdapter(@NonNull RecordingListCallbacks callbacks) {
         mCallbacks = callbacks;
         mData = new ArrayList<>();
+        mSelected = new ArrayList<>();
+        mInSelectionMode = false;
     }
 
     @NonNull
@@ -49,12 +54,29 @@ public class RecordingsAdapter extends RecyclerView.Adapter<RecordingItemViewHol
     public RecordingItemViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         final View view = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.list_item, parent, false);
-        return new RecordingItemViewHolder(view, mCallbacks, mDateFormat);
+        final RecordingItemViewHolder viewHolder = new RecordingItemViewHolder(view,
+                mCallbacks, mDateFormat);
+        viewHolder.itemView.setOnClickListener(v -> {
+            if (mInSelectionMode) {
+                changeSelectedState(viewHolder.getAdapterPosition());
+            } else {
+                mCallbacks.onPlay(viewHolder.getUri());
+            }
+        });
+        viewHolder.itemView.setOnLongClickListener(v -> {
+            changeSelectedState(viewHolder.getAdapterPosition());
+            return true;
+        });
+        return viewHolder;
     }
 
     @Override
     public void onBindViewHolder(@NonNull RecordingItemViewHolder holder, int position) {
-        holder.setData(mData.get(position));
+        final RecordingData item = mData.get(position);
+        final int selectionStatus = mSelected.isEmpty()
+                ? ListItemStatus.DEFAULT
+                : mSelected.contains(item) ? ListItemStatus.CHECKED : ListItemStatus.UNCHECKED;
+        holder.setData(item, selectionStatus);
     }
 
     @Override
@@ -64,6 +86,8 @@ public class RecordingsAdapter extends RecyclerView.Adapter<RecordingItemViewHol
 
     public void setData(@NonNull List<RecordingData> data) {
         mData = data;
+        mSelected = new ArrayList<>(data.size());
+        mInSelectionMode = false;
         notifyDataSetChanged();
     }
 
@@ -73,7 +97,7 @@ public class RecordingsAdapter extends RecyclerView.Adapter<RecordingItemViewHol
     }
 
     public void onDelete(int index) {
-        mData.remove(index);
+        mSelected.remove(mData.remove(index));
         notifyItemRemoved(index);
     }
 
@@ -86,8 +110,48 @@ public class RecordingsAdapter extends RecyclerView.Adapter<RecordingItemViewHol
 
     public void onRename(int index, @NonNull String newTitle) {
         RecordingData oldData = mData.get(index);
-        mData.set(index, new RecordingData(oldData.getUri(), newTitle, oldData.getDate(),
-                oldData.getDuration()));
+        RecordingData newData = new RecordingData(oldData.getUri(), newTitle, oldData.getDate(),
+                oldData.getDuration());
+        mData.set(index, newData);
+
+        final int selectIndex = mSelected.indexOf(oldData);
+        if (selectIndex >= 0) {
+            mSelected.set(selectIndex, newData);
+        }
         notifyItemChanged(index);
+    }
+
+    @NonNull
+    public List<RecordingData> getSelected() {
+        return new ArrayList<>(mSelected);
+    }
+
+    private void changeSelectedState(int position) {
+        if (!mInSelectionMode) {
+            mCallbacks.startSelectionMode();
+        }
+
+        final RecordingData item = mData.get(position);
+        if (mSelected.contains(item)) {
+            mSelected.remove(item);
+        } else {
+            mSelected.add(mData.get(position));
+        }
+        notifyItemChanged(position);
+
+        if (mSelected.isEmpty()) {
+            mCallbacks.endSelectionMode();
+        }
+    }
+
+    public void enterSelectionMode() {
+        mInSelectionMode = true;
+        notifyDataSetChanged();
+    }
+
+    public void exitSelectionMode() {
+        mSelected.clear();
+        mInSelectionMode = false;
+        notifyDataSetChanged();
     }
 }
