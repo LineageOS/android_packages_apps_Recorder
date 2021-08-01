@@ -41,6 +41,7 @@ public class GoodQualityRecorder implements SoundRecording {
 
     @Override
     public boolean stopRecording() {
+        boolean hasRecorded = false;
         if (mRecorder == null) {
             return false;
         }
@@ -50,9 +51,16 @@ public class GoodQualityRecorder implements SoundRecording {
             mRecorder.resume();
         }
 
-        mRecorder.stop();
-        mRecorder.release();
-        return true;
+        // needed to prevent app crash when starting and stopping too fast
+        try {
+            mRecorder.stop();
+            hasRecorded = true;
+        } catch (RuntimeException rte) {
+            // ignore
+        } finally {
+            mRecorder.release();
+        }
+        return hasRecorded;
     }
 
     @Override

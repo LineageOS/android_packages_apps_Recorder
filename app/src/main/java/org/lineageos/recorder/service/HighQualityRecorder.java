@@ -65,6 +65,7 @@ public class HighQualityRecorder implements SoundRecording {
 
     @Override
     public boolean stopRecording() {
+        boolean hasRecorded = false;
         if (mRecord == null) {
             return false;
         }
@@ -76,11 +77,17 @@ public class HighQualityRecorder implements SoundRecording {
             Log.e(TAG, "Interrupted thread", e);
         }
 
-        mRecord.stop();
-        mRecord.release();
-
-        PcmConverter.convertToWave(mFile, BUFFER_SIZE);
-        return true;
+        // needed to prevent app crash when starting and stopping too fast
+        try {
+            mRecord.stop();
+            PcmConverter.convertToWave(mFile, BUFFER_SIZE);
+            hasRecorded = true;
+        } catch (RuntimeException rte) {
+            // ignore
+        } finally {
+            mRecord.release();
+        }
+        return hasRecorded;
     }
 
     @Override
