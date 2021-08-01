@@ -26,6 +26,7 @@ public class GoodQualityRecorder implements SoundRecording {
 
     private MediaRecorder mRecorder = null;
     private boolean mIsPaused = false;
+    private boolean mHasRecorded = false;
 
     @Override
     public void startRecording(File file) throws IOException {
@@ -50,9 +51,15 @@ public class GoodQualityRecorder implements SoundRecording {
             mRecorder.resume();
         }
 
-        mRecorder.stop();
+        // needed to prevent app crash when starting and stopping too fast
+        try {
+            mRecorder.stop();
+            mHasRecorded = true;
+        } catch (RuntimeException rte) {
+            // ignore
+        }
         mRecorder.release();
-        return true;
+        return mHasRecorded;
     }
 
     @Override

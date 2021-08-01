@@ -180,6 +180,7 @@ public class SoundRecorderService extends Service {
 
         boolean success = mRecorder.stopRecording();
         if (!success || mRecordFile == null) {
+            onRecordFailed();
             return START_NOT_STICKY;
         }
 
@@ -260,6 +261,12 @@ public class SoundRecorderService extends Service {
         if (uri != null) {
             createShareNotification(uri);
         }
+        Utils.setStatus(this, Utils.UiStatus.NOTHING);
+    }
+
+    private void onRecordFailed() {
+        mNotificationManager.cancel(NOTIFICATION_ID);
+        stopForeground(true);
         Utils.setStatus(this, Utils.UiStatus.NOTHING);
     }
 

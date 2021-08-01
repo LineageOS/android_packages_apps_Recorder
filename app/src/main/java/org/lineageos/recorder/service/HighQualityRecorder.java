@@ -49,6 +49,8 @@ public class HighQualityRecorder implements SoundRecording {
     private final AtomicBoolean mIsRecording = new AtomicBoolean(false);
     private final Semaphore mPauseSemaphore = new Semaphore(1);
 
+    private boolean mHasRecorded = false;
+
     @Override
     public void startRecording(File file) {
         mFile = file;
@@ -76,11 +78,16 @@ public class HighQualityRecorder implements SoundRecording {
             Log.e(TAG, "Interrupted thread", e);
         }
 
-        mRecord.stop();
+        // needed to prevent app crash when starting and stopping too fast
+        try {
+            mRecord.stop();
+            PcmConverter.convertToWave(mFile, BUFFER_SIZE);
+            mHasRecorded = true;
+        } catch (RuntimeException rte) {
+            // ignore
+        }
         mRecord.release();
-
-        PcmConverter.convertToWave(mFile, BUFFER_SIZE);
-        return true;
+        return mHasRecorded;
     }
 
     @Override
