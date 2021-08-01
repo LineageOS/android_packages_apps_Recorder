@@ -76,10 +76,16 @@ public class HighQualityRecorder implements SoundRecording {
             Log.e(TAG, "Interrupted thread", e);
         }
 
-        mRecord.stop();
-        mRecord.release();
-
-        PcmConverter.convertToWave(mFile, BUFFER_SIZE);
+        // needed to prevent app crash when starting and stopping too fast
+        boolean hasRecorded;
+        try {
+            mRecord.stop();
+            PcmConverter.convertToWave(mFile, BUFFER_SIZE);
+        } catch (RuntimeException rte) {
+            return false;
+        } finally {
+            mRecord.release();
+        }
         return true;
     }
 

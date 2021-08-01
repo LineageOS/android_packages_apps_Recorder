@@ -50,8 +50,14 @@ public class GoodQualityRecorder implements SoundRecording {
             mRecorder.resume();
         }
 
-        mRecorder.stop();
-        mRecorder.release();
+        // needed to prevent app crash when starting and stopping too fast
+        try {
+            mRecorder.stop();
+        } catch (RuntimeException rte) {
+            return false;
+        } finally {
+            mRecorder.release();
+        }
         return true;
     }
 
