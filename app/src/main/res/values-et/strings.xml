@@ -14,7 +14,20 @@
      limitations under the License.
 -->
 <resources>
+    <string name="pause">Paus</string>
+    <string name="resume">Jätka</string>
+    <string name="rename">Nimeta ümber</string>
+    <string name="delete_recording_message">Kas sa oled kindel, et soovid selle salvestuse kustutada? Seda toimingut ei saa tagasi võtta!</string>
+    <string name="sound_recording_title_paused">Pausil</string>
     <string name="sound_channel_title">Heli salvestamine</string>
     <string name="sound_channel_desc">Püsiv teade heli salvestamisel ja teade kui salvestamine on lõppenud</string>
-    <string name="screen_last_message">Kestus: %1$d sekundit</string>
+    <string name="settings_title">Seaded</string>
+    <string name="settings_location_message">Lisage postitustele asukohasildid</string>
+    <string name="settings_quality_high">Kvaliteetne salvestus</string>
+    <string name="snack_permissions_no_permission_location">Asukohaluba keelati. Salvestustele asukohtade lisamiseks lülitage see seadetes sisse</string>
+    <string name="list_title">Minu salvestused</string>
+    <string name="list_error_empty">Siin kuvatakse kõik teie salvestused</string>
+    <string name="list_edit_title">Muuda salvestuse nime</string>
+    <string name="list_edit_confirm">Muuda</string>
+    <string name="list_item_menu">Veel toiminguid</string>
 </resources>

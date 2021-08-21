@@ -18,16 +18,22 @@
     <string name="share">Bagikan</string>
     <string name="stop">Hentikan</string>
     <string name="play">Putar</string>
+    <string name="pause">Jeda</string>
+    <string name="resume">Lanjutkan</string>
     <string name="delete">Hapus</string>
     <string name="cancel">Batal</string>
+    <string name="rename">Ganti nama</string>
     <string name="delete_title">Menghapus rekaman</string>
     <string name="sound_notification_title">Perekam Suara</string>
     <string name="sound_notification_message">Durasi audio: %1$s</string>
     <string name="sound_recording_title_working">Merekam</string>
+    <string name="sound_recording_title_paused">Dijeda</string>
     <string name="sound_last_title">Rekaman terakhir</string>
     <string name="sound_channel_title">Rekaman suara</string>
     <string name="sound_channel_desc">Pemberitahuan tetap saat merekam suara dan pemberitahuan setelah selesai</string>
-    <string name="screen_last_message">Durasi: %1$d detik</string>
+    <string name="settings_title">Setelan</string>
+    <string name="settings_location_message">Tandai rekaman Anda dengan posisi lokasi saat ini</string>
+    <string name="settings_quality_high">Rekam dengan kualitas tinggi</string>
     <string name="dialog_permissions_title">Izin</string>
     <string name="dialog_permissions_mic">Perekam membutuhkan izin mikrofon untuk merekam audio</string>
     <string name="dialog_permissions_phone">Perekam membutuhkan akses ke status telepon untuk mencegah aplikasi ini merekam saat Anda melakukan panggilan</string>
@@ -35,5 +41,10 @@
     <string name="dialog_permissions_ask">Minta izin lagi</string>
     <string name="dialog_permissions_dismiss">Tutup</string>
     <string name="snack_permissions_no_permission">Izin yang diperlukan ditolak, hidupkan dari aplikasi Pengaturan untuk mulai merekam</string>
+    <string name="snack_permissions_no_permission_location">Izin akses lokasi ditolak, aktifkan izin dari aplikasi Setelan untuk menandai rekaman Anda</string>
     <string name="main_sound_action">Rekam suara</string>
+    <string name="list_title">Rekaman saya</string>
+    <string name="list_error_empty">Semua rekaman Anda akan muncul di sini</string>
+    <string name="list_edit_confirm">Ubah</string>
+    <string name="list_item_menu">Tindakan lainnya</string>
 </resources>

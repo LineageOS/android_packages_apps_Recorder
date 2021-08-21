@@ -28,10 +28,10 @@
     <string name="sound_notification_title">Înregistrare Sunet</string>
     <string name="sound_notification_message">Lungime audio: %1$s</string>
     <string name="sound_recording_title_working">Înregistrare</string>
+    <string name="sound_recording_title_paused">În pauză</string>
     <string name="sound_last_title">Ultima înregistrare</string>
     <string name="sound_channel_title">Înregistrare sunet</string>
     <string name="sound_channel_desc">Notificare persistentă când se înregistrează sunetul și notificare când acțiunea este completă</string>
-    <string name="screen_last_message">Durată: %1$d (de) secunde</string>
     <string name="settings_title">Setări</string>
     <string name="settings_location_message">Etichetați înregistrările cu poziția dvs. curentă</string>
     <string name="settings_quality_high">Înregistrare la calitate înaltă</string>

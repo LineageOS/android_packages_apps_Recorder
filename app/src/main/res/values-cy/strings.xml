@@ -18,8 +18,11 @@
     <string name="share">Rhannu</string>
     <string name="stop">Stopio</string>
     <string name="play">Chwarae</string>
+    <string name="pause">Seibio</string>
+    <string name="resume">Parhau</string>
     <string name="delete">Dileu</string>
     <string name="cancel">Diddymu</string>
+    <string name="rename">Ailenwi</string>
     <string name="delete_title">Yn dileu\'r recordiad</string>
     <string name="sound_notification_title">Recordydd Sain</string>
     <string name="sound_notification_message">Hyd sain: %1$s</string>
@@ -27,7 +30,8 @@
     <string name="sound_last_title">Recordiad diwethaf</string>
     <string name="sound_channel_title">Recordio sain</string>
     <string name="sound_channel_desc">Hysbysiad cyson wrth recordio\'r sain a hysbysiad ar ôl gorffen recordio</string>
-    <string name="screen_last_message">Hyd: %1$d eiliad</string>
+    <string name="settings_title">Gosodiadau</string>
+    <string name="settings_quality_high">Recordio mewn ansawdd uchel</string>
     <string name="dialog_permissions_title">Caniatâd</string>
     <string name="dialog_permissions_mic">Mae ar Recordydd angen mynediad i\'r meicroffon i recordio sain.</string>
     <string name="dialog_permissions_phone">Mae ar Rcordydd angen mynediad i statws y ffôn er mwyn sicrhau nad yw\'r ap hwn yn recordio tra dy fod mewn galwad.</string>
@@ -35,5 +39,11 @@
     <string name="dialog_permissions_ask">Gofyn eto</string>
     <string name="dialog_permissions_dismiss">Diystyru</string>
     <string name="snack_permissions_no_permission">Gwrthodwyd peth caniatad sydd ei angen. Rho ganiatâd yn Gosodiadau er mwyn dechrau recordio.</string>
+    <string name="snack_permissions_no_permission_location">Gwrthodwyd caniatâd lleoliad. Gellir ei alluogi o\'r ap Gosodiadau i dagio dy recordiadau.</string>
     <string name="main_sound_action">Recordio sain</string>
+    <string name="list_title">Fy recordiadau</string>
+    <string name="list_error_empty">Caiff dy holl recordiadau eu dangos yma</string>
+    <string name="list_edit_title">Golygu enw\'r recordiad</string>
+    <string name="list_edit_confirm">Newid</string>
+    <string name="list_item_menu">Rhagor o weithrediadau</string>
 </resources>

@@ -28,10 +28,10 @@
     <string name="sound_notification_title">Hangrögzítő</string>
     <string name="sound_notification_message">Audio hossza: %1$s</string>
     <string name="sound_recording_title_working">Felvétel</string>
+    <string name="sound_recording_title_paused">Szüneteltetve</string>
     <string name="sound_last_title">Utolsó felvétel</string>
     <string name="sound_channel_title">Hangrögzítés</string>
     <string name="sound_channel_desc">Állandó értesítés hangfelvétel közben és értesítés befejezéskor</string>
-    <string name="screen_last_message">%1$d másodperc hosszú</string>
     <string name="settings_title">Beállítások</string>
     <string name="settings_location_message">A felvételeket fűzze hozzá az aktuális tartózkodási helyhez</string>
     <string name="settings_quality_high">Kiváló minőségű felvétel</string>

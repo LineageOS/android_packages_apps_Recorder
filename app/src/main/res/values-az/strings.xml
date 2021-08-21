@@ -28,10 +28,10 @@
     <string name="sound_notification_title">Səs Yazma</string>
     <string name="sound_notification_message">Səs uzunluğu: %1$s</string>
     <string name="sound_recording_title_working">Səs yazılır</string>
+    <string name="sound_recording_title_paused">Fasilə verildi</string>
     <string name="sound_last_title">Son səsyazma</string>
     <string name="sound_channel_title">Səs yazma</string>
     <string name="sound_channel_desc">Səs yazanda davamlı bildiriş göstər və tamamlandıqdan sonra bildiriş göstər</string>
-    <string name="screen_last_message">Müddət: %1$d saniyə</string>
     <string name="settings_title">Tənzimləmələr</string>
     <string name="settings_location_message">Səsyazmalarınızı mövcud mövqeyinizlə etiketləyin</string>
     <string name="settings_quality_high">Yüksək keyfiyyətdə səsyazma</string>

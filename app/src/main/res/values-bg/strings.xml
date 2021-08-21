@@ -31,7 +31,6 @@
     <string name="sound_last_title">Последен запис</string>
     <string name="sound_channel_title">Запис на звук</string>
     <string name="sound_channel_desc">Постоянно известяване при запис на звук и известие, след завършване</string>
-    <string name="screen_last_message">Продължителност: %1$d секунди</string>
     <string name="settings_title">Настройки</string>
     <string name="settings_location_message">Маркирайте вашите записи с текущата ви позиция</string>
     <string name="settings_quality_high">Записвайте с високо качество</string>

@@ -28,10 +28,10 @@
     <string name="sound_notification_title">Ses Kaydedici</string>
     <string name="sound_notification_message">Ses uzunluğu: %1$s</string>
     <string name="sound_recording_title_working">Kaydediliyor</string>
+    <string name="sound_recording_title_paused">Duraklatıldı</string>
     <string name="sound_last_title">Son kayıt</string>
     <string name="sound_channel_title">Ses kaydı</string>
     <string name="sound_channel_desc">Ses kaydedilirken kalıcı bildirim göster ve tamamlandıktan sonra bildirim göster</string>
-    <string name="screen_last_message">Süre: %1$d saniye</string>
     <string name="settings_title">Ayarlar</string>
     <string name="settings_location_message">Kayıtlarınızı mevcut konumunuzla etiketleyin</string>
     <string name="settings_quality_high">Yüksek kalitede kayıt</string>

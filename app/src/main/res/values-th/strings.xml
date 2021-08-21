@@ -27,7 +27,6 @@
     <string name="sound_last_title">บันทึกล่าสุด</string>
     <string name="sound_channel_title">บันทึกเสียง</string>
     <string name="sound_channel_desc">การแจ้งเตือนถาวรเมื่อบันทึกเสียงและการแจ้งเตือนหลังจากเสร็จสิ้น</string>
-    <string name="screen_last_message">ช่วงเวลา: %1$d วินาที</string>
     <string name="dialog_permissions_title">การอนุญาต</string>
     <string name="dialog_permissions_ask">ถามอีกครั้ง</string>
     <string name="dialog_permissions_dismiss">ยกเลิก</string>

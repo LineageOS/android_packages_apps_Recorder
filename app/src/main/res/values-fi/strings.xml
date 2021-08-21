@@ -28,10 +28,10 @@
     <string name="sound_notification_title">Ääninauhuri</string>
     <string name="sound_notification_message">Äänen kesto: %1$s</string>
     <string name="sound_recording_title_working">Nauhoitetaan</string>
+    <string name="sound_recording_title_paused">Keskeytetty</string>
     <string name="sound_last_title">Viimeisin nauhoitus</string>
     <string name="sound_channel_title">Ääninauhuri</string>
     <string name="sound_channel_desc">Jatkuva ilmoitus äänen tallentamisesta ja ilmoitus kun se on valmis</string>
-    <string name="screen_last_message">Kesto: %1$d sekuntia</string>
     <string name="settings_title">Asetukset</string>
     <string name="settings_location_message">Merkitse nauhoitukset nykyisellä sijainnilla</string>
     <string name="settings_quality_high">Nauhoita korkealla laadulla</string>

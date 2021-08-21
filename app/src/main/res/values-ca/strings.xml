@@ -28,10 +28,10 @@
     <string name="sound_notification_title">Gravadora de so</string>
     <string name="sound_notification_message">Durada de l\'àudio: %1$s</string>
     <string name="sound_recording_title_working">S\'està gravant</string>
+    <string name="sound_recording_title_paused">Pausat</string>
     <string name="sound_last_title">Darrer enregistrament</string>
     <string name="sound_channel_title">Enregistrament de so</string>
     <string name="sound_channel_desc">Notificació persistent quan s\'està enregistrant so i notificació quan s\'hagi acabat</string>
-    <string name="screen_last_message">Durada: %1$d segons</string>
     <string name="settings_title">Configuració</string>
     <string name="settings_location_message">Etiqueteu les gravacions amb la vostra posició actual</string>
     <string name="settings_quality_high">Grava en alta qualitat</string>

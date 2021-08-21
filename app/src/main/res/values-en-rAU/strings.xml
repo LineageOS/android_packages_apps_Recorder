@@ -28,10 +28,10 @@
     <string name="sound_notification_title">Sound Recorder</string>
     <string name="sound_notification_message">Audio length: %1$s</string>
     <string name="sound_recording_title_working">Recording</string>
+    <string name="sound_recording_title_paused">Paused</string>
     <string name="sound_last_title">Last record</string>
     <string name="sound_channel_title">Sound recording</string>
     <string name="sound_channel_desc">Persistent notification when recording sound and notification after it is complete</string>
-    <string name="screen_last_message">Duration: %1$d seconds</string>
     <string name="settings_title">Settings</string>
     <string name="settings_location_message">Tag your recordings with your current position</string>
     <string name="settings_quality_high">Record in high quality</string>

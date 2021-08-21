@@ -28,10 +28,10 @@
     <string name="sound_notification_title">Запись звука</string>
     <string name="sound_notification_message">Длительность аудио: %1$s</string>
     <string name="sound_recording_title_working">Запись</string>
+    <string name="sound_recording_title_paused">Приостановлено</string>
     <string name="sound_last_title">Последняя запись</string>
     <string name="sound_channel_title">Запись звука</string>
     <string name="sound_channel_desc">Постоянное уведомление при записи звука и уведомление после его завершения</string>
-    <string name="screen_last_message">Продолжительность: %1$d секунд</string>
     <string name="settings_title">Настройки</string>
     <string name="settings_location_message">Добавляйте метки расположения к своим записям</string>
     <string name="settings_quality_high">Запись в высоком качестве</string>

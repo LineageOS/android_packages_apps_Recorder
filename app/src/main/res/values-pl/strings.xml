@@ -27,7 +27,6 @@
     <string name="sound_last_title">Ostatnie nagranie</string>
     <string name="sound_channel_title">Nagrywanie dźwięku</string>
     <string name="sound_channel_desc">Stałe powiadomienie podczas nagrywania dźwięku i powiadomienie po jego ukończeniu</string>
-    <string name="screen_last_message">Czas trwania: %1$d sekund</string>
     <string name="dialog_permissions_title">Uprawnienia</string>
     <string name="dialog_permissions_mic">Rejestrator musi mieć uprawnienia do mikrofonu w celu nagrywania dźwięku </string>
     <string name="dialog_permissions_phone">Rejestrator potrzebuje dostępu do stanu telefonu, aby zapobiec nagrywaniu w trakcie wykonywania połączenia</string>

@@ -28,10 +28,10 @@
     <string name="sound_notification_title">Registratore suoni</string>
     <string name="sound_notification_message">Durata audio: %1$s</string>
     <string name="sound_recording_title_working">Registrazione in corso</string>
+    <string name="sound_recording_title_paused">In pausa</string>
     <string name="sound_last_title">Ultima registrazione</string>
     <string name="sound_channel_title">Registrazione audio</string>
     <string name="sound_channel_desc">Notifica persistente durante la registrazione audio e notifica dopo averla completata</string>
-    <string name="screen_last_message">Durata: %1$d secondi</string>
     <string name="settings_title">Impostazioni</string>
     <string name="settings_location_message">Etichetta le tue registrazioni con la tua posizione attuale</string>
     <string name="settings_quality_high">Registra in alta qualità</string>

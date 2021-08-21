@@ -27,7 +27,6 @@
     <string name="sound_last_title">Последњи снимак</string>
     <string name="sound_channel_title">Снимање звука</string>
     <string name="sound_channel_desc">Трајно обавештење док се снима звук и обавештење након што се снимање заврши</string>
-    <string name="screen_last_message">Трајања: %1$d сек.</string>
     <string name="dialog_permissions_title">Дозволе</string>
     <string name="dialog_permissions_mic">Снимач захтева приступ микрофону за снимање звука.</string>
     <string name="dialog_permissions_phone">Снимач захтева приступ стању телефона за паузирање снимања током позива.</string>

@@ -31,7 +31,6 @@
     <string name="sound_last_title">Dernier enregistrement</string>
     <string name="sound_channel_title">Enregistreur audio</string>
     <string name="sound_channel_desc">Notification persistante lors de l\'enregistrement audio et notification après la fin de ce dernier</string>
-    <string name="screen_last_message">Durée : %1$d secondes</string>
     <string name="settings_title">Paramètres</string>
     <string name="settings_quality_high">Enregistrer en haute qualité</string>
     <string name="dialog_permissions_title">Autorisations</string>

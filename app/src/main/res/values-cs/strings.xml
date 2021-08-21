@@ -28,10 +28,10 @@
     <string name="sound_notification_title">Záznam zvuku</string>
     <string name="sound_notification_message">Délka zvukového záznamu: %1$s</string>
     <string name="sound_recording_title_working">Nahrávání</string>
+    <string name="sound_recording_title_paused">Pozastaveno</string>
     <string name="sound_last_title">Poslední záznam</string>
     <string name="sound_channel_title">Záznam zvuku</string>
     <string name="sound_channel_desc">Trvalé oznámení při záznamu zvuku a oznámení po dokončení</string>
-    <string name="screen_last_message">Doba trvání: %1$d\u00a0s</string>
     <string name="settings_title">Nastavení</string>
     <string name="settings_location_message">Označte své nahrávky svou aktuální pozicí</string>
     <string name="settings_quality_high">Nahrávání ve vysoké kvalitě</string>

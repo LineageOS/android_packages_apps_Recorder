@@ -28,10 +28,10 @@
     <string name="sound_notification_title">录音机</string>
     <string name="sound_notification_message">音频长度：%1$s</string>
     <string name="sound_recording_title_working">正在录制</string>
+    <string name="sound_recording_title_paused">已暂停</string>
     <string name="sound_last_title">上次录制</string>
     <string name="sound_channel_title">录音</string>
     <string name="sound_channel_desc">录音至完成期间的持续通知</string>
-    <string name="screen_last_message">持续时间 %1$d 秒</string>
     <string name="settings_title">设置</string>
     <string name="settings_location_message">以你当前的位置标记你的录音</string>
     <string name="settings_quality_high">高质量录音</string>

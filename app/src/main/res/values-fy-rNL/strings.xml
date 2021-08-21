@@ -27,7 +27,6 @@
     <string name="sound_last_title">Lêste opname</string>
     <string name="sound_channel_title">Lûd opnimme</string>
     <string name="sound_channel_desc">Permaninte notifikaasje wylst it opnimmen fan lûd en in notifikaasje neidat dit foltôge is</string>
-    <string name="screen_last_message">Doer: %1$d sekonden</string>
     <string name="dialog_permissions_title">Machtigingen</string>
     <string name="dialog_permissions_mic">Recorder hat tagong ta de mikrofoan nedich om lûd op nimme te kinnen</string>
     <string name="dialog_permissions_phone">Recorder hat tagong nedich ta de telefoansteat om foar te kommen dat dizze app opnimt wylst oproppen</string>

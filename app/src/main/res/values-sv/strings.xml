@@ -26,7 +26,6 @@
     <string name="sound_recording_title_working">Spelar in</string>
     <string name="sound_last_title">Senaste inspelning</string>
     <string name="sound_channel_title">Ljudinspelning</string>
-    <string name="screen_last_message">Varaktighet: %1$d sekunder</string>
     <string name="dialog_permissions_title">Behörigheter</string>
     <string name="dialog_permissions_mic">Inspelare behöver mikrofonbehörighet för att spela in ljud</string>
     <string name="dialog_permissions_phone">Inspelaren behöver samtalsstatus åtkomst för att hindra appen från att spela in medans du är i ett samtal</string>

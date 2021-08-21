@@ -28,10 +28,10 @@
     <string name="sound_notification_title">Gravador de som</string>
     <string name="sound_notification_message">Tamanho do áudio: %1$s</string>
     <string name="sound_recording_title_working">A gravar</string>
+    <string name="sound_recording_title_paused">Em pausa</string>
     <string name="sound_last_title">Última gravação</string>
     <string name="sound_channel_title">Gravador de som</string>
     <string name="sound_channel_desc">Notificação persistente durante a gravação de som e notificação depois de completa</string>
-    <string name="screen_last_message">Duração: %1$d segundos</string>
     <string name="settings_title">Definições</string>
     <string name="settings_location_message">Marca as tuas gravações com a tua localização atual</string>
     <string name="settings_quality_high">Gravação de alta qualidade</string>

@@ -28,10 +28,10 @@
     <string name="sound_notification_title">소리 녹음기</string>
     <string name="sound_notification_message">오디오 길이: %1$s</string>
     <string name="sound_recording_title_working">녹음 중</string>
+    <string name="sound_recording_title_paused">일시 정지됨</string>
     <string name="sound_last_title">마지막 녹음</string>
     <string name="sound_channel_title">소리 녹음</string>
     <string name="sound_channel_desc">소리 녹음 중 또는 녹음 완료 시 지속적으로 표시되는 알림</string>
-    <string name="screen_last_message">길이 : %1$d 초</string>
     <string name="settings_title">설정</string>
     <string name="settings_location_message">현재 위치를 녹음 태그에 기록</string>
     <string name="settings_quality_high">고품질로 녹음</string>

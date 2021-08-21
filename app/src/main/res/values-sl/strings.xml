@@ -28,10 +28,10 @@
     <string name="sound_notification_title">Snemalnik zvoka</string>
     <string name="sound_notification_message">Dolžina zvoka: %1$s</string>
     <string name="sound_recording_title_working">Snemanje</string>
+    <string name="sound_recording_title_paused">V premoru</string>
     <string name="sound_last_title">Zadnji posnetek</string>
     <string name="sound_channel_title">Snemanje zvoka</string>
     <string name="sound_channel_desc">Trajno obvestilo med snemanjem zvoka in obvestilo, ko je končano</string>
-    <string name="screen_last_message">Trajanje: %1$d sekund</string>
     <string name="settings_title">Nastavitve</string>
     <string name="settings_location_message">Označite vaše posnetke z vašo trenutno lokacijo</string>
     <string name="settings_quality_high">Snemaj v visoki kakovosti</string>
