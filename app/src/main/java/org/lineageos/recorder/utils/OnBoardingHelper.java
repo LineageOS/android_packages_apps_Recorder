@@ -27,7 +27,7 @@ import androidx.annotation.NonNull;
 
 import org.lineageos.recorder.R;
 
-public class OnBoardingHelper {
+public final class OnBoardingHelper {
     private static final String ONBOARD_SETTINGS = "onboard_settings";
     private static final String ONBOARD_SOUND_LIST = "onboard_list";
     private static final long RIPPLE_DELAY = 500;
@@ -35,6 +35,9 @@ public class OnBoardingHelper {
     private static final int RIPPLE_OPEN_APP_WAIT = 1;
     private static final long ROTATION_DELAY = 500;
     private static final int ROTATION_OPEN_APP_WAIT = 3;
+
+    private OnBoardingHelper() {
+    }
 
     public static void onBoardList(Context context, View view) {
         SharedPreferences prefs = getPrefs(context);
