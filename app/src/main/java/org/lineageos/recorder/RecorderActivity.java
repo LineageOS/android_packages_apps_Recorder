@@ -26,6 +26,7 @@ import android.content.IntentFilter;
 import android.content.ServiceConnection;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.IBinder;
@@ -45,6 +46,8 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import org.lineageos.recorder.service.RecorderBinder;
 import org.lineageos.recorder.service.SoundRecorderService;
+import org.lineageos.recorder.task.DeleteRecordingTask;
+import org.lineageos.recorder.task.TaskExecutor;
 import org.lineageos.recorder.ui.WaveFormView;
 import org.lineageos.recorder.utils.LastRecordHelper;
 import org.lineageos.recorder.utils.LocationHelper;
@@ -75,6 +78,7 @@ public class RecorderActivity extends AppCompatActivity implements
     private WaveFormView mRecordingVisualizer;
 
     private LocationHelper mLocationHelper;
+    private TaskExecutor mTaskExecutor;
 
     private boolean mReturnAudio;
     private boolean mHasRecordedAudio;
@@ -118,6 +122,9 @@ public class RecorderActivity extends AppCompatActivity implements
         mPrefs.registerOnSharedPreferenceChangeListener(this);
 
         mLocationHelper = new LocationHelper(this);
+
+        mTaskExecutor = new TaskExecutor();
+        getLifecycle().addObserver(mTaskExecutor);
 
         if (RECORD_SOUND_ACTION.equals(getIntent().getAction())) {
             mReturnAudio = true;
@@ -376,7 +383,13 @@ public class RecorderActivity extends AppCompatActivity implements
     }
 
     private void discardLastResult() {
-        LastRecordHelper.deleteRecording(this, LastRecordHelper.getLastItemUri(this), true);
+        final Uri uri = LastRecordHelper.getLastItemUri(this);
+        if (uri != null) {
+            mTaskExecutor.runTask(new DeleteRecordingTask(getContentResolver(), uri), () -> {
+                Utils.cancelShareNotification(this);
+                LastRecordHelper.setLastItem(this, null);
+            });
+        }
         cancelResult(true);
     }
 
