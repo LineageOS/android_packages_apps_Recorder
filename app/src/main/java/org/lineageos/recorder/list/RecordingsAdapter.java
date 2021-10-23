@@ -146,12 +146,12 @@ public class RecordingsAdapter extends RecyclerView.Adapter<RecordingItemViewHol
 
     public void enterSelectionMode() {
         mInSelectionMode = true;
-        notifyDataSetChanged();
+        notifyItemRangeChanged(0, mData.size());
     }
 
     public void exitSelectionMode() {
         mSelected.clear();
         mInSelectionMode = false;
-        notifyDataSetChanged();
+        notifyItemRangeChanged(0, mData.size());
     }
 }
