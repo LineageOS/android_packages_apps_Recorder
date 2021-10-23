@@ -16,6 +16,7 @@
 
 package org.lineageos.recorder.service;
 
+import android.Manifest;
 import android.app.Notification;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
@@ -25,6 +26,7 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Environment;
 import android.os.IBinder;
@@ -150,7 +152,13 @@ public class SoundRecorderService extends Service {
         mElapsedTime.set(0);
 
         try {
-            mRecorder.startRecording(mRecordFile);
+            if (checkSelfPermission(Manifest.permission.RECORD_AUDIO)
+                    == PackageManager.PERMISSION_GRANTED) {
+                mRecorder.startRecording(mRecordFile);
+            } else {
+                Log.e(TAG, "Missing permission to record audio");
+                return START_NOT_STICKY;
+            }
         } catch (IOException e) {
             Log.e(TAG, "Error while starting the media recorder", e);
             return START_NOT_STICKY;
@@ -279,7 +287,7 @@ public class SoundRecorderService extends Service {
         mNotificationManager.createNotificationChannel(notificationChannel);
     }
 
-    @NonNull
+    @Nullable
     private Notification createRecordingNotification() {
         if (mNotificationManager == null) {
             return null;
@@ -290,7 +298,7 @@ public class SoundRecorderService extends Service {
                 PendingIntent.FLAG_IMMUTABLE);
         PendingIntent stopPIntent = PendingIntent.getService(this, 0,
                 new Intent(this, SoundRecorderService.class).setAction(ACTION_STOP),
-                        PendingIntent.FLAG_IMMUTABLE);
+                PendingIntent.FLAG_IMMUTABLE);
 
         String duration = DateUtils.formatElapsedTime(mSbRecycle, mElapsedTime.get());
         NotificationCompat.Builder nb = new NotificationCompat.Builder(this, NOTIFICATION_CHANNEL)
@@ -304,12 +312,12 @@ public class SoundRecorderService extends Service {
         if (mIsPaused) {
             PendingIntent resumePIntent = PendingIntent.getService(this, 0,
                     new Intent(this, SoundRecorderService.class).setAction(ACTION_RESUME),
-                            PendingIntent.FLAG_IMMUTABLE);
+                    PendingIntent.FLAG_IMMUTABLE);
             nb.addAction(R.drawable.ic_resume, getString(R.string.resume), resumePIntent);
         } else {
             PendingIntent pausePIntent = PendingIntent.getService(this, 0,
                     new Intent(this, SoundRecorderService.class).setAction(ACTION_PAUSE),
-                            PendingIntent.FLAG_IMMUTABLE);
+                    PendingIntent.FLAG_IMMUTABLE);
             nb.addAction(R.drawable.ic_pause, getString(R.string.pause), pausePIntent);
         }
         nb.addAction(R.drawable.ic_stop, getString(R.string.stop), stopPIntent);

@@ -110,7 +110,7 @@ public final class MediaProviderHelper {
 
     private static <T> void runTask(Callable<T> callable, Consumer<T> consumer) {
         Handler handler = new Handler(Looper.getMainLooper());
-        FutureTask<T> future = new FutureTask<T>(callable) {
+        FutureTask<T> future = new FutureTask<>(callable) {
             @Override
             protected void done() {
                 try {
