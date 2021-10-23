@@ -90,6 +90,7 @@ public class Utils {
         view.setSystemUiVisibility(flags);
     }
 
+    @SuppressWarnings("deprecation")
     public static void setVerticalInsets(View view) {
         ViewCompat.setOnApplyWindowInsetsListener(view, (v, insets) -> {
             Insets systemInsets = insets.getSystemWindowInsets();
