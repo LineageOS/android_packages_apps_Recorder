@@ -32,7 +32,7 @@ import androidx.core.view.ViewCompat;
 import java.io.Closeable;
 import java.io.IOException;
 
-public class Utils {
+public final class Utils {
     public static final String PREFS = "preferences";
     public static final String KEY_RECORDING = "recording";
     public static final String PREF_RECORDING_NOTHING = "nothing";
