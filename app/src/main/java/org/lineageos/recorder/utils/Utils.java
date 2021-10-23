@@ -15,12 +15,14 @@
  */
 package org.lineageos.recorder.utils;
 
+import android.annotation.SuppressLint;
 import android.app.NotificationManager;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Build;
 import android.view.View;
 import android.view.Window;
+import android.view.WindowInsets;
 import android.view.inputmethod.InputMethodManager;
 
 import org.lineageos.recorder.service.SoundRecorderService;
@@ -90,10 +92,13 @@ public final class Utils {
         view.setSystemUiVisibility(flags);
     }
 
+    @SuppressLint("WrongConstant")
     @SuppressWarnings("deprecation")
     public static void setVerticalInsets(View view) {
         ViewCompat.setOnApplyWindowInsetsListener(view, (v, insets) -> {
-            Insets systemInsets = insets.getSystemWindowInsets();
+             Insets systemInsets = Build.VERSION.SDK_INT >= 31
+                    ? insets.getInsets(WindowInsets.Type.systemBars())
+                    : insets.getSystemWindowInsets();
             v.setPadding(v.getPaddingLeft(), systemInsets.top,
                     v.getPaddingRight(), systemInsets.bottom);
             return insets;
