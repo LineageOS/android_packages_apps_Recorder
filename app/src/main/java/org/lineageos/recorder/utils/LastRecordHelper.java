@@ -34,66 +34,11 @@ import org.lineageos.recorder.R;
 import java.util.ArrayList;
 import java.util.function.Consumer;
 
-public class LastRecordHelper {
+public final class LastRecordHelper {
     private static final String PREFS = "preferences";
     private static final String KEY_LAST_SOUND = "sound_last_path";
 
     private LastRecordHelper() {
-    }
-
-    @NonNull
-    public static AlertDialog promptDeleteFile(Context context,
-                                               Runnable onDelete) {
-        return new AlertDialog.Builder(context)
-                .setTitle(R.string.delete_title)
-                .setMessage(context.getString(R.string.delete_recording_message))
-                .setPositiveButton(R.string.delete,
-                        (dialog, which) -> onDelete.run())
-                .setNegativeButton(R.string.cancel, null)
-                .create();
-    }
-
-    @NonNull
-    public static AlertDialog promptFileDeletion(Context context,
-                                                 Runnable onDelete) {
-        return new AlertDialog.Builder(context)
-                .setTitle(R.string.delete_title)
-                .setMessage(context.getString(R.string.delete_recording_message))
-                .setPositiveButton(R.string.delete, (dialog, which) -> {
-                    onDelete.run();
-                })
-                .setNegativeButton(R.string.cancel, null)
-                .create();
-    }
-
-    @NonNull
-    public static AlertDialog promptRename(@NonNull Context context,
-                                           String currentTitle,
-                                           Consumer<String> consumer) {
-        LayoutInflater inflater = context.getSystemService(LayoutInflater.class);
-        View view = inflater.inflate(R.layout.dialog_content_rename, null);
-        EditText editText = view.findViewById(R.id.name);
-        editText.setText(currentTitle);
-        editText.requestFocus();
-        Utils.showKeyboard(context);
-
-        return new AlertDialog.Builder(context)
-                .setTitle(R.string.list_edit_title)
-                .setView(view)
-                .setPositiveButton(R.string.list_edit_confirm, (dialog, which) -> {
-                    Editable editable = editText.getText();
-                    if (editable == null || editable.length() == 0) {
-                        return;
-                    }
-
-                    String newTitle = editable.toString();
-                    if (!newTitle.equals(currentTitle)) {
-                        consumer.accept(newTitle);
-                    }
-                    Utils.closeKeyboard(context);
-                })
-                .setNegativeButton(R.string.cancel, (dialog, which) -> Utils.closeKeyboard(context))
-                .create();
     }
 
     @NonNull

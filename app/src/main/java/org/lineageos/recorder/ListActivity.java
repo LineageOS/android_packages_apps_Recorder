@@ -17,11 +17,14 @@ package org.lineageos.recorder;
 
 import android.net.Uri;
 import android.os.Bundle;
+import android.text.Editable;
 import android.view.ActionMode;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
@@ -126,19 +129,42 @@ public class ListActivity extends AppCompatActivity implements RecordingListCall
 
     @Override
     public void onDelete(int index, @NonNull Uri uri) {
-        final AlertDialog dialog = LastRecordHelper.promptFileDeletion(this, () ->
-                mTaskExecutor.runTask(new DeleteRecordingTask(getContentResolver(), uri),
-                        () -> mAdapter.onDelete(index)));
-        dialog.show();
+        new AlertDialog.Builder(this)
+                .setTitle(R.string.delete_title)
+                .setMessage(getString(R.string.delete_recording_message))
+                .setPositiveButton(R.string.delete, (d, which) -> mTaskExecutor.runTask(
+                        new DeleteRecordingTask(getContentResolver(), uri),
+                        () -> mAdapter.onDelete(index)))
+                .setNegativeButton(R.string.cancel, null)
+                .show();
     }
 
     @Override
     public void onRename(int index, @NonNull Uri uri, @NonNull String currentTitle) {
-        final AlertDialog dialog = LastRecordHelper.promptRename(
-                this,
-                currentTitle,
-                newTitle -> renameRecording(uri, newTitle, index));
-        dialog.show();
+        final LayoutInflater inflater = getSystemService(LayoutInflater.class);
+        final View view = inflater.inflate(R.layout.dialog_content_rename, null);
+        EditText editText = view.findViewById(R.id.name);
+        editText.setText(currentTitle);
+        editText.requestFocus();
+        Utils.showKeyboard(this);
+
+        new AlertDialog.Builder(this)
+                .setTitle(R.string.list_edit_title)
+                .setView(view)
+                .setPositiveButton(R.string.list_edit_confirm, (d, which) -> {
+                    Editable editable = editText.getText();
+                    if (editable == null || editable.length() == 0) {
+                        return;
+                    }
+
+                    String newTitle = editable.toString();
+                    if (!newTitle.equals(currentTitle)) {
+                        renameRecording(uri, newTitle, index);
+                    }
+                    Utils.closeKeyboard(this);
+                })
+                .setNegativeButton(R.string.cancel, (d, which) -> Utils.closeKeyboard(this))
+                .show();
     }
 
     @Override
