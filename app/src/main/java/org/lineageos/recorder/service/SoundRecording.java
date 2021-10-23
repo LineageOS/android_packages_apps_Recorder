@@ -15,11 +15,16 @@
  */
 package org.lineageos.recorder.service;
 
+import android.Manifest;
+
+import androidx.annotation.RequiresPermission;
+
 import java.io.File;
 import java.io.IOException;
 
 public interface SoundRecording {
 
+    @RequiresPermission(Manifest.permission.RECORD_AUDIO)
     void startRecording(File file) throws IOException;
 
     boolean stopRecording();
