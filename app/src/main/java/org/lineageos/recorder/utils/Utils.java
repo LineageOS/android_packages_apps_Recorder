@@ -28,6 +28,7 @@ import org.lineageos.recorder.service.SoundRecorderService;
 import androidx.annotation.NonNull;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
+import androidx.core.view.WindowInsetsCompat;
 
 import java.io.Closeable;
 import java.io.IOException;
@@ -93,7 +94,9 @@ public final class Utils {
     @SuppressWarnings("deprecation")
     public static void setVerticalInsets(View view) {
         ViewCompat.setOnApplyWindowInsetsListener(view, (v, insets) -> {
-            Insets systemInsets = insets.getSystemWindowInsets();
+             Insets systemInsets = Build.VERSION.SDK_INT >= 31
+                    ? insets.getInsets(WindowInsetsCompat.Type.systemBars())
+                    : insets.getSystemWindowInsets();
             v.setPadding(v.getPaddingLeft(), systemInsets.top,
                     v.getPaddingRight(), systemInsets.bottom);
             return insets;
