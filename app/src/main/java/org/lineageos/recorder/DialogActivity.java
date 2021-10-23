@@ -30,6 +30,8 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SwitchCompat;
 
+import org.lineageos.recorder.task.DeleteRecordingTask;
+import org.lineageos.recorder.task.TaskExecutor;
 import org.lineageos.recorder.utils.LastRecordHelper;
 import org.lineageos.recorder.utils.Utils;
 
@@ -41,6 +43,7 @@ public class DialogActivity extends AppCompatActivity {
     private SwitchCompat mLocationSwitch;
 
     private SharedPreferences mPrefs;
+    private TaskExecutor mTaskExecutor;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstance) {
@@ -49,6 +52,8 @@ public class DialogActivity extends AppCompatActivity {
         setFinishOnTouchOutside(true);
 
         mPrefs = getSharedPreferences(Utils.PREFS, 0);
+        mTaskExecutor = new TaskExecutor();
+        getLifecycle().addObserver(mTaskExecutor);
 
         Intent intent = getIntent();
         boolean deleteLastRecording = intent.getBooleanExtra(EXTRA_DELETE_LAST_RECORDING, false);
@@ -69,11 +74,6 @@ public class DialogActivity extends AppCompatActivity {
             dialog.setTitle(dialogTitle);
         }
         dialog.show();
-    }
-
-    @Override
-    public void onDestroy() {
-        super.onDestroy();
     }
 
     @Override
@@ -115,8 +115,12 @@ public class DialogActivity extends AppCompatActivity {
 
     private void deleteLastItem() {
         Uri uri = LastRecordHelper.getLastItemUri(this);
-        AlertDialog dialog = LastRecordHelper.deleteFile(this, uri);
-        dialog.setOnDismissListener(d -> finish());
+        if (uri == null) {
+            return;
+        }
+        AlertDialog dialog = LastRecordHelper.promptDeleteFile(this, () ->
+                mTaskExecutor.runTask(new DeleteRecordingTask(getContentResolver(), uri),
+                        this::finish));
         dialog.show();
     }
 
@@ -164,7 +168,7 @@ public class DialogActivity extends AppCompatActivity {
     }
 
     private void askLocationPermission() {
-        requestPermissions(new String[]{ Manifest.permission.ACCESS_FINE_LOCATION },
+        requestPermissions(new String[]{Manifest.permission.ACCESS_FINE_LOCATION},
                 REQUEST_LOCATION_PERMS);
     }
 
