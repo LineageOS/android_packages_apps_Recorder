@@ -114,14 +114,20 @@ public class DialogActivity extends AppCompatActivity {
     }
 
     private void deleteLastItem() {
-        Uri uri = LastRecordHelper.getLastItemUri(this);
+        final Uri uri = LastRecordHelper.getLastItemUri(this);
         if (uri == null) {
             return;
         }
-        AlertDialog dialog = LastRecordHelper.promptDeleteFile(this, () ->
-                mTaskExecutor.runTask(new DeleteRecordingTask(getContentResolver(), uri),
-                        this::finish));
-        dialog.show();
+
+        new AlertDialog.Builder(this)
+                .setTitle(R.string.delete_title)
+                .setMessage(getString(R.string.delete_recording_message))
+                .setPositiveButton(R.string.delete, (d, which) -> mTaskExecutor.runTask(
+                        new DeleteRecordingTask(getContentResolver(), uri),
+                        d::dismiss))
+                .setNegativeButton(R.string.cancel, null)
+                .setOnDismissListener(d -> finish())
+                .show();
     }
 
     @NonNull
