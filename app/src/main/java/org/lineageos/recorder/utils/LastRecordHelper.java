@@ -42,33 +42,24 @@ public class LastRecordHelper {
     }
 
     @NonNull
-    public static AlertDialog deleteFile(Context context, final Uri uri) {
+    public static AlertDialog promptDeleteFile(Context context,
+                                               Runnable onDelete) {
         return new AlertDialog.Builder(context)
                 .setTitle(R.string.delete_title)
                 .setMessage(context.getString(R.string.delete_recording_message))
                 .setPositiveButton(R.string.delete,
-                        (dialog, which) -> deleteRecording(context, uri, true))
+                        (dialog, which) -> onDelete.run())
                 .setNegativeButton(R.string.cancel, null)
                 .create();
     }
 
-    public static void deleteRecording(Context context, Uri uri, boolean clearLastItem) {
-        MediaProviderHelper.remove(context, uri);
-        Utils.cancelShareNotification(context);
-        if (clearLastItem) {
-            setLastItem(context, null);
-        }
-    }
-
     @NonNull
     public static AlertDialog promptFileDeletion(Context context,
-                                                 final Uri uri,
                                                  Runnable onDelete) {
         return new AlertDialog.Builder(context)
                 .setTitle(R.string.delete_title)
                 .setMessage(context.getString(R.string.delete_recording_message))
                 .setPositiveButton(R.string.delete, (dialog, which) -> {
-                    deleteRecording(context, uri, false);
                     onDelete.run();
                 })
                 .setNegativeButton(R.string.cancel, null)
@@ -80,7 +71,7 @@ public class LastRecordHelper {
                                            String currentTitle,
                                            Consumer<String> consumer) {
         LayoutInflater inflater = context.getSystemService(LayoutInflater.class);
-        View view = inflater.inflate( R.layout.dialog_content_rename, null);
+        View view = inflater.inflate(R.layout.dialog_content_rename, null);
         EditText editText = view.findViewById(R.id.name);
         editText.setText(currentTitle);
         editText.requestFocus();

@@ -42,8 +42,9 @@ import org.lineageos.recorder.BuildConfig;
 import org.lineageos.recorder.ListActivity;
 import org.lineageos.recorder.R;
 import org.lineageos.recorder.RecorderActivity;
+import org.lineageos.recorder.task.AddRecordingToContentProviderTask;
+import org.lineageos.recorder.task.TaskExecutor;
 import org.lineageos.recorder.utils.LastRecordHelper;
-import org.lineageos.recorder.utils.MediaProviderHelper;
 import org.lineageos.recorder.utils.Utils;
 
 import java.io.File;
@@ -72,6 +73,7 @@ public class SoundRecorderService extends Service {
     private static final String NOTIFICATION_CHANNEL = "soundrecorder_notification_channel";
 
     private NotificationManager mNotificationManager;
+    private TaskExecutor mTaskExecutor;
 
     private final IBinder mBinder = new RecorderBinder(this);
     private SoundRecording mRecorder = null;
@@ -112,10 +114,13 @@ public class SoundRecorderService extends Service {
                 mNotificationManager.getNotificationChannel(NOTIFICATION_CHANNEL) == null) {
             createNotificationChannel();
         }
+
+        mTaskExecutor = new TaskExecutor();
     }
 
     @Override
     public void onDestroy() {
+        mTaskExecutor.terminate(null);
         unregisterReceiver(mShutdownReceiver);
         super.onDestroy();
     }
@@ -192,11 +197,12 @@ public class SoundRecorderService extends Service {
             return START_NOT_STICKY;
         }
 
-        MediaProviderHelper.addSoundToContentProvider(
-                getContentResolver(),
-                mRecordFile,
+        mTaskExecutor.runTask(new AddRecordingToContentProviderTask(
+                        getContentResolver(),
+                        mRecordFile,
+                        mRecorder.getMimeType()),
                 this::onRecordCompleted,
-                mRecorder.getMimeType());
+                () -> Log.e(TAG, "Failed to save recording"));
         return START_STICKY;
     }
 

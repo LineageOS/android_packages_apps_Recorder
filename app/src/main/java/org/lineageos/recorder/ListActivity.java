@@ -39,11 +39,16 @@ import org.lineageos.recorder.list.ListActionModeCallback;
 import org.lineageos.recorder.list.RecordingData;
 import org.lineageos.recorder.list.RecordingListCallbacks;
 import org.lineageos.recorder.list.RecordingsAdapter;
+import org.lineageos.recorder.task.DeleteAllRecordingsTask;
+import org.lineageos.recorder.task.DeleteRecordingTask;
+import org.lineageos.recorder.task.GetRecordingsTask;
+import org.lineageos.recorder.task.RenameRecordingTask;
+import org.lineageos.recorder.task.TaskExecutor;
 import org.lineageos.recorder.utils.LastRecordHelper;
-import org.lineageos.recorder.utils.MediaProviderHelper;
 import org.lineageos.recorder.utils.Utils;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -59,9 +64,14 @@ public class ListActivity extends AppCompatActivity implements RecordingListCall
 
     private ActionMode mActionMode;
 
+    private TaskExecutor mTaskExecutor;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        mTaskExecutor = new TaskExecutor();
+        getLifecycle().addObserver(mTaskExecutor);
 
         setContentView(R.layout.activity_list);
 
@@ -116,8 +126,9 @@ public class ListActivity extends AppCompatActivity implements RecordingListCall
 
     @Override
     public void onDelete(int index, @NonNull Uri uri) {
-        final AlertDialog dialog = LastRecordHelper.promptFileDeletion(
-                this, uri, () -> mAdapter.onDelete(index));
+        final AlertDialog dialog = LastRecordHelper.promptFileDeletion(this, () ->
+                mTaskExecutor.runTask(new DeleteRecordingTask(getContentResolver(), uri),
+                        () -> mAdapter.onDelete(index)));
         dialog.show();
     }
 
@@ -126,16 +137,7 @@ public class ListActivity extends AppCompatActivity implements RecordingListCall
         final AlertDialog dialog = LastRecordHelper.promptRename(
                 this,
                 currentTitle,
-                newTitle -> MediaProviderHelper.rename(
-                        getContentResolver(),
-                        uri,
-                        newTitle,
-                        success -> {
-                            if (success) {
-                                mAdapter.onRename(index, newTitle);
-                            }
-                        })
-        );
+                newTitle -> renameRecording(uri, newTitle, index));
         dialog.show();
     }
 
@@ -159,7 +161,7 @@ public class ListActivity extends AppCompatActivity implements RecordingListCall
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
         if (id == R.id.action_delete_all) {
-            deleteAllRecordings();
+            promptDeleteAllRecordings();
             return true;
         } else {
             return super.onOptionsItemSelected(item);
@@ -193,10 +195,32 @@ public class ListActivity extends AppCompatActivity implements RecordingListCall
     }
 
     private void loadRecordings() {
-        MediaProviderHelper.requestMyRecordings(getContentResolver(), list -> {
+        mTaskExecutor.runTask(new GetRecordingsTask(getContentResolver()), list -> {
             mProgressBar.setVisibility(View.GONE);
             mAdapter.setData(list);
         });
+    }
+
+    private void renameRecording(@NonNull Uri uri, @NonNull String newTitle, int index) {
+        mTaskExecutor.runTask(new RenameRecordingTask(getContentResolver(), uri, newTitle),
+                success -> {
+                    if (success) {
+                        mAdapter.onRename(index, newTitle);
+                    }
+                });
+    }
+
+    private void deleteRecording(@NonNull RecordingData item) {
+        mTaskExecutor.runTask(new DeleteRecordingTask(getContentResolver(), item.getUri()),
+                () -> mAdapter.onDelete(item));
+    }
+
+    private void deleteAllRecordings() {
+        final List<Uri> uris = mAdapter.getData().stream()
+                .map(RecordingData::getUri)
+                .collect(Collectors.toList());
+        mTaskExecutor.runTask(new DeleteAllRecordingsTask(getContentResolver(), uris),
+                () -> mAdapter.setData(Collections.emptyList()));
     }
 
     private void changeEmptyView(boolean isEmpty) {
@@ -226,19 +250,15 @@ public class ListActivity extends AppCompatActivity implements RecordingListCall
                 .setTitle(R.string.delete_selected_title)
                 .setMessage(getString(R.string.delete_selected_message))
                 .setPositiveButton(R.string.delete, (dialog, which) -> {
-                    selectedItems.forEach(item -> {
-                        MediaProviderHelper.remove(this, item.getUri());
-                        mAdapter.onDelete(item);
-                    });
+                    selectedItems.forEach(this::deleteRecording);
                     Utils.cancelShareNotification(this);
                 })
                 .setNegativeButton(R.string.cancel, null)
                 .show();
     }
 
-    private void deleteAllRecordings() {
-        final List<RecordingData> items = mAdapter.getData();
-        if (items.isEmpty()) {
+    private void promptDeleteAllRecordings() {
+        if (mAdapter.getItemCount() == 0) {
             return;
         }
 
@@ -246,8 +266,7 @@ public class ListActivity extends AppCompatActivity implements RecordingListCall
                 .setTitle(R.string.delete_all_title)
                 .setMessage(getString(R.string.delete_all_message))
                 .setPositiveButton(R.string.delete, (dialog, which) -> {
-                    items.forEach(item -> MediaProviderHelper.remove(this, item.getUri()));
-                    mAdapter.setData(new ArrayList<>());
+                    deleteAllRecordings();
                     Utils.cancelShareNotification(this);
                 })
                 .setNegativeButton(R.string.cancel, null)
