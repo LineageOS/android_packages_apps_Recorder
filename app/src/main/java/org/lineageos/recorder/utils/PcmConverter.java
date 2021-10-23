@@ -22,12 +22,15 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
-public class PcmConverter {
+public final class PcmConverter {
     private static final long SAMPLE_RATE = 44100;
     private static final int RECORDER_BPP = 16;
     private static final int CHANNELS = 1;
     private static final long BYTE_RATE = CHANNELS * SAMPLE_RATE * RECORDER_BPP / 8;
     private static final String TAG = "PcmConverter";
+
+    private PcmConverter() {
+    }
 
     public static void convertToWave(File file, int bufferSize) {
         FileInputStream input = null;
