@@ -101,12 +101,6 @@ public class ListActivity extends AppCompatActivity implements RecordingListCall
                     endSelectionMode();
                 }
             }
-
-            @Override
-            public void onChanged() {
-                super.onChanged();
-                changeEmptyView(mAdapter.getItemCount() == 0);
-            }
         });
         mListView.setLayoutManager(new LinearLayoutManager(this));
         mListView.setAdapter(mAdapter);
@@ -224,6 +218,7 @@ public class ListActivity extends AppCompatActivity implements RecordingListCall
         mTaskExecutor.runTask(new GetRecordingsTask(getContentResolver()), list -> {
             mProgressBar.setVisibility(View.GONE);
             mAdapter.setData(list);
+            changeEmptyView(list.isEmpty());
         });
     }
 
@@ -245,8 +240,10 @@ public class ListActivity extends AppCompatActivity implements RecordingListCall
         final List<Uri> uris = mAdapter.getData().stream()
                 .map(RecordingData::getUri)
                 .collect(Collectors.toList());
-        mTaskExecutor.runTask(new DeleteAllRecordingsTask(getContentResolver(), uris),
-                () -> mAdapter.setData(Collections.emptyList()));
+        mTaskExecutor.runTask(new DeleteAllRecordingsTask(getContentResolver(), uris), () -> {
+            mAdapter.setData(Collections.emptyList());
+            changeEmptyView(true);
+        });
     }
 
     private void changeEmptyView(boolean isEmpty) {
