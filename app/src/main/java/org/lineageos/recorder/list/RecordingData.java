@@ -20,6 +20,7 @@ import android.net.Uri;
 import androidx.annotation.NonNull;
 
 import java.util.Date;
+import java.util.Objects;
 
 public class RecordingData {
 
@@ -56,5 +57,25 @@ public class RecordingData {
 
     public long getDuration() {
         return duration;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof RecordingData)) {
+            return false;
+        }
+        final RecordingData that = (RecordingData) o;
+        return duration == that.duration
+                && uri.equals(that.uri)
+                && title.equals(that.title)
+                && date.equals(that.date);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(uri, title, date, duration);
     }
 }
