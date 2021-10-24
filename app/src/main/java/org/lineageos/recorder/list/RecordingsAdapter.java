@@ -20,6 +20,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.DiffUtil;
 import androidx.recyclerview.widget.RecyclerView;
 
 import org.lineageos.recorder.R;
@@ -30,6 +31,8 @@ import java.util.List;
 import java.util.Locale;
 
 public class RecordingsAdapter extends RecyclerView.Adapter<RecordingItemViewHolder> {
+    // According to documentation, DiffUtil is not working with lists of size > 2^26
+    private static final int DIFF_MAX_SIZE = 1 << 26;
 
     @NonNull
     private final RecordingListCallbacks mCallbacks;
@@ -85,10 +88,17 @@ public class RecordingsAdapter extends RecyclerView.Adapter<RecordingItemViewHol
     }
 
     public void setData(@NonNull List<RecordingData> data) {
-        mData = data;
         mSelected = new ArrayList<>(data.size());
         mInSelectionMode = false;
-        notifyDataSetChanged();
+
+        if (data.size() < DIFF_MAX_SIZE) {
+            final DiffUtil.DiffResult diff = DiffUtil.calculateDiff(new DiffCallback(mData, data));
+            mData = data;
+            diff.dispatchUpdatesTo(this);
+        } else {
+            mData = data;
+            notifyItemRangeChanged(0, data.size());
+        }
     }
 
     @NonNull
@@ -153,5 +163,39 @@ public class RecordingsAdapter extends RecyclerView.Adapter<RecordingItemViewHol
         mSelected.clear();
         mInSelectionMode = false;
         notifyItemRangeChanged(0, mData.size());
+    }
+
+    private static class DiffCallback extends DiffUtil.Callback {
+        @NonNull
+        private final List<RecordingData> oldList;
+        @NonNull
+        private final List<RecordingData> newList;
+
+        public DiffCallback(@NonNull List<RecordingData> oldList,
+                            @NonNull List<RecordingData> newList) {
+            this.oldList = oldList;
+            this.newList = newList;
+        }
+
+        @Override
+        public int getOldListSize() {
+            return oldList.size();
+        }
+
+        @Override
+        public int getNewListSize() {
+            return newList.size();
+        }
+
+        @Override
+        public boolean areItemsTheSame(int oldItemPosition, int newItemPosition) {
+            return oldList.get(oldItemPosition).getUri()
+                    .equals(newList.get(newItemPosition).getUri());
+        }
+
+        @Override
+        public boolean areContentsTheSame(int oldItemPosition, int newItemPosition) {
+            return oldList.get(oldItemPosition).equals(newList.get(newItemPosition));
+        }
     }
 }
