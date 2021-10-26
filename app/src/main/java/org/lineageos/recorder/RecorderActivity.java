@@ -88,9 +88,8 @@ public class RecorderActivity extends AppCompatActivity implements
         public void onReceive(Context context, Intent intent) {
             if (TelephonyManager.ACTION_PHONE_STATE_CHANGED.equals(intent.getAction())) {
                 int state = intent.getIntExtra(TelephonyManager.EXTRA_STATE, -1);
-                if (state == TelephonyManager.CALL_STATE_OFFHOOK &&
-                        Utils.isRecording(context)) {
-                    toggleSoundRecorder();
+                if (state == TelephonyManager.CALL_STATE_OFFHOOK) {
+                    togglePause();
                 }
             }
         }
