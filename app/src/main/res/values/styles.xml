@@ -50,18 +50,9 @@
         <item name="android:maxLines">1</item>
     </style>
 
-    <style name="AppTheme.RecordFab">
-        <item name="android:layout_width">wrap_content</item>
-        <item name="android:layout_height">wrap_content</item>
-        <item name="android:layout_margin">16dp</item>
-        <item name="android:stateListAnimator">@animator/lift_on_touch</item>
-        <item name="backgroundTint">?android:attr/colorAccent</item>
-        <item name="android:layout_centerInParent">true</item>
-    </style>
-
     <style name="AppTheme.ImageButton">
-        <item name="android:layout_width">36dp</item>
-        <item name="android:layout_height">36dp</item>
+        <item name="android:layout_width">40dp</item>
+        <item name="android:layout_height">40dp</item>
         <item name="android:paddingStart">8dp</item>
         <item name="android:paddingEnd">8dp</item>
         <item name="android:background">?attr/selectableItemBackgroundBorderless</item>
