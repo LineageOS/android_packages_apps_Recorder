@@ -16,15 +16,23 @@
 <resources>
     <string name="app_name">Recorder</string>
     <string name="share">Share</string>
+    <string name="share_selected">Share selected</string>
     <string name="stop">Stop</string>
     <string name="play">Play</string>
     <string name="pause">Pause</string>
     <string name="resume">Resume</string>
     <string name="delete">Delete</string>
+    <string name="delete_all">Delete all</string>
+    <string name="delete_selected">Delete selected</string>
     <string name="cancel">Cancel</string>
     <string name="rename">Rename</string>
     <string name="delete_title">Deleting record</string>
     <string name="delete_recording_message">Are you sure you want to delete this recording? This cannot be undone</string>
+    <string name="confirm">Confirm</string>
+    <string name="discard">Discard</string>
+    <string name="record_again">Record again</string>
+    <string name="confirm_result_title">Use recording?</string>
+    <string name="confirm_result_message">Do you want to use the last recording?</string>
     <string name="sound_notification_title">Sound Recorder</string>
     <string name="sound_notification_message">Audio length: %1$s</string>
     <string name="sound_recording_title_working">Recording</string>
@@ -50,4 +58,8 @@
     <string name="list_edit_title">Edit recording name</string>
     <string name="list_edit_confirm">Change</string>
     <string name="list_item_menu">More actions</string>
+    <string name="delete_all_title">Delete all</string>
+    <string name="delete_all_message">Are you sure you want to delete all recordings? This cannot be undone</string>
+    <string name="delete_selected_title">Delete selected</string>
+    <string name="delete_selected_message">Are you sure you want to delete the selected recordings? This cannot be undone</string>
 </resources>

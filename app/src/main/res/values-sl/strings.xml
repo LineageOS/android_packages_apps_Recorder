@@ -16,15 +16,23 @@
 <resources>
     <string name="app_name">Snemalnik</string>
     <string name="share">Souporaba</string>
+    <string name="share_selected">Deli izbrano</string>
     <string name="stop">Ustavi</string>
     <string name="play">Predvajaj</string>
     <string name="pause">Premor</string>
     <string name="resume">Nadaljuj</string>
     <string name="delete">Izbriši</string>
+    <string name="delete_all">Izbriši vse</string>
+    <string name="delete_selected">Izbriši izbrano</string>
     <string name="cancel">Prekliči</string>
     <string name="rename">Preimenuj</string>
     <string name="delete_title">Brisanje posnetka</string>
     <string name="delete_recording_message">Ali ste prepričani, da želite izbrisati ta posnetek? Tega ni mogoče razveljaviti</string>
+    <string name="confirm">Potrdi</string>
+    <string name="discard">Zavrzi</string>
+    <string name="record_again">Snemaj ponovno</string>
+    <string name="confirm_result_title">Uporabi posnetek?</string>
+    <string name="confirm_result_message">Ali želite uporabiti zadnji posnetek?</string>
     <string name="sound_notification_title">Snemalnik zvoka</string>
     <string name="sound_notification_message">Dolžina zvoka: %1$s</string>
     <string name="sound_recording_title_working">Snemanje</string>
@@ -50,4 +58,8 @@
     <string name="list_edit_title">Uredi ime posnetka</string>
     <string name="list_edit_confirm">Spremeni</string>
     <string name="list_item_menu">Več dejanj</string>
+    <string name="delete_all_title">Izbriši vse</string>
+    <string name="delete_all_message">Ali ste prepričani, da želite izbrisati vse posnetke? Tega ni mogoče razveljaviti</string>
+    <string name="delete_selected_title">Izbriši izbrano</string>
+    <string name="delete_selected_message">Ali ste prepričani, da želite izbrisati izbrane posnetke? Tega ni mogoče razveljaviti</string>
 </resources>

@@ -16,15 +16,23 @@
 <resources>
     <string name="app_name">Optager</string>
     <string name="share">Del</string>
+    <string name="share_selected">Del valgte</string>
     <string name="stop">Stop</string>
     <string name="play">Afspil</string>
     <string name="pause">Pause</string>
     <string name="resume">Genoptag</string>
     <string name="delete">Slet</string>
+    <string name="delete_all">Slet alle</string>
+    <string name="delete_selected">Slet valgte</string>
     <string name="cancel">Afbryd</string>
     <string name="rename">Omdøb</string>
     <string name="delete_title">Sletter optagelse</string>
     <string name="delete_recording_message">Er du sikker på, at du ønsker at slette denne optagelse? Dette kan ikke fortrydes.</string>
+    <string name="confirm">Bekræft</string>
+    <string name="discard">Kassér</string>
+    <string name="record_again">Optag igen</string>
+    <string name="confirm_result_title">Brug optagelse?</string>
+    <string name="confirm_result_message">Vil du bruge den sidste optagelse?</string>
     <string name="sound_notification_title">Lydoptager</string>
     <string name="sound_notification_message">Lydlængde: %1$s</string>
     <string name="sound_recording_title_working">Optager</string>
@@ -50,4 +58,8 @@
     <string name="list_edit_title">Rediger optagelses navn</string>
     <string name="list_edit_confirm">Skift</string>
     <string name="list_item_menu">Flere handlinger</string>
+    <string name="delete_all_title">Slet alle</string>
+    <string name="delete_all_message">Er du sikker på, at du ønsker at slette alle optagelser? Dette kan ikke fortrydes.</string>
+    <string name="delete_selected_title">Slet valgte</string>
+    <string name="delete_selected_message">Er du sikker på, at du ønsker at slette valgte optagelser? Dette kan ikke fortrydes.</string>
 </resources>

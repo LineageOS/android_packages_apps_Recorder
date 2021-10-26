@@ -16,15 +16,23 @@
 <resources>
     <string name="app_name">Gravadora</string>
     <string name="share">Comparteix</string>
+    <string name="share_selected">Comparteix selecció</string>
     <string name="stop">Para</string>
     <string name="play">Reprodueix</string>
     <string name="pause">Pausa</string>
     <string name="resume">Reprèn</string>
     <string name="delete">Elimina</string>
+    <string name="delete_all">Elimina-ho tot</string>
+    <string name="delete_selected">Elimina els seleccionats</string>
     <string name="cancel">Cancel·la</string>
     <string name="rename">Reanomena</string>
     <string name="delete_title">S\'està eliminant el registre</string>
     <string name="delete_recording_message">Esteu segur que voleu suprimir aquesta gravació? Això no es pot desfer</string>
+    <string name="confirm">Confirma</string>
+    <string name="discard">Descarta</string>
+    <string name="record_again">Enregistra de nou</string>
+    <string name="confirm_result_title">Voleu utilitzar l\'enregistrament?</string>
+    <string name="confirm_result_message">Voleu fer servir l\'últim enregistrament?</string>
     <string name="sound_notification_title">Gravadora de so</string>
     <string name="sound_notification_message">Durada de l\'àudio: %1$s</string>
     <string name="sound_recording_title_working">S\'està gravant</string>
@@ -50,4 +58,8 @@
     <string name="list_edit_title">Edita el nom de la gravació</string>
     <string name="list_edit_confirm">Canvia</string>
     <string name="list_item_menu">Més accions</string>
+    <string name="delete_all_title">Elimina-ho tot</string>
+    <string name="delete_all_message">Esteu segur que voleu suprimir tots els enregistraments? Això no es pot desfer</string>
+    <string name="delete_selected_title">Elimina els seleccionats</string>
+    <string name="delete_selected_message">Esteu segur que voleu suprimir els enregistraments seleccionats? Això no es pot desfer</string>
 </resources>

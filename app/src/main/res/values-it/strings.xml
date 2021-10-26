@@ -16,15 +16,23 @@
 <resources>
     <string name="app_name">Registratore</string>
     <string name="share">Condividi</string>
+    <string name="share_selected">Condividi selezionati</string>
     <string name="stop">Stop</string>
     <string name="play">Play</string>
     <string name="pause">Pausa</string>
     <string name="resume">Riprendi</string>
     <string name="delete">Elimina</string>
+    <string name="delete_all">Elimina tutto</string>
+    <string name="delete_selected">Elimina selezionati</string>
     <string name="cancel">Annulla</string>
     <string name="rename">Rinomina</string>
     <string name="delete_title">Elimina registrazione</string>
     <string name="delete_recording_message">Sei sicuro di cancellare questa registrazione? Quest\'azione non può essere annullata</string>
+    <string name="confirm">Conferma</string>
+    <string name="discard">Annulla</string>
+    <string name="record_again">Registra di nuovo</string>
+    <string name="confirm_result_title">Utilizzare la registrazione?</string>
+    <string name="confirm_result_message">Vuoi utilizzare l\'ultima registrazione effettuata?</string>
     <string name="sound_notification_title">Registratore suoni</string>
     <string name="sound_notification_message">Durata audio: %1$s</string>
     <string name="sound_recording_title_working">Registrazione in corso</string>
@@ -50,4 +58,8 @@
     <string name="list_edit_title">Modifica nome registrazione</string>
     <string name="list_edit_confirm">Modifica</string>
     <string name="list_item_menu">Altre azioni</string>
+    <string name="delete_all_title">Elimina tutto</string>
+    <string name="delete_all_message">Confermi l\'eliminazione di tutte le registrazioni? Quest\'azione non può essere annullata</string>
+    <string name="delete_selected_title">Elimina selezionati</string>
+    <string name="delete_selected_message">Sei sicuro di voler eliminare le registrazioni selezionate? Quest\'azione non può essere annullata</string>
 </resources>

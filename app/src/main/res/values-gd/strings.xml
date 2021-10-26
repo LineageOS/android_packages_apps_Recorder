@@ -16,15 +16,23 @@
 <resources>
     <string name="app_name">Clàradair</string>
     <string name="share">Co-roinn</string>
+    <string name="share_selected">Co-roinn na thagh thu</string>
     <string name="stop">Cuir stad air</string>
     <string name="play">Cluich</string>
     <string name="pause">Cuir ’na stad</string>
     <string name="resume">Lean air</string>
     <string name="delete">Sguab às</string>
+    <string name="delete_all">Sguab às na h-uile</string>
+    <string name="delete_selected">Sguab às na thagh thu</string>
     <string name="cancel">Sguir dheth</string>
     <string name="rename">Thoir ainm ùr air</string>
     <string name="delete_title">A’ sguabadh às an clàradh</string>
     <string name="delete_recording_message">A bheil thu cinnteach gu bheil thu airson an clàradh seo a sguabadh às? Cha ghabh seo a neo-dhèanamh</string>
+    <string name="confirm">Dearbh</string>
+    <string name="discard">Tilg air falbh</string>
+    <string name="record_again">Clàraich e às ùr</string>
+    <string name="confirm_result_title">A bheil thu airson an clàradh a chleachdadh?</string>
+    <string name="confirm_result_message">A bheil thu airson an clàradh mu dheireadh a chleachdadh?</string>
     <string name="sound_notification_title">Clàradair fuaime</string>
     <string name="sound_notification_message">Faid na fuaime: %1$s</string>
     <string name="sound_recording_title_working">’Ga chlàradh</string>
@@ -50,4 +58,8 @@
     <string name="list_edit_title">Deasaich ainm a’ chlàraidh</string>
     <string name="list_edit_confirm">Atharraich</string>
     <string name="list_item_menu">Barrachd ghnìomhan</string>
+    <string name="delete_all_title">Sguab às na h-uile</string>
+    <string name="delete_all_message">A bheil thu cinnteach gu bheil thu airson gach clàradh a sguabadh às? Cha ghabh seo a neo-dhèanamh</string>
+    <string name="delete_selected_title">Sguab às na thagh thu</string>
+    <string name="delete_selected_message">A bheil thu cinnteach gu bheil thu airson na clàraidhean a thagh thu a sguabadh às? Cha ghabh seo a neo-dhèanamh</string>
 </resources>

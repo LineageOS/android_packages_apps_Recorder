@@ -16,15 +16,23 @@
 <resources>
     <string name="app_name">Рекордер</string>
     <string name="share">Отправить</string>
+    <string name="share_selected">Поделиться выбранным</string>
     <string name="stop">Остановить</string>
     <string name="play">Воспроизвести</string>
     <string name="pause">Приостановить</string>
     <string name="resume">Возобновить</string>
     <string name="delete">Удалить</string>
+    <string name="delete_all">Удалить все</string>
+    <string name="delete_selected">Удалить выбранные</string>
     <string name="cancel">Отмена</string>
     <string name="rename">Переименовать</string>
     <string name="delete_title">Удаление записи</string>
     <string name="delete_recording_message">Вы уверены, что хотите удалить эту запись? Действие не может быть отменено</string>
+    <string name="confirm">Подтвердить</string>
+    <string name="discard">Отменить</string>
+    <string name="record_again">Записать повторно</string>
+    <string name="confirm_result_title">Использовать запись?</string>
+    <string name="confirm_result_message">Вы хотите использовать последнюю запись?</string>
     <string name="sound_notification_title">Запись звука</string>
     <string name="sound_notification_message">Длительность аудио: %1$s</string>
     <string name="sound_recording_title_working">Запись</string>
@@ -50,4 +58,8 @@
     <string name="list_edit_title">Изменить название записи</string>
     <string name="list_edit_confirm">Изменить</string>
     <string name="list_item_menu">Другие действия</string>
+    <string name="delete_all_title">Удалить все</string>
+    <string name="delete_all_message">Вы уверены, что хотите удалить все записи? Действие не может быть отменено</string>
+    <string name="delete_selected_title">Удалить выбранное</string>
+    <string name="delete_selected_message">Вы уверены, что хотите выбранные записи? Действие не может быть отменено</string>
 </resources>

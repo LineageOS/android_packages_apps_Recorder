@@ -16,15 +16,23 @@
 <resources>
     <string name="app_name">Səsyazan</string>
     <string name="share">Paylaş</string>
+    <string name="share_selected">Seçiləni paylaş</string>
     <string name="stop">Dayandır</string>
     <string name="play">Oynat</string>
     <string name="pause">Fasilə ver</string>
     <string name="resume">Davam etdir</string>
     <string name="delete">Sil</string>
+    <string name="delete_all">Hamısını sil</string>
+    <string name="delete_selected">Seçiləni sil</string>
     <string name="cancel">İmtina</string>
     <string name="rename">Yenidən adlandır</string>
     <string name="delete_title">Səsyazma silinir</string>
     <string name="delete_recording_message">Bu səsyazmanı silmək istədiyinizə əminsiniz? Bu, geri qaytarıla bilməyəcək</string>
+    <string name="confirm">Təsdiqlə</string>
+    <string name="discard">Ləğv et</string>
+    <string name="record_again">Yenidən yaz</string>
+    <string name="confirm_result_title">Səsyazma istifadə edilsin?</string>
+    <string name="confirm_result_message">Son səsyazmanı istifadə etmək istəyirsiniz?</string>
     <string name="sound_notification_title">Səs Yazma</string>
     <string name="sound_notification_message">Səs uzunluğu: %1$s</string>
     <string name="sound_recording_title_working">Səs yazılır</string>
@@ -50,4 +58,8 @@
     <string name="list_edit_title">Yazılmış səsin adına düzəliş edin</string>
     <string name="list_edit_confirm">Dəyişdir</string>
     <string name="list_item_menu">Daha çox əməliyyat</string>
+    <string name="delete_all_title">Hamısını sil</string>
+    <string name="delete_all_message">Bütün səsyazmaları silmək istədiyinizə əminsiniz? Bunun geri dönüşü yoxdur</string>
+    <string name="delete_selected_title">Seçiləni sil</string>
+    <string name="delete_selected_message">Seçilmiş səsyazmalarıı silmək istədiyinizə əminsiniz? Bunun geri dönüşü yoxdur</string>
 </resources>
