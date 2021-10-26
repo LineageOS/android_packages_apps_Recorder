@@ -16,15 +16,23 @@
 <resources>
     <string name="app_name">レコーダー</string>
     <string name="share">共有</string>
+    <string name="share_selected">選択した項目を共有</string>
     <string name="stop">停止</string>
     <string name="play">再生</string>
     <string name="pause">一時停止</string>
     <string name="resume">再開</string>
     <string name="delete">削除</string>
+    <string name="delete_all">すべて削除</string>
+    <string name="delete_selected">選択した項目を削除</string>
     <string name="cancel">キャンセル</string>
     <string name="rename">名前の変更</string>
     <string name="delete_title">記録の削除</string>
     <string name="delete_recording_message">本当にこの録画を削除しますか? この操作は元に戻せません。</string>
+    <string name="confirm">確認</string>
+    <string name="discard">破棄</string>
+    <string name="record_again">再度録音</string>
+    <string name="confirm_result_title">録音を使用しますか?</string>
+    <string name="confirm_result_message">最後の録音を使用しますか?</string>
     <string name="sound_notification_title">音声レコーダー</string>
     <string name="sound_notification_message">音声の長さ: %1$s</string>
     <string name="sound_recording_title_working">録音中</string>
@@ -50,4 +58,8 @@
     <string name="list_edit_title">録画の名前を編集</string>
     <string name="list_edit_confirm">変更</string>
     <string name="list_item_menu">その他の操作</string>
+    <string name="delete_all_title">すべて削除</string>
+    <string name="delete_all_message">本当にすべての録画を削除してよろしいですか? この操作は元に戻せません。</string>
+    <string name="delete_selected_title">選択項目を削除</string>
+    <string name="delete_selected_message">本当に選択した録画を削除してよろしいですか? この操作は元に戻せません。</string>
 </resources>

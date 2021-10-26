@@ -16,15 +16,23 @@
 <resources>
     <string name="app_name">Gravador</string>
     <string name="share">Compartir</string>
+    <string name="share_selected">Compartir seleccionadas</string>
     <string name="stop">Deter</string>
     <string name="play">Reproducir</string>
     <string name="pause">Deter</string>
     <string name="resume">Continuar</string>
     <string name="delete">Borrar</string>
+    <string name="delete_all">Eliminar todo</string>
+    <string name="delete_selected">Eliminar seleccionadas</string>
     <string name="cancel">Cancelar</string>
     <string name="rename">Renomear</string>
     <string name="delete_title">Eliminando rexistro</string>
     <string name="delete_recording_message">Tes a certeza de querer eliminar esta gravación? Isto non se pode desfacer</string>
+    <string name="confirm">Confirmar</string>
+    <string name="discard">Descartar</string>
+    <string name="record_again">Gravar de novo</string>
+    <string name="confirm_result_title">Empregar a gravación?</string>
+    <string name="confirm_result_message">Desexas empregar a última gravación?</string>
     <string name="sound_notification_title">Gravador de son</string>
     <string name="sound_notification_message">Duración do son: %1$s</string>
     <string name="sound_recording_title_working">Gravando</string>
@@ -50,4 +58,8 @@
     <string name="list_edit_title">Editar nome da gravación</string>
     <string name="list_edit_confirm">Cambiar</string>
     <string name="list_item_menu">Máis accións</string>
+    <string name="delete_all_title">Eliminar todas</string>
+    <string name="delete_all_message">Tes a certeza de querer eliminar todas as gravacións? Isto non se pode desfacer</string>
+    <string name="delete_selected_title">Eliminar seleccionadas</string>
+    <string name="delete_selected_message">Tes a certeza de querer eliminar as gravacións seleccionadas? Isto non se pode desfacer</string>
 </resources>

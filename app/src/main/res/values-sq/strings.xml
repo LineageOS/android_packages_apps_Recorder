@@ -16,15 +16,23 @@
 <resources>
     <string name="app_name">Regjistruesi</string>
     <string name="share">Ndaj</string>
+    <string name="share_selected">Shpërndaj të përzgjedhurat</string>
     <string name="stop">Ndalo</string>
     <string name="play">Luaj</string>
     <string name="pause">Pezullo</string>
     <string name="resume">Rinis</string>
     <string name="delete">Fshi</string>
+    <string name="delete_all">Fshiji të gjitha</string>
+    <string name="delete_selected">Fshiji të zgjedhurat</string>
     <string name="cancel">Anullo</string>
     <string name="rename">Riemërto</string>
     <string name="delete_title">Duke fshirë regjistrimin</string>
     <string name="delete_recording_message">Je i sigurt që dëshiron ta fshish këtë regjistrim? Kjo nuk mund të zhbëhet</string>
+    <string name="confirm">Konfirmo</string>
+    <string name="discard">Mos e ruaj</string>
+    <string name="record_again">Regjistro përsëri</string>
+    <string name="confirm_result_title">Përdorni regjistrimin?</string>
+    <string name="confirm_result_message">Dëshironi të përdorni regjistrimin e fundit?</string>
     <string name="sound_notification_title">Regjistruesi i Tingujve</string>
     <string name="sound_notification_message">Gjatësia e audios: %1$s</string>
     <string name="sound_recording_title_working">Duke regjistruar</string>
@@ -50,4 +58,8 @@
     <string name="list_edit_title">Redakto emrin e regjistrimit</string>
     <string name="list_edit_confirm">Ndrysho</string>
     <string name="list_item_menu">Veprime të tjera</string>
+    <string name="delete_all_title">Fshiji të gjitha</string>
+    <string name="delete_all_message">Je i sigurt që dëshiron të fshish të gjitha regjistrimet? Kjo nuk mund të zhbëhet</string>
+    <string name="delete_selected_title">Fshiji të zgjedhurat</string>
+    <string name="delete_selected_message">Je i sigurt që dëshiron të fshish regjistrimet e zgjedhura? Kjo nuk mund të zhbëhet</string>
 </resources>

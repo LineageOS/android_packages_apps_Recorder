@@ -16,15 +16,23 @@
 <resources>
     <string name="app_name">Felvevő</string>
     <string name="share">Megosztás</string>
+    <string name="share_selected">A kijelöltek megosztása</string>
     <string name="stop">Leállítás</string>
     <string name="play">Lejátszás</string>
     <string name="pause">Szünet</string>
     <string name="resume">Folytatás</string>
     <string name="delete">Törlés</string>
+    <string name="delete_all">Az összes törlése</string>
+    <string name="delete_selected">A kijelöltek törlése</string>
     <string name="cancel">Mégse</string>
     <string name="rename">Átnevezés</string>
     <string name="delete_title">Felvétel törlése</string>
     <string name="delete_recording_message">Biztosan törli ezt a felvételt? Ha törölte, már nem szerezheti többé vissza</string>
+    <string name="confirm">Megerősítés</string>
+    <string name="discard">Elvetés</string>
+    <string name="record_again">Ismételt felvétel</string>
+    <string name="confirm_result_title">Használja a felvételt?</string>
+    <string name="confirm_result_message">Szeretné a legutóbb felvettet használni?</string>
     <string name="sound_notification_title">Hangrögzítő</string>
     <string name="sound_notification_message">Audio hossza: %1$s</string>
     <string name="sound_recording_title_working">Felvétel</string>
@@ -50,4 +58,8 @@
     <string name="list_edit_title">Felvételcímek szerkesztése</string>
     <string name="list_edit_confirm">Módosítás</string>
     <string name="list_item_menu">További műveletek</string>
+    <string name="delete_all_title">Az összes törlése</string>
+    <string name="delete_all_message">Biztosan törli az összes felvételt? Ha törölte, már nem szerezheti többé vissza</string>
+    <string name="delete_selected_title">A kijelöltek törlése</string>
+    <string name="delete_selected_message">Biztosan törli a kiválasztott felvételt? Ha törölte, már nem szerezheti többé vissza</string>
 </resources>

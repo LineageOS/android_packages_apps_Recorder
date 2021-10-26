@@ -16,15 +16,23 @@
 <resources>
     <string name="app_name">Gravador</string>
     <string name="share">Partilhar</string>
+    <string name="share_selected">Partilhar seleção</string>
     <string name="stop">Parar</string>
     <string name="play">Reproduzir</string>
     <string name="pause">Pausar</string>
     <string name="resume">Retomar</string>
     <string name="delete">Apagar</string>
+    <string name="delete_all">Eliminar todas</string>
+    <string name="delete_selected">Eliminar selecionadas</string>
     <string name="cancel">Cancelar</string>
     <string name="rename">Mudar o nome</string>
     <string name="delete_title">A apagar a gravação</string>
-    <string name="delete_recording_message">Tem a certeza que deseja eliminar esta gravação? Isto não pode ser desfeito.</string>
+    <string name="delete_recording_message">Tem a certeza que deseja eliminar esta gravação? Isto não pode ser revertido</string>
+    <string name="confirm">Confirmar</string>
+    <string name="discard">Descartar</string>
+    <string name="record_again">Gravar novamente</string>
+    <string name="confirm_result_title">Usar gravação?</string>
+    <string name="confirm_result_message">Deseja usar a última gravação?</string>
     <string name="sound_notification_title">Gravador de som</string>
     <string name="sound_notification_message">Tamanho do áudio: %1$s</string>
     <string name="sound_recording_title_working">A gravar</string>
@@ -50,4 +58,8 @@
     <string name="list_edit_title">Editar o nome da gravação</string>
     <string name="list_edit_confirm">Alterar</string>
     <string name="list_item_menu">Mais ações</string>
+    <string name="delete_all_title">Eliminar todas</string>
+    <string name="delete_all_message">Tem a certeza que deseja eliminar todas as gravações? Isto não pode ser revertido</string>
+    <string name="delete_selected_title">Eliminar selecionadas</string>
+    <string name="delete_selected_message">Tem a certeza que deseja eliminar as gravações selecionadas? Isto não pode ser revertido</string>
 </resources>
