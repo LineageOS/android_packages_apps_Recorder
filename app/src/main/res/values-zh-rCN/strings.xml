@@ -16,15 +16,23 @@
 <resources>
     <string name="app_name">录制器</string>
     <string name="share">分享</string>
+    <string name="share_selected">分享选中内容</string>
     <string name="stop">停止</string>
     <string name="play">播放</string>
     <string name="pause">暂停</string>
     <string name="resume">继续</string>
     <string name="delete">删除</string>
+    <string name="delete_all">删除所有</string>
+    <string name="delete_selected">刪除所选</string>
     <string name="cancel">取消</string>
     <string name="rename">重命名</string>
     <string name="delete_title">正在删除记录</string>
     <string name="delete_recording_message">你确定要删除此录音吗？ 此操作不可撤销</string>
+    <string name="confirm">确认</string>
+    <string name="discard">舍弃</string>
+    <string name="record_again">重新录音</string>
+    <string name="confirm_result_title">使用录音？</string>
+    <string name="confirm_result_message">你想使用上次的录音吗？</string>
     <string name="sound_notification_title">录音机</string>
     <string name="sound_notification_message">音频长度：%1$s</string>
     <string name="sound_recording_title_working">正在录制</string>
@@ -50,4 +58,8 @@
     <string name="list_edit_title">编辑录音名称</string>
     <string name="list_edit_confirm">更改</string>
     <string name="list_item_menu">更多操作</string>
+    <string name="delete_all_title">删除所有</string>
+    <string name="delete_all_message">您确定要删除所有录音吗？此操作无法撤消</string>
+    <string name="delete_selected_title">刪除所选</string>
+    <string name="delete_selected_message">您确定要删除所选录音吗？此操作无法撤消</string>
 </resources>

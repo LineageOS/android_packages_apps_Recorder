@@ -16,15 +16,23 @@
 <resources>
     <string name="app_name">Recorder</string>
     <string name="share">Distribuiți</string>
+    <string name="share_selected">Distribuiți selecția</string>
     <string name="stop">Stop</string>
     <string name="play">Redați</string>
     <string name="pause">Pauză</string>
     <string name="resume">Reia</string>
     <string name="delete">Ștergeți</string>
+    <string name="delete_all">Ștergeți tot</string>
+    <string name="delete_selected">Ştergeţi selecţia</string>
     <string name="cancel">Anulare</string>
     <string name="rename">Redenumire</string>
     <string name="delete_title">Ștergere înregistrare</string>
     <string name="delete_recording_message">Sunteți sigur(ă) că doriți să ștergeți înregistrarea? Această acțiune este ireversibilă</string>
+    <string name="confirm">Confirmați</string>
+    <string name="discard">Renunţaţi</string>
+    <string name="record_again">Înregistrează din nou</string>
+    <string name="confirm_result_title">Utilizaţi înregistrarea?</string>
+    <string name="confirm_result_message">Doriţi să utilizaţi ultima înregistrare?</string>
     <string name="sound_notification_title">Înregistrare Sunet</string>
     <string name="sound_notification_message">Lungime audio: %1$s</string>
     <string name="sound_recording_title_working">Înregistrare</string>
@@ -50,4 +58,8 @@
     <string name="list_edit_title">Editare nume înregistrare</string>
     <string name="list_edit_confirm">Schimbați</string>
     <string name="list_item_menu">Mai multe acțiuni</string>
+    <string name="delete_all_title">Ștergeți tot</string>
+    <string name="delete_all_message">Sunteți sigur(ă) că doriți să ștergeți toate înregistrările? Această acțiune este ireversibilă</string>
+    <string name="delete_selected_title">Ştergeţi selecţia</string>
+    <string name="delete_selected_message">Sunteți sigur(ă) că doriți să ștergeți înregistrările selectate? Această acțiune este ireversibilă</string>
 </resources>

@@ -16,15 +16,23 @@
 <resources>
     <string name="app_name">Kaydedici</string>
     <string name="share">Paylaş</string>
+    <string name="share_selected">Seçilenleri paylaş</string>
     <string name="stop">Durdur</string>
     <string name="play">Oynat</string>
     <string name="pause">Duraklat</string>
     <string name="resume">Devam et</string>
     <string name="delete">Sil</string>
+    <string name="delete_all">Tümünü sil</string>
+    <string name="delete_selected">Seçileni sil</string>
     <string name="cancel">İptal</string>
     <string name="rename">Yeniden adlandır</string>
     <string name="delete_title">Kayıt siliniyor</string>
     <string name="delete_recording_message">Bu kaydı silmek istediğinizden emin misiniz? Bu eylem geri alınamaz!</string>
+    <string name="confirm">Onayla</string>
+    <string name="discard">Yoksay</string>
+    <string name="record_again">Tekrar kaydet</string>
+    <string name="confirm_result_title">Kayıt kullanılsın mı?</string>
+    <string name="confirm_result_message">Son kaydı kullanmak istiyor musunuz?</string>
     <string name="sound_notification_title">Ses Kaydedici</string>
     <string name="sound_notification_message">Ses uzunluğu: %1$s</string>
     <string name="sound_recording_title_working">Kaydediliyor</string>
@@ -50,4 +58,8 @@
     <string name="list_edit_title">Kayıt adını düzenleyin</string>
     <string name="list_edit_confirm">Değiştir</string>
     <string name="list_item_menu">Diğer işlemler</string>
+    <string name="delete_all_title">Tümünü sil</string>
+    <string name="delete_all_message">Tüm kayıtları silmek istediğinizden emin misiniz? Bu geri alınamaz</string>
+    <string name="delete_selected_title">Seçileni sil</string>
+    <string name="delete_selected_message">Seçilen kayıtları silmek istediğinizden emin misiniz? Bu geri alınamaz</string>
 </resources>

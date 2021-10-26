@@ -24,9 +24,14 @@
     <string name="cancel">Cancelar</string>
     <string name="rename">Renomear</string>
     <string name="delete_title">Excluir gravação</string>
+    <string name="confirm">Confirmar</string>
+    <string name="discard">Descartar</string>
+    <string name="confirm_result_title">Usar gravação?</string>
+    <string name="confirm_result_message">Você deseja usar a última gravação?</string>
     <string name="sound_notification_title">Gravador de som</string>
     <string name="sound_notification_message">Duração do áudio: %1$s</string>
     <string name="sound_recording_title_working">Gravando</string>
+    <string name="sound_recording_title_paused">Pausada</string>
     <string name="sound_last_title">Última gravação</string>
     <string name="sound_channel_title">Gravação de som</string>
     <string name="sound_channel_desc">Notificação persistente durante a gravação de som e notificação após gravar</string>

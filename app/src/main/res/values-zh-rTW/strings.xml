@@ -16,15 +16,23 @@
 <resources>
     <string name="app_name">錄製工具</string>
     <string name="share">分享</string>
+    <string name="share_selected">分享選取的項目</string>
     <string name="stop">停止</string>
     <string name="play">播放</string>
     <string name="pause">暫停</string>
     <string name="resume">繼續</string>
     <string name="delete">刪除</string>
+    <string name="delete_all">刪除全部</string>
+    <string name="delete_selected">刪除選取的項目</string>
     <string name="cancel">取消</string>
     <string name="rename">重新命名</string>
     <string name="delete_title">正在刪除記錄</string>
     <string name="delete_recording_message">您確定要刪除此錄音嗎？此項動作無法還原</string>
+    <string name="confirm">確認</string>
+    <string name="discard">捨棄</string>
+    <string name="record_again">重新錄音</string>
+    <string name="confirm_result_title">使用錄音？</string>
+    <string name="confirm_result_message">您要使用上次的錄音嗎？</string>
     <string name="sound_notification_title">錄音機</string>
     <string name="sound_notification_message">音訊長度︰%1$s</string>
     <string name="sound_recording_title_working">錄製中</string>
@@ -50,4 +58,8 @@
     <string name="list_edit_title">編輯錄音名稱</string>
     <string name="list_edit_confirm">更改</string>
     <string name="list_item_menu">更多操作</string>
+    <string name="delete_all_title">刪除全部</string>
+    <string name="delete_all_message">您確定要刪除所有錄音嗎？此項動作無法還原</string>
+    <string name="delete_selected_title">刪除選取的項目</string>
+    <string name="delete_selected_message">您確定要刪除選取的錄音嗎？此項動作無法還原</string>
 </resources>
