@@ -14,88 +14,81 @@
      See the License for the specific language governing permissions and
      limitations under the License.
 -->
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main_root"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:clipToPadding="false">
+    android:layout_height="match_parent">
 
     <TextView
         android:id="@+id/main_title"
         style="@style/AppTheme.RecordTitle"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="@string/app_name"
         android:textAlignment="center"
         android:textColor="?android:attr/textColorPrimary"
         app:layout_constraintBottom_toTopOf="@id/main_recording_visualizer"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="@string/main_sound_action" />
 
-    <FrameLayout
-        android:id="@+id/main_bottom_container"
-        android:layout_width="0dp"
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/sound_fab"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:paddingBottom="16dp"
-        android:paddingTop="16dp"
+        android:layout_marginBottom="16dp"
+        android:clipToPadding="false"
+        android:contentDescription="@string/main_sound_action"
+        android:src="@drawable/ic_action_record"
+        app:fabCustomSize="96dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
-
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/sound_fab"
-            style="@style/AppTheme.RecordFab"
-            android:layout_gravity="center"
-            android:contentDescription="@null"
-            android:src="@drawable/ic_action_record" />
-    </FrameLayout>
+        app:layout_constraintStart_toStartOf="parent" />
 
     <org.lineageos.recorder.ui.WaveFormView
         android:id="@+id/main_recording_visualizer"
         android:layout_width="0dp"
         android:layout_height="128dp"
         android:visibility="invisible"
-        app:wavesColor="@color/wave"
-        app:maxAudioValue="@integer/max_audio_value"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:maxAudioValue="@integer/max_audio_value"
+        app:wavesColor="@color/wave"
         tools:visibility="visible" />
 
     <ImageView
         android:id="@+id/sound_pause_resume"
         style="@style/AppTheme.ImageButton"
+        android:layout_marginEnd="16dp"
         android:contentDescription="@null"
-        android:layout_marginStart="16dp"
         android:visibility="gone"
-        app:layout_constraintBottom_toBottomOf="@id/main_bottom_container"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@id/main_bottom_container"
+        app:layout_constraintBottom_toBottomOf="@id/sound_fab"
+        app:layout_constraintEnd_toStartOf="@id/sound_fab"
+        app:layout_constraintTop_toTopOf="@id/sound_fab"
         tools:src="@drawable/ic_pause"
         tools:visibility="visible" />
 
     <ImageView
         android:id="@+id/sound_list_icon"
         style="@style/AppTheme.ImageButton"
-        android:layout_marginEnd="16dp"
+        android:layout_marginStart="16dp"
         android:contentDescription="@string/sound_last_title"
         android:src="@drawable/ic_last_sound"
-        app:layout_constraintBottom_toBottomOf="@id/main_bottom_container"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@id/main_bottom_container" />
+        app:layout_constraintBottom_toBottomOf="@id/sound_fab"
+        app:layout_constraintStart_toEndOf="@id/sound_settings"
+        app:layout_constraintTop_toTopOf="@id/sound_fab" />
 
     <ImageView
         android:id="@+id/sound_settings"
         style="@style/AppTheme.ImageButton"
-        android:layout_marginEnd="16dp"
+        android:layout_marginStart="16dp"
         android:contentDescription="@string/sound_last_title"
         android:src="@drawable/ic_settings"
-        app:layout_constraintBottom_toBottomOf="@id/main_bottom_container"
-        app:layout_constraintEnd_toStartOf="@id/sound_list_icon"
-        app:layout_constraintTop_toTopOf="@id/main_bottom_container" />
+        app:layout_constraintBottom_toBottomOf="@id/sound_fab"
+        app:layout_constraintStart_toEndOf="@id/sound_fab"
+        app:layout_constraintTop_toTopOf="@id/sound_fab" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -280,7 +280,6 @@ public class RecorderActivity extends AppCompatActivity implements
     private void refresh() {
         if (Utils.isRecording(this)) {
             mSoundFab.setImageResource(R.drawable.ic_action_stop);
-            mSoundFab.setSelected(true);
             mRecordingVisualizer.setVisibility(View.VISIBLE);
             mRecordingVisualizer.setAmplitude(0);
             mPauseResume.setVisibility(View.VISIBLE);
@@ -299,7 +298,6 @@ public class RecorderActivity extends AppCompatActivity implements
         } else {
             mRecordingText.setText(getString(R.string.main_sound_action));
             mSoundFab.setImageResource(R.drawable.ic_action_record);
-            mSoundFab.setSelected(false);
             mRecordingVisualizer.setVisibility(View.INVISIBLE);
             mPauseResume.setVisibility(View.GONE);
             if (mSoundService != null) {
