@@ -24,7 +24,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:fitsSystemWindows="true"
-        android:elevation="8dp">
+        app:liftOnScroll="true">
 
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
@@ -33,36 +33,32 @@
             android:background="?android:attr/colorPrimary" />
     </com.google.android.material.appbar.AppBarLayout>
 
-    <FrameLayout
+
+    <ProgressBar
+        android:id="@+id/list_loading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        tools:visibility="gone" />
+
+    <TextView
+        android:id="@+id/list_empty"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:drawablePadding="8dp"
+        android:text="@string/list_error_empty"
+        android:textColor="?android:attr/textColorSecondary"
+        android:visibility="gone"
+        app:drawableTopCompat="@drawable/ic_list_empty" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/list_view"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-        <ProgressBar
-            android:id="@+id/list_loading"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            tools:visibility="gone" />
-
-        <TextView
-            android:id="@+id/list_empty"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:drawablePadding="8dp"
-            android:text="@string/list_error_empty"
-            android:textColor="?android:attr/textColorSecondary"
-            android:visibility="gone"
-            app:drawableTopCompat="@drawable/ic_list_empty" />
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/list_view"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:visibility="gone"
-            android:clipToPadding="false"
-            android:layout_marginTop="?attr/actionBarSize"
-            tools:listitem="@layout/list_item"
-            tools:visibility="visible" />
-    </FrameLayout>
+        android:layout_height="match_parent"
+        android:clipToPadding="false"
+        android:visibility="gone"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        tools:listitem="@layout/list_item"
+        tools:visibility="visible" />
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
