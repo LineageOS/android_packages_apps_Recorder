@@ -25,6 +25,29 @@
     },
     {
       "key": {
+        "uuid": "9072e3d3_0107a03d",
+        "filename": "app/src/main/java/org/lineageos/recorder/service/GoodQualityRecorder.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 10067
+      },
+      "writtenOn": "2021-10-27T09:43:32Z",
+      "side": 1,
+      "message": "try catch finally?",
+      "range": {
+        "startLine": 55,
+        "startChar": 0,
+        "endLine": 62,
+        "endChar": 28
+      },
+      "revId": "a313843dc197e7954ba6904081c8a9d88eaa3966",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "ca6dd942_869f69cf",
         "filename": "app/src/main/java/org/lineageos/recorder/service/HighQualityRecorder.java",
         "patchSetId": 1
