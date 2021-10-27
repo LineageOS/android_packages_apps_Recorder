@@ -87,8 +87,8 @@ public class RecorderActivity extends AppCompatActivity implements
         @Override
         public void onReceive(Context context, Intent intent) {
             if (TelephonyManager.ACTION_PHONE_STATE_CHANGED.equals(intent.getAction())) {
-                int state = intent.getIntExtra(TelephonyManager.EXTRA_STATE, -1);
-                if (state == TelephonyManager.CALL_STATE_OFFHOOK) {
+                String state = intent.getStringExtra(TelephonyManager.EXTRA_STATE);
+                if (TelephonyManager.EXTRA_STATE_OFFHOOK.equals(state)) {
                     togglePause();
                 }
             }
