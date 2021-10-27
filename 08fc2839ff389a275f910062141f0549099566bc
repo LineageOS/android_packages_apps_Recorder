@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5767f0ab_bd9859bc",
+        "filename": "app/src/main/java/org/lineageos/recorder/service/GoodQualityRecorder.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2021-10-27T10:07:18Z",
+      "side": 1,
+      "message": "can go there, and boolean defaults to false.",
+      "revId": "08fc2839ff389a275f910062141f0549099566bc",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    }
+  ]
+}
