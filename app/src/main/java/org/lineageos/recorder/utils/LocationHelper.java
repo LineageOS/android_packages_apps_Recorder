@@ -77,7 +77,7 @@ public final class LocationHelper {
 
     @Nullable
     private Location getLastGoodLocation() {
-        if (locationManager == null) {
+        if (locationManager == null || !Utils.getTagWithLocation(context)) {
             return null;
         }
         Location lastGoodLocation;
