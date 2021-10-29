@@ -18,8 +18,6 @@ package org.lineageos.recorder;
 import android.Manifest;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
-import android.view.LayoutInflater;
-import android.view.View;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -40,11 +38,24 @@ public class DialogActivity extends AppCompatActivity {
 
         setFinishOnTouchOutside(true);
 
-        new AlertDialog.Builder(this)
+        final AlertDialog dialog = new AlertDialog.Builder(this)
                 .setTitle(R.string.settings_title)
-                .setView(setupAsSettingsScreen())
+                .setView(R.layout.dialog_content_settings)
                 .setOnDismissListener(dialogInterface -> finish())
                 .show();
+
+        final boolean isRecording = Utils.isRecording(this);
+
+        mLocationSwitch = dialog.findViewById(
+                R.id.dialog_content_settings_location_switch);
+        if (mLocationSwitch != null) {
+            setupLocationSwitch(mLocationSwitch, isRecording);
+        }
+        final SwitchCompat highQualitySwitch = dialog.findViewById(
+                R.id.dialog_content_settings_high_quality_switch);
+        if (highQualitySwitch != null) {
+            setupHighQualitySwitch(highQualitySwitch, isRecording);
+        }
     }
 
     @Override
@@ -84,42 +95,51 @@ public class DialogActivity extends AppCompatActivity {
         finish();
     }
 
-    @NonNull
-    private View setupAsSettingsScreen() {
-        LayoutInflater inflater = getLayoutInflater();
-        final View view = inflater.inflate(R.layout.dialog_content_settings, null);
-        mLocationSwitch = view.findViewById(R.id.dialog_content_settings_location_switch);
-        boolean hasLocationPerm = hasLocationPermission();
-        boolean tagWithLocation = Utils.getTagWithLocation(this);
-        if (tagWithLocation && !hasLocationPerm) {
-            Utils.setTagWithLocation(this, false);
+    private void setupLocationSwitch(@NonNull SwitchCompat locationSwitch,
+                                     boolean isRecording) {
+        final boolean tagWithLocation;
+        if (Utils.getTagWithLocation(this)) {
+            if (hasLocationPermission()) {
+                tagWithLocation = true;
+            } else {
+                // Permission revoked -> disabled feature
+                Utils.setTagWithLocation(this, false);
+                tagWithLocation = false;
+            }
+        } else {
             tagWithLocation = false;
         }
-        mLocationSwitch.setChecked(tagWithLocation);
-        mLocationSwitch.setOnCheckedChangeListener((button, isChecked) -> {
-            if (isChecked) {
-                if (hasLocationPermission()) {
-                    Utils.setTagWithLocation(this, true);
+
+        locationSwitch.setChecked(tagWithLocation);
+
+        if (isRecording) {
+            locationSwitch.setEnabled(false);
+        } else {
+            locationSwitch.setOnCheckedChangeListener((button, isChecked) -> {
+                if (isChecked) {
+                    if (hasLocationPermission()) {
+                        Utils.setTagWithLocation(this, true);
+                    } else {
+                        askLocationPermission();
+                    }
                 } else {
-                    askLocationPermission();
+                    Utils.setTagWithLocation(this, false);
                 }
-            } else {
-                Utils.setTagWithLocation(this, false);
-            }
-        });
-
-        SwitchCompat highQualitySwitch =
-                view.findViewById(R.id.dialog_content_settings_high_quality_switch);
-        boolean highQuality = Utils.getRecordInHighQuality(this);
-        highQualitySwitch.setChecked(highQuality);
-        highQualitySwitch.setOnCheckedChangeListener(((buttonView, isChecked) ->
-                Utils.setRecordingHighQuality(this, isChecked)));
-        if (Utils.isRecording(this)) {
-            mLocationSwitch.setEnabled(false);
-            highQualitySwitch.setEnabled(false);
+            });
         }
+    }
 
-        return view;
+    private void setupHighQualitySwitch(@NonNull SwitchCompat highQualitySwitch,
+                                        boolean isRecording) {
+        final boolean highQuality = Utils.getRecordInHighQuality(this);
+        highQualitySwitch.setChecked(highQuality);
+
+        if (isRecording) {
+            highQualitySwitch.setEnabled(false);
+        } else {
+            highQualitySwitch.setOnCheckedChangeListener((button, isChecked) ->
+                    Utils.setRecordingHighQuality(this, isChecked));
+        }
     }
 
     private boolean hasLocationPermission() {
