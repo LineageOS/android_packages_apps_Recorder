@@ -365,7 +365,6 @@ public class RecorderActivity extends AppCompatActivity implements
 
     private void openSettings() {
         Intent intent = new Intent(this, DialogActivity.class);
-        intent.putExtra(DialogActivity.EXTRA_TITLE, R.string.settings_title);
         startActivity(intent);
     }
 
