@@ -19,20 +19,13 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.net.Uri;
-import android.text.Editable;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.widget.EditText;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.appcompat.app.AlertDialog;
 
-import org.lineageos.recorder.DialogActivity;
-import org.lineageos.recorder.R;
+import org.lineageos.recorder.DeleteLastActivity;
 
 import java.util.ArrayList;
-import java.util.function.Consumer;
 
 public final class LastRecordHelper {
     private static final String PREFS = "preferences";
@@ -71,10 +64,7 @@ public final class LastRecordHelper {
 
     @NonNull
     public static Intent getDeleteIntent(Context context) {
-        Intent intent = new Intent(context, DialogActivity.class);
-        intent.putExtra(DialogActivity.EXTRA_TITLE, R.string.sound_last_title);
-        intent.putExtra(DialogActivity.EXTRA_DELETE_LAST_RECORDING, true);
-        return intent;
+        return new Intent(context, DeleteLastActivity.class);
     }
 
     public static void setLastItem(@NonNull Context context, String path) {
