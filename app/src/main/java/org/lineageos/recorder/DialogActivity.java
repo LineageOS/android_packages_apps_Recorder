@@ -16,7 +16,6 @@
 package org.lineageos.recorder;
 
 import android.Manifest;
-import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -36,15 +35,11 @@ public class DialogActivity extends AppCompatActivity {
 
     private SwitchCompat mLocationSwitch;
 
-    private SharedPreferences mPrefs;
-
     @Override
     protected void onCreate(@Nullable Bundle savedInstance) {
         super.onCreate(savedInstance);
 
         setFinishOnTouchOutside(true);
-
-        mPrefs = getSharedPreferences(Utils.PREFS, 0);
 
         new AlertDialog.Builder(this)
                 .setTitle(R.string.settings_title)
@@ -96,21 +91,21 @@ public class DialogActivity extends AppCompatActivity {
         final View view = inflater.inflate(R.layout.dialog_content_settings, null);
         mLocationSwitch = view.findViewById(R.id.dialog_content_settings_location_switch);
         boolean hasLocationPerm = hasLocationPermission();
-        boolean tagWithLocation = getTagWithLocation();
+        boolean tagWithLocation = Utils.getTagWithLocation(this);
         if (tagWithLocation && !hasLocationPerm) {
-            setTagWithLocation(false);
+            Utils.setTagWithLocation(this, false);
             tagWithLocation = false;
         }
         mLocationSwitch.setChecked(tagWithLocation);
         mLocationSwitch.setOnCheckedChangeListener((button, isChecked) -> {
             if (isChecked) {
                 if (hasLocationPermission()) {
-                    setTagWithLocation(true);
+                    Utils.setTagWithLocation(this, true);
                 } else {
                     askLocationPermission();
                 }
             } else {
-                setTagWithLocation(false);
+                Utils.setTagWithLocation(this, false);
             }
         });
 
@@ -138,18 +133,10 @@ public class DialogActivity extends AppCompatActivity {
                 REQUEST_LOCATION_PERMS);
     }
 
-    private void setTagWithLocation(boolean enabled) {
-        mPrefs.edit().putBoolean(Utils.PREF_TAG_WITH_LOCATION, enabled).apply();
-    }
-
-    private boolean getTagWithLocation() {
-        return mPrefs.getBoolean(Utils.PREF_TAG_WITH_LOCATION, false);
-    }
-
     private void toggleAfterPermissionRequest(int requestCode) {
         if (requestCode == REQUEST_LOCATION_PERMS) {
             mLocationSwitch.setChecked(true);
-            setTagWithLocation(true);
+            Utils.setTagWithLocation(this, true);
         }
     }
 }
