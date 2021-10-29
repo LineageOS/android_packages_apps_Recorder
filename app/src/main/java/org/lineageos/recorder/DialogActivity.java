@@ -16,10 +16,8 @@
 package org.lineageos.recorder;
 
 import android.Manifest;
-import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
-import android.net.Uri;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -30,20 +28,15 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SwitchCompat;
 
-import org.lineageos.recorder.task.DeleteRecordingTask;
-import org.lineageos.recorder.task.TaskExecutor;
-import org.lineageos.recorder.utils.LastRecordHelper;
 import org.lineageos.recorder.utils.Utils;
 
 public class DialogActivity extends AppCompatActivity {
     public static final String EXTRA_TITLE = "dialogTitle";
-    public static final String EXTRA_DELETE_LAST_RECORDING = "deleteLastItem";
     private static final int REQUEST_LOCATION_PERMS = 214;
 
     private SwitchCompat mLocationSwitch;
 
     private SharedPreferences mPrefs;
-    private TaskExecutor mTaskExecutor;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstance) {
@@ -52,28 +45,12 @@ public class DialogActivity extends AppCompatActivity {
         setFinishOnTouchOutside(true);
 
         mPrefs = getSharedPreferences(Utils.PREFS, 0);
-        mTaskExecutor = new TaskExecutor();
-        getLifecycle().addObserver(mTaskExecutor);
 
-        Intent intent = getIntent();
-        boolean deleteLastRecording = intent.getBooleanExtra(EXTRA_DELETE_LAST_RECORDING, false);
-
-        if (deleteLastRecording) {
-            deleteLastItem();
-            return;
-        }
-
-        int dialogTitle = intent.getIntExtra(EXTRA_TITLE, 0);
-
-        AlertDialog dialog = new AlertDialog.Builder(this)
+        new AlertDialog.Builder(this)
+                .setTitle(R.string.settings_title)
                 .setView(setupAsSettingsScreen())
                 .setOnDismissListener(dialogInterface -> finish())
-                .create();
-
-        if (dialogTitle != 0) {
-            dialog.setTitle(dialogTitle);
-        }
-        dialog.show();
+                .show();
     }
 
     @Override
@@ -111,23 +88,6 @@ public class DialogActivity extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         finish();
-    }
-
-    private void deleteLastItem() {
-        final Uri uri = LastRecordHelper.getLastItemUri(this);
-        if (uri == null) {
-            return;
-        }
-
-        new AlertDialog.Builder(this)
-                .setTitle(R.string.delete_title)
-                .setMessage(getString(R.string.delete_recording_message))
-                .setPositiveButton(R.string.delete, (d, which) -> mTaskExecutor.runTask(
-                        new DeleteRecordingTask(getContentResolver(), uri),
-                        d::dismiss))
-                .setNegativeButton(R.string.cancel, null)
-                .setOnDismissListener(d -> finish())
-                .show();
     }
 
     @NonNull
