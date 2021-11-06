@@ -127,8 +127,10 @@ public class ListActivity extends AppCompatActivity implements RecordingListCall
                 .setTitle(R.string.delete_title)
                 .setMessage(getString(R.string.delete_recording_message))
                 .setPositiveButton(R.string.delete, (d, which) -> mTaskExecutor.runTask(
-                        new DeleteRecordingTask(getContentResolver(), uri),
-                        () -> mAdapter.onDelete(index)))
+                        new DeleteRecordingTask(getContentResolver(), uri), () -> {
+                            mAdapter.onDelete(index);
+                            Utils.cancelShareNotification(this);
+                        }))
                 .setNegativeButton(R.string.cancel, null)
                 .show();
     }
@@ -233,7 +235,10 @@ public class ListActivity extends AppCompatActivity implements RecordingListCall
 
     private void deleteRecording(@NonNull RecordingData item) {
         mTaskExecutor.runTask(new DeleteRecordingTask(getContentResolver(), item.getUri()),
-                () -> mAdapter.onDelete(item));
+                () -> {
+                    mAdapter.onDelete(item);
+                    Utils.cancelShareNotification(this);
+                });
     }
 
     private void deleteAllRecordings() {
