@@ -95,6 +95,12 @@ public class DialogActivity extends AppCompatActivity {
         finish();
     }
 
+    @Override
+    public void finish() {
+        super.finish();
+        overridePendingTransition(0, android.R.anim.fade_out);
+    }
+
     private void setupLocationSwitch(@NonNull SwitchCompat locationSwitch,
                                      boolean isRecording) {
         final boolean tagWithLocation;
