@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "92ba094e_4e007d51",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 13559
+      },
+      "writtenOn": "2021-12-14T14:19:27Z",
+      "side": 1,
+      "message": ".gitattribute seems to reformat it on each clone so lets just commit it :3 ",
+      "revId": "d48e414c86cfdd497d1ea6886e41f2da2913c2bd",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
