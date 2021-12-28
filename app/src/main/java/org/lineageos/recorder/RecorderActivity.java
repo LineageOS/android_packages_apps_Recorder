@@ -17,7 +17,6 @@ package org.lineageos.recorder;
 
 import static android.provider.MediaStore.Audio.Media.RECORD_SOUND_ACTION;
 
-import android.Manifest;
 import android.content.BroadcastReceiver;
 import android.content.ComponentName;
 import android.content.Context;
@@ -25,7 +24,6 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.ServiceConnection;
 import android.content.SharedPreferences;
-import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
@@ -52,21 +50,11 @@ import org.lineageos.recorder.ui.WaveFormView;
 import org.lineageos.recorder.utils.LastRecordHelper;
 import org.lineageos.recorder.utils.LocationHelper;
 import org.lineageos.recorder.utils.OnBoardingHelper;
+import org.lineageos.recorder.utils.PermissionManager;
 import org.lineageos.recorder.utils.Utils;
-
-import java.util.ArrayList;
 
 public class RecorderActivity extends AppCompatActivity implements
         SharedPreferences.OnSharedPreferenceChangeListener {
-    private static final int REQUEST_SOUND_REC_PERMS = 440;
-
-    private static final int[] PERMISSION_ERROR_MESSAGE_RES_IDS = {
-            0,
-            R.string.dialog_permissions_mic,
-            R.string.dialog_permissions_phone,
-            R.string.dialog_permissions_mic_phone,
-    };
-
     private ServiceConnection mConnection;
     private SoundRecorderService mSoundService;
     private SharedPreferences mPrefs;
@@ -78,6 +66,7 @@ public class RecorderActivity extends AppCompatActivity implements
     private WaveFormView mRecordingVisualizer;
 
     private LocationHelper mLocationHelper;
+    private PermissionManager mPermissionManager;
     private TaskExecutor mTaskExecutor;
 
     private boolean mReturnAudio;
@@ -121,6 +110,7 @@ public class RecorderActivity extends AppCompatActivity implements
         mPrefs.registerOnSharedPreferenceChangeListener(this);
 
         mLocationHelper = new LocationHelper(this);
+        mPermissionManager = new PermissionManager(this);
 
         mTaskExecutor = new TaskExecutor();
         getLifecycle().addObserver(mTaskExecutor);
@@ -170,42 +160,12 @@ public class RecorderActivity extends AppCompatActivity implements
                                            @NonNull int[] results) {
 
         super.onRequestPermissionsResult(requestCode, permissions, results);
-        if (hasAllAudioRecorderPermissions()) {
-            toggleAfterPermissionRequest(requestCode);
-            return;
-        }
-
-        if (shouldShowRequestPermissionRationale(Manifest.permission.RECORD_AUDIO) ||
-                shouldShowRequestPermissionRationale(Manifest.permission.READ_PHONE_STATE)) {
-            // Explain the user why the denied permission is needed
-            int error = 0;
-
-            if (!hasAudioPermission()) {
-                error |= 1;
+        if (requestCode == PermissionManager.REQUEST_CODE) {
+            if (mPermissionManager.hasEssentialPermissions()) {
+                toggleAfterPermissionRequest();
+            } else {
+                mPermissionManager.onEssentialPermissionsDenied();
             }
-            if (!hasPhoneReaderPermission()) {
-                error |= 1 << 1;
-            }
-
-            String message = getString(PERMISSION_ERROR_MESSAGE_RES_IDS[error]);
-
-            new AlertDialog.Builder(this)
-                    .setTitle(R.string.dialog_permissions_title)
-                    .setMessage(message)
-                    .setPositiveButton(R.string.dialog_permissions_ask,
-                            (dialog, position) -> {
-                                dialog.dismiss();
-                                askPermissionsAgain(requestCode);
-                            })
-                    .setNegativeButton(R.string.dialog_permissions_dismiss, null)
-                    .show();
-        } else {
-            // User has denied all the required permissions "forever"
-            new AlertDialog.Builder(this)
-                    .setTitle(R.string.dialog_permissions_title)
-                    .setMessage(R.string.snack_permissions_no_permission)
-                    .setPositiveButton(R.string.dialog_permissions_dismiss, null)
-                    .show();
         }
     }
 
@@ -221,21 +181,13 @@ public class RecorderActivity extends AppCompatActivity implements
     }
 
 
-    private void toggleAfterPermissionRequest(int requestCode) {
-        if (requestCode == REQUEST_SOUND_REC_PERMS) {
-            bindSoundRecService();
-            new Handler(Looper.getMainLooper()).postDelayed(this::toggleSoundRecorder, 500);
-        }
-    }
-
-    private void askPermissionsAgain(int requestCode) {
-        if (requestCode == REQUEST_SOUND_REC_PERMS) {
-            checkSoundRecPermissions();
-        }
+    private void toggleAfterPermissionRequest() {
+        bindSoundRecService();
+        new Handler(Looper.getMainLooper()).postDelayed(this::toggleSoundRecorder, 500);
     }
 
     private void toggleSoundRecorder() {
-        if (checkSoundRecPermissions()) {
+        if (mPermissionManager.requestEssentialPermissions()) {
             return;
         }
 
@@ -305,42 +257,9 @@ public class RecorderActivity extends AppCompatActivity implements
         }
     }
 
-    private boolean hasAudioPermission() {
-        int result = checkSelfPermission(Manifest.permission.RECORD_AUDIO);
-        return result == PackageManager.PERMISSION_GRANTED;
-    }
-
-    private boolean hasPhoneReaderPermission() {
-        int result = checkSelfPermission(Manifest.permission.READ_PHONE_STATE);
-        return result == PackageManager.PERMISSION_GRANTED;
-    }
-
-    private boolean hasAllAudioRecorderPermissions() {
-        return hasAudioPermission() && hasPhoneReaderPermission();
-    }
-
-    private boolean checkSoundRecPermissions() {
-        ArrayList<String> permissions = new ArrayList<>();
-
-        if (!hasAudioPermission()) {
-            permissions.add(Manifest.permission.RECORD_AUDIO);
-        }
-
-        if (!hasPhoneReaderPermission()) {
-            permissions.add(Manifest.permission.READ_PHONE_STATE);
-        }
-
-        if (permissions.isEmpty()) {
-            return false;
-        }
-
-        String[] permissionArray = permissions.toArray(new String[0]);
-        requestPermissions(permissionArray, REQUEST_SOUND_REC_PERMS);
-        return true;
-    }
-
     private void setupConnection() {
-        checkSoundRecPermissions();
+        mPermissionManager.requestEssentialPermissions();
+
         mConnection = new ServiceConnection() {
             @Override
             public void onServiceConnected(ComponentName name, IBinder binder) {
@@ -356,7 +275,7 @@ public class RecorderActivity extends AppCompatActivity implements
     }
 
     private void bindSoundRecService() {
-        if (mSoundService == null && hasAllAudioRecorderPermissions()) {
+        if (mSoundService == null && mPermissionManager.hasEssentialPermissions()) {
             setupConnection();
             bindService(new Intent(this, SoundRecorderService.class),
                     mConnection, BIND_AUTO_CREATE);
