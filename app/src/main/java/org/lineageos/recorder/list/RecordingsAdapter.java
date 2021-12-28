@@ -25,7 +25,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import org.lineageos.recorder.R;
 
-import java.text.SimpleDateFormat;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
@@ -37,7 +37,7 @@ public class RecordingsAdapter extends RecyclerView.Adapter<RecordingItemViewHol
     @NonNull
     private final RecordingListCallbacks mCallbacks;
     @NonNull
-    private final SimpleDateFormat mDateFormat = new SimpleDateFormat(
+    private final DateTimeFormatter mDateFormat = DateTimeFormatter.ofPattern(
             "yyyy-MM-dd HH:mm", Locale.getDefault());
     @NonNull
     private List<RecordingData> mData;
@@ -120,7 +120,7 @@ public class RecordingsAdapter extends RecyclerView.Adapter<RecordingItemViewHol
 
     public void onRename(int index, @NonNull String newTitle) {
         RecordingData oldData = mData.get(index);
-        RecordingData newData = new RecordingData(oldData.getUri(), newTitle, oldData.getDate(),
+        RecordingData newData = new RecordingData(oldData.getUri(), newTitle, oldData.getDateTime(),
                 oldData.getDuration());
         mData.set(index, newData);
 

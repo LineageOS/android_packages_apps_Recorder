@@ -49,8 +49,8 @@ import org.lineageos.recorder.utils.Utils;
 
 import java.io.File;
 import java.io.IOException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.Locale;
 import java.util.Timer;
 import java.util.TimerTask;
@@ -88,8 +88,8 @@ public class SoundRecorderService extends Service {
     private final AtomicLong mElapsedTime = new AtomicLong();
     private final StringBuilder mSbRecycle = new StringBuilder();
 
-    private final SimpleDateFormat mDateFormat = new SimpleDateFormat(FILE_NAME_DATE_FORMAT,
-            Locale.getDefault());
+    private final DateTimeFormatter mDateFormat = DateTimeFormatter.ofPattern(
+            FILE_NAME_DATE_FORMAT, Locale.getDefault());
     private final BroadcastReceiver mShutdownReceiver = new BroadcastReceiver() {
         @Override
         public void onReceive(Context context, Intent intent) {
@@ -372,7 +372,7 @@ public class SoundRecorderService extends Service {
                                     @NonNull String extension) {
         String fileName = String.format(FILE_NAME_BASE,
                 locationName == null ? FILE_NAME_LOCATION_FALLBACK : locationName,
-                mDateFormat.format(new Date()),
+                mDateFormat.format(LocalDateTime.now()),
                 extension);
         File file = new File(getExternalFilesDir(Environment.DIRECTORY_MUSIC), fileName);
         File recordingDir = file.getParentFile();
