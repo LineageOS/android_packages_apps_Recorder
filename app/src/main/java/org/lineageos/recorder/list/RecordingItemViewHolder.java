@@ -31,13 +31,13 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import org.lineageos.recorder.R;
 
-import java.text.SimpleDateFormat;
+import java.time.format.DateTimeFormatter;
 import java.util.Locale;
 
 public class RecordingItemViewHolder extends RecyclerView.ViewHolder {
     private static final String SUMMARY_FORMAT = "%s - %02d:%02d";
 
-    private final SimpleDateFormat mDateFormat;
+    private final DateTimeFormatter mDateFormat;
     private final ImageView mIconView;
     private final TextView mTitleView;
     private final TextView mSummaryView;
@@ -47,7 +47,7 @@ public class RecordingItemViewHolder extends RecyclerView.ViewHolder {
 
     public RecordingItemViewHolder(@NonNull View itemView,
                                    @NonNull RecordingItemCallbacks callbacks,
-                                   @NonNull SimpleDateFormat dateFormat) {
+                                   @NonNull DateTimeFormatter dateFormat) {
         super(itemView);
 
         mCallbacks = callbacks;
@@ -68,7 +68,7 @@ public class RecordingItemViewHolder extends RecyclerView.ViewHolder {
         long minutes = seconds / 60;
         seconds -= (minutes * 60);
         mSummaryView.setText(String.format(Locale.getDefault(), SUMMARY_FORMAT,
-                mDateFormat.format(data.getDate()), minutes, seconds));
+                mDateFormat.format(data.getDateTime()), minutes, seconds));
 
         switch (selection) {
             case ListItemStatus.DEFAULT:

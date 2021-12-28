@@ -26,9 +26,11 @@ import androidx.annotation.Nullable;
 import org.lineageos.recorder.BuildConfig;
 import org.lineageos.recorder.list.RecordingData;
 
+import java.time.Instant;
+import java.time.LocalDateTime;
+import java.time.ZoneId;
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Date;
 import java.util.List;
 import java.util.concurrent.Callable;
 
@@ -68,11 +70,11 @@ public final class GetRecordingsTask implements Callable<List<RecordingData>> {
                     final Uri uri = ContentUris.withAppendedId(
                             MediaStore.Audio.Media.EXTERNAL_CONTENT_URI, id);
                     final String name = cursor.getString(1);
-                    final long timeStamp = cursor.getLong(2) * 1000L;
-                    // TODO: convert to LocalDateTime
-                    final Date date = new Date(timeStamp);
+                    final long timeStamp = cursor.getLong(2);
+                    final LocalDateTime dateTime = LocalDateTime.ofInstant(
+                            Instant.ofEpochSecond(timeStamp), ZoneId.systemDefault());
                     final long duration = cursor.getLong(3);
-                    list.add(new RecordingData(uri, name, date, duration));
+                    list.add(new RecordingData(uri, name, dateTime, duration));
                 } while (cursor.moveToNext());
             }
         }
