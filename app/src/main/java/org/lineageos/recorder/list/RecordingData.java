@@ -19,7 +19,7 @@ import android.net.Uri;
 
 import androidx.annotation.NonNull;
 
-import java.util.Date;
+import java.time.LocalDateTime;
 import java.util.Objects;
 
 public class RecordingData {
@@ -29,14 +29,14 @@ public class RecordingData {
     @NonNull
     private final String title;
     @NonNull
-    private final Date date;
+    private final LocalDateTime dateTime;
     private final long duration;
 
-    public RecordingData(@NonNull Uri uri, @NonNull String title, @NonNull Date date,
+    public RecordingData(@NonNull Uri uri, @NonNull String title, @NonNull LocalDateTime dateTime,
                          long duration) {
         this.uri = uri;
         this.title = title;
-        this.date = date;
+        this.dateTime = dateTime;
         this.duration = duration;
     }
 
@@ -51,8 +51,8 @@ public class RecordingData {
     }
 
     @NonNull
-    public Date getDate() {
-        return date;
+    public LocalDateTime getDateTime() {
+        return dateTime;
     }
 
     public long getDuration() {
@@ -71,11 +71,11 @@ public class RecordingData {
         return duration == that.duration
                 && uri.equals(that.uri)
                 && title.equals(that.title)
-                && date.equals(that.date);
+                && dateTime.equals(that.dateTime);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(uri, title, date, duration);
+        return Objects.hash(uri, title, dateTime, duration);
     }
 }
