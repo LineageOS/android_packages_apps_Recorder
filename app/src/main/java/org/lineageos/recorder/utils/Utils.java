@@ -35,47 +35,10 @@ import java.io.IOException;
 
 public final class Utils {
     public static final String PREFS = "preferences";
-    public static final String KEY_RECORDING = "recording";
-    public static final String PREF_RECORDING_NOTHING = "nothing";
-    private static final String PREF_RECORDING_SOUND = "sound";
-    private static final String PREF_RECORDING_PAUSED = "paused";
     private static final String PREF_TAG_WITH_LOCATION = "tag_with_location";
     private static final String PREF_RECORDING_QUALITY = "recording_quality";
 
     private Utils() {
-    }
-
-    @NonNull
-    private static String getStatus(@NonNull Context context) {
-        SharedPreferences prefs = context.getSharedPreferences(PREFS, 0);
-        return prefs.getString(KEY_RECORDING, PREF_RECORDING_NOTHING);
-    }
-
-    public static void setStatus(@NonNull Context context, @NonNull UiStatus status) {
-        switch (status) {
-            case SOUND:
-                setStatus(context, PREF_RECORDING_SOUND);
-                break;
-            case PAUSED:
-                setStatus(context, PREF_RECORDING_PAUSED);
-                break;
-            default:
-                setStatus(context, PREF_RECORDING_NOTHING);
-                break;
-        }
-    }
-
-    public static void setStatus(@NonNull Context context, String status) {
-        SharedPreferences prefs = context.getSharedPreferences(PREFS, 0);
-        prefs.edit().putString(KEY_RECORDING, status).apply();
-    }
-
-    public static boolean isRecording(@NonNull Context context) {
-        return !PREF_RECORDING_NOTHING.equals(getStatus(context));
-    }
-
-    public static boolean isPaused(@NonNull Context context) {
-        return PREF_RECORDING_PAUSED.equals(getStatus(context));
     }
 
     public static void setFullScreen(Window window, View view) {
@@ -164,13 +127,6 @@ public final class Utils {
     public static boolean getTagWithLocation(@NonNull Context context) {
         SharedPreferences prefs = context.getSharedPreferences(PREFS, 0);
         return prefs.getBoolean(PREF_TAG_WITH_LOCATION, false);
-    }
-
-
-    public enum UiStatus {
-        NOTHING,
-        SOUND,
-        PAUSED,
     }
 
     public static void cancelShareNotification(Context context) {
