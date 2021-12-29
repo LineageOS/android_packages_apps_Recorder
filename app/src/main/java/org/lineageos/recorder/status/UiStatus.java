@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2021 The LineageOS Project
+ * Copyright (C) 2022 The LineageOS Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,24 +13,17 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.lineageos.recorder.service;
+package org.lineageos.recorder.status;
 
-import android.os.Binder;
+import androidx.annotation.IntDef;
 
-import androidx.annotation.NonNull;
-
-public class RecorderBinder extends Binder {
-
-    @NonNull
-    private final SoundRecorderService mService;
-
-    public RecorderBinder(@NonNull SoundRecorderService service) {
-        super();
-        mService = service;
-    }
-
-    @NonNull
-    public SoundRecorderService getService() {
-        return mService;
-    }
+@IntDef(value = {
+        UiStatus.READY,
+        UiStatus.RECORDING,
+        UiStatus.PAUSED,
+})
+public @interface UiStatus {
+    int READY = 0;
+    int RECORDING = 1;
+    int PAUSED = 2;
 }
