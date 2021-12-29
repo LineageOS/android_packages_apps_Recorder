@@ -27,10 +27,9 @@ import org.lineageos.recorder.utils.PcmConverter;
 import org.lineageos.recorder.utils.Utils;
 
 import java.io.BufferedOutputStream;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
 import java.util.concurrent.Semaphore;
 import java.util.concurrent.atomic.AtomicBoolean;
 
@@ -45,7 +44,7 @@ public class HighQualityRecorder implements SoundRecording {
             CHANNEL_IN, FORMAT);
 
     private AudioRecord mRecord;
-    private File mFile;
+    private Path mPath;
 
     private volatile byte[] mData;
     private Thread mThread;
@@ -54,8 +53,8 @@ public class HighQualityRecorder implements SoundRecording {
 
     @Override
     @RequiresPermission(Manifest.permission.RECORD_AUDIO)
-    public void startRecording(File file) {
-        mFile = file;
+    public void startRecording(Path path) {
+        mPath = path;
         mRecord = new AudioRecord(MediaRecorder.AudioSource.DEFAULT,
                 SAMPLING_RATE, CHANNEL_IN, FORMAT, BUFFER_SIZE);
         mData = new byte[BUFFER_SIZE];
@@ -83,7 +82,7 @@ public class HighQualityRecorder implements SoundRecording {
         // needed to prevent app crash when starting and stopping too fast
         try {
             mRecord.stop();
-            PcmConverter.convertToWave(mFile, BUFFER_SIZE);
+            PcmConverter.convertToWave(mPath, BUFFER_SIZE);
         } catch (RuntimeException rte) {
             return false;
         } finally {
@@ -144,7 +143,7 @@ public class HighQualityRecorder implements SoundRecording {
     private void recordingThreadImpl() {
         BufferedOutputStream out = null;
         try {
-            out = new BufferedOutputStream(new FileOutputStream(mFile));
+            out = new BufferedOutputStream(Files.newOutputStream(mPath));
 
             while (mIsRecording.get()) {
                 mPauseSemaphore.acquireUninterruptibly();
@@ -168,7 +167,7 @@ public class HighQualityRecorder implements SoundRecording {
                     mPauseSemaphore.release();
                 }
             }
-        } catch (FileNotFoundException e) {
+        } catch (IOException e) {
             Log.e(TAG, "Can't find output file", e);
         } finally {
             Utils.closeQuietly(out);
