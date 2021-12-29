@@ -23,6 +23,7 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SwitchCompat;
 
+import org.lineageos.recorder.status.StatusManager;
 import org.lineageos.recorder.utils.PermissionManager;
 import org.lineageos.recorder.utils.Utils;
 
@@ -44,7 +45,7 @@ public class DialogActivity extends AppCompatActivity {
                 .setOnDismissListener(dialogInterface -> finish())
                 .show();
 
-        final boolean isRecording = Utils.isRecording(this);
+        final boolean isRecording = StatusManager.getInstance(this).isRecording();
 
         mLocationSwitch = dialog.findViewById(
                 R.id.dialog_content_settings_location_switch);

@@ -42,6 +42,8 @@ import org.lineageos.recorder.BuildConfig;
 import org.lineageos.recorder.ListActivity;
 import org.lineageos.recorder.R;
 import org.lineageos.recorder.RecorderActivity;
+import org.lineageos.recorder.status.StatusManager;
+import org.lineageos.recorder.status.UiStatus;
 import org.lineageos.recorder.task.AddRecordingToContentProviderTask;
 import org.lineageos.recorder.task.TaskExecutor;
 import org.lineageos.recorder.utils.LastRecordHelper;
@@ -74,6 +76,7 @@ public class SoundRecorderService extends Service {
 
     private NotificationManager mNotificationManager;
     private TaskExecutor mTaskExecutor;
+    private StatusManager mStatusManager;
 
     private final IBinder mBinder = new RecorderBinder(this);
     private SoundRecording mRecorder = null;
@@ -116,6 +119,7 @@ public class SoundRecorderService extends Service {
         }
 
         mTaskExecutor = new TaskExecutor();
+        mStatusManager = StatusManager.getInstance(this);
     }
 
     @Override
@@ -171,15 +175,15 @@ public class SoundRecorderService extends Service {
 
         startTimers();
         startForeground(NOTIFICATION_ID, createRecordingNotification());
-        Utils.setStatus(this, Utils.UiStatus.SOUND);
+        mStatusManager.setStatus(UiStatus.RECORDING);
         return START_STICKY;
     }
 
     private int stopRecording() {
         if (mRecorder == null) {
-            if (Utils.isRecording(this)) {
+            if (mStatusManager.isRecording()) {
                 // Old crash?
-                Utils.setStatus(this, Utils.UiStatus.NOTHING);
+                mStatusManager.setStatus(UiStatus.READY);
             }
             return START_NOT_STICKY;
         }
@@ -212,9 +216,9 @@ public class SoundRecorderService extends Service {
         }
 
         if (mRecorder == null) {
-            if (Utils.isRecording(this)) {
+            if (mStatusManager.isRecording()) {
                 // Old crash?
-                Utils.setStatus(this, Utils.UiStatus.NOTHING);
+                mStatusManager.setStatus(UiStatus.READY);
             }
             return START_NOT_STICKY;
         }
@@ -230,7 +234,7 @@ public class SoundRecorderService extends Service {
 
         mIsPaused = true;
         mNotificationManager.notify(NOTIFICATION_ID, createRecordingNotification());
-        Utils.setStatus(this, Utils.UiStatus.PAUSED);
+        mStatusManager.setStatus(UiStatus.PAUSED);
 
         return START_STICKY;
     }
@@ -241,9 +245,9 @@ public class SoundRecorderService extends Service {
         }
 
         if (mRecorder == null) {
-            if (!Utils.isRecording(this)) {
+            if (mStatusManager.isRecording()) {
                 // Old crash?
-                Utils.setStatus(this, Utils.UiStatus.NOTHING);
+                mStatusManager.setStatus(UiStatus.READY);
             }
             return START_NOT_STICKY;
         }
@@ -255,7 +259,7 @@ public class SoundRecorderService extends Service {
         startTimers();
         mIsPaused = false;
         mNotificationManager.notify(NOTIFICATION_ID, createRecordingNotification());
-        Utils.setStatus(this, Utils.UiStatus.SOUND);
+        mStatusManager.setStatus(UiStatus.RECORDING);
 
         return START_STICKY;
     }
@@ -275,13 +279,13 @@ public class SoundRecorderService extends Service {
         if (uri != null) {
             createShareNotification(uri);
         }
-        Utils.setStatus(this, Utils.UiStatus.NOTHING);
+        mStatusManager.setStatus(UiStatus.READY);
     }
 
     private void onRecordFailed() {
         mNotificationManager.cancel(NOTIFICATION_ID);
         stopForeground(true);
-        Utils.setStatus(this, Utils.UiStatus.NOTHING);
+        mStatusManager.setStatus(UiStatus.READY);
     }
 
     private void createNotificationChannel() {

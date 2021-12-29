@@ -23,7 +23,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.ServiceConnection;
-import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
@@ -44,6 +43,9 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import org.lineageos.recorder.service.RecorderBinder;
 import org.lineageos.recorder.service.SoundRecorderService;
+import org.lineageos.recorder.status.StatusListener;
+import org.lineageos.recorder.status.StatusManager;
+import org.lineageos.recorder.status.UiStatus;
 import org.lineageos.recorder.task.DeleteRecordingTask;
 import org.lineageos.recorder.task.TaskExecutor;
 import org.lineageos.recorder.ui.WaveFormView;
@@ -53,11 +55,9 @@ import org.lineageos.recorder.utils.OnBoardingHelper;
 import org.lineageos.recorder.utils.PermissionManager;
 import org.lineageos.recorder.utils.Utils;
 
-public class RecorderActivity extends AppCompatActivity implements
-        SharedPreferences.OnSharedPreferenceChangeListener {
+public class RecorderActivity extends AppCompatActivity implements StatusListener {
     private ServiceConnection mConnection;
     private SoundRecorderService mSoundService;
-    private SharedPreferences mPrefs;
 
     private FloatingActionButton mSoundFab;
     private ImageView mPauseResume;
@@ -67,6 +67,7 @@ public class RecorderActivity extends AppCompatActivity implements
 
     private LocationHelper mLocationHelper;
     private PermissionManager mPermissionManager;
+    private StatusManager mStatusManager;
     private TaskExecutor mTaskExecutor;
 
     private boolean mReturnAudio;
@@ -106,11 +107,11 @@ public class RecorderActivity extends AppCompatActivity implements
         Utils.setFullScreen(getWindow(), mainView);
         Utils.setVerticalInsets(mainView);
 
-        mPrefs = getSharedPreferences(Utils.PREFS, 0);
-        mPrefs.registerOnSharedPreferenceChangeListener(this);
-
         mLocationHelper = new LocationHelper(this);
         mPermissionManager = new PermissionManager(this);
+
+        mStatusManager = StatusManager.getInstance(this);
+        mStatusManager.addListener(this);
 
         mTaskExecutor = new TaskExecutor();
         getLifecycle().addObserver(mTaskExecutor);
@@ -132,7 +133,6 @@ public class RecorderActivity extends AppCompatActivity implements
         if (mConnection != null) {
             unbindService(mConnection);
         }
-        mPrefs.unregisterOnSharedPreferenceChangeListener(this);
         super.onDestroy();
     }
 
@@ -152,7 +152,7 @@ public class RecorderActivity extends AppCompatActivity implements
     @Override
     protected void onResume() {
         super.onResume();
-        refresh();
+        applyStatus(mStatusManager.getStatus());
     }
 
     @Override
@@ -170,16 +170,14 @@ public class RecorderActivity extends AppCompatActivity implements
     }
 
     @Override
-    public void onSharedPreferenceChanged(SharedPreferences prefs, String key) {
-        if (Utils.KEY_RECORDING.equals(key)) {
-            refresh();
-            if (mReturnAudio && mHasRecordedAudio) {
-                Utils.cancelShareNotification(this);
-                promptUser();
-            }
+    public void onStatusChanged(UiStatus newStatus) {
+        applyStatus(newStatus);
+
+        if (mReturnAudio && mHasRecordedAudio) {
+            Utils.cancelShareNotification(this);
+            promptUser();
         }
     }
-
 
     private void toggleAfterPermissionRequest() {
         bindSoundRecService();
@@ -196,7 +194,7 @@ public class RecorderActivity extends AppCompatActivity implements
             return;
         }
 
-        if (Utils.isRecording(this)) {
+        if (mStatusManager.isRecording()) {
             // Stop
             Intent stopIntent = new Intent(this, SoundRecorderService.class)
                     .setAction(SoundRecorderService.ACTION_STOP);
@@ -213,11 +211,11 @@ public class RecorderActivity extends AppCompatActivity implements
     }
 
     private void togglePause() {
-        if (!Utils.isRecording(this)) {
+        if (!mStatusManager.isRecording()) {
             return;
         }
 
-        if (Utils.isPaused(this)) {
+        if (mStatusManager.isPaused()) {
             Intent resumeIntent = new Intent(this, SoundRecorderService.class)
                     .setAction(SoundRecorderService.ACTION_RESUME);
             startService(resumeIntent);
@@ -228,13 +226,21 @@ public class RecorderActivity extends AppCompatActivity implements
         }
     }
 
-    private void refresh() {
-        if (Utils.isRecording(this)) {
+    private void applyStatus(UiStatus status) {
+        if (UiStatus.READY.equals(status)) {
+            mRecordingText.setText(getString(R.string.main_sound_action));
+            mSoundFab.setImageResource(R.drawable.ic_action_record);
+            mRecordingVisualizer.setVisibility(View.INVISIBLE);
+            mPauseResume.setVisibility(View.GONE);
+            if (mSoundService != null) {
+                mSoundService.setAudioListener(null);
+            }
+        } else {
             mSoundFab.setImageResource(R.drawable.ic_action_stop);
             mRecordingVisualizer.setVisibility(View.VISIBLE);
             mRecordingVisualizer.setAmplitude(0);
             mPauseResume.setVisibility(View.VISIBLE);
-            if (Utils.isPaused(this)) {
+            if (UiStatus.PAUSED.equals(status)) {
                 mRecordingText.setText(getString(R.string.sound_recording_title_paused));
                 mPauseResume.setImageResource(R.drawable.ic_resume);
                 mPauseResume.setContentDescription(getString(R.string.resume));
@@ -245,14 +251,6 @@ public class RecorderActivity extends AppCompatActivity implements
             }
             if (mSoundService != null) {
                 mSoundService.setAudioListener(mRecordingVisualizer);
-            }
-        } else {
-            mRecordingText.setText(getString(R.string.main_sound_action));
-            mSoundFab.setImageResource(R.drawable.ic_action_record);
-            mRecordingVisualizer.setVisibility(View.INVISIBLE);
-            mPauseResume.setVisibility(View.GONE);
-            if (mSoundService != null) {
-                mSoundService.setAudioListener(null);
             }
         }
     }
