@@ -27,6 +27,8 @@ import org.lineageos.recorder.utils.PermissionManager;
 import org.lineageos.recorder.utils.Utils;
 
 public class DialogActivity extends AppCompatActivity {
+    public static final String EXTRA_IS_RECORDING = "is_recording";
+
     private PermissionManager mPermissionManager;
     private SwitchCompat mLocationSwitch;
 
@@ -44,7 +46,7 @@ public class DialogActivity extends AppCompatActivity {
                 .setOnDismissListener(dialogInterface -> finish())
                 .show();
 
-        final boolean isRecording = Utils.isRecording(this);
+        final boolean isRecording = getIntent().getBooleanExtra(EXTRA_IS_RECORDING, false);
 
         mLocationSwitch = dialog.findViewById(
                 R.id.dialog_content_settings_location_switch);
