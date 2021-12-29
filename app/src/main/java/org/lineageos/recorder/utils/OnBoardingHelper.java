@@ -16,7 +16,6 @@
 package org.lineageos.recorder.utils;
 
 import android.content.Context;
-import android.content.SharedPreferences;
 import android.os.Handler;
 import android.os.Looper;
 import android.view.View;
@@ -28,8 +27,6 @@ import androidx.annotation.NonNull;
 import org.lineageos.recorder.R;
 
 public final class OnBoardingHelper {
-    private static final String ONBOARD_SETTINGS = "onboard_settings";
-    private static final String ONBOARD_SOUND_LIST = "onboard_list";
     private static final long RIPPLE_DELAY = 500;
     private static final long RIPPLE_REPEAT = 4;
     private static final int RIPPLE_OPEN_APP_WAIT = 1;
@@ -40,12 +37,12 @@ public final class OnBoardingHelper {
     }
 
     public static void onBoardList(Context context, View view) {
-        SharedPreferences prefs = getPrefs(context);
-        int appOpenTimes = prefs.getInt(ONBOARD_SOUND_LIST, 0);
+        final PreferencesManager prefsManager = new PreferencesManager(context);
+        final int appOpenTimes = prefsManager.getOnboardListCounter();
 
         // Wait for the user to open the app 2 times before exposing this
         if (appOpenTimes <= RIPPLE_OPEN_APP_WAIT) {
-            prefs.edit().putInt(ONBOARD_SOUND_LIST, appOpenTimes + 1).apply();
+            prefsManager.setOnboardListCounter(appOpenTimes + 1);
         }
 
         if (appOpenTimes == RIPPLE_OPEN_APP_WAIT) {
@@ -58,23 +55,18 @@ public final class OnBoardingHelper {
     }
 
     public static void onBoardSettings(Context context, View view) {
-        SharedPreferences prefs = getPrefs(context);
-        int appOpenTimes = prefs.getInt(ONBOARD_SETTINGS, 0);
+        final PreferencesManager prefsManager = new PreferencesManager(context);
+        final int appOpenTimes = prefsManager.getOnboardSettingsCounter();
 
         // Wait for the user to open the app 4 times before exposing this
         if (appOpenTimes <= ROTATION_OPEN_APP_WAIT) {
-            prefs.edit().putInt(ONBOARD_SETTINGS, appOpenTimes + 1).apply();
+            prefsManager.setOnboardSettingsCounter(appOpenTimes + 1);
         }
 
         if (appOpenTimes == ROTATION_OPEN_APP_WAIT) {
             new Handler(Looper.getMainLooper())
                     .postDelayed(rotationAnimation(context, view), ROTATION_DELAY);
         }
-    }
-
-    @NonNull
-    private static SharedPreferences getPrefs(@NonNull Context context) {
-        return context.getSharedPreferences(Utils.PREFS, 0);
     }
 
     @NonNull

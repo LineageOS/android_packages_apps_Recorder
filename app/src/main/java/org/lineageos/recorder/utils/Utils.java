@@ -17,7 +17,6 @@ package org.lineageos.recorder.utils;
 
 import android.app.NotificationManager;
 import android.content.Context;
-import android.content.SharedPreferences;
 import android.os.Build;
 import android.view.View;
 import android.view.Window;
@@ -34,10 +33,6 @@ import java.io.Closeable;
 import java.io.IOException;
 
 public final class Utils {
-    public static final String PREFS = "preferences";
-    private static final String PREF_TAG_WITH_LOCATION = "tag_with_location";
-    private static final String PREF_RECORDING_QUALITY = "recording_quality";
-
     private Utils() {
     }
 
@@ -107,26 +102,6 @@ public final class Utils {
     public static void closeKeyboard(@NonNull Context context) {
         InputMethodManager inputMethodManager = context.getSystemService(InputMethodManager.class);
         inputMethodManager.toggleSoftInput(InputMethodManager.HIDE_IMPLICIT_ONLY, 0);
-    }
-
-    public static void setRecordingHighQuality(@NonNull Context context, boolean highQuality) {
-        SharedPreferences prefs = context.getSharedPreferences(PREFS, 0);
-        prefs.edit().putInt(PREF_RECORDING_QUALITY, highQuality ? 1 : 0).apply();
-    }
-
-    public static boolean getRecordInHighQuality(@NonNull Context context) {
-        SharedPreferences prefs = context.getSharedPreferences(PREFS, 0);
-        return prefs.getInt(PREF_RECORDING_QUALITY, 0) == 1;
-    }
-
-    public static void setTagWithLocation(@NonNull Context context, boolean tagWithLocation) {
-        SharedPreferences prefs = context.getSharedPreferences(PREFS, 0);
-        prefs.edit().putBoolean(PREF_TAG_WITH_LOCATION, tagWithLocation).apply();
-    }
-
-    public static boolean getTagWithLocation(@NonNull Context context) {
-        SharedPreferences prefs = context.getSharedPreferences(PREFS, 0);
-        return prefs.getBoolean(PREF_TAG_WITH_LOCATION, false);
     }
 
     public static void cancelShareNotification(Context context) {
