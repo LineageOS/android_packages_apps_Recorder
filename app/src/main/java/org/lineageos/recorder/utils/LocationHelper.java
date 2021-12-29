@@ -33,6 +33,7 @@ public final class LocationHelper {
 
     @NonNull
     private final Context context;
+    private final AppPreferences preferences;
 
     @Nullable
     private final LocationManager locationManager;
@@ -41,6 +42,7 @@ public final class LocationHelper {
         this.context = context;
 
         locationManager = context.getSystemService(LocationManager.class);
+        preferences = AppPreferences.getInstance(context);
     }
 
     @Nullable
@@ -77,7 +79,7 @@ public final class LocationHelper {
 
     @Nullable
     private Location getLastGoodLocation() {
-        if (locationManager == null || !Utils.getTagWithLocation(context)) {
+        if (locationManager == null || !preferences.getTagWithLocation()) {
             return null;
         }
         Location lastGoodLocation;

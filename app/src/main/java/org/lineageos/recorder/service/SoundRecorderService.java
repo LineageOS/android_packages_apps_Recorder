@@ -46,8 +46,8 @@ import org.lineageos.recorder.status.StatusManager;
 import org.lineageos.recorder.status.UiStatus;
 import org.lineageos.recorder.task.AddRecordingToContentProviderTask;
 import org.lineageos.recorder.task.TaskExecutor;
+import org.lineageos.recorder.utils.AppPreferences;
 import org.lineageos.recorder.utils.LastRecordHelper;
-import org.lineageos.recorder.utils.Utils;
 
 import java.io.File;
 import java.io.IOException;
@@ -153,7 +153,7 @@ public class SoundRecorderService extends Service {
     }
 
     private int startRecording(@Nullable String locationName) {
-        boolean highQuality = Utils.getRecordInHighQuality(this);
+        boolean highQuality = AppPreferences.getInstance(this).getRecordInHighQuality();
         mRecorder = highQuality ? new HighQualityRecorder() : new GoodQualityRecorder();
 
         mRecordFile = createNewAudioFile(locationName, mRecorder.getFileExtension());
