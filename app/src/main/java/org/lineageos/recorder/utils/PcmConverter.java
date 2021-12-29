@@ -17,10 +17,11 @@ package org.lineageos.recorder.utils;
 
 import android.util.Log;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
+import java.nio.file.Files;
+import java.nio.file.Path;
 
 public final class PcmConverter {
     private static final long SAMPLE_RATE = 44100;
@@ -32,18 +33,20 @@ public final class PcmConverter {
     private PcmConverter() {
     }
 
-    public static void convertToWave(File file, int bufferSize) {
-        FileInputStream input = null;
-        FileOutputStream output = null;
+    public static void convertToWave(Path path, int bufferSize) {
+        InputStream input = null;
+        OutputStream output = null;
 
-        final File tmpFile = new File(file.getPath() + ".tmp");
+        final Path tmpPath = path.getParent().resolve(path.getFileName() + ".tmp");
 
         final byte[] data = new byte[bufferSize];
 
         try {
-            input = new FileInputStream(file);
-            output = new FileOutputStream(tmpFile);
-            long audioLength = input.getChannel().size();
+            Files.createFile(tmpPath);
+
+            input = Files.newInputStream(path);
+            output = Files.newOutputStream(tmpPath);
+            long audioLength = Files.size(path);
             long dataLength = audioLength + 36;
 
             writeWaveHeader(output, audioLength, dataLength);
@@ -60,19 +63,9 @@ public final class PcmConverter {
         // Now rename tmp file to output destination
         try {
             // Delete old file
-            //noinspection ResultOfMethodCallIgnored
-            file.delete();
+            Files.delete(path);
 
-            input = new FileInputStream(tmpFile);
-            output = new FileOutputStream(file);
-
-            while (input.read(data) != -1) {
-                output.write(data);
-            }
-
-            // Delete tmp file
-            //noinspection ResultOfMethodCallIgnored
-            tmpFile.delete();
+            Files.move(tmpPath, path);
         } catch (IOException e) {
             Log.e(TAG, "Failed to copy file to output destination", e);
         } finally {
@@ -82,7 +75,7 @@ public final class PcmConverter {
     }
 
     // http://stackoverflow.com/questions/4440015/java-pcm-to-wav
-    private static void writeWaveHeader(FileOutputStream out, long audioLength,
+    private static void writeWaveHeader(OutputStream out, long audioLength,
                                         long dataLength) throws IOException {
         byte[] header = new byte[44];
 

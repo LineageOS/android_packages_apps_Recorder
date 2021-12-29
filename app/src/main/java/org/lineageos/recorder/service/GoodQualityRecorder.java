@@ -20,8 +20,8 @@ import android.media.MediaRecorder;
 
 import androidx.annotation.RequiresPermission;
 
-import java.io.File;
 import java.io.IOException;
+import java.nio.file.Path;
 
 public class GoodQualityRecorder implements SoundRecording {
     private static final String FILE_NAME_EXTENSION_AAC = "m4a";
@@ -32,9 +32,9 @@ public class GoodQualityRecorder implements SoundRecording {
 
     @Override
     @RequiresPermission(Manifest.permission.RECORD_AUDIO)
-    public void startRecording(File file) throws IOException {
+    public void startRecording(Path path) throws IOException {
         mRecorder = new MediaRecorder();
-        mRecorder.setOutputFile(file);
+        mRecorder.setOutputFile(path.toFile());
         mRecorder.setAudioSource(MediaRecorder.AudioSource.MIC);
         mRecorder.setOutputFormat(MediaRecorder.OutputFormat.MPEG_4);
         mRecorder.setAudioEncoder(MediaRecorder.AudioEncoder.AAC);
