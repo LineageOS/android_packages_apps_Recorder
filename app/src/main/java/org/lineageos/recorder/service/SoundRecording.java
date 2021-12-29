@@ -19,13 +19,13 @@ import android.Manifest;
 
 import androidx.annotation.RequiresPermission;
 
-import java.io.File;
 import java.io.IOException;
+import java.nio.file.Path;
 
 public interface SoundRecording {
 
     @RequiresPermission(Manifest.permission.RECORD_AUDIO)
-    void startRecording(File file) throws IOException;
+    void startRecording(Path path) throws IOException;
 
     boolean stopRecording();
 
