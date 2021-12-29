@@ -24,11 +24,12 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SwitchCompat;
 
 import org.lineageos.recorder.status.StatusManager;
+import org.lineageos.recorder.utils.AppPreferences;
 import org.lineageos.recorder.utils.PermissionManager;
-import org.lineageos.recorder.utils.Utils;
 
 public class DialogActivity extends AppCompatActivity {
     private PermissionManager mPermissionManager;
+    private AppPreferences mPreferences;
     private SwitchCompat mLocationSwitch;
 
     @Override
@@ -36,6 +37,7 @@ public class DialogActivity extends AppCompatActivity {
         super.onCreate(savedInstance);
 
         mPermissionManager = new PermissionManager(this);
+        mPreferences = AppPreferences.getInstance(this);
 
         setFinishOnTouchOutside(true);
 
@@ -87,12 +89,12 @@ public class DialogActivity extends AppCompatActivity {
     private void setupLocationSwitch(@NonNull SwitchCompat locationSwitch,
                                      boolean isRecording) {
         final boolean tagWithLocation;
-        if (Utils.getTagWithLocation(this)) {
+        if (mPreferences.getTagWithLocation()) {
             if (mPermissionManager.hasLocationPermission()) {
                 tagWithLocation = true;
             } else {
                 // Permission revoked -> disabled feature
-                Utils.setTagWithLocation(this, false);
+                mPreferences.setTagWithLocation(false);
                 tagWithLocation = false;
             }
         } else {
@@ -107,12 +109,12 @@ public class DialogActivity extends AppCompatActivity {
             locationSwitch.setOnCheckedChangeListener((button, isChecked) -> {
                 if (isChecked) {
                     if (mPermissionManager.hasLocationPermission()) {
-                        Utils.setTagWithLocation(this, true);
+                        mPreferences.setTagWithLocation(true);
                     } else {
                         mPermissionManager.requestLocationPermission();
                     }
                 } else {
-                    Utils.setTagWithLocation(this, false);
+                    mPreferences.setTagWithLocation(false);
                 }
             });
         }
@@ -120,19 +122,19 @@ public class DialogActivity extends AppCompatActivity {
 
     private void setupHighQualitySwitch(@NonNull SwitchCompat highQualitySwitch,
                                         boolean isRecording) {
-        final boolean highQuality = Utils.getRecordInHighQuality(this);
+        final boolean highQuality = mPreferences.getRecordInHighQuality();
         highQualitySwitch.setChecked(highQuality);
 
         if (isRecording) {
             highQualitySwitch.setEnabled(false);
         } else {
             highQualitySwitch.setOnCheckedChangeListener((button, isChecked) ->
-                    Utils.setRecordingHighQuality(this, isChecked));
+                    mPreferences.setRecordingHighQuality(isChecked));
         }
     }
 
     private void toggleAfterPermissionRequest() {
         mLocationSwitch.setChecked(true);
-        Utils.setTagWithLocation(this, true);
+        mPreferences.setTagWithLocation(true);
     }
 }
