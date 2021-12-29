@@ -50,7 +50,7 @@ import org.lineageos.recorder.status.UiStatus;
 import org.lineageos.recorder.task.AddRecordingToContentProviderTask;
 import org.lineageos.recorder.task.TaskExecutor;
 import org.lineageos.recorder.utils.LastRecordHelper;
-import org.lineageos.recorder.utils.Utils;
+import org.lineageos.recorder.utils.PreferencesManager;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -87,6 +87,7 @@ public class SoundRecorderService extends Service {
     private static final String NOTIFICATION_CHANNEL = "soundrecorder_notification_channel";
 
     private NotificationManager mNotificationManager;
+    private PreferencesManager mPreferencesManager;
     private TaskExecutor mTaskExecutor;
 
     private final List<Messenger> mClients = new ArrayList<>();
@@ -143,6 +144,7 @@ public class SoundRecorderService extends Service {
             createNotificationChannel();
         }
 
+        mPreferencesManager = new PreferencesManager(this);
         mTaskExecutor = new TaskExecutor();
     }
 
@@ -183,7 +185,7 @@ public class SoundRecorderService extends Service {
             return false;
         }
 
-        mRecorder = Utils.getRecordInHighQuality(this)
+        mRecorder = mPreferencesManager.getRecordInHighQuality()
                 ? new HighQualityRecorder()
                 : new GoodQualityRecorder();
 
