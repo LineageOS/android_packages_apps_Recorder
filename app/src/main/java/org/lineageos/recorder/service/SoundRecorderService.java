@@ -49,11 +49,13 @@ import org.lineageos.recorder.task.TaskExecutor;
 import org.lineageos.recorder.utils.AppPreferences;
 import org.lineageos.recorder.utils.LastRecordHelper;
 
-import java.io.File;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Locale;
+import java.util.Optional;
 import java.util.Timer;
 import java.util.TimerTask;
 import java.util.concurrent.atomic.AtomicLong;
@@ -80,7 +82,7 @@ public class SoundRecorderService extends Service {
 
     private final IBinder mBinder = new RecorderBinder(this);
     private SoundRecording mRecorder = null;
-    private File mRecordFile = null;
+    private Path mRecordPath = null;
 
     private TimerTask mVisualizerTask;
     @Nullable
@@ -156,14 +158,22 @@ public class SoundRecorderService extends Service {
         boolean highQuality = AppPreferences.getInstance(this).getRecordInHighQuality();
         mRecorder = highQuality ? new HighQualityRecorder() : new GoodQualityRecorder();
 
-        mRecordFile = createNewAudioFile(locationName, mRecorder.getFileExtension());
+        final Optional<Path> optPath = createNewAudioFile(locationName,
+                mRecorder.getFileExtension());
+        // No .isEmpty for android
+        //noinspection SimplifyOptionalCallChains
+        if (!optPath.isPresent()) {
+            Log.e(TAG, "Failed to prepare output file");
+            return START_NOT_STICKY;
+        }
+        mRecordPath = optPath.get();
         mIsPaused = false;
         mElapsedTime.set(0);
 
         try {
             if (checkSelfPermission(Manifest.permission.RECORD_AUDIO)
                     == PackageManager.PERMISSION_GRANTED) {
-                mRecorder.startRecording(mRecordFile);
+                mRecorder.startRecording(mRecordPath);
             } else {
                 Log.e(TAG, "Missing permission to record audio");
                 return START_NOT_STICKY;
@@ -196,14 +206,14 @@ public class SoundRecorderService extends Service {
         stopTimers();
 
         boolean success = mRecorder.stopRecording();
-        if (!success || mRecordFile == null) {
+        if (!success || mRecordPath == null) {
             onRecordFailed();
             return START_NOT_STICKY;
         }
 
         mTaskExecutor.runTask(new AddRecordingToContentProviderTask(
                         getContentResolver(),
-                        mRecordFile,
+                        mRecordPath,
                         mRecorder.getMimeType()),
                 this::onRecordCompleted,
                 () -> Log.e(TAG, "Failed to save recording"));
@@ -372,19 +382,23 @@ public class SoundRecorderService extends Service {
     }
 
     @NonNull
-    private File createNewAudioFile(@Nullable String locationName,
-                                    @NonNull String extension) {
-        String fileName = String.format(FILE_NAME_BASE,
+    private Optional<Path> createNewAudioFile(@Nullable String locationName,
+                                              @NonNull String extension) {
+        final String fileName = String.format(FILE_NAME_BASE,
                 locationName == null ? FILE_NAME_LOCATION_FALLBACK : locationName,
                 mDateFormat.format(LocalDateTime.now()),
                 extension);
-        File file = new File(getExternalFilesDir(Environment.DIRECTORY_MUSIC), fileName);
-        File recordingDir = file.getParentFile();
-        if (recordingDir != null && !recordingDir.exists()) {
-            //noinspection ResultOfMethodCallIgnored
-            recordingDir.mkdirs();
+        final Path recordingDir = getExternalFilesDir(Environment.DIRECTORY_MUSIC).toPath();
+        final Path path = recordingDir.resolve(fileName);
+        if (!Files.exists(recordingDir)) {
+            try {
+                Files.createDirectories(recordingDir);
+            } catch (IOException e) {
+                Log.e(TAG, "Failed to create parent directories for output");
+                return Optional.empty();
+            }
         }
-        return file;
+        return Optional.of(path);
     }
 
     private void startElapsedTimeTask() {

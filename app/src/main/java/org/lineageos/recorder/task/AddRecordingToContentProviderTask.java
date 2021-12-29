@@ -25,10 +25,10 @@ import android.util.Log;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
-import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.nio.file.Files;
+import java.nio.file.Path;
 import java.util.Optional;
 import java.util.concurrent.Callable;
 
@@ -41,29 +41,28 @@ public final class AddRecordingToContentProviderTask implements Callable<Optiona
     @Nullable
     private final ContentResolver cr;
     @Nullable
-    private final File file;
+    private final Path path;
     @NonNull
     private final String mimeType;
 
     public AddRecordingToContentProviderTask(@Nullable ContentResolver cr,
-                                             // TODO: Convert to Path
-                                             @Nullable File file,
+                                             @Nullable Path path,
                                              @NonNull String mimeType) {
         this.cr = cr;
-        this.file = file;
+        this.path = path;
         this.mimeType = mimeType;
     }
 
     @Override
     public Optional<String> call() {
-        if (cr == null || file == null) {
+        if (cr == null || path == null) {
             return Optional.empty();
         }
 
         final Uri uri = cr.insert(MediaStore.Audio.Media.getContentUri(
-                MediaStore.VOLUME_EXTERNAL_PRIMARY), buildCv(file));
+                MediaStore.VOLUME_EXTERNAL_PRIMARY), buildCv(path));
         if (uri == null) {
-            Log.e(TAG, "Failed to insert " + file.getAbsolutePath());
+            Log.e(TAG, "Failed to insert " + path.toAbsolutePath().toString());
             return Optional.empty();
         }
 
@@ -72,14 +71,16 @@ public final class AddRecordingToContentProviderTask implements Callable<Optiona
                 return Optional.empty();
             }
             try (FileOutputStream oStream = new FileOutputStream(pfd.getFileDescriptor())) {
-                Files.copy(file.toPath(), oStream);
+                Files.copy(path, oStream);
             }
 
             final ContentValues values = new ContentValues();
             values.put(MediaStore.MediaColumns.IS_PENDING, 0);
             cr.update(uri, values, null, null);
 
-            if (!file.delete()) {
+            try {
+                Files.delete(path);
+            } catch (IOException e) {
                 Log.w(TAG, "Failed to delete tmp file");
             }
             return Optional.of(uri.toString());
@@ -89,10 +90,11 @@ public final class AddRecordingToContentProviderTask implements Callable<Optiona
         }
     }
 
-    private ContentValues buildCv(@NonNull File file) {
+    private ContentValues buildCv(@NonNull Path path) {
+        final String name = path.getFileName().toString();
         final ContentValues values = new ContentValues();
-        values.put(MediaStore.Audio.Media.DISPLAY_NAME, file.getName());
-        values.put(MediaStore.Audio.Media.TITLE, file.getName());
+        values.put(MediaStore.Audio.Media.DISPLAY_NAME, name);
+        values.put(MediaStore.Audio.Media.TITLE, name);
         values.put(MediaStore.Audio.Media.MIME_TYPE, mimeType);
         values.put(MediaStore.Audio.Media.ARTIST, ARTIST);
         values.put(MediaStore.Audio.Media.ALBUM, ALBUM);
