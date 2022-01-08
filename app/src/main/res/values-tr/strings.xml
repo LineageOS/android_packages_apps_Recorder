@@ -15,51 +15,103 @@
 -->
 <resources>
     <string name="app_name">Kaydedici</string>
+    <!-- Common actions -->
+    <!-- Share action for notification -->
     <string name="share">Paylaş</string>
+    <!-- Share selected action -->
     <string name="share_selected">Seçilenleri paylaş</string>
+    <!-- Stop action for notification -->
     <string name="stop">Durdur</string>
+    <!-- Play action -->
     <string name="play">Oynat</string>
+    <!-- Pause action -->
     <string name="pause">Duraklat</string>
+    <!-- Resume action -->
     <string name="resume">Devam et</string>
+    <!-- Delete action -->
     <string name="delete">Sil</string>
+    <!-- Delete all action -->
     <string name="delete_all">Tümünü sil</string>
+    <!-- Delete selected action -->
     <string name="delete_selected">Seçileni sil</string>
+    <!-- Cancel action -->
     <string name="cancel">İptal</string>
+    <!-- Rename action -->
     <string name="rename">Yeniden adlandır</string>
+    <!-- Delete confirm title -->
     <string name="delete_title">Kayıt siliniyor</string>
+    <!-- Delete confirm message -->
     <string name="delete_recording_message">Bu kaydı silmek istediğinizden emin misiniz? Bu eylem geri alınamaz!</string>
+    <!-- Confirm result action-->
     <string name="confirm">Onayla</string>
+    <!-- Discard the last recording -->
     <string name="discard">Yoksay</string>
+    <!-- Record again action-->
     <string name="record_again">Tekrar kaydet</string>
+    <!-- Confirm result title -->
     <string name="confirm_result_title">Kayıt kullanılsın mı?</string>
+    <!-- Confirm result dialog text -->
     <string name="confirm_result_message">Son kaydı kullanmak istiyor musunuz?</string>
+    <!-- Sound recorder -->
+    <!-- Sound recorder notification title -->
     <string name="sound_notification_title">Ses Kaydedici</string>
+    <!-- Sound recorder notification message -->
     <string name="sound_notification_message">Ses uzunluğu: %1$s</string>
+    <!-- Sound recorder status card title recording -->
     <string name="sound_recording_title_working">Kaydediliyor</string>
+    <!-- Sound recorder status card title paused -->
     <string name="sound_recording_title_paused">Duraklatıldı</string>
+    <!-- Sound recorder last item title -->
     <string name="sound_last_title">Son kayıt</string>
+    <!-- Sound recorder notification channel title -->
     <string name="sound_channel_title">Ses kaydı</string>
+    <!-- Sound recorder notification channel description-->
     <string name="sound_channel_desc">Ses kaydedilirken kalıcı bildirim göster ve tamamlandıktan sonra bildirim göster</string>
+    <!-- Settings -->
+    <!-- Settings: dialog title -->
     <string name="settings_title">Ayarlar</string>
+    <!-- Settings: tag recordings with current location -->
     <string name="settings_location_message">Kayıtlarınızı mevcut konumunuzla etiketleyin</string>
+    <!-- Settings: recording in high quality -->
     <string name="settings_quality_high">Yüksek kalitede kayıt</string>
+    <!-- Permissions -->
+    <!-- Permissions dialog title -->
     <string name="dialog_permissions_title">İzinler</string>
+    <!-- Message: microphone access denied -->
     <string name="dialog_permissions_mic">Kaydedici ses kaydetmek için mikrofon iznine ihtiyaç duyuyor</string>
+    <!-- Message: phone status denied -->
     <string name="dialog_permissions_phone">Arama esnasında bu uygulamanın kayıt yapmasını önlemek için kaydedicinin telefon durumu erişimine ihtiyacı var</string>
+    <!-- Message: microphone and phone status access denied -->
     <string name="dialog_permissions_mic_phone">Kaydedici, arama esnasında kayıt yapmayı önlemek için mikrofon iznine ve telefon durumu erişimine ihtiyaç duyar</string>
+    <!-- Message: location permission denied -->
     <string name="dialog_permissions_location">Kaydedicinin, kayıtlarınızı düzenlemenize yardımcı olmak üzere otomatik olarak etiketlemesi için konum iznine ihtiyacı var</string>
+    <!-- Permissions dialog action: ask permissions access again -->
     <string name="dialog_permissions_ask">Tekrar sor</string>
+    <!-- Permissions dialog action: dismiss dialog -->
     <string name="dialog_permissions_dismiss">Reddet</string>
+    <!-- No permissions granted error -->
     <string name="snack_permissions_no_permission">Gerekli izinler reddedildi, kayda başlamak için bunları Ayarlar uygulamasından etkinleştirin</string>
+    <!-- User denied location access -->
     <string name="snack_permissions_no_permission_location">Konum izni reddedildi, kayıtlarınızı etiketlemek için Ayarlar uygulamasından etkinleştirin</string>
+    <!-- Main activity -->
+    <!-- Sound record title -->
     <string name="main_sound_action">Ses kaydet</string>
+    <!-- List activity -->
+    <!-- List activity title -->
     <string name="list_title">Kayıtlarım</string>
     <string name="list_error_empty">Tüm kayıtlarınız burada gösterilecek</string>
+    <!-- Edit recording title -->
     <string name="list_edit_title">Kayıt adını düzenleyin</string>
+    <!-- Edit recording confirm action -->
     <string name="list_edit_confirm">Değiştir</string>
+    <!-- List item menu actions description for a11y -->
     <string name="list_item_menu">Diğer işlemler</string>
+    <!-- Delete all message title -->
     <string name="delete_all_title">Tümünü sil</string>
+    <!-- Delete all message -->
     <string name="delete_all_message">Tüm kayıtları silmek istediğinizden emin misiniz? Bu geri alınamaz</string>
+    <!-- Delete selected message title -->
     <string name="delete_selected_title">Seçileni sil</string>
+    <!-- Delete all message -->
     <string name="delete_selected_message">Seçilen kayıtları silmek istediğinizden emin misiniz? Bu geri alınamaz</string>
 </resources>

@@ -15,51 +15,103 @@
 -->
 <resources>
     <string name="app_name">Εγγραφή</string>
+    <!-- Common actions -->
+    <!-- Share action for notification -->
     <string name="share">Κοινή χρήση</string>
+    <!-- Share selected action -->
     <string name="share_selected">Κοινή χρήση επιλεγμένων</string>
+    <!-- Stop action for notification -->
     <string name="stop">Διακοπή</string>
+    <!-- Play action -->
     <string name="play">Αναπαραγωγή</string>
+    <!-- Pause action -->
     <string name="pause">Παύση</string>
+    <!-- Resume action -->
     <string name="resume">Συνέχιση</string>
+    <!-- Delete action -->
     <string name="delete">Διαγραφή</string>
+    <!-- Delete all action -->
     <string name="delete_all">Διαγραφή όλων</string>
+    <!-- Delete selected action -->
     <string name="delete_selected">Διαγραφή επιλεγμένων</string>
+    <!-- Cancel action -->
     <string name="cancel">Ακύρωση</string>
+    <!-- Rename action -->
     <string name="rename">Μετονομασία</string>
+    <!-- Delete confirm title -->
     <string name="delete_title">Διαγραφή εγγραφής</string>
+    <!-- Delete confirm message -->
     <string name="delete_recording_message">Είστε βέβαιοι ότι θέλετε να διαγράψετε αυτή την εγγραφή; Αυτή η ενέργεια δεν μπορεί να αναιρεθεί</string>
+    <!-- Confirm result action-->
     <string name="confirm">Επιβεβαίωση</string>
+    <!-- Discard the last recording -->
     <string name="discard">Απόρριψη</string>
+    <!-- Record again action-->
     <string name="record_again">Εγγραφή ξανά</string>
+    <!-- Confirm result title -->
     <string name="confirm_result_title">Χρήση εγγραφής;</string>
+    <!-- Confirm result dialog text -->
     <string name="confirm_result_message">Θέλετε να χρησιμοποιήσετε την τελευταία εγγραφή;</string>
+    <!-- Sound recorder -->
+    <!-- Sound recorder notification title -->
     <string name="sound_notification_title">Εγγραφή ήχου</string>
+    <!-- Sound recorder notification message -->
     <string name="sound_notification_message">Μήκος ήχου: %1$s</string>
+    <!-- Sound recorder status card title recording -->
     <string name="sound_recording_title_working">Γίνεται εγγραφή</string>
+    <!-- Sound recorder status card title paused -->
     <string name="sound_recording_title_paused">Σε παύση</string>
+    <!-- Sound recorder last item title -->
     <string name="sound_last_title">Τελευταία εγγραφή</string>
+    <!-- Sound recorder notification channel title -->
     <string name="sound_channel_title">Εγγραφή ήχου</string>
+    <!-- Sound recorder notification channel description-->
     <string name="sound_channel_desc">Συνεχής ειδοποίηση κατά την εγγραφή ήχου και ειδοποίηση αφού έχει ολοκληρωθεί</string>
+    <!-- Settings -->
+    <!-- Settings: dialog title -->
     <string name="settings_title">Ρυθμίσεις</string>
+    <!-- Settings: tag recordings with current location -->
     <string name="settings_location_message">Προσθέστε ετικέτες στις ηχογραφήσεις σας με την τρέχουσα θέση σας</string>
+    <!-- Settings: recording in high quality -->
     <string name="settings_quality_high">Εγγραφή σε υψηλή ποιότητα</string>
+    <!-- Permissions -->
+    <!-- Permissions dialog title -->
     <string name="dialog_permissions_title">Δικαιώματα</string>
+    <!-- Message: microphone access denied -->
     <string name="dialog_permissions_mic">Η Εγγραφή χρειάζεται πρόσβαση στο μικρόφωνο για την εγγραφή ήχου</string>
+    <!-- Message: phone status denied -->
     <string name="dialog_permissions_phone">Η Εγγραφή χρειάζεται πρόσβαση στην κατάσταση του τηλεφώνου προκειμένου να μην ηχογραφεί κατά την διάρκεια κλήσεων</string>
+    <!-- Message: microphone and phone status access denied -->
     <string name="dialog_permissions_mic_phone">Η Εγγραφή χρειάζεται πρόσβαση στο μικρόφωνο για την εγγραφή ήχου και πρόσβαση στην κατάσταση τηλεφώνου προκειμένου να μην ηχογραφεί κατά την διάρκεια κλήσεων</string>
+    <!-- Message: location permission denied -->
     <string name="dialog_permissions_location">Η Εγγραφή χρειάζεται άδεια τοποθεσίας για αυτόματη προσθήκη ετικετών στις εγγραφές σας για να σας βοηθήσει να τις οργανώσετε</string>
+    <!-- Permissions dialog action: ask permissions access again -->
     <string name="dialog_permissions_ask">Ερώτηση ξανά</string>
+    <!-- Permissions dialog action: dismiss dialog -->
     <string name="dialog_permissions_dismiss">Παράβλεψη</string>
+    <!-- No permissions granted error -->
     <string name="snack_permissions_no_permission">Τα απαραίτητα δικαιώματα απορρίφθηκαν, ενεργοποιήστε τα από τις Ρυθμίσεις για να ξεκινήσει η εγγραφή</string>
+    <!-- User denied location access -->
     <string name="snack_permissions_no_permission_location">Η άδεια τοποθεσίας απορρίφθηκε, ενεργοποιήστε την από τις Ρυθμίσεις για να προσθέσετε ετικέτες στις εγγραφές σας</string>
+    <!-- Main activity -->
+    <!-- Sound record title -->
     <string name="main_sound_action">Εγγραφή ήχου</string>
+    <!-- List activity -->
+    <!-- List activity title -->
     <string name="list_title">Οι εγγραφές μου</string>
     <string name="list_error_empty">Όλες οι εγγραφές σας θα εμφανίζονται εδώ</string>
+    <!-- Edit recording title -->
     <string name="list_edit_title">Επεξεργασία ονόματος εγγραφής</string>
+    <!-- Edit recording confirm action -->
     <string name="list_edit_confirm">Αλλαγή</string>
+    <!-- List item menu actions description for a11y -->
     <string name="list_item_menu">Περισσότερες ενέργειες</string>
+    <!-- Delete all message title -->
     <string name="delete_all_title">Διαγραφή όλων</string>
+    <!-- Delete all message -->
     <string name="delete_all_message">Είστε βέβαιοι ότι θέλετε να διαγράψετε όλες τις εγγραφές; Αυτή η ενέργεια δεν μπορεί να αναιρεθεί</string>
+    <!-- Delete selected message title -->
     <string name="delete_selected_title">Διαγραφή επιλεγμένων</string>
+    <!-- Delete all message -->
     <string name="delete_selected_message">Είστε βέβαιοι ότι θέλετε να διαγράψετε τις επιλεγμένες εγγραφές; Αυτή η ενέργεια δεν μπορεί να αναιρεθεί</string>
 </resources>

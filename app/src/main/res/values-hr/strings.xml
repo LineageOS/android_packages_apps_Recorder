@@ -15,39 +15,91 @@
 -->
 <resources>
     <string name="app_name">Snimanje</string>
+    <!-- Common actions -->
+    <!-- Share action for notification -->
     <string name="share">Podijeli</string>
+    <!-- Share selected action -->
+    <!-- Stop action for notification -->
     <string name="stop">Zaustavi</string>
+    <!-- Play action -->
     <string name="play">Reproduciraj</string>
+    <!-- Pause action -->
     <string name="pause">Pauza</string>
+    <!-- Resume action -->
     <string name="resume">Nastavi</string>
+    <!-- Delete action -->
     <string name="delete">Izbriši</string>
+    <!-- Delete all action -->
+    <!-- Delete selected action -->
+    <!-- Cancel action -->
     <string name="cancel">Odustani</string>
+    <!-- Rename action -->
     <string name="rename">Preimenuj</string>
+    <!-- Delete confirm title -->
     <string name="delete_title">Brisanje zapisa</string>
+    <!-- Delete confirm message -->
     <string name="delete_recording_message">Jeste li sigurni da želite izbrisati ovu snimku? To se ne može poništiti</string>
+    <!-- Confirm result action-->
+    <!-- Discard the last recording -->
+    <!-- Record again action-->
+    <!-- Confirm result title -->
+    <!-- Confirm result dialog text -->
+    <!-- Sound recorder -->
+    <!-- Sound recorder notification title -->
     <string name="sound_notification_title">Snimanje zvuka</string>
+    <!-- Sound recorder notification message -->
     <string name="sound_notification_message">Duljina audiozapisa: %1$s</string>
+    <!-- Sound recorder status card title recording -->
     <string name="sound_recording_title_working">Snimanje</string>
+    <!-- Sound recorder status card title paused -->
     <string name="sound_recording_title_paused">Pauzirano</string>
+    <!-- Sound recorder last item title -->
     <string name="sound_last_title">Posljednji zapis</string>
+    <!-- Sound recorder notification channel title -->
     <string name="sound_channel_title">Snimanje zvuka</string>
+    <!-- Sound recorder notification channel description-->
     <string name="sound_channel_desc">Stalna obavijest pri snimanju zvuka i obavijest kad završi</string>
+    <!-- Settings -->
+    <!-- Settings: dialog title -->
     <string name="settings_title">Postavke</string>
+    <!-- Settings: tag recordings with current location -->
     <string name="settings_location_message">Označite svoje snimke sa svojim trenutnim položajem</string>
+    <!-- Settings: recording in high quality -->
     <string name="settings_quality_high">Snimajte u visokoj kvaliteti</string>
+    <!-- Permissions -->
+    <!-- Permissions dialog title -->
     <string name="dialog_permissions_title">Dopuštenja</string>
+    <!-- Message: microphone access denied -->
     <string name="dialog_permissions_mic">Snimač treba dopuštenje za mikrofon za snimanje zvuka</string>
+    <!-- Message: phone status denied -->
     <string name="dialog_permissions_phone">Snimač treba pristup stanju telefona za sprječavanje aplikacije da snima vaše pozive</string>
+    <!-- Message: microphone and phone status access denied -->
     <string name="dialog_permissions_mic_phone">Snimač treba dopuštenje za mikrofon za snimanje zvuka i pristup stanju telefona da spriječi aplikaciju od snimanja vaših poziva</string>
+    <!-- Message: location permission denied -->
     <string name="dialog_permissions_location">Snimaču je potrebno dopuštenje za lokaciju da bi automatski označio vaše snimke kako biste ih lakše organizirali</string>
+    <!-- Permissions dialog action: ask permissions access again -->
     <string name="dialog_permissions_ask">Pitaj ponovno</string>
+    <!-- Permissions dialog action: dismiss dialog -->
     <string name="dialog_permissions_dismiss">Odbaci</string>
+    <!-- No permissions granted error -->
     <string name="snack_permissions_no_permission">Potrebna su dopuštenja odbijena. Omogućite ih u postavkama da biste mogli snimati.</string>
+    <!-- User denied location access -->
     <string name="snack_permissions_no_permission_location">Potrebna su dopuštenja odbijena. Omogućite ih u postavkama da biste mogli snimati</string>
+    <!-- Main activity -->
+    <!-- Sound record title -->
     <string name="main_sound_action">Snimanje zvuka</string>
+    <!-- List activity -->
+    <!-- List activity title -->
     <string name="list_title">Moje snimke</string>
     <string name="list_error_empty">Ovdje će biti prikazane sve vaše snimke</string>
+    <!-- Edit recording title -->
     <string name="list_edit_title">Uredite naziv snimke</string>
+    <!-- Edit recording confirm action -->
     <string name="list_edit_confirm">Promjeni</string>
+    <!-- List item menu actions description for a11y -->
     <string name="list_item_menu">Više radnji</string>
+    <!-- Delete all message title -->
+    <!-- Delete all message -->
+    <!-- Delete selected message title -->
+    <!-- Delete all message -->
 </resources>

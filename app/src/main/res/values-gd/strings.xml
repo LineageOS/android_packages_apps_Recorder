@@ -15,51 +15,103 @@
 -->
 <resources>
     <string name="app_name">Clàradair</string>
+    <!-- Common actions -->
+    <!-- Share action for notification -->
     <string name="share">Co-roinn</string>
+    <!-- Share selected action -->
     <string name="share_selected">Co-roinn na thagh thu</string>
+    <!-- Stop action for notification -->
     <string name="stop">Cuir stad air</string>
+    <!-- Play action -->
     <string name="play">Cluich</string>
+    <!-- Pause action -->
     <string name="pause">Cuir ’na stad</string>
+    <!-- Resume action -->
     <string name="resume">Lean air</string>
+    <!-- Delete action -->
     <string name="delete">Sguab às</string>
+    <!-- Delete all action -->
     <string name="delete_all">Sguab às na h-uile</string>
+    <!-- Delete selected action -->
     <string name="delete_selected">Sguab às na thagh thu</string>
+    <!-- Cancel action -->
     <string name="cancel">Sguir dheth</string>
+    <!-- Rename action -->
     <string name="rename">Thoir ainm ùr air</string>
+    <!-- Delete confirm title -->
     <string name="delete_title">A’ sguabadh às an clàradh</string>
+    <!-- Delete confirm message -->
     <string name="delete_recording_message">A bheil thu cinnteach gu bheil thu airson an clàradh seo a sguabadh às? Cha ghabh seo a neo-dhèanamh</string>
+    <!-- Confirm result action-->
     <string name="confirm">Dearbh</string>
+    <!-- Discard the last recording -->
     <string name="discard">Tilg air falbh</string>
+    <!-- Record again action-->
     <string name="record_again">Clàraich e às ùr</string>
+    <!-- Confirm result title -->
     <string name="confirm_result_title">A bheil thu airson an clàradh a chleachdadh?</string>
+    <!-- Confirm result dialog text -->
     <string name="confirm_result_message">A bheil thu airson an clàradh mu dheireadh a chleachdadh?</string>
+    <!-- Sound recorder -->
+    <!-- Sound recorder notification title -->
     <string name="sound_notification_title">Clàradair fuaime</string>
+    <!-- Sound recorder notification message -->
     <string name="sound_notification_message">Faid na fuaime: %1$s</string>
+    <!-- Sound recorder status card title recording -->
     <string name="sound_recording_title_working">’Ga chlàradh</string>
+    <!-- Sound recorder status card title paused -->
     <string name="sound_recording_title_paused">’Na stad</string>
+    <!-- Sound recorder last item title -->
     <string name="sound_last_title">An clàradh mu dheireadh</string>
+    <!-- Sound recorder notification channel title -->
     <string name="sound_channel_title">Clàradh fuaime</string>
+    <!-- Sound recorder notification channel description-->
     <string name="sound_channel_desc">Brath maireannach nuair a thèid fuaim a chlàradh agus brath eile nuair a bhios e deiseil</string>
+    <!-- Settings -->
+    <!-- Settings: dialog title -->
     <string name="settings_title">Roghainnean</string>
+    <!-- Settings: tag recordings with current location -->
     <string name="settings_location_message">Cuir d’ ionad làithreach ’na thaga ris na clàraidhean agad</string>
+    <!-- Settings: recording in high quality -->
     <string name="settings_quality_high">Clàraich le càileachd àrd</string>
+    <!-- Permissions -->
+    <!-- Permissions dialog title -->
     <string name="dialog_permissions_title">Ceadan</string>
+    <!-- Message: microphone access denied -->
     <string name="dialog_permissions_mic">Feumaidh an clàradair cead dhan mhicreofon airson fuaim a chlàradh</string>
+    <!-- Message: phone status denied -->
     <string name="dialog_permissions_phone">Feumaidh an clàradair inntrigeadh do staid an fhòn ach nach dèan an aplacaid seo clàradh nuair a bhios tu ann an gairm</string>
+    <!-- Message: microphone and phone status access denied -->
     <string name="dialog_permissions_mic_phone">Feumaidh an clàradair cead dhan mhicreofon airson fuaim a chlàradh agus inntrigeadh do staid an fhòn ach nach dèan an aplacaid seo clàradh nuair a bhios tu ann an gairm</string>
+    <!-- Message: location permission denied -->
     <string name="dialog_permissions_location">Feumaidh an t-inneal-clàraidh cead air d’ ionad mus cuir e taga fèin-obrachail a chur ris na clàraidhean agad ach an cuireadh tu rian orra nas fhasa</string>
+    <!-- Permissions dialog action: ask permissions access again -->
     <string name="dialog_permissions_ask">Faighnich dhìom a-rithist</string>
+    <!-- Permissions dialog action: dismiss dialog -->
     <string name="dialog_permissions_dismiss">Leig seachad</string>
+    <!-- No permissions granted error -->
     <string name="snack_permissions_no_permission">Chaidh ceadan riatanach a dhiùltadh, cuir an comas iad ann an aplacaid nan roghainnean mus tòisich thu air a’ chlàradh</string>
+    <!-- User denied location access -->
     <string name="snack_permissions_no_permission_location">Chaidh an cead dhan ionad a dhiùltadh, cuir an comas e o aplacaid nan “Roghainnean” airson tagaichean a cur ris na clàraidhean agad</string>
+    <!-- Main activity -->
+    <!-- Sound record title -->
     <string name="main_sound_action">Clàraich an fhuaim</string>
+    <!-- List activity -->
+    <!-- List activity title -->
     <string name="list_title">Na clàraidhean agam</string>
     <string name="list_error_empty">Thèid na clàraidhean agad uile a shealltainn an-seo</string>
+    <!-- Edit recording title -->
     <string name="list_edit_title">Deasaich ainm a’ chlàraidh</string>
+    <!-- Edit recording confirm action -->
     <string name="list_edit_confirm">Atharraich</string>
+    <!-- List item menu actions description for a11y -->
     <string name="list_item_menu">Barrachd ghnìomhan</string>
+    <!-- Delete all message title -->
     <string name="delete_all_title">Sguab às na h-uile</string>
+    <!-- Delete all message -->
     <string name="delete_all_message">A bheil thu cinnteach gu bheil thu airson gach clàradh a sguabadh às? Cha ghabh seo a neo-dhèanamh</string>
+    <!-- Delete selected message title -->
     <string name="delete_selected_title">Sguab às na thagh thu</string>
+    <!-- Delete all message -->
     <string name="delete_selected_message">A bheil thu cinnteach gu bheil thu airson na clàraidhean a thagh thu a sguabadh às? Cha ghabh seo a neo-dhèanamh</string>
 </resources>

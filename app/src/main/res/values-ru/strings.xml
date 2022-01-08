@@ -15,51 +15,103 @@
 -->
 <resources>
     <string name="app_name">Рекордер</string>
+    <!-- Common actions -->
+    <!-- Share action for notification -->
     <string name="share">Отправить</string>
+    <!-- Share selected action -->
     <string name="share_selected">Поделиться выбранным</string>
+    <!-- Stop action for notification -->
     <string name="stop">Остановить</string>
+    <!-- Play action -->
     <string name="play">Воспроизвести</string>
+    <!-- Pause action -->
     <string name="pause">Приостановить</string>
+    <!-- Resume action -->
     <string name="resume">Возобновить</string>
+    <!-- Delete action -->
     <string name="delete">Удалить</string>
+    <!-- Delete all action -->
     <string name="delete_all">Удалить все</string>
+    <!-- Delete selected action -->
     <string name="delete_selected">Удалить выбранные</string>
+    <!-- Cancel action -->
     <string name="cancel">Отмена</string>
+    <!-- Rename action -->
     <string name="rename">Переименовать</string>
+    <!-- Delete confirm title -->
     <string name="delete_title">Удаление записи</string>
+    <!-- Delete confirm message -->
     <string name="delete_recording_message">Вы уверены, что хотите удалить эту запись? Действие не может быть отменено</string>
+    <!-- Confirm result action-->
     <string name="confirm">Подтвердить</string>
+    <!-- Discard the last recording -->
     <string name="discard">Отменить</string>
+    <!-- Record again action-->
     <string name="record_again">Записать повторно</string>
+    <!-- Confirm result title -->
     <string name="confirm_result_title">Использовать запись?</string>
+    <!-- Confirm result dialog text -->
     <string name="confirm_result_message">Вы хотите использовать последнюю запись?</string>
+    <!-- Sound recorder -->
+    <!-- Sound recorder notification title -->
     <string name="sound_notification_title">Запись звука</string>
+    <!-- Sound recorder notification message -->
     <string name="sound_notification_message">Длительность аудио: %1$s</string>
+    <!-- Sound recorder status card title recording -->
     <string name="sound_recording_title_working">Запись</string>
+    <!-- Sound recorder status card title paused -->
     <string name="sound_recording_title_paused">Приостановлено</string>
+    <!-- Sound recorder last item title -->
     <string name="sound_last_title">Последняя запись</string>
+    <!-- Sound recorder notification channel title -->
     <string name="sound_channel_title">Запись звука</string>
+    <!-- Sound recorder notification channel description-->
     <string name="sound_channel_desc">Постоянное уведомление при записи звука и уведомление после его завершения</string>
+    <!-- Settings -->
+    <!-- Settings: dialog title -->
     <string name="settings_title">Настройки</string>
+    <!-- Settings: tag recordings with current location -->
     <string name="settings_location_message">Добавляйте метки расположения к своим записям</string>
+    <!-- Settings: recording in high quality -->
     <string name="settings_quality_high">Запись в высоком качестве</string>
+    <!-- Permissions -->
+    <!-- Permissions dialog title -->
     <string name="dialog_permissions_title">Разрешения</string>
+    <!-- Message: microphone access denied -->
     <string name="dialog_permissions_mic">Рекордеру требуется доступ к микрофону для записи звука</string>
+    <!-- Message: phone status denied -->
     <string name="dialog_permissions_phone">Рекордеру требуется доступ к данным о состоянии телефона, чтобы прекращать запись во время звонка</string>
+    <!-- Message: microphone and phone status access denied -->
     <string name="dialog_permissions_mic_phone">Рекордеру требуется доступ к микрофону для записи звука и доступ к данным о состоянии телефона, чтобы прекращать запись во время звонка</string>
+    <!-- Message: location permission denied -->
     <string name="dialog_permissions_location">Рекордеру требуется разрешение на доступ к местоположению для автоматического создания меток ваших записей, чтобы помочь вам организовать их</string>
+    <!-- Permissions dialog action: ask permissions access again -->
     <string name="dialog_permissions_ask">Спросить снова</string>
+    <!-- Permissions dialog action: dismiss dialog -->
     <string name="dialog_permissions_dismiss">Пропустить</string>
+    <!-- No permissions granted error -->
     <string name="snack_permissions_no_permission">Отказано в необходимых разрешениях. Включите их в настройках, чтобы начать запись</string>
+    <!-- User denied location access -->
     <string name="snack_permissions_no_permission_location">Разрешение на доступ к местоположению было отклонено. Включите его в настройках для автоматического создания меток ваших записей</string>
+    <!-- Main activity -->
+    <!-- Sound record title -->
     <string name="main_sound_action">Запись звука</string>
+    <!-- List activity -->
+    <!-- List activity title -->
     <string name="list_title">Мои записи</string>
     <string name="list_error_empty">Здесь будут показаны все ваши записи</string>
+    <!-- Edit recording title -->
     <string name="list_edit_title">Изменить название записи</string>
+    <!-- Edit recording confirm action -->
     <string name="list_edit_confirm">Изменить</string>
+    <!-- List item menu actions description for a11y -->
     <string name="list_item_menu">Другие действия</string>
+    <!-- Delete all message title -->
     <string name="delete_all_title">Удалить все</string>
+    <!-- Delete all message -->
     <string name="delete_all_message">Вы уверены, что хотите удалить все записи? Действие не может быть отменено</string>
+    <!-- Delete selected message title -->
     <string name="delete_selected_title">Удалить выбранное</string>
+    <!-- Delete all message -->
     <string name="delete_selected_message">Вы уверены, что хотите выбранные записи? Действие не может быть отменено</string>
 </resources>

@@ -15,51 +15,103 @@
 -->
 <resources>
     <string name="app_name">Registratore</string>
+    <!-- Common actions -->
+    <!-- Share action for notification -->
     <string name="share">Condividi</string>
+    <!-- Share selected action -->
     <string name="share_selected">Condividi selezionati</string>
+    <!-- Stop action for notification -->
     <string name="stop">Stop</string>
+    <!-- Play action -->
     <string name="play">Play</string>
+    <!-- Pause action -->
     <string name="pause">Pausa</string>
+    <!-- Resume action -->
     <string name="resume">Riprendi</string>
+    <!-- Delete action -->
     <string name="delete">Elimina</string>
+    <!-- Delete all action -->
     <string name="delete_all">Elimina tutto</string>
+    <!-- Delete selected action -->
     <string name="delete_selected">Elimina selezionati</string>
+    <!-- Cancel action -->
     <string name="cancel">Annulla</string>
+    <!-- Rename action -->
     <string name="rename">Rinomina</string>
+    <!-- Delete confirm title -->
     <string name="delete_title">Elimina registrazione</string>
+    <!-- Delete confirm message -->
     <string name="delete_recording_message">Sei sicuro di cancellare questa registrazione? Quest\'azione non può essere annullata</string>
+    <!-- Confirm result action-->
     <string name="confirm">Conferma</string>
+    <!-- Discard the last recording -->
     <string name="discard">Annulla</string>
+    <!-- Record again action-->
     <string name="record_again">Registra di nuovo</string>
+    <!-- Confirm result title -->
     <string name="confirm_result_title">Utilizzare la registrazione?</string>
+    <!-- Confirm result dialog text -->
     <string name="confirm_result_message">Vuoi utilizzare l\'ultima registrazione effettuata?</string>
+    <!-- Sound recorder -->
+    <!-- Sound recorder notification title -->
     <string name="sound_notification_title">Registratore suoni</string>
+    <!-- Sound recorder notification message -->
     <string name="sound_notification_message">Durata audio: %1$s</string>
+    <!-- Sound recorder status card title recording -->
     <string name="sound_recording_title_working">Registrazione in corso</string>
+    <!-- Sound recorder status card title paused -->
     <string name="sound_recording_title_paused">In pausa</string>
+    <!-- Sound recorder last item title -->
     <string name="sound_last_title">Ultima registrazione</string>
+    <!-- Sound recorder notification channel title -->
     <string name="sound_channel_title">Registrazione audio</string>
+    <!-- Sound recorder notification channel description-->
     <string name="sound_channel_desc">Notifica persistente durante la registrazione audio e notifica dopo averla completata</string>
+    <!-- Settings -->
+    <!-- Settings: dialog title -->
     <string name="settings_title">Impostazioni</string>
+    <!-- Settings: tag recordings with current location -->
     <string name="settings_location_message">Etichetta le tue registrazioni con la tua posizione attuale</string>
+    <!-- Settings: recording in high quality -->
     <string name="settings_quality_high">Registra in alta qualità</string>
+    <!-- Permissions -->
+    <!-- Permissions dialog title -->
     <string name="dialog_permissions_title">Permessi</string>
+    <!-- Message: microphone access denied -->
     <string name="dialog_permissions_mic">Registratore deve accedere al microfono per registrare l\'audio</string>
+    <!-- Message: phone status denied -->
     <string name="dialog_permissions_phone">Registratore deve accedere allo stato del telefono per prevenire le registrazioni audio durante le telefonate</string>
+    <!-- Message: microphone and phone status access denied -->
     <string name="dialog_permissions_mic_phone">Registratore deve accedere al microfono per registrare audio e allo stato del telefono per impedire registrazioni audio durante le telefonate</string>
+    <!-- Message: location permission denied -->
     <string name="dialog_permissions_location">Il registratore ha bisogno dei permessi di localizzazione per etichettare automaticamente le tue registrazioni, per aiutarti ad organizzarle</string>
+    <!-- Permissions dialog action: ask permissions access again -->
     <string name="dialog_permissions_ask">Chiedi di nuovo</string>
+    <!-- Permissions dialog action: dismiss dialog -->
     <string name="dialog_permissions_dismiss">Annulla</string>
+    <!-- No permissions granted error -->
     <string name="snack_permissions_no_permission">I permessi richiesti sono stati negati, abilitali dall\'app Impostazioni per iniziare a registrare</string>
+    <!-- User denied location access -->
     <string name="snack_permissions_no_permission_location">I permessi di localizzazione sono stati rifiutati, abilitali dall\'app Impostazioni per etichettare le tue registrazioni</string>
+    <!-- Main activity -->
+    <!-- Sound record title -->
     <string name="main_sound_action">Registra suoni</string>
+    <!-- List activity -->
+    <!-- List activity title -->
     <string name="list_title">Le mie registrazioni</string>
     <string name="list_error_empty">Tutte le tue registrazioni saranno mostrate qui</string>
+    <!-- Edit recording title -->
     <string name="list_edit_title">Modifica nome registrazione</string>
+    <!-- Edit recording confirm action -->
     <string name="list_edit_confirm">Modifica</string>
+    <!-- List item menu actions description for a11y -->
     <string name="list_item_menu">Altre azioni</string>
+    <!-- Delete all message title -->
     <string name="delete_all_title">Elimina tutto</string>
+    <!-- Delete all message -->
     <string name="delete_all_message">Confermi l\'eliminazione di tutte le registrazioni? Quest\'azione non può essere annullata</string>
+    <!-- Delete selected message title -->
     <string name="delete_selected_title">Elimina selezionati</string>
+    <!-- Delete all message -->
     <string name="delete_selected_message">Sei sicuro di voler eliminare le registrazioni selezionate? Quest\'azione non può essere annullata</string>
 </resources>

@@ -15,51 +15,103 @@
 -->
 <resources>
     <string name="app_name">Recorder</string>
+    <!-- Common actions -->
+    <!-- Share action for notification -->
     <string name="share">Share</string>
+    <!-- Share selected action -->
     <string name="share_selected">Share selected</string>
+    <!-- Stop action for notification -->
     <string name="stop">Stop</string>
+    <!-- Play action -->
     <string name="play">Play</string>
+    <!-- Pause action -->
     <string name="pause">Pause</string>
+    <!-- Resume action -->
     <string name="resume">Resume</string>
+    <!-- Delete action -->
     <string name="delete">Delete</string>
+    <!-- Delete all action -->
     <string name="delete_all">Delete all</string>
+    <!-- Delete selected action -->
     <string name="delete_selected">Delete selected</string>
+    <!-- Cancel action -->
     <string name="cancel">Cancel</string>
+    <!-- Rename action -->
     <string name="rename">Rename</string>
+    <!-- Delete confirm title -->
     <string name="delete_title">Deleting record</string>
+    <!-- Delete confirm message -->
     <string name="delete_recording_message">Are you sure you want to delete this recording? This cannot be undone</string>
+    <!-- Confirm result action-->
     <string name="confirm">Confirm</string>
+    <!-- Discard the last recording -->
     <string name="discard">Discard</string>
+    <!-- Record again action-->
     <string name="record_again">Record again</string>
+    <!-- Confirm result title -->
     <string name="confirm_result_title">Use recording?</string>
+    <!-- Confirm result dialog text -->
     <string name="confirm_result_message">Do you want to use the last recording?</string>
+    <!-- Sound recorder -->
+    <!-- Sound recorder notification title -->
     <string name="sound_notification_title">Sound Recorder</string>
+    <!-- Sound recorder notification message -->
     <string name="sound_notification_message">Audio length: %1$s</string>
+    <!-- Sound recorder status card title recording -->
     <string name="sound_recording_title_working">Recording</string>
+    <!-- Sound recorder status card title paused -->
     <string name="sound_recording_title_paused">Paused</string>
+    <!-- Sound recorder last item title -->
     <string name="sound_last_title">Last record</string>
+    <!-- Sound recorder notification channel title -->
     <string name="sound_channel_title">Sound recording</string>
+    <!-- Sound recorder notification channel description-->
     <string name="sound_channel_desc">Persistent notification when recording sound and notification after it is complete</string>
+    <!-- Settings -->
+    <!-- Settings: dialog title -->
     <string name="settings_title">Settings</string>
+    <!-- Settings: tag recordings with current location -->
     <string name="settings_location_message">Tag your recordings with your current position</string>
+    <!-- Settings: recording in high quality -->
     <string name="settings_quality_high">Record in high quality</string>
+    <!-- Permissions -->
+    <!-- Permissions dialog title -->
     <string name="dialog_permissions_title">Permissions</string>
+    <!-- Message: microphone access denied -->
     <string name="dialog_permissions_mic">Recorder needs microphone permission to record audio</string>
+    <!-- Message: phone status denied -->
     <string name="dialog_permissions_phone">Recorder needs phone status access to prevent this app from recording while you\'re calling</string>
+    <!-- Message: microphone and phone status access denied -->
     <string name="dialog_permissions_mic_phone">Recorder needs microphone permission to record audio and phone status access to prevent this app from recording while you\'re calling</string>
+    <!-- Message: location permission denied -->
     <string name="dialog_permissions_location">Recorder needs location permission to automatically tag your recordings to help you organise them</string>
+    <!-- Permissions dialog action: ask permissions access again -->
     <string name="dialog_permissions_ask">Ask again</string>
+    <!-- Permissions dialog action: dismiss dialog -->
     <string name="dialog_permissions_dismiss">Dismiss</string>
+    <!-- No permissions granted error -->
     <string name="snack_permissions_no_permission">Required permissions were denied, enable them from Settings app to start recording</string>
+    <!-- User denied location access -->
     <string name="snack_permissions_no_permission_location">Location permission was denied, enable it from Settings app to tag your recordings</string>
+    <!-- Main activity -->
+    <!-- Sound record title -->
     <string name="main_sound_action">Record sound</string>
+    <!-- List activity -->
+    <!-- List activity title -->
     <string name="list_title">My recordings</string>
     <string name="list_error_empty">All your recordings will be shown here</string>
+    <!-- Edit recording title -->
     <string name="list_edit_title">Edit recording name</string>
+    <!-- Edit recording confirm action -->
     <string name="list_edit_confirm">Change</string>
+    <!-- List item menu actions description for a11y -->
     <string name="list_item_menu">More actions</string>
+    <!-- Delete all message title -->
     <string name="delete_all_title">Delete all</string>
+    <!-- Delete all message -->
     <string name="delete_all_message">Are you sure you want to delete all recordings? This cannot be undone</string>
+    <!-- Delete selected message title -->
     <string name="delete_selected_title">Delete selected</string>
+    <!-- Delete all message -->
     <string name="delete_selected_message">Are you sure you want to delete the selected recordings? This cannot be undone</string>
 </resources>

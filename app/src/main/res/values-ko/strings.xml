@@ -14,50 +14,104 @@
      limitations under the License.
 -->
 <resources>
-    <string name="app_name">녹음/녹화 도구</string>
+    <string name="app_name">녹음기</string>
+    <!-- Common actions -->
+    <!-- Share action for notification -->
     <string name="share">공유</string>
+    <!-- Share selected action -->
     <string name="share_selected">선택 항목 공유</string>
+    <!-- Stop action for notification -->
     <string name="stop">정지</string>
+    <!-- Play action -->
     <string name="play">재생</string>
+    <!-- Pause action -->
     <string name="pause">일시 중지</string>
+    <!-- Resume action -->
     <string name="resume">재개</string>
+    <!-- Delete action -->
     <string name="delete">삭제</string>
+    <!-- Delete all action -->
     <string name="delete_all">모두 삭제</string>
+    <!-- Delete selected action -->
     <string name="delete_selected">선택 항목 삭제</string>
+    <!-- Cancel action -->
     <string name="cancel">취소</string>
+    <!-- Rename action -->
     <string name="rename">이름 바꾸기</string>
+    <!-- Delete confirm title -->
     <string name="delete_title">녹음/녹화 삭제</string>
+    <!-- Delete confirm message -->
     <string name="delete_recording_message">정말 이 녹음을 삭제하시겠습니까? 이 작업은 되돌릴 수 없습니다.</string>
+    <!-- Confirm result action-->
     <string name="confirm">확인</string>
+    <!-- Discard the last recording -->
     <string name="discard">저장 안 함</string>
+    <!-- Record again action-->
     <string name="record_again">다시 녹음</string>
+    <!-- Confirm result title -->
+    <string name="confirm_result_title">녹음을 사용할까요?</string>
+    <!-- Confirm result dialog text -->
+    <string name="confirm_result_message">마지막으로 녹음한 내용을 사용하시겠습니까?</string>
+    <!-- Sound recorder -->
+    <!-- Sound recorder notification title -->
     <string name="sound_notification_title">소리 녹음기</string>
+    <!-- Sound recorder notification message -->
     <string name="sound_notification_message">오디오 길이: %1$s</string>
+    <!-- Sound recorder status card title recording -->
     <string name="sound_recording_title_working">녹음 중</string>
+    <!-- Sound recorder status card title paused -->
     <string name="sound_recording_title_paused">일시 정지됨</string>
+    <!-- Sound recorder last item title -->
     <string name="sound_last_title">마지막 녹음</string>
+    <!-- Sound recorder notification channel title -->
     <string name="sound_channel_title">소리 녹음</string>
+    <!-- Sound recorder notification channel description-->
     <string name="sound_channel_desc">소리 녹음 중 또는 녹음 완료 시 지속적으로 표시되는 알림</string>
+    <!-- Settings -->
+    <!-- Settings: dialog title -->
     <string name="settings_title">설정</string>
+    <!-- Settings: tag recordings with current location -->
     <string name="settings_location_message">현재 위치를 녹음 태그에 기록</string>
+    <!-- Settings: recording in high quality -->
     <string name="settings_quality_high">고품질로 녹음</string>
+    <!-- Permissions -->
+    <!-- Permissions dialog title -->
     <string name="dialog_permissions_title">권한</string>
-    <string name="dialog_permissions_mic">녹음/녹화 도구는 소리를 녹음하기 위해 마이크 사용 권한이 필요합니다.</string>
-    <string name="dialog_permissions_phone">녹음/녹화 도구는 통화 도중에 녹음되는 것을 방지하기 위해 전화 상태 접근 권한이 필요합니다.</string>
-    <string name="dialog_permissions_mic_phone">녹음/녹화 도구는 녹음한 파일을 저장하기 위한 저장소 사용 권한과 통화 도중에 녹음되는 것을 방지하기 위한 전화 상태 접근 권한이 필요합니다.</string>
+    <!-- Message: microphone access denied -->
+    <string name="dialog_permissions_mic">녹음기는 소리를 녹음하기 위해 마이크 사용 권한이 필요합니다.</string>
+    <!-- Message: phone status denied -->
+    <string name="dialog_permissions_phone">녹음기는 통화 도중에 녹음되는 것을 방지하기 위해 전화 상태 접근 권한이 필요합니다.</string>
+    <!-- Message: microphone and phone status access denied -->
+    <string name="dialog_permissions_mic_phone">녹음기는 녹음한 파일을 저장하기 위한 저장소 사용 권한과 통화 도중에 녹음되는 것을 방지하기 위한 전화 상태 접근 권한이 필요합니다.</string>
+    <!-- Message: location permission denied -->
     <string name="dialog_permissions_location">녹음에 자동으로 태그를 기록하여 정리를 돕기 위해 위치 권한이 필요합니다.</string>
+    <!-- Permissions dialog action: ask permissions access again -->
     <string name="dialog_permissions_ask">다시 묻기</string>
+    <!-- Permissions dialog action: dismiss dialog -->
     <string name="dialog_permissions_dismiss">다시 묻지 않기</string>
+    <!-- No permissions granted error -->
     <string name="snack_permissions_no_permission">필요한 권한이 거부되었습니다. 설정 앱에서 권한을 허용한 다음 녹음/녹화를 시작하세요.</string>
+    <!-- User denied location access -->
     <string name="snack_permissions_no_permission_location">위치 권한이 거부되었습니다. 녹음에 위치를 태그하려면 설정 앱에서 권한을 허용하세요.</string>
+    <!-- Main activity -->
+    <!-- Sound record title -->
     <string name="main_sound_action">소리 녹음</string>
+    <!-- List activity -->
+    <!-- List activity title -->
     <string name="list_title">내 녹음</string>
     <string name="list_error_empty">모든 녹음이 여기에 표시됩니다.</string>
+    <!-- Edit recording title -->
     <string name="list_edit_title">녹음 이름 편집</string>
+    <!-- Edit recording confirm action -->
     <string name="list_edit_confirm">변경</string>
+    <!-- List item menu actions description for a11y -->
     <string name="list_item_menu">추가 작업</string>
+    <!-- Delete all message title -->
     <string name="delete_all_title">모두 삭제</string>
+    <!-- Delete all message -->
     <string name="delete_all_message">정말 모든 녹음을 삭제하시겠습니까? 이 작업은 되돌릴 수 없습니다.</string>
+    <!-- Delete selected message title -->
     <string name="delete_selected_title">선택 항목 삭제</string>
+    <!-- Delete all message -->
     <string name="delete_selected_message">정말 선택한 녹음을 삭제하시겠습니까? 이 작업은 되돌릴 수 없습니다.</string>
 </resources>

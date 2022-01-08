@@ -15,51 +15,103 @@
 -->
 <resources>
     <string name="app_name">录制器</string>
+    <!-- Common actions -->
+    <!-- Share action for notification -->
     <string name="share">分享</string>
+    <!-- Share selected action -->
     <string name="share_selected">分享选中内容</string>
+    <!-- Stop action for notification -->
     <string name="stop">停止</string>
+    <!-- Play action -->
     <string name="play">播放</string>
+    <!-- Pause action -->
     <string name="pause">暂停</string>
+    <!-- Resume action -->
     <string name="resume">继续</string>
+    <!-- Delete action -->
     <string name="delete">删除</string>
+    <!-- Delete all action -->
     <string name="delete_all">删除所有</string>
+    <!-- Delete selected action -->
     <string name="delete_selected">刪除所选</string>
+    <!-- Cancel action -->
     <string name="cancel">取消</string>
+    <!-- Rename action -->
     <string name="rename">重命名</string>
+    <!-- Delete confirm title -->
     <string name="delete_title">正在删除记录</string>
+    <!-- Delete confirm message -->
     <string name="delete_recording_message">你确定要删除此录音吗？ 此操作不可撤销</string>
+    <!-- Confirm result action-->
     <string name="confirm">确认</string>
+    <!-- Discard the last recording -->
     <string name="discard">舍弃</string>
+    <!-- Record again action-->
     <string name="record_again">重新录音</string>
+    <!-- Confirm result title -->
     <string name="confirm_result_title">使用录音？</string>
+    <!-- Confirm result dialog text -->
     <string name="confirm_result_message">你想使用上次的录音吗？</string>
+    <!-- Sound recorder -->
+    <!-- Sound recorder notification title -->
     <string name="sound_notification_title">录音机</string>
+    <!-- Sound recorder notification message -->
     <string name="sound_notification_message">音频长度：%1$s</string>
+    <!-- Sound recorder status card title recording -->
     <string name="sound_recording_title_working">正在录制</string>
+    <!-- Sound recorder status card title paused -->
     <string name="sound_recording_title_paused">已暂停</string>
+    <!-- Sound recorder last item title -->
     <string name="sound_last_title">上次录制</string>
+    <!-- Sound recorder notification channel title -->
     <string name="sound_channel_title">录音</string>
+    <!-- Sound recorder notification channel description-->
     <string name="sound_channel_desc">录音至完成期间的持续通知</string>
+    <!-- Settings -->
+    <!-- Settings: dialog title -->
     <string name="settings_title">设置</string>
+    <!-- Settings: tag recordings with current location -->
     <string name="settings_location_message">以你当前的位置标记你的录音</string>
+    <!-- Settings: recording in high quality -->
     <string name="settings_quality_high">高质量录音</string>
+    <!-- Permissions -->
+    <!-- Permissions dialog title -->
     <string name="dialog_permissions_title">权限</string>
+    <!-- Message: microphone access denied -->
     <string name="dialog_permissions_mic">录制器需要麦克风访问权限以便录制音频</string>
+    <!-- Message: phone status denied -->
     <string name="dialog_permissions_phone">录制器需要访问手机状态权限以便在您通话时停止录音</string>
+    <!-- Message: microphone and phone status access denied -->
     <string name="dialog_permissions_mic_phone">录制器需要麦克风访问权限以录制语音，手机状态访问权限以避免在您通话时录制</string>
+    <!-- Message: location permission denied -->
     <string name="dialog_permissions_location">为了让录音机自动帮您整理您的录音，您需要授予录音机位置权限。</string>
+    <!-- Permissions dialog action: ask permissions access again -->
     <string name="dialog_permissions_ask">再次询问</string>
+    <!-- Permissions dialog action: dismiss dialog -->
     <string name="dialog_permissions_dismiss">忽略</string>
+    <!-- No permissions granted error -->
     <string name="snack_permissions_no_permission">必要的权限被拒绝，在“设置”应用中启用它们才能开始录制</string>
+    <!-- User denied location access -->
     <string name="snack_permissions_no_permission_location">位置权限被拒绝，请在“设置”应用中将其启用以标记你的录音</string>
+    <!-- Main activity -->
+    <!-- Sound record title -->
     <string name="main_sound_action">录制声音</string>
+    <!-- List activity -->
+    <!-- List activity title -->
     <string name="list_title">我的录音</string>
     <string name="list_error_empty">你的所有录音文件都会显示在这里</string>
+    <!-- Edit recording title -->
     <string name="list_edit_title">编辑录音名称</string>
+    <!-- Edit recording confirm action -->
     <string name="list_edit_confirm">更改</string>
+    <!-- List item menu actions description for a11y -->
     <string name="list_item_menu">更多操作</string>
+    <!-- Delete all message title -->
     <string name="delete_all_title">删除所有</string>
+    <!-- Delete all message -->
     <string name="delete_all_message">您确定要删除所有录音吗？此操作无法撤消</string>
+    <!-- Delete selected message title -->
     <string name="delete_selected_title">刪除所选</string>
+    <!-- Delete all message -->
     <string name="delete_selected_message">您确定要删除所选录音吗？此操作无法撤消</string>
 </resources>

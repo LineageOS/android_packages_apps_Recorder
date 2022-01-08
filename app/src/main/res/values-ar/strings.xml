@@ -15,39 +15,91 @@
 -->
 <resources>
     <string name="app_name">المُسجل</string>
+    <!-- Common actions -->
+    <!-- Share action for notification -->
     <string name="share">مشاركة</string>
+    <!-- Share selected action -->
+    <!-- Stop action for notification -->
     <string name="stop">إيقاف</string>
+    <!-- Play action -->
     <string name="play">تشغيل</string>
+    <!-- Pause action -->
     <string name="pause">إيقاف مؤقت</string>
+    <!-- Resume action -->
     <string name="resume">استئناف</string>
+    <!-- Delete action -->
     <string name="delete">حذف</string>
+    <!-- Delete all action -->
+    <!-- Delete selected action -->
+    <!-- Cancel action -->
     <string name="cancel">إلغاء</string>
+    <!-- Rename action -->
     <string name="rename">إعادة تسمية</string>
+    <!-- Delete confirm title -->
     <string name="delete_title">حذف التسجيل</string>
+    <!-- Delete confirm message -->
     <string name="delete_recording_message">أمتأكد من أنك تريد حذف هذا التسجيل؟ لا يمكن التراجع عن هذا</string>
+    <!-- Confirm result action-->
+    <!-- Discard the last recording -->
+    <!-- Record again action-->
+    <!-- Confirm result title -->
+    <!-- Confirm result dialog text -->
+    <!-- Sound recorder -->
+    <!-- Sound recorder notification title -->
     <string name="sound_notification_title">مُسجل الصوت</string>
+    <!-- Sound recorder notification message -->
     <string name="sound_notification_message">طول الصوت: %1$s</string>
+    <!-- Sound recorder status card title recording -->
     <string name="sound_recording_title_working">يتم التسجيل</string>
+    <!-- Sound recorder status card title paused -->
     <string name="sound_recording_title_paused">موقف مؤقتاً</string>
+    <!-- Sound recorder last item title -->
     <string name="sound_last_title">التسجيل الأخير</string>
+    <!-- Sound recorder notification channel title -->
     <string name="sound_channel_title">تسجيل الصوت</string>
+    <!-- Sound recorder notification channel description-->
     <string name="sound_channel_desc">إشعار دائم عند تسجيل الصوت والإشعار بعد اكتماله</string>
+    <!-- Settings -->
+    <!-- Settings: dialog title -->
     <string name="settings_title">الإعدادات</string>
+    <!-- Settings: tag recordings with current location -->
     <string name="settings_location_message">ضع علامة على تسجيلاتك مع موقعك الحالي</string>
+    <!-- Settings: recording in high quality -->
     <string name="settings_quality_high">سجل بجودة عالية</string>
+    <!-- Permissions -->
+    <!-- Permissions dialog title -->
     <string name="dialog_permissions_title">الأذونات</string>
+    <!-- Message: microphone access denied -->
     <string name="dialog_permissions_mic">المُسجل يحتاج إلى إذن وصول للميكروفون لتسجيل الصوت</string>
+    <!-- Message: phone status denied -->
     <string name="dialog_permissions_phone">المُسجل يحتاج إلى الوصول إلى حالة الهاتف لمنع هذا التطبيق من التسجيل أثناء قيامك بالاتصال</string>
+    <!-- Message: microphone and phone status access denied -->
     <string name="dialog_permissions_mic_phone">المُسجل يحتاج إلى إذن وصول للميكروفون لتسجيل الصوت والوصول إلى حالة الهاتف لمنع هذا التطبيق من التسجيل أثناء قيامك بالاتصال</string>
+    <!-- Message: location permission denied -->
     <string name="dialog_permissions_location">المسجل يحتاج إلى إذن الموقع لوسم التسجيلات الخاصة بك تلقائياً لمساعدتك على تنظيمها</string>
+    <!-- Permissions dialog action: ask permissions access again -->
     <string name="dialog_permissions_ask">السماح مرة أخرى</string>
+    <!-- Permissions dialog action: dismiss dialog -->
     <string name="dialog_permissions_dismiss">تجاهل</string>
+    <!-- No permissions granted error -->
     <string name="snack_permissions_no_permission">تم رفض الأذونات المطلوبة، قم بتفعيلها من تطبيق الإعدادات لبدء التسجيل</string>
+    <!-- User denied location access -->
     <string name="snack_permissions_no_permission_location">رفض إذن الموقع، قم بتمكينه من تطبيق الإعدادات لوسم تسجيلاتك</string>
+    <!-- Main activity -->
+    <!-- Sound record title -->
     <string name="main_sound_action">تسجيل الصوت</string>
+    <!-- List activity -->
+    <!-- List activity title -->
     <string name="list_title">تسجيلاتي</string>
     <string name="list_error_empty">ستعرض جميع تسجيلاتك هنا</string>
+    <!-- Edit recording title -->
     <string name="list_edit_title">تعديل اسم التسجيل</string>
+    <!-- Edit recording confirm action -->
     <string name="list_edit_confirm">تغيير</string>
+    <!-- List item menu actions description for a11y -->
     <string name="list_item_menu">المزيد من الإجراءات</string>
+    <!-- Delete all message title -->
+    <!-- Delete all message -->
+    <!-- Delete selected message title -->
+    <!-- Delete all message -->
 </resources>

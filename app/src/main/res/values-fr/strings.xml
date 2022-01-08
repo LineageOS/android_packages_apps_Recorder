@@ -15,51 +15,103 @@
 -->
 <resources>
     <string name="app_name">Magnétophone</string>
+    <!-- Common actions -->
+    <!-- Share action for notification -->
     <string name="share">Partager</string>
+    <!-- Share selected action -->
     <string name="share_selected">Partager la sélection</string>
+    <!-- Stop action for notification -->
     <string name="stop">Arrêter</string>
+    <!-- Play action -->
     <string name="play">Lecture</string>
+    <!-- Pause action -->
     <string name="pause">Pause</string>
+    <!-- Resume action -->
     <string name="resume">Reprendre</string>
+    <!-- Delete action -->
     <string name="delete">Supprimer</string>
+    <!-- Delete all action -->
     <string name="delete_all">Tout supprimer</string>
+    <!-- Delete selected action -->
     <string name="delete_selected">Supprimer la sélection</string>
+    <!-- Cancel action -->
     <string name="cancel">Annuler</string>
+    <!-- Rename action -->
     <string name="rename">Renommer</string>
+    <!-- Delete confirm title -->
     <string name="delete_title">Suppression de l’enregistrement</string>
+    <!-- Delete confirm message -->
     <string name="delete_recording_message">Êtes-vous sûr de vouloir supprimer cet enregistrement ? Cette action est irréversible.</string>
+    <!-- Confirm result action-->
     <string name="confirm">Confirmer</string>
+    <!-- Discard the last recording -->
     <string name="discard">Supprimer</string>
+    <!-- Record again action-->
     <string name="record_again">Enregistrer à nouveau</string>
+    <!-- Confirm result title -->
     <string name="confirm_result_title">Utiliser l\'enregistrement ?</string>
+    <!-- Confirm result dialog text -->
     <string name="confirm_result_message">Voulez-vous utiliser le dernier enregistrement ?</string>
+    <!-- Sound recorder -->
+    <!-- Sound recorder notification title -->
     <string name="sound_notification_title">Enregistreur audio</string>
+    <!-- Sound recorder notification message -->
     <string name="sound_notification_message">Durée de l\'audio : %1$s</string>
+    <!-- Sound recorder status card title recording -->
     <string name="sound_recording_title_working">Enregistrement en cours</string>
+    <!-- Sound recorder status card title paused -->
     <string name="sound_recording_title_paused">Suspendu</string>
+    <!-- Sound recorder last item title -->
     <string name="sound_last_title">Dernier enregistrement</string>
+    <!-- Sound recorder notification channel title -->
     <string name="sound_channel_title">Enregistreur audio</string>
+    <!-- Sound recorder notification channel description-->
     <string name="sound_channel_desc">Notification persistante lors de l\'enregistrement audio et notification après la fin de ce dernier</string>
+    <!-- Settings -->
+    <!-- Settings: dialog title -->
     <string name="settings_title">Paramètres</string>
+    <!-- Settings: tag recordings with current location -->
     <string name="settings_location_message">Étiquetez vos enregistrements avec votre position actuelle</string>
+    <!-- Settings: recording in high quality -->
     <string name="settings_quality_high">Enregistrer en haute qualité</string>
+    <!-- Permissions -->
+    <!-- Permissions dialog title -->
     <string name="dialog_permissions_title">Autorisations</string>
+    <!-- Message: microphone access denied -->
     <string name="dialog_permissions_mic">Le magnétophone a besoin d\'accéder au microphone pour enregistrer l\'audio</string>
+    <!-- Message: phone status denied -->
     <string name="dialog_permissions_phone">Le magnétophone a besoin d\'accéder à l\'état du téléphone pour empêcher l\'application d\'enregistrer pendant un appel</string>
+    <!-- Message: microphone and phone status access denied -->
     <string name="dialog_permissions_mic_phone">Le magnétophone a besoin d’accéder au microphone pour enregistrer l\'audio et à l\'état du téléphone pour empêcher l\'application d\'enregistrer pendant un appel</string>
+    <!-- Message: location permission denied -->
     <string name="dialog_permissions_location">L\'enregistreur a besoin de l’autorisation d’accès à la localisation pour étiqueter automatiquement vos enregistrements afin de vous aider à les organiser</string>
+    <!-- Permissions dialog action: ask permissions access again -->
     <string name="dialog_permissions_ask">Demander à nouveau</string>
+    <!-- Permissions dialog action: dismiss dialog -->
     <string name="dialog_permissions_dismiss">Fermer</string>
+    <!-- No permissions granted error -->
     <string name="snack_permissions_no_permission">Les autorisations requises ont été refusées, activez-les depuis les Paramètres pour commencer à enregistrer</string>
+    <!-- User denied location access -->
     <string name="snack_permissions_no_permission_location">L’accès à la localisation a été refusé. Activez-le depuis l\'application Paramètres pour étiqueter vos enregistrements</string>
+    <!-- Main activity -->
+    <!-- Sound record title -->
     <string name="main_sound_action">Enregistrement vocal</string>
+    <!-- List activity -->
+    <!-- List activity title -->
     <string name="list_title">Mes enregistrements</string>
     <string name="list_error_empty">Tous vos enregistrements seront affichés ici</string>
+    <!-- Edit recording title -->
     <string name="list_edit_title">Modifier le nom de l\'enregistrement</string>
+    <!-- Edit recording confirm action -->
     <string name="list_edit_confirm">Modifier</string>
+    <!-- List item menu actions description for a11y -->
     <string name="list_item_menu">Plus d\'actions</string>
+    <!-- Delete all message title -->
     <string name="delete_all_title">Tout supprimer</string>
+    <!-- Delete all message -->
     <string name="delete_all_message">Êtes-vous sûr de vouloir supprimer tous les enregistrements ? Cette action est irréversible</string>
+    <!-- Delete selected message title -->
     <string name="delete_selected_title">Supprimer la sélection</string>
+    <!-- Delete all message -->
     <string name="delete_selected_message">Êtes-vous sûr de vouloir supprimer les enregistrements sélectionnés ? Cette action est irréversible</string>
 </resources>

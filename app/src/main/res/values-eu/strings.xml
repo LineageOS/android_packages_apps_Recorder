@@ -15,24 +15,76 @@
 -->
 <resources>
     <string name="app_name">Grabatzailea</string>
+    <!-- Common actions -->
+    <!-- Share action for notification -->
     <string name="share">Partekatu</string>
+    <!-- Share selected action -->
+    <!-- Stop action for notification -->
     <string name="stop">Gelditu</string>
+    <!-- Play action -->
     <string name="play">Erreproduzitu</string>
+    <!-- Pause action -->
+    <!-- Resume action -->
+    <!-- Delete action -->
     <string name="delete">Ezabatu</string>
+    <!-- Delete all action -->
+    <!-- Delete selected action -->
+    <!-- Cancel action -->
     <string name="cancel">Utzi</string>
+    <!-- Rename action -->
+    <!-- Delete confirm title -->
     <string name="delete_title">Grabaketa ezabatzen</string>
+    <!-- Delete confirm message -->
+    <!-- Confirm result action-->
+    <!-- Discard the last recording -->
+    <!-- Record again action-->
+    <!-- Confirm result title -->
+    <!-- Confirm result dialog text -->
+    <!-- Sound recorder -->
+    <!-- Sound recorder notification title -->
     <string name="sound_notification_title">Soinu grabagailua</string>
+    <!-- Sound recorder notification message -->
     <string name="sound_notification_message">Audioaren iraupena: %1$s</string>
+    <!-- Sound recorder status card title recording -->
     <string name="sound_recording_title_working">Grabatzen</string>
+    <!-- Sound recorder status card title paused -->
+    <!-- Sound recorder last item title -->
     <string name="sound_last_title">Azken grabaketa</string>
+    <!-- Sound recorder notification channel title -->
     <string name="sound_channel_title">Soinu grabazioa</string>
+    <!-- Sound recorder notification channel description-->
     <string name="sound_channel_desc">Jakinarazpen iraunkorra soinua grabatzean eta jakinarazpena behin burututa</string>
+    <!-- Settings -->
+    <!-- Settings: dialog title -->
+    <!-- Settings: tag recordings with current location -->
+    <!-- Settings: recording in high quality -->
+    <!-- Permissions -->
+    <!-- Permissions dialog title -->
     <string name="dialog_permissions_title">Baimenak</string>
+    <!-- Message: microphone access denied -->
     <string name="dialog_permissions_mic">Grabatzaileak mikrofonoa atzitzeko baimena behar du grabatu ahal izateko</string>
+    <!-- Message: phone status denied -->
     <string name="dialog_permissions_phone">Grabatzaileak telefonoaren egoera atzitzeko baimena behar aplikazio honek dei batean zehar grabatzea ekiditeko</string>
+    <!-- Message: microphone and phone status access denied -->
     <string name="dialog_permissions_mic_phone">Grabatzaileak mikrofonoa atzitzeko baimena behar du audioa grabatzeko eta telefonoaren egoera atzitzeko baimena dei batean zehar grabatzea ekiditeko</string>
+    <!-- Message: location permission denied -->
+    <!-- Permissions dialog action: ask permissions access again -->
     <string name="dialog_permissions_ask">Galdetu berriro</string>
+    <!-- Permissions dialog action: dismiss dialog -->
     <string name="dialog_permissions_dismiss">Baztertu</string>
+    <!-- No permissions granted error -->
     <string name="snack_permissions_no_permission">Beharrezkoak diren baimenak ukatu dira, gaitu itzazu ezarpenen aplikaziotik grabatzen hasteko</string>
+    <!-- User denied location access -->
+    <!-- Main activity -->
+    <!-- Sound record title -->
     <string name="main_sound_action">Grabatu soinua</string>
+    <!-- List activity -->
+    <!-- List activity title -->
+    <!-- Edit recording title -->
+    <!-- Edit recording confirm action -->
+    <!-- List item menu actions description for a11y -->
+    <!-- Delete all message title -->
+    <!-- Delete all message -->
+    <!-- Delete selected message title -->
+    <!-- Delete all message -->
 </resources>

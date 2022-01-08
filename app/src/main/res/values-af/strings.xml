@@ -15,20 +15,72 @@
 -->
 <resources>
     <string name="app_name">Opnemer</string>
+    <!-- Common actions -->
+    <!-- Share action for notification -->
     <string name="share">Deel</string>
+    <!-- Share selected action -->
+    <!-- Stop action for notification -->
     <string name="stop">Stop</string>
+    <!-- Play action -->
     <string name="play">Speel</string>
+    <!-- Pause action -->
+    <!-- Resume action -->
+    <!-- Delete action -->
     <string name="delete">Verwyder</string>
+    <!-- Delete all action -->
+    <!-- Delete selected action -->
+    <!-- Cancel action -->
+    <!-- Rename action -->
+    <!-- Delete confirm title -->
     <string name="delete_title">Verwyde opname</string>
+    <!-- Delete confirm message -->
+    <!-- Confirm result action-->
+    <!-- Discard the last recording -->
+    <!-- Record again action-->
+    <!-- Confirm result title -->
+    <!-- Confirm result dialog text -->
+    <!-- Sound recorder -->
+    <!-- Sound recorder notification title -->
     <string name="sound_notification_title">Klankopnemer</string>
+    <!-- Sound recorder notification message -->
     <string name="sound_notification_message">Oudio-lengte: %1$s</string>
+    <!-- Sound recorder status card title recording -->
     <string name="sound_recording_title_working">Neem tans op</string>
+    <!-- Sound recorder status card title paused -->
+    <!-- Sound recorder last item title -->
     <string name="sound_last_title">Laaste opname</string>
+    <!-- Sound recorder notification channel title -->
+    <!-- Sound recorder notification channel description-->
+    <!-- Settings -->
+    <!-- Settings: dialog title -->
+    <!-- Settings: tag recordings with current location -->
+    <!-- Settings: recording in high quality -->
+    <!-- Permissions -->
+    <!-- Permissions dialog title -->
     <string name="dialog_permissions_title">Toestemmings</string>
+    <!-- Message: microphone access denied -->
     <string name="dialog_permissions_mic">Opnemer benodig mikrofoon toestemming om oudio op te neem</string>
+    <!-- Message: phone status denied -->
     <string name="dialog_permissions_phone">Opnemer het foon status toegang nodig om te voorkom dat hierdie toep jou opneem terwyl jy bel</string>
+    <!-- Message: microphone and phone status access denied -->
     <string name="dialog_permissions_mic_phone">Opnemer benodig mikrofoon toegang om oudio op te neem en foon status toegang om te verhoed dat hierdie toep jou oproep opneem terwyl jy bel</string>
+    <!-- Message: location permission denied -->
+    <!-- Permissions dialog action: ask permissions access again -->
     <string name="dialog_permissions_ask">Vra weer</string>
+    <!-- Permissions dialog action: dismiss dialog -->
     <string name="dialog_permissions_dismiss">Maak toe</string>
+    <!-- No permissions granted error -->
     <string name="snack_permissions_no_permission">Nodige toestemmings geweier, aktiveer hulle vanaf Instellings toep om die opname te begin</string>
+    <!-- User denied location access -->
+    <!-- Main activity -->
+    <!-- Sound record title -->
+    <!-- List activity -->
+    <!-- List activity title -->
+    <!-- Edit recording title -->
+    <!-- Edit recording confirm action -->
+    <!-- List item menu actions description for a11y -->
+    <!-- Delete all message title -->
+    <!-- Delete all message -->
+    <!-- Delete selected message title -->
+    <!-- Delete all message -->
 </resources>

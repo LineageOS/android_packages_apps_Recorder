@@ -15,36 +15,88 @@
 -->
 <resources>
     <string name="app_name">Perekam</string>
+    <!-- Common actions -->
+    <!-- Share action for notification -->
     <string name="share">Bagikan</string>
+    <!-- Share selected action -->
+    <!-- Stop action for notification -->
     <string name="stop">Hentikan</string>
+    <!-- Play action -->
     <string name="play">Putar</string>
+    <!-- Pause action -->
     <string name="pause">Jeda</string>
+    <!-- Resume action -->
     <string name="resume">Lanjutkan</string>
+    <!-- Delete action -->
     <string name="delete">Hapus</string>
+    <!-- Delete all action -->
+    <!-- Delete selected action -->
+    <!-- Cancel action -->
     <string name="cancel">Batal</string>
+    <!-- Rename action -->
     <string name="rename">Ganti nama</string>
+    <!-- Delete confirm title -->
     <string name="delete_title">Menghapus rekaman</string>
+    <!-- Delete confirm message -->
+    <!-- Confirm result action-->
+    <!-- Discard the last recording -->
+    <!-- Record again action-->
+    <!-- Confirm result title -->
+    <!-- Confirm result dialog text -->
+    <!-- Sound recorder -->
+    <!-- Sound recorder notification title -->
     <string name="sound_notification_title">Perekam Suara</string>
+    <!-- Sound recorder notification message -->
     <string name="sound_notification_message">Durasi audio: %1$s</string>
+    <!-- Sound recorder status card title recording -->
     <string name="sound_recording_title_working">Merekam</string>
+    <!-- Sound recorder status card title paused -->
     <string name="sound_recording_title_paused">Dijeda</string>
+    <!-- Sound recorder last item title -->
     <string name="sound_last_title">Rekaman terakhir</string>
+    <!-- Sound recorder notification channel title -->
     <string name="sound_channel_title">Rekaman suara</string>
+    <!-- Sound recorder notification channel description-->
     <string name="sound_channel_desc">Pemberitahuan tetap saat merekam suara dan pemberitahuan setelah selesai</string>
+    <!-- Settings -->
+    <!-- Settings: dialog title -->
     <string name="settings_title">Setelan</string>
+    <!-- Settings: tag recordings with current location -->
     <string name="settings_location_message">Tandai rekaman Anda dengan posisi lokasi saat ini</string>
+    <!-- Settings: recording in high quality -->
     <string name="settings_quality_high">Rekam dengan kualitas tinggi</string>
+    <!-- Permissions -->
+    <!-- Permissions dialog title -->
     <string name="dialog_permissions_title">Izin</string>
+    <!-- Message: microphone access denied -->
     <string name="dialog_permissions_mic">Perekam membutuhkan izin mikrofon untuk merekam audio</string>
+    <!-- Message: phone status denied -->
     <string name="dialog_permissions_phone">Perekam membutuhkan akses ke status telepon untuk mencegah aplikasi ini merekam saat Anda melakukan panggilan</string>
+    <!-- Message: microphone and phone status access denied -->
     <string name="dialog_permissions_mic_phone">Perekam membutuhkan izin mikrofon untuk merekam audio, dan akses ke status telepon untuk mencegah aplikasi ini merekam saat Anda melakukan panggilan</string>
+    <!-- Message: location permission denied -->
+    <!-- Permissions dialog action: ask permissions access again -->
     <string name="dialog_permissions_ask">Minta izin lagi</string>
+    <!-- Permissions dialog action: dismiss dialog -->
     <string name="dialog_permissions_dismiss">Tutup</string>
+    <!-- No permissions granted error -->
     <string name="snack_permissions_no_permission">Izin yang diperlukan ditolak, hidupkan dari aplikasi Pengaturan untuk mulai merekam</string>
+    <!-- User denied location access -->
     <string name="snack_permissions_no_permission_location">Izin akses lokasi ditolak, aktifkan izin dari aplikasi Setelan untuk menandai rekaman Anda</string>
+    <!-- Main activity -->
+    <!-- Sound record title -->
     <string name="main_sound_action">Rekam suara</string>
+    <!-- List activity -->
+    <!-- List activity title -->
     <string name="list_title">Rekaman saya</string>
     <string name="list_error_empty">Semua rekaman Anda akan muncul di sini</string>
+    <!-- Edit recording title -->
+    <!-- Edit recording confirm action -->
     <string name="list_edit_confirm">Ubah</string>
+    <!-- List item menu actions description for a11y -->
     <string name="list_item_menu">Tindakan lainnya</string>
+    <!-- Delete all message title -->
+    <!-- Delete all message -->
+    <!-- Delete selected message title -->
+    <!-- Delete all message -->
 </resources>

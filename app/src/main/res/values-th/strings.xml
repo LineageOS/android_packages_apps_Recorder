@@ -15,20 +15,89 @@
 -->
 <resources>
     <string name="app_name">บันทึกเสียง</string>
+    <!-- Common actions -->
+    <!-- Share action for notification -->
     <string name="share">แชร์</string>
+    <!-- Share selected action -->
+    <string name="share_selected">แชร์รายการที่เลือก</string>
+    <!-- Stop action for notification -->
     <string name="stop">หยุด</string>
+    <!-- Play action -->
     <string name="play">เล่น</string>
+    <!-- Pause action -->
+    <string name="pause">หยุดชั่วคราว</string>
+    <!-- Resume action -->
+    <string name="resume">ดำเนินการต่อ</string>
+    <!-- Delete action -->
     <string name="delete">ลบ</string>
+    <!-- Delete all action -->
+    <string name="delete_all">ลบทั้งหมด</string>
+    <!-- Delete selected action -->
+    <string name="delete_selected">ลบที่เลือกไว้</string>
+    <!-- Cancel action -->
     <string name="cancel">ยกเลิก</string>
+    <!-- Rename action -->
+    <string name="rename">เปลี่ยนชื่อ</string>
+    <!-- Delete confirm title -->
     <string name="delete_title">การลบบันทึก</string>
+    <!-- Delete confirm message -->
+    <!-- Confirm result action-->
+    <string name="confirm">ยืนยัน</string>
+    <!-- Discard the last recording -->
+    <string name="discard">ละทิ้ง</string>
+    <!-- Record again action-->
+    <string name="record_again">บันทึกเสียงใหม่</string>
+    <!-- Confirm result title -->
+    <!-- Confirm result dialog text -->
+    <!-- Sound recorder -->
+    <!-- Sound recorder notification title -->
     <string name="sound_notification_title">บันทึกเสียง</string>
+    <!-- Sound recorder notification message -->
     <string name="sound_notification_message">ความยาวเสียง: %1$s</string>
+    <!-- Sound recorder status card title recording -->
     <string name="sound_recording_title_working">การบันทึก</string>
+    <!-- Sound recorder status card title paused -->
+    <string name="sound_recording_title_paused">หยุดชั่วคราว</string>
+    <!-- Sound recorder last item title -->
     <string name="sound_last_title">บันทึกล่าสุด</string>
+    <!-- Sound recorder notification channel title -->
     <string name="sound_channel_title">บันทึกเสียง</string>
+    <!-- Sound recorder notification channel description-->
     <string name="sound_channel_desc">การแจ้งเตือนถาวรเมื่อบันทึกเสียงและการแจ้งเตือนหลังจากเสร็จสิ้น</string>
+    <!-- Settings -->
+    <!-- Settings: dialog title -->
+    <string name="settings_title">การตั้งค่า</string>
+    <!-- Settings: tag recordings with current location -->
+    <!-- Settings: recording in high quality -->
+    <!-- Permissions -->
+    <!-- Permissions dialog title -->
     <string name="dialog_permissions_title">การอนุญาต</string>
+    <!-- Message: microphone access denied -->
+    <string name="dialog_permissions_mic">บันทึกเสียงต้องเข้าถึงไมโครโฟนเพื่อให้บันทึกเสียงได้</string>
+    <!-- Message: phone status denied -->
+    <!-- Message: microphone and phone status access denied -->
+    <!-- Message: location permission denied -->
+    <!-- Permissions dialog action: ask permissions access again -->
     <string name="dialog_permissions_ask">ถามอีกครั้ง</string>
+    <!-- Permissions dialog action: dismiss dialog -->
     <string name="dialog_permissions_dismiss">ยกเลิก</string>
+    <!-- No permissions granted error -->
+    <!-- User denied location access -->
+    <!-- Main activity -->
+    <!-- Sound record title -->
     <string name="main_sound_action">บันทึกเสียง</string>
+    <!-- List activity -->
+    <!-- List activity title -->
+    <string name="list_title">การบันทึกของฉัน</string>
+    <!-- Edit recording title -->
+    <string name="list_edit_title">แก้ไขชื่อการบันทึก</string>
+    <!-- Edit recording confirm action -->
+    <!-- List item menu actions description for a11y -->
+    <string name="list_item_menu">ดำเนินการเพิ่มเติม</string>
+    <!-- Delete all message title -->
+    <string name="delete_all_title">ลบทั้งหมด</string>
+    <!-- Delete all message -->
+    <!-- Delete selected message title -->
+    <string name="delete_selected_title">ลบที่เลือกไว้</string>
+    <!-- Delete all message -->
 </resources>

@@ -15,35 +15,87 @@
 -->
 <resources>
     <string name="app_name">Recordydd</string>
+    <!-- Common actions -->
+    <!-- Share action for notification -->
     <string name="share">Rhannu</string>
+    <!-- Share selected action -->
+    <!-- Stop action for notification -->
     <string name="stop">Stopio</string>
+    <!-- Play action -->
     <string name="play">Chwarae</string>
+    <!-- Pause action -->
     <string name="pause">Seibio</string>
+    <!-- Resume action -->
     <string name="resume">Parhau</string>
+    <!-- Delete action -->
     <string name="delete">Dileu</string>
+    <!-- Delete all action -->
+    <!-- Delete selected action -->
+    <!-- Cancel action -->
     <string name="cancel">Diddymu</string>
+    <!-- Rename action -->
     <string name="rename">Ailenwi</string>
+    <!-- Delete confirm title -->
     <string name="delete_title">Yn dileu\'r recordiad</string>
+    <!-- Delete confirm message -->
+    <!-- Confirm result action-->
+    <!-- Discard the last recording -->
+    <!-- Record again action-->
+    <!-- Confirm result title -->
+    <!-- Confirm result dialog text -->
+    <!-- Sound recorder -->
+    <!-- Sound recorder notification title -->
     <string name="sound_notification_title">Recordydd Sain</string>
+    <!-- Sound recorder notification message -->
     <string name="sound_notification_message">Hyd sain: %1$s</string>
+    <!-- Sound recorder status card title recording -->
     <string name="sound_recording_title_working">Yn recordio</string>
+    <!-- Sound recorder status card title paused -->
+    <!-- Sound recorder last item title -->
     <string name="sound_last_title">Recordiad diwethaf</string>
+    <!-- Sound recorder notification channel title -->
     <string name="sound_channel_title">Recordio sain</string>
+    <!-- Sound recorder notification channel description-->
     <string name="sound_channel_desc">Hysbysiad cyson wrth recordio\'r sain a hysbysiad ar ôl gorffen recordio</string>
+    <!-- Settings -->
+    <!-- Settings: dialog title -->
     <string name="settings_title">Gosodiadau</string>
+    <!-- Settings: tag recordings with current location -->
+    <!-- Settings: recording in high quality -->
     <string name="settings_quality_high">Recordio mewn ansawdd uchel</string>
+    <!-- Permissions -->
+    <!-- Permissions dialog title -->
     <string name="dialog_permissions_title">Caniatâd</string>
+    <!-- Message: microphone access denied -->
     <string name="dialog_permissions_mic">Mae ar Recordydd angen mynediad i\'r meicroffon i recordio sain.</string>
+    <!-- Message: phone status denied -->
     <string name="dialog_permissions_phone">Mae ar Rcordydd angen mynediad i statws y ffôn er mwyn sicrhau nad yw\'r ap hwn yn recordio tra dy fod mewn galwad.</string>
+    <!-- Message: microphone and phone status access denied -->
     <string name="dialog_permissions_mic_phone">Mae ar Recordydd angen mynediad i\'r meicroffon i fedru recordio sain, mynediad i statws y ffôn er mwyn sicrhau nad yw\'r ap hwn yn recordio tra dy fod mewn galwad.</string>
+    <!-- Message: location permission denied -->
+    <!-- Permissions dialog action: ask permissions access again -->
     <string name="dialog_permissions_ask">Gofyn eto</string>
+    <!-- Permissions dialog action: dismiss dialog -->
     <string name="dialog_permissions_dismiss">Diystyru</string>
+    <!-- No permissions granted error -->
     <string name="snack_permissions_no_permission">Gwrthodwyd peth caniatad sydd ei angen. Rho ganiatâd yn Gosodiadau er mwyn dechrau recordio.</string>
+    <!-- User denied location access -->
     <string name="snack_permissions_no_permission_location">Gwrthodwyd caniatâd lleoliad. Gellir ei alluogi o\'r ap Gosodiadau i dagio dy recordiadau.</string>
+    <!-- Main activity -->
+    <!-- Sound record title -->
     <string name="main_sound_action">Recordio sain</string>
+    <!-- List activity -->
+    <!-- List activity title -->
     <string name="list_title">Fy recordiadau</string>
     <string name="list_error_empty">Caiff dy holl recordiadau eu dangos yma</string>
+    <!-- Edit recording title -->
     <string name="list_edit_title">Golygu enw\'r recordiad</string>
+    <!-- Edit recording confirm action -->
     <string name="list_edit_confirm">Newid</string>
+    <!-- List item menu actions description for a11y -->
     <string name="list_item_menu">Rhagor o weithrediadau</string>
+    <!-- Delete all message title -->
+    <!-- Delete all message -->
+    <!-- Delete selected message title -->
+    <!-- Delete all message -->
 </resources>

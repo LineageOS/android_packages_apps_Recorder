@@ -15,38 +15,90 @@
 -->
 <resources>
     <string name="app_name">Записвачка</string>
+    <!-- Common actions -->
+    <!-- Share action for notification -->
     <string name="share">Споделяне</string>
+    <!-- Share selected action -->
+    <!-- Stop action for notification -->
     <string name="stop">Стоп</string>
+    <!-- Play action -->
     <string name="play">Възпроизвеждане</string>
+    <!-- Pause action -->
     <string name="pause">Пауза</string>
+    <!-- Resume action -->
     <string name="resume">Възобнови</string>
+    <!-- Delete action -->
     <string name="delete">Изтриване</string>
+    <!-- Delete all action -->
+    <!-- Delete selected action -->
+    <!-- Cancel action -->
     <string name="cancel">Отказ</string>
+    <!-- Rename action -->
     <string name="rename">Преименуване</string>
+    <!-- Delete confirm title -->
     <string name="delete_title">Изтриване на записа</string>
+    <!-- Delete confirm message -->
     <string name="delete_recording_message">Наистина ли искате да изтриете този запис? Това действие не може да бъде отменено.</string>
+    <!-- Confirm result action-->
+    <!-- Discard the last recording -->
+    <!-- Record again action-->
+    <!-- Confirm result title -->
+    <!-- Confirm result dialog text -->
+    <!-- Sound recorder -->
+    <!-- Sound recorder notification title -->
     <string name="sound_notification_title">Записване на звук</string>
+    <!-- Sound recorder notification message -->
     <string name="sound_notification_message">Продължителност на аудио запис: %1$s</string>
+    <!-- Sound recorder status card title recording -->
     <string name="sound_recording_title_working">Записване</string>
+    <!-- Sound recorder status card title paused -->
+    <!-- Sound recorder last item title -->
     <string name="sound_last_title">Последен запис</string>
+    <!-- Sound recorder notification channel title -->
     <string name="sound_channel_title">Запис на звук</string>
+    <!-- Sound recorder notification channel description-->
     <string name="sound_channel_desc">Постоянно известяване при запис на звук и известие, след завършване</string>
+    <!-- Settings -->
+    <!-- Settings: dialog title -->
     <string name="settings_title">Настройки</string>
+    <!-- Settings: tag recordings with current location -->
     <string name="settings_location_message">Маркирайте вашите записи с текущата ви позиция</string>
+    <!-- Settings: recording in high quality -->
     <string name="settings_quality_high">Записвайте с високо качество</string>
+    <!-- Permissions -->
+    <!-- Permissions dialog title -->
     <string name="dialog_permissions_title">Разрешения</string>
+    <!-- Message: microphone access denied -->
     <string name="dialog_permissions_mic">Приложението за запис се нуждае отдостъп до микрофона за запис на аудио</string>
+    <!-- Message: phone status denied -->
     <string name="dialog_permissions_phone">Приложението за запис се нуждае от достъп до телефонен статус за да предотврати запис по време на разговор</string>
+    <!-- Message: microphone and phone status access denied -->
     <string name="dialog_permissions_mic_phone">Приложението за запис се нуждае от достъп до микрофона и телефонен статус за да предотврати запис по време на разговор</string>
+    <!-- Message: location permission denied -->
     <string name="dialog_permissions_location">Recorder се нуждае от разрешение за местоположение, за да маркира автоматично вашите записи, за да ви помогне да ги организирате</string>
+    <!-- Permissions dialog action: ask permissions access again -->
     <string name="dialog_permissions_ask">Попитай отново</string>
+    <!-- Permissions dialog action: dismiss dialog -->
     <string name="dialog_permissions_dismiss">Отхвърли</string>
+    <!-- No permissions granted error -->
     <string name="snack_permissions_no_permission">Необходимите разрешения са отказани, разрешете ги от настройките на приложението и започнете запис</string>
+    <!-- User denied location access -->
     <string name="snack_permissions_no_permission_location">Разрешението за местоположение е отказано, активирайте го от приложението Настройки, за да маркирате вашите записи</string>
+    <!-- Main activity -->
+    <!-- Sound record title -->
     <string name="main_sound_action">Запис на звук</string>
+    <!-- List activity -->
+    <!-- List activity title -->
     <string name="list_title">Моите записи</string>
     <string name="list_error_empty">Всички ваши записи ще бъдат показани тук</string>
+    <!-- Edit recording title -->
     <string name="list_edit_title">Редактирайте името на записа</string>
+    <!-- Edit recording confirm action -->
     <string name="list_edit_confirm">Промени</string>
+    <!-- List item menu actions description for a11y -->
     <string name="list_item_menu">Още действия</string>
+    <!-- Delete all message title -->
+    <!-- Delete all message -->
+    <!-- Delete selected message title -->
+    <!-- Delete all message -->
 </resources>

@@ -15,47 +15,103 @@
 -->
 <resources>
     <string name="app_name">Rekorder</string>
+    <!-- Common actions -->
+    <!-- Share action for notification -->
     <string name="share">Teilen</string>
+    <!-- Share selected action -->
     <string name="share_selected">Ausgewählte teilen</string>
+    <!-- Stop action for notification -->
     <string name="stop">Stoppen</string>
+    <!-- Play action -->
     <string name="play">Wiedergabe</string>
+    <!-- Pause action -->
     <string name="pause">Pause</string>
+    <!-- Resume action -->
     <string name="resume">Fortsetzen</string>
+    <!-- Delete action -->
     <string name="delete">Löschen</string>
+    <!-- Delete all action -->
     <string name="delete_all">Alle löschen</string>
+    <!-- Delete selected action -->
     <string name="delete_selected">Ausgewählte löschen</string>
+    <!-- Cancel action -->
     <string name="cancel">Abbrechen</string>
+    <!-- Rename action -->
     <string name="rename">Umbenennen</string>
+    <!-- Delete confirm title -->
     <string name="delete_title">Aufnahme löschen</string>
+    <!-- Delete confirm message -->
     <string name="delete_recording_message">Möchtest du die Aufnahme wirklich löschen? Das kann nicht rückgängig gemacht werden</string>
+    <!-- Confirm result action-->
     <string name="confirm">Bestätigen</string>
+    <!-- Discard the last recording -->
     <string name="discard">Verwerfen</string>
+    <!-- Record again action-->
     <string name="record_again">Aufnahme wiederholen</string>
+    <!-- Confirm result title -->
     <string name="confirm_result_title">Aufnahme verwenden?</string>
+    <!-- Confirm result dialog text -->
+    <string name="confirm_result_message">Möchtest du die letzte Aufnahme verwenden?</string>
+    <!-- Sound recorder -->
+    <!-- Sound recorder notification title -->
     <string name="sound_notification_title">Soundrekorder</string>
+    <!-- Sound recorder notification message -->
     <string name="sound_notification_message">Audiolänge: %1$s</string>
+    <!-- Sound recorder status card title recording -->
     <string name="sound_recording_title_working">Wird aufgenommen</string>
+    <!-- Sound recorder status card title paused -->
     <string name="sound_recording_title_paused">Pausiert</string>
+    <!-- Sound recorder last item title -->
     <string name="sound_last_title">Letzte Aufnahme</string>
+    <!-- Sound recorder notification channel title -->
     <string name="sound_channel_title">Tonaufnahme</string>
+    <!-- Sound recorder notification channel description-->
     <string name="sound_channel_desc">Dauerhafte Benachrichtigung bei der Tonaufnahme und Benachrichtigung nach Abschluss der Aufnahme</string>
+    <!-- Settings -->
+    <!-- Settings: dialog title -->
     <string name="settings_title">Einstellungen</string>
+    <!-- Settings: tag recordings with current location -->
     <string name="settings_location_message">Aufnahmen mit deiner aktuellen Position markieren</string>
+    <!-- Settings: recording in high quality -->
     <string name="settings_quality_high">Aufnehmen in hoher Qualität</string>
+    <!-- Permissions -->
+    <!-- Permissions dialog title -->
     <string name="dialog_permissions_title">Berechtigungen</string>
+    <!-- Message: microphone access denied -->
     <string name="dialog_permissions_mic">Rekorder benötigt Zugriff auf das Mikrofon, um Ton aufzunehmen</string>
+    <!-- Message: phone status denied -->
     <string name="dialog_permissions_phone">Rekorder benötigt Zugriff auf den Telefonstatus, um zu verhindern, dass diese App deine Anrufe aufzeichnet</string>
+    <!-- Message: microphone and phone status access denied -->
     <string name="dialog_permissions_mic_phone">Rekorder benötigt Zugriff auf das Mikrofon, um Aufnahmen zu erstellen und Zugriff auf den Telefonstatus, um zu verhindern, dass diese App Aufzeichnungen erstellt, während du telefonierst</string>
+    <!-- Message: location permission denied -->
     <string name="dialog_permissions_location">Der Rekorder benötigt die Standortberechtigung, um deine Aufnahmen für eine leichtere Organisation automatisch  zu markieren</string>
+    <!-- Permissions dialog action: ask permissions access again -->
     <string name="dialog_permissions_ask">Erneut nachfragen</string>
+    <!-- Permissions dialog action: dismiss dialog -->
     <string name="dialog_permissions_dismiss">Verwerfen</string>
+    <!-- No permissions granted error -->
     <string name="snack_permissions_no_permission">Erforderliche Berechtigungen wurden verweigert, aktiviere diese in den Einstellungen, um mit der Aufnahme zu beginnen</string>
+    <!-- User denied location access -->
     <string name="snack_permissions_no_permission_location">Standortberechtigung wurde verweigert, aktiviere sie in der Einstellungen-App, um deine Aufnahmen markieren zu können</string>
+    <!-- Main activity -->
+    <!-- Sound record title -->
     <string name="main_sound_action">Ton aufnehmen</string>
+    <!-- List activity -->
+    <!-- List activity title -->
     <string name="list_title">Meine Aufnahmen</string>
     <string name="list_error_empty">Alle deine Aufnahmen werden hier angezeigt</string>
+    <!-- Edit recording title -->
     <string name="list_edit_title">Aufzeichnungsname ändern</string>
+    <!-- Edit recording confirm action -->
     <string name="list_edit_confirm">Ändern</string>
+    <!-- List item menu actions description for a11y -->
     <string name="list_item_menu">Weitere Aktionen</string>
+    <!-- Delete all message title -->
     <string name="delete_all_title">Alle löschen</string>
+    <!-- Delete all message -->
+    <string name="delete_all_message">Möchtest du wirklich alle Aufnahmen löschen? Dies kann nicht rückgängig gemacht werden</string>
+    <!-- Delete selected message title -->
+    <string name="delete_selected_title">Markierte löschen</string>
+    <!-- Delete all message -->
+    <string name="delete_selected_message">Möchtest du die ausgewählten Aufnahmen wirklich löschen? Dies kann nicht rückgängig gemacht werden</string>
 </resources>

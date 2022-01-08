@@ -15,51 +15,103 @@
 -->
 <resources>
     <string name="app_name">Səsyazan</string>
+    <!-- Common actions -->
+    <!-- Share action for notification -->
     <string name="share">Paylaş</string>
+    <!-- Share selected action -->
     <string name="share_selected">Seçiləni paylaş</string>
+    <!-- Stop action for notification -->
     <string name="stop">Dayandır</string>
+    <!-- Play action -->
     <string name="play">Oynat</string>
+    <!-- Pause action -->
     <string name="pause">Fasilə ver</string>
+    <!-- Resume action -->
     <string name="resume">Davam etdir</string>
+    <!-- Delete action -->
     <string name="delete">Sil</string>
+    <!-- Delete all action -->
     <string name="delete_all">Hamısını sil</string>
+    <!-- Delete selected action -->
     <string name="delete_selected">Seçiləni sil</string>
+    <!-- Cancel action -->
     <string name="cancel">İmtina</string>
+    <!-- Rename action -->
     <string name="rename">Yenidən adlandır</string>
+    <!-- Delete confirm title -->
     <string name="delete_title">Səsyazma silinir</string>
+    <!-- Delete confirm message -->
     <string name="delete_recording_message">Bu səsyazmanı silmək istədiyinizə əminsiniz? Bu, geri qaytarıla bilməyəcək</string>
+    <!-- Confirm result action-->
     <string name="confirm">Təsdiqlə</string>
+    <!-- Discard the last recording -->
     <string name="discard">Ləğv et</string>
+    <!-- Record again action-->
     <string name="record_again">Yenidən yaz</string>
+    <!-- Confirm result title -->
     <string name="confirm_result_title">Səsyazma istifadə edilsin?</string>
+    <!-- Confirm result dialog text -->
     <string name="confirm_result_message">Son səsyazmanı istifadə etmək istəyirsiniz?</string>
+    <!-- Sound recorder -->
+    <!-- Sound recorder notification title -->
     <string name="sound_notification_title">Səs Yazma</string>
+    <!-- Sound recorder notification message -->
     <string name="sound_notification_message">Səs uzunluğu: %1$s</string>
+    <!-- Sound recorder status card title recording -->
     <string name="sound_recording_title_working">Səs yazılır</string>
+    <!-- Sound recorder status card title paused -->
     <string name="sound_recording_title_paused">Fasilə verildi</string>
+    <!-- Sound recorder last item title -->
     <string name="sound_last_title">Son səsyazma</string>
+    <!-- Sound recorder notification channel title -->
     <string name="sound_channel_title">Səs yazma</string>
+    <!-- Sound recorder notification channel description-->
     <string name="sound_channel_desc">Səs yazanda davamlı bildiriş göstər və tamamlandıqdan sonra bildiriş göstər</string>
+    <!-- Settings -->
+    <!-- Settings: dialog title -->
     <string name="settings_title">Tənzimləmələr</string>
+    <!-- Settings: tag recordings with current location -->
     <string name="settings_location_message">Səsyazmalarınızı mövcud mövqeyinizlə etiketləyin</string>
+    <!-- Settings: recording in high quality -->
     <string name="settings_quality_high">Yüksək keyfiyyətdə səsyazma</string>
+    <!-- Permissions -->
+    <!-- Permissions dialog title -->
     <string name="dialog_permissions_title">İcazələr</string>
+    <!-- Message: microphone access denied -->
     <string name="dialog_permissions_mic">Səsyazan-ın, səsi yazmaq üçün mikrofon icazəsinə ehtiyacı var</string>
+    <!-- Message: phone status denied -->
     <string name="dialog_permissions_phone">Zəng əsnasında bu tətbiqin yazmasını əngəlləmək üçün \"Səsyazan\" telefon vəziyyətinə müraciət etməlidir</string>
+    <!-- Message: microphone and phone status access denied -->
     <string name="dialog_permissions_mic_phone">Səsyazan-ın, zəng əsnasında yazmağı əngəlləmək üçün mikrofon icazəsinə və telefon vəziyyətinə müraciətə ehtiyacı var</string>
+    <!-- Message: location permission denied -->
     <string name="dialog_permissions_location">Səsyazanın, yazılmış qeydləri nizama salmanıza kömək etməsi üzrə avtomatik etiketləməsi üçün yerləşmə icazəsinə ehtiyac var</string>
+    <!-- Permissions dialog action: ask permissions access again -->
     <string name="dialog_permissions_ask">Təkrar soruş</string>
+    <!-- Permissions dialog action: dismiss dialog -->
     <string name="dialog_permissions_dismiss">Rədd et</string>
+    <!-- No permissions granted error -->
     <string name="snack_permissions_no_permission">Tələb edilən icazələr rədd edildi, səsyazmağa başlamaq üçün Tənzimləmələr tətbiqindən icazələri fəallaşdırın</string>
+    <!-- User denied location access -->
     <string name="snack_permissions_no_permission_location">Yerləşmə icazəsi rədd edildi, səsyazmalarınızı etiketləmək üçün Tənzimləmələrdən fəallaşdırın</string>
+    <!-- Main activity -->
+    <!-- Sound record title -->
     <string name="main_sound_action">Səs yaz</string>
+    <!-- List activity -->
+    <!-- List activity title -->
     <string name="list_title">Səsyazmalarım</string>
     <string name="list_error_empty">Bütün yazılmış səsləriniz burada görünəcək</string>
+    <!-- Edit recording title -->
     <string name="list_edit_title">Yazılmış səsin adına düzəliş edin</string>
+    <!-- Edit recording confirm action -->
     <string name="list_edit_confirm">Dəyişdir</string>
+    <!-- List item menu actions description for a11y -->
     <string name="list_item_menu">Daha çox əməliyyat</string>
+    <!-- Delete all message title -->
     <string name="delete_all_title">Hamısını sil</string>
+    <!-- Delete all message -->
     <string name="delete_all_message">Bütün səsyazmaları silmək istədiyinizə əminsiniz? Bunun geri dönüşü yoxdur</string>
+    <!-- Delete selected message title -->
     <string name="delete_selected_title">Seçiləni sil</string>
+    <!-- Delete all message -->
     <string name="delete_selected_message">Seçilmiş səsyazmalarıı silmək istədiyinizə əminsiniz? Bunun geri dönüşü yoxdur</string>
 </resources>

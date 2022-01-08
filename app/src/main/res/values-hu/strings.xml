@@ -15,51 +15,103 @@
 -->
 <resources>
     <string name="app_name">Felvevő</string>
+    <!-- Common actions -->
+    <!-- Share action for notification -->
     <string name="share">Megosztás</string>
+    <!-- Share selected action -->
     <string name="share_selected">A kijelöltek megosztása</string>
+    <!-- Stop action for notification -->
     <string name="stop">Leállítás</string>
+    <!-- Play action -->
     <string name="play">Lejátszás</string>
+    <!-- Pause action -->
     <string name="pause">Szünet</string>
+    <!-- Resume action -->
     <string name="resume">Folytatás</string>
+    <!-- Delete action -->
     <string name="delete">Törlés</string>
+    <!-- Delete all action -->
     <string name="delete_all">Az összes törlése</string>
+    <!-- Delete selected action -->
     <string name="delete_selected">A kijelöltek törlése</string>
+    <!-- Cancel action -->
     <string name="cancel">Mégse</string>
+    <!-- Rename action -->
     <string name="rename">Átnevezés</string>
+    <!-- Delete confirm title -->
     <string name="delete_title">Felvétel törlése</string>
+    <!-- Delete confirm message -->
     <string name="delete_recording_message">Biztosan törli ezt a felvételt? Ha törölte, már nem szerezheti többé vissza</string>
+    <!-- Confirm result action-->
     <string name="confirm">Megerősítés</string>
+    <!-- Discard the last recording -->
     <string name="discard">Elvetés</string>
+    <!-- Record again action-->
     <string name="record_again">Ismételt felvétel</string>
+    <!-- Confirm result title -->
     <string name="confirm_result_title">Használja a felvételt?</string>
+    <!-- Confirm result dialog text -->
     <string name="confirm_result_message">Szeretné a legutóbb felvettet használni?</string>
+    <!-- Sound recorder -->
+    <!-- Sound recorder notification title -->
     <string name="sound_notification_title">Hangrögzítő</string>
+    <!-- Sound recorder notification message -->
     <string name="sound_notification_message">Audio hossza: %1$s</string>
+    <!-- Sound recorder status card title recording -->
     <string name="sound_recording_title_working">Felvétel</string>
+    <!-- Sound recorder status card title paused -->
     <string name="sound_recording_title_paused">Szüneteltetve</string>
+    <!-- Sound recorder last item title -->
     <string name="sound_last_title">Utolsó felvétel</string>
+    <!-- Sound recorder notification channel title -->
     <string name="sound_channel_title">Hangrögzítés</string>
+    <!-- Sound recorder notification channel description-->
     <string name="sound_channel_desc">Állandó értesítés hangfelvétel közben és értesítés befejezéskor</string>
+    <!-- Settings -->
+    <!-- Settings: dialog title -->
     <string name="settings_title">Beállítások</string>
+    <!-- Settings: tag recordings with current location -->
     <string name="settings_location_message">A felvételeket fűzze hozzá az aktuális tartózkodási helyhez</string>
+    <!-- Settings: recording in high quality -->
     <string name="settings_quality_high">Kiváló minőségű felvétel</string>
+    <!-- Permissions -->
+    <!-- Permissions dialog title -->
     <string name="dialog_permissions_title">Jogosultságok</string>
+    <!-- Message: microphone access denied -->
     <string name="dialog_permissions_mic">Felvevőnek a mikrofonhoz való hozzáférés kell a hang rögzítéséhez</string>
+    <!-- Message: phone status denied -->
     <string name="dialog_permissions_phone">Felvevőnek a telefon állapotához való hozzáférésre van szüksége a telefonálás közbeni rögzítés megakadályozására</string>
+    <!-- Message: microphone and phone status access denied -->
     <string name="dialog_permissions_mic_phone">Felvevőnek a mikrofonhoz való hozzáférésre van szüksége a hang rögzítéséhez és a telefon állapotához való hozzáférésre a telefonálás közbeni rögzítés megakadályozására</string>
+    <!-- Message: location permission denied -->
     <string name="dialog_permissions_location">A teggeléshez (hogy később tartózkodási hely szerint rendezhesse a felvételeket) a rögzítőnek jogosultságok szükségesek</string>
+    <!-- Permissions dialog action: ask permissions access again -->
     <string name="dialog_permissions_ask">Kérdezze meg újra</string>
+    <!-- Permissions dialog action: dismiss dialog -->
     <string name="dialog_permissions_dismiss">Elvetés</string>
+    <!-- No permissions granted error -->
     <string name="snack_permissions_no_permission">Szükséges engedélyek megtagadva, engedélyezze őket a Beállításokban a felvétel megkezdéséhez</string>
+    <!-- User denied location access -->
     <string name="snack_permissions_no_permission_location">Helyhozzáférés megtagadva, engedélyezze a Beállításokban, hogy a felvételek teggelhetők legyenek</string>
+    <!-- Main activity -->
+    <!-- Sound record title -->
     <string name="main_sound_action">Hangrögzítés</string>
+    <!-- List activity -->
+    <!-- List activity title -->
     <string name="list_title">Saját felvételeim</string>
     <string name="list_error_empty">Az összes felvétele itt fog látszódni</string>
+    <!-- Edit recording title -->
     <string name="list_edit_title">Felvételcímek szerkesztése</string>
+    <!-- Edit recording confirm action -->
     <string name="list_edit_confirm">Módosítás</string>
+    <!-- List item menu actions description for a11y -->
     <string name="list_item_menu">További műveletek</string>
+    <!-- Delete all message title -->
     <string name="delete_all_title">Az összes törlése</string>
+    <!-- Delete all message -->
     <string name="delete_all_message">Biztosan törli az összes felvételt? Ha törölte, már nem szerezheti többé vissza</string>
+    <!-- Delete selected message title -->
     <string name="delete_selected_title">A kijelöltek törlése</string>
+    <!-- Delete all message -->
     <string name="delete_selected_message">Biztosan törli a kiválasztott felvételt? Ha törölte, már nem szerezheti többé vissza</string>
 </resources>

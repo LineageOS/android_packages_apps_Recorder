@@ -15,51 +15,103 @@
 -->
 <resources>
     <string name="app_name">Recorder</string>
+    <!-- Common actions -->
+    <!-- Share action for notification -->
     <string name="share">Distribuiți</string>
+    <!-- Share selected action -->
     <string name="share_selected">Distribuiți selecția</string>
+    <!-- Stop action for notification -->
     <string name="stop">Stop</string>
+    <!-- Play action -->
     <string name="play">Redați</string>
+    <!-- Pause action -->
     <string name="pause">Pauză</string>
+    <!-- Resume action -->
     <string name="resume">Reia</string>
+    <!-- Delete action -->
     <string name="delete">Ștergeți</string>
+    <!-- Delete all action -->
     <string name="delete_all">Ștergeți tot</string>
+    <!-- Delete selected action -->
     <string name="delete_selected">Ştergeţi selecţia</string>
+    <!-- Cancel action -->
     <string name="cancel">Anulare</string>
+    <!-- Rename action -->
     <string name="rename">Redenumire</string>
+    <!-- Delete confirm title -->
     <string name="delete_title">Ștergere înregistrare</string>
+    <!-- Delete confirm message -->
     <string name="delete_recording_message">Sunteți sigur(ă) că doriți să ștergeți înregistrarea? Această acțiune este ireversibilă</string>
+    <!-- Confirm result action-->
     <string name="confirm">Confirmați</string>
+    <!-- Discard the last recording -->
     <string name="discard">Renunţaţi</string>
+    <!-- Record again action-->
     <string name="record_again">Înregistrează din nou</string>
+    <!-- Confirm result title -->
     <string name="confirm_result_title">Utilizaţi înregistrarea?</string>
+    <!-- Confirm result dialog text -->
     <string name="confirm_result_message">Doriţi să utilizaţi ultima înregistrare?</string>
+    <!-- Sound recorder -->
+    <!-- Sound recorder notification title -->
     <string name="sound_notification_title">Înregistrare Sunet</string>
+    <!-- Sound recorder notification message -->
     <string name="sound_notification_message">Lungime audio: %1$s</string>
+    <!-- Sound recorder status card title recording -->
     <string name="sound_recording_title_working">Înregistrare</string>
+    <!-- Sound recorder status card title paused -->
     <string name="sound_recording_title_paused">În pauză</string>
+    <!-- Sound recorder last item title -->
     <string name="sound_last_title">Ultima înregistrare</string>
+    <!-- Sound recorder notification channel title -->
     <string name="sound_channel_title">Înregistrare sunet</string>
+    <!-- Sound recorder notification channel description-->
     <string name="sound_channel_desc">Notificare persistentă când se înregistrează sunetul și notificare când acțiunea este completă</string>
+    <!-- Settings -->
+    <!-- Settings: dialog title -->
     <string name="settings_title">Setări</string>
+    <!-- Settings: tag recordings with current location -->
     <string name="settings_location_message">Etichetați înregistrările cu poziția dvs. curentă</string>
+    <!-- Settings: recording in high quality -->
     <string name="settings_quality_high">Înregistrare la calitate înaltă</string>
+    <!-- Permissions -->
+    <!-- Permissions dialog title -->
     <string name="dialog_permissions_title">Permisiuni</string>
+    <!-- Message: microphone access denied -->
     <string name="dialog_permissions_mic">Recorder are nevoie de permisiunea de microfon pentru a înregistra audio</string>
+    <!-- Message: phone status denied -->
     <string name="dialog_permissions_phone">Recorder are nevoie de acces la starea telefonului pentru a împiedica aplicația să înregistreze în timpul apelurilor</string>
+    <!-- Message: microphone and phone status access denied -->
     <string name="dialog_permissions_mic_phone">Recorder are nevoie de permisiunea de microfon pentru a înregistra audio și acces la starea telefonului pentru a împiedica aplicația să înregistreze când apelați</string>
+    <!-- Message: location permission denied -->
     <string name="dialog_permissions_location">Aplicația Înregistrare are nevoie de permisiuni de localizare pentru a vă eticheta automat înregistrările pentru a vă ajuta să le organizați</string>
+    <!-- Permissions dialog action: ask permissions access again -->
     <string name="dialog_permissions_ask">Cere din nou</string>
+    <!-- Permissions dialog action: dismiss dialog -->
     <string name="dialog_permissions_dismiss">Renunţaţi</string>
+    <!-- No permissions granted error -->
     <string name="snack_permissions_no_permission">Permisiunile necesare au fost refuzate, activați-le din aplicația Setări pentru a începe înregistrarea</string>
+    <!-- User denied location access -->
     <string name="snack_permissions_no_permission_location">Permisiunea de localizare a fost refuzată, activați-o din aplicația Setări pentru a vă eticheta înregistrările</string>
+    <!-- Main activity -->
+    <!-- Sound record title -->
     <string name="main_sound_action">Înregistrare sunet</string>
+    <!-- List activity -->
+    <!-- List activity title -->
     <string name="list_title">Înregistrările mele</string>
     <string name="list_error_empty">Toate înregistrările dvs. vor fi afișate aici</string>
+    <!-- Edit recording title -->
     <string name="list_edit_title">Editare nume înregistrare</string>
+    <!-- Edit recording confirm action -->
     <string name="list_edit_confirm">Schimbați</string>
+    <!-- List item menu actions description for a11y -->
     <string name="list_item_menu">Mai multe acțiuni</string>
+    <!-- Delete all message title -->
     <string name="delete_all_title">Ștergeți tot</string>
+    <!-- Delete all message -->
     <string name="delete_all_message">Sunteți sigur(ă) că doriți să ștergeți toate înregistrările? Această acțiune este ireversibilă</string>
+    <!-- Delete selected message title -->
     <string name="delete_selected_title">Ştergeţi selecţia</string>
+    <!-- Delete all message -->
     <string name="delete_selected_message">Sunteți sigur(ă) că doriți să ștergeți înregistrările selectate? Această acțiune este ireversibilă</string>
 </resources>

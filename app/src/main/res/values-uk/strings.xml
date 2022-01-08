@@ -15,22 +15,74 @@
 -->
 <resources>
     <string name="app_name">Recorder</string>
+    <!-- Common actions -->
+    <!-- Share action for notification -->
     <string name="share">Поділитися</string>
+    <!-- Share selected action -->
+    <!-- Stop action for notification -->
     <string name="stop">Зупинити</string>
+    <!-- Play action -->
     <string name="play">Відтворити</string>
+    <!-- Pause action -->
+    <!-- Resume action -->
+    <!-- Delete action -->
     <string name="delete">Видалити</string>
+    <!-- Delete all action -->
+    <!-- Delete selected action -->
+    <!-- Cancel action -->
     <string name="cancel">Скасувати</string>
+    <!-- Rename action -->
+    <!-- Delete confirm title -->
     <string name="delete_title">Видалення записів</string>
+    <!-- Delete confirm message -->
+    <!-- Confirm result action-->
+    <!-- Discard the last recording -->
+    <!-- Record again action-->
+    <!-- Confirm result title -->
+    <!-- Confirm result dialog text -->
+    <!-- Sound recorder -->
+    <!-- Sound recorder notification title -->
     <string name="sound_notification_title">Запис звуку</string>
+    <!-- Sound recorder notification message -->
     <string name="sound_notification_message">Тривалість аудіо запису: %1$s</string>
+    <!-- Sound recorder status card title recording -->
     <string name="sound_recording_title_working">Запис</string>
+    <!-- Sound recorder status card title paused -->
+    <!-- Sound recorder last item title -->
     <string name="sound_last_title">Останній запис</string>
+    <!-- Sound recorder notification channel title -->
+    <!-- Sound recorder notification channel description-->
+    <!-- Settings -->
+    <!-- Settings: dialog title -->
+    <!-- Settings: tag recordings with current location -->
+    <!-- Settings: recording in high quality -->
+    <!-- Permissions -->
+    <!-- Permissions dialog title -->
     <string name="dialog_permissions_title">Дозволи</string>
+    <!-- Message: microphone access denied -->
     <string name="dialog_permissions_mic">Додаток «Звукозаписувач» потребує доступ до мікрофону для здійснення звукозапису</string>
+    <!-- Message: phone status denied -->
     <string name="dialog_permissions_phone">Додатку «Recorder» потрібен доступ до стану телефону, щоб припиняти аудіозапис під час дзвінка</string>
+    <!-- Message: microphone and phone status access denied -->
     <string name="dialog_permissions_mic_phone">Додатку «Recorder» потрібен доступ до мікрофону для аудіозапису і доступ до стану телефону, щоб припиняти аудіозапис під час дзвінка</string>
+    <!-- Message: location permission denied -->
+    <!-- Permissions dialog action: ask permissions access again -->
     <string name="dialog_permissions_ask">Запитайте ще раз</string>
+    <!-- Permissions dialog action: dismiss dialog -->
     <string name="dialog_permissions_dismiss">Відхилити</string>
+    <!-- No permissions granted error -->
     <string name="snack_permissions_no_permission">Відмовлено в необхідних дозволах. Увімкніть їх у налаштуваннях, щоб почати запис</string>
+    <!-- User denied location access -->
+    <!-- Main activity -->
+    <!-- Sound record title -->
     <string name="main_sound_action">Запис звуку</string>
+    <!-- List activity -->
+    <!-- List activity title -->
+    <!-- Edit recording title -->
+    <!-- Edit recording confirm action -->
+    <!-- List item menu actions description for a11y -->
+    <!-- Delete all message title -->
+    <!-- Delete all message -->
+    <!-- Delete selected message title -->
+    <!-- Delete all message -->
 </resources>

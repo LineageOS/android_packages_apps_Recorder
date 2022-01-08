@@ -15,51 +15,103 @@
 -->
 <resources>
     <string name="app_name">Recorder</string>
+    <!-- Common actions -->
+    <!-- Share action for notification -->
     <string name="share">Delen</string>
+    <!-- Share selected action -->
     <string name="share_selected">Selectie delen</string>
+    <!-- Stop action for notification -->
     <string name="stop">Stoppen</string>
+    <!-- Play action -->
     <string name="play">Afspelen</string>
+    <!-- Pause action -->
     <string name="pause">Pauzeer</string>
+    <!-- Resume action -->
     <string name="resume">Hervat</string>
+    <!-- Delete action -->
     <string name="delete">Verwijderen</string>
+    <!-- Delete all action -->
     <string name="delete_all">Alles verwijderen</string>
+    <!-- Delete selected action -->
     <string name="delete_selected">Selectie verwijderen</string>
+    <!-- Cancel action -->
     <string name="cancel">Annuleren</string>
+    <!-- Rename action -->
     <string name="rename">Hernoem</string>
+    <!-- Delete confirm title -->
     <string name="delete_title">Opname verwijderen</string>
+    <!-- Delete confirm message -->
     <string name="delete_recording_message">Weet u zeker dat u deze opname wilt verwijderen? Dit kan niet ongedaan worden gemaakt</string>
+    <!-- Confirm result action-->
     <string name="confirm">Bevestig</string>
+    <!-- Discard the last recording -->
     <string name="discard">Negeer</string>
+    <!-- Record again action-->
     <string name="record_again">Neem opnieuw op</string>
+    <!-- Confirm result title -->
     <string name="confirm_result_title">Opname gebruiken?</string>
+    <!-- Confirm result dialog text -->
     <string name="confirm_result_message">Wilt u de laatste opname gebruiken?</string>
+    <!-- Sound recorder -->
+    <!-- Sound recorder notification title -->
     <string name="sound_notification_title">Geluidsrecorder</string>
+    <!-- Sound recorder notification message -->
     <string name="sound_notification_message">Audiolengte: %1$s</string>
+    <!-- Sound recorder status card title recording -->
     <string name="sound_recording_title_working">Opnemen</string>
+    <!-- Sound recorder status card title paused -->
     <string name="sound_recording_title_paused">Gepauzeerd</string>
+    <!-- Sound recorder last item title -->
     <string name="sound_last_title">Laatste opname</string>
+    <!-- Sound recorder notification channel title -->
     <string name="sound_channel_title">Geluidsopname</string>
+    <!-- Sound recorder notification channel description-->
     <string name="sound_channel_desc">Permanente notificatie tijdens het opnemen van geluid en een notificatie nadat dit voltooid is</string>
+    <!-- Settings -->
+    <!-- Settings: dialog title -->
     <string name="settings_title">Instellingen</string>
+    <!-- Settings: tag recordings with current location -->
     <string name="settings_location_message">Tag uw opnames met uw huidige locatie</string>
+    <!-- Settings: recording in high quality -->
     <string name="settings_quality_high">Neem op in hoge kwaliteit</string>
+    <!-- Permissions -->
+    <!-- Permissions dialog title -->
     <string name="dialog_permissions_title">Machtigingen</string>
+    <!-- Message: microphone access denied -->
     <string name="dialog_permissions_mic">Recorder heeft toegang nodig tot de microfoon om geluid op te kunnen nemen</string>
+    <!-- Message: phone status denied -->
     <string name="dialog_permissions_phone">Recorder heeft toegang nodig tot de telefoonstatus om te voorkomen dat deze app opneemt tijdens oproepen</string>
+    <!-- Message: microphone and phone status access denied -->
     <string name="dialog_permissions_mic_phone">Recorder heeft toegang nodig tot de microfoon om audio op te kunnen nemen en toegang nodig tot de telefoonstatus om te voorkomen dat deze app opneemt tijdens oproepen</string>
+    <!-- Message: location permission denied -->
     <string name="dialog_permissions_location">Recorder heeft locatiemachtiging nodig om automatisch uw opnamen te taggen om die te organiseren</string>
+    <!-- Permissions dialog action: ask permissions access again -->
     <string name="dialog_permissions_ask">Opnieuw vragen</string>
+    <!-- Permissions dialog action: dismiss dialog -->
     <string name="dialog_permissions_dismiss">Sluiten</string>
+    <!-- No permissions granted error -->
     <string name="snack_permissions_no_permission">Vereiste machtigingen werden geweigerd, schakel ze in bij Instellingen om opname te starten</string>
+    <!-- User denied location access -->
     <string name="snack_permissions_no_permission_location">Locatiemachtiging werd geweigerd, sta dit toe in Instellingen om uw opnamen te taggen</string>
+    <!-- Main activity -->
+    <!-- Sound record title -->
     <string name="main_sound_action">Geluid opnemen</string>
+    <!-- List activity -->
+    <!-- List activity title -->
     <string name="list_title">Mijn opnames</string>
     <string name="list_error_empty">Al uw opnamen worden hier getoond</string>
+    <!-- Edit recording title -->
     <string name="list_edit_title">Bewerk opnamenaam</string>
+    <!-- Edit recording confirm action -->
     <string name="list_edit_confirm">Wijzig</string>
+    <!-- List item menu actions description for a11y -->
     <string name="list_item_menu">Meer acties</string>
+    <!-- Delete all message title -->
     <string name="delete_all_title">Alles verwijderen</string>
+    <!-- Delete all message -->
     <string name="delete_all_message">Weet u zeker dat u alle opnames wilt verwijderen? Dit kan niet ongedaan worden gemaakt</string>
+    <!-- Delete selected message title -->
     <string name="delete_selected_title">Selectie verwijderen</string>
+    <!-- Delete all message -->
     <string name="delete_selected_message">Weet u zeker dat u de geselecteerde opnames wilt verwijderen? Dit kan niet ongedaan worden gemaakt</string>
 </resources>

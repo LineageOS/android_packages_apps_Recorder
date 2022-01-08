@@ -15,39 +15,91 @@
 -->
 <resources>
     <string name="app_name">Nauhoitus</string>
+    <!-- Common actions -->
+    <!-- Share action for notification -->
     <string name="share">Jaa</string>
+    <!-- Share selected action -->
+    <!-- Stop action for notification -->
     <string name="stop">Lopeta</string>
+    <!-- Play action -->
     <string name="play">Toista</string>
+    <!-- Pause action -->
     <string name="pause">Tauko</string>
+    <!-- Resume action -->
     <string name="resume">Jatka</string>
+    <!-- Delete action -->
     <string name="delete">Poista</string>
+    <!-- Delete all action -->
+    <!-- Delete selected action -->
+    <!-- Cancel action -->
     <string name="cancel">Peruuta</string>
+    <!-- Rename action -->
     <string name="rename">Uudelleennimeä</string>
+    <!-- Delete confirm title -->
     <string name="delete_title">Poistetaan nauhoitusta</string>
+    <!-- Delete confirm message -->
     <string name="delete_recording_message">Haluatko varmasti poistaa tämän nauhoitteen? Poistoa ei voi peruuttaa!</string>
+    <!-- Confirm result action-->
+    <!-- Discard the last recording -->
+    <!-- Record again action-->
+    <!-- Confirm result title -->
+    <!-- Confirm result dialog text -->
+    <!-- Sound recorder -->
+    <!-- Sound recorder notification title -->
     <string name="sound_notification_title">Ääninauhuri</string>
+    <!-- Sound recorder notification message -->
     <string name="sound_notification_message">Äänen kesto: %1$s</string>
+    <!-- Sound recorder status card title recording -->
     <string name="sound_recording_title_working">Nauhoitetaan</string>
+    <!-- Sound recorder status card title paused -->
     <string name="sound_recording_title_paused">Keskeytetty</string>
+    <!-- Sound recorder last item title -->
     <string name="sound_last_title">Viimeisin nauhoitus</string>
+    <!-- Sound recorder notification channel title -->
     <string name="sound_channel_title">Ääninauhuri</string>
+    <!-- Sound recorder notification channel description-->
     <string name="sound_channel_desc">Jatkuva ilmoitus äänen tallentamisesta ja ilmoitus kun se on valmis</string>
+    <!-- Settings -->
+    <!-- Settings: dialog title -->
     <string name="settings_title">Asetukset</string>
+    <!-- Settings: tag recordings with current location -->
     <string name="settings_location_message">Merkitse nauhoitukset nykyisellä sijainnilla</string>
+    <!-- Settings: recording in high quality -->
     <string name="settings_quality_high">Nauhoita korkealla laadulla</string>
+    <!-- Permissions -->
+    <!-- Permissions dialog title -->
     <string name="dialog_permissions_title">Käyttöoikeudet</string>
+    <!-- Message: microphone access denied -->
     <string name="dialog_permissions_mic">Nauhoitus tarvitsee pääsyn mikrofoniin nauhoittaakseen ääntä</string>
+    <!-- Message: phone status denied -->
     <string name="dialog_permissions_phone">Nauhoitus tarvitsee puhelimen käyttöoikeuden estääkseen nauhoituksen puhelun aikana</string>
+    <!-- Message: microphone and phone status access denied -->
     <string name="dialog_permissions_mic_phone">Nauhoitus tarvitsee pääsyn mikrofoniin nauhoittaakseen ääntä ja puhelimen tilaan estääkseen nauhoituksen puhelun aikana</string>
+    <!-- Message: location permission denied -->
     <string name="dialog_permissions_location">Nauhoitus tarvitsee sijainnin käyttöoikeuden nauhoituksen sijainnin merkitsemiseksi</string>
+    <!-- Permissions dialog action: ask permissions access again -->
     <string name="dialog_permissions_ask">Kysy uudelleen</string>
+    <!-- Permissions dialog action: dismiss dialog -->
     <string name="dialog_permissions_dismiss">Hylkää</string>
+    <!-- No permissions granted error -->
     <string name="snack_permissions_no_permission">Tarvittavat käyttöoikeudet hylättiin, ota ne käyttöön Asetukset-sovelluksesta aloittaaksesi nauhoituksen</string>
+    <!-- User denied location access -->
     <string name="snack_permissions_no_permission_location">Sijainnin käyttöoikeudet hylättiin, ota ne käyttöön Asetukset-sovelluksesta merkitäksesi nauhoitukset</string>
+    <!-- Main activity -->
+    <!-- Sound record title -->
     <string name="main_sound_action">Nauhoita ääntä</string>
+    <!-- List activity -->
+    <!-- List activity title -->
     <string name="list_title">Omat nauhoitukset</string>
     <string name="list_error_empty">Kaikki nauhoituksesi näkyvät täällä</string>
+    <!-- Edit recording title -->
     <string name="list_edit_title">Muokkaa nauhoituksen nimeä</string>
+    <!-- Edit recording confirm action -->
     <string name="list_edit_confirm">Muuta</string>
+    <!-- List item menu actions description for a11y -->
     <string name="list_item_menu">Lisää toimintoja</string>
+    <!-- Delete all message title -->
+    <!-- Delete all message -->
+    <!-- Delete selected message title -->
+    <!-- Delete all message -->
 </resources>

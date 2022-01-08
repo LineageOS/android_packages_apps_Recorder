@@ -15,40 +15,95 @@
 -->
 <resources>
     <string name="app_name">Gravador</string>
+    <!-- Common actions -->
+    <!-- Share action for notification -->
     <string name="share">Compartilhar</string>
+    <!-- Share selected action -->
+    <string name="share_selected">Compartilhar selecionados</string>
+    <!-- Stop action for notification -->
     <string name="stop">Parar</string>
+    <!-- Play action -->
     <string name="play">Reproduzir</string>
+    <!-- Pause action -->
     <string name="pause">Pausar</string>
+    <!-- Resume action -->
     <string name="resume">Continuar</string>
+    <!-- Delete action -->
     <string name="delete">Excluir</string>
+    <!-- Delete all action -->
+    <string name="delete_all">Excluir todos</string>
+    <!-- Delete selected action -->
+    <string name="delete_selected">Excluir selecionados</string>
+    <!-- Cancel action -->
     <string name="cancel">Cancelar</string>
+    <!-- Rename action -->
     <string name="rename">Renomear</string>
+    <!-- Delete confirm title -->
     <string name="delete_title">Excluir gravação</string>
+    <!-- Delete confirm message -->
+    <!-- Confirm result action-->
     <string name="confirm">Confirmar</string>
+    <!-- Discard the last recording -->
     <string name="discard">Descartar</string>
+    <!-- Record again action-->
+    <!-- Confirm result title -->
     <string name="confirm_result_title">Usar gravação?</string>
+    <!-- Confirm result dialog text -->
     <string name="confirm_result_message">Você deseja usar a última gravação?</string>
+    <!-- Sound recorder -->
+    <!-- Sound recorder notification title -->
     <string name="sound_notification_title">Gravador de som</string>
+    <!-- Sound recorder notification message -->
     <string name="sound_notification_message">Duração do áudio: %1$s</string>
+    <!-- Sound recorder status card title recording -->
     <string name="sound_recording_title_working">Gravando</string>
+    <!-- Sound recorder status card title paused -->
     <string name="sound_recording_title_paused">Pausada</string>
+    <!-- Sound recorder last item title -->
     <string name="sound_last_title">Última gravação</string>
+    <!-- Sound recorder notification channel title -->
     <string name="sound_channel_title">Gravação de som</string>
+    <!-- Sound recorder notification channel description-->
     <string name="sound_channel_desc">Notificação persistente durante a gravação de som e notificação após gravar</string>
+    <!-- Settings -->
+    <!-- Settings: dialog title -->
     <string name="settings_title">Configurações</string>
+    <!-- Settings: tag recordings with current location -->
+    <!-- Settings: recording in high quality -->
     <string name="settings_quality_high">Gravar em alta qualidade</string>
+    <!-- Permissions -->
+    <!-- Permissions dialog title -->
     <string name="dialog_permissions_title">Permissões</string>
+    <!-- Message: microphone access denied -->
     <string name="dialog_permissions_mic">O gravador requer acesso ao microfone para gravar áudio</string>
+    <!-- Message: phone status denied -->
     <string name="dialog_permissions_phone">O gravador requer acesso ao estado do telefone para impedir que este aplicativo grave enquanto você estiver em uma ligação</string>
+    <!-- Message: microphone and phone status access denied -->
     <string name="dialog_permissions_mic_phone">O gravador requer acesso ao microfone para gravar áudio e acesso ao estado do telefone para impedir este aplicativo de gravar enquanto você estiver em uma ligação</string>
+    <!-- Message: location permission denied -->
     <string name="dialog_permissions_location">O gravador requer a permissão de localização para marcar automaticamente as suas gravações, ajudando a organizá-las</string>
+    <!-- Permissions dialog action: ask permissions access again -->
     <string name="dialog_permissions_ask">Permitir novamente</string>
+    <!-- Permissions dialog action: dismiss dialog -->
     <string name="dialog_permissions_dismiss">Dispensar</string>
+    <!-- No permissions granted error -->
     <string name="snack_permissions_no_permission">As permissões necessárias foram negadas, ative-as no aplicativo Configurações para iniciar a gravação</string>
+    <!-- User denied location access -->
     <string name="snack_permissions_no_permission_location">A permissão de localização foi negada. Ative-a nas configurações para poder marcar as suas gravações</string>
+    <!-- Main activity -->
+    <!-- Sound record title -->
     <string name="main_sound_action">Gravar o som</string>
+    <!-- List activity -->
+    <!-- List activity title -->
     <string name="list_title">Minhas gravações</string>
     <string name="list_error_empty">Todas as suas gravações serão exibidas aqui</string>
+    <!-- Edit recording title -->
     <string name="list_edit_title">Editar nome da gravação</string>
+    <!-- Edit recording confirm action -->
+    <!-- List item menu actions description for a11y -->
     <string name="list_item_menu">Mais ações</string>
+    <!-- Delete all message title -->
+    <!-- Delete all message -->
+    <!-- Delete selected message title -->
+    <!-- Delete all message -->
 </resources>

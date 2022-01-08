@@ -14,20 +14,72 @@
      limitations under the License.
 -->
 <resources>
+    <!-- Common actions -->
+    <!-- Share action for notification -->
+    <!-- Share selected action -->
+    <!-- Stop action for notification -->
+    <!-- Play action -->
+    <!-- Pause action -->
     <string name="pause">Paus</string>
+    <!-- Resume action -->
     <string name="resume">Jätka</string>
+    <!-- Delete action -->
+    <!-- Delete all action -->
+    <!-- Delete selected action -->
+    <!-- Cancel action -->
+    <!-- Rename action -->
     <string name="rename">Nimeta ümber</string>
+    <!-- Delete confirm title -->
+    <!-- Delete confirm message -->
     <string name="delete_recording_message">Kas sa oled kindel, et soovid selle salvestuse kustutada? Seda toimingut ei saa tagasi võtta!</string>
+    <!-- Confirm result action-->
+    <!-- Discard the last recording -->
+    <!-- Record again action-->
+    <!-- Confirm result title -->
+    <!-- Confirm result dialog text -->
+    <!-- Sound recorder -->
+    <!-- Sound recorder notification title -->
+    <!-- Sound recorder notification message -->
+    <!-- Sound recorder status card title recording -->
+    <!-- Sound recorder status card title paused -->
     <string name="sound_recording_title_paused">Pausil</string>
+    <!-- Sound recorder last item title -->
+    <!-- Sound recorder notification channel title -->
     <string name="sound_channel_title">Heli salvestamine</string>
+    <!-- Sound recorder notification channel description-->
     <string name="sound_channel_desc">Püsiv teade heli salvestamisel ja teade kui salvestamine on lõppenud</string>
+    <!-- Settings -->
+    <!-- Settings: dialog title -->
     <string name="settings_title">Seaded</string>
+    <!-- Settings: tag recordings with current location -->
     <string name="settings_location_message">Lisage postitustele asukohasildid</string>
+    <!-- Settings: recording in high quality -->
     <string name="settings_quality_high">Kvaliteetne salvestus</string>
+    <!-- Permissions -->
+    <!-- Permissions dialog title -->
+    <!-- Message: microphone access denied -->
+    <!-- Message: phone status denied -->
+    <!-- Message: microphone and phone status access denied -->
+    <!-- Message: location permission denied -->
+    <!-- Permissions dialog action: ask permissions access again -->
+    <!-- Permissions dialog action: dismiss dialog -->
+    <!-- No permissions granted error -->
+    <!-- User denied location access -->
     <string name="snack_permissions_no_permission_location">Asukohaluba keelati. Salvestustele asukohtade lisamiseks lülitage see seadetes sisse</string>
+    <!-- Main activity -->
+    <!-- Sound record title -->
+    <!-- List activity -->
+    <!-- List activity title -->
     <string name="list_title">Minu salvestused</string>
     <string name="list_error_empty">Siin kuvatakse kõik teie salvestused</string>
+    <!-- Edit recording title -->
     <string name="list_edit_title">Muuda salvestuse nime</string>
+    <!-- Edit recording confirm action -->
     <string name="list_edit_confirm">Muuda</string>
+    <!-- List item menu actions description for a11y -->
     <string name="list_item_menu">Veel toiminguid</string>
+    <!-- Delete all message title -->
+    <!-- Delete all message -->
+    <!-- Delete selected message title -->
+    <!-- Delete all message -->
 </resources>

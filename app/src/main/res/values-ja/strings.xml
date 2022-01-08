@@ -15,51 +15,103 @@
 -->
 <resources>
     <string name="app_name">レコーダー</string>
+    <!-- Common actions -->
+    <!-- Share action for notification -->
     <string name="share">共有</string>
+    <!-- Share selected action -->
     <string name="share_selected">選択した項目を共有</string>
+    <!-- Stop action for notification -->
     <string name="stop">停止</string>
+    <!-- Play action -->
     <string name="play">再生</string>
+    <!-- Pause action -->
     <string name="pause">一時停止</string>
+    <!-- Resume action -->
     <string name="resume">再開</string>
+    <!-- Delete action -->
     <string name="delete">削除</string>
+    <!-- Delete all action -->
     <string name="delete_all">すべて削除</string>
+    <!-- Delete selected action -->
     <string name="delete_selected">選択した項目を削除</string>
+    <!-- Cancel action -->
     <string name="cancel">キャンセル</string>
+    <!-- Rename action -->
     <string name="rename">名前の変更</string>
+    <!-- Delete confirm title -->
     <string name="delete_title">記録の削除</string>
+    <!-- Delete confirm message -->
     <string name="delete_recording_message">本当にこの録画を削除しますか? この操作は元に戻せません。</string>
+    <!-- Confirm result action-->
     <string name="confirm">確認</string>
+    <!-- Discard the last recording -->
     <string name="discard">破棄</string>
+    <!-- Record again action-->
     <string name="record_again">再度録音</string>
+    <!-- Confirm result title -->
     <string name="confirm_result_title">録音を使用しますか?</string>
+    <!-- Confirm result dialog text -->
     <string name="confirm_result_message">最後の録音を使用しますか?</string>
+    <!-- Sound recorder -->
+    <!-- Sound recorder notification title -->
     <string name="sound_notification_title">音声レコーダー</string>
+    <!-- Sound recorder notification message -->
     <string name="sound_notification_message">音声の長さ: %1$s</string>
+    <!-- Sound recorder status card title recording -->
     <string name="sound_recording_title_working">録音中</string>
+    <!-- Sound recorder status card title paused -->
     <string name="sound_recording_title_paused">一時停止中</string>
+    <!-- Sound recorder last item title -->
     <string name="sound_last_title">最後の記録</string>
+    <!-- Sound recorder notification channel title -->
     <string name="sound_channel_title">音声録音</string>
+    <!-- Sound recorder notification channel description-->
     <string name="sound_channel_desc">録音中の通知を完了後も表示し続ける</string>
+    <!-- Settings -->
+    <!-- Settings: dialog title -->
     <string name="settings_title">設定</string>
+    <!-- Settings: tag recordings with current location -->
     <string name="settings_location_message">録画に現在位置のタグを付ける</string>
+    <!-- Settings: recording in high quality -->
     <string name="settings_quality_high">高画質録画</string>
+    <!-- Permissions -->
+    <!-- Permissions dialog title -->
     <string name="dialog_permissions_title">権限</string>
+    <!-- Message: microphone access denied -->
     <string name="dialog_permissions_mic">レコーダーは音声を録音するためにマイクの権限を必要とします。</string>
+    <!-- Message: phone status denied -->
     <string name="dialog_permissions_phone">レコーダーは通話中に録音を停止するために端末の状態の権限が必要とします。</string>
+    <!-- Message: microphone and phone status access denied -->
     <string name="dialog_permissions_mic_phone">レコーダーは音声を録音するためにマイクの権限と、通話中に録音を停止するために端末の状態の権限を必要とします。</string>
+    <!-- Message: location permission denied -->
     <string name="dialog_permissions_location">録画アプリは録画に自動でタグ付けして整理を補助するために位置情報の権限が必要となります</string>
+    <!-- Permissions dialog action: ask permissions access again -->
     <string name="dialog_permissions_ask">次回も確認する</string>
+    <!-- Permissions dialog action: dismiss dialog -->
     <string name="dialog_permissions_dismiss">閉じる</string>
+    <!-- No permissions granted error -->
     <string name="snack_permissions_no_permission">必要な権限が拒否されました。録音を開始するには設定アプリから権限を有効にしてください。</string>
+    <!-- User denied location access -->
     <string name="snack_permissions_no_permission_location">位置情報の権限が拒否されましたので、録画をタグ付けするには設定アプリから有効にして下さい。</string>
+    <!-- Main activity -->
+    <!-- Sound record title -->
     <string name="main_sound_action">サウンドの録音</string>
+    <!-- List activity -->
+    <!-- List activity title -->
     <string name="list_title">取得した録画</string>
     <string name="list_error_empty">ここに作成されたすべての録画が表示されます</string>
+    <!-- Edit recording title -->
     <string name="list_edit_title">録画の名前を編集</string>
+    <!-- Edit recording confirm action -->
     <string name="list_edit_confirm">変更</string>
+    <!-- List item menu actions description for a11y -->
     <string name="list_item_menu">その他の操作</string>
+    <!-- Delete all message title -->
     <string name="delete_all_title">すべて削除</string>
+    <!-- Delete all message -->
     <string name="delete_all_message">本当にすべての録画を削除してよろしいですか? この操作は元に戻せません。</string>
+    <!-- Delete selected message title -->
     <string name="delete_selected_title">選択項目を削除</string>
+    <!-- Delete all message -->
     <string name="delete_selected_message">本当に選択した録画を削除してよろしいですか? この操作は元に戻せません。</string>
 </resources>

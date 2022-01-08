@@ -15,51 +15,103 @@
 -->
 <resources>
     <string name="app_name">Gravadora</string>
+    <!-- Common actions -->
+    <!-- Share action for notification -->
     <string name="share">Comparteix</string>
+    <!-- Share selected action -->
     <string name="share_selected">Comparteix selecció</string>
+    <!-- Stop action for notification -->
     <string name="stop">Para</string>
+    <!-- Play action -->
     <string name="play">Reprodueix</string>
+    <!-- Pause action -->
     <string name="pause">Pausa</string>
+    <!-- Resume action -->
     <string name="resume">Reprèn</string>
+    <!-- Delete action -->
     <string name="delete">Elimina</string>
+    <!-- Delete all action -->
     <string name="delete_all">Elimina-ho tot</string>
+    <!-- Delete selected action -->
     <string name="delete_selected">Elimina els seleccionats</string>
+    <!-- Cancel action -->
     <string name="cancel">Cancel·la</string>
+    <!-- Rename action -->
     <string name="rename">Reanomena</string>
+    <!-- Delete confirm title -->
     <string name="delete_title">S\'està eliminant el registre</string>
+    <!-- Delete confirm message -->
     <string name="delete_recording_message">Esteu segur que voleu suprimir aquesta gravació? Això no es pot desfer</string>
+    <!-- Confirm result action-->
     <string name="confirm">Confirma</string>
+    <!-- Discard the last recording -->
     <string name="discard">Descarta</string>
+    <!-- Record again action-->
     <string name="record_again">Enregistra de nou</string>
+    <!-- Confirm result title -->
     <string name="confirm_result_title">Voleu utilitzar l\'enregistrament?</string>
+    <!-- Confirm result dialog text -->
     <string name="confirm_result_message">Voleu fer servir l\'últim enregistrament?</string>
+    <!-- Sound recorder -->
+    <!-- Sound recorder notification title -->
     <string name="sound_notification_title">Gravadora de so</string>
+    <!-- Sound recorder notification message -->
     <string name="sound_notification_message">Durada de l\'àudio: %1$s</string>
+    <!-- Sound recorder status card title recording -->
     <string name="sound_recording_title_working">S\'està gravant</string>
+    <!-- Sound recorder status card title paused -->
     <string name="sound_recording_title_paused">Pausat</string>
+    <!-- Sound recorder last item title -->
     <string name="sound_last_title">Darrer enregistrament</string>
+    <!-- Sound recorder notification channel title -->
     <string name="sound_channel_title">Enregistrament de so</string>
+    <!-- Sound recorder notification channel description-->
     <string name="sound_channel_desc">Notificació persistent quan s\'està enregistrant so i notificació quan s\'hagi acabat</string>
+    <!-- Settings -->
+    <!-- Settings: dialog title -->
     <string name="settings_title">Configuració</string>
+    <!-- Settings: tag recordings with current location -->
     <string name="settings_location_message">Etiqueteu les gravacions amb la vostra posició actual</string>
+    <!-- Settings: recording in high quality -->
     <string name="settings_quality_high">Grava en alta qualitat</string>
+    <!-- Permissions -->
+    <!-- Permissions dialog title -->
     <string name="dialog_permissions_title">Permisos</string>
+    <!-- Message: microphone access denied -->
     <string name="dialog_permissions_mic">La gravadora necessita permís d\'accés al micròfon per enregistrar so</string>
+    <!-- Message: phone status denied -->
     <string name="dialog_permissions_phone">La gravadora necessita accedir a l\'estat del telèfon per evitar que aquesta aplicació enregistri mentre estàs trucant</string>
+    <!-- Message: microphone and phone status access denied -->
     <string name="dialog_permissions_mic_phone">La gravadora de sons necessita permís d\'accés al micròfon per enregistrar so i d\'accés a l\'estat del telèfon per evitar que aquesta aplicació enregistri mentre estàs trucant</string>
+    <!-- Message: location permission denied -->
     <string name="dialog_permissions_location">La Gravadora necessita el permís d\'ubicació per etiquetar automàticament les gravacions per ajudar-lo a organitzar-les</string>
+    <!-- Permissions dialog action: ask permissions access again -->
     <string name="dialog_permissions_ask">Torna a preguntar</string>
+    <!-- Permissions dialog action: dismiss dialog -->
     <string name="dialog_permissions_dismiss">Descarta</string>
+    <!-- No permissions granted error -->
     <string name="snack_permissions_no_permission">Els permisos necessaris han estat denegats, habilita\'ls des de l\'aplicació Configuració per iniciar l\'enregistrament</string>
+    <!-- User denied location access -->
     <string name="snack_permissions_no_permission_location">El permís d\'ubicació s\'ha denegat. Activeu-lo des de l\'aplicació Configuració per etiquetar les gravacions</string>
+    <!-- Main activity -->
+    <!-- Sound record title -->
     <string name="main_sound_action">Enregistra el so</string>
+    <!-- List activity -->
+    <!-- List activity title -->
     <string name="list_title">Les meves gravacions</string>
     <string name="list_error_empty">Totes les gravacions es mostraran aquí</string>
+    <!-- Edit recording title -->
     <string name="list_edit_title">Edita el nom de la gravació</string>
+    <!-- Edit recording confirm action -->
     <string name="list_edit_confirm">Canvia</string>
+    <!-- List item menu actions description for a11y -->
     <string name="list_item_menu">Més accions</string>
+    <!-- Delete all message title -->
     <string name="delete_all_title">Elimina-ho tot</string>
+    <!-- Delete all message -->
     <string name="delete_all_message">Esteu segur que voleu suprimir tots els enregistraments? Això no es pot desfer</string>
+    <!-- Delete selected message title -->
     <string name="delete_selected_title">Elimina els seleccionats</string>
+    <!-- Delete all message -->
     <string name="delete_selected_message">Esteu segur que voleu suprimir els enregistraments seleccionats? Això no es pot desfer</string>
 </resources>

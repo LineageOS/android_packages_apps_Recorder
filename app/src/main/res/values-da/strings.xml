@@ -15,51 +15,103 @@
 -->
 <resources>
     <string name="app_name">Optager</string>
+    <!-- Common actions -->
+    <!-- Share action for notification -->
     <string name="share">Del</string>
+    <!-- Share selected action -->
     <string name="share_selected">Del valgte</string>
+    <!-- Stop action for notification -->
     <string name="stop">Stop</string>
+    <!-- Play action -->
     <string name="play">Afspil</string>
+    <!-- Pause action -->
     <string name="pause">Pause</string>
+    <!-- Resume action -->
     <string name="resume">Genoptag</string>
+    <!-- Delete action -->
     <string name="delete">Slet</string>
+    <!-- Delete all action -->
     <string name="delete_all">Slet alle</string>
+    <!-- Delete selected action -->
     <string name="delete_selected">Slet valgte</string>
+    <!-- Cancel action -->
     <string name="cancel">Afbryd</string>
+    <!-- Rename action -->
     <string name="rename">Omdøb</string>
+    <!-- Delete confirm title -->
     <string name="delete_title">Sletter optagelse</string>
+    <!-- Delete confirm message -->
     <string name="delete_recording_message">Er du sikker på, at du ønsker at slette denne optagelse? Dette kan ikke fortrydes.</string>
+    <!-- Confirm result action-->
     <string name="confirm">Bekræft</string>
+    <!-- Discard the last recording -->
     <string name="discard">Kassér</string>
+    <!-- Record again action-->
     <string name="record_again">Optag igen</string>
+    <!-- Confirm result title -->
     <string name="confirm_result_title">Brug optagelse?</string>
+    <!-- Confirm result dialog text -->
     <string name="confirm_result_message">Vil du bruge den sidste optagelse?</string>
+    <!-- Sound recorder -->
+    <!-- Sound recorder notification title -->
     <string name="sound_notification_title">Lydoptager</string>
+    <!-- Sound recorder notification message -->
     <string name="sound_notification_message">Lydlængde: %1$s</string>
+    <!-- Sound recorder status card title recording -->
     <string name="sound_recording_title_working">Optager</string>
+    <!-- Sound recorder status card title paused -->
     <string name="sound_recording_title_paused">Pauset</string>
+    <!-- Sound recorder last item title -->
     <string name="sound_last_title">Sidste optagelse</string>
+    <!-- Sound recorder notification channel title -->
     <string name="sound_channel_title">Lydoptagelse</string>
+    <!-- Sound recorder notification channel description-->
     <string name="sound_channel_desc">Vedvarende notifikation ved optagelse af lyd og notifikation efter den er fuldført</string>
+    <!-- Settings -->
+    <!-- Settings: dialog title -->
     <string name="settings_title">Indstillinger</string>
+    <!-- Settings: tag recordings with current location -->
     <string name="settings_location_message">Markér dine optagelser, med din nuværende position</string>
+    <!-- Settings: recording in high quality -->
     <string name="settings_quality_high">Optag i høj kvalitet</string>
+    <!-- Permissions -->
+    <!-- Permissions dialog title -->
     <string name="dialog_permissions_title">Tilladelser</string>
+    <!-- Message: microphone access denied -->
     <string name="dialog_permissions_mic">Optager behøver mikrofon-tilladelse, for at optage lyd</string>
+    <!-- Message: phone status denied -->
     <string name="dialog_permissions_phone">Optager behøver telefonstatus-adgang, for at forhindre denne app i at optage, imens du ringer</string>
+    <!-- Message: microphone and phone status access denied -->
     <string name="dialog_permissions_mic_phone">Optager behøver mikrofon-tilladelse, for at optage lyd og telefonstatus-adgang, for at forhindre denne app i at optage, imens du ringer</string>
+    <!-- Message: location permission denied -->
     <string name="dialog_permissions_location">Optager har brug for placeringstilladelse for automatisk at tagge dine optagelser med lokation, for at hjælpe dig med at organisere dem</string>
+    <!-- Permissions dialog action: ask permissions access again -->
     <string name="dialog_permissions_ask">Spørg igen</string>
+    <!-- Permissions dialog action: dismiss dialog -->
     <string name="dialog_permissions_dismiss">Afvis</string>
+    <!-- No permissions granted error -->
     <string name="snack_permissions_no_permission">Påkrævede tilladelser blev afslået, aktivér dem fra Indstillinger-app, for at begynde optagelse</string>
+    <!-- User denied location access -->
     <string name="snack_permissions_no_permission_location">Placeringstilladelse blev benægtet, aktivér det fra Indstillinger for at tagge dine optagelser</string>
+    <!-- Main activity -->
+    <!-- Sound record title -->
     <string name="main_sound_action">Optag lyd</string>
+    <!-- List activity -->
+    <!-- List activity title -->
     <string name="list_title">Mine optagelser</string>
     <string name="list_error_empty">Alle dine optagelser vil blive vist her</string>
+    <!-- Edit recording title -->
     <string name="list_edit_title">Rediger optagelses navn</string>
+    <!-- Edit recording confirm action -->
     <string name="list_edit_confirm">Skift</string>
+    <!-- List item menu actions description for a11y -->
     <string name="list_item_menu">Flere handlinger</string>
+    <!-- Delete all message title -->
     <string name="delete_all_title">Slet alle</string>
+    <!-- Delete all message -->
     <string name="delete_all_message">Er du sikker på, at du ønsker at slette alle optagelser? Dette kan ikke fortrydes.</string>
+    <!-- Delete selected message title -->
     <string name="delete_selected_title">Slet valgte</string>
+    <!-- Delete all message -->
     <string name="delete_selected_message">Er du sikker på, at du ønsker at slette valgte optagelser? Dette kan ikke fortrydes.</string>
 </resources>

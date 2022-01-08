@@ -15,30 +15,102 @@
 -->
 <resources>
     <string name="app_name">Grabadora</string>
+    <!-- Common actions -->
+    <!-- Share action for notification -->
     <string name="share">Compartir</string>
+    <!-- Share selected action -->
+    <string name="share_selected">Compartir lo esbillao</string>
+    <!-- Stop action for notification -->
     <string name="stop">Parar</string>
+    <!-- Play action -->
     <string name="play">Reproducir</string>
+    <!-- Pause action -->
     <string name="pause">Posar</string>
+    <!-- Resume action -->
     <string name="resume">Siguir</string>
+    <!-- Delete action -->
     <string name="delete">Desaniciar</string>
+    <!-- Delete all action -->
+    <string name="delete_all">Desaniciar too</string>
+    <!-- Delete selected action -->
+    <string name="delete_selected">Desaniciar lo esbillao</string>
+    <!-- Cancel action -->
     <string name="cancel">Encaboxar</string>
+    <!-- Rename action -->
     <string name="rename">Renomar</string>
+    <!-- Delete confirm title -->
     <string name="delete_title">Desaniciando grabación</string>
+    <!-- Delete confirm message -->
+    <string name="delete_recording_message">¿De xuru que quies desaniciar esta grabación? Esta aición nun se pue desfacer</string>
+    <!-- Confirm result action-->
+    <string name="confirm">Confirmar</string>
+    <!-- Discard the last recording -->
+    <string name="discard">Escartar</string>
+    <!-- Record again action-->
+    <string name="record_again">Volver grabar</string>
+    <!-- Confirm result title -->
+    <string name="confirm_result_title">¿Quies usar la grabación?</string>
+    <!-- Confirm result dialog text -->
+    <string name="confirm_result_message">¿Quies usar la última grabación?</string>
+    <!-- Sound recorder -->
+    <!-- Sound recorder notification title -->
     <string name="sound_notification_title">Grabadora de soníu</string>
+    <!-- Sound recorder notification message -->
     <string name="sound_notification_message">Duración d\'audiu: %1$s</string>
+    <!-- Sound recorder status card title recording -->
     <string name="sound_recording_title_working">Grabando</string>
+    <!-- Sound recorder status card title paused -->
     <string name="sound_recording_title_paused">En posa</string>
+    <!-- Sound recorder last item title -->
     <string name="sound_last_title">Grabación cabera</string>
-    <string name="sound_channel_title">Grabación de soníu</string>
-    <string name="sound_channel_desc">Notificación persistente na grabación de soníu y notificación cuando tea fecha</string>
+    <!-- Sound recorder notification channel title -->
+    <string name="sound_channel_title">Grabación del soníu</string>
+    <!-- Sound recorder notification channel description-->
+    <!-- Settings -->
+    <!-- Settings: dialog title -->
     <string name="settings_title">Axustes</string>
+    <!-- Settings: tag recordings with current location -->
+    <string name="settings_location_message">Etiquetar les grabaciones cola to posición actual</string>
+    <!-- Settings: recording in high quality -->
+    <string name="settings_quality_high">Grabar en calidá alta</string>
+    <!-- Permissions -->
+    <!-- Permissions dialog title -->
     <string name="dialog_permissions_title">Permisos</string>
+    <!-- Message: microphone access denied -->
     <string name="dialog_permissions_mic">Grabadora precisa\'l permisu del micrófonu pa grabar audiu</string>
+    <!-- Message: phone status denied -->
     <string name="dialog_permissions_phone">Grabadora precisa\'l permisu del estáu del teléfonu pa evitar qu\'esta aplicación grabe entrín teas llamando</string>
+    <!-- Message: microphone and phone status access denied -->
     <string name="dialog_permissions_mic_phone">Grabadora precisa\'l permisu\'l micrófonu pa grabar audiu y l\'accesu al estáu del teléfonu pa evitar qu\'esta aplicación grabe entrín teas llamando</string>
+    <!-- Message: location permission denied -->
+    <string name="dialog_permissions_location">Grabadora precisa\'l permisu d\'allugamientu pa etiquetar automáticamente les grabaciones y ayudate a organizales</string>
+    <!-- Permissions dialog action: ask permissions access again -->
     <string name="dialog_permissions_ask">Entrugar de nueves</string>
+    <!-- Permissions dialog action: dismiss dialog -->
     <string name="dialog_permissions_dismiss">Escartar</string>
+    <!-- No permissions granted error -->
     <string name="snack_permissions_no_permission">Ñegáronse permisos riquíos, habilítalos dende Axustes pa entamar a grabar</string>
+    <!-- User denied location access -->
+    <string name="snack_permissions_no_permission_location">Negóse\'l permisu d\'allugamientu, concédelu n\'Axustes pa etiquetar les grabaciones</string>
+    <!-- Main activity -->
+    <!-- Sound record title -->
     <string name="main_sound_action">Grabar el soníu</string>
+    <!-- List activity -->
+    <!-- List activity title -->
+    <string name="list_title">Les mios grabaciones</string>
+    <string name="list_error_empty">Equí apaecen toles grabaciones</string>
+    <!-- Edit recording title -->
+    <string name="list_edit_title">Edición del nome d\'una grabación</string>
+    <!-- Edit recording confirm action -->
+    <string name="list_edit_confirm">Camudar</string>
+    <!-- List item menu actions description for a11y -->
     <string name="list_item_menu">Más aiciones</string>
+    <!-- Delete all message title -->
+    <string name="delete_all_title">Desaniciu de too</string>
+    <!-- Delete all message -->
+    <string name="delete_all_message">¿De xuru que quies desaniciar toles grabaciones? Esta aición nun se pue desfacer</string>
+    <!-- Delete selected message title -->
+    <string name="delete_selected_title">Desaniciu de lo esbillao</string>
+    <!-- Delete all message -->
+    <string name="delete_selected_message">¿De xuru que quies desaniciar les grabaciones esbillaes? Esta aición nun se pue desfacer</string>
 </resources>

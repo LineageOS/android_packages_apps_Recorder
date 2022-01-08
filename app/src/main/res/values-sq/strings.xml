@@ -15,51 +15,103 @@
 -->
 <resources>
     <string name="app_name">Regjistruesi</string>
+    <!-- Common actions -->
+    <!-- Share action for notification -->
     <string name="share">Ndaj</string>
+    <!-- Share selected action -->
     <string name="share_selected">Shpërndaj të përzgjedhurat</string>
+    <!-- Stop action for notification -->
     <string name="stop">Ndalo</string>
+    <!-- Play action -->
     <string name="play">Luaj</string>
+    <!-- Pause action -->
     <string name="pause">Pezullo</string>
+    <!-- Resume action -->
     <string name="resume">Rinis</string>
+    <!-- Delete action -->
     <string name="delete">Fshi</string>
+    <!-- Delete all action -->
     <string name="delete_all">Fshiji të gjitha</string>
+    <!-- Delete selected action -->
     <string name="delete_selected">Fshiji të zgjedhurat</string>
+    <!-- Cancel action -->
     <string name="cancel">Anullo</string>
+    <!-- Rename action -->
     <string name="rename">Riemërto</string>
+    <!-- Delete confirm title -->
     <string name="delete_title">Duke fshirë regjistrimin</string>
+    <!-- Delete confirm message -->
     <string name="delete_recording_message">Je i sigurt që dëshiron ta fshish këtë regjistrim? Kjo nuk mund të zhbëhet</string>
+    <!-- Confirm result action-->
     <string name="confirm">Konfirmo</string>
+    <!-- Discard the last recording -->
     <string name="discard">Mos e ruaj</string>
+    <!-- Record again action-->
     <string name="record_again">Regjistro përsëri</string>
+    <!-- Confirm result title -->
     <string name="confirm_result_title">Përdorni regjistrimin?</string>
+    <!-- Confirm result dialog text -->
     <string name="confirm_result_message">Dëshironi të përdorni regjistrimin e fundit?</string>
+    <!-- Sound recorder -->
+    <!-- Sound recorder notification title -->
     <string name="sound_notification_title">Regjistruesi i Tingujve</string>
+    <!-- Sound recorder notification message -->
     <string name="sound_notification_message">Gjatësia e audios: %1$s</string>
+    <!-- Sound recorder status card title recording -->
     <string name="sound_recording_title_working">Duke regjistruar</string>
+    <!-- Sound recorder status card title paused -->
     <string name="sound_recording_title_paused">Në pauzë</string>
+    <!-- Sound recorder last item title -->
     <string name="sound_last_title">Regjistrimi i fundit</string>
+    <!-- Sound recorder notification channel title -->
     <string name="sound_channel_title">Inçizim zëri</string>
+    <!-- Sound recorder notification channel description-->
     <string name="sound_channel_desc">Njoftim i vazhdueshëm kur inçizon me zë dhe njofto pasi të përfundojë</string>
+    <!-- Settings -->
+    <!-- Settings: dialog title -->
     <string name="settings_title">Cilësimet</string>
+    <!-- Settings: tag recordings with current location -->
     <string name="settings_location_message">Etiketoni regjistrimet tuaja me pozicionin tuaj aktual</string>
+    <!-- Settings: recording in high quality -->
     <string name="settings_quality_high">Regjistro në cilësi të lartë</string>
+    <!-- Permissions -->
+    <!-- Permissions dialog title -->
     <string name="dialog_permissions_title">Lejet</string>
+    <!-- Message: microphone access denied -->
     <string name="dialog_permissions_mic">Regjistruesi kërkon leje aksesi tek mikrofoni për të regjistruar audio</string>
+    <!-- Message: phone status denied -->
     <string name="dialog_permissions_phone">Regjistruesi kërkon akses te statusi i telefonit për të parandaluar aplikacionin që të regjistrojë gjatë një telefonate</string>
+    <!-- Message: microphone and phone status access denied -->
     <string name="dialog_permissions_mic_phone">Regjistruesi kërkon leje për përdorimin e mikrofonit që të regjistrojë audio dhe akses te statusi i telefonit për të parandaluar aplikacionin që të regjistrojë gjatë një telefonate</string>
+    <!-- Message: location permission denied -->
     <string name="dialog_permissions_location">Regjistruesit i duhet leja e vendndodhjes për të etiketuar automatikisht regjistrimet tuaja për t\'ju ndihmuar t\'i organizoni ato</string>
+    <!-- Permissions dialog action: ask permissions access again -->
     <string name="dialog_permissions_ask">Pyet përsëri</string>
+    <!-- Permissions dialog action: dismiss dialog -->
     <string name="dialog_permissions_dismiss">Largo</string>
+    <!-- No permissions granted error -->
     <string name="snack_permissions_no_permission">Lejet e nevojitura u refuzuan. Aktivizoji ato nga aplikacioni i Parametrave për të nisur regjistrimin</string>
+    <!-- User denied location access -->
     <string name="snack_permissions_no_permission_location">Leja e vendndodhjes u refuzua, aktivizo nga aplikacioni Settings për të etiketuar regjistrimet e tua</string>
+    <!-- Main activity -->
+    <!-- Sound record title -->
     <string name="main_sound_action">Regjistro zërin</string>
+    <!-- List activity -->
+    <!-- List activity title -->
     <string name="list_title">Regjistrimet e mia</string>
     <string name="list_error_empty">Të gjitha regjistrimet tuaja do të shfaqen këtu</string>
+    <!-- Edit recording title -->
     <string name="list_edit_title">Redakto emrin e regjistrimit</string>
+    <!-- Edit recording confirm action -->
     <string name="list_edit_confirm">Ndrysho</string>
+    <!-- List item menu actions description for a11y -->
     <string name="list_item_menu">Veprime të tjera</string>
+    <!-- Delete all message title -->
     <string name="delete_all_title">Fshiji të gjitha</string>
+    <!-- Delete all message -->
     <string name="delete_all_message">Je i sigurt që dëshiron të fshish të gjitha regjistrimet? Kjo nuk mund të zhbëhet</string>
+    <!-- Delete selected message title -->
     <string name="delete_selected_title">Fshiji të zgjedhurat</string>
+    <!-- Delete all message -->
     <string name="delete_selected_message">Je i sigurt që dëshiron të fshish regjistrimet e zgjedhura? Kjo nuk mund të zhbëhet</string>
 </resources>
