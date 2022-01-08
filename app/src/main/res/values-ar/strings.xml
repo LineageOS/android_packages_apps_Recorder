@@ -39,6 +39,7 @@
     <string name="screen_notification_message_done">جاهز للمشاركة</string>
     <string name="screen_recording_message">يتم تسجيل الشاشة</string>
     <string name="screen_last_title">التسجيل الأخير</string>
+    <string name="screen_last_message">المدة: %1$d ثانية</string>
     <string name="screen_overlay_notif_title">مستعد للتسجيل</string>
     <string name="screen_overlay_notif_message">اضغط على زر التسجيل عندما تكون على استعداد للبدء</string>
     <string name="screen_settings_title">ضبط إعدادات مسجل الشاشة</string>

@@ -26,6 +26,8 @@
     <string name="sound_notification_message">Audiolengte: %1$s</string>
     <string name="sound_recording_title_working">Opnemen</string>
     <string name="sound_last_title">Laatste opname</string>
+    <string name="sound_channel_title">Geluidsopname</string>
+    <string name="sound_channel_desc">Permanente notificatie tijdens het opnemen van geluid en een notificatie nadat dit voltooid is</string>
     <string name="screen_audio_message_on">Geluid van de microfoon wordt toegevoegd aan de video</string>
     <string name="screen_audio_message_off">Geluid van de microfoon wordt niet toegevoegd aan de video</string>
     <string name="screen_audio_message_disabled">Het is niet mogelijk deze instelling te wijzigen tijdens het opnemen van het scherm</string>
@@ -37,10 +39,14 @@
     <string name="screen_notification_message_done">Klaar om te delen</string>
     <string name="screen_recording_message">Scherm wordt opgenomen\u2026</string>
     <string name="screen_last_title">Laatste opname</string>
+    <string name="screen_last_message">Duur: %1$d seconden</string>
     <string name="screen_overlay_notif_title">Klaar voor opname</string>
     <string name="screen_overlay_notif_message">Tik op de opnameknop wanneer u wilt beginnen</string>
     <string name="screen_settings_title">Instellingen Schermrecorder</string>
+    <string name="screen_overlay_channel_title">Klaar om het scherm op te nemen</string>
+    <string name="screen_overlay_channel_desc">Notificatie die aangeeft wanneer schermopname klaar is om te beginnen</string>
     <string name="screen_channel_title">Scherm opnemen</string>
+    <string name="screen_channel_desc">Permanente notificatie tijdens schermopname en een notificatie nadat dit voltooid is</string>
     <string name="dialog_permissions_title">Machtigingen</string>
     <string name="dialog_permissions_mic">Recorder heeft toegang nodig tot de microfoon om geluid op te kunnen nemen</string>
     <string name="dialog_permissions_phone">Recorder heeft toegang nodig tot de telefoonstatus om te voorkomen dat deze app opneemt tijdens oproepen</string>

@@ -37,8 +37,9 @@
     <string name="screen_notification_title">Clàradair na sgrìn</string>
     <string name="screen_notification_message">Faid a’ video: %s</string>
     <string name="screen_notification_message_done">Deiseil ri cho-roinneadh</string>
-    <string name="screen_recording_message">Tha an sgrìn ’ga chlàradh…</string>
+    <string name="screen_recording_message">Tha an sgrìn ’ga clàradh\u2026</string>
     <string name="screen_last_title">An clàradh mu dheireadh</string>
+    <string name="screen_last_message">Faide: %1$d diog(an)</string>
     <string name="screen_overlay_notif_title">Deiseil gus a chlàradh</string>
     <string name="screen_overlay_notif_message">Brùth air a’ phutan “Clàraich” nuair a bhios tu ullamh</string>
     <string name="screen_settings_title">Roghainnean clàradair na sgrìn</string>

@@ -39,6 +39,7 @@
     <string name="screen_notification_message_done">共有する準備ができました</string>
     <string name="screen_recording_message">画面を録画中...</string>
     <string name="screen_last_title">最後の記録</string>
+    <string name="screen_last_message">経過時間: %1$d秒</string>
     <string name="screen_overlay_notif_title">録音準備OK</string>
     <string name="screen_overlay_notif_message">開始する準備ができたら録画ボタンを押してください</string>
     <string name="screen_settings_title">スクリーンレコード設定</string>

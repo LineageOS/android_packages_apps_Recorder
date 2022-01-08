@@ -21,7 +21,7 @@
     <string name="delete">Löschen</string>
     <string name="cancel">Abbrechen</string>
     <string name="delete_title">Aufnahme löschen</string>
-    <string name="delete_message">Sind Sie sicher, dass Sie %1$s löschen möchten? Dies kann nicht rückgängig gemacht werden</string>
+    <string name="delete_message">Bist du sicher, dass du %1$s löschen möchtest? Dies kann nicht rückgängig gemacht werden</string>
     <string name="sound_notification_title">Soundrekorder</string>
     <string name="sound_notification_message">Audiolänge: %1$s</string>
     <string name="sound_recording_title_working">Wird aufgenommen</string>
@@ -41,7 +41,7 @@
     <string name="screen_last_title">Letzte Aufnahme</string>
     <string name="screen_last_message">Dauer: %1$d Sekunden</string>
     <string name="screen_overlay_notif_title">Bereit zur Aufnahme</string>
-    <string name="screen_overlay_notif_message">Drücken Sie die Aufnahme-Schaltfläche, um die Aufnahme zu starten</string>
+    <string name="screen_overlay_notif_message">Drücke die Aufnahme-Schaltfläche, um die Aufnahme zu starten</string>
     <string name="screen_settings_title">Bildschirmaufnahmeeinstellungen</string>
     <string name="screen_overlay_channel_title">Bereit zur Aufnahme des Bildschirms</string>
     <string name="screen_overlay_channel_desc">Benachrichtigung anzeigen, wenn die Bildschirmaufnahme startbereit ist</string>
@@ -49,12 +49,12 @@
     <string name="screen_channel_desc">Dauerhafte Benachrichtigung bei der Bildschirmaufnahme und Benachrichtigung nach Abschluss der Aufnahme</string>
     <string name="dialog_permissions_title">Berechtigungen</string>
     <string name="dialog_permissions_mic">Rekorder benötigt Zugriff auf das Mikrofon, um Ton aufzunehmen</string>
-    <string name="dialog_permissions_phone">Rekorder benötigt Zugriff auf den Telefonstatus, um zu verhindern, dass diese App Ihre Anrufe aufzeichnet</string>
-    <string name="dialog_permissions_mic_phone">Rekorder benötigt Zugriff auf das Mikrofon, um Aufnahmen zu erstellen und Zugriff auf den Telefonstatus, um zu verhindern, dass diese App Aufzeichnungen erstellt, während Sie telefonieren</string>
+    <string name="dialog_permissions_phone">Rekorder benötigt Zugriff auf den Telefonstatus, um zu verhindern, dass diese App deine Anrufe aufzeichnet</string>
+    <string name="dialog_permissions_mic_phone">Rekorder benötigt Zugriff auf das Mikrofon, um Aufnahmen zu erstellen und Zugriff auf den Telefonstatus, um zu verhindern, dass diese App Aufzeichnungen erstellt, während du telefonierst</string>
     <string name="dialog_permissions_ask">Erneut nachfragen</string>
     <string name="dialog_permissions_dismiss">Verwerfen</string>
-    <string name="dialog_permissions_overlay">Rekorder benötigt die Berechtigung \"Über anderen Apps einblenden\", um den Bildschirm aufzuzeichnen. Lassen Sie die Berechtigung in den Einstellungen zu und kehren zu Rekorder zurück</string>
-    <string name="snack_permissions_no_permission">Erforderliche Berechtigungen wurden verweigert, aktivieren Sie diese in den Einstellungen, um mit der Aufnahme zu beginnen</string>
+    <string name="dialog_permissions_overlay">Rekorder benötigt die Berechtigung \"Über anderen Apps einblenden\", um den Bildschirm aufzuzeichnen. Lasse die Berechtigung in den Einstellungen zu und kehre zu Rekorder zurück</string>
+    <string name="snack_permissions_no_permission">Erforderliche Berechtigungen wurden verweigert, aktiviere diese in den Einstellungen, um mit der Aufnahme zu beginnen</string>
     <string name="main_screen_action">Bildschirm aufnehmen</string>
     <string name="main_sound_action">Ton aufnehmen</string>
 </resources>
