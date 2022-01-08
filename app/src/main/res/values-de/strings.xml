@@ -32,6 +32,7 @@
     <string name="discard">Verwerfen</string>
     <string name="record_again">Aufnahme wiederholen</string>
     <string name="confirm_result_title">Aufnahme verwenden?</string>
+    <string name="confirm_result_message">Möchtest du die letzte Aufnahme verwenden?</string>
     <string name="sound_notification_title">Soundrekorder</string>
     <string name="sound_notification_message">Audiolänge: %1$s</string>
     <string name="sound_recording_title_working">Wird aufgenommen</string>
@@ -58,4 +59,7 @@
     <string name="list_edit_confirm">Ändern</string>
     <string name="list_item_menu">Weitere Aktionen</string>
     <string name="delete_all_title">Alle löschen</string>
+    <string name="delete_all_message">Möchtest du wirklich alle Aufnahmen löschen? Dies kann nicht rückgängig gemacht werden</string>
+    <string name="delete_selected_title">Markierte löschen</string>
+    <string name="delete_selected_message">Möchtest du die ausgewählten Aufnahmen wirklich löschen? Dies kann nicht rückgängig gemacht werden</string>
 </resources>
