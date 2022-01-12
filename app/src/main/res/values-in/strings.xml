@@ -16,14 +16,23 @@
 <resources>
     <string name="app_name">Perekam</string>
     <string name="share">Bagikan</string>
+    <string name="share_selected">Bagikan yang dipilih</string>
     <string name="stop">Hentikan</string>
     <string name="play">Putar</string>
     <string name="pause">Jeda</string>
     <string name="resume">Lanjutkan</string>
     <string name="delete">Hapus</string>
+    <string name="delete_all">Hapus semua</string>
+    <string name="delete_selected">Hapus yang dipilih</string>
     <string name="cancel">Batal</string>
     <string name="rename">Ganti nama</string>
     <string name="delete_title">Menghapus rekaman</string>
+    <string name="delete_recording_message">Apakah Anda yakin ingin menghapus rekaman ini? Tindakan ini tidak dapat dibatalkan</string>
+    <string name="confirm">Konfirmasi</string>
+    <string name="discard">Buang</string>
+    <string name="record_again">Rekam ulang</string>
+    <string name="confirm_result_title">Gunakan rekaman?</string>
+    <string name="confirm_result_message">Apakah Anda ingin menggunakan rekaman terakhir?</string>
     <string name="sound_notification_title">Perekam Suara</string>
     <string name="sound_notification_message">Durasi audio: %1$s</string>
     <string name="sound_recording_title_working">Merekam</string>
@@ -47,4 +56,8 @@
     <string name="list_error_empty">Semua rekaman Anda akan muncul di sini</string>
     <string name="list_edit_confirm">Ubah</string>
     <string name="list_item_menu">Tindakan lainnya</string>
+    <string name="delete_all_title">Hapus semua</string>
+    <string name="delete_all_message">Anda yakin ingin menghapus semua rekaman? Tindakan ini tidak dapat dibatalkan</string>
+    <string name="delete_selected_title">Hapus yang dipilih</string>
+    <string name="delete_selected_message">Anda yakin ingin menghapus rekaman yang dipilih? Tindakan ini tidak dapat dibatalkan</string>
 </resources>
