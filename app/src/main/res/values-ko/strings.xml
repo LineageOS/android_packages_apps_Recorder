@@ -13,8 +13,22 @@
      See the License for the specific language governing permissions and
      limitations under the License.
 -->
+<!-- Copyright (c) 2017-2021 The LineageOS Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+         http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
 <resources>
-    <string name="app_name">녹음/녹화 도구</string>
+    <string name="app_name">녹음기</string>
     <string name="share">공유</string>
     <string name="share_selected">선택 항목 공유</string>
     <string name="stop">정지</string>
@@ -31,6 +45,8 @@
     <string name="confirm">확인</string>
     <string name="discard">저장 안 함</string>
     <string name="record_again">다시 녹음</string>
+    <string name="confirm_result_title">녹음을 사용할까요?</string>
+    <string name="confirm_result_message">마지막으로 녹음한 내용을 사용하시겠습니까?</string>
     <string name="sound_notification_title">소리 녹음기</string>
     <string name="sound_notification_message">오디오 길이: %1$s</string>
     <string name="sound_recording_title_working">녹음 중</string>
@@ -42,9 +58,9 @@
     <string name="settings_location_message">현재 위치를 녹음 태그에 기록</string>
     <string name="settings_quality_high">고품질로 녹음</string>
     <string name="dialog_permissions_title">권한</string>
-    <string name="dialog_permissions_mic">녹음/녹화 도구는 소리를 녹음하기 위해 마이크 사용 권한이 필요합니다.</string>
-    <string name="dialog_permissions_phone">녹음/녹화 도구는 통화 도중에 녹음되는 것을 방지하기 위해 전화 상태 접근 권한이 필요합니다.</string>
-    <string name="dialog_permissions_mic_phone">녹음/녹화 도구는 녹음한 파일을 저장하기 위한 저장소 사용 권한과 통화 도중에 녹음되는 것을 방지하기 위한 전화 상태 접근 권한이 필요합니다.</string>
+    <string name="dialog_permissions_mic">녹음기는 소리를 녹음하기 위해 마이크 사용 권한이 필요합니다.</string>
+    <string name="dialog_permissions_phone">녹음기는 통화 도중에 녹음되는 것을 방지하기 위해 전화 상태 접근 권한이 필요합니다.</string>
+    <string name="dialog_permissions_mic_phone">녹음기는 녹음한 파일을 저장하기 위한 저장소 사용 권한과 통화 도중에 녹음되는 것을 방지하기 위한 전화 상태 접근 권한이 필요합니다.</string>
     <string name="dialog_permissions_location">녹음에 자동으로 태그를 기록하여 정리를 돕기 위해 위치 권한이 필요합니다.</string>
     <string name="dialog_permissions_ask">다시 묻기</string>
     <string name="dialog_permissions_dismiss">다시 묻지 않기</string>
