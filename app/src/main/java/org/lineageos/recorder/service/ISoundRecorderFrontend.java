@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2021 The LineageOS Project
+ * Copyright (C) 2021-2022 The LineageOS Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,7 +15,9 @@
  */
 package org.lineageos.recorder.service;
 
-public interface IAudioVisualizer {
+public interface ISoundRecorderFrontend {
 
-    void setAmplitude(int amplitude);
+    void setVisualizerAmplitude(int amplitude);
+
+    void setTimeElapsed(long seconds);
 }

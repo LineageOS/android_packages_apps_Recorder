@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2021 The LineageOS Project
+ * Copyright (C) 2021-2022 The LineageOS Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -50,6 +50,7 @@ import org.lineageos.recorder.utils.AppPreferences;
 import org.lineageos.recorder.utils.LastRecordHelper;
 
 import java.io.IOException;
+import java.lang.ref.WeakReference;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.time.LocalDateTime;
@@ -84,12 +85,12 @@ public class SoundRecorderService extends Service {
     private SoundRecording mRecorder = null;
     private Path mRecordPath = null;
 
+    private WeakReference<ISoundRecorderFrontend> mFrontendRef = new WeakReference<>(null);
+
     private TimerTask mVisualizerTask;
-    @Nullable
-    private IAudioVisualizer mAudioVisualizer;
+    private TimerTask mElapsedTimeTask;
 
     private boolean mIsPaused;
-    private TimerTask mElapsedTimeTask;
     private final AtomicLong mElapsedTime = new AtomicLong();
     private final StringBuilder mSbRecycle = new StringBuilder();
 
@@ -150,8 +151,8 @@ public class SoundRecorderService extends Service {
         return super.onStartCommand(intent, flags, startId);
     }
 
-    public void setAudioListener(@Nullable IAudioVisualizer audioVisualizer) {
-        mAudioVisualizer = audioVisualizer;
+    public void setAudioListener(@Nullable ISoundRecorderFrontend frontend) {
+        mFrontendRef = new WeakReference<>(frontend);
     }
 
     private int startRecording(@Nullable String locationName) {
@@ -184,8 +185,14 @@ public class SoundRecorderService extends Service {
         }
 
         startTimers();
-        startForeground(NOTIFICATION_ID, createRecordingNotification());
+        startForeground(NOTIFICATION_ID, createRecordingNotification(0));
+
         mStatusManager.setStatus(UiStatus.RECORDING);
+        final ISoundRecorderFrontend frontend = mFrontendRef.get();
+        if (frontend != null) {
+            frontend.setTimeElapsed(0);
+        }
+
         return START_STICKY;
     }
 
@@ -233,8 +240,9 @@ public class SoundRecorderService extends Service {
             return START_NOT_STICKY;
         }
 
-        if (mAudioVisualizer != null) {
-            mAudioVisualizer.setAmplitude(0);
+        final ISoundRecorderFrontend frontend = mFrontendRef.get();
+        if (frontend != null) {
+            frontend.setVisualizerAmplitude(0);
         }
         stopTimers();
 
@@ -243,7 +251,8 @@ public class SoundRecorderService extends Service {
         }
 
         mIsPaused = true;
-        mNotificationManager.notify(NOTIFICATION_ID, createRecordingNotification());
+        mNotificationManager.notify(NOTIFICATION_ID,
+                createRecordingNotification(mElapsedTime.get()));
         mStatusManager.setStatus(UiStatus.PAUSED);
 
         return START_STICKY;
@@ -268,7 +277,8 @@ public class SoundRecorderService extends Service {
 
         startTimers();
         mIsPaused = false;
-        mNotificationManager.notify(NOTIFICATION_ID, createRecordingNotification());
+        mNotificationManager.notify(NOTIFICATION_ID,
+                createRecordingNotification(mElapsedTime.get()));
         mStatusManager.setStatus(UiStatus.RECORDING);
 
         return START_STICKY;
@@ -308,7 +318,7 @@ public class SoundRecorderService extends Service {
     }
 
     @Nullable
-    private Notification createRecordingNotification() {
+    private Notification createRecordingNotification(long elapsedTime) {
         if (mNotificationManager == null) {
             return null;
         }
@@ -320,7 +330,7 @@ public class SoundRecorderService extends Service {
                 new Intent(this, SoundRecorderService.class).setAction(ACTION_STOP),
                 PendingIntent.FLAG_IMMUTABLE);
 
-        String duration = DateUtils.formatElapsedTime(mSbRecycle, mElapsedTime.get());
+        String duration = DateUtils.formatElapsedTime(mSbRecycle, elapsedTime);
         NotificationCompat.Builder nb = new NotificationCompat.Builder(this, NOTIFICATION_CHANNEL)
                 .setOngoing(true)
                 .setContentTitle(getString(R.string.sound_notification_title))
@@ -405,8 +415,12 @@ public class SoundRecorderService extends Service {
         mElapsedTimeTask = new TimerTask() {
             @Override
             public void run() {
-                mElapsedTime.incrementAndGet();
-                Notification notification = createRecordingNotification();
+                final long newElapsedTime = mElapsedTime.incrementAndGet();
+                final ISoundRecorderFrontend frontend = mFrontendRef.get();
+                if (frontend != null) {
+                    frontend.setTimeElapsed(newElapsedTime);
+                }
+                Notification notification = createRecordingNotification(newElapsedTime);
                 mNotificationManager.notify(NOTIFICATION_ID, notification);
             }
         };
@@ -418,8 +432,9 @@ public class SoundRecorderService extends Service {
         mVisualizerTask = new TimerTask() {
             @Override
             public void run() {
-                if (mAudioVisualizer != null) {
-                    mAudioVisualizer.setAmplitude(mRecorder.getCurrentAmplitude());
+                final ISoundRecorderFrontend frontend = mFrontendRef.get();
+                if (frontend != null) {
+                    frontend.setVisualizerAmplitude(mRecorder.getCurrentAmplitude());
                 }
             }
         };
