@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2017-2021 The LineageOS Project
+ * Copyright (C) 2017-2022 The LineageOS Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -32,6 +32,7 @@ import android.os.Message;
 import android.os.Messenger;
 import android.os.RemoteException;
 import android.telephony.TelephonyManager;
+import android.text.format.DateUtils;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -60,6 +61,7 @@ public class RecorderActivity extends AppCompatActivity {
     private ImageView mPauseResume;
 
     private TextView mRecordingText;
+    private TextView mElapsedTimeText;
     private WaveFormView mRecordingVisualizer;
 
     private LocationHelper mLocationHelper;
@@ -93,6 +95,10 @@ public class RecorderActivity extends AppCompatActivity {
                     break;
                 case SoundRecorderService.MSG_SOUND_AMPLITUDE:
                     setVisualizerAmplitude(msg.arg1);
+                    break;
+                case SoundRecorderService.MSG_TIME_ELAPSED:
+                    // elapsed time is a long value split in two integer values
+                    setElapsedTime(((long) msg.arg1 << 32) | msg.arg2 & 0xffffffffL);
                     break;
                 default:
                     super.handleMessage(msg);
@@ -140,6 +146,7 @@ public class RecorderActivity extends AppCompatActivity {
         ImageView settings = findViewById(R.id.sound_settings);
 
         mRecordingText = findViewById(R.id.main_title);
+        mElapsedTimeText = findViewById(R.id.main_elapsed_time);
         mRecordingVisualizer = findViewById(R.id.main_recording_visualizer);
 
         mSoundFab.setOnClickListener(v -> toggleSoundRecorder());
@@ -213,6 +220,11 @@ public class RecorderActivity extends AppCompatActivity {
         mRecordingVisualizer.post(() -> mRecordingVisualizer.setAmplitude(amplitude));
     }
 
+    private void setElapsedTime(long seconds) {
+        mElapsedTimeText.post(() -> mElapsedTimeText.setText(
+                DateUtils.formatElapsedTime(seconds)));
+    }
+
     private void toggleAfterPermissionRequest() {
         doBindService();
         new Handler(Looper.getMainLooper()).postDelayed(this::toggleSoundRecorder, 500);
@@ -264,10 +276,12 @@ public class RecorderActivity extends AppCompatActivity {
         if (UiStatus.READY == status) {
             mRecordingText.setText(getString(R.string.main_sound_action));
             mSoundFab.setImageResource(R.drawable.ic_action_record);
-            mRecordingVisualizer.setVisibility(View.INVISIBLE);
+            mElapsedTimeText.setVisibility(View.GONE);
+            mRecordingVisualizer.setVisibility(View.GONE);
             mPauseResume.setVisibility(View.GONE);
         } else {
             mSoundFab.setImageResource(R.drawable.ic_action_stop);
+            mElapsedTimeText.setVisibility(View.VISIBLE);
             mRecordingVisualizer.setVisibility(View.VISIBLE);
             mRecordingVisualizer.setAmplitude(0);
             mPauseResume.setVisibility(View.VISIBLE);
