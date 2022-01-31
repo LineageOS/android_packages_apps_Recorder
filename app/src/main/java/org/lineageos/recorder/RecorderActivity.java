@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2017-2021 The LineageOS Project
+ * Copyright (C) 2017-2022 The LineageOS Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,6 +29,7 @@ import android.os.Handler;
 import android.os.IBinder;
 import android.os.Looper;
 import android.telephony.TelephonyManager;
+import android.text.format.DateUtils;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -41,6 +42,7 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
+import org.lineageos.recorder.service.ISoundRecorderFrontend;
 import org.lineageos.recorder.service.RecorderBinder;
 import org.lineageos.recorder.service.SoundRecorderService;
 import org.lineageos.recorder.status.StatusListener;
@@ -55,7 +57,8 @@ import org.lineageos.recorder.utils.OnBoardingHelper;
 import org.lineageos.recorder.utils.PermissionManager;
 import org.lineageos.recorder.utils.Utils;
 
-public class RecorderActivity extends AppCompatActivity implements StatusListener {
+public class RecorderActivity extends AppCompatActivity implements ISoundRecorderFrontend,
+        StatusListener {
     private ServiceConnection mConnection;
     private SoundRecorderService mSoundService;
 
@@ -63,6 +66,7 @@ public class RecorderActivity extends AppCompatActivity implements StatusListene
     private ImageView mPauseResume;
 
     private TextView mRecordingText;
+    private TextView mElapsedTimeText;
     private WaveFormView mRecordingVisualizer;
 
     private LocationHelper mLocationHelper;
@@ -72,6 +76,8 @@ public class RecorderActivity extends AppCompatActivity implements StatusListene
 
     private boolean mReturnAudio;
     private boolean mHasRecordedAudio;
+
+    private final StringBuilder mSbRecycle = new StringBuilder();
 
     private final BroadcastReceiver mTelephonyReceiver = new BroadcastReceiver() {
         @Override
@@ -97,6 +103,7 @@ public class RecorderActivity extends AppCompatActivity implements StatusListene
         ImageView settings = findViewById(R.id.sound_settings);
 
         mRecordingText = findViewById(R.id.main_title);
+        mElapsedTimeText = findViewById(R.id.main_elapsed_time);
         mRecordingVisualizer = findViewById(R.id.main_recording_visualizer);
 
         mSoundFab.setOnClickListener(v -> toggleSoundRecorder());
@@ -170,6 +177,17 @@ public class RecorderActivity extends AppCompatActivity implements StatusListene
     }
 
     @Override
+    public void setVisualizerAmplitude(int amplitude) {
+        mRecordingVisualizer.post(() -> mRecordingVisualizer.setAmplitude(amplitude));
+    }
+
+    @Override
+    public void setTimeElapsed(long seconds) {
+        mElapsedTimeText.post(() -> mElapsedTimeText.setText(
+                DateUtils.formatElapsedTime(mSbRecycle, seconds)));
+    }
+
+    @Override
     public void onStatusChanged(UiStatus newStatus) {
         applyStatus(newStatus);
 
@@ -230,13 +248,15 @@ public class RecorderActivity extends AppCompatActivity implements StatusListene
         if (UiStatus.READY.equals(status)) {
             mRecordingText.setText(getString(R.string.main_sound_action));
             mSoundFab.setImageResource(R.drawable.ic_action_record);
-            mRecordingVisualizer.setVisibility(View.INVISIBLE);
+            mElapsedTimeText.setVisibility(View.GONE);
+            mRecordingVisualizer.setVisibility(View.GONE);
             mPauseResume.setVisibility(View.GONE);
             if (mSoundService != null) {
                 mSoundService.setAudioListener(null);
             }
         } else {
             mSoundFab.setImageResource(R.drawable.ic_action_stop);
+            mElapsedTimeText.setVisibility(View.VISIBLE);
             mRecordingVisualizer.setVisibility(View.VISIBLE);
             mRecordingVisualizer.setAmplitude(0);
             mPauseResume.setVisibility(View.VISIBLE);
@@ -250,7 +270,7 @@ public class RecorderActivity extends AppCompatActivity implements StatusListene
                 mPauseResume.setContentDescription(getString(R.string.pause));
             }
             if (mSoundService != null) {
-                mSoundService.setAudioListener(mRecordingVisualizer);
+                mSoundService.setAudioListener(this);
             }
         }
     }
@@ -262,11 +282,12 @@ public class RecorderActivity extends AppCompatActivity implements StatusListene
             @Override
             public void onServiceConnected(ComponentName name, IBinder binder) {
                 mSoundService = ((RecorderBinder) binder).getService();
-                mSoundService.setAudioListener(mRecordingVisualizer);
+                mSoundService.setAudioListener(null);
             }
 
             @Override
             public void onServiceDisconnected(ComponentName name) {
+                mSoundService.setAudioListener(null);
                 mSoundService = null;
             }
         };

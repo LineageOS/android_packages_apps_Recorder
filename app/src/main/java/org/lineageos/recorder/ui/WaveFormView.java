@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2021 The LineageOS Project
+ * Copyright (C) 2021-2022 The LineageOS Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -26,9 +26,8 @@ import android.util.AttributeSet;
 import android.view.View;
 
 import org.lineageos.recorder.R;
-import org.lineageos.recorder.service.IAudioVisualizer;
 
-public class WaveFormView extends View implements IAudioVisualizer {
+public class WaveFormView extends View {
     private static final int DEFAULT_NUMBER_OF_WAVES = 5;
 
     private static final int DEFAULT_MAX_AUDIO_VALUE = 1500;
@@ -136,7 +135,6 @@ public class WaveFormView extends View implements IAudioVisualizer {
         invalidate();
     }
 
-    @Override
     public void setAmplitude(int amplitude) {
         synchronized (mAmpLock) {
             mAmplitude = Math.min(amplitude / mMaxAudioValue, mIdleAmplitude);
