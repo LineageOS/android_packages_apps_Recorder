@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2021 The LineageOS Project
+ * Copyright (C) 2021-2022 The LineageOS Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,6 +17,7 @@ package org.lineageos.recorder.list;
 
 import android.annotation.SuppressLint;
 import android.net.Uri;
+import android.text.format.DateUtils;
 import android.view.ContextThemeWrapper;
 import android.view.Gravity;
 import android.view.View;
@@ -35,7 +36,7 @@ import java.time.format.DateTimeFormatter;
 import java.util.Locale;
 
 public class RecordingItemViewHolder extends RecyclerView.ViewHolder {
-    private static final String SUMMARY_FORMAT = "%s - %02d:%02d";
+    private static final String SUMMARY_FORMAT = "%s - %s";
 
     private final DateTimeFormatter mDateFormat;
     private final ImageView mIconView;
@@ -64,11 +65,10 @@ public class RecordingItemViewHolder extends RecyclerView.ViewHolder {
                         @ListItemStatus int selection) {
         mUri = data.getUri();
         mTitleView.setText(data.getTitle());
-        long seconds = data.getDuration() / 1000;
-        long minutes = seconds / 60;
-        seconds -= (minutes * 60);
+        long duration = data.getDuration() / 1000;
         mSummaryView.setText(String.format(Locale.getDefault(), SUMMARY_FORMAT,
-                mDateFormat.format(data.getDateTime()), minutes, seconds));
+                mDateFormat.format(data.getDateTime()),
+                DateUtils.formatElapsedTime(duration)));
 
         switch (selection) {
             case ListItemStatus.DEFAULT:
