@@ -28,6 +28,9 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.IBinder;
 import android.os.Looper;
+import android.os.Message;
+import android.os.Messenger;
+import android.os.RemoteException;
 import android.telephony.TelephonyManager;
 import android.text.format.DateUtils;
 import android.view.View;
@@ -42,11 +45,7 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
-import org.lineageos.recorder.service.ISoundRecorderFrontend;
-import org.lineageos.recorder.service.RecorderBinder;
 import org.lineageos.recorder.service.SoundRecorderService;
-import org.lineageos.recorder.status.StatusListener;
-import org.lineageos.recorder.status.StatusManager;
 import org.lineageos.recorder.status.UiStatus;
 import org.lineageos.recorder.task.DeleteRecordingTask;
 import org.lineageos.recorder.task.TaskExecutor;
@@ -57,11 +56,7 @@ import org.lineageos.recorder.utils.OnBoardingHelper;
 import org.lineageos.recorder.utils.PermissionManager;
 import org.lineageos.recorder.utils.Utils;
 
-public class RecorderActivity extends AppCompatActivity implements ISoundRecorderFrontend,
-        StatusListener {
-    private ServiceConnection mConnection;
-    private SoundRecorderService mSoundService;
-
+public class RecorderActivity extends AppCompatActivity {
     private FloatingActionButton mSoundFab;
     private ImageView mPauseResume;
 
@@ -71,13 +66,15 @@ public class RecorderActivity extends AppCompatActivity implements ISoundRecorde
 
     private LocationHelper mLocationHelper;
     private PermissionManager mPermissionManager;
-    private StatusManager mStatusManager;
     private TaskExecutor mTaskExecutor;
 
     private boolean mReturnAudio;
     private boolean mHasRecordedAudio;
 
     private final StringBuilder mSbRecycle = new StringBuilder();
+
+    @UiStatus
+    private int mUiStatus = UiStatus.READY;
 
     private final BroadcastReceiver mTelephonyReceiver = new BroadcastReceiver() {
         @Override
@@ -90,6 +87,51 @@ public class RecorderActivity extends AppCompatActivity implements ISoundRecorde
             }
         }
     };
+
+    private final Messenger mMessenger = new Messenger(new Handler(Looper.getMainLooper()) {
+        @Override
+        public void handleMessage(@NonNull Message msg) {
+            switch (msg.what) {
+                case SoundRecorderService.MSG_UI_STATUS:
+                    setStatus(msg.arg1);
+                    break;
+                case SoundRecorderService.MSG_SOUND_AMPLITUDE:
+                    setVisualizerAmplitude(msg.arg1);
+                    break;
+                case SoundRecorderService.MSG_TIME_ELAPSED:
+                    // elapsed time is a long value split in two integer values
+                    setElapsedTime(((long) msg.arg1 << 32) | msg.arg2 & 0xffffffffL);
+                    break;
+                default:
+                    super.handleMessage(msg);
+                    break;
+            }
+        }
+    });
+    private final ServiceConnection mConnection = new ServiceConnection() {
+        @Override
+        public void onServiceConnected(ComponentName name, IBinder service) {
+            mService = new Messenger(service);
+
+            try {
+                final Message msg = Message.obtain(null,
+                        SoundRecorderService.MSG_REGISTER_CLIENT);
+                msg.replyTo = mMessenger;
+                mService.send(msg);
+            } catch (RemoteException e) {
+                // In this case the service has crashed before we could even
+                // do anything with it; we can count on soon being
+                // disconnected (and then reconnected if it can be restarted)
+                // so there is no need to do anything here.
+            }
+        }
+
+        @Override
+        public void onServiceDisconnected(ComponentName name) {
+            mService = null;
+        }
+    };
+    private Messenger mService;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstance) {
@@ -117,9 +159,6 @@ public class RecorderActivity extends AppCompatActivity implements ISoundRecorde
         mLocationHelper = new LocationHelper(this);
         mPermissionManager = new PermissionManager(this);
 
-        mStatusManager = StatusManager.getInstance(this);
-        mStatusManager.addListener(this);
-
         mTaskExecutor = new TaskExecutor();
         getLifecycle().addObserver(mTaskExecutor);
 
@@ -129,7 +168,7 @@ public class RecorderActivity extends AppCompatActivity implements ISoundRecorde
             settings.setVisibility(View.GONE);
         }
 
-        bindSoundRecService();
+        doBindService();
 
         OnBoardingHelper.onBoardList(this, soundList);
         OnBoardingHelper.onBoardSettings(this, settings);
@@ -137,10 +176,8 @@ public class RecorderActivity extends AppCompatActivity implements ISoundRecorde
 
     @Override
     public void onDestroy() {
-        if (mConnection != null) {
-            unbindService(mConnection);
-        }
         super.onDestroy();
+        doUnbindService();
     }
 
     @Override
@@ -157,15 +194,8 @@ public class RecorderActivity extends AppCompatActivity implements ISoundRecorde
     }
 
     @Override
-    protected void onResume() {
-        super.onResume();
-        applyStatus(mStatusManager.getStatus());
-    }
-
-    @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions,
                                            @NonNull int[] results) {
-
         super.onRequestPermissionsResult(requestCode, permissions, results);
         if (requestCode == PermissionManager.REQUEST_CODE) {
             if (mPermissionManager.hasEssentialPermissions()) {
@@ -176,20 +206,8 @@ public class RecorderActivity extends AppCompatActivity implements ISoundRecorde
         }
     }
 
-    @Override
-    public void setVisualizerAmplitude(int amplitude) {
-        mRecordingVisualizer.post(() -> mRecordingVisualizer.setAmplitude(amplitude));
-    }
-
-    @Override
-    public void setTimeElapsed(long seconds) {
-        mElapsedTimeText.post(() -> mElapsedTimeText.setText(
-                DateUtils.formatElapsedTime(mSbRecycle, seconds)));
-    }
-
-    @Override
-    public void onStatusChanged(UiStatus newStatus) {
-        applyStatus(newStatus);
+    private void setStatus(@UiStatus int status) {
+        applyUiStatus(status);
 
         if (mReturnAudio && mHasRecordedAudio) {
             Utils.cancelShareNotification(this);
@@ -197,8 +215,17 @@ public class RecorderActivity extends AppCompatActivity implements ISoundRecorde
         }
     }
 
+    private void setVisualizerAmplitude(int amplitude) {
+        mRecordingVisualizer.post(() -> mRecordingVisualizer.setAmplitude(amplitude));
+    }
+
+    private void setElapsedTime(long seconds) {
+        mElapsedTimeText.post(() -> mElapsedTimeText.setText(
+                DateUtils.formatElapsedTime(mSbRecycle, seconds)));
+    }
+
     private void toggleAfterPermissionRequest() {
-        bindSoundRecService();
+        doBindService();
         new Handler(Looper.getMainLooper()).postDelayed(this::toggleSoundRecorder, 500);
     }
 
@@ -207,60 +234,57 @@ public class RecorderActivity extends AppCompatActivity implements ISoundRecorde
             return;
         }
 
-        if (mSoundService == null) {
-            bindSoundRecService();
+        if (mConnection == null) {
+            doBindService();
             return;
         }
 
-        if (mStatusManager.isRecording()) {
-            // Stop
-            Intent stopIntent = new Intent(this, SoundRecorderService.class)
-                    .setAction(SoundRecorderService.ACTION_STOP);
-            startService(stopIntent);
-            mHasRecordedAudio = true;
-        } else {
+        if (mUiStatus == UiStatus.READY) {
             // Start
-            Intent startIntent = new Intent(this, SoundRecorderService.class)
+            startService(new Intent(this, SoundRecorderService.class)
                     .setAction(SoundRecorderService.ACTION_START)
-                    .putExtra(SoundRecorderService.EXTRA_LOCATION,
-                            mLocationHelper.getCurrentLocationName());
-            startService(startIntent);
+                    .putExtra(SoundRecorderService.EXTRA_FILE_NAME,
+                            mLocationHelper.getCurrentLocationName()));
+        } else {
+            // Stop
+            startService(new Intent(this, SoundRecorderService.class)
+                    .setAction(SoundRecorderService.ACTION_STOP));
+            mHasRecordedAudio = true;
         }
     }
 
     private void togglePause() {
-        if (!mStatusManager.isRecording()) {
-            return;
-        }
-
-        if (mStatusManager.isPaused()) {
-            Intent resumeIntent = new Intent(this, SoundRecorderService.class)
-                    .setAction(SoundRecorderService.ACTION_RESUME);
-            startService(resumeIntent);
-        } else {
-            Intent pauseIntent = new Intent(this, SoundRecorderService.class)
-                    .setAction(SoundRecorderService.ACTION_PAUSE);
-            startService(pauseIntent);
+        switch (mUiStatus) {
+            case UiStatus.RECORDING:
+                startService(new Intent(this, SoundRecorderService.class)
+                        .setAction(SoundRecorderService.ACTION_PAUSE));
+                break;
+            case UiStatus.PAUSED:
+                startService(new Intent(this, SoundRecorderService.class)
+                        .setAction(SoundRecorderService.ACTION_RESUME));
+                break;
+            case UiStatus.READY:
+                // Do nothing
+                break;
         }
     }
 
-    private void applyStatus(UiStatus status) {
-        if (UiStatus.READY.equals(status)) {
+    private void applyUiStatus(@UiStatus int status) {
+        mUiStatus = status;
+
+        if (UiStatus.READY == status) {
             mRecordingText.setText(getString(R.string.main_sound_action));
             mSoundFab.setImageResource(R.drawable.ic_action_record);
             mElapsedTimeText.setVisibility(View.GONE);
             mRecordingVisualizer.setVisibility(View.GONE);
             mPauseResume.setVisibility(View.GONE);
-            if (mSoundService != null) {
-                mSoundService.setAudioListener(null);
-            }
         } else {
             mSoundFab.setImageResource(R.drawable.ic_action_stop);
             mElapsedTimeText.setVisibility(View.VISIBLE);
             mRecordingVisualizer.setVisibility(View.VISIBLE);
             mRecordingVisualizer.setAmplitude(0);
             mPauseResume.setVisibility(View.VISIBLE);
-            if (UiStatus.PAUSED.equals(status)) {
+            if (UiStatus.PAUSED == status) {
                 mRecordingText.setText(getString(R.string.sound_recording_title_paused));
                 mPauseResume.setImageResource(R.drawable.ic_resume);
                 mPauseResume.setContentDescription(getString(R.string.resume));
@@ -269,40 +293,34 @@ public class RecorderActivity extends AppCompatActivity implements ISoundRecorde
                 mPauseResume.setImageResource(R.drawable.ic_pause);
                 mPauseResume.setContentDescription(getString(R.string.pause));
             }
-            if (mSoundService != null) {
-                mSoundService.setAudioListener(this);
-            }
         }
     }
 
-    private void setupConnection() {
-        mPermissionManager.requestEssentialPermissions();
-
-        mConnection = new ServiceConnection() {
-            @Override
-            public void onServiceConnected(ComponentName name, IBinder binder) {
-                mSoundService = ((RecorderBinder) binder).getService();
-                mSoundService.setAudioListener(null);
-            }
-
-            @Override
-            public void onServiceDisconnected(ComponentName name) {
-                mSoundService.setAudioListener(null);
-                mSoundService = null;
-            }
-        };
-    }
-
-    private void bindSoundRecService() {
-        if (mSoundService == null && mPermissionManager.hasEssentialPermissions()) {
-            setupConnection();
+    private void doBindService() {
+        if (mPermissionManager.hasEssentialPermissions()) {
             bindService(new Intent(this, SoundRecorderService.class),
                     mConnection, BIND_AUTO_CREATE);
         }
     }
 
+    private void doUnbindService() {
+        if (mService != null) {
+            try {
+                final Message msg = Message.obtain(null,
+                        SoundRecorderService.MSG_UNREGISTER_CLIENT);
+                msg.replyTo = mMessenger;
+                mService.send(msg);
+            } catch (RemoteException e) {
+                // There is nothing special we need to do if the service
+                // has crashed.
+            }
+        }
+        unbindService(mConnection);
+    }
+
     private void openSettings() {
-        Intent intent = new Intent(this, DialogActivity.class);
+        Intent intent = new Intent(this, DialogActivity.class)
+                .putExtra(DialogActivity.EXTRA_IS_RECORDING, mUiStatus != UiStatus.READY);
         startActivity(intent);
     }
 
