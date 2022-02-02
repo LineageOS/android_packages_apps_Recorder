@@ -54,11 +54,8 @@ import org.lineageos.recorder.utils.LastRecordHelper;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Locale;
 import java.util.Optional;
 import java.util.Timer;
 import java.util.TimerTask;
@@ -457,7 +454,7 @@ public class SoundRecorderService extends Service {
 
     private Notification createShareNotification(String uri) {
         Uri fileUri = Uri.parse(uri);
-        LastRecordHelper.setLastItem(this, uri);
+        mPreferences.setLastItemUri(uri);
         String mimeType = mRecorder.getMimeType();
 
         Intent intent = new Intent(this, ListActivity.class);
