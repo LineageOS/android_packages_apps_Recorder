@@ -56,7 +56,14 @@ import org.lineageos.recorder.utils.OnBoardingHelper;
 import org.lineageos.recorder.utils.PermissionManager;
 import org.lineageos.recorder.utils.Utils;
 
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.util.Locale;
+
 public class RecorderActivity extends AppCompatActivity {
+    private static final String FILE_NAME_BASE = "%1$s (%2$s)";
+    private static final String FILE_NAME_FALLBACK = "Sound record";
+
     private FloatingActionButton mSoundFab;
     private ImageView mPauseResume;
 
@@ -244,8 +251,7 @@ public class RecorderActivity extends AppCompatActivity {
             // Start
             startService(new Intent(this, SoundRecorderService.class)
                     .setAction(SoundRecorderService.ACTION_START)
-                    .putExtra(SoundRecorderService.EXTRA_FILE_NAME,
-                            mLocationHelper.getCurrentLocationName()));
+                    .putExtra(SoundRecorderService.EXTRA_FILE_NAME, getNewRecordFileName()));
         } else {
             // Stop
             startService(new Intent(this, SoundRecorderService.class)
@@ -367,5 +373,15 @@ public class RecorderActivity extends AppCompatActivity {
                 .setNeutralButton(R.string.record_again, (dialog, which) -> cancelResult(false))
                 .setCancelable(false)
                 .show();
+    }
+
+    private String getNewRecordFileName() {
+        final String tag = mLocationHelper.getCurrentLocationName()
+                .orElse(FILE_NAME_FALLBACK);
+        final DateTimeFormatter formatter = DateTimeFormatter.ofPattern(
+                getString(R.string.main_file_date_time_format),
+                Locale.getDefault());
+        return String.format(FILE_NAME_BASE, tag,
+                formatter.format(LocalDateTime.now())) + ".%1$s";
     }
 }

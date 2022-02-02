@@ -38,7 +38,6 @@ import android.text.format.DateUtils;
 import android.util.Log;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.core.app.NotificationCompat;
 import androidx.core.content.ContextCompat;
 
@@ -55,11 +54,8 @@ import org.lineageos.recorder.utils.PreferencesManager;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Locale;
 import java.util.Optional;
 import java.util.Timer;
 import java.util.TimerTask;
@@ -79,9 +75,6 @@ public class SoundRecorderService extends Service {
     public static final int MSG_TIME_ELAPSED = 4;
 
     public static final String EXTRA_FILE_NAME = "extra_filename";
-    private static final String FILE_NAME_BASE = "%1$s (%2$s).%3$s";
-    private static final String FILE_NAME_FALLBACK = "Sound record";
-    private static final String FILE_NAME_DATE_FORMAT = "yyyy-MM-dd HH:mm:ss";
 
     public static final int NOTIFICATION_ID = 60;
     private static final String NOTIFICATION_CHANNEL = "soundrecorder_notification_channel";
@@ -117,8 +110,6 @@ public class SoundRecorderService extends Service {
     private boolean mIsPaused;
     private long mElapsedTime;
 
-    private final DateTimeFormatter mDateFormat = DateTimeFormatter.ofPattern(
-            FILE_NAME_DATE_FORMAT, Locale.getDefault());
     private final BroadcastReceiver mShutdownReceiver = new BroadcastReceiver() {
         @Override
         public void onReceive(Context context, Intent intent) {
@@ -304,14 +295,10 @@ public class SoundRecorderService extends Service {
     }
 
     @NonNull
-    private Optional<Path> createNewAudioFile(@Nullable String suggestedName,
+    private Optional<Path> createNewAudioFile(@NonNull String fileName,
                                               @NonNull String extension) {
-        final String fileName = String.format(FILE_NAME_BASE,
-                suggestedName == null ? FILE_NAME_FALLBACK : suggestedName,
-                mDateFormat.format(LocalDateTime.now()),
-                extension);
         final Path recordingDir = getExternalFilesDir(Environment.DIRECTORY_RECORDINGS).toPath();
-        final Path path = recordingDir.resolve(fileName);
+        final Path path = recordingDir.resolve(String.format(fileName, extension));
         if (!Files.exists(recordingDir)) {
             try {
                 Files.createDirectories(recordingDir);
