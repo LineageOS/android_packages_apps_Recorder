@@ -429,7 +429,6 @@ public class SoundRecorderService extends Service {
         String duration = DateUtils.formatElapsedTime(elapsedTime);
         NotificationCompat.Builder nb = new NotificationCompat.Builder(this, NOTIFICATION_CHANNEL)
                 .setOngoing(true)
-                .setContentTitle(getString(R.string.sound_notification_title))
                 .setContentText(getString(R.string.sound_notification_message, duration))
                 .setSmallIcon(R.drawable.ic_notification_sound)
                 .setColor(ContextCompat.getColor(this, R.color.colorAccent))
@@ -440,12 +439,14 @@ public class SoundRecorderService extends Service {
                     new Intent(this, SoundRecorderService.class)
                             .setAction(ACTION_RESUME),
                     PendingIntent.FLAG_IMMUTABLE);
+            nb.setContentTitle(getString(R.string.sound_recording_title_paused));
             nb.addAction(R.drawable.ic_resume, getString(R.string.resume), resumePIntent);
         } else {
             PendingIntent pausePIntent = PendingIntent.getService(this, 0,
                     new Intent(this, SoundRecorderService.class)
                             .setAction(ACTION_PAUSE),
                     PendingIntent.FLAG_IMMUTABLE);
+            nb.setContentTitle(getString(R.string.sound_recording_title_working));
             nb.addAction(R.drawable.ic_pause, getString(R.string.pause), pausePIntent);
         }
         nb.addAction(R.drawable.ic_stop, getString(R.string.stop), stopPIntent);
