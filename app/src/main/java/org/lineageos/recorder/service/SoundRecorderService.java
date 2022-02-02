@@ -50,7 +50,7 @@ import org.lineageos.recorder.RecorderActivity;
 import org.lineageos.recorder.status.UiStatus;
 import org.lineageos.recorder.task.AddRecordingToContentProviderTask;
 import org.lineageos.recorder.task.TaskExecutor;
-import org.lineageos.recorder.utils.LastRecordHelper;
+import org.lineageos.recorder.utils.RecordIntentHelper;
 import org.lineageos.recorder.utils.PreferencesManager;
 
 import java.io.IOException;
@@ -478,20 +478,20 @@ public class SoundRecorderService extends Service {
 
     private Notification createShareNotification(String uri) {
         Uri fileUri = Uri.parse(uri);
-        LastRecordHelper.setLastItem(this, uri);
+        mPreferencesManager.setLastItemUri(uri);
         String mimeType = mRecorder.getMimeType();
 
         Intent intent = new Intent(this, ListActivity.class);
         PendingIntent pi = PendingIntent.getActivity(this, 0, intent,
                 PendingIntent.FLAG_IMMUTABLE);
         PendingIntent playPIntent = PendingIntent.getActivity(this, 0,
-                LastRecordHelper.getOpenIntent(fileUri, mimeType),
+                RecordIntentHelper.getOpenIntent(fileUri, mimeType),
                 PendingIntent.FLAG_CANCEL_CURRENT | PendingIntent.FLAG_IMMUTABLE);
         PendingIntent sharePIntent = PendingIntent.getActivity(this, 0,
-                LastRecordHelper.getShareIntent(fileUri, mimeType),
+                RecordIntentHelper.getShareIntent(fileUri, mimeType),
                 PendingIntent.FLAG_CANCEL_CURRENT | PendingIntent.FLAG_IMMUTABLE);
         PendingIntent deletePIntent = PendingIntent.getActivity(this, 0,
-                LastRecordHelper.getDeleteIntent(this),
+                RecordIntentHelper.getDeleteIntent(this),
                 PendingIntent.FLAG_CANCEL_CURRENT | PendingIntent.FLAG_IMMUTABLE);
 
         String duration = DateUtils.formatElapsedTime(mElapsedTime);
