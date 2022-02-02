@@ -50,10 +50,10 @@ import org.lineageos.recorder.status.UiStatus;
 import org.lineageos.recorder.task.DeleteRecordingTask;
 import org.lineageos.recorder.task.TaskExecutor;
 import org.lineageos.recorder.ui.WaveFormView;
-import org.lineageos.recorder.utils.LastRecordHelper;
 import org.lineageos.recorder.utils.LocationHelper;
 import org.lineageos.recorder.utils.OnBoardingHelper;
 import org.lineageos.recorder.utils.PermissionManager;
+import org.lineageos.recorder.utils.PreferencesManager;
 import org.lineageos.recorder.utils.Utils;
 
 import java.time.LocalDateTime;
@@ -73,6 +73,7 @@ public class RecorderActivity extends AppCompatActivity {
 
     private LocationHelper mLocationHelper;
     private PermissionManager mPermissionManager;
+    private PreferencesManager mPreferencesManager;
     private TaskExecutor mTaskExecutor;
 
     private boolean mReturnAudio;
@@ -165,6 +166,7 @@ public class RecorderActivity extends AppCompatActivity {
 
         mLocationHelper = new LocationHelper(this);
         mPermissionManager = new PermissionManager(this);
+        mPreferencesManager = new PreferencesManager(this);
 
         mTaskExecutor = new TaskExecutor();
         getLifecycle().addObserver(mTaskExecutor);
@@ -331,17 +333,17 @@ public class RecorderActivity extends AppCompatActivity {
     }
 
     private void confirmLastResult() {
-        Intent resultIntent = new Intent().setData(LastRecordHelper.getLastItemUri(this));
+        Intent resultIntent = new Intent().setData(mPreferencesManager.getLastItemUri());
         setResult(RESULT_OK, resultIntent);
         finish();
     }
 
     private void discardLastResult() {
-        final Uri uri = LastRecordHelper.getLastItemUri(this);
+        final Uri uri = mPreferencesManager.getLastItemUri();
         if (uri != null) {
             mTaskExecutor.runTask(new DeleteRecordingTask(getContentResolver(), uri), () -> {
                 Utils.cancelShareNotification(this);
-                LastRecordHelper.setLastItem(this, null);
+                mPreferencesManager.setLastItemUri(null);
             });
         }
         cancelResult(true);
