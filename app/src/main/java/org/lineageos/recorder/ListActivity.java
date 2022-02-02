@@ -47,7 +47,7 @@ import org.lineageos.recorder.task.DeleteRecordingTask;
 import org.lineageos.recorder.task.GetRecordingsTask;
 import org.lineageos.recorder.task.RenameRecordingTask;
 import org.lineageos.recorder.task.TaskExecutor;
-import org.lineageos.recorder.utils.LastRecordHelper;
+import org.lineageos.recorder.utils.RecordIntentHelper;
 import org.lineageos.recorder.utils.Utils;
 
 import java.util.ArrayList;
@@ -113,12 +113,12 @@ public class ListActivity extends AppCompatActivity implements RecordingListCall
 
     @Override
     public void onPlay(@NonNull Uri uri) {
-        startActivity(LastRecordHelper.getOpenIntent(uri, TYPE_AUDIO));
+        startActivity(RecordIntentHelper.getOpenIntent(uri, TYPE_AUDIO));
     }
 
     @Override
     public void onShare(@NonNull Uri uri) {
-        startActivity(LastRecordHelper.getShareIntent(uri, TYPE_AUDIO));
+        startActivity(RecordIntentHelper.getShareIntent(uri, TYPE_AUDIO));
     }
 
     @Override
@@ -265,7 +265,7 @@ public class ListActivity extends AppCompatActivity implements RecordingListCall
         final ArrayList<Uri> uris = selectedItems.stream()
                 .map(RecordingData::getUri)
                 .collect(Collectors.toCollection(ArrayList::new));
-        startActivity(LastRecordHelper.getShareIntents(uris, TYPE_AUDIO));
+        startActivity(RecordIntentHelper.getShareIntents(uris, TYPE_AUDIO));
     }
 
     private void deleteSelectedRecordings() {
