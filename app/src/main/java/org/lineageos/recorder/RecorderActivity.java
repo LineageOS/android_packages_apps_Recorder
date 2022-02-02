@@ -50,7 +50,7 @@ import org.lineageos.recorder.status.UiStatus;
 import org.lineageos.recorder.task.DeleteRecordingTask;
 import org.lineageos.recorder.task.TaskExecutor;
 import org.lineageos.recorder.ui.WaveFormView;
-import org.lineageos.recorder.utils.LastRecordHelper;
+import org.lineageos.recorder.utils.AppPreferences;
 import org.lineageos.recorder.utils.LocationHelper;
 import org.lineageos.recorder.utils.OnBoardingHelper;
 import org.lineageos.recorder.utils.PermissionManager;
@@ -72,6 +72,7 @@ public class RecorderActivity extends AppCompatActivity {
     private WaveFormView mRecordingVisualizer;
 
     private LocationHelper mLocationHelper;
+    private AppPreferences mPreferences;
     private PermissionManager mPermissionManager;
     private TaskExecutor mTaskExecutor;
 
@@ -164,6 +165,7 @@ public class RecorderActivity extends AppCompatActivity {
         Utils.setVerticalInsets(mainView);
 
         mLocationHelper = new LocationHelper(this);
+        mPreferences = AppPreferences.getInstance(this);
         mPermissionManager = new PermissionManager(this);
 
         mTaskExecutor = new TaskExecutor();
@@ -335,17 +337,17 @@ public class RecorderActivity extends AppCompatActivity {
     }
 
     private void confirmLastResult() {
-        Intent resultIntent = new Intent().setData(LastRecordHelper.getLastItemUri(this));
+        Intent resultIntent = new Intent().setData(mPreferences.getLastItemUri());
         setResult(RESULT_OK, resultIntent);
         finish();
     }
 
     private void discardLastResult() {
-        final Uri uri = LastRecordHelper.getLastItemUri(this);
+        final Uri uri = mPreferences.getLastItemUri();
         if (uri != null) {
             mTaskExecutor.runTask(new DeleteRecordingTask(getContentResolver(), uri), () -> {
                 Utils.cancelShareNotification(this);
-                LastRecordHelper.setLastItem(this, null);
+                mPreferences.setLastItemUri(null);
             });
         }
         cancelResult(true);

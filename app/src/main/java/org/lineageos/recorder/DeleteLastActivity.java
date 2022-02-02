@@ -24,7 +24,7 @@ import androidx.appcompat.app.AlertDialog;
 
 import org.lineageos.recorder.task.DeleteRecordingTask;
 import org.lineageos.recorder.task.TaskExecutor;
-import org.lineageos.recorder.utils.LastRecordHelper;
+import org.lineageos.recorder.utils.AppPreferences;
 import org.lineageos.recorder.utils.Utils;
 
 public class DeleteLastActivity extends ComponentActivity {
@@ -39,7 +39,9 @@ public class DeleteLastActivity extends ComponentActivity {
         mTaskExecutor = new TaskExecutor();
         getLifecycle().addObserver(mTaskExecutor);
 
-        final Uri uri = LastRecordHelper.getLastItemUri(this);
+        AppPreferences preferences = AppPreferences.getInstance(this);
+
+        final Uri uri = preferences.getLastItemUri();
         if (uri == null) {
             finish();
         } else {
@@ -50,7 +52,7 @@ public class DeleteLastActivity extends ComponentActivity {
                             new DeleteRecordingTask(getContentResolver(), uri), () -> {
                                 d.dismiss();
                                 Utils.cancelShareNotification(this);
-                                LastRecordHelper.setLastItem(this, null);
+                                preferences.setLastItemUri(null);
                             }))
                     .setNegativeButton(R.string.cancel, null)
                     .setOnDismissListener(d -> finish())

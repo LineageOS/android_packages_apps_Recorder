@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2017-2021 The LineageOS Project
+ * Copyright (C) 2017-2022 The LineageOS Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,8 +28,6 @@ import org.lineageos.recorder.DeleteLastActivity;
 import java.util.ArrayList;
 
 public final class LastRecordHelper {
-    private static final String PREFS = "preferences";
-    private static final String KEY_LAST_SOUND = "sound_last_path";
 
     private LastRecordHelper() {
     }
@@ -65,19 +63,5 @@ public final class LastRecordHelper {
     @NonNull
     public static Intent getDeleteIntent(Context context) {
         return new Intent(context, DeleteLastActivity.class);
-    }
-
-    public static void setLastItem(@NonNull Context context, String path) {
-        SharedPreferences prefs = context.getSharedPreferences(PREFS, 0);
-        prefs.edit()
-                .putString(KEY_LAST_SOUND, path)
-                .apply();
-    }
-
-    @Nullable
-    public static Uri getLastItemUri(Context context) {
-        SharedPreferences prefs = context.getSharedPreferences(PREFS, 0);
-        String uriStr = prefs.getString(KEY_LAST_SOUND, null);
-        return uriStr == null ? null : Uri.parse(uriStr);
     }
 }
