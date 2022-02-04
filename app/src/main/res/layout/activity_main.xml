@@ -81,7 +81,7 @@
         app:layout_constraintBottom_toBottomOf="@id/sound_fab"
         app:layout_constraintEnd_toStartOf="@id/sound_fab"
         app:layout_constraintTop_toTopOf="@id/sound_fab"
-        tools:src="@drawable/ic_pause"
+        tools:src="@drawable/avd_pause_to_play"
         tools:visibility="visible" />
 
     <ImageView
