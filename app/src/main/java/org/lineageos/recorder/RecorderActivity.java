@@ -23,6 +23,8 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.ServiceConnection;
+import android.graphics.drawable.AnimatedVectorDrawable;
+import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
@@ -42,6 +44,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.core.content.ContextCompat;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
@@ -292,14 +295,20 @@ public class RecorderActivity extends AppCompatActivity {
             mRecordingVisualizer.setVisibility(View.VISIBLE);
             mRecordingVisualizer.setAmplitude(0);
             mPauseResume.setVisibility(View.VISIBLE);
+            final Drawable prDrawable;
             if (UiStatus.PAUSED == status) {
                 mRecordingText.setText(getString(R.string.sound_recording_title_paused));
-                mPauseResume.setImageResource(R.drawable.ic_resume);
                 mPauseResume.setContentDescription(getString(R.string.resume));
+                prDrawable = ContextCompat.getDrawable(this, R.drawable.avd_play_to_pause);
             } else {
                 mRecordingText.setText(getString(R.string.sound_recording_title_working));
-                mPauseResume.setImageResource(R.drawable.ic_pause);
                 mPauseResume.setContentDescription(getString(R.string.pause));
+                prDrawable = ContextCompat.getDrawable(this, R.drawable.avd_pause_to_play);
+            }
+            mPauseResume.setTooltipText(mPauseResume.getContentDescription());
+            mPauseResume.setImageDrawable(prDrawable);
+            if (prDrawable instanceof AnimatedVectorDrawable) {
+                ((AnimatedVectorDrawable) prDrawable).start();
             }
         }
     }
