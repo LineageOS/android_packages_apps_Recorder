@@ -27,6 +27,8 @@
     <string name="sound_notification_message">Lydlængde: %1$s</string>
     <string name="sound_recording_title_working">Optager</string>
     <string name="sound_last_title">Sidste optagelse</string>
+    <string name="sound_channel_title">Lydoptagelse</string>
+    <string name="sound_channel_desc">Vedvarende notifikation ved optagelse af lyd og notifikation efter den er fuldført</string>
     <string name="screen_audio_message_on">Lyd fra mikrofonen vil blive inkluderet i videoen</string>
     <string name="screen_audio_message_off">Lyd fra mikrofonen vil ikke blive inkluderet i videoen</string>
     <string name="screen_audio_message_disabled">Det er ikke muligt at ændre denne indstilling, imens skærmen optages</string>

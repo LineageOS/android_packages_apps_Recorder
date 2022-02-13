@@ -14,7 +14,7 @@
      limitations under the License.
 -->
 <resources>
-    <string name="app_name">녹음/녹화 도구</string>
+    <string name="app_name">녹음기</string>
     <string name="share">공유</string>
     <string name="stop">정지</string>
     <string name="play">재생</string>
@@ -49,16 +49,16 @@
     <string name="screen_channel_title">화면 녹화</string>
     <string name="screen_channel_desc">화면 녹화 중 또는 녹화 완료 시 지속적으로 표시되는 알림</string>
     <string name="dialog_permissions_title">권한</string>
-    <string name="dialog_permissions_mic">녹음/녹화 도구는 소리를 녹음하기 위해 마이크 사용 권한이 필요합니다.</string>
-    <string name="dialog_permissions_storage">녹음/녹화 도구는 녹음한 파일을 저장하기 위해 저장소 사용 권한이 필요합니다.</string>
-    <string name="dialog_permissions_phone">녹음/녹화 도구는 통화 도중에 녹음되는 것을 방지하기 위해 전화 상태 접근 권한이 필요합니다.</string>
-    <string name="dialog_permissions_mic_storage">녹음/녹화 도구는 소리를 녹음하기 위한 마이크 사용 권한과 녹음한 파일을 저장하기 위한 저장소 사용 권한이 필요합니다.</string>
-    <string name="dialog_permissions_mic_phone">녹음/녹화 도구는 녹음한 파일을 저장하기 위한 저장소 사용 권한과 통화 도중에 녹음되는 것을 방지하기 위한 전화 상태 접근 권한이 필요합니다.</string>
-    <string name="dialog_permissions_storage_phone">녹음/녹화 도구는 녹음한 파일을 저장하기 위한 저장소 사용 권한과 통화 도중에 녹음되는 것을 방지하기 위한 전화 상태 접근 권한이 필요합니다.</string>
-    <string name="dialog_permissions_mic_storage_phone">녹음/녹화 도구는 소리를 녹음하기 위한 마이크 사용 권한, 녹음한 파일을 저장하기 위한 저장소 사용 권한과 통화 도중에 녹음되는 것을 방지하기 위한 전화 상태 접근 권한이 필요합니다.</string>
+    <string name="dialog_permissions_mic">녹음기는 소리를 녹음하기 위해 마이크 사용 권한이 필요합니다.</string>
+    <string name="dialog_permissions_storage">녹음기는 녹음한 파일을 저장하기 위해 저장소 사용 권한이 필요합니다.</string>
+    <string name="dialog_permissions_phone">녹음기는 통화 도중에 녹음되는 것을 방지하기 위해 전화 상태 접근 권한이 필요합니다.</string>
+    <string name="dialog_permissions_mic_storage">녹음기는 소리를 녹음하기 위한 마이크 사용 권한과 녹음한 파일을 저장하기 위한 저장소 사용 권한이 필요합니다.</string>
+    <string name="dialog_permissions_mic_phone">녹음기는 녹음한 파일을 저장하기 위한 저장소 사용 권한과 통화 도중에 녹음되는 것을 방지하기 위한 전화 상태 접근 권한이 필요합니다.</string>
+    <string name="dialog_permissions_storage_phone">녹음기는 녹음한 파일을 저장하기 위한 저장소 사용 권한과 통화 도중에 녹음되는 것을 방지하기 위한 전화 상태 접근 권한이 필요합니다.</string>
+    <string name="dialog_permissions_mic_storage_phone">녹음기는 소리를 녹음하기 위한 마이크 사용 권한, 녹음한 파일을 저장하기 위한 저장소 사용 권한과 통화 도중에 녹음되는 것을 방지하기 위한 전화 상태 접근 권한이 필요합니다.</string>
     <string name="dialog_permissions_ask">다시 묻기</string>
     <string name="dialog_permissions_dismiss">다시 묻지 않기</string>
-    <string name="dialog_permissions_overlay">녹음/녹화 도구는 화면을 녹화하기 위해 \"다른 앱 위에 그리기\" 권한이 필요합니다. 설정에서 권한을 허용하고 녹음/녹화 도구로 돌아오세요.</string>
+    <string name="dialog_permissions_overlay">녹음기는 화면을 녹화하기 위해 \"다른 앱 위에 그리기\" 권한이 필요합니다. 설정에서 권한을 허용하고 녹음기로 돌아오세요.</string>
     <string name="snack_permissions_no_permission">필요한 권한이 거부되었습니다. 설정 앱에서 권한을 허용한 다음 녹음/녹화를 시작하세요.</string>
     <string name="main_screen_action">화면 녹화</string>
     <string name="main_sound_action">소리 녹음</string>
