@@ -16,19 +16,36 @@
 <resources>
     <string name="app_name">บันทึกเสียง</string>
     <string name="share">แชร์</string>
+    <string name="share_selected">แชร์รายการที่เลือก</string>
     <string name="stop">หยุด</string>
     <string name="play">เล่น</string>
+    <string name="pause">หยุดชั่วคราว</string>
+    <string name="resume">ดำเนินการต่อ</string>
     <string name="delete">ลบ</string>
+    <string name="delete_all">ลบทั้งหมด</string>
+    <string name="delete_selected">ลบที่เลือกไว้</string>
     <string name="cancel">ยกเลิก</string>
+    <string name="rename">เปลี่ยนชื่อ</string>
     <string name="delete_title">การลบบันทึก</string>
+    <string name="confirm">ยืนยัน</string>
+    <string name="discard">ละทิ้ง</string>
+    <string name="record_again">บันทึกเสียงใหม่</string>
     <string name="sound_notification_title">บันทึกเสียง</string>
     <string name="sound_notification_message">ความยาวเสียง: %1$s</string>
     <string name="sound_recording_title_working">การบันทึก</string>
+    <string name="sound_recording_title_paused">หยุดชั่วคราว</string>
     <string name="sound_last_title">บันทึกล่าสุด</string>
     <string name="sound_channel_title">บันทึกเสียง</string>
     <string name="sound_channel_desc">การแจ้งเตือนถาวรเมื่อบันทึกเสียงและการแจ้งเตือนหลังจากเสร็จสิ้น</string>
+    <string name="settings_title">การตั้งค่า</string>
     <string name="dialog_permissions_title">การอนุญาต</string>
+    <string name="dialog_permissions_mic">บันทึกเสียงต้องเข้าถึงไมโครโฟนเพื่อให้บันทึกเสียงได้</string>
     <string name="dialog_permissions_ask">ถามอีกครั้ง</string>
     <string name="dialog_permissions_dismiss">ยกเลิก</string>
     <string name="main_sound_action">บันทึกเสียง</string>
+    <string name="list_title">การบันทึกของฉัน</string>
+    <string name="list_edit_title">แก้ไขชื่อการบันทึก</string>
+    <string name="list_item_menu">ดำเนินการเพิ่มเติม</string>
+    <string name="delete_all_title">ลบทั้งหมด</string>
+    <string name="delete_selected_title">ลบที่เลือกไว้</string>
 </resources>
