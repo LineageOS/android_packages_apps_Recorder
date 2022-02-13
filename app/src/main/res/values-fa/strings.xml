@@ -14,8 +14,5 @@
      limitations under the License.
 -->
 <resources>
-    <string name="cancel">Encaboxar</string>
-    <string name="date_format">%1$s-%2$s-%3$s %4$s:%5$s</string>
-    <string name="screen_audio_warning_button_ask">Pidir</string>
-    <string name="dialog_permissions_title">Permisos</string>
+    <string name="app_name">ضبط کننده</string>
 </resources>
