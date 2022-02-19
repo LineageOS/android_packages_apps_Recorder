@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "24dc4494_73d0d999",
+        "filename": "build.gradle",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2022-02-19T15:23:29Z",
+      "side": 1,
+      "message": "no need to do this here, since you are updating it in a separate patch anyway: https://review.lineageos.org/c/LineageOS/android_packages_apps_Recorder/+/324709/1",
+      "range": {
+        "startLine": 9,
+        "startChar": 8,
+        "endLine": 9,
+        "endChar": 56
+      },
+      "revId": "3cf8afe548c431494e8d6db73309b517d9fca9ed",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
