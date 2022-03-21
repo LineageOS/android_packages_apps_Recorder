@@ -1,0 +1,67 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ba5f2e54_68de5995",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2022-03-21T22:00:40Z",
+      "side": 1,
+      "message": "I honestly don\u0027t like this at all.\nLifecycle should be tied to each context.\n\nI\u0027d make a normal ViewModel/Observer in each activity\nthen use Broadcasts and/or ServiceConnection to talk with the service passing the required data\n\nThe service will always be running, and _should_ now handle all the \"set status\" so that we have a single source of truth about the information",
+      "revId": "51e7ed093960dbcb5ed6c0061090314cbe2d359e",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "83b8749d_023813b0",
+        "filename": "app/src/main/java/org/lineageos/recorder/status/StatusManager.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2022-03-21T22:00:40Z",
+      "side": 1,
+      "message": "I need to wrap my head around this.\nUsually you need an observer for activity/fragment, but you\u0027re using a shared observer across 2 contexts.",
+      "range": {
+        "startLine": 46,
+        "startChar": 0,
+        "endLine": 57,
+        "endChar": 0
+      },
+      "revId": "51e7ed093960dbcb5ed6c0061090314cbe2d359e",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "998f42f2_57dadaed",
+        "filename": "app/src/main/java/org/lineageos/recorder/status/StatusManager.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 105,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2022-03-21T22:00:40Z",
+      "side": 1,
+      "message": "I understand what you\u0027re doing, but please do that inside the class, not inside an abstraction of the manager.\n\ngetLifecycle().addObserver(new StatusManager(this)) in the activity\n\nThen on each class you override onDestroy with the proper OnLifecycleEvent tag, not here, I don\u0027t think the annotation processor is _that_ good",
+      "range": {
+        "startLine": 95,
+        "startChar": 0,
+        "endLine": 105,
+        "endChar": 4
+      },
+      "revId": "51e7ed093960dbcb5ed6c0061090314cbe2d359e",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
