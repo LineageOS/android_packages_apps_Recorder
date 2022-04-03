@@ -14,7 +14,6 @@
      limitations under the License.
 -->
 <resources>
-    <string name="app_name">Grabadora</string>
     <string name="share">Compartir</string>
     <string name="share_selected">Compartir lo esbillao</string>
     <string name="stop">Parar</string>
@@ -26,32 +25,21 @@
     <string name="delete_selected">Desaniciar lo esbillao</string>
     <string name="cancel">Encaboxar</string>
     <string name="rename">Renomar</string>
-    <string name="delete_title">Desaniciando grabación</string>
     <string name="delete_recording_message">¿De xuru que quies desaniciar esta grabación? Esta aición nun se pue desfacer</string>
     <string name="confirm">Confirmar</string>
     <string name="discard">Escartar</string>
     <string name="record_again">Volver grabar</string>
     <string name="confirm_result_title">¿Quies usar la grabación?</string>
     <string name="confirm_result_message">¿Quies usar la última grabación?</string>
-    <string name="sound_notification_title">Grabadora de soníu</string>
-    <string name="sound_notification_message">Duración d\'audiu: %1$s</string>
-    <string name="sound_recording_title_working">Grabando</string>
     <string name="sound_recording_title_paused">En posa</string>
-    <string name="sound_last_title">Grabación cabera</string>
-    <string name="sound_channel_title">Grabación del soníu</string>
     <string name="settings_title">Axustes</string>
     <string name="settings_location_message">Etiquetar les grabaciones cola to posición actual</string>
     <string name="settings_quality_high">Grabar en calidá alta</string>
     <string name="dialog_permissions_title">Permisos</string>
-    <string name="dialog_permissions_mic">Grabadora precisa\'l permisu del micrófonu pa grabar audiu</string>
-    <string name="dialog_permissions_phone">Grabadora precisa\'l permisu del estáu del teléfonu pa evitar qu\'esta aplicación grabe entrín teas llamando</string>
-    <string name="dialog_permissions_mic_phone">Grabadora precisa\'l permisu\'l micrófonu pa grabar audiu y l\'accesu al estáu del teléfonu pa evitar qu\'esta aplicación grabe entrín teas llamando</string>
-    <string name="dialog_permissions_location">Grabadora precisa\'l permisu d\'allugamientu pa etiquetar automáticamente les grabaciones y ayudate a organizales</string>
-    <string name="dialog_permissions_ask">Entrugar de nueves</string>
+    <string name="dialog_permissions_location">«Grabadora» ha tener el permisu d\'allugamientu pa etiquetar automáticamente les grabaciones y ayudate a organizales</string>
+    <string name="dialog_permissions_ask">Volver pidir</string>
     <string name="dialog_permissions_dismiss">Escartar</string>
-    <string name="snack_permissions_no_permission">Ñegáronse permisos riquíos, habilítalos dende Axustes pa entamar a grabar</string>
     <string name="snack_permissions_no_permission_location">Negóse\'l permisu d\'allugamientu, concédelu n\'Axustes pa etiquetar les grabaciones</string>
-    <string name="main_sound_action">Grabar el soníu</string>
     <string name="list_title">Les mios grabaciones</string>
     <string name="list_error_empty">Equí apaecen toles grabaciones</string>
     <string name="list_edit_title">Edición del nome d\'una grabación</string>

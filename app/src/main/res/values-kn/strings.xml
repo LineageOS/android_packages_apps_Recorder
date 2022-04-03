@@ -14,6 +14,13 @@
      limitations under the License.
 -->
 <resources>
+    <string name="delete">ಅಳಿಸು</string>
+    <string name="cancel">ರದ್ದು</string>
+    <string name="delete_title">ದಾಖಲೆ ಅಳಿಸಲಾಗುತ್ತಿದೆ</string>
+    <string name="sound_notification_message">ಶ್ರಾವ್ಯಾವಧಿ: %1$s</string>
+    <string name="sound_last_title">ಕೊನೆಯ ಧ್ವನಿಮುದ್ರಣ</string>
     <string name="sound_channel_title">ಧ್ವನಿಮುದ್ರಣ</string>
     <string name="sound_channel_desc">ಧ್ವನಿಮುದ್ರಿಸುವಾಗ ನಿರಂತರ ಸೂಚನೆ ಮತ್ತು ಅಂತ್ಯವಾದಾಗ ಸೂಚನೆ</string>
+    <string name="dialog_permissions_ask">ಮತ್ತೆ ಕೇಳು</string>
+    <string name="dialog_permissions_dismiss">ವಜಾಮಾಡು</string>
 </resources>
