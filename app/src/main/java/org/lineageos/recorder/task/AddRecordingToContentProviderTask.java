@@ -36,7 +36,7 @@ public final class AddRecordingToContentProviderTask implements Callable<Optiona
     private static final String TAG = "AddRecordingToContentProviderTask";
     private static final String ARTIST = "Recorder";
     private static final String ALBUM = "Sound records";
-    private static final String PATH = "Music/" + ALBUM;
+    private static final String PATH = "Recordings";
 
     @Nullable
     private final ContentResolver cr;
