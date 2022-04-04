@@ -51,6 +51,24 @@
       "message": "Will be: /sdcard/Recordings/SoundRecords\nAlso you need to transfer the dialer records to the same folder.\nWill be: /sdcard/Recordings/CallRecordings\nEverything is beautiful and crisp.\n\nIn this case, the Recordings folder is the root folder for storing records. You don\u0027t have to throw everything in there. Let\u0027s do it right. ",
       "revId": "970a442fdf511ce3221ce25a48a42f48e1ee644d",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "25415042_e7ff8f5a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 21651
+      },
+      "writtenOn": "2022-04-04T17:01:59Z",
+      "side": 1,
+      "message": "Makes sense.\nIf you have a change for dialer, why wont you upload it?",
+      "parentUuid": "efe01542_54846f7b",
+      "revId": "970a442fdf511ce3221ce25a48a42f48e1ee644d",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
