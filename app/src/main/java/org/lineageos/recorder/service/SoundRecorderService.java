@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2021 The LineageOS Project
+ * Copyright (C) 2021-2022 The LineageOS Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -65,7 +65,7 @@ public class SoundRecorderService extends Service {
     public static final String ACTION_RESUME = BuildConfig.APPLICATION_ID + ".service.RESUME";
 
     public static final String EXTRA_LOCATION = "extra_filename";
-    private static final String FILE_NAME_BASE = "SoundRecords/%1$s (%2$s).%3$s";
+    private static final String FILE_NAME_BASE = "%1$s (%2$s).%3$s";
     private static final String FILE_NAME_LOCATION_FALLBACK = "Sound record";
     private static final String FILE_NAME_DATE_FORMAT = "yyyy-MM-dd HH:mm:ss";
 
@@ -374,7 +374,7 @@ public class SoundRecorderService extends Service {
                 locationName == null ? FILE_NAME_LOCATION_FALLBACK : locationName,
                 mDateFormat.format(new Date()),
                 extension);
-        File file = new File(getExternalFilesDir(Environment.DIRECTORY_MUSIC), fileName);
+        File file = new File(getExternalFilesDir(Environment.DIRECTORY_RECORDINGS), fileName);
         File recordingDir = file.getParentFile();
         if (recordingDir != null && !recordingDir.exists()) {
             //noinspection ResultOfMethodCallIgnored
