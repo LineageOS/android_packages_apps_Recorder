@@ -69,6 +69,23 @@
       "parentUuid": "efe01542_54846f7b",
       "revId": "970a442fdf511ce3221ce25a48a42f48e1ee644d",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "abd32d18_320892a2",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 9760
+      },
+      "writtenOn": "2022-04-04T17:06:35Z",
+      "side": 1,
+      "message": "The question is rhetorical.\n\nWhy did you see my Recorder, but didn \u0027t see Dialer?\nhttps://github.com/ShevT/android_packages_apps_Dialer/commit/d5ee9452fd763a5e34e5638f82ac1c0c6fc45318",
+      "revId": "970a442fdf511ce3221ce25a48a42f48e1ee644d",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
