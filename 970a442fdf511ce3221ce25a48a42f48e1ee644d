@@ -104,6 +104,23 @@
       "parentUuid": "abd32d18_320892a2",
       "revId": "970a442fdf511ce3221ce25a48a42f48e1ee644d",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0c72f3b2_7c0e8bee",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 9760
+      },
+      "writtenOn": "2022-04-04T17:10:42Z",
+      "side": 1,
+      "message": "Good. Let\u0027s we will consider that you came up with the idea to move it :)\n\nPlease also make a patch on the dialer.",
+      "revId": "970a442fdf511ce3221ce25a48a42f48e1ee644d",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
