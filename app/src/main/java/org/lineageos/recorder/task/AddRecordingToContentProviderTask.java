@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2021 The LineageOS Project
+ * Copyright (C) 2021-2022 The LineageOS Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -36,7 +36,7 @@ public final class AddRecordingToContentProviderTask implements Callable<Optiona
     private static final String TAG = "AddRecordingToContentProviderTask";
     private static final String ARTIST = "Recorder";
     private static final String ALBUM = "Sound records";
-    private static final String PATH = "Music/" + ALBUM;
+    private static final String PATH = "Recordings";
 
     @Nullable
     private final ContentResolver cr;
