@@ -121,6 +121,24 @@
       "message": "Good. Let\u0027s we will consider that you came up with the idea to move it :)\n\nPlease also make a patch on the dialer.",
       "revId": "970a442fdf511ce3221ce25a48a42f48e1ee644d",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "cf901feb_f6da4f21",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 21651
+      },
+      "writtenOn": "2022-04-12T12:03:27Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9bb9863b_6e525a73",
+      "revId": "970a442fdf511ce3221ce25a48a42f48e1ee644d",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
