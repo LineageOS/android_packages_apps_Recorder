@@ -27,6 +27,7 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.pm.PackageManager;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Environment;
 import android.os.Handler;
 import android.os.IBinder;
@@ -79,6 +80,7 @@ public class SoundRecorderService extends Service {
     public static final int MSG_TIME_ELAPSED = 4;
 
     public static final String EXTRA_FILE_NAME = "extra_filename";
+    private static final String LEGACY_MUSIC_DIR = "Sound records";
 
     public static final int NOTIFICATION_ID = 60;
     private static final String NOTIFICATION_CHANNEL = "soundrecorder_notification_channel";
@@ -301,7 +303,13 @@ public class SoundRecorderService extends Service {
     @NonNull
     private Optional<Path> createNewAudioFile(@NonNull String fileName,
                                               @NonNull String extension) {
-        final Path recordingDir = getExternalFilesDir(Environment.DIRECTORY_RECORDINGS).toPath();
+        final Path recordingDir;
+        if (Build.VERSION.SDK_INT >= 31) {
+            recordingDir = getExternalFilesDir(Environment.DIRECTORY_RECORDINGS).toPath();
+        } else {
+            recordingDir = getExternalFilesDir(Environment.DIRECTORY_MUSIC).toPath()
+                    .resolve(LEGACY_MUSIC_DIR);
+        }
         final Path path = recordingDir.resolve(String.format(fileName, extension));
         if (!Files.exists(recordingDir)) {
             try {

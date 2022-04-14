@@ -18,6 +18,7 @@ package org.lineageos.recorder.task;
 import android.content.ContentResolver;
 import android.content.ContentValues;
 import android.net.Uri;
+import android.os.Build;
 import android.os.ParcelFileDescriptor;
 import android.provider.MediaStore;
 import android.util.Log;
@@ -37,6 +38,7 @@ public final class AddRecordingToContentProviderTask implements Callable<Optiona
     private static final String ARTIST = "Recorder";
     private static final String ALBUM = "Sound records";
     private static final String PATH = "Recordings/" + ALBUM;
+    private static final String PATH_LEGACY = "Music/" + ALBUM;
 
     @Nullable
     private final ContentResolver cr;
@@ -99,7 +101,8 @@ public final class AddRecordingToContentProviderTask implements Callable<Optiona
         values.put(MediaStore.Audio.Media.ARTIST, ARTIST);
         values.put(MediaStore.Audio.Media.ALBUM, ALBUM);
         values.put(MediaStore.Audio.Media.DATE_ADDED, System.currentTimeMillis() / 1000L);
-        values.put(MediaStore.Audio.Media.RELATIVE_PATH, PATH);
+        values.put(MediaStore.Audio.Media.RELATIVE_PATH,
+                Build.VERSION.SDK_INT >= 31 ? PATH : PATH_LEGACY);
         values.put(MediaStore.Audio.Media.IS_PENDING, 1);
         return values;
     }
