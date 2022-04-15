@@ -48,6 +48,30 @@
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "2df266bd_ac739264",
+        "filename": "app/src/main/java/org/lineageos/recorder/service/SoundRecorderService.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2022-04-15T10:02:09Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "390aacd4_672096c5",
+      "range": {
+        "startLine": 97,
+        "startChar": 0,
+        "endLine": 97,
+        "endChar": 41
+      },
+      "revId": "13517a622592cf2ef4aaa2fbcd5007267c08caf3",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "49833104_e9b8b561",
@@ -71,6 +95,30 @@
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "b746b5a3_cf346f6f",
+        "filename": "app/src/main/java/org/lineageos/recorder/service/SoundRecorderService.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 153,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2022-04-15T10:02:09Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "49833104_e9b8b561",
+      "range": {
+        "startLine": 153,
+        "startChar": 0,
+        "endLine": 153,
+        "endChar": 25
+      },
+      "revId": "13517a622592cf2ef4aaa2fbcd5007267c08caf3",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "3e8bc90d_841e09ed",
@@ -84,6 +132,24 @@
       "writtenOn": "2022-04-15T08:49:05Z",
       "side": 1,
       "message": "can drop the else statement entirely",
+      "revId": "13517a622592cf2ef4aaa2fbcd5007267c08caf3",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5697e593_85165ce2",
+        "filename": "app/src/main/java/org/lineageos/recorder/service/SoundRecorderService.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 162,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2022-04-15T10:02:09Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3e8bc90d_841e09ed",
       "revId": "13517a622592cf2ef4aaa2fbcd5007267c08caf3",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     },
@@ -168,6 +234,30 @@
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "d88e01cb_3ac234c8",
+        "filename": "app/src/main/java/org/lineageos/recorder/service/SoundRecorderService.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 290,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2022-04-15T10:02:09Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e6c79e4b_8dd83394",
+      "range": {
+        "startLine": 290,
+        "startChar": 0,
+        "endLine": 290,
+        "endChar": 29
+      },
+      "revId": "13517a622592cf2ef4aaa2fbcd5007267c08caf3",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "1b59e368_e747c949",
@@ -191,6 +281,30 @@
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "29994224_abd6f9d7",
+        "filename": "app/src/main/java/org/lineageos/recorder/service/SoundRecorderService.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 300,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2022-04-15T10:02:09Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1b59e368_e747c949",
+      "range": {
+        "startLine": 300,
+        "startChar": 8,
+        "endLine": 300,
+        "endChar": 29
+      },
+      "revId": "13517a622592cf2ef4aaa2fbcd5007267c08caf3",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "4a507e4e_066d02df",
@@ -204,6 +318,24 @@
       "writtenOn": "2022-04-15T08:08:09Z",
       "side": 1,
       "message": "can use obtainMessage directly",
+      "revId": "13517a622592cf2ef4aaa2fbcd5007267c08caf3",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f0a6c75b_098cd3a2",
+        "filename": "app/src/main/java/org/lineageos/recorder/service/SoundRecorderService.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 404,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2022-04-15T10:02:09Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4a507e4e_066d02df",
       "revId": "13517a622592cf2ef4aaa2fbcd5007267c08caf3",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
