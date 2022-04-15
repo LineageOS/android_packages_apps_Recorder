@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4a507e4e_066d02df",
+        "filename": "app/src/main/java/org/lineageos/recorder/service/SoundRecorderService.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 404,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2022-04-15T08:08:09Z",
+      "side": 1,
+      "message": "can use obtainMessage directly",
+      "revId": "13517a622592cf2ef4aaa2fbcd5007267c08caf3",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
