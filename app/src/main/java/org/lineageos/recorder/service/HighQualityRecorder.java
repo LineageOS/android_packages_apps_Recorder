@@ -24,14 +24,12 @@ import android.util.Log;
 import androidx.annotation.RequiresPermission;
 
 import org.lineageos.recorder.utils.PcmConverter;
-import org.lineageos.recorder.utils.Utils;
 
 import java.io.BufferedOutputStream;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.util.concurrent.Semaphore;
 import java.util.concurrent.atomic.AtomicBoolean;
 
 public class HighQualityRecorder implements SoundRecording {
@@ -47,10 +45,9 @@ public class HighQualityRecorder implements SoundRecording {
     private AudioRecord mRecord;
     private File mFile;
 
-    private volatile byte[] mData;
+    private byte[] mData;
     private Thread mThread;
     private final AtomicBoolean mIsRecording = new AtomicBoolean(false);
-    private final Semaphore mPauseSemaphore = new Semaphore(1);
 
     @Override
     @RequiresPermission(Manifest.permission.RECORD_AUDIO)
@@ -74,21 +71,15 @@ public class HighQualityRecorder implements SoundRecording {
         }
 
         mIsRecording.set(false);
+
         try {
-            mThread.join();
+            mThread.join(1000);
         } catch (InterruptedException e) {
-            Log.e(TAG, "Interrupted thread", e);
+            // Wait at most 1 second, if we fail save the current data
+        } finally {
+            PcmConverter.convertToWave(mFile, BUFFER_SIZE);
         }
 
-        // needed to prevent app crash when starting and stopping too fast
-        try {
-            mRecord.stop();
-            PcmConverter.convertToWave(mFile, BUFFER_SIZE);
-        } catch (RuntimeException rte) {
-            return false;
-        } finally {
-            mRecord.release();
-        }
         return true;
     }
 
@@ -98,23 +89,17 @@ public class HighQualityRecorder implements SoundRecording {
             return false;
         }
 
-        try {
-            mPauseSemaphore.acquire();
-        } catch (InterruptedException e) {
-            Log.e(TAG, "Failed to acquire pause semaphore", e);
-        }
         mRecord.stop();
         return true;
     }
 
     @Override
     public boolean resumeRecording() {
-        if (!mIsRecording.get() || mPauseSemaphore.availablePermits() == 1) {
+        if (!mIsRecording.get()) {
             return false;
         }
 
         mRecord.startRecording();
-        mPauseSemaphore.release();
         return true;
     }
 
@@ -142,12 +127,8 @@ public class HighQualityRecorder implements SoundRecording {
     }
 
     private void recordingThreadImpl() {
-        BufferedOutputStream out = null;
-        try {
-            out = new BufferedOutputStream(new FileOutputStream(mFile));
-
+        try (BufferedOutputStream out = new BufferedOutputStream(new FileOutputStream(mFile))) {
             while (mIsRecording.get()) {
-                mPauseSemaphore.acquireUninterruptibly();
                 try {
                     int status = mRecord.read(mData, 0, BUFFER_SIZE);
                     switch (status) {
@@ -156,22 +137,25 @@ public class HighQualityRecorder implements SoundRecording {
                             Log.e(TAG, "Error reading audio record data");
                             mIsRecording.set(false);
                             break;
+                        case AudioRecord.ERROR_DEAD_OBJECT:
+                        case AudioRecord.ERROR:
+                            continue;
                         default:
-                            out.write(mData, 0, BUFFER_SIZE);
-                            break;
+                            // Status indicates the number of bytes
+                            if (status != 0) {
+                                out.write(mData, 0, BUFFER_SIZE);
+                            }
                     }
                 } catch (IOException e) {
                     Log.e(TAG, "Failed to write audio stream", e);
                     // Stop recording
                     mIsRecording.set(false);
-                } finally {
-                    mPauseSemaphore.release();
                 }
             }
-        } catch (FileNotFoundException e) {
+            mRecord.stop();
+            mRecord.release();
+        } catch (IOException e) {
             Log.e(TAG, "Can't find output file", e);
-        } finally {
-            Utils.closeQuietly(out);
         }
     }
 }
