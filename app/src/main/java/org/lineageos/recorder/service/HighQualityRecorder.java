@@ -36,12 +36,13 @@ public class HighQualityRecorder implements SoundRecording {
     private static final String FILE_NAME_EXTENSION_WAV = "wav";
     private static final String FILE_MIME_TYPE_WAV = "audio/wav";
     private static final int SAMPLING_RATE = 44100;
-    private static final int CHANNEL_IN = AudioFormat.CHANNEL_IN_DEFAULT;
+    private static final int CHANNEL_IN = AudioFormat.CHANNEL_IN_STEREO;
     private static final int FORMAT = AudioFormat.ENCODING_PCM_16BIT;
     private static final int BUFFER_SIZE_IN_BYTES = 2 * AudioRecord.getMinBufferSize(SAMPLING_RATE,
             CHANNEL_IN, FORMAT);
 
     private AudioRecord mRecord;
+    private PcmConverter mPcmConverter;
     private Path mPath;
     private int mMaxAmplitude;
 
@@ -53,8 +54,19 @@ public class HighQualityRecorder implements SoundRecording {
     @RequiresPermission(Manifest.permission.RECORD_AUDIO)
     public void startRecording(Path path) {
         mPath = path;
-        mRecord = new AudioRecord(MediaRecorder.AudioSource.DEFAULT,
-                SAMPLING_RATE, CHANNEL_IN, FORMAT, BUFFER_SIZE_IN_BYTES);
+
+        AudioFormat audioFormat = new AudioFormat.Builder()
+                .setSampleRate(SAMPLING_RATE)
+                .setChannelMask(CHANNEL_IN)
+                .setEncoding(FORMAT)
+                .build();
+
+        mPcmConverter = new PcmConverter(audioFormat.getSampleRate(),
+                audioFormat.getChannelCount(),
+                audioFormat.getFrameSizeInBytes() * 8 / audioFormat.getChannelCount());
+
+        mRecord = new AudioRecord(MediaRecorder.AudioSource.DEFAULT, audioFormat.getSampleRate(),
+                audioFormat.getChannelMask(), audioFormat.getEncoding(), BUFFER_SIZE_IN_BYTES);
         mRecord.startRecording();
 
         mIsRecording.set(true);
@@ -76,7 +88,7 @@ public class HighQualityRecorder implements SoundRecording {
         } catch (InterruptedException e) {
             // Wait at most 1 second, if we fail save the current data
         } finally {
-            PcmConverter.convertToWave(mPath, BUFFER_SIZE_IN_BYTES);
+            mPcmConverter.convertToWave(mPath, BUFFER_SIZE_IN_BYTES);
         }
 
         return true;
