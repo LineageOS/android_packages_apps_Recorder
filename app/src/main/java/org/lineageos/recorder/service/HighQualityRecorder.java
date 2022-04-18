@@ -24,10 +24,10 @@ import android.util.Log;
 import androidx.annotation.RequiresPermission;
 
 import org.lineageos.recorder.utils.PcmConverter;
-import org.lineageos.recorder.utils.Utils;
 
 import java.io.BufferedOutputStream;
 import java.io.IOException;
+import java.nio.ByteBuffer;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.concurrent.atomic.AtomicBoolean;
@@ -39,23 +39,23 @@ public class HighQualityRecorder implements SoundRecording {
     private static final int SAMPLING_RATE = 44100;
     private static final int CHANNEL_IN = AudioFormat.CHANNEL_IN_DEFAULT;
     private static final int FORMAT = AudioFormat.ENCODING_PCM_16BIT;
-    private static final int BUFFER_SIZE = AudioRecord.getMinBufferSize(SAMPLING_RATE,
+    private static final int BUFFER_SIZE_IN_BYTES = 2 * AudioRecord.getMinBufferSize(SAMPLING_RATE,
             CHANNEL_IN, FORMAT);
 
     private AudioRecord mRecord;
     private Path mPath;
+    private int mMaxAmplitude;
 
-    private byte[] mData;
     private Thread mThread;
     private final AtomicBoolean mIsRecording = new AtomicBoolean(false);
+    private final AtomicBoolean mTrackAmplitude = new AtomicBoolean(false);
 
     @Override
     @RequiresPermission(Manifest.permission.RECORD_AUDIO)
     public void startRecording(Path path) {
         mPath = path;
         mRecord = new AudioRecord(MediaRecorder.AudioSource.DEFAULT,
-                SAMPLING_RATE, CHANNEL_IN, FORMAT, BUFFER_SIZE);
-        mData = new byte[BUFFER_SIZE];
+                SAMPLING_RATE, CHANNEL_IN, FORMAT, BUFFER_SIZE_IN_BYTES);
         mRecord.startRecording();
 
         mIsRecording.set(true);
@@ -77,7 +77,7 @@ public class HighQualityRecorder implements SoundRecording {
         } catch (InterruptedException e) {
             // Wait at most 1 second, if we fail save the current data
         } finally {
-            PcmConverter.convertToWave(mPath, BUFFER_SIZE);
+            PcmConverter.convertToWave(mPath, BUFFER_SIZE_IN_BYTES);
         }
 
         return true;
@@ -105,15 +105,13 @@ public class HighQualityRecorder implements SoundRecording {
 
     @Override
     public int getCurrentAmplitude() {
-        byte[] data = new byte[BUFFER_SIZE];
-        // Make a copy so we don't lock the object too long
-        System.arraycopy(mData, 0, data, 0, BUFFER_SIZE);
-        double val = 0d;
-        for (byte b : data) {
-            val += (b * b);
+        if (!mTrackAmplitude.get()) {
+            mTrackAmplitude.set(true);
         }
-        val /= BUFFER_SIZE;
-        return (int) (val * 10);
+
+        int value = mMaxAmplitude;
+        mMaxAmplitude = 0;
+        return value * 10;
     }
 
     @Override
@@ -126,11 +124,20 @@ public class HighQualityRecorder implements SoundRecording {
         return FILE_NAME_EXTENSION_WAV;
     }
 
+    private void short2byte(short[] in, byte[] out) {
+        for (int i = 0; i < in.length; ++i) {
+            out[i * 2] = (byte) (in[i] & 0x00FF);
+            out[i * 2 + 1] = (byte) (in[i] >> 8);
+        }
+    }
+
     private void recordingThreadImpl() {
         try (BufferedOutputStream out = new BufferedOutputStream(Files.newOutputStream(mPath))) {
+            final short[] data = new short[BUFFER_SIZE_IN_BYTES / 2];
+            final byte[] byte_data = new byte[BUFFER_SIZE_IN_BYTES];
             while (mIsRecording.get()) {
                 try {
-                    int status = mRecord.read(mData, 0, BUFFER_SIZE);
+                    int status = mRecord.read(data, 0, BUFFER_SIZE_IN_BYTES / 2);
                     switch (status) {
                         case AudioRecord.ERROR_INVALID_OPERATION:
                         case AudioRecord.ERROR_BAD_VALUE:
@@ -143,7 +150,17 @@ public class HighQualityRecorder implements SoundRecording {
                         default:
                             // Status indicates the number of bytes
                             if (status != 0) {
-                                out.write(mData, 0, BUFFER_SIZE);
+                                for (int i = status - 1; i > 0; --i) {
+                                    int value = data[i];
+                                    if (value < 0) {
+                                        value = -value;
+                                    }
+                                    if (mMaxAmplitude < value) {
+                                        mMaxAmplitude = value;
+                                    }
+                                }
+                                short2byte(data, byte_data);
+                                out.write(byte_data, 0, BUFFER_SIZE_IN_BYTES);
                             }
                     }
                 } catch (IOException e) {
