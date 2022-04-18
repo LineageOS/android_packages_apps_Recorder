@@ -25,36 +25,35 @@ import java.nio.file.Path;
 import java.util.Arrays;
 
 public final class PcmConverter {
-    private static final long SAMPLE_RATE = 44100;
-    private static final byte RECORDER_BPP = 16;
-    private static final byte CHANNELS = 1;
-    private static final long BYTE_RATE = CHANNELS * SAMPLE_RATE * RECORDER_BPP / 8;
-    private static final byte[] WAV_HEADER = {
-            'R', 'I', 'F', 'F',
-            0, 0, 0, 0, // data length placeholder
-            'W', 'A', 'V', 'E',
-            'f', 'm', 't', ' ', // 'fmt ' chunk
-            16, // 4 bytes: size of 'fmt ' chunk
-            0, 0, 0, 1, // format = 1
-            0,
-            CHANNELS,
-            0,
-            (byte) (SAMPLE_RATE & 0xff), (byte) ((SAMPLE_RATE >> 8) & 0xff), 0, 0, // sample rate
-            (byte) (BYTE_RATE & 0xff), (byte) ((BYTE_RATE >> 8) & 0xff),
-            (byte) ((BYTE_RATE >> 16) & 0xff), 0, // byte rate
-            (byte) (CHANNELS * RECORDER_BPP / 8),  // block align
-            0,
-            RECORDER_BPP, // bits per sample
-            0,
-            'd', 'a', 't', 'a',
-            0, 0, 0, 0, // audio length placeholder
-    };
+    private final byte[] WAV_HEADER;
     private static final String TAG = "PcmConverter";
 
-    private PcmConverter() {
+    public PcmConverter(long sampleRate, int channels, int bitsPerSample) {
+        long byteRate = channels * sampleRate * bitsPerSample / 8;
+
+        WAV_HEADER = new byte[]{
+                'R', 'I', 'F', 'F',
+                0, 0, 0, 0, // data length placeholder
+                'W', 'A', 'V', 'E',
+                'f', 'm', 't', ' ', // 'fmt ' chunk
+                16, // 4 bytes: size of 'fmt ' chunk
+                0, 0, 0, 1, // format = 1
+                0,
+                (byte) channels,
+                0,
+                (byte) (sampleRate & 0xff), (byte) ((sampleRate >> 8) & 0xff), 0, 0, // sample rate
+                (byte) (byteRate & 0xff), (byte) ((byteRate >> 8) & 0xff),
+                (byte) ((byteRate >> 16) & 0xff), 0, // byte rate
+                (byte) (channels * bitsPerSample / 8),  // block align
+                0,
+                (byte) bitsPerSample, // bits per sample
+                0,
+                'd', 'a', 't', 'a',
+                0, 0, 0, 0, // audio length placeholder
+        };
     }
 
-    public static void convertToWave(Path path, int bufferSize) {
+    public void convertToWave(Path path, int bufferSize) {
         InputStream input = null;
         OutputStream output = null;
 
@@ -96,8 +95,8 @@ public final class PcmConverter {
     }
 
     // http://stackoverflow.com/questions/4440015/java-pcm-to-wav
-    private static void writeWaveHeader(OutputStream out, long audioLength,
-                                        long dataLength) throws IOException {
+    private void writeWaveHeader(OutputStream out, long audioLength,
+                                 long dataLength) throws IOException {
         byte[] header = Arrays.copyOf(WAV_HEADER, WAV_HEADER.length);
 
         header[4] = (byte) (dataLength & 0xff);
