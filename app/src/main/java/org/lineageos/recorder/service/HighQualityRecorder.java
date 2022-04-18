@@ -39,23 +39,23 @@ public class HighQualityRecorder implements SoundRecording {
     private static final int SAMPLING_RATE = 44100;
     private static final int CHANNEL_IN = AudioFormat.CHANNEL_IN_DEFAULT;
     private static final int FORMAT = AudioFormat.ENCODING_PCM_16BIT;
-    private static final int BUFFER_SIZE = AudioRecord.getMinBufferSize(SAMPLING_RATE,
+    private static final int BUFFER_SIZE_IN_BYTES = 2 * AudioRecord.getMinBufferSize(SAMPLING_RATE,
             CHANNEL_IN, FORMAT);
 
     private AudioRecord mRecord;
     private File mFile;
+    private int mMaxAmplitude;
 
-    private byte[] mData;
     private Thread mThread;
     private final AtomicBoolean mIsRecording = new AtomicBoolean(false);
+    private final AtomicBoolean mTrackAmplitude = new AtomicBoolean(false);
 
     @Override
     @RequiresPermission(Manifest.permission.RECORD_AUDIO)
     public void startRecording(File file) {
         mFile = file;
         mRecord = new AudioRecord(MediaRecorder.AudioSource.DEFAULT,
-                SAMPLING_RATE, CHANNEL_IN, FORMAT, BUFFER_SIZE);
-        mData = new byte[BUFFER_SIZE];
+                SAMPLING_RATE, CHANNEL_IN, FORMAT, BUFFER_SIZE_IN_BYTES);
         mRecord.startRecording();
 
         mIsRecording.set(true);
@@ -77,7 +77,7 @@ public class HighQualityRecorder implements SoundRecording {
         } catch (InterruptedException e) {
             // Wait at most 1 second, if we fail save the current data
         } finally {
-            PcmConverter.convertToWave(mFile, BUFFER_SIZE);
+            PcmConverter.convertToWave(mFile, BUFFER_SIZE_IN_BYTES);
         }
 
         return true;
@@ -105,15 +105,13 @@ public class HighQualityRecorder implements SoundRecording {
 
     @Override
     public int getCurrentAmplitude() {
-        byte[] data = new byte[BUFFER_SIZE];
-        // Make a copy so we don't lock the object too long
-        System.arraycopy(mData, 0, data, 0, BUFFER_SIZE);
-        double val = 0d;
-        for (byte b : data) {
-            val += (b * b);
+        if (!mTrackAmplitude.get()) {
+            mTrackAmplitude.set(true);
         }
-        val /= BUFFER_SIZE;
-        return (int) (val * 10);
+
+        int value = mMaxAmplitude;
+        mMaxAmplitude = 0;
+        return value;
     }
 
     @Override
@@ -128,9 +126,10 @@ public class HighQualityRecorder implements SoundRecording {
 
     private void recordingThreadImpl() {
         try (BufferedOutputStream out = new BufferedOutputStream(new FileOutputStream(mFile))) {
+            final byte[] data = new byte[BUFFER_SIZE_IN_BYTES];
             while (mIsRecording.get()) {
                 try {
-                    int status = mRecord.read(mData, 0, BUFFER_SIZE);
+                    int status = mRecord.read(data, 0, BUFFER_SIZE_IN_BYTES);
                     switch (status) {
                         case AudioRecord.ERROR_INVALID_OPERATION:
                         case AudioRecord.ERROR_BAD_VALUE:
@@ -143,7 +142,18 @@ public class HighQualityRecorder implements SoundRecording {
                         default:
                             // Status indicates the number of bytes
                             if (status != 0) {
-                                out.write(mData, 0, BUFFER_SIZE);
+                                if (mTrackAmplitude.get()) {
+                                    for (int i = 0; i < data.length; i = i + 2) {
+                                        int value = data[i] & 0xff | data[i + 1] << 8;
+                                        if (value < 0) {
+                                            value = -value;
+                                        }
+                                        if (mMaxAmplitude < value) {
+                                            mMaxAmplitude = value;
+                                        }
+                                    }
+                                }
+                                out.write(data, 0, BUFFER_SIZE_IN_BYTES);
                             }
                     }
                 } catch (IOException e) {
