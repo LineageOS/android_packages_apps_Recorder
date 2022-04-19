@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2c523cc7_4575202f",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2022-04-19T14:27:53Z",
+      "side": 1,
+      "message": "Why do we care if we target the latest SDK?",
+      "revId": "90ac7c18d4f65e71afa7679dd5232e6e308cf81f",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
