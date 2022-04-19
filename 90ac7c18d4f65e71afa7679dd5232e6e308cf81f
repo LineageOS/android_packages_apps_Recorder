@@ -16,6 +16,24 @@
       "message": "Why do we care if we target the latest SDK?",
       "revId": "90ac7c18d4f65e71afa7679dd5232e6e308cf81f",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a7a94e59_4b204b6f",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2022-04-19T14:38:44Z",
+      "side": 1,
+      "message": "Our min SDK is currently 29, so we do",
+      "parentUuid": "2c523cc7_4575202f",
+      "revId": "90ac7c18d4f65e71afa7679dd5232e6e308cf81f",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
