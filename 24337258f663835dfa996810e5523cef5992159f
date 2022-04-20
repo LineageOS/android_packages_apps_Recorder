@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0d43644f_507c39b3",
+        "filename": "app/src/main/res/values/strings.xml",
+        "patchSetId": 6
+      },
+      "lineNbr": 105,
+      "author": {
+        "id": 11801
+      },
+      "writtenOn": "2022-04-20T14:09:55Z",
+      "side": 1,
+      "message": "Should this be translatable\u003d\"false\"?",
+      "revId": "24337258f663835dfa996810e5523cef5992159f",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
