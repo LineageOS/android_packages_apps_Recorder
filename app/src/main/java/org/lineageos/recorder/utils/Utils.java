@@ -52,10 +52,13 @@ public final class Utils {
     @SuppressWarnings("deprecation")
     public static void setVerticalInsets(View view) {
         ViewCompat.setOnApplyWindowInsetsListener(view, (v, insets) -> {
-             Insets systemInsets = Build.VERSION.SDK_INT >= 31
-                    ? insets.getInsets(WindowInsetsCompat.Type.systemBars())
-                    : insets.getSystemWindowInsets();
-            v.setPadding(v.getPaddingLeft(), systemInsets.top,
+            Insets systemInsets;
+            if (Build.VERSION.SDK_INT >= 31) {
+                systemInsets =  insets.getInsets(WindowInsetsCompat.Type.systemBars());
+            } else {
+                systemInsets = insets.getSystemWindowInsets();
+            }
+            v.setPadding(v.getPaddingLeft(), v.getPaddingTop(),
                     v.getPaddingRight(), systemInsets.bottom);
             return insets;
         });
