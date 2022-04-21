@@ -101,8 +101,6 @@
     <!-- Main activity -->
     <!-- Sound record title -->
     <string name="main_sound_action">Record sound</string>
-    <!-- File name date-time format -->
-    <string name="main_file_date_time_format">yyyy-MM-dd HH:mm:ss</string>
 
     <!-- List activity -->
     <!-- List activity title -->

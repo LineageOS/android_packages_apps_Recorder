@@ -61,6 +61,8 @@ import org.lineageos.recorder.utils.Utils;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeFormatterBuilder;
+import java.time.temporal.ChronoUnit;
 import java.util.Locale;
 
 public class RecorderActivity extends AppCompatActivity {
@@ -380,10 +382,13 @@ public class RecorderActivity extends AppCompatActivity {
     private String getNewRecordFileName() {
         final String tag = mLocationHelper.getCurrentLocationName()
                 .orElse(FILE_NAME_FALLBACK);
-        final DateTimeFormatter formatter = DateTimeFormatter.ofPattern(
-                getString(R.string.main_file_date_time_format),
-                Locale.getDefault());
+        final DateTimeFormatter formatter = new DateTimeFormatterBuilder()
+                .append(DateTimeFormatter.ISO_LOCAL_DATE)
+                .appendLiteral(' ')
+                .append(DateTimeFormatter.ISO_LOCAL_TIME)
+                .toFormatter(Locale.getDefault());
+        final LocalDateTime now = LocalDateTime.now();
         return String.format(FILE_NAME_BASE, tag,
-                formatter.format(LocalDateTime.now())) + ".%1$s";
+                formatter.format(now.truncatedTo(ChronoUnit.SECONDS))) + ".%1$s";
     }
 }
