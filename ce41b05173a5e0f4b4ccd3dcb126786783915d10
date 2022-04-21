@@ -33,6 +33,24 @@
       "message": "Actually, shouldn\u0027t we try to have proper format that matches Locale?",
       "revId": "ce41b05173a5e0f4b4ccd3dcb126786783915d10",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9ebb29fe_49eed412",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 4550
+      },
+      "writtenOn": "2022-04-21T11:47:17Z",
+      "side": 1,
+      "message": "It should come from somewhere else or done automatically, I don\u0027t expect every translator to set proper format that matches locale.",
+      "parentUuid": "b1d38fa7_7c8497b7",
+      "revId": "ce41b05173a5e0f4b4ccd3dcb126786783915d10",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
