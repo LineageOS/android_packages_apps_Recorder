@@ -16,6 +16,23 @@
       "message": "Sorry Paul, didn\u0027t see the +1 :(",
       "revId": "ce41b05173a5e0f4b4ccd3dcb126786783915d10",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b1d38fa7_7c8497b7",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2022-04-21T11:30:23Z",
+      "side": 1,
+      "message": "Actually, shouldn\u0027t we try to have proper format that matches Locale?",
+      "revId": "ce41b05173a5e0f4b4ccd3dcb126786783915d10",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
