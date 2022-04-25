@@ -66,6 +66,7 @@ import java.util.Locale;
 public class RecorderActivity extends AppCompatActivity {
     private static final String FILE_NAME_BASE = "%1$s (%2$s)";
     private static final String FILE_NAME_FALLBACK = "Sound record";
+    private static final String FILE_NAME_DATE_FORMAT = "yyyy-MM-dd HH:mm:ss";
 
     private FloatingActionButton mSoundFab;
     private ImageView mPauseResume;
@@ -84,6 +85,9 @@ public class RecorderActivity extends AppCompatActivity {
 
     @UiStatus
     private int mUiStatus = UiStatus.READY;
+
+    private final DateTimeFormatter mDateFormatter = DateTimeFormatter.ofPattern(
+                FILE_NAME_DATE_FORMAT, Locale.getDefault());
 
     private final BroadcastReceiver mTelephonyReceiver = new BroadcastReceiver() {
         @Override
@@ -380,10 +384,7 @@ public class RecorderActivity extends AppCompatActivity {
     private String getNewRecordFileName() {
         final String tag = mLocationHelper.getCurrentLocationName()
                 .orElse(FILE_NAME_FALLBACK);
-        final DateTimeFormatter formatter = DateTimeFormatter.ofPattern(
-                getString(R.string.main_file_date_time_format),
-                Locale.getDefault());
         return String.format(FILE_NAME_BASE, tag,
-                formatter.format(LocalDateTime.now())) + ".%1$s";
+                mDateFormatter.format(LocalDateTime.now())) + ".%1$s";
     }
 }
