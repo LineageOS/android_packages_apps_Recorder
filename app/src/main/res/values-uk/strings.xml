@@ -25,6 +25,7 @@
     <string name="sound_notification_message">Тривалість аудіо запису: %1$s</string>
     <string name="sound_recording_title_working">Запис</string>
     <string name="sound_last_title">Останній запис</string>
+    <string name="sound_channel_title">Запис звуку</string>
     <string name="dialog_permissions_title">Дозволи</string>
     <string name="dialog_permissions_mic">Додаток «Звукозаписувач» потребує доступ до мікрофону для здійснення звукозапису</string>
     <string name="dialog_permissions_phone">Додатку «Recorder» потрібен доступ до стану телефону, щоб припиняти аудіозапис під час дзвінка</string>

@@ -14,6 +14,7 @@
      limitations under the License.
 -->
 <resources>
+    <string name="app_name">রেকর্ডার</string>
     <string name="rename">পুনঃনামকরণ</string>
     <string name="settings_title">নিয়ন্ত্রণ</string>
     <string name="list_edit_confirm">পরিবর্তন করুন</string>

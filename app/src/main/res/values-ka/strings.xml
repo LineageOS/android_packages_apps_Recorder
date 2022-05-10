@@ -14,8 +14,36 @@
      limitations under the License.
 -->
 <resources>
+    <string name="share_selected">შერჩეულის გაზიარება</string>
+    <string name="pause">შეჩერება</string>
+    <string name="resume">გაგრძელება</string>
+    <string name="delete_all">ყველას წაშლა</string>
+    <string name="delete_selected">შერჩეულის წაშლა</string>
     <string name="cancel">გაუქმება</string>
+    <string name="rename">გადარქმევა</string>
+    <string name="delete_recording_message">ნამდვილად გსურთ ამ ჩანაწერის წაშლა? ქმედება შეუქცევადია</string>
+    <string name="confirm">დასტური</string>
+    <string name="discard">გაუქმება</string>
+    <string name="record_again">კვლავ ჩაწერა</string>
+    <string name="confirm_result_title">გსურთ ჩანაწერის გამოყენება?</string>
+    <string name="confirm_result_message">გსურთ ბოლო ჩანაწერის გამოყენება?</string>
+    <string name="sound_notification_title">ხმის ჩამწერი</string>
+    <string name="sound_recording_title_paused">შეჩერებულია</string>
     <string name="sound_last_title">ბოლო ჩანაწერი</string>
+    <string name="settings_title">პარამეტრები</string>
+    <string name="settings_location_message">ჩანაწერებზე მიმდინარე მდებარეობის აღნიშვნა</string>
+    <string name="settings_quality_high">ჩაწერა მაღალ ხარისხში</string>
     <string name="dialog_permissions_title">ნებართვები</string>
+    <string name="dialog_permissions_location">ჩამწერი საჭიროებს მდებარეობაზე წვდომას ჩანაწერების ავტომატური მონიშვნისთვის უკეთ დასალაგებლად.</string>
     <string name="snack_permissions_no_permission">მოთხოვნილი უფლებები უარყოფილია, დართეთ ნება პარამეტრებიდან ჩაწერის დასაწყებად</string>
+    <string name="snack_permissions_no_permission_location">მდებარეობაზე წვდომა უარყოფილია, დართეთ ნება პარამეტრებიდან ჩაწერის დასაწყებად</string>
+    <string name="list_title">ჩემი ჩანაწერები</string>
+    <string name="list_error_empty">თქვენი ყველა ჩანაწერი გამოჩნდება აქ</string>
+    <string name="list_edit_title">ჩანაწერის გადარქმევა</string>
+    <string name="list_edit_confirm">შეცვლა</string>
+    <string name="list_item_menu">სხვა მოქმედებები</string>
+    <string name="delete_all_title">ყველას წაშლა</string>
+    <string name="delete_all_message">ნამდვილად გსურთ ყველა ჩანაწერის წაშლა? ქმედება შეუქცევადია</string>
+    <string name="delete_selected_title">შერჩეულის წაშლა</string>
+    <string name="delete_selected_message">ნამდვილად გსურთ შერჩეულის წაშლა? ქმედება შეუქცევადია</string>
 </resources>
