@@ -14,15 +14,16 @@
      limitations under the License.
 -->
 <resources>
+    <string name="app_name">Grabadora</string>
     <string name="share">Compartir</string>
-    <string name="share_selected">Compartir lo esbillao</string>
+    <string name="share_selected">Compartir lo seleicionao</string>
     <string name="stop">Parar</string>
     <string name="play">Reproducir</string>
     <string name="pause">Posar</string>
     <string name="resume">Siguir</string>
     <string name="delete">Desaniciar</string>
     <string name="delete_all">Desaniciar too</string>
-    <string name="delete_selected">Desaniciar lo esbillao</string>
+    <string name="delete_selected">Desaniciar lo seleicionao</string>
     <string name="cancel">Encaboxar</string>
     <string name="rename">Renomar</string>
     <string name="delete_recording_message">¿De xuru que quies desaniciar esta grabación? Esta aición nun se pue desfacer</string>
@@ -36,10 +37,10 @@
     <string name="settings_location_message">Etiquetar les grabaciones cola to posición actual</string>
     <string name="settings_quality_high">Grabar en calidá alta</string>
     <string name="dialog_permissions_title">Permisos</string>
-    <string name="dialog_permissions_location">«Grabadora» ha tener el permisu d\'allugamientu pa etiquetar automáticamente les grabaciones y ayudate a organizales</string>
+    <string name="dialog_permissions_location">«Grabadora» ha tener el permisu de llocalización pa etiquetar automáticamente les grabaciones y ayudate a organizales</string>
     <string name="dialog_permissions_ask">Volver pidir</string>
     <string name="dialog_permissions_dismiss">Escartar</string>
-    <string name="snack_permissions_no_permission_location">Negóse\'l permisu d\'allugamientu, concédelu n\'Axustes pa etiquetar les grabaciones</string>
+    <string name="snack_permissions_no_permission_location">Negóse\'l permisu de llocalización, concédelu n\'«Axustes» pa etiquetar les grabaciones</string>
     <string name="list_title">Les mios grabaciones</string>
     <string name="list_error_empty">Equí apaecen toles grabaciones</string>
     <string name="list_edit_title">Edición del nome d\'una grabación</string>
@@ -47,6 +48,6 @@
     <string name="list_item_menu">Más aiciones</string>
     <string name="delete_all_title">Desaniciu de too</string>
     <string name="delete_all_message">¿De xuru que quies desaniciar toles grabaciones? Esta aición nun se pue desfacer</string>
-    <string name="delete_selected_title">Desaniciu de lo esbillao</string>
-    <string name="delete_selected_message">¿De xuru que quies desaniciar les grabaciones esbillaes? Esta aición nun se pue desfacer</string>
+    <string name="delete_selected_title">Desaniciu de lo seleicionao</string>
+    <string name="delete_selected_message">¿De xuru que quies desaniciar les grabaciones seleicionaes? Esta aición nun se pue desfacer</string>
 </resources>

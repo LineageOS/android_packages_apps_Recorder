@@ -14,13 +14,19 @@
      limitations under the License.
 -->
 <resources>
+    <string name="app_name">ჩამწერი</string>
+    <string name="share">გაზიარება</string>
     <string name="share_selected">შერჩეულის გაზიარება</string>
+    <string name="stop">შეწყვეტა</string>
+    <string name="play">გაშვება</string>
     <string name="pause">შეჩერება</string>
     <string name="resume">გაგრძელება</string>
+    <string name="delete">წაშლა</string>
     <string name="delete_all">ყველას წაშლა</string>
     <string name="delete_selected">შერჩეულის წაშლა</string>
     <string name="cancel">გაუქმება</string>
     <string name="rename">გადარქმევა</string>
+    <string name="delete_title">ჩანაწერის იშლება</string>
     <string name="delete_recording_message">ნამდვილად გსურთ ამ ჩანაწერის წაშლა? ქმედება შეუქცევადია</string>
     <string name="confirm">დასტური</string>
     <string name="discard">გაუქმება</string>
@@ -28,15 +34,25 @@
     <string name="confirm_result_title">გსურთ ჩანაწერის გამოყენება?</string>
     <string name="confirm_result_message">გსურთ ბოლო ჩანაწერის გამოყენება?</string>
     <string name="sound_notification_title">ხმის ჩამწერი</string>
+    <string name="sound_notification_message">ხმის ხანგრძლივობა: %1$s</string>
+    <string name="sound_recording_title_working">იწერება</string>
     <string name="sound_recording_title_paused">შეჩერებულია</string>
     <string name="sound_last_title">ბოლო ჩანაწერი</string>
+    <string name="sound_channel_title">ხმის ჩაწერა</string>
+    <string name="sound_channel_desc">განუწვეტელი შეტყობინება ხმის ჩაწერისას და შეტყობინება, დასრულების შემდგომ</string>
     <string name="settings_title">პარამეტრები</string>
     <string name="settings_location_message">ჩანაწერებზე მიმდინარე მდებარეობის აღნიშვნა</string>
     <string name="settings_quality_high">ჩაწერა მაღალ ხარისხში</string>
     <string name="dialog_permissions_title">ნებართვები</string>
+    <string name="dialog_permissions_mic">საჭიროებს მიკროფონთან წვდომის ნებართვას ხმის ჩასაწერად</string>
+    <string name="dialog_permissions_phone">საჭიროებს ტელეფონის მდგომარეობის მონაცემებთან წვდომის ნებართვას, საუბრის დროს ჩაწერის ასარიდებლად</string>
+    <string name="dialog_permissions_mic_phone">საჭიროებს მიკროფონთან წვდომის ნებართვას ხმის ჩასაწერად და ტელეფონის მდგომარეობის მონაცემებთან წვდომას, საუბრისას ჩაწერის ასარიდებლად</string>
     <string name="dialog_permissions_location">ჩამწერი საჭიროებს მდებარეობაზე წვდომას ჩანაწერების ავტომატური მონიშვნისთვის უკეთ დასალაგებლად.</string>
+    <string name="dialog_permissions_ask">კვლავ შეკითხვა</string>
+    <string name="dialog_permissions_dismiss">აცილება</string>
     <string name="snack_permissions_no_permission">მოთხოვნილი უფლებები უარყოფილია, დართეთ ნება პარამეტრებიდან ჩაწერის დასაწყებად</string>
     <string name="snack_permissions_no_permission_location">მდებარეობაზე წვდომა უარყოფილია, დართეთ ნება პარამეტრებიდან ჩაწერის დასაწყებად</string>
+    <string name="main_sound_action">ხმის ჩაწერა</string>
     <string name="list_title">ჩემი ჩანაწერები</string>
     <string name="list_error_empty">თქვენი ყველა ჩანაწერი გამოჩნდება აქ</string>
     <string name="list_edit_title">ჩანაწერის გადარქმევა</string>
