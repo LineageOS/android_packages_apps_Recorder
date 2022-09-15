@@ -41,6 +41,30 @@
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "9d5b71bc_0934d77e",
+        "filename": "app/src/main/AndroidManifest.xml",
+        "patchSetId": 3
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 19612
+      },
+      "writtenOn": "2022-09-15T13:50:00Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1db9c1a0_bd418510",
+      "range": {
+        "startLine": 25,
+        "startChar": 54,
+        "endLine": 25,
+        "endChar": 72
+      },
+      "revId": "b67f70258f8c33d8d3448215a8395a15c293410c",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "729f5c26_d910fc84",
@@ -54,6 +78,30 @@
       "writtenOn": "2022-09-15T13:43:57Z",
       "side": 1,
       "message": "Sort it and you will avoid over 100 chars line.",
+      "range": {
+        "startLine": 104,
+        "startChar": 82,
+        "endLine": 104,
+        "endChar": 100
+      },
+      "revId": "b67f70258f8c33d8d3448215a8395a15c293410c",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8e94a08f_457b4fb0",
+        "filename": "app/src/main/java/org/lineageos/recorder/utils/PermissionManager.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 19612
+      },
+      "writtenOn": "2022-09-15T13:50:00Z",
+      "side": 1,
+      "message": "Done but couldn\u0027t avoid 100 chars line",
+      "parentUuid": "729f5c26_d910fc84",
       "range": {
         "startLine": 104,
         "startChar": 82,
