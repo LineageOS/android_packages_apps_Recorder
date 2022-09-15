@@ -16,6 +16,52 @@
       "message": "Also i think this AlertDialog only shows once on startup. then shows snack_permissions_no_permission_location.",
       "revId": "b67f70258f8c33d8d3448215a8395a15c293410c",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1db9c1a0_bd418510",
+        "filename": "app/src/main/AndroidManifest.xml",
+        "patchSetId": 3
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2022-09-15T13:43:57Z",
+      "side": 1,
+      "message": "Sort it.",
+      "range": {
+        "startLine": 25,
+        "startChar": 54,
+        "endLine": 25,
+        "endChar": 72
+      },
+      "revId": "b67f70258f8c33d8d3448215a8395a15c293410c",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "729f5c26_d910fc84",
+        "filename": "app/src/main/java/org/lineageos/recorder/utils/PermissionManager.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2022-09-15T13:43:57Z",
+      "side": 1,
+      "message": "Sort it and you will avoid over 100 chars line.",
+      "range": {
+        "startLine": 104,
+        "startChar": 82,
+        "endLine": 104,
+        "endChar": 100
+      },
+      "revId": "b67f70258f8c33d8d3448215a8395a15c293410c",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
