@@ -16,6 +16,24 @@
       "message": "if (!notificationManager.areNotificationsEnabled()) {",
       "revId": "2ed553dc8a7edf41b9b5efcb78444cfcc23fdf36",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3c6628ba_2fda6f77",
+        "filename": "app/src/main/java/org/lineageos/recorder/utils/PermissionManager.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 19612
+      },
+      "writtenOn": "2022-09-15T13:09:30Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4660780c_56215e0a",
+      "revId": "2ed553dc8a7edf41b9b5efcb78444cfcc23fdf36",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
