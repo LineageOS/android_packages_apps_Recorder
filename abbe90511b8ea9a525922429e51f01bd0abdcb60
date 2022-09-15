@@ -16,6 +16,24 @@
       "message": "error |\u003d 1 \u003c\u003c 2;",
       "revId": "abbe90511b8ea9a525922429e51f01bd0abdcb60",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "834e18d1_71e0c443",
+        "filename": "app/src/main/java/org/lineageos/recorder/utils/PermissionManager.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 113,
+      "author": {
+        "id": 18796
+      },
+      "writtenOn": "2022-09-15T13:41:03Z",
+      "side": 1,
+      "message": "done",
+      "parentUuid": "7394cba2_a6e016d7",
+      "revId": "abbe90511b8ea9a525922429e51f01bd0abdcb60",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }

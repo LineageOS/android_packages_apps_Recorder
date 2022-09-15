@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "14f97b7e_5780527e",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 18796
+      },
+      "writtenOn": "2022-09-15T13:41:03Z",
+      "side": 1,
+      "message": "Also i think this AlertDialog only shows once on startup. then shows snack_permissions_no_permission_location.",
+      "revId": "b67f70258f8c33d8d3448215a8395a15c293410c",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
