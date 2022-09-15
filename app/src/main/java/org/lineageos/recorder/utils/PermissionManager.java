@@ -17,7 +17,9 @@ package org.lineageos.recorder.utils;
 
 import android.Manifest;
 import android.app.Activity;
+import android.app.NotificationManager;
 import android.content.pm.PackageManager;
+import android.os.Build;
 
 import androidx.annotation.StringRes;
 import androidx.appcompat.app.AlertDialog;
@@ -35,12 +37,18 @@ public final class PermissionManager {
             R.string.dialog_permissions_mic,
             R.string.dialog_permissions_phone,
             R.string.dialog_permissions_mic_phone,
+            R.string.dialog_permissions_notifications,
+            R.string.dialog_permissions_mic_notifications,
+            R.string.dialog_permissions_phone_notifications,
+            R.string.dialog_permissions_mic_phone_notifications
     };
 
     private final Activity activity;
+    private final NotificationManager notificationManager;
 
     public PermissionManager(Activity activity) {
         this.activity = activity;
+        this.notificationManager = activity.getSystemService(NotificationManager.class);
     }
 
     public boolean requestEssentialPermissions() {
@@ -50,6 +58,9 @@ public final class PermissionManager {
         }
         if (!hasPhoneReadStatusPermission()) {
             missingPermissions.add(Manifest.permission.READ_PHONE_STATE);
+        }
+        if (Build.VERSION.SDK_INT >= 33 && !notificationManager.areNotificationsEnabled()) {
+            missingPermissions.add(Manifest.permission.POST_NOTIFICATIONS);
         }
 
         if (missingPermissions.isEmpty()) {
@@ -69,7 +80,12 @@ public final class PermissionManager {
     }
 
     public boolean hasEssentialPermissions() {
-        return hasRecordAudioPermission() && hasPhoneReadStatusPermission();
+        if (Build.VERSION.SDK_INT >= 33) {
+            return hasRecordAudioPermission() && hasPhoneReadStatusPermission() &&
+                    notificationManager.areNotificationsEnabled();
+        } else {
+            return hasRecordAudioPermission() && hasPhoneReadStatusPermission();
+        }
     }
 
     public boolean hasRecordAudioPermission() {
@@ -88,7 +104,8 @@ public final class PermissionManager {
     }
 
     public void onEssentialPermissionsDenied() {
-        if (activity.shouldShowRequestPermissionRationale(Manifest.permission.READ_PHONE_STATE) ||
+        if (activity.shouldShowRequestPermissionRationale(Manifest.permission.POST_NOTIFICATIONS) ||
+                activity.shouldShowRequestPermissionRationale(Manifest.permission.READ_PHONE_STATE) ||
                 activity.shouldShowRequestPermissionRationale(Manifest.permission.RECORD_AUDIO)) {
             // Explain the user why the denied permission is needed
             int error = 0;
@@ -98,6 +115,9 @@ public final class PermissionManager {
             }
             if (!hasPhoneReadStatusPermission()) {
                 error |= 1 << 1;
+            }
+            if (Build.VERSION.SDK_INT >= 33 && !notificationManager.areNotificationsEnabled()) {
+                error |= 1 << 2;
             }
 
             showPermissionRationale(PERMISSION_ERROR_MESSAGE_RES_IDS[error],

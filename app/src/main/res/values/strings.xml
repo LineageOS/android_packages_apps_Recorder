@@ -85,8 +85,16 @@
     <string name="dialog_permissions_mic">Recorder needs microphone permission to record audio</string>
     <!-- Message: phone status denied -->
     <string name="dialog_permissions_phone">Recorder needs phone status access to prevent this app from recording while you\'re calling</string>
+    <!-- Message: notifications permission denied -->
+    <string name="dialog_permissions_notifications">Recorder needs notifications permission to show recording controls</string>
     <!-- Message: microphone and phone status access denied -->
     <string name="dialog_permissions_mic_phone">Recorder needs microphone permission to record audio and phone status access to prevent this app from recording while you\'re calling</string>
+    <!-- Message: microphone and phone status access denied -->
+    <string name="dialog_permissions_mic_notifications">Recorder needs microphone permission to record audio and notifications permission to show recording controls</string>
+    <!-- Message: microphone and phone status access denied -->
+    <string name="dialog_permissions_phone_notifications">Recorder needs phone status access to prevent this app from recording while you\'re calling and notifications permission to show recording controls</string>
+    <!-- Message: microphone and phone status access denied -->
+    <string name="dialog_permissions_mic_phone_notifications">Recorder needs microphone permission to record audio, phone status access to prevent this app from recording while you\'re calling, and notifications permission to show recording controls</string>
     <!-- Message: location permission denied -->
     <string name="dialog_permissions_location">Recorder needs location permission to automatically tag your recordings to help you organize them</string>
     <!-- Permissions dialog action: ask permissions access again -->
