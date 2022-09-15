@@ -15,9 +15,15 @@
  */
 package org.lineageos.recorder.utils;
 
-import android.Manifest;
+import static android.Manifest.permission.ACCESS_FINE_LOCATION;
+import static android.Manifest.permission.POST_NOTIFICATIONS;
+import static android.Manifest.permission.READ_PHONE_STATE;
+import static android.Manifest.permission.RECORD_AUDIO;
+
 import android.app.Activity;
+import android.app.NotificationManager;
 import android.content.pm.PackageManager;
+import android.os.Build;
 
 import androidx.annotation.StringRes;
 import androidx.appcompat.app.AlertDialog;
@@ -35,21 +41,30 @@ public final class PermissionManager {
             R.string.dialog_permissions_mic,
             R.string.dialog_permissions_phone,
             R.string.dialog_permissions_mic_phone,
+            R.string.dialog_permissions_notifications,
+            R.string.dialog_permissions_mic_notifications,
+            R.string.dialog_permissions_phone_notifications,
+            R.string.dialog_permissions_mic_phone_notifications
     };
 
     private final Activity activity;
+    private final NotificationManager notificationManager;
 
     public PermissionManager(Activity activity) {
         this.activity = activity;
+        this.notificationManager = activity.getSystemService(NotificationManager.class);
     }
 
     public boolean requestEssentialPermissions() {
         final List<String> missingPermissions = new ArrayList<>();
         if (!hasRecordAudioPermission()) {
-            missingPermissions.add(Manifest.permission.RECORD_AUDIO);
+            missingPermissions.add(RECORD_AUDIO);
         }
         if (!hasPhoneReadStatusPermission()) {
-            missingPermissions.add(Manifest.permission.READ_PHONE_STATE);
+            missingPermissions.add(READ_PHONE_STATE);
+        }
+        if (Build.VERSION.SDK_INT >= 33 && !notificationManager.areNotificationsEnabled()) {
+            missingPermissions.add(POST_NOTIFICATIONS);
         }
 
         if (missingPermissions.isEmpty()) {
@@ -63,33 +78,39 @@ public final class PermissionManager {
 
     public void requestLocationPermission() {
         if (!hasLocationPermission()) {
-            final String[] requestArray = {Manifest.permission.ACCESS_FINE_LOCATION};
+            final String[] requestArray = {ACCESS_FINE_LOCATION};
             activity.requestPermissions(requestArray, REQUEST_CODE);
         }
     }
 
     public boolean hasEssentialPermissions() {
-        return hasRecordAudioPermission() && hasPhoneReadStatusPermission();
+        if (Build.VERSION.SDK_INT >= 33) {
+            return hasRecordAudioPermission() && hasPhoneReadStatusPermission() &&
+                    notificationManager.areNotificationsEnabled();
+        } else {
+            return hasRecordAudioPermission() && hasPhoneReadStatusPermission();
+        }
     }
 
     public boolean hasRecordAudioPermission() {
-        return activity.checkSelfPermission(Manifest.permission.RECORD_AUDIO)
+        return activity.checkSelfPermission(RECORD_AUDIO)
                 == PackageManager.PERMISSION_GRANTED;
     }
 
     public boolean hasPhoneReadStatusPermission() {
-        return activity.checkSelfPermission(Manifest.permission.READ_PHONE_STATE)
+        return activity.checkSelfPermission(READ_PHONE_STATE)
                 == PackageManager.PERMISSION_GRANTED;
     }
 
     public boolean hasLocationPermission() {
-        return activity.checkSelfPermission(Manifest.permission.ACCESS_FINE_LOCATION)
+        return activity.checkSelfPermission(ACCESS_FINE_LOCATION)
                 == PackageManager.PERMISSION_GRANTED;
     }
 
     public void onEssentialPermissionsDenied() {
-        if (activity.shouldShowRequestPermissionRationale(Manifest.permission.READ_PHONE_STATE) ||
-                activity.shouldShowRequestPermissionRationale(Manifest.permission.RECORD_AUDIO)) {
+        if (activity.shouldShowRequestPermissionRationale(POST_NOTIFICATIONS) ||
+                activity.shouldShowRequestPermissionRationale(READ_PHONE_STATE) ||
+                activity.shouldShowRequestPermissionRationale(RECORD_AUDIO)) {
             // Explain the user why the denied permission is needed
             int error = 0;
 
@@ -98,6 +119,9 @@ public final class PermissionManager {
             }
             if (!hasPhoneReadStatusPermission()) {
                 error |= 1 << 1;
+            }
+            if (Build.VERSION.SDK_INT >= 33 && !notificationManager.areNotificationsEnabled()) {
+                error |= 1 << 2;
             }
 
             showPermissionRationale(PERMISSION_ERROR_MESSAGE_RES_IDS[error],
@@ -109,8 +133,7 @@ public final class PermissionManager {
     }
 
     public void onLocationPermissionDenied() {
-        if (activity.shouldShowRequestPermissionRationale(
-                Manifest.permission.ACCESS_FINE_LOCATION)) {
+        if (activity.shouldShowRequestPermissionRationale(ACCESS_FINE_LOCATION)) {
             showPermissionRationale(R.string.dialog_permissions_location,
                     this::requestLocationPermission);
         } else {
