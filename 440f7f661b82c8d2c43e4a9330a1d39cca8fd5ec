@@ -16,6 +16,24 @@
       "message": "100 chars",
       "revId": "440f7f661b82c8d2c43e4a9330a1d39cca8fd5ec",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5e1eefa7_5beee779",
+        "filename": "app/src/main/java/org/lineageos/recorder/utils/PermissionManager.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 19612
+      },
+      "writtenOn": "2022-09-16T04:08:19Z",
+      "side": 1,
+      "message": "Not sure what\u0027s the best format to respect the 100 chars rule for this",
+      "parentUuid": "7061e3c5_1541f4af",
+      "revId": "440f7f661b82c8d2c43e4a9330a1d39cca8fd5ec",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
