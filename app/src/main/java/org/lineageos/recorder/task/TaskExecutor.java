@@ -24,9 +24,8 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.annotation.WorkerThread;
 import androidx.lifecycle.Lifecycle;
-import androidx.lifecycle.LifecycleObserver;
+import androidx.lifecycle.LifecycleEventObserver;
 import androidx.lifecycle.LifecycleOwner;
-import androidx.lifecycle.OnLifecycleEvent;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -40,12 +39,19 @@ import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 import java.util.function.Consumer;
 
-public final class TaskExecutor implements LifecycleObserver {
+public final class TaskExecutor implements LifecycleEventObserver {
     private static final String TAG = "TaskExecutor";
 
     private final ExecutorService executor = Executors.newFixedThreadPool(2);
     private final Handler handler = new Handler(Looper.getMainLooper());
     private final List<Future<?>> execFutures = new ArrayList<>(4);
+
+    @Override
+    public void onStateChanged(@NonNull LifecycleOwner source, @NonNull Lifecycle.Event event) {
+        if (event == Lifecycle.Event.ON_DESTROY) {
+            terminate(source);
+        }
+    }
 
     public synchronized <T> void runTask(@NonNull @WorkerThread Callable<T> callable,
                                          @NonNull @MainThread Consumer<T> consumer) {
@@ -95,7 +101,6 @@ public final class TaskExecutor implements LifecycleObserver {
         }
     }
 
-    @OnLifecycleEvent(Lifecycle.Event.ON_DESTROY)
     public void terminate(@Nullable LifecycleOwner owner) {
         // Unsubscribe
         if (owner != null) {
