@@ -189,7 +189,7 @@ public class SoundRecorderService extends Service {
 
         mRecorder = mPreferencesManager.getRecordInHighQuality()
                 ? new HighQualityRecorder()
-                : new GoodQualityRecorder();
+                : new GoodQualityRecorder(this);
 
         final Optional<Path> optPath = createNewAudioFile(fileName, mRecorder.getFileExtension());
         if (optPath.isPresent()) {
