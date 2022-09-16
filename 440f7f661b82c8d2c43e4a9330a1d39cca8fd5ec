@@ -34,6 +34,24 @@
       "parentUuid": "7061e3c5_1541f4af",
       "revId": "440f7f661b82c8d2c43e4a9330a1d39cca8fd5ec",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "43b3cece_c2192109",
+        "filename": "app/src/main/java/org/lineageos/recorder/utils/PermissionManager.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 4550
+      },
+      "writtenOn": "2022-09-16T16:15:16Z",
+      "side": 1,
+      "message": "Maybe like this? https://zifb.in/Ja9NoLm6NQ",
+      "parentUuid": "5e1eefa7_5beee779",
+      "revId": "440f7f661b82c8d2c43e4a9330a1d39cca8fd5ec",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
