@@ -3,6 +3,7 @@ plugins {
 }
 
 android {
+    namespace 'org.lineageos.recorder'
     compileSdk 33
 
     defaultConfig {

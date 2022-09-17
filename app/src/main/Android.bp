@@ -17,6 +17,8 @@
 android_app {
     name: "Recorder",
 
+    package_name: 'org.lineageos.recorder',
+
     resource_dirs: ["res"],
 
     srcs: [
