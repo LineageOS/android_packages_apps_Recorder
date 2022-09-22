@@ -46,7 +46,11 @@
     <string name="dialog_permissions_title">İcazələr</string>
     <string name="dialog_permissions_mic">Səsyazan-ın, səsi yazmaq üçün mikrofon icazəsinə ehtiyacı var</string>
     <string name="dialog_permissions_phone">Zəng əsnasında bu tətbiqin yazmasını əngəlləmək üçün \"Səsyazan\" telefon vəziyyətinə müraciət etməlidir</string>
+    <string name="dialog_permissions_notifications">\"Səsyazan\"ın səs kontrollarını göstərməsi üçün bildirişlərə müraciətinə ehtiyacı var</string>
     <string name="dialog_permissions_mic_phone">Səsyazan-ın, zəng əsnasında yazmağı əngəlləmək üçün mikrofon icazəsinə və telefon vəziyyətinə müraciətə ehtiyacı var</string>
+    <string name="dialog_permissions_mic_notifications">\"Səsyazan\"ın səs yazmaq üçün mikrofona və səs kontrollarını göstərməsi üçün bildirişlərə müraciətinə ehtiyacı var</string>
+    <string name="dialog_permissions_phone_notifications">\"Səsyazan\"ın siz zəng edərkən bu tətbiqin səs yazmasının qarşısını almaq üçün telefon vəziyyətinə müraciətinə və səs kontrollarını göstərməsi üçün bildirişlərə müraciətinə ehtiyacı var</string>
+    <string name="dialog_permissions_mic_phone_notifications">\"Səsyazan\"ın səs yazmaq üçün mikrofona müraciətinə, siz zəng edərkən bu tətbiqin səs yazmasının qarşısını almaq üçün telefon vəziyyətinə müraciətinə və səs kontrollarını göstərməsi üçün bildirişlərə müraciətinə ehtiyacı var</string>
     <string name="dialog_permissions_location">Səsyazanın, yazılmış qeydləri nizama salmanıza kömək etməsi üzrə avtomatik etiketləməsi üçün yerləşmə icazəsinə ehtiyac var</string>
     <string name="dialog_permissions_ask">Təkrar soruş</string>
     <string name="dialog_permissions_dismiss">Rədd et</string>
