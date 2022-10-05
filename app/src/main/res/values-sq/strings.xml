@@ -46,7 +46,11 @@
     <string name="dialog_permissions_title">Lejet</string>
     <string name="dialog_permissions_mic">Regjistruesi kërkon leje aksesi tek mikrofoni për të regjistruar audio</string>
     <string name="dialog_permissions_phone">Regjistruesi kërkon akses te statusi i telefonit për të parandaluar aplikacionin që të regjistrojë gjatë një telefonate</string>
+    <string name="dialog_permissions_notifications">Regjistruesi ka nevojë për lejen e njoftimeve për të shfaqur kontrollet e regjistrimit</string>
     <string name="dialog_permissions_mic_phone">Regjistruesi kërkon leje për përdorimin e mikrofonit që të regjistrojë audio dhe akses te statusi i telefonit për të parandaluar aplikacionin që të regjistrojë gjatë një telefonate</string>
+    <string name="dialog_permissions_mic_notifications">Regjistruesi ka nevojë për lejen e mikrofonit për të regjistruar audio dhe lejen e njoftimeve për të shfaqur kontrollet e regjistrimit</string>
+    <string name="dialog_permissions_phone_notifications">Regjistruesi ka nevojë për qasje në statusin e telefonit për të parandaluar regjistrimin e këtij aplikacioni ndërsa telefononi dhe lejen e njoftimeve për të shfaqur kontrollet e regjistrimit</string>
+    <string name="dialog_permissions_mic_phone_notifications">Regjistruesi ka nevojë për lejen e mikrofonit për të regjistruar audion, qasjen në statusin e telefonit për të parandaluar regjistrimin e këtij aplikacioni ndërsa jeni duke telefonuar dhe lejen e njoftimeve për të shfaqur kontrollet e regjistrimit</string>
     <string name="dialog_permissions_location">Regjistruesit i duhet leja e vendndodhjes për të etiketuar automatikisht regjistrimet tuaja për t\'ju ndihmuar t\'i organizoni ato</string>
     <string name="dialog_permissions_ask">Pyet përsëri</string>
     <string name="dialog_permissions_dismiss">Largo</string>

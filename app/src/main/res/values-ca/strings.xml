@@ -46,7 +46,11 @@
     <string name="dialog_permissions_title">Permisos</string>
     <string name="dialog_permissions_mic">La gravadora necessita permís d\'accés al micròfon per enregistrar so</string>
     <string name="dialog_permissions_phone">La gravadora necessita accedir a l\'estat del telèfon per evitar que aquesta aplicació enregistri mentre estàs trucant</string>
+    <string name="dialog_permissions_notifications">La gravadora necessita permís de notificacions per mostrar els controls de gravació</string>
     <string name="dialog_permissions_mic_phone">La gravadora de sons necessita permís d\'accés al micròfon per enregistrar so i d\'accés a l\'estat del telèfon per evitar que aquesta aplicació enregistri mentre estàs trucant</string>
+    <string name="dialog_permissions_mic_notifications">La gravadora necessita permís del micròfon per gravar àudio i permís de notificacions per mostrar els controls de gravació</string>
+    <string name="dialog_permissions_phone_notifications">La gravadora necessita accés a l\'estat del telèfon per evitar que aquesta aplicació gravi mentre truqueu i permís de notificacions per mostrar els controls de gravació</string>
+    <string name="dialog_permissions_mic_phone_notifications">La gravadora necessita permís del micròfon per gravar àudio, accés a l\'estat del telèfon per evitar que aquesta aplicació gravi mentre truqueu i permís de notificacions per mostrar els controls de gravació</string>
     <string name="dialog_permissions_location">La Gravadora necessita el permís d\'ubicació per etiquetar automàticament les gravacions per ajudar-lo a organitzar-les</string>
     <string name="dialog_permissions_ask">Torna a preguntar</string>
     <string name="dialog_permissions_dismiss">Descarta</string>

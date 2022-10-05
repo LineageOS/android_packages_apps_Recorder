@@ -45,8 +45,12 @@
     <string name="settings_quality_high">Запись в высоком качестве</string>
     <string name="dialog_permissions_title">Разрешения</string>
     <string name="dialog_permissions_mic">Рекордеру требуется доступ к микрофону для записи звука</string>
-    <string name="dialog_permissions_phone">Рекордеру требуется доступ к данным о состоянии телефона, чтобы прекращать запись во время звонка</string>
-    <string name="dialog_permissions_mic_phone">Рекордеру требуется доступ к микрофону для записи звука и доступ к данным о состоянии телефона, чтобы прекращать запись во время звонка</string>
+    <string name="dialog_permissions_phone">Рекордеру требуется доступ к состоянию телефона для предотвращения записи во время звонка</string>
+    <string name="dialog_permissions_notifications">Рекордеру требуется разрешение на уведомления для отображения кнопок управления записью</string>
+    <string name="dialog_permissions_mic_phone">Рекордеру требуется доступ к микрофону для записи звука и доступ к состоянию телефона для предотвращения записи во время звонка</string>
+    <string name="dialog_permissions_mic_notifications">Рекордеру требуется доступ к микрофону для записи звука и разрешение на уведомления для отображения кнопок управления записью</string>
+    <string name="dialog_permissions_phone_notifications">Рекордеру требуется доступ к состоянию телефона для предотвращения записи во время звонков и разрешение на уведомления для отображения кнопок управления записью</string>
+    <string name="dialog_permissions_mic_phone_notifications">Рекордеру требуется доступ к микрофону для записи звука, доступ к состоянию телефона для предотвращения записи во время звонка и доступ к уведомлениям для отображения кнопок управления записью</string>
     <string name="dialog_permissions_location">Рекордеру требуется разрешение на доступ к местоположению для автоматического создания меток ваших записей, чтобы помочь вам организовать их</string>
     <string name="dialog_permissions_ask">Спросить снова</string>
     <string name="dialog_permissions_dismiss">Пропустить</string>

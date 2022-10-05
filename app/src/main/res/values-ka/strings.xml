@@ -45,9 +45,13 @@
     <string name="settings_quality_high">ჩაწერა მაღალ ხარისხში</string>
     <string name="dialog_permissions_title">ნებართვები</string>
     <string name="dialog_permissions_mic">საჭიროებს მიკროფონთან წვდომის ნებართვას ხმის ჩასაწერად</string>
-    <string name="dialog_permissions_phone">საჭიროებს ტელეფონის მდგომარეობის მონაცემებთან წვდომის ნებართვას, საუბრის დროს ჩაწერის ასარიდებლად</string>
-    <string name="dialog_permissions_mic_phone">საჭიროებს მიკროფონთან წვდომის ნებართვას ხმის ჩასაწერად და ტელეფონის მდგომარეობის მონაცემებთან წვდომას, საუბრისას ჩაწერის ასარიდებლად</string>
-    <string name="dialog_permissions_location">ჩამწერი საჭიროებს მდებარეობაზე წვდომას ჩანაწერების ავტომატური მონიშვნისთვის უკეთ დასალაგებლად.</string>
+    <string name="dialog_permissions_phone">საჭიროებს ტელეფონის მდგომარეობის მონაცემებთან წვდომის ნებართვას ზარის დროს ჩაწერის ასარიდებლად</string>
+    <string name="dialog_permissions_notifications">ჩამწერი საჭიროებს შეტყობინებების ნებართვას ჩაწერისას სამართავის გამოსაჩენად</string>
+    <string name="dialog_permissions_mic_phone">საჭიროებს მიკროფონთან წვდომის ნებართვას ხმის ჩასაწერად და ტელეფონის მდგომარეობის მონაცემებთან წვდომას საუბრისას ჩაწერის ასარიდებლად</string>
+    <string name="dialog_permissions_mic_notifications">ჩამწერი საჭიროებს მიკროფონთან წვდომის ნებართვას ხმის ჩასაწერად და შეტყობინებების ნებართვას ჩაწერისას სამართავის გამოსაჩენად</string>
+    <string name="dialog_permissions_phone_notifications">ჩამწერი საჭიროებს ტელეფონის მდგომარეობის მონაცემებთან წვდომის ნებართვას ზარის დროს ჩაწერის ასარიდებლად და შეტყობინებების ნებართვას ჩაწერისას სამართავის გამოსაჩენად</string>
+    <string name="dialog_permissions_mic_phone_notifications">ჩამწერი საჭიროებს მიკროფონთან წვდომის ნებართვას ზარის დროს ჩაწერის ასარიდებლად და შეტყობინებების ნებართვას ჩაწერისას სამართავის გამოსაჩენად</string>
+    <string name="dialog_permissions_location">ჩამწერი საჭიროებს მდებარეობაზე წვდომას ჩანაწერების ავტომატური მონიშვნისთვის უკეთ დასალაგებლად</string>
     <string name="dialog_permissions_ask">კვლავ შეკითხვა</string>
     <string name="dialog_permissions_dismiss">აცილება</string>
     <string name="snack_permissions_no_permission">მოთხოვნილი უფლებები უარყოფილია, დართეთ ნება პარამეტრებიდან ჩაწერის დასაწყებად</string>

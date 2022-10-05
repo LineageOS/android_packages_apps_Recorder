@@ -46,7 +46,11 @@
     <string name="dialog_permissions_title">Permisiuni</string>
     <string name="dialog_permissions_mic">Recorder are nevoie de permisiunea de microfon pentru a înregistra audio</string>
     <string name="dialog_permissions_phone">Recorder are nevoie de acces la starea telefonului pentru a împiedica aplicația să înregistreze în timpul apelurilor</string>
+    <string name="dialog_permissions_notifications">Aplicația Înregistrare are nevoie de permisiunea de notificări pentru a afișa controalele înregistrării</string>
     <string name="dialog_permissions_mic_phone">Recorder are nevoie de permisiunea de microfon pentru a înregistra audio și acces la starea telefonului pentru a împiedica aplicația să înregistreze când apelați</string>
+    <string name="dialog_permissions_mic_notifications">Aplicația Înregistrare are nevoie de permisiuni pentru microfon pentru a înregistra audio și de notificări pentru a afișa controalele înregistrării</string>
+    <string name="dialog_permissions_phone_notifications">Aplicația Înregistrare are nevoie de acces la starea telefonului pentru a preveni ca această aplicație să înregistreze în timpul apelului și de permisiunea de notificări pentru a afișa controalele înregistrării</string>
+    <string name="dialog_permissions_mic_phone_notifications">Aplicația Înregistrare are nevoie de permisiunea de microfon pentru a înregistra audio, acces la starea telefonului pentru a preveni ca această aplicație să înregistreze în timpul apelului și permisiunea de notificări pentru a afișa controalele înregistrării</string>
     <string name="dialog_permissions_location">Aplicația Înregistrare are nevoie de permisiuni de localizare pentru a vă eticheta automat înregistrările pentru a vă ajuta să le organizați</string>
     <string name="dialog_permissions_ask">Cere din nou</string>
     <string name="dialog_permissions_dismiss">Renunţaţi</string>

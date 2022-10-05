@@ -46,7 +46,11 @@
     <string name="dialog_permissions_title">Machtigingen</string>
     <string name="dialog_permissions_mic">Recorder heeft toegang nodig tot de microfoon om geluid op te kunnen nemen</string>
     <string name="dialog_permissions_phone">Recorder heeft toegang nodig tot de telefoonstatus om te voorkomen dat deze app opneemt tijdens oproepen</string>
+    <string name="dialog_permissions_notifications">Recorder heeft toestemming voor meldingen nodig om opnameopties weer te geven</string>
     <string name="dialog_permissions_mic_phone">Recorder heeft toegang nodig tot de microfoon om audio op te kunnen nemen en toegang nodig tot de telefoonstatus om te voorkomen dat deze app opneemt tijdens oproepen</string>
+    <string name="dialog_permissions_mic_notifications">Recorder heeft toegang nodig tot de microfoon om audio op te nemen en toestemming voor meldingen om opnamebesturen weer te geven</string>
+    <string name="dialog_permissions_phone_notifications">Recorder heeft toegang nodig tot de telefoonstatus om te voorkomen dat deze app opneemt tijdens oproepen en notificatie toestemming om opnamebesturing te tonen</string>
+    <string name="dialog_permissions_mic_phone_notifications">Recorder heeft toegang nodig tot de microfoon om audio op te nemen, toegang tot de telefoonstatus om te voorkomen dat deze app opneemt tijdens het bellen, en notificatie permissie om opname besturing weer te geven</string>
     <string name="dialog_permissions_location">Recorder heeft locatiemachtiging nodig om automatisch uw opnamen te taggen om die te organiseren</string>
     <string name="dialog_permissions_ask">Opnieuw vragen</string>
     <string name="dialog_permissions_dismiss">Sluiten</string>

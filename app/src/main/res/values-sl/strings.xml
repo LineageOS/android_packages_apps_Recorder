@@ -46,7 +46,11 @@
     <string name="dialog_permissions_title">Dovoljenja</string>
     <string name="dialog_permissions_mic">Snemalnik potrebuje dovoljenje za mikrofon za snemanje zvoka</string>
     <string name="dialog_permissions_phone">Snemalnik potrebuje dostop do stanja telefona, da tej aplikaciji prepreči snemanje med klicem</string>
+    <string name="dialog_permissions_notifications">Snemalnik potrebuje dovoljenje za obvestila za prikaz kontrolnikov snemanja</string>
     <string name="dialog_permissions_mic_phone">Snemalnik potrebuje dovoljenje za mikrofon za snemanje zvoka in dostop do stanja telefona, da tej aplikaciji prepreči snemanje med klicem</string>
+    <string name="dialog_permissions_mic_notifications">Snemalnik potrebuje dovoljenje za mikrofon za snemanje zvoka in dovoljenje za obvestila za prikaz kontrolnikov snemanja</string>
+    <string name="dialog_permissions_phone_notifications">Snemalnik potrebuje dostop do stanja telefona, da prepreči tej aplikaciji snemanje med klicem in dovoljenje za obvestila za prikaz kontrolnikov snemanja</string>
+    <string name="dialog_permissions_mic_phone_notifications">Snemalnik potrebuje dovoljenje za mikrofon za snemanje zvoka, dostop do stanja telefona, da prepreči tej aplikaciji snemanje med klicem in dovoljenje za obvestila za prikaz kontrolnikov snemanja</string>
     <string name="dialog_permissions_location">Snemalnik potrebuje dovoljenje za lokacijo za samodejno označevanje vaših posnetkov za pomoč pri organiziranju</string>
     <string name="dialog_permissions_ask">Ponovno vprašaj</string>
     <string name="dialog_permissions_dismiss">Opusti</string>
