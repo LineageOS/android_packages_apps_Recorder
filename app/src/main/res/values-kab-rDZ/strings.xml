@@ -34,6 +34,10 @@
     <string name="sound_channel_title">Asekles n umeslaw</string>
     <string name="settings_title">Iɣewwaṛen</string>
     <string name="dialog_permissions_title">Issirgen</string>
+    <string name="dialog_permissions_notifications">Asekles isra tisirag n ilɣa i uskan n tqefalin n usekles</string>
+    <string name="dialog_permissions_mic_notifications">Asekles isra tisirag n umṣawaḍ usekles n imesli akked tisirag n ilɣa i uskan n tqefalin n usekles</string>
+    <string name="dialog_permissions_phone_notifications">Asekles isra anekcum ɣer waddad n tilifun akken ur ittaǧa asekles ticki tesawaleḍ akked tisirag n ilɣa i uskan n tqefalin n usekles</string>
+    <string name="dialog_permissions_mic_phone_notifications">Asekles isra tisirag n umṣawaḍ i usekles n imesli, anekcum ɣer waddad n tilifun akken ur ittaǧa ara asnas-a ad isekles ticki tesawaleḍ, akked tisirag n ilɣa i uskan ntqefalin n usekles</string>
     <string name="dialog_permissions_ask">Ssuter tikkelt-nniḍen</string>
     <string name="dialog_permissions_dismiss">Suref</string>
     <string name="main_sound_action">Sekles imesli</string>

@@ -16,5 +16,8 @@
 <resources>
     <string name="dialog_permissions_mic">Upptökuforitið þarf heimild fyrir aðgang að hljóðnema til að taka upp hljóð</string>
     <string name="dialog_permissions_phone">Upptökuforitið þarf heimild fyrir aðgang að stöðu símans til að koma í veg fyrir hljóðupptöku á meðan símtölum stendur</string>
+    <string name="dialog_permissions_notifications">Upptökuforitið þarf heimild fyrir tilkynningar til að birta stýringar fyrir upptöku</string>
     <string name="dialog_permissions_mic_phone">Upptökuforitið þarf heimild fyrir aðgang að hljóðnema til að taka upp hljóð og að stöðu símans til að koma í veg fyrir hljóðupptöku á meðan símtölum stendur</string>
+    <string name="dialog_permissions_mic_notifications">Upptökuforitið þarf heimild fyrir aðgang að hljóðnema og tilkynningum til að birta stýringar fyrir upptöku</string>
+    <string name="dialog_permissions_phone_notifications">Upptökuforitið þarf heimild fyrir aðgang að stöðu símans til að koma í veg fyrir hljóðupptöku á meðan símtölum stendur og að tilkynningum til að birta stýringar fyrir upptöku</string>
 </resources>
