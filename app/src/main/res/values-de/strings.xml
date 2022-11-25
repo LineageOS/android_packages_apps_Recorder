@@ -46,7 +46,11 @@
     <string name="dialog_permissions_title">Berechtigungen</string>
     <string name="dialog_permissions_mic">Rekorder benötigt Zugriff auf das Mikrofon, um Ton aufzunehmen</string>
     <string name="dialog_permissions_phone">Rekorder benötigt Zugriff auf den Telefonstatus, um zu verhindern, dass diese App deine Anrufe aufzeichnet</string>
+    <string name="dialog_permissions_notifications">Rekorder benötigt die Berechtigung für Benachrichtigungen, um Aufzeichnungssteuerelemente anzuzeigen</string>
     <string name="dialog_permissions_mic_phone">Rekorder benötigt Zugriff auf das Mikrofon, um Aufnahmen zu erstellen und Zugriff auf den Telefonstatus, um zu verhindern, dass diese App Aufzeichnungen erstellt, während du telefonierst</string>
+    <string name="dialog_permissions_mic_notifications">Rekorder benötigt die Berechtigung für das Mikrofon, um Aufzeichnungssteuerelemente anzuzeigen</string>
+    <string name="dialog_permissions_phone_notifications">Rekorder benötigt Zugriff auf den Telefonstatus, um zu verhindern, dass diese App während eines Anrufs aufzeichnet und Benachrichtigungsrechte für die Aufzeichnungssteuerung</string>
+    <string name="dialog_permissions_mic_phone_notifications">Rekorder benötigt die Berechtigung für das Mikrofon um Ton aufzuzeichnen, Zugriff auf den Telefonstatus, um zu verhindern, dass diese App während eines Anrufs aufzeichnet, und Benachrichtigungsrechte für die Aufnahmesteuerung</string>
     <string name="dialog_permissions_location">Der Rekorder benötigt die Standortberechtigung, um deine Aufnahmen für eine leichtere Organisation automatisch  zu markieren</string>
     <string name="dialog_permissions_ask">Erneut nachfragen</string>
     <string name="dialog_permissions_dismiss">Verwerfen</string>

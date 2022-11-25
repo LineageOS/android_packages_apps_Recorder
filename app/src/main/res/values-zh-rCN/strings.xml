@@ -48,8 +48,8 @@
     <string name="dialog_permissions_phone">录制器需要访问手机状态权限以便在您通话时停止录音</string>
     <string name="dialog_permissions_notifications">录音机需要通知权限才能显示录制控制按钮</string>
     <string name="dialog_permissions_mic_phone">录制器需要麦克风访问权限以录制语音，手机状态访问权限以避免在您通话时录制</string>
-    <string name="dialog_permissions_mic_notifications">录音机需要麦克风权限来录制音频和通知权限来显示录制控制按钮</string>
-    <string name="dialog_permissions_phone_notifications">录音机需要手机状态访问权限以防止此应用程序在您通话时进行录制并允许显示录制控制按钮</string>
+    <string name="dialog_permissions_mic_notifications">录音机需要麦克风权限来录制音频、需要通知权限来显示录制控制按钮</string>
+    <string name="dialog_permissions_phone_notifications">录音机需要手机状态访问权限以防止此应用程序在您通话时进行录制、需要通知权限显示录制控制按钮</string>
     <string name="dialog_permissions_mic_phone_notifications">录音机需要麦克风权限才能录制音频，手机状态权限才能阻止您通话时录制此应用， 以及显示录制控制按钮的通知权限</string>
     <string name="dialog_permissions_location">为了让录音机自动帮您整理您的录音，您需要授予录音机位置权限。</string>
     <string name="dialog_permissions_ask">再次询问</string>

@@ -46,7 +46,11 @@
     <string name="dialog_permissions_title">Permissões</string>
     <string name="dialog_permissions_mic">O Gravador precisa de acesso ao microfone para gravar áudio</string>
     <string name="dialog_permissions_phone">O Gravador precisa de acesso ao estado do telefone para impedir que esta aplicação grave enquanto está numa chamada</string>
+    <string name="dialog_permissions_notifications">Gravador precisa de permissão de acesso às notificações para mostrar os controlos de gravação</string>
     <string name="dialog_permissions_mic_phone">O Gravador precisa de acesso ao microfone para gravar som e de acesso ao estado do telefone para impedir que esta aplicação grave enquanto está numa chamada</string>
+    <string name="dialog_permissions_mic_notifications">Gravador precisa de permissão de acesso ao microfone para gravar áudio e permissão de acesso às notificações para mostrar os controlos de gravação</string>
+    <string name="dialog_permissions_phone_notifications">Gravador precisa de acesso ao estado do telefone para impedir a gravação durante chamadas e permissão de acesso às notificações para mostrar os controlos de gravação</string>
+    <string name="dialog_permissions_mic_phone_notifications">Gravador precisa de permissões de acesso ao microfone para gravar áudio, ao estado do telefone para impedir a gravação durante chamadas, e às notificações para mostrar os controlos de gravação</string>
     <string name="dialog_permissions_location">O gravador precisa de permissão de localização para marcar automaticamente as tuas gravações, para te ajudar a organizá-las</string>
     <string name="dialog_permissions_ask">Voltar a perguntar</string>
     <string name="dialog_permissions_dismiss">Ignorar</string>
