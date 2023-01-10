@@ -16,4 +16,8 @@
 <resources>
     <string name="share">Абагуліць</string>
     <string name="share_selected">Абагуліць выбраныя</string>
+    <string name="delete_all">Выдаліць усе</string>
+    <string name="delete_title">Выдаленне запісу</string>
+    <string name="confirm_result_message">Вы сапраўды хочаце выкарыстоўваць апошні запіс?</string>
+    <string name="delete_all_title">Выдаліць усе</string>
 </resources>

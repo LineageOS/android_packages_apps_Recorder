@@ -46,7 +46,11 @@
     <string name="dialog_permissions_title">İzinler</string>
     <string name="dialog_permissions_mic">Kaydedici ses kaydetmek için mikrofon iznine ihtiyaç duyuyor</string>
     <string name="dialog_permissions_phone">Arama esnasında bu uygulamanın kayıt yapmasını önlemek için kaydedicinin telefon durumu erişimine ihtiyacı var</string>
+    <string name="dialog_permissions_notifications">Kaydedici, kayıt etme kontrollerini göstermek için bildirim iznine ihtiyaç duyuyor</string>
     <string name="dialog_permissions_mic_phone">Kaydedici, arama esnasında kayıt yapmayı önlemek için mikrofon iznine ve telefon durumu erişimine ihtiyaç duyar</string>
+    <string name="dialog_permissions_mic_notifications">Kaydedici, sesi kaydetmek için mikrofon iznine ve kayıt kontrollerini göstermek için bildirim iznine ihtiyaç duyuyor</string>
+    <string name="dialog_permissions_phone_notifications">Kaydedici uygulaması arama esnasında kayıt yapmasını önlemek için telefon durumu erişimine ve kayıt kontrollerini göstermek için bildirim iznine ihtiyaç duyuyor</string>
+    <string name="dialog_permissions_mic_phone_notifications">Kaydedici, ses kaydetmek için mikrofon iznine, bu uygulamanın siz arama yaparken kayıt yapmasını önlemek için telefon durumu erişimine ve kayıt kontrollerini göstermek için bildirim iznine ihtiyaç duyuyor</string>
     <string name="dialog_permissions_location">Kaydedicinin, kayıtlarınızı düzenlemenize yardımcı olmak üzere otomatik olarak etiketlemesi için konum iznine ihtiyacı var</string>
     <string name="dialog_permissions_ask">Tekrar sor</string>
     <string name="dialog_permissions_dismiss">Reddet</string>
