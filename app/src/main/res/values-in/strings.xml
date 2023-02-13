@@ -46,7 +46,11 @@
     <string name="dialog_permissions_title">Izin</string>
     <string name="dialog_permissions_mic">Perekam membutuhkan izin mikrofon untuk merekam audio</string>
     <string name="dialog_permissions_phone">Perekam membutuhkan akses ke status telepon untuk mencegah aplikasi ini merekam saat Anda melakukan panggilan</string>
+    <string name="dialog_permissions_notifications">Perekam memerlukan izin notifikasi untuk menampilkan kontrol perekaman</string>
     <string name="dialog_permissions_mic_phone">Perekam membutuhkan izin mikrofon untuk merekam audio, dan akses ke status telepon untuk mencegah aplikasi ini merekam saat Anda melakukan panggilan</string>
+    <string name="dialog_permissions_mic_notifications">Perekam memerlukan izin mikrofon untuk merekam audio dan izin notifikasi untuk menampilkan kontrol perekaman</string>
+    <string name="dialog_permissions_phone_notifications">Perekam memerlukan akses status telepon untuk mencegah aplikasi ini merekam saat Anda menelepon dan izin notifikasi untuk menampilkan kontrol perekaman</string>
+    <string name="dialog_permissions_mic_phone_notifications">Perekam memerlukan izin mikrofon untuk merekam audio, akses status telepon untuk mencegah aplikasi ini merekam saat Anda menelepon, dan izin notifikasi untuk menampilkan kontrol perekaman</string>
     <string name="dialog_permissions_location">Perekam perlu izin akses lokasi agar secara otomatis menandai rekaman Anda untuk membantu Anda mengelompokkan nya</string>
     <string name="dialog_permissions_ask">Minta izin lagi</string>
     <string name="dialog_permissions_dismiss">Tutup</string>

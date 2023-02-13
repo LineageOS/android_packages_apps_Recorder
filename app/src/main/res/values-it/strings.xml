@@ -46,7 +46,11 @@
     <string name="dialog_permissions_title">Permessi</string>
     <string name="dialog_permissions_mic">Registratore deve accedere al microfono per registrare l\'audio</string>
     <string name="dialog_permissions_phone">Registratore deve accedere allo stato del telefono per prevenire le registrazioni audio durante le telefonate</string>
+    <string name="dialog_permissions_notifications">Il registratore ha bisogno dei permessi di notifica per mostrare i controlli di registrazione</string>
     <string name="dialog_permissions_mic_phone">Registratore deve accedere al microfono per registrare audio e allo stato del telefono per impedire registrazioni audio durante le telefonate</string>
+    <string name="dialog_permissions_mic_notifications">Il registratore deve accedere al microfono per registrare l\'audio e i permessi di notifica per mostrare i controlli</string>
+    <string name="dialog_permissions_phone_notifications">Il registratore chiede l\'accesso allo stato del telefono per impedire a questa app di registrare durante le chiamate e i permessi di notifica per mostrare i controlli di registrazione</string>
+    <string name="dialog_permissions_mic_phone_notifications">Il registratore ha bisogno dell\'accesso al microfono per registrare l\'audio, l\'accesso allo stato del telefono per impedire a questa app di registrare durante le chiamate e i permessi di notifica per mostrare i controlli di registrazione</string>
     <string name="dialog_permissions_location">Il registratore ha bisogno dei permessi di localizzazione per etichettare automaticamente le tue registrazioni, per aiutarti ad organizzarle</string>
     <string name="dialog_permissions_ask">Chiedi di nuovo</string>
     <string name="dialog_permissions_dismiss">Annulla</string>

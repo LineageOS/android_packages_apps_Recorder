@@ -47,6 +47,8 @@
     <string name="dialog_permissions_mic">녹음기는 소리를 녹음하기 위해 마이크 사용 권한이 필요합니다.</string>
     <string name="dialog_permissions_phone">녹음기는 통화 도중에 녹음되는 것을 방지하기 위해 전화 상태 접근 권한이 필요합니다.</string>
     <string name="dialog_permissions_mic_phone">녹음기는 녹음한 파일을 저장하기 위한 저장소 사용 권한과 통화 도중에 녹음되는 것을 방지하기 위한 전화 상태 접근 권한이 필요합니다.</string>
+    <string name="dialog_permissions_phone_notifications">녹음기는 전화를 걸고 받는 중에 녹음을 멈추기 위한 휴대전화 상태 읽기 권한과, 녹음 제어 알림을 보여주기 위한 알림 권한이 필요합니다.</string>
+    <string name="dialog_permissions_mic_phone_notifications">녹음기는 소리를 녹음하기 위한 마이크 권한과 전화를 걸고 받는 중에 녹음을 멈추기 위한 휴대전화 상태 읽기 권한, 녹음 제어 알림을 보여주기 위한 알림 권한이 필요합니다.</string>
     <string name="dialog_permissions_location">녹음에 자동으로 태그를 기록하여 정리를 돕기 위해 위치 권한이 필요합니다.</string>
     <string name="dialog_permissions_ask">다시 묻기</string>
     <string name="dialog_permissions_dismiss">다시 묻지 않기</string>
