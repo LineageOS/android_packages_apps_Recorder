@@ -46,7 +46,11 @@
     <string name="dialog_permissions_title">Autorisations</string>
     <string name="dialog_permissions_mic">Le magnétophone a besoin d\'accéder au microphone pour enregistrer l\'audio</string>
     <string name="dialog_permissions_phone">Le magnétophone a besoin d\'accéder à l\'état du téléphone pour empêcher l\'application d\'enregistrer pendant un appel</string>
+    <string name="dialog_permissions_notifications">Le magnétophone nécessite l\'accès aux notifications pour afficher les commandes d\'enregistrement</string>
     <string name="dialog_permissions_mic_phone">Le magnétophone a besoin d’accéder au microphone pour enregistrer l\'audio et à l\'état du téléphone pour empêcher l\'application d\'enregistrer pendant un appel</string>
+    <string name="dialog_permissions_mic_notifications">Le magnétophone nécessite l\'accès au microphone pour enregistrer l\'audio, et aux notifications pour afficher les commandes d\'enregistrement</string>
+    <string name="dialog_permissions_phone_notifications">Le magnétophone nécessite l\'accès au statut du téléphone pour empêcher cette application d\'enregistrer pendant que vous appelez, et aux notifications afin d\'afficher les commandes d\'enregistrement</string>
+    <string name="dialog_permissions_mic_phone_notifications">Le magnétophone nécessite l\'accès au microphone pour enregistrer l\'audio, au statut du téléphone pour empêcher cette application d\'enregistrer pendant que vous appelez, et aux notifications afin d\'afficher les commandes d\'enregistrement</string>
     <string name="dialog_permissions_location">L\'enregistreur a besoin de l’autorisation d’accès à la localisation pour étiqueter automatiquement vos enregistrements afin de vous aider à les organiser</string>
     <string name="dialog_permissions_ask">Demander à nouveau</string>
     <string name="dialog_permissions_dismiss">Fermer</string>

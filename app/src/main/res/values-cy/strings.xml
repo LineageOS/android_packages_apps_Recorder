@@ -46,7 +46,11 @@
     <string name="dialog_permissions_title">Caniatâd</string>
     <string name="dialog_permissions_mic">Mae ar Recordydd angen mynediad i\'r meicroffon i recordio sain.</string>
     <string name="dialog_permissions_phone">Mae ar Rcordydd angen mynediad i statws y ffôn er mwyn sicrhau nad yw\'r ap hwn yn recordio tra dy fod mewn galwad.</string>
+    <string name="dialog_permissions_notifications">Mae ar y recordydd angen caniatâd hysbysiadau i allu dangos rheolyddion recordio</string>
     <string name="dialog_permissions_mic_phone">Mae ar Recordydd angen mynediad i\'r meicroffon i fedru recordio sain, mynediad i statws y ffôn er mwyn sicrhau nad yw\'r ap hwn yn recordio tra dy fod mewn galwad.</string>
+    <string name="dialog_permissions_mic_notifications">Mae ar y recordydd angen caniatâd meicroffon i allu recordio sain a chaniatâd hysbysiadau i allu dangos rheolyddion recordio</string>
+    <string name="dialog_permissions_phone_notifications">Mae ar y recordydd angen caniatâd statws y ffôn i rwystro\'r ap hwn rhag recordio tra dy fod ar alwad a chaniatâd hysbysiadau i allu dangos rheolyddion recordio</string>
+    <string name="dialog_permissions_mic_phone_notifications">Mae ar y recordydd angen caniatâd meicroffon i allu recordio sain, caniatâd statws y ffôn i rwystro\'r ap hwn rhag recordio tra dy fod ar alwad, a chaniatâd hysbysiadau i allu dangos rheolyddion recordio</string>
     <string name="dialog_permissions_location">Mae angen caniatâd lleoliad ar y recordydd i dagio\'n awtomatig dy recordiadau i dy gynorthwyo i\'w trefnu</string>
     <string name="dialog_permissions_ask">Gofyn eto</string>
     <string name="dialog_permissions_dismiss">Diystyru</string>
