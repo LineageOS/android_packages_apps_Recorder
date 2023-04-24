@@ -16,26 +16,38 @@
 <resources>
     <string name="app_name">Recordydd</string>
     <string name="share">Rhannu</string>
+    <string name="share_selected">Rhan wedi\'i ddewis</string>
     <string name="stop">Stopio</string>
     <string name="play">Chwarae</string>
     <string name="pause">Seibio</string>
     <string name="resume">Parhau</string>
     <string name="delete">Dileu</string>
+    <string name="delete_all">Dileu\'r cwbl</string>
+    <string name="delete_selected">Dileu hwn</string>
     <string name="cancel">Diddymu</string>
     <string name="rename">Ailenwi</string>
     <string name="delete_title">Yn dileu\'r recordiad</string>
+    <string name="delete_recording_message">Wyt ti\'n siŵr dy fod eisiau dileu\'r recordiad? Nid oes modd ei ddadwneud</string>
+    <string name="confirm">Cadarnhau</string>
+    <string name="discard">Dileu</string>
+    <string name="record_again">Recordio eto</string>
+    <string name="confirm_result_title">Defnyddio\'r recordiad?</string>
+    <string name="confirm_result_message">Wyt ti am ddefnyddio\'r recordiad diwethaf?</string>
     <string name="sound_notification_title">Recordydd Sain</string>
     <string name="sound_notification_message">Hyd sain: %1$s</string>
     <string name="sound_recording_title_working">Yn recordio</string>
+    <string name="sound_recording_title_paused">Wedi seibio</string>
     <string name="sound_last_title">Recordiad diwethaf</string>
     <string name="sound_channel_title">Recordio sain</string>
     <string name="sound_channel_desc">Hysbysiad cyson wrth recordio\'r sain a hysbysiad ar ôl gorffen recordio</string>
     <string name="settings_title">Gosodiadau</string>
+    <string name="settings_location_message">Tagia dy recordiadau gyda sy safle presennol</string>
     <string name="settings_quality_high">Recordio mewn ansawdd uchel</string>
     <string name="dialog_permissions_title">Caniatâd</string>
     <string name="dialog_permissions_mic">Mae ar Recordydd angen mynediad i\'r meicroffon i recordio sain.</string>
     <string name="dialog_permissions_phone">Mae ar Rcordydd angen mynediad i statws y ffôn er mwyn sicrhau nad yw\'r ap hwn yn recordio tra dy fod mewn galwad.</string>
     <string name="dialog_permissions_mic_phone">Mae ar Recordydd angen mynediad i\'r meicroffon i fedru recordio sain, mynediad i statws y ffôn er mwyn sicrhau nad yw\'r ap hwn yn recordio tra dy fod mewn galwad.</string>
+    <string name="dialog_permissions_location">Mae angen caniatâd lleoliad ar y recordydd i dagio\'n awtomatig dy recordiadau i dy gynorthwyo i\'w trefnu</string>
     <string name="dialog_permissions_ask">Gofyn eto</string>
     <string name="dialog_permissions_dismiss">Diystyru</string>
     <string name="snack_permissions_no_permission">Gwrthodwyd peth caniatad sydd ei angen. Rho ganiatâd yn Gosodiadau er mwyn dechrau recordio.</string>
@@ -46,4 +58,8 @@
     <string name="list_edit_title">Golygu enw\'r recordiad</string>
     <string name="list_edit_confirm">Newid</string>
     <string name="list_item_menu">Rhagor o weithrediadau</string>
+    <string name="delete_all_title">Dileu\'r cwbl</string>
+    <string name="delete_all_message">Wyt ti\'n siŵr dy fod am ddileu\'r holl recordiadau? Nid oes modd dadwneud hyn</string>
+    <string name="delete_selected_title">Dileu hwn</string>
+    <string name="delete_selected_message">Wyt ti\'n siŵr dy fod am ddileu\'r holl recordiadau a ddewiswyd? Nid oes modd dadwneud hyn</string>
 </resources>

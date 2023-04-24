@@ -16,18 +16,27 @@
 <resources>
     <string name="app_name">Записвачка</string>
     <string name="share">Споделяне</string>
+    <string name="share_selected">Споделяне на избраното</string>
     <string name="stop">Стоп</string>
     <string name="play">Възпроизвеждане</string>
     <string name="pause">Пауза</string>
     <string name="resume">Възобнови</string>
     <string name="delete">Изтриване</string>
+    <string name="delete_all">Изтриване на всички</string>
+    <string name="delete_selected">Изтриване на избраните</string>
     <string name="cancel">Отказ</string>
     <string name="rename">Преименуване</string>
     <string name="delete_title">Изтриване на записа</string>
     <string name="delete_recording_message">Наистина ли искате да изтриете този запис? Това действие не може да бъде отменено.</string>
+    <string name="confirm">Потвърждаване</string>
+    <string name="discard">Отхвърли</string>
+    <string name="record_again">Повторно записване</string>
+    <string name="confirm_result_title">Да се използва ли записът?</string>
+    <string name="confirm_result_message">Искате ли да използвате последния запис?</string>
     <string name="sound_notification_title">Записване на звук</string>
     <string name="sound_notification_message">Продължителност на аудио запис: %1$s</string>
     <string name="sound_recording_title_working">Записване</string>
+    <string name="sound_recording_title_paused">На пауза</string>
     <string name="sound_last_title">Последен запис</string>
     <string name="sound_channel_title">Запис на звук</string>
     <string name="sound_channel_desc">Постоянно известяване при запис на звук и известие, след завършване</string>
@@ -49,4 +58,8 @@
     <string name="list_edit_title">Редактирайте името на записа</string>
     <string name="list_edit_confirm">Промени</string>
     <string name="list_item_menu">Още действия</string>
+    <string name="delete_all_title">Изтриване на всички</string>
+    <string name="delete_all_message">Наистина ли искате да изтриете всички записи? Това действие не може да бъде отменено.</string>
+    <string name="delete_selected_title">Изтриване на избраните</string>
+    <string name="delete_selected_message">Наистина ли искате да изтриете избраните записи? Това не може да бъде отменено.</string>
 </resources>
