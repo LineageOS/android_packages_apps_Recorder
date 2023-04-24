@@ -46,7 +46,11 @@
     <string name="dialog_permissions_title">Quyền truy cập</string>
     <string name="dialog_permissions_mic">Trình ghi lại cần quyền micro để ghi lại âm thanh</string>
     <string name="dialog_permissions_phone">Trình ghi lại cần truy cập trạng thái điện thoại để ngăn ứng dụng này ghi âm khi bạn đang gọi</string>
+    <string name="dialog_permissions_notifications">Máy ghi âm cần quyền thông báo để hiển thị các điều khiển ghi âm</string>
     <string name="dialog_permissions_mic_phone">Trình ghi lại cần quyền micro để ghi lại âm thanh và truy cập trạng thái điện thoại để ngăn chặn ứng dụng này ghi âm trong khi bạn đang gọi</string>
+    <string name="dialog_permissions_mic_notifications">Máy ghi âm cần quyền sử dụng micrô để ghi âm thanh và quyền thông báo để hiển thị các điều khiển ghi âm</string>
+    <string name="dialog_permissions_phone_notifications">Máy ghi âm cần quyền truy cập trạng thái điện thoại để ngăn ứng dụng này ghi âm khi bạn đang gọi điện và thông báo cho phép hiển thị các điều khiển ghi âm</string>
+    <string name="dialog_permissions_mic_phone_notifications">Máy ghi âm cần quyền truy cập micrô để ghi âm thanh, quyền truy cập trạng thái điện thoại để ngăn ứng dụng này ghi âm khi bạn đang gọi và quyền thông báo để hiển thị các điều khiển ghi âm</string>
     <string name="dialog_permissions_location">Máy ghi âm cần quyền vị trí để tự động gắn thẻ các bản ghi âm của bạn nhằm giúp bạn sắp xếp chúng</string>
     <string name="dialog_permissions_ask">Hỏi lại</string>
     <string name="dialog_permissions_dismiss">Bỏ qua</string>
