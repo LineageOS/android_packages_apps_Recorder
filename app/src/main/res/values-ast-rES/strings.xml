@@ -33,14 +33,14 @@
     <string name="confirm_result_title">¿Quies usar la grabación?</string>
     <string name="confirm_result_message">¿Quies usar la última grabación?</string>
     <string name="sound_recording_title_paused">En posa</string>
-    <string name="settings_title">Axustes</string>
+    <string name="settings_title">Configuración</string>
     <string name="settings_location_message">Etiquetar les grabaciones cola to posición actual</string>
     <string name="settings_quality_high">Grabar en calidá alta</string>
     <string name="dialog_permissions_title">Permisos</string>
     <string name="dialog_permissions_location">«Grabadora» ha tener el permisu de llocalización pa etiquetar automáticamente les grabaciones y ayudate a organizales</string>
     <string name="dialog_permissions_ask">Volver pidir</string>
     <string name="dialog_permissions_dismiss">Escartar</string>
-    <string name="snack_permissions_no_permission_location">Negóse\'l permisu de llocalización, concédelu n\'«Axustes» pa etiquetar les grabaciones</string>
+    <string name="snack_permissions_no_permission_location">Negóse\'l permisu de llocalización, concédelu en «Configuración» pa etiquetar les grabaciones</string>
     <string name="list_title">Les mios grabaciones</string>
     <string name="list_error_empty">Equí apaecen toles grabaciones</string>
     <string name="list_edit_title">Edición del nome d\'una grabación</string>
