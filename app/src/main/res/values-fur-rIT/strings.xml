@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (c) 2017-2021 The LineageOS Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+         http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<resources>
+    <string name="app_name">Regjistradôr</string>
+    <string name="share">Condivît</string>
+    <string name="share_selected">Condivît selezionâts</string>
+    <string name="stop">Ferme</string>
+    <string name="play">Riprodûs</string>
+    <string name="pause">Pause</string>
+    <string name="resume">Ripie</string>
+    <string name="delete">Elimine</string>
+    <string name="delete_all">Elimine dut</string>
+    <string name="delete_selected">Elimine selezionâts</string>
+    <string name="cancel">Anule</string>
+    <string name="rename">Cambie non</string>
+    <string name="delete_title">Elimine regjistrazion</string>
+    <string name="delete_recording_message">Eliminâ pardabon cheste regjistrazion? Nol è pussibil tornâ indaûr di cheste operazion</string>
+    <string name="confirm">Conferme</string>
+    <string name="discard">Scarte</string>
+    <string name="record_again">Regjistre di gnûf</string>
+    <string name="confirm_result_title">Doprâ la regjistrazion?</string>
+    <string name="confirm_result_message">Desideristu doprâ la ultime regjistrazion fate?</string>
+    <string name="sound_notification_title">Regjistradôr di suns</string>
+    <string name="sound_notification_message">Durade audio: %1$s</string>
+    <string name="sound_recording_title_working">Daûr a regjistrâ</string>
+    <string name="sound_recording_title_paused">In pause</string>
+    <string name="sound_last_title">Ultime regjistrazion</string>
+    <string name="sound_channel_title">Regjistrazion audio</string>
+    <string name="sound_channel_desc">Notifiche persistente dilunc la regjistrazion audio e notifiche dopo vêle completade</string>
+    <string name="settings_title">Impostazions</string>
+    <string name="settings_location_message">Etichete lis tôs regjistrazions cu la posizion atuâl</string>
+    <string name="settings_quality_high">Regjistre in alte cualitât</string>
+    <string name="dialog_permissions_title">Permès</string>
+    <string name="dialog_permissions_mic">Regjistradôr al à bisugne di doprâ il microfon par regjistrâ l\'audio</string>
+    <string name="dialog_permissions_phone">Regjistradôr al à bisugne di cognossi il stât dal telefon par impedî lis regjistrazion intant des clamadis</string>
+    <string name="dialog_permissions_mic_phone">Regjistradôr al à bisugne dai permès di utilizazion dal microfon par regjistrâ l\'audio e di cognossi il stât dal telefon par impedî lis regjistrazions intant des clamadis</string>
+    <string name="dialog_permissions_location">Il regjistradôr al à bisugne dai permès pe posizion par etichetâ in automatic lis tôs regjistrazions, cussì di judâti a organizâlis</string>
+    <string name="dialog_permissions_ask">Torne domande</string>
+    <string name="dialog_permissions_dismiss">Scarte</string>
+    <string name="snack_permissions_no_permission">I permès domandâts a son stâts dineâts, abilitiju de aplicazion Impostazions par scomençâ a regjistrâ</string>
+    <string name="snack_permissions_no_permission_location">I permès pe posizion a son stâts dineâts, abilitiju de aplicazion Impostazions par etichetâ lis tôs regjistrazions</string>
+    <string name="main_sound_action">Regjistre suns</string>
+    <string name="list_title">Lis mês regjistrazions</string>
+    <string name="list_error_empty">Dutis lis tôs regjistrazions a vignaran mostradis achì</string>
+    <string name="list_edit_title">Modifiche il non de regjistrazion</string>
+    <string name="list_edit_confirm">Modifiche</string>
+    <string name="list_item_menu">Altris azions</string>
+    <string name="delete_all_title">Elimine dut</string>
+    <string name="delete_all_message">Eliminâ pardabon dutis lis regjistrazions? Nol è pussibil tornâ indaûr di cheste operazion</string>
+    <string name="delete_selected_title">Elimine selezionâts</string>
+    <string name="delete_selected_message">Eliminâ pardabon lis regjistrazions selezionadis? Nol è pussibil tornâ indaûr di cheste operazion</string>
+</resources>

@@ -16,15 +16,23 @@
 <resources>
     <string name="app_name">Rekordér</string>
     <string name="share">Sdílet</string>
+    <string name="share_selected">Sdílet vybrané</string>
     <string name="stop">Stop</string>
     <string name="play">Přehrát</string>
     <string name="pause">Pozastavit</string>
     <string name="resume">Pokračovat</string>
     <string name="delete">Odstranit</string>
+    <string name="delete_all">Odstranit vše</string>
+    <string name="delete_selected">Odstranit vybrané</string>
     <string name="cancel">Zrušit</string>
     <string name="rename">Přejmenovat</string>
     <string name="delete_title">Odstraňování záznamu</string>
     <string name="delete_recording_message">Opravdu chcete smazat tento záznam? Tato akce je nevratná</string>
+    <string name="confirm">Potvrdit</string>
+    <string name="discard">Zahodit</string>
+    <string name="record_again">Znovu zaznamenat</string>
+    <string name="confirm_result_title">Použít nahrávku?</string>
+    <string name="confirm_result_message">Chcete použít poslední záznam?</string>
     <string name="sound_notification_title">Záznam zvuku</string>
     <string name="sound_notification_message">Délka zvukového záznamu: %1$s</string>
     <string name="sound_recording_title_working">Nahrávání</string>
@@ -50,4 +58,8 @@
     <string name="list_edit_title">Upravit název záznamu</string>
     <string name="list_edit_confirm">Změnit</string>
     <string name="list_item_menu">Další akce</string>
+    <string name="delete_all_title">Odstranit vše</string>
+    <string name="delete_all_message">Opravdu chcete odstranit všechny záznamy? Tato akce je nevratná</string>
+    <string name="delete_selected_title">Odstranit vybrané</string>
+    <string name="delete_selected_message">Opravdu chcete odstranit vybrané záznamy? Tato akce je nevratná</string>
 </resources>
