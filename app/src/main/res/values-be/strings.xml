@@ -14,8 +14,10 @@
      limitations under the License.
 -->
 <resources>
-    <string name="app_name">রেকর্ডার</string>
-    <string name="rename">পুনঃনামকরণ</string>
-    <string name="settings_title">নিয়ন্ত্রণ</string>
-    <string name="list_edit_confirm">পরিবর্তন করুন</string>
+    <string name="share">Абагуліць</string>
+    <string name="share_selected">Абагуліць выбраныя</string>
+    <string name="delete_all">Выдаліць усе</string>
+    <string name="delete_title">Выдаленне запісу</string>
+    <string name="confirm_result_message">Вы сапраўды хочаце выкарыстоўваць апошні запіс?</string>
+    <string name="delete_all_title">Выдаліць усе</string>
 </resources>
