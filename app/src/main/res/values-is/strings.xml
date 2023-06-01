@@ -14,10 +14,56 @@
      limitations under the License.
 -->
 <resources>
+    <string name="app_name">Upptaka</string>
+    <string name="share">Deila</string>
+    <string name="share_selected">Deila völdu</string>
+    <string name="stop">Stöðva</string>
+    <string name="play">Spila</string>
+    <string name="pause">Í bið</string>
+    <string name="resume">Halda áfram</string>
+    <string name="delete">Eyða</string>
+    <string name="delete_all">Eyða öllu</string>
+    <string name="delete_selected">Eyða völdu</string>
+    <string name="cancel">Hætta við</string>
+    <string name="rename">Endurnefna</string>
+    <string name="delete_title">Eyði upptöku</string>
+    <string name="delete_recording_message">Ertu viss um að þú viljir eyða þessari upptöku? Aðgerðin er ekki afturkallanleg</string>
+    <string name="confirm">Staðfesta</string>
+    <string name="discard">Fleygja</string>
+    <string name="record_again">Taka upp aftur</string>
+    <string name="confirm_result_title">Nota upptöku?</string>
+    <string name="confirm_result_message">Viltu nota síðustu upptöku?</string>
+    <string name="sound_notification_title">Hljóðupptaka</string>
+    <string name="sound_notification_message">Lengd hljóðskrár: %1$s</string>
+    <string name="sound_recording_title_working">Upptaka í gangi</string>
+    <string name="sound_recording_title_paused">Í bið</string>
+    <string name="sound_last_title">Síðasta upptaka</string>
+    <string name="sound_channel_title">Hljóðupptaka</string>
+    <string name="sound_channel_desc">Viðvarandi tilkynning við hljóðupptöku og tilkynning eftir að henni er lokið</string>
+    <string name="settings_title">Stillingar</string>
+    <string name="settings_location_message">Merktu upptökurnar þínar með núverandi staðsetningu þinni</string>
+    <string name="settings_quality_high">Taka upp í hágæðum</string>
+    <string name="dialog_permissions_title">Heimildir</string>
     <string name="dialog_permissions_mic">Upptökuforitið þarf heimild fyrir aðgang að hljóðnema til að taka upp hljóð</string>
     <string name="dialog_permissions_phone">Upptökuforitið þarf heimild fyrir aðgang að stöðu símans til að koma í veg fyrir hljóðupptöku á meðan símtölum stendur</string>
     <string name="dialog_permissions_notifications">Upptökuforitið þarf heimild fyrir tilkynningar til að birta stýringar fyrir upptöku</string>
     <string name="dialog_permissions_mic_phone">Upptökuforitið þarf heimild fyrir aðgang að hljóðnema til að taka upp hljóð og að stöðu símans til að koma í veg fyrir hljóðupptöku á meðan símtölum stendur</string>
     <string name="dialog_permissions_mic_notifications">Upptökuforitið þarf heimild fyrir aðgang að hljóðnema og tilkynningum til að birta stýringar fyrir upptöku</string>
     <string name="dialog_permissions_phone_notifications">Upptökuforitið þarf heimild fyrir aðgang að stöðu símans til að koma í veg fyrir hljóðupptöku á meðan símtölum stendur og að tilkynningum til að birta stýringar fyrir upptöku</string>
+    <string name="dialog_permissions_mic_phone_notifications">Upptökuforitið þarf heimild fyrir aðgang að hljóðnema til að taka upp hljóð, aðgang að stöðu símans til að koma í veg fyrir hljóðupptöku á meðan símtölum stendur og að tilkynningum til að birta stýringar fyrir upptöku</string>
+    <string name="dialog_permissions_location">Upptökuforritið þarf heimild til að nota staðsetningar til að geta merkt upptökur með þeim svo skipulagning á upptökum verði auðveldari</string>
+    <string name="dialog_permissions_ask">Spyrja aftur</string>
+    <string name="dialog_permissions_dismiss">Hafna</string>
+    <string name="snack_permissions_no_permission">Nauðsynlegum heimildum var hafnað, virkjaðu þær í stillingaforritinu til að geta hafið upptöku</string>
+    <string name="snack_permissions_no_permission_location">Heimild til að nota staðsetningar var hafnað, virkjaðu hana í stillingunum til að geta merkt upptökurnar þínar</string>
+    <string name="main_sound_action">Taka upp hljóð</string>
+    <string name="list_title">Upptökurnar mínar</string>
+    <string name="list_error_empty">Allar upptökurnar þínar munu birtast hér</string>
+    <string name="list_edit_title">Breyta heiti upptöku</string>
+    <string name="list_edit_confirm">Breyta</string>
+    <string name="list_item_menu">Fleiri aðgerðir</string>
+    <string name="delete_all_title">Eyða öllu</string>
+    <string name="delete_all_message">Ertu viss um að þú viljir eyða öllum upptökum? Aðgerðin er ekki afturkallanleg</string>
+    <string name="delete_selected_title">Eyða völdu</string>
+    <string name="delete_selected_message">Ertu viss um að þú viljir eyða valinni upptöku? Aðgerðin er ekki afturkallanleg</string>
 </resources>
