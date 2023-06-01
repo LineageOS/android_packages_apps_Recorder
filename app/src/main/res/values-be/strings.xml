@@ -17,7 +17,13 @@
     <string name="share">Абагуліць</string>
     <string name="share_selected">Абагуліць выбраныя</string>
     <string name="delete_all">Выдаліць усе</string>
+    <string name="cancel">Скасаваць</string>
     <string name="delete_title">Выдаленне запісу</string>
     <string name="confirm_result_message">Вы сапраўды хочаце выкарыстоўваць апошні запіс?</string>
+    <string name="sound_last_title">Апошні запіс</string>
+    <string name="sound_channel_title">Запіс гуку</string>
+    <string name="sound_channel_desc">Пастаяннае апавяшчэнне пры запісе гуку і апавяшчэнне пасля яго завяршэння</string>
+    <string name="dialog_permissions_ask">Спытаць зноў</string>
+    <string name="dialog_permissions_dismiss">Адхіліць</string>
     <string name="delete_all_title">Выдаліць усе</string>
 </resources>
