@@ -17,6 +17,8 @@
 android_app {
     name: "Recorder",
 
+    defaults: ["aapt_version_code_defaults"],
+
     manifest: "src/main/AndroidManifest.xml",
     resource_dirs: ["src/main/res"],
 
