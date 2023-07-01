@@ -46,7 +46,11 @@
     <string name="dialog_permissions_title">Tilladelser</string>
     <string name="dialog_permissions_mic">Optager behøver mikrofon-tilladelse, for at optage lyd</string>
     <string name="dialog_permissions_phone">Optager behøver telefonstatus-adgang, for at forhindre denne app i at optage, imens du ringer</string>
+    <string name="dialog_permissions_notifications">Lydoptager har brug for notifikationstilladelse for at vise optagelseskontroller</string>
     <string name="dialog_permissions_mic_phone">Optager behøver mikrofon-tilladelse, for at optage lyd og telefonstatus-adgang, for at forhindre denne app i at optage, imens du ringer</string>
+    <string name="dialog_permissions_mic_notifications">Optager har brug for mikrofon-tilladelse, for at optage lyd og notifikation-tilladelse for at vise optagelseskontroller</string>
+    <string name="dialog_permissions_phone_notifications">Lydoptager behøver telefonstaus-tilladelse for at forhindre denne app i at optage mens du ringer og notifikationstilladelse til at vise optagelseskontroller</string>
+    <string name="dialog_permissions_mic_phone_notifications">Lydoptager behøver mikrofon-tilladelse for at optage lyd, telefonstatus-adgang for at forhindre denne app i at optage mens du ringer og notifikationstilladelse til at vise optagelseskontroller</string>
     <string name="dialog_permissions_location">Optager har brug for placeringstilladelse for automatisk at tagge dine optagelser med lokation, for at hjælpe dig med at organisere dem</string>
     <string name="dialog_permissions_ask">Spørg igen</string>
     <string name="dialog_permissions_dismiss">Afvis</string>
