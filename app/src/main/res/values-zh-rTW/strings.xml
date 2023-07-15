@@ -46,7 +46,11 @@
     <string name="dialog_permissions_title">權限</string>
     <string name="dialog_permissions_mic">錄製工具需要麥克風錄製音訊的權限</string>
     <string name="dialog_permissions_phone">錄製工具需要存取手機狀態以避免程式在您通話時錄音</string>
+    <string name="dialog_permissions_notifications">錄製程式需要通知權限才能顯示錄製控制元件</string>
     <string name="dialog_permissions_mic_phone">錄製工具需要存取麥克風權限和手機狀態以錄製音訊檔案並避免程式在您通話時錄音。</string>
+    <string name="dialog_permissions_mic_notifications">錄製程式需要麥克風權限才能錄製音訊，以及通知權限用來顯示錄製控制元件</string>
+    <string name="dialog_permissions_phone_notifications">錄製程式需要電話狀態權限以避免此應用程式在您通話時錄製，以及通知權限用來顯示錄製控制元件</string>
+    <string name="dialog_permissions_mic_phone_notifications">錄製程式需要麥克風權限才能錄製音訊，電話狀態權限以避免此應用程式在您通話時錄製，以及通知權限用來顯示錄製控制元件</string>
     <string name="dialog_permissions_location">為了讓錄音機自動幫您整理您的錄音，您需要授予錄音機位置權限。</string>
     <string name="dialog_permissions_ask">再次詢問</string>
     <string name="dialog_permissions_dismiss">忽略</string>
