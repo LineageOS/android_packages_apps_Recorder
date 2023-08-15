@@ -42,7 +42,7 @@
     <string name="sound_channel_desc">განუწვეტელი შეტყობინება ხმის ჩაწერისას და შეტყობინება, დასრულების შემდგომ</string>
     <string name="settings_title">პარამეტრები</string>
     <string name="settings_location_message">ჩანაწერებზე მიმდინარე მდებარეობის აღნიშვნა</string>
-    <string name="settings_quality_high">ჩაწერა მაღალ ხარისხში</string>
+    <string name="settings_quality_high">ჩაწერა მაღალი ხარისხით</string>
     <string name="dialog_permissions_title">ნებართვები</string>
     <string name="dialog_permissions_mic">საჭიროებს მიკროფონთან წვდომის ნებართვას ხმის ჩასაწერად</string>
     <string name="dialog_permissions_phone">საჭიროებს ტელეფონის მდგომარეობის მონაცემებთან წვდომის ნებართვას ზარის დროს ჩაწერის ასარიდებლად</string>
