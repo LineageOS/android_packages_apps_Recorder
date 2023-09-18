@@ -17,22 +17,20 @@
 android_app {
     name: "Recorder",
 
-    resource_dirs: ["res"],
+    resource_dirs: ["src/main/res"],
 
     srcs: [
-        "java/**/*.java",
-        "gen/**/*.java"
+        "src/main/java/**/*.java",
+        "src/main/gen/**/*.java"
     ],
 
     product_specific: true,
 
     static_libs: [
-        "androidx.annotation_annotation",
-        "androidx-constraintlayout_constraintlayout",
-        "androidx-constraintlayout_constraintlayout-solver",
+        // DO NOT EDIT THIS SECTION MANUALLY
         "androidx.appcompat_appcompat",
-        "androidx.recyclerview_recyclerview",
         "com.google.android.material_material",
+        "androidx-constraintlayout_constraintlayout",
     ],
 
     sdk_version: "current",
