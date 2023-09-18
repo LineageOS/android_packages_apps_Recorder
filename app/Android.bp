@@ -27,12 +27,10 @@ android_app {
     product_specific: true,
 
     static_libs: [
-        "androidx.annotation_annotation",
-        "androidx-constraintlayout_constraintlayout",
-        "androidx-constraintlayout_constraintlayout-solver",
+        // DO NOT EDIT THIS SECTION MANUALLY
         "androidx.appcompat_appcompat",
-        "androidx.recyclerview_recyclerview",
         "com.google.android.material_material",
+        "androidx-constraintlayout_constraintlayout",
     ],
 
     sdk_version: "current",

@@ -1,5 +1,23 @@
+import org.lineageos.generatebp.GenerateBpPlugin
+import org.lineageos.generatebp.GenerateBpPluginExtension
+import org.lineageos.generatebp.models.Module
+
 plugins {
     id("com.android.application")
+}
+
+apply {
+    plugin<GenerateBpPlugin>()
+}
+
+buildscript {
+    repositories {
+        maven("https://raw.githubusercontent.com/lineage-next/gradle-generatebp/v1.2/.m2")
+    }
+
+    dependencies {
+        classpath("org.lineageos:gradle-generatebp:+")
+    }
 }
 
 android {
@@ -42,4 +60,17 @@ dependencies {
     implementation("androidx.appcompat:appcompat:1.5.1")
     implementation("com.google.android.material:material:1.6.1")
     implementation("androidx.constraintlayout:constraintlayout:2.1.4")
+}
+
+configure<GenerateBpPluginExtension> {
+    targetSdk.set(android.defaultConfig.targetSdk!!)
+    availableInAOSP.set { module: Module ->
+        when {
+            module.group.startsWith("androidx") -> true
+            module.group.startsWith("org.jetbrains") -> true
+            module.group == "com.google.android.material" -> true
+            module.group == "com.google.guava" -> true
+            else -> false
+        }
+    }
 }
