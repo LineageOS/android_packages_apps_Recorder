@@ -93,8 +93,7 @@ public class RecordingItemViewHolder extends RecyclerView.ViewHolder {
                 itemView.getContext(),
                 R.style.AppTheme_Main_PopupMenuOverlapAnchor
         );
-        final PopupMenu popupMenu = new PopupMenu(wrapper, view, Gravity.NO_GRAVITY,
-                R.attr.actionOverflowButtonStyle, 0);
+        final PopupMenu popupMenu = new PopupMenu(wrapper, view, Gravity.NO_GRAVITY);
         popupMenu.inflate(R.menu.menu_list_item);
         popupMenu.setOnMenuItemClickListener(item -> onActionSelected(item.getItemId()));
         final MenuPopupHelper helper = new MenuPopupHelper(

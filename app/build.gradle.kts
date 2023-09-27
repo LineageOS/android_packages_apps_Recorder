@@ -22,6 +22,7 @@ buildscript {
 
 android {
     compileSdk = 33
+    namespace = "org.lineageos.recorder"
 
     defaultConfig {
         applicationId = "org.lineageos.recorder"
