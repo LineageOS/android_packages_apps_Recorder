@@ -24,6 +24,30 @@
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "822c0c7b_94c64544",
+        "filename": "app/build.gradle",
+        "patchSetId": 1
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 19612
+      },
+      "writtenOn": "2023-09-27T14:59:44Z",
+      "side": 1,
+      "message": "Required, even AOSP builds have it at `app/src/main/gen/BuildConfig.java`.",
+      "parentUuid": "6f006d0f_f1efe62c",
+      "range": {
+        "startLine": 23,
+        "startChar": 20,
+        "endLine": 23,
+        "endChar": 24
+      },
+      "revId": "bc17195d991e9691d76542ca1d1ccb1aa4e51531",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "06cd6953_03844c1a",
@@ -64,6 +88,24 @@
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "82286307_cc77369b",
+        "filename": "app/src/main/java/org/lineageos/recorder/list/RecordingItemViewHolder.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 19612
+      },
+      "writtenOn": "2023-09-27T14:59:44Z",
+      "side": 1,
+      "message": "Nope, required for non-transitive R class",
+      "parentUuid": "20beeb81_d8a596c0",
+      "revId": "bc17195d991e9691d76542ca1d1ccb1aa4e51531",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "f61bb8c1_154573d6",
@@ -77,6 +119,30 @@
       "writtenOn": "2023-09-27T14:51:29Z",
       "side": 1,
       "message": "Does it even build with namespace specified in AndroidManifest.xml?",
+      "range": {
+        "startLine": 3,
+        "startChar": 42,
+        "endLine": 3,
+        "endChar": 47
+      },
+      "revId": "bc17195d991e9691d76542ca1d1ccb1aa4e51531",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "390b741b_4188742b",
+        "filename": "build.gradle",
+        "patchSetId": 1
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 19612
+      },
+      "writtenOn": "2023-09-27T14:59:44Z",
+      "side": 1,
+      "message": "Yes",
+      "parentUuid": "f61bb8c1_154573d6",
       "range": {
         "startLine": 3,
         "startChar": 42,
