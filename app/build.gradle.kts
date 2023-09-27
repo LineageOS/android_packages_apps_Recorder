@@ -22,6 +22,7 @@ buildscript {
 
 android {
     compileSdk = 33
+    namespace = "org.lineageos.recorder"
 
     defaultConfig {
         applicationId = "org.lineageos.recorder"
@@ -50,6 +51,9 @@ android {
         }
     }
 
+    buildFeatures {
+        buildConfig = true
+    }
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_11
         targetCompatibility = JavaVersion.VERSION_11
