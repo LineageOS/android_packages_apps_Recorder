@@ -34,6 +34,24 @@
       "parentUuid": "76235362_dfcb91df",
       "revId": "4f3bdda285836e735bec200c32cb15682ab09271",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "24d5bbfd_98a0c65e",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 10067
+      },
+      "writtenOn": "2023-10-04T07:33:02Z",
+      "side": 1,
+      "message": "https://github.com/lineageos-infra/fetch-gerrit-change/commit/578f62c866d78d45bebb671572b81860f96ce9ec",
+      "parentUuid": "09a2bd89_3c6d7474",
+      "revId": "4f3bdda285836e735bec200c32cb15682ab09271",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
