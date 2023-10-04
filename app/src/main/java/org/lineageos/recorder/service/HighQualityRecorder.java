@@ -27,6 +27,7 @@ import org.lineageos.recorder.utils.PcmConverter;
 
 import java.io.BufferedOutputStream;
 import java.io.IOException;
+import java.nio.ByteBuffer;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.concurrent.atomic.AtomicBoolean;
@@ -44,11 +45,10 @@ public class HighQualityRecorder implements SoundRecording {
     private AudioRecord mRecord;
     private PcmConverter mPcmConverter;
     private Path mPath;
-    private int mMaxAmplitude;
+    private ByteBuffer mData;
 
     private Thread mThread;
     private final AtomicBoolean mIsRecording = new AtomicBoolean(false);
-    private final AtomicBoolean mTrackAmplitude = new AtomicBoolean(false);
 
     @Override
     @RequiresPermission(Manifest.permission.RECORD_AUDIO)
@@ -116,13 +116,19 @@ public class HighQualityRecorder implements SoundRecording {
 
     @Override
     public int getCurrentAmplitude() {
-        if (!mTrackAmplitude.get()) {
-            mTrackAmplitude.set(true);
+        int maxAmplitude = 0;
+
+        if (mData == null) {
+            return 0;
+        }
+        for (int i = 0; i < mData.limit(); i = i + 2) {
+            int value = Math.abs(mData.get(i) & 0xff | mData.get(i + 1) << 8);
+            if (value > maxAmplitude) {
+                maxAmplitude = value;
+            }
         }
 
-        int value = mMaxAmplitude;
-        mMaxAmplitude = 0;
-        return value;
+        return maxAmplitude;
     }
 
     @Override
@@ -153,17 +159,7 @@ public class HighQualityRecorder implements SoundRecording {
                         default:
                             // Status indicates the number of bytes
                             if (status != 0) {
-                                if (mTrackAmplitude.get()) {
-                                    for (int i = 0; i < status; i = i + 2) {
-                                        int value = data[i] & 0xff | data[i + 1] << 8;
-                                        if (value < 0) {
-                                            value = -value;
-                                        }
-                                        if (mMaxAmplitude < value) {
-                                            mMaxAmplitude = value;
-                                        }
-                                    }
-                                }
+                                mData = ByteBuffer.wrap(data, 0, status);
                                 out.write(data, 0, status);
                             }
                     }
