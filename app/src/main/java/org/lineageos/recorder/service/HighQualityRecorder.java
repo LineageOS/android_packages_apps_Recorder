@@ -155,10 +155,7 @@ public class HighQualityRecorder implements SoundRecording {
                             if (status != 0) {
                                 if (mTrackAmplitude.get()) {
                                     for (int i = 0; i < status; i = i + 2) {
-                                        int value = data[i] & 0xff | data[i + 1] << 8;
-                                        if (value < 0) {
-                                            value = -value;
-                                        }
+                                        int value = Math.abs(data[i] & 0xff | data[i + 1] << 8);
                                         if (mMaxAmplitude < value) {
                                             mMaxAmplitude = value;
                                         }
