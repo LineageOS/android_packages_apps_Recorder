@@ -52,6 +52,29 @@
       "parentUuid": "09a2bd89_3c6d7474",
       "revId": "4f3bdda285836e735bec200c32cb15682ab09271",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a75be7d8_9183bedd",
+        "filename": "app/build.gradle.kts",
+        "patchSetId": 5
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 10067
+      },
+      "writtenOn": "2023-10-04T07:34:36Z",
+      "side": 1,
+      "message": "tbh i liked it in gradle properties more, since we don\u0027t declare custom board config values anyway.",
+      "range": {
+        "startLine": 53,
+        "startChar": 0,
+        "endLine": 56,
+        "endChar": 5
+      },
+      "revId": "4f3bdda285836e735bec200c32cb15682ab09271",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
