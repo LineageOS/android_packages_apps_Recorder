@@ -16,6 +16,24 @@
       "message": "Not sure what `  Error: fatal: remote error: upload-pack: not our ref 4f3bdda285836e735bec200c32cb15682ab09271` means",
       "revId": "4f3bdda285836e735bec200c32cb15682ab09271",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "09a2bd89_3c6d7474",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2023-10-04T07:17:22Z",
+      "side": 1,
+      "message": "I think the trigger started even before gerrit replicated to GitHub, LuK we may need to add a delay or something?",
+      "parentUuid": "76235362_dfcb91df",
+      "revId": "4f3bdda285836e735bec200c32cb15682ab09271",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
