@@ -197,8 +197,12 @@ public class RecorderActivity extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
-        registerReceiver(mTelephonyReceiver,
-                new IntentFilter(TelephonyManager.ACTION_PHONE_STATE_CHANGED));
+        ContextCompat.registerReceiver(
+                this,
+                mTelephonyReceiver,
+                new IntentFilter(TelephonyManager.ACTION_PHONE_STATE_CHANGED),
+                ContextCompat.RECEIVER_NOT_EXPORTED
+        );
     }
 
     @Override
