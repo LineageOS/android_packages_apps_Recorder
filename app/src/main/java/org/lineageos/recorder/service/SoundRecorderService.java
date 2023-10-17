@@ -139,7 +139,12 @@ public class SoundRecorderService extends Service {
     public void onCreate() {
         super.onCreate();
 
-        registerReceiver(mShutdownReceiver, new IntentFilter(Intent.ACTION_SHUTDOWN));
+        ContextCompat.registerReceiver(
+                this,
+                mShutdownReceiver,
+                new IntentFilter(Intent.ACTION_SHUTDOWN),
+                ContextCompat.RECEIVER_NOT_EXPORTED
+        );
 
         mNotificationManager = getSystemService(NotificationManager.class);
         if (mNotificationManager != null &&
