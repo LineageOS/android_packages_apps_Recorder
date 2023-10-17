@@ -34,6 +34,6 @@ android_app {
         "androidx-constraintlayout_constraintlayout",
     ],
 
-    sdk_version: "33",
+    sdk_version: "34",
 
 }
