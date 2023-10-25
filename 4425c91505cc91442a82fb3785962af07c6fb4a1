@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d758ea5a_67ae6a7c",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 10067
+      },
+      "writtenOn": "2023-10-25T15:49:40Z",
+      "side": 1,
+      "message": "Luca: is it /faster/ to just handle exception here instead?",
+      "revId": "4425c91505cc91442a82fb3785962af07c6fb4a1",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
