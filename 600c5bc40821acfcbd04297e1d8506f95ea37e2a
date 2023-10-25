@@ -34,6 +34,24 @@
       "parentUuid": "d2baa255_c108347b",
       "revId": "600c5bc40821acfcbd04297e1d8506f95ea37e2a",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "323e074f_5efe73b0",
+        "filename": "app/src/main/java/org/lineageos/recorder/task/DeleteRecordingTask.java",
+        "patchSetId": 7
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2023-10-25T17:09:25Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "d92e5cf7_233c39ac",
+      "revId": "600c5bc40821acfcbd04297e1d8506f95ea37e2a",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
