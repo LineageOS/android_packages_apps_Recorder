@@ -33,6 +33,7 @@ public final class DeleteRecordingTask implements Runnable {
 
     @Override
     public void run() {
-        cr.delete(uri, null, null);
+        if(cr.query(uri, null, null, null, null).getCount() > 0)
+            cr.delete(uri, null, null);
     }
 }
