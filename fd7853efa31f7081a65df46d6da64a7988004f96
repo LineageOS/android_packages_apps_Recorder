@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d0bf8cd7_50c183a5",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 31334
+      },
+      "writtenOn": "2023-10-25T15:28:07Z",
+      "side": 1,
+      "message": "How to reproduce: Record audio using recoder; open it by other apps(like file manager) and delete the audio; click the notification and delete again. recorder crashes.",
+      "revId": "fd7853efa31f7081a65df46d6da64a7988004f96",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
