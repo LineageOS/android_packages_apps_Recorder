@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d2baa255_c108347b",
+        "filename": "app/src/main/java/org/lineageos/recorder/task/DeleteRecordingTask.java",
+        "patchSetId": 7
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2023-10-25T16:48:16Z",
+      "side": 1,
+      "message": "remove the log ad a whole, just leave w comment.",
+      "revId": "600c5bc40821acfcbd04297e1d8506f95ea37e2a",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
