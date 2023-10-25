@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2021 The LineageOS Project
+ * Copyright (C) 2021-2023 The LineageOS Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,10 +17,13 @@ package org.lineageos.recorder.task;
 
 import android.content.ContentResolver;
 import android.net.Uri;
+import android.util.Log;
 
 import androidx.annotation.NonNull;
 
 public final class DeleteRecordingTask implements Runnable {
+    private static final String TAG = "DeleteRecordingTask";
+
     @NonNull
     private final ContentResolver cr;
     @NonNull
@@ -33,6 +36,10 @@ public final class DeleteRecordingTask implements Runnable {
 
     @Override
     public void run() {
-        cr.delete(uri, null, null);
+        try {
+            cr.delete(uri, null, null);
+        } catch (SecurityException e) {
+            Log.e(TAG, "Failed to delete recording", e);
+        }
     }
 }
