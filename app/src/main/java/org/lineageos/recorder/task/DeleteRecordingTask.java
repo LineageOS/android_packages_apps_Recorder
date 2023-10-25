@@ -21,6 +21,8 @@ import android.net.Uri;
 import androidx.annotation.NonNull;
 
 public final class DeleteRecordingTask implements Runnable {
+    private static final String TAG = "DeleteRecordingTask";
+
     @NonNull
     private final ContentResolver cr;
     @NonNull
@@ -33,6 +35,10 @@ public final class DeleteRecordingTask implements Runnable {
 
     @Override
     public void run() {
-        cr.delete(uri, null, null);
+        try {
+            cr.delete(uri, null, null);
+        } catch (SecurityException e) {
+            Log.e(TAG, "Failed to delete recording", e);
+        }
     }
 }
