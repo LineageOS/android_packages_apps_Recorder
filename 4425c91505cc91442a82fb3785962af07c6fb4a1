@@ -16,6 +16,24 @@
       "message": "Luca: is it /faster/ to just handle exception here instead?",
       "revId": "4425c91505cc91442a82fb3785962af07c6fb4a1",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "013ea659_4a6869a3",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2023-10-25T15:59:05Z",
+      "side": 1,
+      "message": "yeah, just try catch",
+      "parentUuid": "d758ea5a_67ae6a7c",
+      "revId": "4425c91505cc91442a82fb3785962af07c6fb4a1",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
