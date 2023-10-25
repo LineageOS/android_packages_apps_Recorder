@@ -17,6 +17,7 @@ package org.lineageos.recorder.task;
 
 import android.content.ContentResolver;
 import android.net.Uri;
+import android.util.Log;
 
 import androidx.annotation.NonNull;
 
@@ -32,7 +33,11 @@ public final class DeleteRecordingTask implements Runnable {
     }
 
     @Override
-    public void run() {
-        cr.delete(uri, null, null);
+        public void run() {
+        try{
+            cr.delete(uri, null, null);
+        } catch (Exception e) {
+            Log.w("DeleteRecordingTask", "Failed to delete ContentResolver URI ",e);
+        }
     }
 }
