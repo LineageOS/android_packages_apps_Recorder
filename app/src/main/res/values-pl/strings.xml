@@ -41,7 +41,7 @@
     <string name="screen_last_title">Ostatnie nagranie</string>
     <string name="screen_last_message">Czas trwania: %1$d sekund</string>
     <string name="screen_overlay_notif_title">Gotowy do nagrywania</string>
-    <string name="screen_overlay_notif_message">Naciśnij przycisk nagrywania, gdy jesteś gotowy rozpocząć</string>
+    <string name="screen_overlay_notif_message">Dotknij przycisku nagrywania, aby rozpocząć</string>
     <string name="screen_settings_title">Ustawienia nagrywania ekranu</string>
     <string name="screen_overlay_channel_title">Gotowy do nagrywania ekranu</string>
     <string name="screen_overlay_channel_desc">Powiadomienie pokazujące gotowość do uruchomienia nagrywania ekranu</string>

@@ -39,6 +39,7 @@
     <string name="screen_notification_message_done">Sẵn sàng để chia sẻ</string>
     <string name="screen_recording_message">Màn hình đang được ghi\u2026</string>
     <string name="screen_last_title">Lần ghi cuối</string>
+    <string name="screen_last_message">Thời lượng: %1$d giây</string>
     <string name="screen_overlay_notif_title">Sẵn sàng để ghi lại</string>
     <string name="screen_overlay_notif_message">Nhấn nút ghi âm khi bạn đã sẵn sàng để bắt đầu</string>
     <string name="screen_settings_title">Cài đặt trình ghi màn hình</string>

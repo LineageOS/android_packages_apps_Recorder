@@ -14,14 +14,47 @@
      limitations under the License.
 -->
 <resources>
+    <string name="app_name">Upptaka</string>
+    <string name="share">Deila</string>
+    <string name="stop">Stöðva</string>
+    <string name="play">Spila</string>
+    <string name="delete">Eyða</string>
+    <string name="cancel">Hætta við</string>
+    <string name="delete_title">Eyði upptöku</string>
     <string name="delete_message">Ertu viss um að þú viljir eyða %1$s? Þessi aðgerð er ekki afturkallanleg</string>
+    <string name="sound_notification_title">Hljóðupptaka</string>
+    <string name="sound_notification_message">Lengd hljóðskrár: %1$s</string>
+    <string name="sound_recording_title_working">Upptaka í gangi</string>
+    <string name="sound_last_title">Síðasta upptaka</string>
+    <string name="sound_channel_title">Hljóðupptaka</string>
+    <string name="sound_channel_desc">Viðvarandi tilkynning við hljóðupptöku og tilkynning eftir að henni er lokið</string>
     <string name="screen_audio_message_on">Hljóð frá hljóðnema verður innifalið í myndskeiðinu</string>
     <string name="screen_audio_message_off">Hljóð frá hljóðnema verður ekki innifalið í myndskeiðinu</string>
     <string name="screen_audio_message_disabled">Það er ekki hægt að breyta þessari stillingu á meðan verið er að taka upp af skjánum</string>
+    <string name="screen_audio_warning_button_ask">Spyrja</string>
     <string name="screen_insufficient_storage">Ónógt geymslupláss</string>
+    <string name="screen_not_enough_storage">Ekki er nægilegt geymslupláss tiltækt</string>
+    <string name="screen_notification_title">Skjáupptaka</string>
+    <string name="screen_notification_message">Lengd myndskeiðs: %s</string>
+    <string name="screen_notification_message_done">Tilbúið fyrir deilingu</string>
+    <string name="screen_recording_message">Verið er að taka upp af skjánum\u2026</string>
+    <string name="screen_last_title">Síðasta upptaka</string>
+    <string name="screen_last_message">Lengd: %1$d sekúndur</string>
+    <string name="screen_overlay_notif_title">Tilbúið til að taka upp</string>
     <string name="screen_overlay_notif_message">Ýttu á upptökuhnappinn þegar þú ert til í að byrja</string>
+    <string name="screen_settings_title">Stillingar skjáupptöku</string>
+    <string name="screen_overlay_channel_title">Tilbúið til að taka upp myndskeið af skjánum</string>
+    <string name="screen_overlay_channel_desc">Silkynning sem sýnir að upptaka af skjá geti hafist</string>
+    <string name="screen_channel_title">Upptaka af skjá</string>
+    <string name="screen_channel_desc">Viðvarandi tilkynning við skjáupptöku og tilkynning eftir að henni er lokið</string>
+    <string name="dialog_permissions_title">Heimildir</string>
     <string name="dialog_permissions_mic">Upptökuforitið þarf heimild fyrir aðgang að hljóðnema til að taka upp hljóð</string>
     <string name="dialog_permissions_phone">Upptökuforitið þarf heimild fyrir aðgang að stöðu símans til að koma í veg fyrir hljóðupptöku á meðan símtölum stendur</string>
     <string name="dialog_permissions_mic_phone">Upptökuforitið þarf heimild fyrir aðgang að hljóðnema til að taka upp hljóð og að stöðu símans til að koma í veg fyrir hljóðupptöku á meðan símtölum stendur</string>
+    <string name="dialog_permissions_ask">Spyrja aftur</string>
+    <string name="dialog_permissions_dismiss">Hafna</string>
     <string name="dialog_permissions_overlay">Upptökuforitið þarf heimild til að \"Teikna yfir önnur forrit\" til að taka upp af skjánum þínum. Ýttu á \'Leyfa\', virkjaðu heimildir í stillingunum og komdu svo til baka í upptökuforitið</string>
+    <string name="snack_permissions_no_permission">Nauðsynlegum heimildum var hafnað, virkjaðu þær í stillingaforritinu til að geta hafið upptöku</string>
+    <string name="main_screen_action">Taka upp myndskeið af skjánum</string>
+    <string name="main_sound_action">Taka upp hljóð</string>
 </resources>

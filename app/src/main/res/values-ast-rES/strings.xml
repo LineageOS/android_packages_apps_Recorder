@@ -14,8 +14,21 @@
      limitations under the License.
 -->
 <resources>
+    <string name="app_name">Grabadora</string>
+    <string name="share">Compartir</string>
+    <string name="stop">Parar</string>
+    <string name="play">Reproducir</string>
+    <string name="delete">Desaniciar</string>
     <string name="cancel">Encaboxar</string>
+    <string name="delete_message">¿De xuru que quies desaniciar «%1$s»? Esta aición nun se pue desfacer</string>
+    <string name="screen_audio_message_on">Nel videu, inclúise l\'audiu que capture\'l micrófonu</string>
+    <string name="screen_audio_message_off">Nel videu, nun s\'inclúi l\'audiu que capture\'l micrófonu</string>
+    <string name="screen_audio_message_disabled">Nun ye posible camudar esti axuste mentanto se graba la pantalla</string>
     <string name="screen_audio_warning_button_ask">Pidir</string>
     <string name="screen_last_message">Duración: %1$d s</string>
+    <string name="screen_overlay_notif_message">Primi\'l botón de grabar cuando puedas comenzar</string>
+    <string name="screen_overlay_channel_title">Yá se pue grabar la pantalla</string>
     <string name="dialog_permissions_title">Permisos</string>
+    <string name="dialog_permissions_ask">Volver pidir</string>
+    <string name="dialog_permissions_dismiss">Escartar</string>
 </resources>

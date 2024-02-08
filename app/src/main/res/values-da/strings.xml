@@ -30,7 +30,7 @@
     <string name="sound_channel_desc">Vedvarende notifikation ved optagelse af lyd og notifikation efter den er fuldført</string>
     <string name="screen_audio_message_on">Lyd fra mikrofonen vil blive inkluderet i videoen</string>
     <string name="screen_audio_message_off">Lyd fra mikrofonen vil ikke blive inkluderet i videoen</string>
-    <string name="screen_audio_message_disabled">Det er ikke muligt at ændre denne indstilling, imens skærmen optages</string>
+    <string name="screen_audio_message_disabled">Det er ikke muligt at ændre denne indstilling, under skærmoptagelse</string>
     <string name="screen_audio_warning_button_ask">Spørg</string>
     <string name="screen_insufficient_storage">Utilstrækkelig lagerplads</string>
     <string name="screen_not_enough_storage">Ikke nok lagerplads tilgængelig</string>

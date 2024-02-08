@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (c) 2017 The LineageOS Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+         http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<resources>
+    <string name="app_name">Regjistradôr</string>
+    <string name="share">Condivît</string>
+    <string name="stop">Ferme</string>
+    <string name="play">Riprodûs</string>
+    <string name="delete">Elimine</string>
+    <string name="cancel">Anule</string>
+    <string name="delete_title">Elimine regjistrazion</string>
+    <string name="delete_message">Eliminâ pardabon %1$s? Nol è pussibil tornâ indaûr di cheste operazion</string>
+    <string name="sound_notification_title">Regjistradôr di suns</string>
+    <string name="sound_notification_message">Durade audio: %1$s</string>
+    <string name="sound_recording_title_working">Daûr a regjistrâ</string>
+    <string name="sound_last_title">Ultime regjistrazion</string>
+    <string name="sound_channel_title">Regjistrazion audio</string>
+    <string name="sound_channel_desc">Notifiche persistente dilunc la regjistrazion audio e notifiche dopo vêle completade</string>
+    <string name="screen_audio_message_on">L\'audio dal microfon al sarà includût tal video</string>
+    <string name="screen_audio_message_off">L\'audio dal microfon nol sarà includût tal video</string>
+    <string name="screen_audio_message_disabled">Nol è pussibil modificâ cheste impostazion intant de regjistrazion dal schermi</string>
+    <string name="screen_audio_warning_button_ask">Domande</string>
+    <string name="screen_insufficient_storage">Memorie insuficiente</string>
+    <string name="screen_not_enough_storage">No je disponibile vonde memorie di archiviazion</string>
+    <string name="screen_notification_title">Regjistradôr di schermi</string>
+    <string name="screen_notification_message">Durade video: %s</string>
+    <string name="screen_notification_message_done">Pront par condividi</string>
+    <string name="screen_recording_message">Regjistrazion in cors dal schermi\u2026</string>
+    <string name="screen_last_title">Ultime regjistrazion</string>
+    <string name="screen_last_message">Durade: %1$d seconts</string>
+    <string name="screen_overlay_notif_title">Pront par regjistrâ</string>
+    <string name="screen_overlay_notif_message">Frache il boton regjistre par scomençâ la regjistrazion</string>
+    <string name="screen_settings_title">Impostazions regjistradôr di schermi</string>
+    <string name="screen_overlay_channel_title">Pront par regjistrâ il schermi</string>
+    <string name="screen_overlay_channel_desc">Notifiche se la regjistrazion dal schermi e je pronte par scomençâ</string>
+    <string name="screen_channel_title">Daûr a regjistrâ il schermi</string>
+    <string name="screen_channel_desc">Notifiche persistente dilunc la regjistrazion dal schermi e notifiche dopo vêle completade</string>
+    <string name="dialog_permissions_title">Permès</string>
+    <string name="dialog_permissions_mic">Regjistradôr al à bisugne di doprâ il microfon par regjistrâ l\'audio</string>
+    <string name="dialog_permissions_phone">Regjistradôr al à bisugne di cognossi il stât dal telefon par impedî lis regjistrazion intant des clamadis</string>
+    <string name="dialog_permissions_mic_phone">Regjistradôr al à bisugne dai permès di utilizazion dal microfon par regjistrâ l\'audio e di cognossi il stât dal telefon par impedî lis regjistrazions intant des clamadis</string>
+    <string name="dialog_permissions_ask">Torne domande</string>
+    <string name="dialog_permissions_dismiss">Scarte</string>
+    <string name="dialog_permissions_overlay">Regjistradôr al à bisugne dal permès di \"Soreposizion parsore altris aplicazions\" par regjistrâ il schermi. Frache permet, abilite il permès tes impostazions e torne al Regjistradôr</string>
+    <string name="snack_permissions_no_permission">I permès domandâts a son stâts dineâts, abilitiju de aplicazion Impostazions par scomençâ a regjistrâ</string>
+    <string name="main_screen_action">Regjistre schermi</string>
+    <string name="main_sound_action">Regjistre suns</string>
+</resources>

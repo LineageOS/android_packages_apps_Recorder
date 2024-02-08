@@ -14,8 +14,47 @@
      limitations under the License.
 -->
 <resources>
+    <string name="app_name">ჩამწერი</string>
+    <string name="share">გაზიარება</string>
+    <string name="stop">შეწყვეტა</string>
+    <string name="play">გაშვება</string>
+    <string name="delete">წაშლა</string>
     <string name="cancel">გაუქმება</string>
+    <string name="delete_title">ჩანაწერის იშლება</string>
+    <string name="delete_message">ნამდვილად გსურთ, წაიშალოს %1$s? ქმედება შეუქცევადია</string>
+    <string name="sound_notification_title">ხმის ჩამწერი</string>
+    <string name="sound_notification_message">ხმის ხანგრძლივობა: %1$s</string>
+    <string name="sound_recording_title_working">იწერება</string>
     <string name="sound_last_title">ბოლო ჩანაწერი</string>
+    <string name="sound_channel_title">ხმის ჩაწერა</string>
+    <string name="sound_channel_desc">განუწვეტელი შეტყობინება ხმის ჩაწერისას და შეტყობინება, დასრულების შემდგომ</string>
+    <string name="screen_audio_message_on">ხმა მიკროფონიდან დაერთვება ვიდეოს</string>
+    <string name="screen_audio_message_off">ხმა მიკროფონიდან არ დაერთვება ვიდეოს</string>
+    <string name="screen_audio_message_disabled">შეუძლებელია ამ პარამეტრის ცვლილება ეკრანის გადაღებისას</string>
+    <string name="screen_audio_warning_button_ask">შეკითხვა</string>
+    <string name="screen_insufficient_storage">არასაკმარისი მეხსიერება</string>
+    <string name="screen_not_enough_storage">თავისუფალი ადგილი არასაკმარისია</string>
+    <string name="screen_notification_title">ეკრანის ჩამწერი</string>
+    <string name="screen_notification_message">ვიდეოს ხანგრძლივობა: %s</string>
+    <string name="screen_notification_message_done">მზადაა გასაზიარებლად</string>
+    <string name="screen_recording_message">იღებს ეკრანს\u2026</string>
     <string name="screen_last_title">ბოლო ჩანაწერი</string>
+    <string name="screen_last_message">ხანგრძლივობა: %1$d წამი</string>
+    <string name="screen_overlay_notif_title">მზადაა ჩასაწერად</string>
+    <string name="screen_overlay_notif_message">დააჭირეთ ჩაწერის ღილაკს, როცა მზად იქნებით დასაწყებად</string>
+    <string name="screen_settings_title">ეკრანის გადაღების პარამეტრები</string>
+    <string name="screen_overlay_channel_title">მზადაა ეკრანის ჩასაწერად</string>
+    <string name="screen_overlay_channel_desc">შეტყობინება აჩვენებს ეკრანის ჩაწერის მზადყოფნას</string>
+    <string name="screen_channel_title">ეკრანის გადაღება</string>
+    <string name="screen_channel_desc">განუწვეტელი შეტყობინება ეკრანის გადაღებისას და შეტყობინება, დასრულების შემდგომ</string>
     <string name="dialog_permissions_title">ნებართვები</string>
+    <string name="dialog_permissions_mic">საჭიროებს მიკროფონთან წვდომის ნებართვას ხმის ჩასაწერად</string>
+    <string name="dialog_permissions_phone">საჭიროებს ტელეფონის მდგომარეობის მონაცემებთან წვდომის ნებართვას ზარის დროს ჩაწერის ასარიდებლად</string>
+    <string name="dialog_permissions_mic_phone">საჭიროებს მიკროფონთან წვდომის ნებართვას ხმის ჩასაწერად და ტელეფონის მდგომარეობის მონაცემებთან წვდომას საუბრისას ჩაწერის ასარიდებლად</string>
+    <string name="dialog_permissions_ask">კვლავ შეკითხვა</string>
+    <string name="dialog_permissions_dismiss">აცილება</string>
+    <string name="dialog_permissions_overlay">ჩამწერი საჭიროებს „სხვა აპებზე გადაფარვის“ უფლებას ეკრანის გადასაღებად. შეეხეთ „ნებართვას“, მიეცით უფლება პარამეტრებიდან და დაუბრუნდით ჩამწერს</string>
+    <string name="snack_permissions_no_permission">მოთხოვნილი უფლებები უარყოფილია, დართეთ ნება პარამეტრებიდან ჩაწერის დასაწყებად</string>
+    <string name="main_screen_action">ეკრანის გადაღება</string>
+    <string name="main_sound_action">ხმის ჩაწერა</string>
 </resources>

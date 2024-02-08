@@ -14,9 +14,9 @@
      limitations under the License.
 -->
 <resources>
-    <string name="app_name">Inspelare</string>
+    <string name="app_name">Ljudinspelare</string>
     <string name="share">Dela</string>
-    <string name="stop">Avbryt</string>
+    <string name="stop">Stoppa</string>
     <string name="play">Spela upp</string>
     <string name="delete">Radera</string>
     <string name="cancel">Avbryt</string>
@@ -27,8 +27,10 @@
     <string name="sound_recording_title_working">Spelar in</string>
     <string name="sound_last_title">Senaste inspelning</string>
     <string name="sound_channel_title">Ljudinspelning</string>
+    <string name="sound_channel_desc">Fast avisering vid ljudinspelning och avisering när den är färdig</string>
     <string name="screen_audio_message_on">Ljud från mikrofonen kommer inkluderas i videon</string>
     <string name="screen_audio_message_off">Ljud från mikrofonen kommer inte inkluderas i videon</string>
+    <string name="screen_audio_message_disabled">Det är inte möjligt att ändra den här inställningen under tiden du spelar in skärmen</string>
     <string name="screen_audio_warning_button_ask">Fråga</string>
     <string name="screen_insufficient_storage">Otillräckligt med utrymme</string>
     <string name="screen_not_enough_storage">Inte tillräckligt med lagringsutrymme ledigt</string>
@@ -40,15 +42,19 @@
     <string name="screen_last_message">Varaktighet: %1$d sekunder</string>
     <string name="screen_overlay_notif_title">Redo att spela in</string>
     <string name="screen_overlay_notif_message">Tryck på inspelningsknappen när du är redo att börja</string>
+    <string name="screen_settings_title">Inställningar för skärminspelaren</string>
     <string name="screen_overlay_channel_title">Redo att spela in skärmen</string>
+    <string name="screen_overlay_channel_desc">Avisering som visar att skärminspelning är redo att börja</string>
     <string name="screen_channel_title">Skärminspelning</string>
+    <string name="screen_channel_desc">Fast avisering vid skärminspelning och avisering när den är färdig</string>
     <string name="dialog_permissions_title">Behörigheter</string>
-    <string name="dialog_permissions_mic">Inspelare behöver mikrofonbehörighet för att spela in ljud</string>
-    <string name="dialog_permissions_phone">Inspelaren behöver samtalsstatus åtkomst för att hindra appen från att spela in medans du är i ett samtal</string>
-    <string name="dialog_permissions_mic_phone">Inspelaren behöver rättigheten till mikrofonen för att kunna spela in ljud och tillgång till samtalsstatus för att hindra denna app från att spela in medans du är i ett samtal</string>
+    <string name="dialog_permissions_mic">Ljudinspelare behöver mikrofonbehörighet för att spela in ljud</string>
+    <string name="dialog_permissions_phone">Ljudinspelaren behöver tillgång till samtalsstatus för att förhindra den här appen från att spela in ljud under tiden du är i ett samtal</string>
+    <string name="dialog_permissions_mic_phone">Ljudinspelaren behöver behörighet till mikrofonen för att kunna spela in ljud samt tillgång till samtalsstatus för att förhindra den här appen från att spela in ljud under tiden du är i ett samtal</string>
     <string name="dialog_permissions_ask">Fråga igen</string>
     <string name="dialog_permissions_dismiss">Avvisa</string>
-    <string name="snack_permissions_no_permission">Nödvändiga behörigheter nekades, aktivera dem i appens inställningar för att starta inspelningen</string>
+    <string name="dialog_permissions_overlay">Skärminspelare behöver \"Rita över andra appar\"-behörigheten för att kunna spela in din skärm. Tryck på tillåt, aktivera behörigheten i inställningarna och återvänd sedan till Skärminspelare</string>
+    <string name="snack_permissions_no_permission">Nödvändiga behörigheter nekades, aktivera dem i Inställningar för att starta inspelningen</string>
     <string name="main_screen_action">Spela in skärmen</string>
     <string name="main_sound_action">Spela in ljud</string>
 </resources>

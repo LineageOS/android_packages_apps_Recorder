@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (c) 2017 The LineageOS Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+         http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<resources>
+    <string name="app_name">Amaklas</string>
+    <string name="share">Bḍu</string>
+    <string name="stop">Seḥbes</string>
+    <string name="play">Urar</string>
+    <string name="delete">Kkes</string>
+    <string name="cancel">Sefsex</string>
+    <string name="delete_message">Tḥeqqeḍ tebɣiḍ ad-tekkseḍ %1$s? Ulac tuɣalin ar deffir</string>
+    <string name="sound_notification_message">Tanzagt n imesli: %1$s</string>
+    <string name="sound_recording_title_working">Asekles</string>
+    <string name="sound_last_title">Asekles aneggaru</string>
+    <string name="sound_channel_title">Asekles n umeslaw</string>
+    <string name="screen_audio_warning_button_ask">Ssuter</string>
+    <string name="screen_insufficient_storage">Drus usekles</string>
+    <string name="screen_not_enough_storage">Ulac ddeqs n uḥraz</string>
+    <string name="screen_notification_title">Amaklas n ugdil</string>
+    <string name="screen_notification_message">Tanzagt n tvidyut: %s</string>
+    <string name="screen_notification_message_done">Iwjed i beṭṭu</string>
+    <string name="screen_recording_message">Agdil ad yettwaseklas\u2026</string>
+    <string name="screen_last_title">Asekles aneggaru</string>
+    <string name="screen_last_message">Tanzagt: %1$d n tsinin</string>
+    <string name="screen_overlay_channel_title">Iwjed ad issekles agdil</string>
+    <string name="screen_channel_title">Asekles n ugdil</string>
+    <string name="dialog_permissions_title">Issirgen</string>
+    <string name="dialog_permissions_ask">Ssuter tikkelt-nniḍen</string>
+    <string name="dialog_permissions_dismiss">Suref</string>
+    <string name="main_screen_action">Agdil n usekles</string>
+    <string name="main_sound_action">Sekles imesli</string>
+</resources>

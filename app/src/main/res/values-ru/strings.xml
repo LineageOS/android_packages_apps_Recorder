@@ -31,8 +31,8 @@
     <string name="screen_audio_message_on">Звуки с микрофона будут записаны в видео</string>
     <string name="screen_audio_message_off">Звуки с микрофона не записываются</string>
     <string name="screen_audio_message_disabled">Во время записи экрана изменение этого параметра невозможно.</string>
-    <string name="screen_audio_warning_button_ask">Запросить разрешения</string>
-    <string name="screen_insufficient_storage">Недостаточно памяти</string>
+    <string name="screen_audio_warning_button_ask">Спрашивать</string>
+    <string name="screen_insufficient_storage">Недостаточно места для хранения</string>
     <string name="screen_not_enough_storage">Недостаточно свободной памяти</string>
     <string name="screen_notification_title">Запись экрана</string>
     <string name="screen_notification_message">Длительность видео: %s</string>
@@ -49,8 +49,8 @@
     <string name="screen_channel_desc">Постоянное уведомление при записи экрана и уведомление после его завершения</string>
     <string name="dialog_permissions_title">Разрешения</string>
     <string name="dialog_permissions_mic">Рекордеру требуется доступ к микрофону для записи звука</string>
-    <string name="dialog_permissions_phone">Рекордеру требуется доступ к данным о состоянии телефона, чтобы прекращать запись во время звонка</string>
-    <string name="dialog_permissions_mic_phone">Рекордеру требуется доступ к микрофону для записи звука и доступ к данным о состоянии телефона, чтобы прекращать запись во время звонка</string>
+    <string name="dialog_permissions_phone">Рекордеру требуется доступ к состоянию телефона для предотвращения записи во время звонка</string>
+    <string name="dialog_permissions_mic_phone">Рекордеру требуется доступ к микрофону для записи звука и доступ к состоянию телефона для предотвращения записи во время звонка</string>
     <string name="dialog_permissions_ask">Спросить снова</string>
     <string name="dialog_permissions_dismiss">Пропустить</string>
     <string name="dialog_permissions_overlay">Рекордеру требуется разрешение \'Наложение поверх других окон\'. Разрешите это в настройках и вернитесь к приложению</string>

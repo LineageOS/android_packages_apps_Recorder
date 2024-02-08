@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (c) 2017 The LineageOS Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+         http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<resources>
+    <string name="share">Абагуліць</string>
+    <string name="stop">Спыніць</string>
+    <string name="play">Прайграць</string>
+    <string name="delete">Выдаліць</string>
+    <string name="cancel">Скасаваць</string>
+    <string name="delete_title">Выдаленне запісу</string>
+    <string name="sound_notification_title">Запіс гуку</string>
+    <string name="sound_recording_title_working">Запіс</string>
+    <string name="sound_last_title">Апошні запіс</string>
+    <string name="sound_channel_title">Запіс гуку</string>
+    <string name="sound_channel_desc">Пастаяннае апавяшчэнне пры запісе гуку і апавяшчэнне пасля яго завяршэння</string>
+    <string name="screen_audio_message_on">Гук мікрафона будзе ўключаны ў відэа</string>
+    <string name="screen_audio_message_off">Гук мікрафона будзе выключаны ў відэа</string>
+    <string name="screen_audio_warning_button_ask">Пытацца</string>
+    <string name="screen_insufficient_storage">Недастаткова месца ў сховішчы</string>
+    <string name="screen_notification_message">Працягласць відэа: %s</string>
+    <string name="screen_recording_message">Ідзе запіс экрана\u2026</string>
+    <string name="screen_last_title">Апошні запіс</string>
+    <string name="screen_settings_title">Налады запісу экрана</string>
+    <string name="screen_overlay_channel_desc">Апавяшчэнне, якое паказвае гатоўнасць запісу экрана</string>
+    <string name="screen_channel_title">Запіс экрана</string>
+    <string name="screen_channel_desc">Пастаяннае апавяшчэнне пры запісе экрана і апавяшчэнне пасля яго завяршэння</string>
+    <string name="dialog_permissions_title">Дазволы</string>
+    <string name="dialog_permissions_ask">Спытаць зноў</string>
+    <string name="dialog_permissions_dismiss">Адхіліць</string>
+    <string name="main_screen_action">Запіс экрана</string>
+    <string name="main_sound_action">Запіс гуку</string>
+</resources>

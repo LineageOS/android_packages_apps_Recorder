@@ -26,6 +26,7 @@
     <string name="sound_notification_message">Тривалість аудіо запису: %1$s</string>
     <string name="sound_recording_title_working">Запис</string>
     <string name="sound_last_title">Останній запис</string>
+    <string name="sound_channel_title">Запис звуку</string>
     <string name="screen_audio_message_on">Звук з мікрофону буде додано у відео</string>
     <string name="screen_audio_message_off">Звук з мікрофону не буде додано у відео</string>
     <string name="screen_audio_message_disabled">Під час запису екрану змінити ці налаштування неможливо</string>
@@ -37,6 +38,7 @@
     <string name="screen_notification_message_done">Готово, аби поділитися</string>
     <string name="screen_recording_message">Триває запис з екрану\u2026</string>
     <string name="screen_last_title">Останній запис</string>
+    <string name="screen_last_message">Тривалість: %1$d с</string>
     <string name="screen_overlay_notif_title">Готово для запису</string>
     <string name="screen_overlay_notif_message">Натисніть кнопку запису, щоб почати</string>
     <string name="dialog_permissions_title">Дозволи</string>

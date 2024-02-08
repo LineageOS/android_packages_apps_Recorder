@@ -21,7 +21,7 @@
     <string name="delete">삭제</string>
     <string name="cancel">취소</string>
     <string name="delete_title">녹음/녹화 삭제</string>
-    <string name="delete_message">정말 %1$s을(를) 삭제하시겠습니까? 이 작업은 되돌릴 수 없습니다.</string>
+    <string name="delete_message">정말 %1$s 파일을 삭제하시겠습니까? 이 작업은 되돌릴 수 없습니다.</string>
     <string name="sound_notification_title">소리 녹음기</string>
     <string name="sound_notification_message">오디오 길이: %1$s</string>
     <string name="sound_recording_title_working">녹음 중</string>
