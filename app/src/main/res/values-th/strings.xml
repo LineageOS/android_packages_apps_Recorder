@@ -39,6 +39,7 @@
     <string name="sound_channel_desc">การแจ้งเตือนถาวรเมื่อบันทึกเสียงและการแจ้งเตือนหลังจากเสร็จสิ้น</string>
     <string name="settings_title">การตั้งค่า</string>
     <string name="dialog_permissions_title">การอนุญาต</string>
+    <string name="dialog_permissions_mic">บันทึกเสียงต้องเข้าถึงไมโครโฟนเพื่อให้บันทึกเสียงได้</string>
     <string name="dialog_permissions_ask">ถามอีกครั้ง</string>
     <string name="dialog_permissions_dismiss">ยกเลิก</string>
     <string name="main_sound_action">บันทึกเสียง</string>
