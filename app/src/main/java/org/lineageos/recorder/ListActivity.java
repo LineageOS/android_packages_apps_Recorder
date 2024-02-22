@@ -31,12 +31,13 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.ActionBar;
-import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.coordinatorlayout.widget.CoordinatorLayout;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 
 import org.lineageos.recorder.list.ListActionModeCallback;
 import org.lineageos.recorder.list.RecordingData;
@@ -123,7 +124,7 @@ public class ListActivity extends AppCompatActivity implements RecordingListCall
 
     @Override
     public void onDelete(int index, @NonNull Uri uri) {
-        new AlertDialog.Builder(this)
+        new MaterialAlertDialogBuilder(this)
                 .setTitle(R.string.delete_title)
                 .setMessage(getString(R.string.delete_recording_message))
                 .setPositiveButton(R.string.delete, (d, which) -> mTaskExecutor.runTask(
@@ -144,7 +145,7 @@ public class ListActivity extends AppCompatActivity implements RecordingListCall
         editText.requestFocus();
         Utils.showKeyboard(this);
 
-        new AlertDialog.Builder(this)
+        new MaterialAlertDialogBuilder(this)
                 .setTitle(R.string.list_edit_title)
                 .setView(view)
                 .setPositiveButton(R.string.list_edit_confirm, (d, which) -> {
@@ -274,7 +275,7 @@ public class ListActivity extends AppCompatActivity implements RecordingListCall
             return;
         }
 
-        new AlertDialog.Builder(this)
+        new MaterialAlertDialogBuilder(this)
                 .setTitle(R.string.delete_selected_title)
                 .setMessage(getString(R.string.delete_selected_message))
                 .setPositiveButton(R.string.delete, (dialog, which) -> {
@@ -290,7 +291,7 @@ public class ListActivity extends AppCompatActivity implements RecordingListCall
             return;
         }
 
-        new AlertDialog.Builder(this)
+        new MaterialAlertDialogBuilder(this)
                 .setTitle(R.string.delete_all_title)
                 .setMessage(getString(R.string.delete_all_message))
                 .setPositiveButton(R.string.delete, (dialog, which) -> {
