@@ -48,16 +48,18 @@
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/sound_fab"
+        style="@style/Widget.Material3.FloatingActionButton.Large.Primary"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
         android:clipToPadding="false"
         android:contentDescription="@string/main_sound_action"
         android:src="@drawable/ic_action_record"
-        app:fabCustomSize="96dp"
+        app:backgroundTint="?attr/colorSurface"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:tint="?attr/colorOnSurface" />
 
     <org.lineageos.recorder.ui.WaveFormView
         android:id="@+id/main_recording_visualizer"
@@ -69,7 +71,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:maxAudioValue="@integer/max_audio_value"
-        app:wavesColor="@color/wave"
+        app:wavesColor="?attr/colorAccent"
         tools:visibility="visible" />
 
     <ImageView

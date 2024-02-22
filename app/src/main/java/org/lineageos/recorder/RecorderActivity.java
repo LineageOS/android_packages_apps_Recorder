@@ -41,11 +41,11 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.core.content.ContextCompat;
 
+import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import org.lineageos.recorder.service.SoundRecorderService;
@@ -373,7 +373,7 @@ public class RecorderActivity extends AppCompatActivity {
     }
 
     private void promptUser() {
-        new AlertDialog.Builder(this)
+        new MaterialAlertDialogBuilder(this)
                 .setTitle(R.string.confirm_result_title)
                 .setMessage(R.string.confirm_result_message)
                 .setPositiveButton(R.string.confirm, (dialog, which) -> confirmLastResult())

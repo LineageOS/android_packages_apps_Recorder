@@ -19,11 +19,14 @@ import android.content.Context;
 import android.content.res.Configuration;
 import android.content.res.TypedArray;
 import android.graphics.Canvas;
-import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Path;
 import android.util.AttributeSet;
 import android.view.View;
+
+import androidx.annotation.ColorInt;
+
+import com.google.android.material.color.MaterialColors;
 
 import org.lineageos.recorder.R;
 
@@ -45,6 +48,8 @@ public class WaveFormView extends View {
     private final float mFrequency;
     private final float mPhaseShift;
 
+    @ColorInt
+    private final int mWavesColor;
     private final Paint mPaint;
     private final Path mPath = new Path();
 
@@ -82,8 +87,11 @@ public class WaveFormView extends View {
         mPhaseShift = ta.getFloat(R.styleable.WaveFormView_defaultPhaseShift,
                 DEFAULT_PHASE_SHIFT);
 
+        mWavesColor = MaterialColors.getColor(
+                this, com.google.android.material.R.attr.colorAccent);
+
         mPaint = new Paint();
-        mPaint.setColor(ta.getColor(R.styleable.WaveFormView_wavesColor, Color.WHITE));
+        mPaint.setColor(mWavesColor);
         mPaint.setStyle(Paint.Style.FILL_AND_STROKE);
         mPaint.setStrokeWidth(1f);
         mPaint.setAntiAlias(true);

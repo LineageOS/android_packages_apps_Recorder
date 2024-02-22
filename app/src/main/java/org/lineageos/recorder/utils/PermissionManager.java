@@ -26,7 +26,8 @@ import android.content.pm.PackageManager;
 import android.os.Build;
 
 import androidx.annotation.StringRes;
-import androidx.appcompat.app.AlertDialog;
+
+import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 
 import org.lineageos.recorder.R;
 
@@ -143,7 +144,7 @@ public final class PermissionManager {
 
     private void showPermissionRationale(@StringRes int messageRes,
                                          Runnable requestAgain) {
-        new AlertDialog.Builder(activity)
+        new MaterialAlertDialogBuilder(activity)
                 .setTitle(R.string.dialog_permissions_title)
                 .setMessage(messageRes)
                 .setPositiveButton(R.string.dialog_permissions_ask,
@@ -156,7 +157,7 @@ public final class PermissionManager {
     }
 
     private void showPermissionError(@StringRes int messageRes) {
-        new AlertDialog.Builder(activity)
+        new MaterialAlertDialogBuilder(activity)
                 .setTitle(R.string.dialog_permissions_title)
                 .setMessage(messageRes)
                 .setPositiveButton(R.string.dialog_permissions_dismiss, null)

@@ -18,7 +18,6 @@
     <declare-styleable name="WaveFormView">
         <attr name="numOfWaves" format="integer" />
         <attr name="density" format="float" />
-        <attr name="wavesColor" format="color" />
         <attr name="maxAudioValue" format="integer" />
         <attr name="defaultFrequency" format="float" />
         <attr name="defaultAmplitude" format="float" />

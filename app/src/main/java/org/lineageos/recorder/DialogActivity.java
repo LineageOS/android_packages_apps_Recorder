@@ -23,6 +23,8 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SwitchCompat;
 
+import com.google.android.material.dialog.MaterialAlertDialogBuilder;
+
 import org.lineageos.recorder.utils.PermissionManager;
 import org.lineageos.recorder.utils.PreferencesManager;
 
@@ -42,7 +44,7 @@ public class DialogActivity extends AppCompatActivity {
 
         setFinishOnTouchOutside(true);
 
-        final AlertDialog dialog = new AlertDialog.Builder(this)
+        final AlertDialog dialog = new MaterialAlertDialogBuilder(this)
                 .setTitle(R.string.settings_title)
                 .setView(R.layout.dialog_content_settings)
                 .setOnDismissListener(dialogInterface -> finish())
