@@ -20,7 +20,8 @@ import android.os.Bundle;
 
 import androidx.activity.ComponentActivity;
 import androidx.annotation.Nullable;
-import androidx.appcompat.app.AlertDialog;
+
+import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 
 import org.lineageos.recorder.task.DeleteRecordingTask;
 import org.lineageos.recorder.task.TaskExecutor;
@@ -45,7 +46,7 @@ public class DeleteLastActivity extends ComponentActivity {
         if (uri == null) {
             finish();
         } else {
-            new AlertDialog.Builder(this)
+            new MaterialAlertDialogBuilder(this)
                     .setTitle(R.string.delete_title)
                     .setMessage(getString(R.string.delete_recording_message))
                     .setPositiveButton(R.string.delete, (d, which) -> mTaskExecutor.runTask(
