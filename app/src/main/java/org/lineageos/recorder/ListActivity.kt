@@ -11,12 +11,12 @@ import android.os.Bundle
 import android.view.ActionMode
 import android.view.Menu
 import android.view.MenuItem
+import android.view.View
 import android.widget.EditText
 import android.widget.ProgressBar
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
-import androidx.coordinatorlayout.widget.CoordinatorLayout
 import androidx.core.view.isVisible
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -38,11 +38,11 @@ import java.util.stream.Collectors
 
 class ListActivity : AppCompatActivity(), RecordingListCallbacks {
     // Views
-    private val coordinatorLayout by lazy { findViewById<CoordinatorLayout>(R.id.coordinator) }
+    private val contentView by lazy { findViewById<View>(android.R.id.content) }
+    private val listEmptyTextView by lazy { findViewById<TextView>(R.id.listEmptyTextView) }
+    private val listLoadingProgressBar by lazy { findViewById<ProgressBar>(R.id.listLoadingProgressBar) }
+    private val listRecyclerView by lazy { findViewById<RecyclerView>(R.id.listRecyclerView) }
     private val toolbar by lazy { findViewById<Toolbar>(R.id.toolbar) }
-    private val listView by lazy { findViewById<RecyclerView>(R.id.list_view) }
-    private val progressBar by lazy { findViewById<ProgressBar>(R.id.list_loading) }
-    private val emptyText by lazy { findViewById<TextView>(R.id.list_empty) }
 
     // Adapters
     private val adapter by lazy {
@@ -77,13 +77,13 @@ class ListActivity : AppCompatActivity(), RecordingListCallbacks {
             }
         })
 
-        listView.layoutManager = LinearLayoutManager(this)
-        listView.adapter = adapter
+        listRecyclerView.layoutManager = LinearLayoutManager(this)
+        listRecyclerView.adapter = adapter
 
         loadRecordings()
 
-        Utils.setFullScreen(window, coordinatorLayout)
-        Utils.setVerticalInsets(listView)
+        Utils.setFullScreen(window, contentView)
+        Utils.setVerticalInsets(listRecyclerView)
     }
 
     override fun onPlay(uri: Uri) {
@@ -113,7 +113,7 @@ class ListActivity : AppCompatActivity(), RecordingListCallbacks {
     override fun onRename(index: Int, uri: Uri, currentName: String) {
         val view = layoutInflater.inflate(R.layout.dialog_content_rename, null)
 
-        val editText = view.findViewById<EditText>(R.id.name)
+        val editText = view.findViewById<EditText>(R.id.nameEditText)
         editText.setText(currentName)
         editText.requestFocus()
         Utils.showKeyboard(this)
@@ -190,7 +190,7 @@ class ListActivity : AppCompatActivity(), RecordingListCallbacks {
                 contentResolver
             )
         ) { list: List<RecordingData> ->
-            progressBar.isVisible = false
+            listLoadingProgressBar.isVisible = false
             adapter.data = list
             changeEmptyView(list.isEmpty())
         }
@@ -226,8 +226,8 @@ class ListActivity : AppCompatActivity(), RecordingListCallbacks {
     }
 
     private fun changeEmptyView(isEmpty: Boolean) {
-        emptyText.isVisible = isEmpty
-        listView.isVisible = !isEmpty
+        listEmptyTextView.isVisible = isEmpty
+        listRecyclerView.isVisible = !isEmpty
     }
 
     private fun shareSelectedRecordings() {

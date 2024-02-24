@@ -36,11 +36,11 @@ class DialogActivity : AppCompatActivity() {
             .show()
 
         val isRecording = intent.getBooleanExtra(EXTRA_IS_RECORDING, false)
-        locationSwitch = dialog.findViewById(R.id.dialog_content_settings_location_switch)!!
+        locationSwitch = dialog.findViewById(R.id.locationSwitch)!!
 
         setupLocationSwitch(locationSwitch, isRecording)
 
-        highQualitySwitch = dialog.findViewById(R.id.dialog_content_settings_high_quality_switch)!!
+        highQualitySwitch = dialog.findViewById(R.id.highQualitySwitch)!!
         setupHighQualitySwitch(highQualitySwitch, isRecording)
     }
 
