@@ -1,53 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-     Copyright (c) 2017-2022 The LineageOS Project
-
-     Licensed under the Apache License, Version 2.0 (the "License");
-     you may not use this file except in compliance with the License.
-     You may obtain a copy of the License at
-
-         http://www.apache.org/licenses/LICENSE-2.0
-
-     Unless required by applicable law or agreed to in writing, software
-     distributed under the License is distributed on an "AS IS" BASIS,
-     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-     See the License for the specific language governing permissions and
-     limitations under the License.
+     SPDX-FileCopyrightText: 2017-2024 The LineageOS Project
+     SPDX-License-Identifier: Apache-2.0
 -->
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main_root"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
     <TextView
-        android:id="@+id/main_title"
+        android:id="@+id/titleTextView"
         style="@style/AppTheme.RecordTitle"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:textAlignment="center"
         android:textColor="?android:attr/textColorPrimary"
-        app:layout_constraintBottom_toTopOf="@id/main_recording_visualizer"
+        app:layout_constraintBottom_toTopOf="@id/recordingWaveFormView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:text="@string/main_sound_action" />
 
     <TextView
-        android:id="@+id/main_elapsed_time"
+        android:id="@+id/elapsedTimeTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="28sp"
         android:visibility="gone"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/main_title"
+        app:layout_constraintTop_toBottomOf="@id/titleTextView"
         tools:text="12:34"
         tools:visibility="visible" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/sound_fab"
+        android:id="@+id/floatingActionButton"
         style="@style/Widget.Material3.FloatingActionButton.Large.Primary"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -62,7 +50,7 @@
         app:tint="?attr/colorOnSurface" />
 
     <org.lineageos.recorder.ui.WaveFormView
-        android:id="@+id/main_recording_visualizer"
+        android:id="@+id/recordingWaveFormView"
         android:layout_width="0dp"
         android:layout_height="128dp"
         android:visibility="invisible"
@@ -74,38 +62,38 @@
         tools:visibility="visible" />
 
     <ImageView
-        android:id="@+id/sound_pause_resume"
+        android:id="@+id/pauseResumeImageView"
         style="@style/AppTheme.ImageButton"
         android:contentDescription="@null"
         android:visibility="gone"
-        app:layout_constraintBottom_toBottomOf="@id/sound_fab"
-        app:layout_constraintEnd_toStartOf="@id/sound_fab"
+        app:layout_constraintBottom_toBottomOf="@id/floatingActionButton"
+        app:layout_constraintEnd_toStartOf="@id/floatingActionButton"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@id/sound_fab"
+        app:layout_constraintTop_toTopOf="@id/floatingActionButton"
         app:tint="?attr/colorOnBackground"
         tools:src="@drawable/avd_pause_to_play"
         tools:visibility="visible" />
 
     <ImageView
-        android:id="@+id/sound_list_icon"
+        android:id="@+id/openSoundListImageView"
         style="@style/AppTheme.ImageButton"
         android:contentDescription="@string/sound_last_title"
         android:src="@drawable/ic_library_music"
-        app:layout_constraintBottom_toBottomOf="@id/sound_fab"
+        app:layout_constraintBottom_toBottomOf="@id/floatingActionButton"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/sound_settings"
-        app:layout_constraintTop_toTopOf="@id/sound_fab"
+        app:layout_constraintStart_toEndOf="@id/settingsImageView"
+        app:layout_constraintTop_toTopOf="@id/floatingActionButton"
         app:tint="?attr/colorOnBackground" />
 
     <ImageView
-        android:id="@+id/sound_settings"
+        android:id="@+id/settingsImageView"
         style="@style/AppTheme.ImageButton"
         android:contentDescription="@string/sound_last_title"
         android:src="@drawable/ic_settings"
-        app:layout_constraintBottom_toBottomOf="@id/sound_fab"
-        app:layout_constraintEnd_toStartOf="@+id/sound_list_icon"
-        app:layout_constraintStart_toEndOf="@id/sound_fab"
-        app:layout_constraintTop_toTopOf="@id/sound_fab"
+        app:layout_constraintBottom_toBottomOf="@id/floatingActionButton"
+        app:layout_constraintEnd_toStartOf="@+id/openSoundListImageView"
+        app:layout_constraintStart_toEndOf="@id/floatingActionButton"
+        app:layout_constraintTop_toTopOf="@id/floatingActionButton"
         app:tint="?attr/colorOnBackground" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
