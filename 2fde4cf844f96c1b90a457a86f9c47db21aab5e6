@@ -16,6 +16,24 @@
       "message": "change doesn\u0027t belong here",
       "revId": "2fde4cf844f96c1b90a457a86f9c47db21aab5e6",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0ae8b17a_79bb5167",
+        "filename": "app/build.gradle.kts",
+        "patchSetId": 2
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 10067
+      },
+      "writtenOn": "2024-02-24T11:56:01Z",
+      "side": 1,
+      "message": "It does, upgrading appcompat upgrades androidx.core:core to version that includes the api used here.",
+      "parentUuid": "d377618c_e69f6121",
+      "revId": "2fde4cf844f96c1b90a457a86f9c47db21aab5e6",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
