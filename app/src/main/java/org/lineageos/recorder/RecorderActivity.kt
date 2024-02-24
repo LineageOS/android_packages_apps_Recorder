@@ -28,7 +28,6 @@ import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.content.ContextCompat
 import androidx.core.view.isVisible
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
@@ -52,14 +51,14 @@ import kotlin.reflect.safeCast
 
 class RecorderActivity : AppCompatActivity(R.layout.activity_main) {
     // Views
-    private val elapsedTimeText by lazy { findViewById<TextView>(R.id.main_elapsed_time) }
-    private val mainView by lazy { findViewById<ConstraintLayout>(R.id.main_root) }
-    private val pauseResume by lazy { findViewById<ImageView>(R.id.sound_pause_resume) }
-    private val recordingText by lazy { findViewById<TextView>(R.id.main_title) }
-    private val recordingVisualizer by lazy { findViewById<WaveFormView>(R.id.main_recording_visualizer) }
-    private val settings by lazy { findViewById<ImageView>(R.id.sound_settings) }
-    private val soundFab by lazy { findViewById<FloatingActionButton>(R.id.sound_fab) }
-    private val soundList by lazy { findViewById<ImageView>(R.id.sound_list_icon) }
+    private val contentView by lazy { findViewById<View>(android.R.id.content) }
+    private val elapsedTimeText by lazy { findViewById<TextView>(R.id.elapsedTimeTextView) }
+    private val floatingActionButton by lazy { findViewById<FloatingActionButton>(R.id.floatingActionButton) }
+    private val openSoundListImageView by lazy { findViewById<ImageView>(R.id.openSoundListImageView) }
+    private val pauseResumeImageView by lazy { findViewById<ImageView>(R.id.pauseResumeImageView) }
+    private val recordingWaveFormView by lazy { findViewById<WaveFormView>(R.id.recordingWaveFormView) }
+    private val settingsImageView by lazy { findViewById<ImageView>(R.id.settingsImageView) }
+    private val titleTextView by lazy { findViewById<TextView>(R.id.titleTextView) }
 
     private val locationHelper by lazy { LocationHelper(this) }
     private val permissionManager by lazy { PermissionManager(this) }
@@ -122,26 +121,26 @@ class RecorderActivity : AppCompatActivity(R.layout.activity_main) {
     public override fun onCreate(savedInstance: Bundle?) {
         super.onCreate(savedInstance)
 
-        soundFab.setOnClickListener { toggleSoundRecorder() }
-        pauseResume.setOnClickListener { togglePause() }
-        soundList.setOnClickListener { openList() }
-        settings.setOnClickListener { openSettings() }
+        floatingActionButton.setOnClickListener { toggleSoundRecorder() }
+        pauseResumeImageView.setOnClickListener { togglePause() }
+        openSoundListImageView.setOnClickListener { openList() }
+        settingsImageView.setOnClickListener { openSettings() }
 
-        Utils.setFullScreen(window, mainView)
-        Utils.setVerticalInsets(mainView)
+        Utils.setFullScreen(window, contentView)
+        Utils.setVerticalInsets(contentView)
 
         lifecycle.addObserver(taskExecutor)
 
         if (MediaStore.Audio.Media.RECORD_SOUND_ACTION == intent.action) {
             returnAudio = true
-            soundList.isVisible = false
-            settings.isVisible = false
+            openSoundListImageView.isVisible = false
+            settingsImageView.isVisible = false
         }
 
         doBindService()
 
-        OnBoardingHelper.onBoardList(this, soundList)
-        OnBoardingHelper.onBoardSettings(this, settings)
+        OnBoardingHelper.onBoardList(this, openSoundListImageView)
+        OnBoardingHelper.onBoardSettings(this, settingsImageView)
     }
 
     public override fun onDestroy() {
@@ -191,7 +190,7 @@ class RecorderActivity : AppCompatActivity(R.layout.activity_main) {
     }
 
     private fun setVisualizerAmplitude(amplitude: Int) {
-        recordingVisualizer.post { recordingVisualizer.setAmplitude(amplitude) }
+        recordingWaveFormView.post { recordingWaveFormView.setAmplitude(amplitude) }
     }
 
     private fun setElapsedTime(seconds: Long) {
@@ -245,29 +244,29 @@ class RecorderActivity : AppCompatActivity(R.layout.activity_main) {
     private fun applyUiStatus(status: UiStatus) {
         uiStatus = status
         if (UiStatus.READY == status) {
-            recordingText.text = getString(R.string.main_sound_action)
-            soundFab.setImageResource(R.drawable.ic_mic)
+            titleTextView.text = getString(R.string.main_sound_action)
+            floatingActionButton.setImageResource(R.drawable.ic_mic)
             elapsedTimeText.isVisible = false
-            recordingVisualizer.isVisible = false
-            pauseResume.isVisible = false
+            recordingWaveFormView.isVisible = false
+            pauseResumeImageView.isVisible = false
         } else {
-            soundFab.setImageResource(R.drawable.ic_stop)
+            floatingActionButton.setImageResource(R.drawable.ic_stop)
             elapsedTimeText.isVisible = true
-            recordingVisualizer.isVisible = true
-            recordingVisualizer.setAmplitude(0)
-            pauseResume.isVisible = true
+            recordingWaveFormView.isVisible = true
+            recordingWaveFormView.setAmplitude(0)
+            pauseResumeImageView.isVisible = true
             val prDrawable: Drawable?
             if (UiStatus.PAUSED == status) {
-                recordingText.text = getString(R.string.sound_recording_title_paused)
-                pauseResume.contentDescription = getString(R.string.resume)
+                titleTextView.text = getString(R.string.sound_recording_title_paused)
+                pauseResumeImageView.contentDescription = getString(R.string.resume)
                 prDrawable = ContextCompat.getDrawable(this, R.drawable.avd_play_to_pause)
             } else {
-                recordingText.text = getString(R.string.sound_recording_title_working)
-                pauseResume.contentDescription = getString(R.string.pause)
+                titleTextView.text = getString(R.string.sound_recording_title_working)
+                pauseResumeImageView.contentDescription = getString(R.string.pause)
                 prDrawable = ContextCompat.getDrawable(this, R.drawable.avd_pause_to_play)
             }
-            pauseResume.tooltipText = pauseResume.contentDescription
-            pauseResume.setImageDrawable(prDrawable)
+            pauseResumeImageView.tooltipText = pauseResumeImageView.contentDescription
+            pauseResumeImageView.setImageDrawable(prDrawable)
             AnimatedVectorDrawable::class.safeCast(prDrawable)?.start()
         }
     }
