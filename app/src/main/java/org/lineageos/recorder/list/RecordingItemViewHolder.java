@@ -72,13 +72,13 @@ public class RecordingItemViewHolder extends RecyclerView.ViewHolder {
 
         switch (selection) {
             case ListItemStatus.DEFAULT:
-                mIconView.setImageResource(R.drawable.ic_play_circle_outline);
+                mIconView.setImageResource(R.drawable.ic_play_circle);
                 break;
             case ListItemStatus.UNCHECKED:
-                mIconView.setImageResource(R.drawable.ic_list_unchecked);
+                mIconView.setImageResource(R.drawable.ic_radio_button_unchecked);
                 break;
             case ListItemStatus.CHECKED:
-                mIconView.setImageResource(R.drawable.ic_list_checked);
+                mIconView.setImageResource(R.drawable.ic_check_circle);
                 break;
         }
     }

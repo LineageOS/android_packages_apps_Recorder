@@ -285,12 +285,12 @@ public class RecorderActivity extends AppCompatActivity {
 
         if (UiStatus.READY == status) {
             mRecordingText.setText(getString(R.string.main_sound_action));
-            mSoundFab.setImageResource(R.drawable.ic_action_record);
+            mSoundFab.setImageResource(R.drawable.ic_mic);
             mElapsedTimeText.setVisibility(View.GONE);
             mRecordingVisualizer.setVisibility(View.GONE);
             mPauseResume.setVisibility(View.GONE);
         } else {
-            mSoundFab.setImageResource(R.drawable.ic_action_stop);
+            mSoundFab.setImageResource(R.drawable.ic_stop);
             mElapsedTimeText.setVisibility(View.VISIBLE);
             mRecordingVisualizer.setVisibility(View.VISIBLE);
             mRecordingVisualizer.setAmplitude(0);
