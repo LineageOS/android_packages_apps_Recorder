@@ -29,6 +29,7 @@
     <uses-sdk tools:ignore="GradleOverrides" />
 
     <application
+        android:name=".RecorderApplication"
         android:allowBackup="false"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
