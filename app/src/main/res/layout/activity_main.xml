@@ -76,11 +76,11 @@
     <ImageView
         android:id="@+id/sound_pause_resume"
         style="@style/AppTheme.ImageButton"
-        android:layout_marginEnd="16dp"
         android:contentDescription="@null"
         android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="@id/sound_fab"
         app:layout_constraintEnd_toStartOf="@id/sound_fab"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@id/sound_fab"
         app:tint="?attr/colorOnBackground"
         tools:src="@drawable/avd_pause_to_play"
@@ -89,10 +89,10 @@
     <ImageView
         android:id="@+id/sound_list_icon"
         style="@style/AppTheme.ImageButton"
-        android:layout_marginStart="16dp"
         android:contentDescription="@string/sound_last_title"
         android:src="@drawable/ic_library_music"
         app:layout_constraintBottom_toBottomOf="@id/sound_fab"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/sound_settings"
         app:layout_constraintTop_toTopOf="@id/sound_fab"
         app:tint="?attr/colorOnBackground" />
@@ -100,11 +100,12 @@
     <ImageView
         android:id="@+id/sound_settings"
         style="@style/AppTheme.ImageButton"
-        android:layout_marginStart="16dp"
         android:contentDescription="@string/sound_last_title"
         android:src="@drawable/ic_settings"
         app:layout_constraintBottom_toBottomOf="@id/sound_fab"
+        app:layout_constraintEnd_toStartOf="@+id/sound_list_icon"
         app:layout_constraintStart_toEndOf="@id/sound_fab"
         app:layout_constraintTop_toTopOf="@id/sound_fab"
         app:tint="?attr/colorOnBackground" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
