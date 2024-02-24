@@ -462,7 +462,7 @@ public class SoundRecorderService extends Service {
         NotificationCompat.Builder nb = new NotificationCompat.Builder(this, NOTIFICATION_CHANNEL)
                 .setOngoing(true)
                 .setContentText(getString(R.string.sound_notification_message, duration))
-                .setSmallIcon(R.drawable.ic_notification_sound)
+                .setSmallIcon(R.drawable.ic_mic)
                 .setContentIntent(pi);
 
         if (mIsPaused) {
@@ -471,7 +471,7 @@ public class SoundRecorderService extends Service {
                             .setAction(ACTION_RESUME),
                     PendingIntent.FLAG_IMMUTABLE);
             nb.setContentTitle(getString(R.string.sound_recording_title_paused));
-            nb.addAction(R.drawable.ic_resume, getString(R.string.resume), resumePIntent);
+            nb.addAction(R.drawable.ic_play_arrow, getString(R.string.resume), resumePIntent);
         } else {
             PendingIntent pausePIntent = PendingIntent.getService(this, 0,
                     new Intent(this, SoundRecorderService.class)
@@ -507,8 +507,8 @@ public class SoundRecorderService extends Service {
                 .setWhen(System.currentTimeMillis())
                 .setContentTitle(getString(R.string.sound_notification_title))
                 .setContentText(getString(R.string.sound_notification_message, duration))
-                .setSmallIcon(R.drawable.ic_notification_sound)
-                .addAction(R.drawable.ic_play, getString(R.string.play), playPIntent)
+                .setSmallIcon(R.drawable.ic_mic)
+                .addAction(R.drawable.ic_play_arrow, getString(R.string.play), playPIntent)
                 .addAction(R.drawable.ic_share, getString(R.string.share), sharePIntent)
                 .addAction(R.drawable.ic_delete, getString(R.string.delete), deletePIntent)
                 .setContentIntent(pi)

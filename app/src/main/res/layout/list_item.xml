@@ -29,7 +29,7 @@
         android:id="@+id/item_play"
         style="@style/AppTheme.ImageButton"
         android:contentDescription="@string/play"
-        android:src="@drawable/ic_play_circle_outline"
+        android:src="@drawable/ic_play_circle"
         android:layout_width="40dp"
         android:layout_height="40dp"
         android:paddingStart="2dp"
@@ -38,7 +38,8 @@
         android:paddingBottom="2dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:tint="?attr/colorOnBackground" />
 
     <ImageView
         android:id="@+id/item_menu"
@@ -47,7 +48,8 @@
         android:src="@drawable/ic_menu"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:tint="?attr/colorOnBackground" />
 
     <TextView
         android:id="@+id/item_date"

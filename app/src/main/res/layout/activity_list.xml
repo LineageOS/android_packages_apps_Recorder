@@ -49,7 +49,8 @@
         android:text="@string/list_error_empty"
         android:textColor="?android:attr/textColorSecondary"
         android:visibility="gone"
-        app:drawableTopCompat="@drawable/ic_list_empty" />
+        app:drawableTint="?attr/colorOnBackground"
+        app:drawableTopCompat="@drawable/ic_empty_list" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/list_view"

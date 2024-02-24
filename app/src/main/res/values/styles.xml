@@ -61,4 +61,10 @@
         <item name="android:dropDownVerticalOffset">0dp</item>
         <item name="android:dropDownHorizontalOffset">0dp</item>
     </style>
+
+    <!-- Action menu item style -->
+    <style name="AppTheme.MenuItem">
+        <item name="android:iconTint">?attr/colorOnSurface</item>
+        <item name="iconTint">?attr/colorOnSurface</item>
+    </style>
 </resources>

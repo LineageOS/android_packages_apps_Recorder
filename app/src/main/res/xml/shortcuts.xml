@@ -17,7 +17,7 @@
     <shortcut
         android:shortcutId="list"
         android:enabled="true"
-        android:icon="@drawable/ic_shortcut_list"
+        android:icon="@drawable/ic_library_music"
         android:shortcutShortLabel="@string/list_title"
         android:shortcutLongLabel="@string/list_title">
 
