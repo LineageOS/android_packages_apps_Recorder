@@ -30,7 +30,7 @@ android_app {
     static_libs: [
         // DO NOT EDIT THIS SECTION MANUALLY
         "androidx.appcompat_appcompat",
-        "com.google.android.material_material",
+        "Recorder_com.google.android.material_material",
         "androidx-constraintlayout_constraintlayout",
     ],
 
