@@ -1,5 +1,5 @@
 //
-// Copyright (C) 2017-2021 The LineageOS Project
+// Copyright (C) 2017-2024 The LineageOS Project
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -21,8 +21,8 @@ android_app {
     resource_dirs: ["src/main/res"],
 
     srcs: [
-        "src/main/java/**/*.java",
-        "src/main/gen/**/*.java"
+        "src/main/java/**/*.kt",
+        "src_aosp/main/java/**/*.kt",
     ],
 
     product_specific: true,
@@ -30,6 +30,7 @@ android_app {
     static_libs: [
         // DO NOT EDIT THIS SECTION MANUALLY
         "androidx.appcompat_appcompat",
+        "androidx.core_core-ktx",
         "Recorder_com.google.android.material_material",
         "androidx-constraintlayout_constraintlayout",
     ],
