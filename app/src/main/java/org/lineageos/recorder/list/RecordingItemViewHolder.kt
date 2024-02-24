@@ -28,29 +28,29 @@ class RecordingItemViewHolder(
     private val dateFormat: DateTimeFormatter
 ) : RecyclerView.ViewHolder(itemView) {
     // Views
-    private val iconView by lazy { itemView.findViewById<ImageView>(R.id.item_play) }
-    private val titleView by lazy { itemView.findViewById<TextView>(R.id.item_title) }
-    private val summaryView by lazy { itemView.findViewById<TextView>(R.id.item_date) }
-    private val menuView by lazy { itemView.findViewById<ImageView>(R.id.item_menu) }
+    private val dateTextView by lazy { itemView.findViewById<TextView>(R.id.dateTextView) }
+    private val menuImageView by lazy { itemView.findViewById<ImageView>(R.id.menuImageView) }
+    private val playImageView by lazy { itemView.findViewById<ImageView>(R.id.playImageView) }
+    private val titleTextView by lazy { itemView.findViewById<TextView>(R.id.titleTextView) }
 
     var uri: Uri? = null
         private set
 
     init {
-        menuView.setOnClickListener { showPopupMenu(it) }
+        menuImageView.setOnClickListener { showPopupMenu(it) }
     }
 
     fun setData(data: RecordingData, selection: ListItemStatus) {
         uri = data.uri
-        titleView.text = data.title
+        titleTextView.text = data.title
         val duration = data.duration / 1000
-        summaryView.text = String.format(
+        dateTextView.text = String.format(
             Locale.getDefault(), SUMMARY_FORMAT,
             dateFormat.format(data.dateTime),
             DateUtils.formatElapsedTime(duration)
         )
 
-        iconView.setImageResource(
+        playImageView.setImageResource(
             when (selection) {
                 ListItemStatus.DEFAULT -> R.drawable.ic_play_circle
                 ListItemStatus.UNCHECKED -> R.drawable.ic_radio_button_unchecked
@@ -80,7 +80,7 @@ class RecordingItemViewHolder(
     private fun onActionSelected(actionId: Int) = uri?.let {
         when (actionId) {
             R.id.action_rename -> {
-                callbacks.onRename(adapterPosition, it, titleView.text.toString())
+                callbacks.onRename(adapterPosition, it, titleTextView.text.toString())
                 true
             }
             R.id.action_share -> {
