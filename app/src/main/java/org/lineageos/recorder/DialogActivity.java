@@ -21,9 +21,9 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.SwitchCompat;
 
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
+import com.google.android.material.materialswitch.MaterialSwitch;
 
 import org.lineageos.recorder.utils.PermissionManager;
 import org.lineageos.recorder.utils.PreferencesManager;
@@ -33,7 +33,7 @@ public class DialogActivity extends AppCompatActivity {
 
     private PermissionManager mPermissionManager;
     private PreferencesManager mPreferences;
-    private SwitchCompat mLocationSwitch;
+    private MaterialSwitch mLocationSwitch;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstance) {
@@ -57,7 +57,7 @@ public class DialogActivity extends AppCompatActivity {
         if (mLocationSwitch != null) {
             setupLocationSwitch(mLocationSwitch, isRecording);
         }
-        final SwitchCompat highQualitySwitch = dialog.findViewById(
+        final MaterialSwitch highQualitySwitch = dialog.findViewById(
                 R.id.dialog_content_settings_high_quality_switch);
         if (highQualitySwitch != null) {
             setupHighQualitySwitch(highQualitySwitch, isRecording);
@@ -89,7 +89,7 @@ public class DialogActivity extends AppCompatActivity {
         overridePendingTransition(0, android.R.anim.fade_out);
     }
 
-    private void setupLocationSwitch(@NonNull SwitchCompat locationSwitch,
+    private void setupLocationSwitch(@NonNull MaterialSwitch locationSwitch,
                                      boolean isRecording) {
         final boolean tagWithLocation;
         if (mPreferences.getTagWithLocation()) {
@@ -123,7 +123,7 @@ public class DialogActivity extends AppCompatActivity {
         }
     }
 
-    private void setupHighQualitySwitch(@NonNull SwitchCompat highQualitySwitch,
+    private void setupHighQualitySwitch(@NonNull MaterialSwitch highQualitySwitch,
                                         boolean isRecording) {
         final boolean highQuality = mPreferences.getRecordInHighQuality();
         highQualitySwitch.setChecked(highQuality);
