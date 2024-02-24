@@ -40,7 +40,10 @@ class PermissionManager(private val activity: Activity) {
 
     fun requestLocationPermission() {
         if (!hasLocationPermission()) {
-            val requestArray = arrayOf(permission.ACCESS_FINE_LOCATION)
+            val requestArray = arrayOf(
+                permission.ACCESS_COARSE_LOCATION,
+                permission.ACCESS_FINE_LOCATION,
+            )
             activity.requestPermissions(requestArray, REQUEST_CODE)
         }
     }
@@ -64,10 +67,10 @@ class PermissionManager(private val activity: Activity) {
                 == PackageManager.PERMISSION_GRANTED)
     }
 
-    fun hasLocationPermission(): Boolean {
-        return (activity.checkSelfPermission(permission.ACCESS_FINE_LOCATION)
-                == PackageManager.PERMISSION_GRANTED)
-    }
+    fun hasLocationPermission() = listOf(
+        permission.ACCESS_COARSE_LOCATION,
+        permission.ACCESS_FINE_LOCATION,
+    ).any { activity.checkSelfPermission(it) == PackageManager.PERMISSION_GRANTED }
 
     fun onEssentialPermissionsDenied() {
         if (activity.shouldShowRequestPermissionRationale(permission.POST_NOTIFICATIONS) ||
