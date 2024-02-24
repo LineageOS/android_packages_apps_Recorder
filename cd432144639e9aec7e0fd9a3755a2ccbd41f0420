@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f996142b_c20e07c9",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 25732
+      },
+      "writtenOn": "2024-02-24T22:59:03Z",
+      "side": 1,
+      "message": "Only 3 non-null assertions in the entire projects, good enough for me",
+      "revId": "cd432144639e9aec7e0fd9a3755a2ccbd41f0420",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
