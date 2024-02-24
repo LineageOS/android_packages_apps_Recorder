@@ -35,8 +35,8 @@
         <item name="windowActionModeOverlay">true</item>
         <item name="android:navigationBarColor">@android:color/transparent</item>
         <item name="android:statusBarColor">@android:color/transparent</item>
-        <item name="android:windowLightNavigationBar">@bool/is_day</item>
-        <item name="android:windowLightStatusBar">@bool/is_day</item>
+        <item name="android:windowLightNavigationBar">?attr/isLightTheme</item>
+        <item name="android:windowLightStatusBar">?attr/isLightTheme</item>
     </style>
 
     <style name="AppTheme.RecordTitle">
