@@ -130,8 +130,9 @@ class WaveFormView @JvmOverloads constructor(
     }
 
     fun setAmplitude(amplitude: Int) {
-        synchronized(ampLock) { this.amplitude =
-            (amplitude / maxAudioValue).coerceAtMost(idleAmplitude)
+        synchronized(ampLock) {
+            this.amplitude =
+                (amplitude / maxAudioValue).coerceAtMost(idleAmplitude)
         }
     }
 

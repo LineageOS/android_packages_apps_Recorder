@@ -173,6 +173,7 @@ class ListActivity : AppCompatActivity(), RecordingListCallbacks {
             promptDeleteAllRecordings()
             true
         }
+
         else -> false
     }
 

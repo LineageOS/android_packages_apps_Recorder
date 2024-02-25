@@ -83,14 +83,17 @@ class RecordingItemViewHolder(
                 callbacks.onRename(adapterPosition, it, titleTextView.text.toString())
                 true
             }
+
             R.id.action_share -> {
                 callbacks.onShare(it)
                 true
             }
+
             R.id.action_delete -> {
                 callbacks.onDelete(adapterPosition, it)
                 true
             }
+
             else -> false
         }
     } ?: false
