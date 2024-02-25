@@ -28,8 +28,7 @@
 
         <activity
             android:name=".RecorderActivity"
-            android:exported="true"
-            android:theme="@style/AppTheme.Main">
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <action android:name="android.intent.action.PHONE_STATE" />
@@ -53,8 +52,7 @@
         <activity
             android:name=".ListActivity"
             android:label="@string/list_title"
-            android:parentActivityName=".RecorderActivity"
-            android:theme="@style/AppTheme.Main" />
+            android:parentActivityName=".RecorderActivity" />
 
         <activity
             android:name=".DialogActivity"

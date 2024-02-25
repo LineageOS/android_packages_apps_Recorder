@@ -29,7 +29,11 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
+import androidx.core.view.ViewCompat
+import androidx.core.view.WindowCompat
+import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.isVisible
+import androidx.core.view.updatePadding
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import org.lineageos.recorder.service.SoundRecorderService
@@ -121,13 +125,23 @@ class RecorderActivity : AppCompatActivity(R.layout.activity_main) {
     public override fun onCreate(savedInstance: Bundle?) {
         super.onCreate(savedInstance)
 
+        // Setup edge-to-edge
+        WindowCompat.setDecorFitsSystemWindows(window, false)
+
         floatingActionButton.setOnClickListener { toggleSoundRecorder() }
         pauseResumeImageView.setOnClickListener { togglePause() }
         openSoundListImageView.setOnClickListener { openList() }
         settingsImageView.setOnClickListener { openSettings() }
 
-        Utils.setFullScreen(window, contentView)
-        Utils.setVerticalInsets(contentView)
+        ViewCompat.setOnApplyWindowInsetsListener(contentView) { _, windowInsets ->
+            val insets = windowInsets.getInsets(WindowInsetsCompat.Type.systemBars())
+
+            contentView.updatePadding(
+                bottom = insets.bottom,
+            )
+
+            windowInsets
+        }
 
         lifecycle.addObserver(taskExecutor)
 

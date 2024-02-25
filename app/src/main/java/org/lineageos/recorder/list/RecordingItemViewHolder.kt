@@ -63,7 +63,7 @@ class RecordingItemViewHolder(
     private fun showPopupMenu(view: View) {
         val wrapper = ContextThemeWrapper(
             itemView.context,
-            R.style.AppTheme_Main_PopupMenuOverlapAnchor
+            R.style.AppTheme_PopupMenuOverlapAnchor
         )
         val popupMenu = PopupMenu(wrapper, view, Gravity.NO_GRAVITY)
         popupMenu.inflate(R.menu.menu_list_item)

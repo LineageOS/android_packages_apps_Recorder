@@ -17,7 +17,11 @@ import android.widget.ProgressBar
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
+import androidx.core.view.ViewCompat
+import androidx.core.view.WindowCompat
+import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.isVisible
+import androidx.core.view.updatePadding
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.AdapterDataObserver
@@ -60,6 +64,9 @@ class ListActivity : AppCompatActivity(), RecordingListCallbacks {
 
         setContentView(R.layout.activity_list)
 
+        // Setup edge-to-edge
+        WindowCompat.setDecorFitsSystemWindows(window, false)
+
         setSupportActionBar(toolbar)
         supportActionBar?.let {
             it.setDisplayShowHomeEnabled(true)
@@ -80,10 +87,19 @@ class ListActivity : AppCompatActivity(), RecordingListCallbacks {
         listRecyclerView.layoutManager = LinearLayoutManager(this)
         listRecyclerView.adapter = adapter
 
-        loadRecordings()
+        ViewCompat.setOnApplyWindowInsetsListener(contentView) { _, windowInsets ->
+            val insets = windowInsets.getInsets(WindowInsetsCompat.Type.systemBars())
 
-        Utils.setFullScreen(window, contentView)
-        Utils.setVerticalInsets(listRecyclerView)
+            listRecyclerView.updatePadding(
+                bottom = insets.bottom,
+                left = insets.left,
+                right = insets.right,
+            )
+
+            windowInsets
+        }
+
+        loadRecordings()
     }
 
     override fun onPlay(uri: Uri) {
