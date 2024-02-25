@@ -22,15 +22,17 @@ class ListActionModeCallback(
 
     override fun onPrepareActionMode(mode: ActionMode, menu: Menu) = false
 
-    override fun onActionItemClicked(mode: ActionMode, item: MenuItem) = when(item.itemId) {
+    override fun onActionItemClicked(mode: ActionMode, item: MenuItem) = when (item.itemId) {
         R.id.action_delete_selected -> {
             deleteSelected.run()
             true
         }
+
         R.id.action_share_selected -> {
             shareSelected.run()
             true
         }
+
         else -> false
     }
 

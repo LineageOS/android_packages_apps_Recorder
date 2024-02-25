@@ -86,7 +86,8 @@ class PermissionManager(private val activity: Activity) {
                 error = error or (1 shl 1)
             }
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU
-                && !notificationManager.areNotificationsEnabled()) {
+                && !notificationManager.areNotificationsEnabled()
+            ) {
                 error = error or (1 shl 2)
             }
             showPermissionRationale(PERMISSION_ERROR_MESSAGE_RES_IDS[error]) {

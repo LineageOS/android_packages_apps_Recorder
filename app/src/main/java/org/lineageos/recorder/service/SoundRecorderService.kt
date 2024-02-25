@@ -77,6 +77,7 @@ class SoundRecorderService : Service() {
                 MSG_UNREGISTER_CLIENT -> synchronized(lock) {
                     unregisterClientLocked(msg.replyTo.binder)
                 }
+
                 else -> super.handleMessage(msg)
             }
         }
@@ -125,13 +126,13 @@ class SoundRecorderService : Service() {
     }
 
     override fun onStartCommand(intent: Intent, flags: Int, startId: Int) = when (intent.action) {
-        ACTION_START -> if (intent.getStringExtra(EXTRA_FILE_NAME)?.let {
-            startRecording(it)
-        } == true) {
-            START_STICKY
-        } else {
-            START_NOT_STICKY
-        }
+        ACTION_START -> intent.getStringExtra(EXTRA_FILE_NAME)?.let {
+            if (startRecording(it)) {
+                START_STICKY
+            } else {
+                START_NOT_STICKY
+            }
+        } ?: START_NOT_STICKY
 
         ACTION_STOP -> if (stopRecording()) START_STICKY else START_NOT_STICKY
 
