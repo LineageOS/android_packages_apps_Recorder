@@ -11,12 +11,14 @@
 
     <com.google.android.material.materialswitch.MaterialSwitch
         android:id="@+id/locationSwitch"
+        style="@style/AppTheme.DialogActivity"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/settings_location_message" />
 
     <com.google.android.material.materialswitch.MaterialSwitch
         android:id="@+id/highQualitySwitch"
+        style="@style/AppTheme.DialogActivity"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/settings_quality_high" />
