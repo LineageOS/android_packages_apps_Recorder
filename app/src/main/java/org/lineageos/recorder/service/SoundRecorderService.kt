@@ -499,7 +499,7 @@ class SoundRecorderService : Service() {
 
         val playPIntent = PendingIntent.getActivity(
             this, 0,
-            RecordIntentHelper.getOpenIntent(fileUri, mimeType),
+            RecordIntentHelper.getOpenIntent(fileUri),
             PendingIntent.FLAG_CANCEL_CURRENT or PendingIntent.FLAG_IMMUTABLE
         )
 

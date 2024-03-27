@@ -34,9 +34,9 @@ object RecordIntentHelper {
         return chooserIntent
     }
 
-    fun getOpenIntent(uri: Uri?, mimeType: String?): Intent {
+    fun getOpenIntent(uri: Uri?): Intent {
         val intent = Intent(Intent.ACTION_VIEW)
-        intent.setDataAndType(uri, mimeType)
+        intent.setData(uri)
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_GRANT_READ_URI_PERMISSION)
         return intent
     }

@@ -103,7 +103,7 @@ class ListActivity : AppCompatActivity(), RecordingListCallbacks {
     }
 
     override fun onPlay(uri: Uri) {
-        startActivity(RecordIntentHelper.getOpenIntent(uri, TYPE_AUDIO))
+        startActivity(RecordIntentHelper.getOpenIntent(uri))
     }
 
     override fun onShare(uri: Uri) {
