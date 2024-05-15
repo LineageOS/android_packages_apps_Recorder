@@ -17,8 +17,10 @@
     <string name="cancel">Cancelar</string>
     <string name="rename">Renomear</string>
     <string name="delete_title">Excluir gravação</string>
+    <string name="delete_recording_message">Tem certeza de que deseja excluir esta gravação? Essa ação não poderá ser desfeita.</string>
     <string name="confirm">Confirmar</string>
     <string name="discard">Descartar</string>
+    <string name="record_again">Gravar novamente</string>
     <string name="confirm_result_title">Usar gravação?</string>
     <string name="confirm_result_message">Você deseja usar a última gravação?</string>
     <string name="sound_notification_title">Gravador de som</string>
@@ -29,11 +31,16 @@
     <string name="sound_channel_title">Gravação de som</string>
     <string name="sound_channel_desc">Notificação persistente durante a gravação de som e notificação após gravar</string>
     <string name="settings_title">Configurações</string>
+    <string name="settings_location_message">Identifique suas gravações com sua posição atual</string>
     <string name="settings_quality_high">Gravar em alta qualidade</string>
     <string name="dialog_permissions_title">Permissões</string>
     <string name="dialog_permissions_mic">O gravador requer acesso ao microfone para gravar áudio</string>
     <string name="dialog_permissions_phone">O gravador requer acesso ao estado do telefone para impedir que este aplicativo grave enquanto você estiver em uma ligação</string>
+    <string name="dialog_permissions_notifications">O gravador precisa da permissão de notificações para mostrar os controles de gravação</string>
     <string name="dialog_permissions_mic_phone">O gravador requer acesso ao microfone para gravar áudio e acesso ao estado do telefone para impedir este aplicativo de gravar enquanto você estiver em uma ligação</string>
+    <string name="dialog_permissions_mic_notifications">O gravador precisa da permissão do microfone para gravar áudio e da permissão de notificações para mostrar controles de gravação</string>
+    <string name="dialog_permissions_phone_notifications">O gravador precisa de acesso ao estado do telefone para impedir que este aplicativo grave enquanto você estiver em uma ligação e permissão de notificações para mostrar controles de gravação</string>
+    <string name="dialog_permissions_mic_phone_notifications">O gravador precisa de permissão do microfone para gravar áudio, além do acesso ao estado do telefone para impedir este aplicativo de gravar enquanto você está em uma ligação, e também permissão de notificações para mostrar controles de gravação</string>
     <string name="dialog_permissions_location">O gravador requer a permissão de localização para marcar automaticamente as suas gravações, ajudando a organizá-las</string>
     <string name="dialog_permissions_ask">Permitir novamente</string>
     <string name="dialog_permissions_dismiss">Dispensar</string>
@@ -43,5 +50,10 @@
     <string name="list_title">Minhas gravações</string>
     <string name="list_error_empty">Todas as suas gravações serão exibidas aqui</string>
     <string name="list_edit_title">Editar nome da gravação</string>
+    <string name="list_edit_confirm">Alterar</string>
     <string name="list_item_menu">Mais ações</string>
+    <string name="delete_all_title">Excluir todas</string>
+    <string name="delete_all_message">Tem certeza que deseja excluir todas as gravações? Isso não pode ser desfeito</string>
+    <string name="delete_selected_title">Excluir selecionados</string>
+    <string name="delete_selected_message">Tem certeza que deseja excluir as gravações selecionadas? Isso não pode ser desfeito</string>
 </resources>
