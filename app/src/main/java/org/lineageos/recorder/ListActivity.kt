@@ -12,9 +12,12 @@ import android.view.ActionMode
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
+import android.view.inputmethod.EditorInfo
 import android.widget.EditText
+import android.widget.FrameLayout
 import android.widget.ProgressBar
 import android.widget.TextView
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.core.view.ViewCompat
@@ -39,6 +42,7 @@ import org.lineageos.recorder.utils.RecordIntentHelper
 import org.lineageos.recorder.utils.Utils
 import java.util.function.Consumer
 import java.util.stream.Collectors
+import kotlin.reflect.cast
 
 class ListActivity : AppCompatActivity(), RecordingListCallbacks {
     // Views
@@ -127,31 +131,55 @@ class ListActivity : AppCompatActivity(), RecordingListCallbacks {
     }
 
     override fun onRename(index: Int, uri: Uri, currentName: String) {
-        val view = layoutInflater.inflate(R.layout.dialog_content_rename, null)
+        lateinit var alertDialog: AlertDialog
+        lateinit var editText: EditText
 
-        val editText = view.findViewById<EditText>(R.id.nameEditText)
-        editText.setText(currentName)
-        editText.requestFocus()
-        Utils.showKeyboard(this)
-
-        MaterialAlertDialogBuilder(this)
-            .setTitle(R.string.list_edit_title)
-            .setView(view)
-            .setPositiveButton(R.string.list_edit_confirm) { _: DialogInterface?, _: Int ->
-                val editable = editText.text ?: return@setPositiveButton
-                if (editable.isEmpty()) {
-                    return@setPositiveButton
-                }
+        val onConfirm = {
+            editText.text?.takeIf { it.isNotEmpty() }?.let { editable ->
                 val newTitle = editable.toString()
                 if (newTitle != currentName) {
                     renameRecording(uri, newTitle, index)
                 }
-                Utils.closeKeyboard(this)
+
+                true
+            } ?: false
+        }
+
+        val view = FrameLayout::class.cast(
+            layoutInflater.inflate(
+                R.layout.dialog_content_rename,
+                null,
+                false
+            )
+        )
+        editText = view.findViewById<EditText>(R.id.nameEditText).apply {
+            setText(currentName)
+            setSelection(0, currentName.length)
+            setOnEditorActionListener { _, actionId, _ ->
+                when (actionId) {
+                    EditorInfo.IME_ACTION_UNSPECIFIED,
+                    EditorInfo.IME_ACTION_DONE -> {
+                        onConfirm().also {
+                            if (it) {
+                                alertDialog.dismiss()
+                            }
+                        }
+                    }
+
+                    else -> false
+                }
             }
-            .setNegativeButton(R.string.cancel) { _: DialogInterface?, _: Int ->
-                Utils.closeKeyboard(this)
-            }
+        }
+
+        alertDialog = MaterialAlertDialogBuilder(this)
+            .setTitle(R.string.list_edit_title)
+            .setView(view)
+            .setPositiveButton(R.string.list_edit_confirm) { _, _ -> onConfirm() }
+            .setNegativeButton(R.string.cancel, null)
             .show()
+            .also {
+                editText.requestFocus()
+            }
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
