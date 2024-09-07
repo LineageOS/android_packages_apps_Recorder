@@ -10,6 +10,8 @@
         <item name="android:windowLayoutInDisplayCutoutMode">shortEdges</item>
         <item name="android:windowLightNavigationBar">?attr/isLightTheme</item>
         <item name="android:windowLightStatusBar">?attr/isLightTheme</item>
+        <item name="alertDialogTheme">@style/Theme.Recorder.AlertDialog</item>
+        <item name="materialAlertDialogTheme">@style/Theme.Recorder.AlertDialog</item>
         <item name="windowActionModeOverlay">true</item>
     </style>
 
@@ -51,5 +53,11 @@
     <style name="AppTheme.MenuItem">
         <item name="android:iconTint">?attr/colorOnSurface</item>
         <item name="iconTint">?attr/colorOnSurface</item>
+    </style>
+
+    <!-- Alert dialog theme. -->
+    <style name="Theme.Recorder.AlertDialog" parent="ThemeOverlay.Material3.MaterialAlertDialog">
+        <item name="android:colorBackground">?attr/colorSurface</item>
+        <item name="dialogCornerRadius">16dp</item>
     </style>
 </resources>
