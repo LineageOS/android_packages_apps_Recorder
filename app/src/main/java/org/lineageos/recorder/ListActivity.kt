@@ -13,8 +13,10 @@ import android.view.Menu
 import android.view.MenuItem
 import android.view.View
 import android.widget.EditText
+import android.widget.LinearLayout
 import android.widget.ProgressBar
 import android.widget.TextView
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.core.view.ViewCompat
@@ -127,15 +129,18 @@ class ListActivity : AppCompatActivity(), RecordingListCallbacks {
     }
 
     override fun onRename(index: Int, uri: Uri, currentName: String) {
-        val view = layoutInflater.inflate(R.layout.dialog_content_rename, null)
+        val builder = AlertDialog.Builder(this)
+        val alertDialog = builder.create()
+        val view = alertDialog.layoutInflater.inflate(
+            R.layout.dialog_content_rename,
+            LinearLayout(this)
+        )
 
         val editText = view.findViewById<EditText>(R.id.nameEditText)
         editText.setText(currentName)
-        editText.requestFocus()
-        Utils.showKeyboard(this)
+        editText.setSelection(0, currentName.length)
 
-        MaterialAlertDialogBuilder(this)
-            .setTitle(R.string.list_edit_title)
+        builder.setTitle(R.string.list_edit_title)
             .setView(view)
             .setPositiveButton(R.string.list_edit_confirm) { _: DialogInterface?, _: Int ->
                 val editable = editText.text ?: return@setPositiveButton
@@ -146,11 +151,8 @@ class ListActivity : AppCompatActivity(), RecordingListCallbacks {
                 if (newTitle != currentName) {
                     renameRecording(uri, newTitle, index)
                 }
-                Utils.closeKeyboard(this)
             }
-            .setNegativeButton(R.string.cancel) { _: DialogInterface?, _: Int ->
-                Utils.closeKeyboard(this)
-            }
+            .setNegativeButton(R.string.cancel, null)
             .show()
     }
 
