@@ -204,6 +204,7 @@ class ListActivity : AppCompatActivity(), RecordingListCallbacks {
     private fun loadRecordings() {
         taskExecutor.runTask(
             GetRecordingsTask(
+                applicationContext.packageName,
                 contentResolver
             )
         ) { list: List<RecordingData> ->

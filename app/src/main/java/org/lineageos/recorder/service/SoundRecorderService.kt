@@ -31,7 +31,6 @@ import android.util.Log
 import androidx.annotation.GuardedBy
 import androidx.core.app.NotificationCompat
 import androidx.core.content.ContextCompat
-import org.lineageos.recorder.BuildConfig
 import org.lineageos.recorder.ListActivity
 import org.lineageos.recorder.R
 import org.lineageos.recorder.RecorderActivity
@@ -568,10 +567,10 @@ class SoundRecorderService : Service() {
     companion object {
         private const val TAG = "SoundRecorderService"
 
-        const val ACTION_START = "${BuildConfig.APPLICATION_ID}.service.START"
-        const val ACTION_STOP = "${BuildConfig.APPLICATION_ID}.service.STOP"
-        const val ACTION_PAUSE = "${BuildConfig.APPLICATION_ID}.service.PAUSE"
-        const val ACTION_RESUME = "${BuildConfig.APPLICATION_ID}.service.RESUME"
+        const val ACTION_START = "START"
+        const val ACTION_STOP = "STOP"
+        const val ACTION_PAUSE = "PAUSE"
+        const val ACTION_RESUME = "RESUME"
 
         const val MSG_REGISTER_CLIENT = 0
         const val MSG_UNREGISTER_CLIENT = 1
