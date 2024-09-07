@@ -13,7 +13,6 @@ android_app {
 
     srcs: [
         "src/main/java/**/*.kt",
-        "src_aosp/main/java/**/*.kt",
     ],
 
     product_specific: true,

@@ -8,7 +8,6 @@ package org.lineageos.recorder.task
 import android.content.ContentResolver
 import android.content.ContentUris
 import android.provider.MediaStore
-import org.lineageos.recorder.BuildConfig
 import org.lineageos.recorder.list.RecordingData
 import java.time.Instant
 import java.time.LocalDateTime
@@ -16,6 +15,7 @@ import java.time.ZoneId
 import java.util.concurrent.Callable
 
 class GetRecordingsTask(
+    private val packageName: String,
     private val contentResolver: ContentResolver,
 ) : Callable<List<RecordingData>> {
     override fun call(): List<RecordingData> {
@@ -26,7 +26,7 @@ class GetRecordingsTask(
             PROJECTION,
             "${MediaStore.Audio.Media.OWNER_PACKAGE_NAME}=?",
             arrayOf(
-                BuildConfig.APPLICATION_ID,
+                packageName,
             ),
             MY_RECORDS_SORT
         )?.use { cursor ->
