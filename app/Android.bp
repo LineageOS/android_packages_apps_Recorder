@@ -31,6 +31,6 @@ android_app {
         "androidx.recyclerview_recyclerview-selection",
     ],
 
-    sdk_version: "34",
+    sdk_version: "35",
 
 }

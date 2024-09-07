@@ -8,7 +8,7 @@
 android_library_import {
     name: "Recorder_com.google.android.material_material-nodeps",
     aars: ["com/google/android/material/material/1.9.0/material-1.9.0.aar"],
-    sdk_version: "34",
+    sdk_version: "35",
     min_sdk_version: "14",
     apex_available: [
         "//apex_available:platform",
@@ -36,7 +36,7 @@ android_library_import {
 
 android_library {
     name: "Recorder_com.google.android.material_material",
-    sdk_version: "34",
+    sdk_version: "35",
     min_sdk_version: "14",
     apex_available: [
         "//apex_available:platform",
