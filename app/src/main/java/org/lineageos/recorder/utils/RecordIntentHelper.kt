@@ -21,7 +21,7 @@ object RecordIntentHelper {
         return chooserIntent
     }
 
-    fun getShareIntents(uris: MutableList<Uri>, mimeType: String?): Intent {
+    fun getShareIntents(uris: List<Uri>, mimeType: String?): Intent {
         val intent = Intent(Intent.ACTION_SEND_MULTIPLE)
         intent.setType(mimeType)
         intent.putExtras(
