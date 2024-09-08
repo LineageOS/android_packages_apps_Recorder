@@ -8,21 +8,21 @@ package org.lineageos.recorder
 import android.content.DialogInterface
 import android.os.Bundle
 import androidx.activity.ComponentActivity
+import androidx.activity.viewModels
+import androidx.lifecycle.lifecycleScope
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
-import org.lineageos.recorder.task.DeleteRecordingTask
-import org.lineageos.recorder.task.TaskExecutor
+import kotlinx.coroutines.launch
 import org.lineageos.recorder.utils.PreferencesManager
-import org.lineageos.recorder.utils.Utils
+import org.lineageos.recorder.viewmodels.RecordingsViewModel
 
 class DeleteLastActivity : ComponentActivity() {
-    private val taskExecutor = TaskExecutor()
+    // View models
+    private val model: RecordingsViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
         setFinishOnTouchOutside(true)
-
-        lifecycle.addObserver(taskExecutor)
 
         val preferences = PreferencesManager(this)
         val uri = preferences.lastItemUri ?: run {
@@ -34,12 +34,10 @@ class DeleteLastActivity : ComponentActivity() {
             .setTitle(R.string.delete_title)
             .setMessage(getString(R.string.delete_recording_message))
             .setPositiveButton(R.string.delete) { d: DialogInterface, _: Int ->
-                taskExecutor.runTask(
-                    DeleteRecordingTask(contentResolver, uri)
-                ) {
-                    d.dismiss()
-                    Utils.cancelShareNotification(this)
+                lifecycleScope.launch {
+                    model.deleteRecordings(uri)
                     preferences.lastItemUri = null
+                    d.dismiss()
                 }
             }
             .setNegativeButton(R.string.cancel, null)

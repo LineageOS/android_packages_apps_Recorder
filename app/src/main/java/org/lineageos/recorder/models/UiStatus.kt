@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-package org.lineageos.recorder.status
+package org.lineageos.recorder.models
 
 enum class UiStatus {
     READY,
