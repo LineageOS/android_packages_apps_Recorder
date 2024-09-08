@@ -6,7 +6,6 @@
 package org.lineageos.recorder
 
 import android.content.DialogInterface
-import android.net.Uri
 import android.os.Bundle
 import android.view.ActionMode
 import android.view.Menu
@@ -17,6 +16,7 @@ import android.widget.EditText
 import android.widget.FrameLayout
 import android.widget.ProgressBar
 import android.widget.TextView
+import androidx.activity.viewModels
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
@@ -25,26 +25,28 @@ import androidx.core.view.WindowCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.isVisible
 import androidx.core.view.updatePadding
+import androidx.lifecycle.Lifecycle
+import androidx.lifecycle.lifecycleScope
+import androidx.lifecycle.repeatOnLifecycle
+import androidx.recyclerview.selection.SelectionTracker
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import androidx.recyclerview.widget.RecyclerView.AdapterDataObserver
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
+import kotlinx.coroutines.flow.collectLatest
+import kotlinx.coroutines.launch
+import org.lineageos.recorder.ext.getCurrentSelection
 import org.lineageos.recorder.list.ListActionModeCallback
-import org.lineageos.recorder.list.RecordingData
-import org.lineageos.recorder.list.RecordingListCallbacks
+import org.lineageos.recorder.list.RecordingItemCallbacks
+import org.lineageos.recorder.models.Recording
 import org.lineageos.recorder.list.RecordingsAdapter
-import org.lineageos.recorder.task.DeleteAllRecordingsTask
-import org.lineageos.recorder.task.DeleteRecordingTask
-import org.lineageos.recorder.task.GetRecordingsTask
-import org.lineageos.recorder.task.RenameRecordingTask
-import org.lineageos.recorder.task.TaskExecutor
 import org.lineageos.recorder.utils.RecordIntentHelper
-import org.lineageos.recorder.utils.Utils
-import java.util.function.Consumer
-import java.util.stream.Collectors
+import org.lineageos.recorder.viewmodels.RecordingsViewModel
 import kotlin.reflect.cast
 
-class ListActivity : AppCompatActivity(), RecordingListCallbacks {
+class ListActivity : AppCompatActivity() {
+    // View models
+    private val model: RecordingsViewModel by viewModels()
+
     // Views
     private val contentView by lazy { findViewById<View>(android.R.id.content) }
     private val listEmptyTextView by lazy { findViewById<TextView>(R.id.listEmptyTextView) }
@@ -53,18 +55,32 @@ class ListActivity : AppCompatActivity(), RecordingListCallbacks {
     private val toolbar by lazy { findViewById<Toolbar>(R.id.toolbar) }
 
     // Adapters
-    private val adapter by lazy {
-        RecordingsAdapter(this)
+    private val recordingItemCallbacks = object : RecordingItemCallbacks {
+        override fun onPlay(recording: Recording) {
+            this@ListActivity.onPlay(recording)
+        }
+
+        override fun onShare(recording: Recording) {
+            this@ListActivity.onShare(recording)
+        }
+
+        override fun onDelete(recording: Recording) {
+            this@ListActivity.onDelete(recording)
+        }
+
+        override fun onRename(recording: Recording) {
+            this@ListActivity.onRename(recording)
+        }
     }
+    private val recordingsAdapter by lazy { RecordingsAdapter(recordingItemCallbacks) }
+
+    // Selection
+    private var selectionTracker: SelectionTracker<Recording>? = null
 
     private var actionMode: ActionMode? = null
 
-    private val taskExecutor = TaskExecutor()
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
-        lifecycle.addObserver(taskExecutor)
 
         setContentView(R.layout.activity_list)
 
@@ -77,19 +93,8 @@ class ListActivity : AppCompatActivity(), RecordingListCallbacks {
             it.setDisplayHomeAsUpEnabled(true)
         }
 
-        adapter.registerAdapterDataObserver(object : AdapterDataObserver() {
-            override fun onItemRangeRemoved(positionStart: Int, itemCount: Int) {
-                super.onItemRangeRemoved(positionStart, itemCount)
-
-                if (adapter.itemCount == 0) {
-                    changeEmptyView(true)
-                    endSelectionMode()
-                }
-            }
-        })
-
         listRecyclerView.layoutManager = LinearLayoutManager(this)
-        listRecyclerView.adapter = adapter
+        listRecyclerView.adapter = recordingsAdapter
 
         ViewCompat.setOnApplyWindowInsetsListener(contentView) { _, windowInsets ->
             val insets = windowInsets.getInsets(WindowInsetsCompat.Type.systemBars())
@@ -103,43 +108,49 @@ class ListActivity : AppCompatActivity(), RecordingListCallbacks {
             windowInsets
         }
 
-        loadRecordings()
+        lifecycleScope.launch {
+            lifecycle.repeatOnLifecycle(Lifecycle.State.STARTED) {
+                model.recordings.collectLatest {
+                    recordingsAdapter.submitList(it)
+
+                    listLoadingProgressBar.isVisible = false
+
+                    val isEmpty = it.isEmpty()
+                    changeEmptyView(isEmpty)
+                    if (isEmpty) {
+                        endSelectionMode()
+                    }
+                }
+            }
+        }
     }
 
-    override fun onPlay(uri: Uri) {
-        startActivity(RecordIntentHelper.getOpenIntent(uri, TYPE_AUDIO))
+    fun onPlay(recording: Recording) {
+        startActivity(RecordIntentHelper.getOpenIntent(recording.uri, TYPE_AUDIO))
     }
 
-    override fun onShare(uri: Uri) {
-        startActivity(RecordIntentHelper.getShareIntent(uri, TYPE_AUDIO))
+    fun onShare(recording: Recording) {
+        startActivity(RecordIntentHelper.getShareIntent(recording.uri, TYPE_AUDIO))
     }
 
-    override fun onDelete(index: Int, uri: Uri) {
+    fun onDelete(recording: Recording) {
         MaterialAlertDialogBuilder(this)
             .setTitle(R.string.delete_title)
             .setMessage(R.string.delete_recording_message)
             .setPositiveButton(R.string.delete) { _: DialogInterface?, _: Int ->
-                taskExecutor.runTask(
-                    DeleteRecordingTask(contentResolver, uri)
-                ) {
-                    adapter.onDelete(index)
-                    Utils.cancelShareNotification(this)
-                }
+                model.deleteRecordings(recording)
             }
             .setNegativeButton(R.string.cancel, null)
             .show()
     }
 
-    override fun onRename(index: Int, uri: Uri, currentName: String) {
+    fun onRename(recording: Recording) {
         lateinit var alertDialog: AlertDialog
         lateinit var editText: EditText
 
         val onConfirm = {
             editText.text?.takeIf { it.isNotEmpty() }?.let { editable ->
-                val newTitle = editable.toString()
-                if (newTitle != currentName) {
-                    renameRecording(uri, newTitle, index)
-                }
+                model.renameRecording(recording, editable.toString())
 
                 true
             } ?: false
@@ -153,8 +164,8 @@ class ListActivity : AppCompatActivity(), RecordingListCallbacks {
             )
         )
         editText = view.findViewById<EditText>(R.id.nameEditText).apply {
-            setText(currentName)
-            setSelection(0, currentName.length)
+            setText(recording.title)
+            setSelection(0, recording.title.length)
             setOnEditorActionListener { _, actionId, _ ->
                 when (actionId) {
                     EditorInfo.IME_ACTION_UNSPECIFIED,
@@ -191,7 +202,7 @@ class ListActivity : AppCompatActivity(), RecordingListCallbacks {
 
     override fun onPrepareOptionsMenu(menu: Menu): Boolean {
         val deleteAllItem = menu.findItem(R.id.action_delete_all)
-        val hasItems = adapter.itemCount > 0
+        val hasItems = recordingsAdapter.itemCount > 0
         deleteAllItem.setEnabled(hasItems)
         return true
     }
@@ -205,7 +216,7 @@ class ListActivity : AppCompatActivity(), RecordingListCallbacks {
         else -> false
     }
 
-    override fun startSelectionMode() {
+    fun startSelectionMode() {
         // Clear previous (should do nothing), but be sure
         endSelectionMode()
         // Start action mode
@@ -214,61 +225,21 @@ class ListActivity : AppCompatActivity(), RecordingListCallbacks {
                 deleteSelectedRecordings()
             }) { shareSelectedRecordings() }
         )
-        adapter.enterSelectionMode()
+        // TODO
+        //adapter.enterSelectionMode()
     }
 
-    override fun endSelectionMode() {
+    fun endSelectionMode() {
         actionMode?.finish()
         actionMode = null
 
-        adapter.exitSelectionMode()
+        // TODO
+        //adapter.exitSelectionMode()
     }
 
     override fun onActionModeFinished(mode: ActionMode) {
         super.onActionModeFinished(mode)
         endSelectionMode()
-    }
-
-    private fun loadRecordings() {
-        taskExecutor.runTask(
-            GetRecordingsTask(
-                applicationContext.packageName,
-                contentResolver
-            )
-        ) { list: List<RecordingData> ->
-            listLoadingProgressBar.isVisible = false
-            adapter.data = list
-            changeEmptyView(list.isEmpty())
-        }
-    }
-
-    private fun renameRecording(uri: Uri, newTitle: String, index: Int) {
-        taskExecutor.runTask(
-            RenameRecordingTask(contentResolver, uri, newTitle)
-        ) { success: Boolean ->
-            if (success) {
-                adapter.onRename(index, newTitle)
-            }
-        }
-    }
-
-    private fun deleteRecording(item: RecordingData) {
-        taskExecutor.runTask(
-            DeleteRecordingTask(contentResolver, item.uri)
-        ) {
-            adapter.onDelete(item)
-            Utils.cancelShareNotification(this)
-        }
-    }
-
-    private fun deleteAllRecordings() {
-        val uris = adapter.data.stream()
-            .map { obj: RecordingData -> obj.uri }
-            .collect(Collectors.toList())
-        taskExecutor.runTask(DeleteAllRecordingsTask(contentResolver, uris)) {
-            adapter.data = emptyList()
-            changeEmptyView(true)
-        }
     }
 
     private fun changeEmptyView(isEmpty: Boolean) {
@@ -277,41 +248,35 @@ class ListActivity : AppCompatActivity(), RecordingListCallbacks {
     }
 
     private fun shareSelectedRecordings() {
-        val selectedItems = adapter.selected
+        selectionTracker?.getCurrentSelection()
+            ?.toList()
+            ?.takeIf { it.isNotEmpty() }
+            ?.let { selectedItems ->
+                val uris = selectedItems
+                    .map { it.uri }
 
-        if (selectedItems.isEmpty()) {
-            return
-        }
-
-        val uris = selectedItems.stream()
-            .map { obj: RecordingData -> obj.uri }
-            .collect(
-                Collectors.toCollection { mutableListOf() }
-            )
-
-        startActivity(RecordIntentHelper.getShareIntents(uris, TYPE_AUDIO))
+                startActivity(RecordIntentHelper.getShareIntents(uris, TYPE_AUDIO))
+            }
     }
 
     private fun deleteSelectedRecordings() {
-        val selectedItems = adapter.selected
-
-        if (selectedItems.isEmpty()) {
-            return
-        }
-
-        MaterialAlertDialogBuilder(this)
-            .setTitle(R.string.delete_selected_title)
-            .setMessage(getString(R.string.delete_selected_message))
-            .setPositiveButton(R.string.delete) { _: DialogInterface?, _: Int ->
-                selectedItems.forEach(Consumer { item: RecordingData -> deleteRecording(item) })
-                Utils.cancelShareNotification(this)
+        selectionTracker?.getCurrentSelection()
+            ?.toList()
+            ?.takeIf { it.isNotEmpty() }
+            ?.let { selectedItems ->
+                MaterialAlertDialogBuilder(this)
+                    .setTitle(R.string.delete_selected_title)
+                    .setMessage(getString(R.string.delete_selected_message))
+                    .setPositiveButton(R.string.delete) { _: DialogInterface?, _: Int ->
+                        model.deleteRecordings(*selectedItems.toTypedArray())
+                    }
+                    .setNegativeButton(R.string.cancel, null)
+                    .show()
             }
-            .setNegativeButton(R.string.cancel, null)
-            .show()
     }
 
     private fun promptDeleteAllRecordings() {
-        if (adapter.itemCount == 0) {
+        if (recordingsAdapter.itemCount == 0) {
             return
         }
 
@@ -319,8 +284,7 @@ class ListActivity : AppCompatActivity(), RecordingListCallbacks {
             .setTitle(R.string.delete_all_title)
             .setMessage(getString(R.string.delete_all_message))
             .setPositiveButton(R.string.delete) { _: DialogInterface?, _: Int ->
-                deleteAllRecordings()
-                Utils.cancelShareNotification(this)
+                model.deleteRecordings(*recordingsAdapter.currentList.toTypedArray())
             }
             .setNegativeButton(R.string.cancel, null)
             .show()

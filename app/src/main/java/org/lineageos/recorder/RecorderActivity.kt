@@ -27,6 +27,7 @@ import android.text.format.DateUtils
 import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.core.view.ViewCompat
@@ -46,6 +47,7 @@ import org.lineageos.recorder.utils.OnBoardingHelper
 import org.lineageos.recorder.utils.PermissionManager
 import org.lineageos.recorder.utils.PreferencesManager
 import org.lineageos.recorder.utils.Utils
+import org.lineageos.recorder.viewmodels.RecordingsViewModel
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
 import java.time.format.DateTimeFormatterBuilder
@@ -54,6 +56,9 @@ import java.util.Locale
 import kotlin.reflect.safeCast
 
 class RecorderActivity : AppCompatActivity(R.layout.activity_main) {
+    // View models
+    private val model: RecordingsViewModel by viewModels()
+
     // Views
     private val contentView by lazy { findViewById<View>(android.R.id.content) }
     private val elapsedTimeText by lazy { findViewById<TextView>(R.id.elapsedTimeTextView) }
