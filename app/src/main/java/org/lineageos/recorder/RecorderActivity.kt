@@ -27,6 +27,7 @@ import android.text.format.DateUtils
 import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.core.view.ViewCompat
@@ -34,18 +35,19 @@ import androidx.core.view.WindowCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.isVisible
 import androidx.core.view.updatePadding
+import androidx.lifecycle.lifecycleScope
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.android.material.floatingactionbutton.FloatingActionButton
+import kotlinx.coroutines.launch
 import org.lineageos.recorder.service.SoundRecorderService
 import org.lineageos.recorder.status.UiStatus
-import org.lineageos.recorder.task.DeleteRecordingTask
-import org.lineageos.recorder.task.TaskExecutor
 import org.lineageos.recorder.ui.WaveFormView
 import org.lineageos.recorder.utils.LocationHelper
 import org.lineageos.recorder.utils.OnBoardingHelper
 import org.lineageos.recorder.utils.PermissionManager
 import org.lineageos.recorder.utils.PreferencesManager
 import org.lineageos.recorder.utils.Utils
+import org.lineageos.recorder.viewmodels.RecordingsViewModel
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
 import java.time.format.DateTimeFormatterBuilder
@@ -54,6 +56,9 @@ import java.util.Locale
 import kotlin.reflect.safeCast
 
 class RecorderActivity : AppCompatActivity(R.layout.activity_main) {
+    // View models
+    private val model: RecordingsViewModel by viewModels()
+
     // Views
     private val contentView by lazy { findViewById<View>(android.R.id.content) }
     private val elapsedTimeText by lazy { findViewById<TextView>(R.id.elapsedTimeTextView) }
@@ -67,7 +72,6 @@ class RecorderActivity : AppCompatActivity(R.layout.activity_main) {
     private val locationHelper by lazy { LocationHelper(this) }
     private val permissionManager by lazy { PermissionManager(this) }
     private val preferencesManager by lazy { PreferencesManager(this) }
-    private val taskExecutor = TaskExecutor()
 
     private var returnAudio = false
     private var hasRecordedAudio = false
@@ -142,8 +146,6 @@ class RecorderActivity : AppCompatActivity(R.layout.activity_main) {
 
             windowInsets
         }
-
-        lifecycle.addObserver(taskExecutor)
 
         if (MediaStore.Audio.Media.RECORD_SOUND_ACTION == intent.action) {
             returnAudio = true
@@ -335,8 +337,8 @@ class RecorderActivity : AppCompatActivity(R.layout.activity_main) {
 
     private fun discardLastResult() {
         preferencesManager.lastItemUri?.let {
-            taskExecutor.runTask(DeleteRecordingTask(contentResolver, it)) {
-                Utils.cancelShareNotification(this)
+            lifecycleScope.launch {
+                model.deleteRecordings(it)
                 preferencesManager.lastItemUri = null
             }
         }

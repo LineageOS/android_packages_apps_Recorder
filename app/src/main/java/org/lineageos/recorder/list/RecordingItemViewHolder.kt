@@ -6,7 +6,6 @@
 package org.lineageos.recorder.list
 
 import android.annotation.SuppressLint
-import android.net.Uri
 import android.text.format.DateUtils
 import android.view.ContextThemeWrapper
 import android.view.Gravity
@@ -19,6 +18,7 @@ import androidx.appcompat.view.menu.MenuPopupHelper
 import androidx.appcompat.widget.PopupMenu
 import androidx.recyclerview.widget.RecyclerView
 import org.lineageos.recorder.R
+import org.lineageos.recorder.models.Recording
 import java.time.format.DateTimeFormatter
 import java.util.Locale
 
@@ -33,15 +33,15 @@ class RecordingItemViewHolder(
     private val playImageView by lazy { itemView.findViewById<ImageView>(R.id.playImageView) }
     private val titleTextView by lazy { itemView.findViewById<TextView>(R.id.titleTextView) }
 
-    var uri: Uri? = null
+    var recording: Recording? = null
         private set
 
     init {
         menuImageView.setOnClickListener { showPopupMenu(it) }
     }
 
-    fun setData(data: RecordingData, selection: ListItemStatus) {
-        uri = data.uri
+    fun setData(data: Recording, selection: ListItemStatus) {
+        recording = data
         titleTextView.text = data.title
         val duration = data.duration / 1000
         dateTextView.text = String.format(
@@ -77,10 +77,10 @@ class RecordingItemViewHolder(
         helper.show()
     }
 
-    private fun onActionSelected(actionId: Int) = uri?.let {
+    private fun onActionSelected(actionId: Int) = recording?.let {
         when (actionId) {
             R.id.action_rename -> {
-                callbacks.onRename(adapterPosition, it, titleTextView.text.toString())
+                callbacks.onRename(it)
                 true
             }
 
@@ -90,7 +90,7 @@ class RecordingItemViewHolder(
             }
 
             R.id.action_delete -> {
-                callbacks.onDelete(adapterPosition, it)
+                callbacks.onDelete(it)
                 true
             }
 
