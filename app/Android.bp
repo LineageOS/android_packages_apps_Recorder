@@ -19,10 +19,16 @@ android_app {
 
     static_libs: [
         // DO NOT EDIT THIS SECTION MANUALLY
+        "androidx.activity_activity-ktx",
         "androidx.appcompat_appcompat",
         "androidx.core_core-ktx",
         "Recorder_com.google.android.material_material",
         "androidx-constraintlayout_constraintlayout",
+        "androidx.lifecycle_lifecycle-livedata-ktx",
+        "androidx.lifecycle_lifecycle-service",
+        "androidx.lifecycle_lifecycle-viewmodel-ktx",
+        "androidx.recyclerview_recyclerview",
+        "androidx.recyclerview_recyclerview-selection",
     ],
 
     sdk_version: "34",

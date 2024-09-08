@@ -5,11 +5,11 @@
 
 package org.lineageos.recorder.list
 
-import android.net.Uri
+import org.lineageos.recorder.models.Recording
 
 interface RecordingItemCallbacks {
-    fun onPlay(uri: Uri)
-    fun onShare(uri: Uri)
-    fun onDelete(index: Int, uri: Uri)
-    fun onRename(index: Int, uri: Uri, currentName: String)
+    fun onPlay(recording: Recording)
+    fun onShare(recording: Recording)
+    fun onDelete(recording: Recording)
+    fun onRename(recording: Recording)
 }

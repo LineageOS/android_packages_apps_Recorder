@@ -10,7 +10,6 @@ import android.app.Notification
 import android.app.NotificationChannel
 import android.app.NotificationManager
 import android.app.PendingIntent
-import android.app.Service
 import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Intent
@@ -31,12 +30,14 @@ import android.util.Log
 import androidx.annotation.GuardedBy
 import androidx.core.app.NotificationCompat
 import androidx.core.content.ContextCompat
+import androidx.lifecycle.LifecycleService
+import androidx.lifecycle.lifecycleScope
+import kotlinx.coroutines.launch
 import org.lineageos.recorder.ListActivity
 import org.lineageos.recorder.R
 import org.lineageos.recorder.RecorderActivity
-import org.lineageos.recorder.status.UiStatus
-import org.lineageos.recorder.task.AddRecordingToContentProviderTask
-import org.lineageos.recorder.task.TaskExecutor
+import org.lineageos.recorder.models.UiStatus
+import org.lineageos.recorder.repository.RecordingsRepository
 import org.lineageos.recorder.utils.PreferencesManager
 import org.lineageos.recorder.utils.RecordIntentHelper
 import java.io.IOException
@@ -46,7 +47,7 @@ import java.nio.file.Path
 import java.util.Timer
 import java.util.TimerTask
 
-class SoundRecorderService : Service() {
+class SoundRecorderService : LifecycleService() {
     // System services
     private val notificationManager by lazy {
         getSystemService(NotificationManager::class.java)
@@ -55,8 +56,6 @@ class SoundRecorderService : Service() {
     private val preferencesManager by lazy {
         PreferencesManager(this)
     }
-
-    private val taskExecutor = TaskExecutor()
 
     private val lock = Any()
 
@@ -95,7 +94,11 @@ class SoundRecorderService : Service() {
         }
     }
 
-    override fun onBind(intent: Intent): IBinder = messenger.binder
+    override fun onBind(intent: Intent): IBinder {
+        super.onBind(intent)
+
+        return messenger.binder
+    }
 
     override fun onCreate() {
         super.onCreate()
@@ -119,27 +122,31 @@ class SoundRecorderService : Service() {
 
         unregisterClients()
 
-        taskExecutor.terminate(null)
-
         super.onDestroy()
     }
 
-    override fun onStartCommand(intent: Intent, flags: Int, startId: Int) = when (intent.action) {
-        ACTION_START -> intent.getStringExtra(EXTRA_FILE_NAME)?.let {
-            if (startRecording(it)) {
-                START_STICKY
-            } else {
-                START_NOT_STICKY
+    override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
+        super.onStartCommand(intent, flags, startId)
+
+        return intent?.let {
+            when (it.action) {
+                ACTION_START -> it.getStringExtra(EXTRA_FILE_NAME)?.let { fileName ->
+                    if (startRecording(fileName)) {
+                        START_STICKY
+                    } else {
+                        START_NOT_STICKY
+                    }
+                } ?: START_NOT_STICKY
+
+                ACTION_STOP -> if (stopRecording()) START_STICKY else START_NOT_STICKY
+
+                ACTION_PAUSE -> if (pauseRecording()) START_STICKY else START_NOT_STICKY
+
+                ACTION_RESUME -> if (resumeRecording()) START_STICKY else START_NOT_STICKY
+
+                else -> START_NOT_STICKY
             }
         } ?: START_NOT_STICKY
-
-        ACTION_STOP -> if (stopRecording()) START_STICKY else START_NOT_STICKY
-
-        ACTION_PAUSE -> if (pauseRecording()) START_STICKY else START_NOT_STICKY
-
-        ACTION_RESUME -> if (resumeRecording()) START_STICKY else START_NOT_STICKY
-
-        else -> START_NOT_STICKY
     }
 
     private fun startRecording(fileName: String): Boolean {
@@ -196,13 +203,17 @@ class SoundRecorderService : Service() {
         val success = recorder.stopRecording()
 
         return recordPath?.takeIf { success }?.let {
-            taskExecutor.runTask(
-                AddRecordingToContentProviderTask(
-                    contentResolver,
+            lifecycleScope.launch {
+                RecordingsRepository.addRecordingToContentProvider(
+                    this@SoundRecorderService,
                     it,
                     recorder.mimeType
-                ), { uri: String? -> onRecordCompleted(uri) }
-            ) { Log.e(TAG, "Failed to save recording") }
+                )?.also { uri ->
+                    onRecordCompleted(uri)
+                } ?: run {
+                    Log.e(TAG, "Failed to save recording")
+                }
+            }
 
             true
         } ?: run {
