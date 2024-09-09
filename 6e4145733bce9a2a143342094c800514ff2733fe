@@ -35,6 +35,24 @@
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "db640424_c7f6aec8",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 25732
+      },
+      "writtenOn": "2024-09-09T14:28:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8d22a6c9_48be1766",
+      "revId": "6e4145733bce9a2a143342094c800514ff2733fe",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "d2411ef4_5f41d38a",
@@ -48,6 +66,30 @@
       "writtenOn": "2024-09-09T09:53:32Z",
       "side": 1,
       "message": "I guess it was an attempt to support sdcards?",
+      "range": {
+        "startLine": 32,
+        "startChar": 0,
+        "endLine": 32,
+        "endChar": 60
+      },
+      "revId": "6e4145733bce9a2a143342094c800514ff2733fe",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7b72406c_b81ad86a",
+        "filename": "app/src/main/java/org/lineageos/recorder/repository/RecordingsRepository.kt",
+        "patchSetId": 3
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 25732
+      },
+      "writtenOn": "2024-09-09T14:28:12Z",
+      "side": 1,
+      "message": "Done, VOLUME_EXTERNAL is a synthetic volume, VOLUME_EXTERNAL_PRIMARY also supports insertions",
+      "parentUuid": "d2411ef4_5f41d38a",
       "range": {
         "startLine": 32,
         "startChar": 0,
