@@ -5,6 +5,7 @@
 
 package org.lineageos.recorder.repository
 
+import android.content.ContentResolver
 import android.content.ContentValues
 import android.content.Context
 import android.os.Build
@@ -13,6 +14,7 @@ import android.util.Log
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import org.lineageos.recorder.flow.RecordingsFlow
+import org.lineageos.recorder.models.Recording
 import java.io.FileOutputStream
 import java.io.IOException
 import java.nio.file.Files
@@ -31,13 +33,14 @@ object RecordingsRepository {
     fun recordings(context: Context) = RecordingsFlow(context).flowData()
 
     suspend fun addRecordingToContentProvider(
-        context: Context, path: Path, mimeType: String
+        contentResolver: ContentResolver, path: Path, mimeType: String, elapsedTime: Long
     ) = withContext(Dispatchers.IO) {
-        val contentResolver = context.contentResolver
+        val now = System.currentTimeMillis() / 1000L
+        val size = Files.size(path)
 
         val uri = contentResolver.insert(
-            MediaStore.Audio.Media.getContentUri(MediaStore.VOLUME_EXTERNAL_PRIMARY),
-            buildCv(path, mimeType)
+            MediaStore.Audio.Media.EXTERNAL_CONTENT_URI,
+            buildCv(path, mimeType, elapsedTime, now, size)
         ) ?: run {
             Log.e(LOG_TAG, "Failed to insert ${path.toAbsolutePath()}")
 
@@ -52,7 +55,7 @@ object RecordingsRepository {
                     Files.copy(path, oStream)
                 }
                 val values = ContentValues().apply {
-                    put(MediaStore.MediaColumns.IS_PENDING, 0)
+                    put(MediaStore.Audio.AudioColumns.IS_PENDING, 0)
                 }
                 contentResolver.update(uri, values, null, null)
                 try {
@@ -61,32 +64,43 @@ object RecordingsRepository {
                     Log.w(LOG_TAG, "Failed to delete tmp file")
                 }
 
-                uri.toString()
+                Recording.fromMediaStore(
+                    uri,
+                    path.fileName.toString(),
+                    now,
+                    elapsedTime,
+                    mimeType,
+                )
             }
         } catch (e: IOException) {
             Log.e(LOG_TAG, "Failed to write into MediaStore", e)
+            contentResolver.delete(uri, null, null)
 
             null
         }
     }
 
-    private fun buildCv(path: Path, mimeType: String) = ContentValues().apply {
-        val name = path.fileName.toString()
+    private fun buildCv(path: Path, mimeType: String, elapsedTime: Long, now: Long, size: Long) =
+        ContentValues().apply {
+            val name = path.fileName.toString()
 
-        put(MediaStore.Audio.Media.DISPLAY_NAME, name)
-        put(MediaStore.Audio.Media.TITLE, name)
-        put(MediaStore.Audio.Media.MIME_TYPE, mimeType)
-        put(MediaStore.Audio.Media.ARTIST, ARTIST)
-        put(MediaStore.Audio.Media.ALBUM, ALBUM)
-        put(MediaStore.Audio.Media.DATE_ADDED, System.currentTimeMillis() / 1000L)
-        put(
-            MediaStore.Audio.Media.RELATIVE_PATH,
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
-                PATH
-            } else {
-                PATH_LEGACY
-            }
-        )
-        put(MediaStore.Audio.Media.IS_PENDING, 1)
-    }
+            put(MediaStore.Audio.AudioColumns.DISPLAY_NAME, name)
+            put(MediaStore.Audio.AudioColumns.TITLE, name)
+            put(MediaStore.Audio.AudioColumns.MIME_TYPE, mimeType)
+            put(MediaStore.Audio.AudioColumns.ARTIST, ARTIST)
+            put(MediaStore.Audio.AudioColumns.ALBUM, ALBUM)
+            put(MediaStore.Audio.AudioColumns.DURATION, elapsedTime)
+            put(MediaStore.Audio.AudioColumns.DATE_ADDED, now)
+            put(MediaStore.Audio.AudioColumns.DATE_MODIFIED, now)
+            put(MediaStore.Audio.AudioColumns.SIZE, size)
+            put(
+                MediaStore.Audio.AudioColumns.RELATIVE_PATH,
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
+                    PATH
+                } else {
+                    PATH_LEGACY
+                }
+            )
+            put(MediaStore.Audio.AudioColumns.IS_PENDING, 1)
+        }
 }

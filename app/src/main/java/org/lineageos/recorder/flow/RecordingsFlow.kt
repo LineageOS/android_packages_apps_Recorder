@@ -47,6 +47,7 @@ class RecordingsFlow(
         val displayName = it.getString(indexCache[i++])
         val dateAdded = it.getLong(indexCache[i++])
         val duration = it.getLong(indexCache[i++])
+        val mimeType = it.getString(indexCache[i++])
 
         val uri = ContentUris.withAppendedId(
             MediaStore.Audio.Media.EXTERNAL_CONTENT_URI, id
@@ -57,6 +58,7 @@ class RecordingsFlow(
             displayName,
             dateAdded,
             duration,
+            mimeType,
         )
     }
 
@@ -65,7 +67,8 @@ class RecordingsFlow(
             MediaStore.Audio.Media._ID,
             MediaStore.Audio.Media.DISPLAY_NAME,
             MediaStore.Audio.Media.DATE_ADDED,
-            MediaStore.Audio.Media.DURATION
+            MediaStore.Audio.Media.DURATION,
+            MediaStore.Audio.Media.MIME_TYPE
         )
     }
 }
