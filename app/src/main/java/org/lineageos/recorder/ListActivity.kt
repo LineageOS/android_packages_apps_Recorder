@@ -6,6 +6,7 @@
 package org.lineageos.recorder
 
 import android.content.DialogInterface
+import android.content.Intent
 import android.os.Bundle
 import android.view.ActionMode
 import android.view.Menu
@@ -137,9 +138,12 @@ class ListActivity : AppCompatActivity() {
                     }
 
                     R.id.share -> {
-                        val uris = selection.map { it.uri }
-
-                        startActivity(RecordIntentHelper.getShareIntents(uris, TYPE_AUDIO))
+                        startActivity(
+                            Intent.createChooser(
+                                RecordIntentHelper.buildShareIntents(*selection),
+                                null
+                            )
+                        )
 
                         true
                     }
@@ -223,11 +227,16 @@ class ListActivity : AppCompatActivity() {
     }
 
     fun onPlay(recording: Recording) {
-        startActivity(RecordIntentHelper.getOpenIntent(recording.uri, TYPE_AUDIO))
+        startActivity(RecordIntentHelper.buildOpenIntent(recording))
     }
 
     fun onShare(recording: Recording) {
-        startActivity(RecordIntentHelper.getShareIntent(recording.uri, TYPE_AUDIO))
+        startActivity(
+            Intent.createChooser(
+                RecordIntentHelper.buildShareIntents(recording),
+                null
+            )
+        )
     }
 
     fun onDelete(recording: Recording) {
