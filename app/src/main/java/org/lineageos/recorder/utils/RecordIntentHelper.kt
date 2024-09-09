@@ -7,41 +7,44 @@ package org.lineageos.recorder.utils
 
 import android.content.Context
 import android.content.Intent
-import android.net.Uri
-import androidx.core.os.bundleOf
 import org.lineageos.recorder.DeleteLastActivity
+import org.lineageos.recorder.models.Recording
 
 object RecordIntentHelper {
-    fun getShareIntent(uri: Uri?, mimeType: String?): Intent {
-        val intent = Intent(Intent.ACTION_SEND)
-        intent.setType(mimeType)
-        intent.putExtra(Intent.EXTRA_STREAM, uri)
-        val chooserIntent = Intent.createChooser(intent, null)
-        chooserIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK)
-        return chooserIntent
-    }
+    fun buildShareIntents(vararg recordings: Recording) = Intent().apply {
+        require(recordings.isNotEmpty()) { "Uris cannot be empty" }
 
-    fun getShareIntents(uris: List<Uri>, mimeType: String?): Intent {
-        val intent = Intent(Intent.ACTION_SEND_MULTIPLE)
-        intent.setType(mimeType)
-        intent.putExtras(
-            bundleOf(
-                Intent.EXTRA_STREAM to uris,
+        if (recordings.size == 1) {
+            action = Intent.ACTION_SEND
+            recordings[0].let {
+                putExtra(Intent.EXTRA_TITLE, it.title)
+                putExtra(Intent.EXTRA_STREAM, it.uri)
+                type = it.mimeType
+            }
+        } else {
+            action = Intent.ACTION_SEND_MULTIPLE
+            putParcelableArrayListExtra(
+                Intent.EXTRA_STREAM,
+                recordings.map { it.uri }.toCollection(ArrayList())
             )
-        )
-        val chooserIntent = Intent.createChooser(intent, null)
-        chooserIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK)
-        return chooserIntent
+            type = when {
+                // Either audio/wav, audio/mp4a-latm or a mix of both
+                recordings.all { it.mimeType == "audio/wav" } -> "audio/wav"
+                recordings.all { it.mimeType == "audio/mp4a-latm" } -> "audio/mp4a-latm"
+                else -> {
+                    putExtra(Intent.EXTRA_MIME_TYPES, arrayOf("audio/wav", "audio/mp4a-latm"))
+                    "*/*"
+                }
+            }
+        }
+        flags = Intent.FLAG_GRANT_READ_URI_PERMISSION
     }
 
-    fun getOpenIntent(uri: Uri?, mimeType: String?): Intent {
-        val intent = Intent(Intent.ACTION_VIEW)
-        intent.setDataAndType(uri, mimeType)
-        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_GRANT_READ_URI_PERMISSION)
-        return intent
+    fun buildOpenIntent(recording: Recording) = Intent().apply {
+        action = Intent.ACTION_VIEW
+        setDataAndType(recording.uri, recording.mimeType)
+        flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_GRANT_READ_URI_PERMISSION
     }
 
-    fun getDeleteIntent(context: Context?): Intent {
-        return Intent(context, DeleteLastActivity::class.java)
-    }
+    fun buildDeleteIntent(context: Context?) = Intent(context, DeleteLastActivity::class.java)
 }

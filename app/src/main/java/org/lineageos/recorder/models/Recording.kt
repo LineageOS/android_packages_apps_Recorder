@@ -16,12 +16,14 @@ data class Recording(
     val title: String,
     val dateAdded: Date,
     val duration: Long,
+    val mimeType: String,
 ) : Parcelable {
     constructor(parcel: Parcel) : this(
         parcel.readParcelable(Uri::class)!!,
         parcel.readString()!!,
         Date(parcel.readLong()),
-        parcel.readLong()
+        parcel.readLong(),
+        parcel.readString()!!,
     )
 
     override fun writeToParcel(parcel: Parcel, flags: Int) {
@@ -29,6 +31,7 @@ data class Recording(
         parcel.writeString(title)
         parcel.writeLong(dateAdded.time)
         parcel.writeLong(duration)
+        parcel.writeString(mimeType)
     }
 
     override fun describeContents() = 0
@@ -43,11 +46,13 @@ data class Recording(
             title: String,
             dateAdded: Long,
             duration: Long,
+            mimeType: String,
         ) = Recording(
             uri,
             title,
             Date(dateAdded * 1000),
             duration,
+            mimeType,
         )
     }
 }
