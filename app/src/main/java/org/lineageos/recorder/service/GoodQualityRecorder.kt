@@ -82,5 +82,5 @@ class GoodQualityRecorder(private val context: Context) : SoundRecording {
 
     override val fileExtension = "m4a"
 
-    override val mimeType = "audio/mp4a-latm"
+    override val mimeType = "audio/mp4a"
 }

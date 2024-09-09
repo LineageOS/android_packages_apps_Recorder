@@ -52,7 +52,9 @@ object RecordingsRepository {
                     Files.copy(path, oStream)
                 }
                 val values = ContentValues().apply {
-                    put(MediaStore.MediaColumns.IS_PENDING, 0)
+                    put(MediaStore.Audio.Media.IS_PENDING, 0)
+                    put(MediaStore.Audio.Media.SIZE, Files.size(path))
+                    put(MediaStore.Audio.Media.DATE_ADDED, System.currentTimeMillis() / 1000L)
                 }
                 contentResolver.update(uri, values, null, null)
                 try {
@@ -61,7 +63,7 @@ object RecordingsRepository {
                     Log.w(LOG_TAG, "Failed to delete tmp file")
                 }
 
-                uri.toString()
+                uri
             }
         } catch (e: IOException) {
             Log.e(LOG_TAG, "Failed to write into MediaStore", e)
@@ -88,5 +90,6 @@ object RecordingsRepository {
             }
         )
         put(MediaStore.Audio.Media.IS_PENDING, 1)
+        put(MediaStore.Audio.Media.SIZE, 0)
     }
 }
