@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "578b2685_abf2603f",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2024-09-09T17:06:42Z",
+      "side": 1,
+      "message": "still doesn\u0027t fix chooser, but progress?",
+      "revId": "1a53531b2f45e3f89a640dfe7847dc80ebb8e888",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
