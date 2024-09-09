@@ -63,12 +63,6 @@
             android:name=".service.SoundRecorderService"
             android:exported="false"
             android:foregroundServiceType="microphone">
-            <intent-filter>
-                <action android:name="org.lineageos.recorder.service.START" />
-                <action android:name="org.lineageos.recorder.service.STOP" />
-                <action android:name="org.lineageos.recorder.service.PAUSE" />
-                <action android:name="org.lineageos.recorder.service.RESUME" />
-            </intent-filter>
         </service>
     </application>
 </manifest>
