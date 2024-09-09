@@ -15,7 +15,6 @@ import android.content.Context
 import android.content.Intent
 import android.content.IntentFilter
 import android.content.pm.PackageManager
-import android.net.Uri
 import android.os.Build
 import android.os.Environment
 import android.os.Handler
@@ -36,6 +35,7 @@ import kotlinx.coroutines.launch
 import org.lineageos.recorder.ListActivity
 import org.lineageos.recorder.R
 import org.lineageos.recorder.RecorderActivity
+import org.lineageos.recorder.models.Recording
 import org.lineageos.recorder.models.UiStatus
 import org.lineageos.recorder.repository.RecordingsRepository
 import org.lineageos.recorder.utils.PreferencesManager
@@ -207,9 +207,10 @@ class SoundRecorderService : LifecycleService() {
                 RecordingsRepository.addRecordingToContentProvider(
                     this@SoundRecorderService,
                     it,
-                    recorder.mimeType
-                )?.also { uri ->
-                    onRecordCompleted(uri)
+                    recorder.mimeType,
+                    elapsedTime,
+                )?.also {
+                    onRecordCompleted(it)
                 } ?: run {
                     Log.e(TAG, "Failed to save recording")
                 }
@@ -277,15 +278,12 @@ class SoundRecorderService : LifecycleService() {
         }
     }
 
-    private fun onRecordCompleted(uri: String?) {
+    private fun onRecordCompleted(recording: Recording) {
         notifyStatus(UiStatus.READY)
         stopForeground(STOP_FOREGROUND_REMOVE)
 
-        uri?.let {
-            createShareNotification(it)?.let { shareNotification ->
-                notificationManager.notify(NOTIFICATION_ID, shareNotification)
-            }
-        }
+        val notification = createShareNotification(recording)
+        notificationManager.notify(NOTIFICATION_ID, notification)
 
         recorder = null
     }
@@ -490,15 +488,8 @@ class SoundRecorderService : LifecycleService() {
         return nb.build()
     }
 
-    private fun createShareNotification(uri: String): Notification? {
-        val fileUri = Uri.parse(uri)
-
-        preferencesManager.lastItemUri = fileUri
-
-        val mimeType = recorder?.mimeType ?: run {
-            Log.e(TAG, "No recorder found while creating the share notification")
-            return null
-        }
+    private fun createShareNotification(recording: Recording): Notification {
+        preferencesManager.lastItemUri = recording.uri
 
         val intent = Intent(this, ListActivity::class.java)
 
@@ -509,19 +500,19 @@ class SoundRecorderService : LifecycleService() {
 
         val playPIntent = PendingIntent.getActivity(
             this, 0,
-            RecordIntentHelper.getOpenIntent(fileUri, mimeType),
+            RecordIntentHelper.buildOpenIntent(recording),
             PendingIntent.FLAG_CANCEL_CURRENT or PendingIntent.FLAG_IMMUTABLE
         )
 
         val sharePIntent = PendingIntent.getActivity(
             this, 0,
-            RecordIntentHelper.getShareIntent(fileUri, mimeType),
+            RecordIntentHelper.buildShareIntents(recording),
             PendingIntent.FLAG_CANCEL_CURRENT or PendingIntent.FLAG_IMMUTABLE
         )
 
         val deletePIntent = PendingIntent.getActivity(
             this, 0,
-            RecordIntentHelper.getDeleteIntent(this),
+            RecordIntentHelper.buildDeleteIntent(this),
             PendingIntent.FLAG_CANCEL_CURRENT or PendingIntent.FLAG_IMMUTABLE
         )
 
