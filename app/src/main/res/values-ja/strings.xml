@@ -56,4 +56,7 @@
     <string name="delete_all_message">本当にすべての録画を削除してよろしいですか? この操作は元に戻せません。</string>
     <string name="delete_selected_title">選択項目を削除</string>
     <string name="delete_selected_message">本当に選択した録画を削除してよろしいですか? この操作は元に戻せません。</string>
+    <plurals name="recording_selection_count">
+        <item quantity="other">%d件を選択中</item>
+    </plurals>
 </resources>

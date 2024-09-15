@@ -56,4 +56,9 @@
     <string name="delete_all_message">Sunteți sigur(ă) că doriți să ștergeți toate înregistrările? Această acțiune este ireversibilă</string>
     <string name="delete_selected_title">Ştergeţi selecţia</string>
     <string name="delete_selected_message">Sunteți sigur(ă) că doriți să ștergeți înregistrările selectate? Această acțiune este ireversibilă</string>
+    <plurals name="recording_selection_count">
+        <item quantity="one">%d selectat</item>
+        <item quantity="few">%d selectate</item>
+        <item quantity="other">%d selectate</item>
+    </plurals>
 </resources>

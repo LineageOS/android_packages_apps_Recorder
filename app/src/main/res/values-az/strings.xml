@@ -56,4 +56,8 @@
     <string name="delete_all_message">Bütün səsyazmaları silmək istədiyinizə əminsiniz? Bunun geri dönüşü yoxdur</string>
     <string name="delete_selected_title">Seçiləni sil</string>
     <string name="delete_selected_message">Seçilmiş səsyazmalarıı silmək istədiyinizə əminsiniz? Bunun geri dönüşü yoxdur</string>
+    <plurals name="recording_selection_count">
+        <item quantity="one">%d seçildi</item>
+        <item quantity="other">%d seçildi</item>
+    </plurals>
 </resources>

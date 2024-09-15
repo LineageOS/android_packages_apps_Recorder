@@ -56,4 +56,8 @@
     <string name="delete_all_message">Confermi l\'eliminazione di tutte le registrazioni? Quest\'azione non può essere annullata</string>
     <string name="delete_selected_title">Elimina selezionati</string>
     <string name="delete_selected_message">Sei sicuro di voler eliminare le registrazioni selezionate? Quest\'azione non può essere annullata</string>
+    <plurals name="recording_selection_count">
+        <item quantity="one">%d selezionato</item>
+        <item quantity="other">%d selezionati</item>
+    </plurals>
 </resources>

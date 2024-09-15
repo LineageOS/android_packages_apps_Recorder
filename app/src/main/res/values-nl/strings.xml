@@ -56,4 +56,8 @@
     <string name="delete_all_message">Weet u zeker dat u alle opnames wilt verwijderen? Dit kan niet ongedaan worden gemaakt</string>
     <string name="delete_selected_title">Selectie verwijderen</string>
     <string name="delete_selected_message">Weet u zeker dat u de geselecteerde opnames wilt verwijderen? Dit kan niet ongedaan worden gemaakt</string>
+    <plurals name="recording_selection_count">
+        <item quantity="one">%d geselekteerd</item>
+        <item quantity="other">%d geselecteerd</item>
+    </plurals>
 </resources>

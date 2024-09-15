@@ -56,4 +56,7 @@
     <string name="delete_all_message">您确定要删除所有录音吗？此操作无法撤消</string>
     <string name="delete_selected_title">刪除所选</string>
     <string name="delete_selected_message">您确定要删除所选录音吗？此操作无法撤消</string>
+    <plurals name="recording_selection_count">
+        <item quantity="other">已选中%d项</item>
+    </plurals>
 </resources>

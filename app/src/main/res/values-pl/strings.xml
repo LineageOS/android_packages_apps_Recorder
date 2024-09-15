@@ -56,4 +56,10 @@
     <string name="delete_all_message">Czy na pewno chcesz usunąć wszystkie nagrania? Nie można tego cofnąć!</string>
     <string name="delete_selected_title">Usuń zaznaczone</string>
     <string name="delete_selected_message">Czy na pewno chcesz usunąć zaznaczone nagrania? Nie można tego cofnąć!</string>
+    <plurals name="recording_selection_count">
+        <item quantity="one">Wybrano: %d</item>
+        <item quantity="few">Wybrano: %d</item>
+        <item quantity="many">Wybrano: %d</item>
+        <item quantity="other">Wybrano: %d</item>
+    </plurals>
 </resources>

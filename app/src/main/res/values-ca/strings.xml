@@ -56,4 +56,8 @@
     <string name="delete_all_message">Esteu segur que voleu suprimir tots els enregistraments? Això no es pot desfer</string>
     <string name="delete_selected_title">Elimina els seleccionats</string>
     <string name="delete_selected_message">Esteu segur que voleu suprimir els enregistraments seleccionats? Això no es pot desfer</string>
+    <plurals name="recording_selection_count">
+        <item quantity="one">%d seleccionat</item>
+        <item quantity="other">%d seleccionats</item>
+    </plurals>
 </resources>

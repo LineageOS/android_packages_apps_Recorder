@@ -56,4 +56,10 @@
     <string name="delete_all_message">Вы уверены, что хотите удалить все записи? Действие не может быть отменено</string>
     <string name="delete_selected_title">Удалить выбранное</string>
     <string name="delete_selected_message">Вы уверены, что хотите выбранные записи? Действие не может быть отменено</string>
+    <plurals name="recording_selection_count">
+        <item quantity="one">Выбрано %d</item>
+        <item quantity="few">%d выбрано</item>
+        <item quantity="many">%d выбрано</item>
+        <item quantity="other">%d выбрано</item>
+    </plurals>
 </resources>

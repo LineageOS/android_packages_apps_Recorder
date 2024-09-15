@@ -56,4 +56,8 @@
     <string name="delete_all_message">Είστε βέβαιοι ότι θέλετε να διαγράψετε όλες τις εγγραφές; Αυτή η ενέργεια δεν μπορεί να αναιρεθεί</string>
     <string name="delete_selected_title">Διαγραφή επιλεγμένων</string>
     <string name="delete_selected_message">Είστε βέβαιοι ότι θέλετε να διαγράψετε τις επιλεγμένες εγγραφές; Αυτή η ενέργεια δεν μπορεί να αναιρεθεί</string>
+    <plurals name="recording_selection_count">
+        <item quantity="one">Επιλέχθηκε %d</item>
+        <item quantity="other">Επιλέχθηκαν %d</item>
+    </plurals>
 </resources>

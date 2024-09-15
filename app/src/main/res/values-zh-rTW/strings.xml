@@ -56,4 +56,7 @@
     <string name="delete_all_message">您確定要刪除所有錄音嗎？此項動作無法還原</string>
     <string name="delete_selected_title">刪除選取的項目</string>
     <string name="delete_selected_message">您確定要刪除選取的錄音嗎？此項動作無法還原</string>
+    <plurals name="recording_selection_count">
+        <item quantity="other">已選擇 %d 個</item>
+    </plurals>
 </resources>

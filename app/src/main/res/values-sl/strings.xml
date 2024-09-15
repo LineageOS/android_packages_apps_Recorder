@@ -56,4 +56,10 @@
     <string name="delete_all_message">Ali ste prepričani, da želite izbrisati vse posnetke? Tega ni mogoče razveljaviti</string>
     <string name="delete_selected_title">Izbriši izbrano</string>
     <string name="delete_selected_message">Ali ste prepričani, da želite izbrisati izbrane posnetke? Tega ni mogoče razveljaviti</string>
+    <plurals name="recording_selection_count">
+        <item quantity="one">%d izbran</item>
+        <item quantity="two">%d izbrana</item>
+        <item quantity="few">%d izbrani</item>
+        <item quantity="other">%d izbranih</item>
+    </plurals>
 </resources>
