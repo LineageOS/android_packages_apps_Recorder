@@ -56,4 +56,8 @@
     <string name="delete_all_message">Biztosan törli az összes felvételt? Ha törölte, már nem szerezheti többé vissza</string>
     <string name="delete_selected_title">A kijelöltek törlése</string>
     <string name="delete_selected_message">Biztosan törli a kiválasztott felvételt? Ha törölte, már nem szerezheti többé vissza</string>
+    <plurals name="recording_selection_count">
+        <item quantity="one">%d kijelölve</item>
+        <item quantity="other">%d kijelölve</item>
+    </plurals>
 </resources>
