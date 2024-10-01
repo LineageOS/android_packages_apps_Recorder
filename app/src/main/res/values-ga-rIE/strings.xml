@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     SPDX-FileCopyrightText: 2017-2021 The LineageOS Project
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources>
+    <string name="dialog_permissions_notifications">Teastaíonn cead fógraí ó thaifeadán chun rialuithe taifeadta a thaispeáint</string>
+    <string name="dialog_permissions_mic_notifications">Teastaíonn cead ó mhicreafón ó thaifeadán chun cead fuaime agus fógraí a thaifeadadh chun rialuithe taifeadta a thaispeáint</string>
+    <string name="dialog_permissions_phone_notifications">Teastaíonn rochtain stádais ghutháin ar Thaifeadán chun an aip seo a chosc ó thaifeadadh agus tú ag glaoch agus cead fógraí a thabhairt chun rialuithe taifeadta a thaispeáint</string>
+</resources>
