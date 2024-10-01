@@ -56,4 +56,8 @@
     <string name="delete_all_message">Are you sure you want to delete all recordings? This cannot be undone</string>
     <string name="delete_selected_title">Delete selected</string>
     <string name="delete_selected_message">Are you sure you want to delete the selected recordings? This cannot be undone</string>
+    <plurals name="recording_selection_count">
+        <item quantity="one">%d selected</item>
+        <item quantity="other">%d selected</item>
+    </plurals>
 </resources>

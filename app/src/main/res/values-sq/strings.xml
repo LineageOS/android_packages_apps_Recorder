@@ -56,4 +56,8 @@
     <string name="delete_all_message">Je i sigurt që dëshiron të fshish të gjitha regjistrimet? Kjo nuk mund të zhbëhet</string>
     <string name="delete_selected_title">Fshiji të zgjedhurat</string>
     <string name="delete_selected_message">Je i sigurt që dëshiron të fshish regjistrimet e zgjedhura? Kjo nuk mund të zhbëhet</string>
+    <plurals name="recording_selection_count">
+        <item quantity="one">%d të përzgjedhur</item>
+        <item quantity="other">%d të përzgjedhur</item>
+    </plurals>
 </resources>
