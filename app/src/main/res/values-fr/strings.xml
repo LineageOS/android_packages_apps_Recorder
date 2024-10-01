@@ -56,4 +56,8 @@
     <string name="delete_all_message">Êtes-vous sûr de vouloir supprimer tous les enregistrements ? Cette action est irréversible</string>
     <string name="delete_selected_title">Supprimer la sélection</string>
     <string name="delete_selected_message">Êtes-vous sûr de vouloir supprimer les enregistrements sélectionnés ? Cette action est irréversible</string>
+    <plurals name="recording_selection_count">
+        <item quantity="one">%d sélectionné</item>
+        <item quantity="other">%d sélectionnés</item>
+    </plurals>
 </resources>

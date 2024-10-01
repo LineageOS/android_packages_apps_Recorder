@@ -56,4 +56,7 @@
     <string name="delete_all_message">Bạn có chắc chắn muốn xóa tất cả bản ghi? Hành động này không thể hoàn tác</string>
     <string name="delete_selected_title">Xóa mục đã chọn </string>
     <string name="delete_selected_message">Bạn có chắc chắn muốn xóa bản ghi đã chọn? Hành động này không thể hoàn tác</string>
+    <plurals name="recording_selection_count">
+        <item quantity="other">Đã chọn %d</item>
+    </plurals>
 </resources>
