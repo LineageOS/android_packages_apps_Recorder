@@ -31,7 +31,7 @@
     <string name="sound_channel_title">Grabación de sonido</string>
     <string name="sound_channel_desc">Notificación persistente al grabar sonido y notificar al terminar</string>
     <string name="settings_title">Ajustes</string>
-    <string name="settings_location_message">Etiqueta tus grabaciones con tu posición actual</string>
+    <string name="settings_location_message">Etiqueta tus grabaciones con tu ubicación actual</string>
     <string name="settings_quality_high">Grabar en alta calidad</string>
     <string name="dialog_permissions_title">Permisos</string>
     <string name="dialog_permissions_mic">La grabadora necesita acceder al micrófono para grabar el audio</string>
