@@ -25,7 +25,6 @@ class HighQualityRecorder : SoundRecording {
     private var file: File? = null
     private var maxAmplitude = 0
     private var isRecording = false
-    private var trackAmplitude = false
 
     @RequiresPermission(permission.RECORD_AUDIO)
     override fun startRecording(path: Path) {
@@ -82,9 +81,6 @@ class HighQualityRecorder : SoundRecording {
 
     override val currentAmplitude: Int
         get() {
-            if (!trackAmplitude) {
-                trackAmplitude = true
-            }
             return maxAmplitude
         }
 
@@ -99,18 +95,17 @@ class HighQualityRecorder : SoundRecording {
                     if (read > 0) {
                         out.write(buffer, 0, read)
 
-                        if (trackAmplitude) {
-                            maxAmplitude = 0
-                            for (i in 0 until read step 2) {
-                                val sample = ByteBuffer.wrap(buffer, i, 2)
-                                    .order(ByteOrder.LITTLE_ENDIAN)
-                                    .short
-                                    .toInt()
-                                maxAmplitude = maxOf(maxAmplitude, abs(sample))
-                            }
+                        maxAmplitude = 0
+                        for (i in 0 until read step 2) {
+                            val sample = ByteBuffer.wrap(buffer, i, 2)
+                                .order(ByteOrder.LITTLE_ENDIAN)
+                                .short
+                                .toInt()
+                            maxAmplitude = maxOf(maxAmplitude, abs(sample))
                         }
                     }
                 }
+
                 PcmConverter.updateWavHeader(out)
             }
         } catch (e: IOException) {
