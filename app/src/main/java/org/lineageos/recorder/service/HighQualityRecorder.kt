@@ -16,7 +16,6 @@ import java.io.BufferedOutputStream
 import java.io.IOException
 import java.nio.file.Files
 import java.nio.file.Path
-import java.util.concurrent.atomic.AtomicBoolean
 import kotlin.math.abs
 
 class HighQualityRecorder : SoundRecording {
@@ -24,8 +23,8 @@ class HighQualityRecorder : SoundRecording {
     private var pcmConverter: PcmConverter? = null
     private var path: Path? = null
     private var maxAmplitude = 0
-    private val isRecording = AtomicBoolean(false)
-    private val trackAmplitude = AtomicBoolean(false)
+    private var isRecording = false
+    private var trackAmplitude = false
 
     @RequiresPermission(permission.RECORD_AUDIO)
     override fun startRecording(path: Path) {
@@ -47,7 +46,8 @@ class HighQualityRecorder : SoundRecording {
         ).apply {
             startRecording()
         }
-        isRecording.set(true)
+
+        isRecording = true
 
         Thread { recordingThreadImpl() }.start()
     }
@@ -61,7 +61,7 @@ class HighQualityRecorder : SoundRecording {
         record?.release()
         record = null
 
-        isRecording.set(false)
+        isRecording = false
 
         path?.also {
             pcmConverter?.convertToWave(it)
@@ -74,7 +74,7 @@ class HighQualityRecorder : SoundRecording {
     }
 
     override fun pauseRecording(): Boolean {
-        if (!isRecording.get()) {
+        if (!isRecording) {
             return false
         }
 
@@ -84,7 +84,7 @@ class HighQualityRecorder : SoundRecording {
     }
 
     override fun resumeRecording(): Boolean {
-        if (!isRecording.get()) {
+        if (!isRecording) {
             return false
         }
         record?.startRecording()
@@ -93,8 +93,8 @@ class HighQualityRecorder : SoundRecording {
 
     override val currentAmplitude: Int
         get() {
-            if (!trackAmplitude.get()) {
-                trackAmplitude.set(true)
+            if (!trackAmplitude) {
+                trackAmplitude = true
             }
             val value = maxAmplitude
             maxAmplitude = 0
@@ -105,7 +105,7 @@ class HighQualityRecorder : SoundRecording {
         try {
             BufferedOutputStream(Files.newOutputStream(path)).use { out ->
                 val data = ByteArray(BUFFER_SIZE_IN_BYTES)
-                while (isRecording.get()) {
+                while (isRecording) {
                     try {
                         val record = record ?: throw NullPointerException("Null record")
 
@@ -113,7 +113,7 @@ class HighQualityRecorder : SoundRecording {
                             AudioRecord.ERROR_INVALID_OPERATION,
                             AudioRecord.ERROR_BAD_VALUE -> {
                                 Log.e(TAG, "Error reading audio record data")
-                                isRecording.set(false)
+                                isRecording = false
                             }
 
                             AudioRecord.ERROR_DEAD_OBJECT,
@@ -121,7 +121,7 @@ class HighQualityRecorder : SoundRecording {
 
                             // Status indicates the number of bytes
                             else -> if (status != 0) {
-                                if (trackAmplitude.get()) {
+                                if (trackAmplitude) {
                                     var i = 0
                                     while (i < status) {
                                         val value = abs(
@@ -139,11 +139,11 @@ class HighQualityRecorder : SoundRecording {
                     } catch (e: IOException) {
                         Log.e(TAG, "Failed to write audio stream", e)
                         // Stop recording
-                        isRecording.set(false)
+                        isRecording = false
                     } catch (e: NullPointerException) {
                         Log.e(TAG, "Null record", e)
                         // Stop recording
-                        isRecording.set(false)
+                        isRecording = false
                     }
                 }
             }
