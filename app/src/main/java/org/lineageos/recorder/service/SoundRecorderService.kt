@@ -40,10 +40,9 @@ import org.lineageos.recorder.models.UiStatus
 import org.lineageos.recorder.repository.RecordingsRepository
 import org.lineageos.recorder.utils.PreferencesManager
 import org.lineageos.recorder.utils.RecordIntentHelper
+import java.io.File
 import java.io.IOException
 import java.lang.ref.WeakReference
-import java.nio.file.Files
-import java.nio.file.Path
 import java.util.Timer
 import java.util.TimerTask
 
@@ -82,7 +81,7 @@ class SoundRecorderService : LifecycleService() {
     }
     private val messenger = Messenger(handler)
     private var recorder: SoundRecording? = null
-    private var recordPath: Path? = null
+    private var recordFile: File? = null
     private var amplitudeTimer: Timer? = null
     private var elapsedTimeTimer: Timer? = null
     private var isPaused = false
@@ -163,17 +162,17 @@ class SoundRecorderService : LifecycleService() {
         }
 
         return recorder?.let { recorder ->
-            val optPath = createNewAudioFile(fileName, recorder.fileExtension) ?: run {
+            val file = createNewAudioFile(fileName, recorder.fileExtension) ?: run {
                 Log.e(TAG, "Failed to prepare output file")
                 return@let false
             }
 
-            this.recordPath = optPath
+            this.recordFile = file
 
             isPaused = false
             elapsedTime = 0
             try {
-                recorder.startRecording(optPath)
+                recorder.startRecording(file)
             } catch (e: IOException) {
                 Log.e(TAG, "Error while starting the recorder", e)
                 return@let false
@@ -202,7 +201,7 @@ class SoundRecorderService : LifecycleService() {
 
         val success = recorder.stopRecording()
 
-        return recordPath?.takeIf { success }?.let {
+        return recordFile?.takeIf { success }?.let {
             lifecycleScope.launch {
                 RecordingsRepository.addRecordingToContentProvider(
                     this@SoundRecorderService,
@@ -299,26 +298,26 @@ class SoundRecorderService : LifecycleService() {
     private fun createNewAudioFile(
         fileName: String,
         extension: String
-    ): Path? {
+    ): File? {
         val recordingDir = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
-            getExternalFilesDir(Environment.DIRECTORY_RECORDINGS)?.toPath()
+            getExternalFilesDir(Environment.DIRECTORY_RECORDINGS)
         } else {
-            getExternalFilesDir(Environment.DIRECTORY_MUSIC)?.toPath()
+            getExternalFilesDir(Environment.DIRECTORY_MUSIC)
                 ?.resolve(LEGACY_MUSIC_DIR)
         } ?: throw Exception("Null external files dir")
 
-        val path = recordingDir.resolve(String.format(fileName, extension))
+        val file = recordingDir.resolve(String.format(fileName, extension))
 
-        if (!Files.exists(recordingDir)) {
+        if (!recordingDir.exists()) {
             try {
-                Files.createDirectories(recordingDir)
+                recordingDir.mkdirs()
             } catch (e: IOException) {
                 Log.e(TAG, "Failed to create parent directories for output")
                 return null
             }
         }
 
-        return path
+        return file
     }
 
     /* Timers */

@@ -13,10 +13,9 @@ import android.util.Log
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import org.lineageos.recorder.flow.RecordingsFlow
+import java.io.File
 import java.io.FileOutputStream
 import java.io.IOException
-import java.nio.file.Files
-import java.nio.file.Path
 
 object RecordingsRepository {
     private val LOG_TAG = this::class.simpleName!!
@@ -31,15 +30,15 @@ object RecordingsRepository {
     fun recordings(context: Context) = RecordingsFlow(context).flowData()
 
     suspend fun addRecordingToContentProvider(
-        context: Context, path: Path, mimeType: String
+        context: Context, file: File, mimeType: String
     ) = withContext(Dispatchers.IO) {
         val contentResolver = context.contentResolver
 
         val uri = contentResolver.insert(
             MediaStore.Audio.Media.getContentUri(MediaStore.VOLUME_EXTERNAL_PRIMARY),
-            buildCv(path, mimeType)
+            buildCv(file, mimeType)
         ) ?: run {
-            Log.e(LOG_TAG, "Failed to insert ${path.toAbsolutePath()}")
+            Log.e(LOG_TAG, "Failed to insert ${file.absoluteFile}")
 
             return@withContext null
         }
@@ -49,14 +48,16 @@ object RecordingsRepository {
                 uri, "w", null
             )?.use { pfd ->
                 FileOutputStream(pfd.fileDescriptor).use { oStream ->
-                    Files.copy(path, oStream)
+                    file.inputStream().use { iStream ->
+                        iStream.copyTo(oStream)
+                    }
                 }
                 val values = ContentValues().apply {
                     put(MediaStore.MediaColumns.IS_PENDING, 0)
                 }
                 contentResolver.update(uri, values, null, null)
                 try {
-                    Files.delete(path)
+                    file.delete()
                 } catch (e: IOException) {
                     Log.w(LOG_TAG, "Failed to delete tmp file")
                 }
@@ -70,8 +71,8 @@ object RecordingsRepository {
         }
     }
 
-    private fun buildCv(path: Path, mimeType: String) = ContentValues().apply {
-        val name = path.fileName.toString()
+    private fun buildCv(file: File, mimeType: String) = ContentValues().apply {
+        val name = file.name
 
         put(MediaStore.Audio.Media.DISPLAY_NAME, name)
         put(MediaStore.Audio.Media.TITLE, name)

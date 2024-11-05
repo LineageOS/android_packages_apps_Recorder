@@ -10,8 +10,8 @@ import android.content.Context
 import android.media.MediaRecorder
 import android.os.Build
 import androidx.annotation.RequiresPermission
+import java.io.File
 import java.io.IOException
-import java.nio.file.Path
 
 class GoodQualityRecorder(private val context: Context) : SoundRecording {
     private var recorder: MediaRecorder? = null
@@ -19,14 +19,14 @@ class GoodQualityRecorder(private val context: Context) : SoundRecording {
 
     @RequiresPermission(permission.RECORD_AUDIO)
     @Throws(IOException::class)
-    override fun startRecording(path: Path) {
+    override fun startRecording(file: File) {
         recorder = (if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
             MediaRecorder(context)
         } else {
             @Suppress("Deprecation")
             MediaRecorder()
         }).apply {
-            setOutputFile(path.toFile())
+            setOutputFile(file)
             setAudioSource(MediaRecorder.AudioSource.DEFAULT)
             setOutputFormat(MediaRecorder.OutputFormat.MPEG_4)
             setAudioEncoder(MediaRecorder.AudioEncoder.AAC)

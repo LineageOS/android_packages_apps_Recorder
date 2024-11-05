@@ -17,7 +17,6 @@ import java.io.FileOutputStream
 import java.io.IOException
 import java.nio.ByteBuffer
 import java.nio.ByteOrder
-import java.nio.file.Path
 import kotlin.math.abs
 
 class HighQualityRecorder : SoundRecording {
@@ -27,8 +26,8 @@ class HighQualityRecorder : SoundRecording {
     private var isRecording = false
 
     @RequiresPermission(permission.RECORD_AUDIO)
-    override fun startRecording(path: Path) {
-        this.file = path.toFile()
+    override fun startRecording(file: File) {
+        this.file = file
 
         val audioFormat = AudioFormat.Builder()
             .setSampleRate(SAMPLING_RATE)

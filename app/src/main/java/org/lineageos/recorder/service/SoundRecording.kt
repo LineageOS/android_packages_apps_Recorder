@@ -7,13 +7,13 @@ package org.lineageos.recorder.service
 
 import android.Manifest.permission
 import androidx.annotation.RequiresPermission
+import java.io.File
 import java.io.IOException
-import java.nio.file.Path
 
 interface SoundRecording {
     @RequiresPermission(permission.RECORD_AUDIO)
     @Throws(IOException::class)
-    fun startRecording(path: Path)
+    fun startRecording(file: File)
 
     fun stopRecording(): Boolean
 
