@@ -24,7 +24,6 @@ class HighQualityRecorder : SoundRecording {
     private var pcmConverter: PcmConverter? = null
     private var path: Path? = null
     private var maxAmplitude = 0
-    private var thread: Thread? = null
     private val isRecording = AtomicBoolean(false)
     private val trackAmplitude = AtomicBoolean(false)
 
@@ -49,9 +48,8 @@ class HighQualityRecorder : SoundRecording {
             startRecording()
         }
         isRecording.set(true)
-        thread = Thread { recordingThreadImpl() }.apply {
-            start()
-        }
+
+        Thread { recordingThreadImpl() }.start()
     }
 
     override fun stopRecording(): Boolean {
@@ -59,13 +57,11 @@ class HighQualityRecorder : SoundRecording {
             return false
         }
 
-        isRecording.set(false)
+        record?.stop()
+        record?.release()
+        record = null
 
-        try {
-            thread?.join(1000)
-        } catch (e: InterruptedException) {
-            // Wait at most 1 second, if we fail save the current data
-        }
+        isRecording.set(false)
 
         path?.also {
             pcmConverter?.convertToWave(it)
@@ -149,10 +145,6 @@ class HighQualityRecorder : SoundRecording {
                         // Stop recording
                         isRecording.set(false)
                     }
-                }
-                record?.let {
-                    it.stop()
-                    it.release()
                 }
             }
         } catch (e: IOException) {
