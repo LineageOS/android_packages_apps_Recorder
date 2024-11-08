@@ -34,6 +34,24 @@
       "parentUuid": "abdc7444_e2663bdc",
       "revId": "e223eb3d8fbcf974bb0f4b2177fed343bbef8c42",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "41996c7c_6fbd4b2c",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2024-11-08T07:07:01Z",
+      "side": 1,
+      "message": "nw, that\u0027s for us to know dependencies between gradle/AOSP match\nWe still prefer to know if the uploader verified it on their side :)",
+      "parentUuid": "561731b3_ff455c41",
+      "revId": "e223eb3d8fbcf974bb0f4b2177fed343bbef8c42",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ],
   "submitRequirementResults": []
