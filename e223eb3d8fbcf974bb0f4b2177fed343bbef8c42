@@ -52,6 +52,23 @@
       "parentUuid": "561731b3_ff455c41",
       "revId": "e223eb3d8fbcf974bb0f4b2177fed343bbef8c42",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d25b691a_de22944d",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 4550
+      },
+      "writtenOn": "2024-11-08T07:26:54Z",
+      "side": 1,
+      "message": "Pick to 22.0 as well?",
+      "revId": "e223eb3d8fbcf974bb0f4b2177fed343bbef8c42",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ],
   "submitRequirementResults": []
