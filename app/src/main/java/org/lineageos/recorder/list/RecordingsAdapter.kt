@@ -63,11 +63,6 @@ class RecordingsAdapter(
     ) {
         super.onCurrentListChanged(previousList, currentList)
 
-        // This gets randomly called with null as argument
-        if (currentList == null) {
-            return
-        }
-
         val dataTypeToIndex = mutableMapOf<Recording, Int>()
         for (i in currentList.indices) {
             dataTypeToIndex[currentList[i]] = i
