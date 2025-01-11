@@ -22,6 +22,30 @@
       },
       "revId": "cc2c2caf9fa3cbcd6bdc71c30796225ebaa4d03f",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "bf8404f7_43bf8a09",
+        "filename": "app/src/main/java/org/lineageos/recorder/list/RecordingsAdapter.kt",
+        "patchSetId": 1
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2025-01-11T13:33:52Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9f1f9e31_88441ba2",
+      "range": {
+        "startLine": 2,
+        "startChar": 32,
+        "endLine": 2,
+        "endChar": 36
+      },
+      "revId": "cc2c2caf9fa3cbcd6bdc71c30796225ebaa4d03f",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
