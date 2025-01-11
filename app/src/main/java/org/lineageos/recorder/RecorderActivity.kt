@@ -126,8 +126,8 @@ class RecorderActivity : AppCompatActivity(R.layout.activity_main) {
     private var service: Messenger? = null
     private var isServiceBound = false
 
-    public override fun onCreate(savedInstance: Bundle?) {
-        super.onCreate(savedInstance)
+    public override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
 
         // Setup edge-to-edge
         WindowCompat.setDecorFitsSystemWindows(window, false)
@@ -182,10 +182,11 @@ class RecorderActivity : AppCompatActivity(R.layout.activity_main) {
     }
 
     override fun onRequestPermissionsResult(
-        requestCode: Int, permissions: Array<String>,
-        results: IntArray
+        requestCode: Int,
+        permissions: Array<String>,
+        grantResults: IntArray,
     ) {
-        super.onRequestPermissionsResult(requestCode, permissions, results)
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults)
 
         if (requestCode == PermissionManager.REQUEST_CODE) {
             if (permissionManager.hasEssentialPermissions()) {
