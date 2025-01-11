@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2021-2024 The LineageOS Project
+ * SPDX-FileCopyrightText: 2021-2025 The LineageOS Project
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -8,7 +8,6 @@ package org.lineageos.recorder.service
 import android.Manifest.permission
 import android.content.Context
 import android.media.MediaRecorder
-import android.os.Build
 import androidx.annotation.RequiresPermission
 import java.io.File
 import java.io.IOException
@@ -20,12 +19,7 @@ class GoodQualityRecorder(private val context: Context) : SoundRecording {
     @RequiresPermission(permission.RECORD_AUDIO)
     @Throws(IOException::class)
     override fun startRecording(file: File) {
-        recorder = (if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
-            MediaRecorder(context)
-        } else {
-            @Suppress("Deprecation")
-            MediaRecorder()
-        }).apply {
+        recorder = MediaRecorder(context).apply {
             setOutputFile(file)
             setAudioSource(MediaRecorder.AudioSource.DEFAULT)
             setOutputFormat(MediaRecorder.OutputFormat.MPEG_4)
