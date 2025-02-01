@@ -6,11 +6,20 @@
 <resources>
     <string name="app_name">Ljudinspelare</string>
     <string name="share">Dela</string>
+    <string name="share_selected">Dela markerade</string>
     <string name="stop">Stoppa</string>
     <string name="play">Spela upp</string>
+    <string name="pause">Pausa</string>
+    <string name="resume">Fortsätt</string>
     <string name="delete">Radera</string>
+    <string name="delete_all">Ta bort alla</string>
+    <string name="delete_selected">Ta bort markerade</string>
     <string name="cancel">Avbryt</string>
+    <string name="rename">Döp om</string>
     <string name="delete_title">Ta bort inspelning</string>
+    <string name="delete_recording_message">Är du säker på att du vill radera den här inspelningen? Åtgärden kan inte ångras</string>
+    <string name="confirm">Bekräfta</string>
+    <string name="record_again">Spela in igen</string>
     <string name="sound_notification_title">Ljudinspelare</string>
     <string name="sound_notification_message">Ljudlängd: %1$s</string>
     <string name="sound_recording_title_working">Spelar in</string>
@@ -18,6 +27,7 @@
     <string name="sound_last_title">Senaste inspelning</string>
     <string name="sound_channel_title">Ljudinspelning</string>
     <string name="sound_channel_desc">Fast avisering vid ljudinspelning och avisering när den är färdig</string>
+    <string name="settings_title">Inställningar</string>
     <string name="dialog_permissions_title">Behörigheter</string>
     <string name="dialog_permissions_mic">Ljudinspelare behöver mikrofonbehörighet för att spela in ljud</string>
     <string name="dialog_permissions_phone">Ljudinspelaren behöver tillgång till samtalsstatus för att förhindra den här appen från att spela in ljud under tiden du är i ett samtal</string>
@@ -31,4 +41,13 @@
     <string name="dialog_permissions_dismiss">Avvisa</string>
     <string name="snack_permissions_no_permission">Nödvändiga behörigheter nekades, aktivera dem i Inställningar för att starta inspelningen</string>
     <string name="main_sound_action">Spela in ljud</string>
+    <string name="list_title">Mina inspelningar</string>
+    <string name="list_error_empty">Alla dina inspelningar kommer att visas här</string>
+    <string name="list_edit_title">Redigera inspelningsnamn</string>
+    <string name="list_edit_confirm">Ändra</string>
+    <string name="list_item_menu">Fler åtgärder</string>
+    <string name="delete_all_title">Ta bort alla</string>
+    <string name="delete_all_message">Är du säker på att du vill radera alla inspelningar? Åtgärden kan inte ångras</string>
+    <string name="delete_selected_title">Ta bort markerade</string>
+    <string name="delete_selected_message">Är du säker på att du vill radera de valda inspelningarna? Åtgärden kan inte ångras</string>
 </resources>
