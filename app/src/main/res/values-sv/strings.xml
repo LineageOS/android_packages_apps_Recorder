@@ -50,4 +50,8 @@
     <string name="delete_all_message">Är du säker på att du vill radera alla inspelningar? Åtgärden kan inte ångras</string>
     <string name="delete_selected_title">Ta bort markerade</string>
     <string name="delete_selected_message">Är du säker på att du vill radera de valda inspelningarna? Åtgärden kan inte ångras</string>
+    <plurals name="recording_selection_count">
+        <item quantity="one">%d markerad</item>
+        <item quantity="other">%d markerade</item>
+    </plurals>
 </resources>
