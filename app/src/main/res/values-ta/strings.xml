@@ -32,7 +32,7 @@
     <string name="sound_channel_desc">ஒலிப்பதிவு செய்யும்போது தொடர் அறிவித்தல்; அது முடிந்த பிறகு அறிவித்தல்</string>
     <string name="settings_title">அமைவுகள்</string>
     <string name="settings_location_message">உமது பதிவுகளை உமது நடப்பு இருப்பிடத்துடன் குறிக்க</string>
-    <string name="settings_quality_high">உயர் தரத்தில் பதிவுசெய்க</string>
+    <string name="settings_quality_high">உயர்தரத்தில் பதிவுசெய்க</string>
     <string name="dialog_permissions_title">அனுமதிகள்</string>
     <string name="dialog_permissions_mic">ஒலிபதிப்பிக்கு ஒலியைப் பதிவுசெய்ய ஒலிவாங்கி அனுமதி தேவை </string>
     <string name="dialog_permissions_phone">நீங்கள் அழைக்கும்போது இச்செயலி பதிவு செய்வதைத் தடுக்க, ஒலிபதிப்பிக்குப் பேசி நிலை அணுகல் தேவை</string>
