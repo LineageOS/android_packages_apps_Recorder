@@ -56,4 +56,7 @@
     <string name="delete_all_message">Anda yakin ingin menghapus semua rekaman? Tindakan ini tidak dapat dibatalkan</string>
     <string name="delete_selected_title">Hapus yang dipilih</string>
     <string name="delete_selected_message">Anda yakin ingin menghapus rekaman yang dipilih? Tindakan ini tidak dapat dibatalkan</string>
+    <plurals name="recording_selection_count">
+        <item quantity="other">%d dipilih</item>
+    </plurals>
 </resources>
