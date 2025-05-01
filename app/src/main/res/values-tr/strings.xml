@@ -56,4 +56,8 @@
     <string name="delete_all_message">Tüm kayıtları silmek istediğinizden emin misiniz? Bu geri alınamaz</string>
     <string name="delete_selected_title">Seçileni sil</string>
     <string name="delete_selected_message">Seçilen kayıtları silmek istediğinizden emin misiniz? Bu geri alınamaz</string>
+    <plurals name="recording_selection_count">
+        <item quantity="one">%d seçildi</item>
+        <item quantity="other">%d seçildi</item>
+    </plurals>
 </resources>
