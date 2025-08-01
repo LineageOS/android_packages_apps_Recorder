@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     SPDX-FileCopyrightText: 2017-2021 The LineageOS Project
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources>
+    <string name="app_name">خاتىرىلىگۈچ</string>
+    <string name="share">ھەمبەھىر</string>
+    <string name="share_selected">تاللانغاننى ھەمبەھىرلە</string>
+    <string name="stop">توختا</string>
+    <string name="play">قوي</string>
+    <string name="pause">ۋاقىتلىق توختا</string>
+    <string name="resume">داۋاملاشتۇر</string>
+    <string name="delete">ئۆچۈر</string>
+    <string name="delete_all">ھەممىنى ئۆچۈر</string>
+    <string name="delete_selected">تاللانغاننى ئۆچۈر</string>
+    <string name="cancel">ۋاز كەچ</string>
+    <string name="rename">ئات ئۆزگەرت</string>
+    <string name="delete_title">خاتىرە ئۆچۈرۈۋاتىدۇ</string>
+    <string name="delete_recording_message">بۇ خاتىرىنى راستلا ئۆچۈرەمسىز؟ بۇنىڭدىن يېنىۋالغىلى بولمايدۇ</string>
+    <string name="confirm">جەزملە</string>
+    <string name="discard">تاشلىۋەت</string>
+    <string name="record_again">قايتا خاتىرىلە</string>
+    <string name="confirm_result_title">خاتىرىلەشنى ئىشلىتەمدۇ؟</string>
+    <string name="confirm_result_message">ئاخىرقى خاتىرىنى ئىشلىتەمسىز؟</string>
+    <string name="sound_notification_title">ئۈنئالغۇ</string>
+    <string name="sound_notification_message">ئاۋاز ئۇزۇنلۇقى: %1$s</string>
+    <string name="sound_recording_title_working">خاتىرىلەۋاتىدۇ</string>
+    <string name="sound_recording_title_paused">ۋاقىتلىق توختىدى</string>
+    <string name="sound_last_title">ئاخىرقى خاتىرە</string>
+    <string name="sound_channel_title">ئۈنگە ئېلىش</string>
+    <string name="sound_channel_desc">ئۈنگە ئېلىش ۋە ئۇقتۇرۇش تاماملانغاندىن كېيىن خاتىرىلەش ئۇقتۇرۇشىنى داۋاملاشتۇرىدۇ</string>
+    <string name="settings_title">تەڭشەك</string>
+    <string name="settings_location_message">نۆۋەتتىكى ئورنىڭىز بىلەن خاتىرىگە بەلگە سالىدۇ</string>
+    <string name="settings_quality_high">يۇقىرى سۈپەتتە خاتىرىلەش</string>
+    <string name="dialog_permissions_title">ئىجازەت</string>
+    <string name="dialog_permissions_mic">ئۈنئالغۇ ئاۋاز خاتىرىلەش ئۈچۈن مىكروفوننىڭ ئىجازىتىگە موھتاج</string>
+    <string name="dialog_permissions_phone">تېلېفوندا سۆزلىشىۋاتقاندا ئۈنگە ئېلىشنىڭ ئالدىنى ئېلىش ئۈچۈن ئۈنئالغۇ تېلېفون ھالىتىنى زىيارەت قىلىش ئىجازىتىگە ئېھتىياجلىق</string>
+    <string name="dialog_permissions_notifications">ئۈنئالغۇ ئۈنگە ئېلىش تىزگىنىنى كۆرسىتىشتە ئۇقتۇرۇش ئىجازىتىگە ئېھتىياجلىق.</string>
+    <string name="dialog_permissions_mic_phone">تېلېفوندا سۆزلىشىۋاتقاندا ئۈنگە ئېلىشنىڭ ئالدىنى ئېلىش ئۈچۈن ئۈنئالغۇ مىكروفون ھالىتىنى زىيارەت قىلىش ئىجازىتىگە ئېھتىياجلىق</string>
+    <string name="dialog_permissions_mic_notifications">ئۈنئالغۇ ئۈنگە ئېلىش تىزگىنىنى كۆرسىتىشتە ئۇقتۇرۇش  ئىجازىتىگە، ئۈن ئېلىشتا مىكروفون ئىجازىتىگە ئېھتىياجلىق.</string>
+    <string name="dialog_permissions_phone_notifications"> تېلېفوندا سۆزلىشىۋاتقاندا ئۈنگە ئېلىشنىڭ ئالدىنى ئېلىش ئۈچۈن ئۈنئالغۇنىڭ تېلېفون ھالىتىنى زىيارەت قىلىش ئىجازىتىگە ھەمدە ئۈنگە ئېلىش تىزگىنىنى كۆرسىتىش ئۈچۈن ئۇقتۇرۇش ئىجازىتىگە ئېھتىياجلىق.</string>
+    <string name="dialog_permissions_mic_phone_notifications">ئۈنگە ئېلىش ئۈچۈن مىكروفون ئىجازىتىگە، تېلېفوندا سۆزلىشىۋاتقاندا ئۈنگە ئېلىشنىڭ ئالدىنى ئېلىش ئۈچۈن تېلېفون ھالىتىنى زىيارەت قىلىش ئىجازىتىگە ھەمدە ئۈنگە ئېلىش تىزگىنىنى كۆرسىتىش ئۈچۈن ئۇقتۇرۇش ئىجازىتىگە ئېھتىياجلىق.</string>
+    <string name="dialog_permissions_location">ئۈنئالغۇ سىزگە ياردەملىشىپ ئۈن خاتىرىلىرىگە ئۆزلۈكىدىن بەلگە قويۇپ تەشكىللىشى ئۈچۈن ئورۇن ئىجازىتىگە ئېھتىياجلىق</string>
+    <string name="dialog_permissions_ask">قايتا سورا</string>
+    <string name="dialog_permissions_dismiss">پەرۋا قىلما</string>
+    <string name="snack_permissions_no_permission">زۆرۈر ئىجازەت رەت قىلىنغان، ئەپنىڭ ئۇن ئېلىشنى باشلىشى ئۈچۈن ئۇلارنى تەڭشەكتىن قوزغىتىش كېرەك</string>
+    <string name="snack_permissions_no_permission_location">ئورۇن ئىجازىتى رەت قىلىندى، ئەپنىڭ ئۈن خاتىرىڭىزگە بەلگە سېلىشى ئۈچۈن تەڭشەكتىن قوزغىتىش كېرەك</string>
+    <string name="main_sound_action">ئاۋاز خاتىرىلە</string>
+    <string name="list_title">خاتىرەم</string>
+    <string name="list_error_empty">بارلىق ئۈن خاتىرىلىرىڭىز بۇ جايدا كۆرۈنىدۇ</string>
+    <string name="list_edit_title">ئۈن خاتىرە ئىسمىنى تەھرىرلەيدۇ</string>
+    <string name="list_edit_confirm">ئۆزگەرت</string>
+    <string name="list_item_menu">تېخىمۇ كۆپ مەشغۇلات</string>
+    <string name="delete_all_title">ھەممىنى ئۆچۈر</string>
+    <string name="delete_all_message">ھەممە ئۈن خاتىرىسىنى راستتىنلا ئۆچۈرەمسىز؟ بۇنىڭدىن يېنىۋالغىلى بولمايدۇ</string>
+    <string name="delete_selected_title">تاللانغاننى ئۆچۈر</string>
+    <string name="delete_selected_message">تاللىغان ئۈن خاتىرىسىنى راستتىنلا ئۆچۈرەمسىز؟ بۇنىڭدىن يېنىۋالغىلى بولمايدۇ</string>
+    <plurals name="recording_selection_count">
+        <item quantity="one">%d تاللاندى</item>
+        <item quantity="other">%d تاللاندى</item>
+    </plurals>
+</resources>
