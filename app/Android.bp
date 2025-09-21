@@ -27,7 +27,7 @@ android_app {
         "androidx.recyclerview_recyclerview",
         "androidx.recyclerview_recyclerview-selection",
         "com.google.android.material_material",
-        "kotlin-stdlib-jdk8",
+        "kotlin-stdlib",
     ],
 
     sdk_version: "36",
