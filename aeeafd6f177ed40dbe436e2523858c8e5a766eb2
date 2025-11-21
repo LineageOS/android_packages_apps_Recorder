@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1e2798fe_8be8dea8",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2025-11-21T11:20:58Z",
+      "side": 1,
+      "message": "Different color, but per md guidelines secondary is for \"accent\" use on primary",
+      "revId": "aeeafd6f177ed40dbe436e2523858c8e5a766eb2",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
