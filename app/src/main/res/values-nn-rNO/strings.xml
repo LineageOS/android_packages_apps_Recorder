@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     SPDX-FileCopyrightText: 2017-2021 The LineageOS Project
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources>
+    <string name="app_name">Lydopptakar</string>
+    <string name="share">Del</string>
+    <string name="share_selected">Del valde</string>
+    <string name="stop">Stopp</string>
+    <string name="play">Spel av</string>
+    <string name="pause">Pause</string>
+    <string name="resume">Hald fram</string>
+    <string name="delete">Slett</string>
+    <string name="delete_all">Slett alle</string>
+    <string name="delete_selected">Slett valde</string>
+    <string name="cancel">Avbryt</string>
+    <string name="rename">Gje nytt namn</string>
+    <string name="delete_title">Slettar opptak</string>
+    <string name="delete_recording_message">Er du sikker på at du vil sletta dette opptaket? Det kan ikkje angrast.</string>
+    <string name="confirm">Stadfest</string>
+    <string name="discard">Forkast</string>
+    <string name="record_again">Ta opp på nytt</string>
+    <string name="confirm_result_title">Bruk opptak?</string>
+    <string name="confirm_result_message">Vil du bruka det siste opptaket?</string>
+    <string name="sound_notification_title">Lydopptakar</string>
+    <string name="sound_notification_message">Lydlengd: %1$s</string>
+    <string name="sound_recording_title_working">Tek opp</string>
+    <string name="sound_recording_title_paused">Pausa</string>
+    <string name="sound_last_title">Siste opptak</string>
+    <string name="sound_channel_title">Lydopptak</string>
+    <string name="sound_channel_desc">Fast varsel medan du tek opp lyd, og varsel etter at det er ferdig</string>
+    <string name="settings_title">Innstillingar</string>
+    <string name="settings_location_message">Merk opptaka dine med noverande posisjon</string>
+    <string name="settings_quality_high">Ta opp i høg kvalitet</string>
+    <string name="dialog_permissions_title">Løyve</string>
+    <string name="dialog_permissions_mic">Lydopptakaren treng løyve til å bruka mikrofonen for å ta opp lyd.</string>
+    <string name="dialog_permissions_phone">Lydopptakaren treng tilgang til telefonstatusen for å hindra at denne appen tek opp mens du er i ein samtale.</string>
+    <string name="dialog_permissions_notifications">Lydopptakaren treng varselløyve for å visa opptakskontrollar.</string>
+    <string name="dialog_permissions_mic_phone">Lydopptakaren treng løyve til å bruka mikrofonen for å ta opp lyd, og tilgang til telefonstatusen for å hindra at appen tek opp mens du er i ein samtale.</string>
+    <string name="dialog_permissions_mic_notifications">Lydopptakaren treng løyve til å bruka mikrofonen for å ta opp lyd, og varselløyve for å visa opptakskontrollar.</string>
+    <string name="dialog_permissions_phone_notifications">Lydopptakaren treng tilgang til telefonstatusen for å hindra at appen tek opp mens du er i ein samtale, og varselløyve for å visa opptakskontrollar.</string>
+    <string name="dialog_permissions_mic_phone_notifications">Lydopptakaren treng løyve til å bruka mikrofonen for å ta opp lyd, tilgang til telefonstatusen for å hindra at appen tek opp mens du er i ein samtale, og varselløyve for å visa opptakskontrollar.</string>
+    <string name="dialog_permissions_location">Lydopptakaren treng posisjonsløyve for å merka opptaka dine automatisk og gjera det lettare å halda orden på dei.</string>
+    <string name="dialog_permissions_ask">Spør på nytt</string>
+    <string name="dialog_permissions_dismiss">Avvis</string>
+    <string name="snack_permissions_no_permission">Naudsynte løyve vart avviste. Slå dei på i appen Innstillingar for å byrja å ta opp.</string>
+    <string name="snack_permissions_no_permission_location">Posisjonsløyvet vart avvist. Slå det på i appen Innstillingar for å merka opptaka dine.</string>
+    <string name="main_sound_action">Ta opp lyd</string>
+    <string name="list_title">Opptaka mine</string>
+    <string name="list_error_empty">Alle opptaka dine vert viste her.</string>
+    <string name="list_edit_title">Rediger opptaksnamn</string>
+    <string name="list_edit_confirm">Endra</string>
+    <string name="list_item_menu">Fleire handlingar</string>
+    <string name="delete_all_title">Slett alle</string>
+    <string name="delete_all_message">Er du sikker på at du vil sletta alle opptaka? Det kan ikkje angrast.</string>
+    <string name="delete_selected_title">Slett valde</string>
+    <string name="delete_selected_message">Er du sikker på at du vil sletta dei valde opptaka? Det kan ikkje angrast.</string>
+    <plurals name="recording_selection_count">
+        <item quantity="one">%d vald</item>
+        <item quantity="other">%d valde</item>
+    </plurals>
+</resources>
