@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b4d4d8ad_913b6d72",
+        "filename": "gradle.properties",
+        "patchSetId": 1
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 25732
+      },
+      "writtenOn": "2026-04-09T13:27:39Z",
+      "side": 1,
+      "message": "We dropped this, unless still needed by the code",
+      "revId": "2d983ca6597f6215667bb7b08c5602482e2dec55",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
