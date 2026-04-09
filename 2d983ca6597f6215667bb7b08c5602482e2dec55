@@ -16,6 +16,24 @@
       "message": "We dropped this, unless still needed by the code",
       "revId": "2d983ca6597f6215667bb7b08c5602482e2dec55",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4ece20c9_415b801b",
+        "filename": "gradle.properties",
+        "patchSetId": 1
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2026-04-09T13:30:05Z",
+      "side": 1,
+      "message": "I mostly pushed this by mistake, I won\u0027t really care unless I touch the app again",
+      "parentUuid": "b4d4d8ad_913b6d72",
+      "revId": "2d983ca6597f6215667bb7b08c5602482e2dec55",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
