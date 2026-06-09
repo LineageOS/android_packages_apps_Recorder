@@ -16,8 +16,6 @@ import android.content.Intent
 import android.content.IntentFilter
 import android.content.pm.PackageManager
 import android.net.Uri
-import android.os.Build
-import android.os.Environment
 import android.os.Handler
 import android.os.IBinder
 import android.os.IBinder.DeathRecipient
@@ -299,14 +297,10 @@ class SoundRecorderService : LifecycleService() {
         fileName: String,
         extension: String
     ): File? {
-        val recordingDir = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
-            getExternalFilesDir(Environment.DIRECTORY_RECORDINGS)
-        } else {
-            getExternalFilesDir(Environment.DIRECTORY_MUSIC)
-                ?.resolve(LEGACY_MUSIC_DIR)
-        } ?: throw Exception("Null external files dir")
-
-        val file = recordingDir.resolve(String.format(fileName, extension))
+        val recordingDir = File(filesDir, "Sound records")
+        if (recordingDir.exists() && !recordingDir.isDirectory) {
+            recordingDir.delete()
+        }
 
         if (!recordingDir.exists()) {
             try {
@@ -317,7 +311,7 @@ class SoundRecorderService : LifecycleService() {
             }
         }
 
-        return file
+        return File(recordingDir, String.format(fileName, extension))
     }
 
     /* Timers */
@@ -589,7 +583,6 @@ class SoundRecorderService : LifecycleService() {
         const val MSG_TIME_ELAPSED = 4
 
         const val EXTRA_FILE_NAME = "extra_filename"
-        private const val LEGACY_MUSIC_DIR = "Sound records"
 
         const val NOTIFICATION_ID = 60
         private const val NOTIFICATION_CHANNEL = "soundrecorder_notification_channel"
