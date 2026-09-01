@@ -59,7 +59,6 @@
     <plurals name="recording_selection_count">
         <item quantity="one">%d נבחר</item>
         <item quantity="two">%d נבחרו</item>
-        <item quantity="many">%d נבחרו</item>
         <item quantity="other">%d נבחרו</item>
     </plurals>
 </resources>
