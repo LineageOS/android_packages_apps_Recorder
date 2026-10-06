@@ -582,10 +582,10 @@ class SoundRecorderService : LifecycleService() {
     companion object {
         private const val TAG = "SoundRecorderService"
 
-        const val ACTION_START = "START"
-        const val ACTION_STOP = "STOP"
-        const val ACTION_PAUSE = "PAUSE"
-        const val ACTION_RESUME = "RESUME"
+        const val ACTION_START = "org.lineageos.recorder.action.START"
+        const val ACTION_STOP = "org.lineageos.recorder.action.STOP"
+        const val ACTION_PAUSE = "org.lineageos.recorder.action.PAUSE"
+        const val ACTION_RESUME = "org.lineageos.recorder.action.RESUME"
 
         const val MSG_REGISTER_CLIENT = 0
         const val MSG_UNREGISTER_CLIENT = 1
