@@ -134,13 +134,16 @@ class SoundRecorderService : LifecycleService() {
 
         return intent?.let {
             when (it.action) {
-                ACTION_START -> it.getStringExtra(EXTRA_FILE_NAME)?.let { fileName ->
+                ACTION_START -> {
+                    val fileName =
+                        it.getStringExtra(EXTRA_FILE_NAME)?.ifEmpty { null }
+                            ?: recordFileName(null)
                     if (startRecording(fileName)) {
                         START_STICKY
                     } else {
                         START_NOT_STICKY
                     }
-                } ?: START_NOT_STICKY
+                }
 
                 ACTION_STOP -> if (stopRecording()) START_STICKY else START_NOT_STICKY
 
