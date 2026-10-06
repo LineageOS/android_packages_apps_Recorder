@@ -48,11 +48,6 @@ import org.lineageos.recorder.utils.PermissionManager
 import org.lineageos.recorder.utils.PreferencesManager
 import org.lineageos.recorder.utils.Utils
 import org.lineageos.recorder.viewmodels.RecordingsViewModel
-import java.time.LocalDateTime
-import java.time.format.DateTimeFormatter
-import java.time.format.DateTimeFormatterBuilder
-import java.time.temporal.ChronoUnit
-import java.util.Locale
 import kotlin.reflect.safeCast
 
 class RecorderActivity : AppCompatActivity(R.layout.activity_main) {
@@ -373,22 +368,5 @@ class RecorderActivity : AppCompatActivity(R.layout.activity_main) {
     }
 
     private val newRecordFileName: String
-        get() {
-            val tag = locationHelper.currentLocationName ?: FILE_NAME_FALLBACK
-            val formatter = DateTimeFormatterBuilder()
-                .append(DateTimeFormatter.ISO_LOCAL_DATE)
-                .appendLiteral(' ')
-                .append(DateTimeFormatter.ISO_LOCAL_TIME)
-                .toFormatter(Locale.getDefault())
-            val now = LocalDateTime.now()
-            return String.format(
-                FILE_NAME_BASE, tag,
-                formatter.format(now.truncatedTo(ChronoUnit.SECONDS))
-            ) + ".%1\$s"
-        }
-
-    companion object {
-        private const val FILE_NAME_BASE = "%1\$s (%2\$s)"
-        private const val FILE_NAME_FALLBACK = "Sound record"
-    }
+        get() = SoundRecorderService.recordFileName(locationHelper.currentLocationName)
 }

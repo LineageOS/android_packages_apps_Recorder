@@ -43,6 +43,11 @@ import org.lineageos.recorder.utils.RecordIntentHelper
 import java.io.File
 import java.io.IOException
 import java.lang.ref.WeakReference
+import java.time.LocalDateTime
+import java.time.format.DateTimeFormatter
+import java.time.format.DateTimeFormatterBuilder
+import java.time.temporal.ChronoUnit
+import java.util.Locale
 import java.util.Timer
 import java.util.TimerTask
 
@@ -590,6 +595,21 @@ class SoundRecorderService : LifecycleService() {
 
         const val EXTRA_FILE_NAME = "extra_filename"
         private const val LEGACY_MUSIC_DIR = "Sound records"
+
+        private const val FILE_NAME_BASE = "%1\$s (%2\$s)"
+        private const val FILE_NAME_FALLBACK = "Sound record"
+
+        fun recordFileName(tag: String?): String {
+            val formatter = DateTimeFormatterBuilder()
+                .append(DateTimeFormatter.ISO_LOCAL_DATE)
+                .appendLiteral(' ')
+                .append(DateTimeFormatter.ISO_LOCAL_TIME)
+                .toFormatter(Locale.getDefault())
+            val now = LocalDateTime.now().truncatedTo(ChronoUnit.SECONDS)
+            return String.format(
+                FILE_NAME_BASE, tag ?: FILE_NAME_FALLBACK, formatter.format(now)
+            ) + ".%1\$s"
+        }
 
         const val NOTIFICATION_ID = 60
         private const val NOTIFICATION_CHANNEL = "soundrecorder_notification_channel"
