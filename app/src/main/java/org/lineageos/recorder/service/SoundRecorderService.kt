@@ -353,9 +353,12 @@ class SoundRecorderService : LifecycleService() {
         } else {
             getExternalFilesDir(Environment.DIRECTORY_MUSIC)
                 ?.resolve(LEGACY_MUSIC_DIR)
-        } ?: throw Exception("Null external files dir")
+        } ?: run {
+            Log.e(TAG, "No external files dir")
+            return null
+        }
 
-        val file = recordingDir.resolve(String.format(fileName, extension))
+        val file = File(recordingDir, "${sanitizeFileName(fileName)}.$extension")
 
         if (!recordingDir.exists()) {
             try {
@@ -642,6 +645,7 @@ class SoundRecorderService : LifecycleService() {
 
         private const val FILE_NAME_BASE = "%1\$s (%2\$s)"
         private const val FILE_NAME_FALLBACK = "Sound record"
+        private val FILE_NAME_INVALID = Regex("""[\\/\x00-\x1f]""")
 
         fun recordFileName(tag: String?): String {
             val formatter = DateTimeFormatterBuilder()
@@ -652,8 +656,16 @@ class SoundRecorderService : LifecycleService() {
             val now = LocalDateTime.now().truncatedTo(ChronoUnit.SECONDS)
             return String.format(
                 FILE_NAME_BASE, tag ?: FILE_NAME_FALLBACK, formatter.format(now)
-            ) + ".%1\$s"
+            )
         }
+
+        // A name reaches here from a caller, and through the location tag from
+        // the network, so it names a file in this directory and nowhere else.
+        private fun sanitizeFileName(name: String) =
+            FILE_NAME_INVALID.replace(name, "_")
+                .trim()
+                .trimEnd('.')
+                .ifEmpty { recordFileName(null) }
 
         const val NOTIFICATION_ID = 60
         private const val NOTIFICATION_CHANNEL = "soundrecorder_notification_channel"
