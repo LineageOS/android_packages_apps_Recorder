@@ -62,7 +62,7 @@
         <service
             android:name=".service.SoundRecorderService"
             android:exported="false"
-            android:foregroundServiceType="microphone">
+            android:foregroundServiceType="microphone|shortService">
         </service>
     </application>
 </manifest>
