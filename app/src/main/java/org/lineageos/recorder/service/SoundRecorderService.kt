@@ -157,6 +157,11 @@ class SoundRecorderService : LifecycleService() {
     }
 
     private fun startRecording(fileName: String): Boolean {
+        if (recorder != null) {
+            Log.e(TAG, "Already recording")
+            return false
+        }
+
         if (checkSelfPermission(permission.RECORD_AUDIO)
             != PackageManager.PERMISSION_GRANTED
         ) {
@@ -301,6 +306,7 @@ class SoundRecorderService : LifecycleService() {
         notificationManager.cancel(NOTIFICATION_ID)
         stopForeground(STOP_FOREGROUND_REMOVE)
         notifyStatus(UiStatus.READY)
+        recorder = null
     }
 
     private fun createNewAudioFile(
