@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "fe141b20_cb8c8057",
+        "filename": "app/src/main/java/org/lineageos/recorder/service/SoundRecorderService.kt",
+        "patchSetId": 2
+      },
+      "lineNbr": 212,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2026-10-07T14:09:33Z",
+      "side": 1,
+      "message": "cursed, but I assume you\u0027ve seen that...",
+      "range": {
+        "startLine": 211,
+        "startChar": 0,
+        "endLine": 212,
+        "endChar": 75
+      },
+      "revId": "9a8de490a459c065ab29e91ce9dcc8ffd0a8cd7e",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
