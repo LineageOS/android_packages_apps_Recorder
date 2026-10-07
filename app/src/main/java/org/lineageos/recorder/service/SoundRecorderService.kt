@@ -15,6 +15,7 @@ import android.content.Context
 import android.content.Intent
 import android.content.IntentFilter
 import android.content.pm.PackageManager
+import android.content.pm.ServiceInfo
 import android.net.Uri
 import android.os.Build
 import android.os.Environment
@@ -159,6 +160,7 @@ class SoundRecorderService : LifecycleService() {
     private fun startRecording(fileName: String): Boolean {
         if (recorder != null) {
             Log.e(TAG, "Already recording")
+            refuseStart()
             return false
         }
 
@@ -166,37 +168,69 @@ class SoundRecorderService : LifecycleService() {
             != PackageManager.PERMISSION_GRANTED
         ) {
             Log.e(TAG, "Missing permission to record audio")
+            refuseStart()
             return false
         }
 
-        recorder = when (preferencesManager.recordInHighQuality) {
+        startForeground(
+            NOTIFICATION_ID,
+            createRecordingNotification(0),
+            ServiceInfo.FOREGROUND_SERVICE_TYPE_MICROPHONE,
+        )
+
+        val recorder = when (preferencesManager.recordInHighQuality) {
             true -> HighQualityRecorder()
             else -> GoodQualityRecorder(this)
         }
 
-        return recorder?.let { recorder ->
-            val file = createNewAudioFile(fileName, recorder.fileExtension) ?: run {
-                Log.e(TAG, "Failed to prepare output file")
-                return@let false
-            }
+        val file = createNewAudioFile(fileName, recorder.fileExtension) ?: run {
+            Log.e(TAG, "Failed to prepare output file")
+            abandonStart()
+            return false
+        }
 
-            this.recordFile = file
+        isPaused = false
+        elapsedTime = 0
+        try {
+            recorder.startRecording(file)
+        } catch (e: IOException) {
+            Log.e(TAG, "Error while starting the recorder", e)
+            abandonStart()
+            return false
+        }
 
-            isPaused = false
-            elapsedTime = 0
-            try {
-                recorder.startRecording(file)
-            } catch (e: IOException) {
-                Log.e(TAG, "Error while starting the recorder", e)
-                return@let false
-            }
-            notifyStatus(UiStatus.RECORDING)
-            notifyElapsedTime(0)
-            startTimers()
-            startForeground(NOTIFICATION_ID, createRecordingNotification(0))
+        this.recorder = recorder
+        this.recordFile = file
+        notifyStatus(UiStatus.RECORDING)
+        notifyElapsedTime(0)
+        startTimers()
 
-            true
-        } ?: false
+        return true
+    }
+
+    // Going down while a start is still owed its notification crashes the
+    // process, and the short service type needs no permission to post one.
+    private fun refuseStart() {
+        if (recorder != null) {
+            startForeground(
+                NOTIFICATION_ID,
+                createRecordingNotification(elapsedTime),
+                ServiceInfo.FOREGROUND_SERVICE_TYPE_MICROPHONE,
+            )
+            return
+        }
+
+        startForeground(
+            NOTIFICATION_ID,
+            createRecordingNotification(0),
+            ServiceInfo.FOREGROUND_SERVICE_TYPE_SHORT_SERVICE,
+        )
+        abandonStart()
+    }
+
+    private fun abandonStart() {
+        stopForeground(STOP_FOREGROUND_REMOVE)
+        stopSelf()
     }
 
     private fun stopRecording(): Boolean {
@@ -204,6 +238,7 @@ class SoundRecorderService : LifecycleService() {
             Log.e(TAG, "Trying to stop null recorder")
             return false
         }
+        this.recorder = null
 
         if (isPaused) {
             isPaused = false
