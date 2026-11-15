@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     SPDX-FileCopyrightText: 2017-2021 The LineageOS Project
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources>
+    <string name="share">分享</string>
+    <string name="share_selected">分享所選項目</string>
+    <string name="stop">停止</string>
+    <string name="play">播放</string>
+    <string name="pause">暫停</string>
+    <string name="resume">繼續</string>
+    <string name="delete">刪除</string>
+    <string name="delete_all">刪除所有內容</string>
+    <string name="delete_selected">刪除所選項目</string>
+    <string name="cancel">取消</string>
+    <string name="rename">重新命名</string>
+    <string name="delete_title">正在刪除錄音</string>
+    <string name="delete_recording_message">您確定要刪除此錄音嗎？此操作無法復原</string>
+    <string name="confirm">確認</string>
+    <string name="discard">捨棄</string>
+    <string name="record_again">重新錄音</string>
+    <string name="confirm_result_title">使用錄音？</string>
+    <string name="confirm_result_message">您要使用上次的錄音嗎？</string>
+    <string name="sound_recording_title_working">正在錄音</string>
+    <string name="sound_recording_title_paused">已暫停</string>
+    <string name="sound_last_title">上次錄音</string>
+    <string name="sound_channel_title">正在錄音</string>
+    <string name="settings_title">設定</string>
+    <string name="settings_location_message">以您當前的位置標記您的錄音</string>
+    <string name="dialog_permissions_title">權限</string>
+    <string name="dialog_permissions_mic">錄音機需要咪高風權限才能錄音</string>
+    <string name="dialog_permissions_mic_phone">錄音機需要咪高風權限才能錄音，並需要存取電話狀態以避免在您通話期間錄音</string>
+    <string name="dialog_permissions_mic_notifications">錄音機需要咪高風權限才能錄音，並需要通知權限以顯示錄音控制項。</string>
+    <string name="dialog_permissions_phone_notifications">錄音機需要存取電話狀態以避免在您通話期間進行錄音，並需要通知權限以顯示錄音控制項</string>
+    <string name="dialog_permissions_mic_phone_notifications">錄音機需要咪高風權限才能錄音，並需要存取電話狀態以避免在您通話期間錄音；此外亦需要通知權限以顯示錄音控制項。﻿</string>
+    <string name="dialog_permissions_location">錄音機需要位置權限以自動標記錄音地點，協助您整理錄音</string>
+    <string name="dialog_permissions_dismiss">忽略</string>
+    <string name="main_sound_action">錄音</string>
+    <string name="list_title">我的錄音</string>
+    <string name="list_edit_title">編輯錄音名稱</string>
+    <string name="delete_all_title">刪除全部</string>
+    <string name="delete_all_message">您確定要刪除所有錄音嗎？此操作無法復原</string>
+    <string name="delete_selected_title">刪除所選項目</string>
+    <string name="delete_selected_message">您確定要刪除選取的錄音嗎？此操作無法復原</string>
+</resources>
